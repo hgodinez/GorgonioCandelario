@@ -5,9 +5,13 @@ from PIL import Image, ImageOps
 src, dst = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
 dst.mkdir(parents=True, exist_ok=True)
 WIDTHS = [480, 960, 1440]
+# Recortes (izq, arriba, der, abajo) para quitar defectos de las fotos originales
+RECORTES = {'IMG-20250829-WA0019.jpg': (0, 4, 720, 722)}  # franja negra arriba
 meta = {}
 for f in sorted(src.glob('*.jpg')):
     im = ImageOps.exif_transpose(Image.open(f)).convert('RGB')
+    if f.name in RECORTES:
+        im = im.crop(RECORTES[f.name])
     slug = f.stem.replace('IMG-20250829-WA', 'mascara-')
     out = []
     for w in WIDTHS:

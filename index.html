@@ -12,9 +12,8 @@
   <meta property="og:description" content="Máscaras de madera talladas y policromadas a mano en Suchitlán, Colima.">
   <!-- PENDIENTE: cuando haya dominio, agregar og:url y og:image con URL absoluta (p. ej. img/mascaras/HERO-960.jpg) -->
   <link rel="icon" href="img/icono.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap">
+  <link rel="preload" href="fuentes/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/estilos.css">
   <script type="application/ld+json">
   {
@@ -64,6 +63,24 @@
   <main id="contenido">
 
     <!-- PORTADA -->
+    <section class="portada" id="inicio" aria-labelledby="titulo-portada">
+      <div class="contenedor">
+        <div>
+          <p class="antetitulo">Maestro mascarero · Suchitlán, Colima</p>
+          <h1 id="titulo-portada">Gorgonio Candelario <em>Castro</em></h1>
+          <p class="entrada">Máscaras de madera talladas y pintadas a mano en Suchitlán, Colima, para la Danza de los Morenos, las pastorelas y las danzas de su pueblo. Es un oficio que aprendió de su padre y de su abuelo.</p>
+          <div class="botones">
+            <a class="boton boton-principal" href="#mascaras">Ver las máscaras</a>
+            <a class="boton boton-secundario" href="#taller">Visitar el taller</a>
+          </div>
+        </div>
+        <figure class="portada-imagen">
+          <div class="portada-marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0043-480.webp 480w, img/mascaras/mascara-0043-960.webp 960w, img/mascaras/mascara-0043-1200.webp 1200w" sizes="(max-width: 760px) 90vw, 30rem"><img src="img/mascaras/mascara-0043-480.jpg" srcset="img/mascaras/mascara-0043-480.jpg 480w, img/mascaras/mascara-0043-960.jpg 960w, img/mascaras/mascara-0043-1200.jpg 1200w" sizes="(max-width: 760px) 90vw, 30rem" width="480" height="640" alt="Máscara de tres rostros con barba negra rizada, banda dorada y corona rematada por un sol con cara" fetchpriority="high" decoding="async" style="object-position: 50% 40%"></picture></div>
+          <figcaption>Tres rostros coronados por un sol</figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- /PORTADA -->
 
     <!-- EL MAESTRO -->
     <section class="seccion seccion-crema" id="maestro" aria-labelledby="titulo-maestro">
@@ -92,6 +109,167 @@
     </section>
 
     <!-- MÁSCARAS -->
+    <section class="seccion" id="mascaras" aria-labelledby="titulo-mascaras">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <p class="antetitulo">Su obra</p>
+          <h2 id="titulo-mascaras">Las máscaras</h2>
+          <p class="texto-suave">Cada máscara está tallada en una sola pieza de madera y pintada a mano. Toca cualquier foto para verla en grande.</p>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar máscaras">
+          <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+          <button type="button" data-filtro="animales" aria-pressed="false">Animales de la danza</button>
+          <button type="button" data-filtro="rostros" aria-pressed="false">Rostros múltiples</button>
+          <button type="button" data-filtro="personajes" aria-pressed="false">Diablos y otros personajes</button>
+          <button type="button" data-filtro="otros" aria-pressed="false">Más animales</button>
+        </div>
+        <div class="grupo" id="animales">
+          <div class="grupo-titulo"><h3>Animales de la danza</h3></div>
+          <p>Tecolotes, gallos, chivos, perros y coyotes están entre los animales que bailan en parejas, macho y hembra, en la Danza de los Morenos.</p>
+          <ul class="galeria">
+            <li><figure>
+              <a href="img/mascaras/mascara-0056-1200.jpg" data-grande="img/mascaras/mascara-0056-1200.webp" data-titulo="Tecolote blanco" data-descripcion="Rostro blanco con puntos dorados, discos negros alrededor de los ojos rojos y largos mechones de fibra natural.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0056-480.webp 480w, img/mascaras/mascara-0056-960.webp 960w, img/mascaras/mascara-0056-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0056-480.jpg" srcset="img/mascaras/mascara-0056-480.jpg 480w, img/mascaras/mascara-0056-960.jpg 960w, img/mascaras/mascara-0056-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de tecolote blanca con puntos dorados, discos negros alrededor de los ojos rojos y fibra natural color crema" loading="lazy" decoding="async" style="object-position: 50% 45%"></picture></div>
+                <figcaption>Tecolote blanco con fibra natural</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0147-960.jpg" data-grande="img/mascaras/mascara-0147-960.webp" data-titulo="Tecolote de cabellera" data-descripcion="Plumaje pintado con pequeños trazos amarillos, ojos rodeados de rojo y una abundante cabellera de fibra oscura.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0147-480.webp 480w, img/mascaras/mascara-0147-960.webp 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0147-480.jpg" srcset="img/mascaras/mascara-0147-480.jpg 480w, img/mascaras/mascara-0147-960.jpg 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de tecolote de madera con plumaje pintado en amarillo, ojos rodeados de rojo y larga cabellera de fibra oscura" loading="lazy" decoding="async" style="object-position: 50% 35%"></picture></div>
+                <figcaption>Tecolote con cabellera de fibra</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0022-364.jpg" data-grande="img/mascaras/mascara-0022-364.webp" data-titulo="Tecolote rojo" data-descripcion="Grandes ojos redondos de rayas negras, pico verde corto y curvo, y orejas puntiagudas.">
+                <div class="marco" style="background: #000"><picture><source type="image/webp" srcset="img/mascaras/mascara-0022-364.webp 364w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0022-364.jpg" srcset="img/mascaras/mascara-0022-364.jpg 364w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="364" height="567" alt="Máscara de tecolote roja con ojos redondos blancos de rayas negras, pico verde curvo y orejas puntiagudas, sobre fondo negro" loading="lazy" decoding="async" style="object-fit: contain"></picture></div>
+                <figcaption>Tecolote rojo de pico verde</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0030-1200.jpg" data-grande="img/mascaras/mascara-0030-1200.webp" data-titulo="Ave de cresta roja" data-descripcion="Rostro blanco, gran cresta roja de puntas negras, ojos amarillos y un largo pico verde.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0030-480.webp 480w, img/mascaras/mascara-0030-960.webp 960w, img/mascaras/mascara-0030-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0030-480.jpg" srcset="img/mascaras/mascara-0030-480.jpg 480w, img/mascaras/mascara-0030-960.jpg 960w, img/mascaras/mascara-0030-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de ave, posiblemente gallo, con rostro blanco, cresta roja de puntas negras, ojos amarillos y pico verde largo, sobre una mesa de madera" loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Ave de cresta roja y pico verde</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0042-720.jpg" data-grande="img/mascaras/mascara-0042-720.webp" data-titulo="Perro o coyote" data-descripcion="Hocico largo, orejas puntiagudas y franjas de colores que forman una V en la frente y espirales en las mejillas.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0042-480.webp 480w, img/mascaras/mascara-0042-720.webp 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0042-480.jpg" srcset="img/mascaras/mascara-0042-480.jpg 480w, img/mascaras/mascara-0042-720.jpg 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="853" alt="Máscara de coyote o perro blanca, con orejas amarillas, franjas de colores en V, espirales en las mejillas y nariz negra" loading="lazy" decoding="async" style="object-position: 50% 35%"></picture></div>
+                <figcaption>Perro o coyote de franjas y espirales</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0065-1200.jpg" data-grande="img/mascaras/mascara-0065-1200.webp" data-titulo="Animal de cuernos largos" data-descripcion="Cara roja y amarilla, cuernos negros con anillos blancos y una barba de fibra natural.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0065-480.webp 480w, img/mascaras/mascara-0065-960.webp 960w, img/mascaras/mascara-0065-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0065-480.jpg" srcset="img/mascaras/mascara-0065-480.jpg 480w, img/mascaras/mascara-0065-960.jpg 960w, img/mascaras/mascara-0065-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de chivo roja y amarilla con dos cuernos largos negros con anillos blancos y barba de fibra clara" loading="lazy" decoding="async" style="object-position: 50% 30%"></picture></div>
+                <figcaption>Cuernos largos y barba de fibra</figcaption>
+              </a>
+            </figure></li>
+          </ul>
+        </div>
+        <div class="grupo" id="rostros">
+          <div class="grupo-titulo"><h3>Rostros múltiples</h3></div>
+          <p>Máscaras de dos y tres rostros, en la línea de las máscaras del Tiempo que talla el maestro, y rostros partidos entre la vida y la muerte.</p>
+          <ul class="galeria">
+            <li><figure>
+              <a href="img/mascaras/mascara-0043-1200.jpg" data-grande="img/mascaras/mascara-0043-1200.webp" data-titulo="Máscara de tres rostros" data-descripcion="Tres rostros que comparten dos ojos, bajo una banda dorada y una corona rematada por un sol con cara y una luna creciente.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0043-480.webp 480w, img/mascaras/mascara-0043-960.webp 960w, img/mascaras/mascara-0043-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0043-480.jpg" srcset="img/mascaras/mascara-0043-480.jpg 480w, img/mascaras/mascara-0043-960.jpg 960w, img/mascaras/mascara-0043-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de tres rostros con barba negra rizada, banda dorada y corona rematada por un sol con cara" loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Tres rostros coronados por un sol</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0041-1200.jpg" data-grande="img/mascaras/mascara-0041-1200.webp" data-titulo="Máscara de tres rostros (vista lateral)" data-descripcion="La misma máscara vista de lado: el rostro con bigote queda de frente y el central, de perfil.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0041-480.webp 480w, img/mascaras/mascara-0041-960.webp 960w, img/mascaras/mascara-0041-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0041-480.jpg" srcset="img/mascaras/mascara-0041-480.jpg 480w, img/mascaras/mascara-0041-960.jpg 960w, img/mascaras/mascara-0041-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Vista lateral de la máscara de tres rostros: rostro barbado color terracota, coronado por una luna creciente azul y un sol con cara" loading="lazy" decoding="async" style="object-position: 50% 30%"></picture></div>
+                <figcaption>Tres rostros, vista lateral</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0116-780.jpg" data-grande="img/mascaras/mascara-0116-780.webp" data-titulo="Rostro coronado con media luna" data-descripcion="Rostro de barba negra dividido en dos colores, con corona de picos y llamas, y una media luna plateada con estrella.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0116-480.webp 480w, img/mascaras/mascara-0116-780.webp 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0116-480.jpg" srcset="img/mascaras/mascara-0116-480.jpg 480w, img/mascaras/mascara-0116-780.jpg 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara policromada vista de perfil: rostro amarillo de barba negra, corona de picos con llamas rojas y media luna con estrella sobre el lado azul." loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Rostro coronado con media luna</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0146-960.jpg" data-grande="img/mascaras/mascara-0146-960.webp" data-titulo="La vida y la muerte" data-descripcion="Mitad rostro lila con barba ondulada de muchos colores, mitad calavera color crema.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0146-480.webp 480w, img/mascaras/mascara-0146-960.webp 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0146-480.jpg" srcset="img/mascaras/mascara-0146-480.jpg 480w, img/mascaras/mascara-0146-960.jpg 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de madera policromada: mitad rostro lila con barba ondulada multicolor y mitad calavera crema con dientes rayados." loading="lazy" decoding="async" style="object-position: 50% 45%"></picture></div>
+                <figcaption>Mitad hombre, mitad calavera</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0140-960.jpg" data-grande="img/mascaras/mascara-0140-960.webp" data-titulo="La vida y la muerte (vista lateral)" data-descripcion="La misma máscara vista desde el lado de la calavera, con sus dientes rayados de azul, amarillo y rojo.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0140-480.webp 480w, img/mascaras/mascara-0140-960.webp 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0140-480.jpg" srcset="img/mascaras/mascara-0140-480.jpg 480w, img/mascaras/mascara-0140-960.jpg 960w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara dividida vista de lado: mitad calavera color crema con dientes rayados y mitad rostro lila con barba ondulada multicolor." loading="lazy" decoding="async" style="object-position: 50% 45%"></picture></div>
+                <figcaption>Vida y muerte, vista lateral</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0125-780.jpg" data-grande="img/mascaras/mascara-0125-780.webp" data-titulo="Mitad hombre, mitad calavera" data-descripcion="Un rostro partido en dos: de un lado un hombre barbado de ojo azul; del otro, una calavera amarilla.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0125-480.webp 480w, img/mascaras/mascara-0125-780.webp 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0125-480.jpg" srcset="img/mascaras/mascara-0125-480.jpg 480w, img/mascaras/mascara-0125-780.jpg 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de madera dividida en dos: mitad hombre barbado de ojo azul y mitad calavera amarilla con trazos negros, sobre pared amarilla." loading="lazy" decoding="async" style="object-position: 50% 45%"></picture></div>
+                <figcaption>Hombre barbado y calavera</figcaption>
+              </a>
+            </figure></li>
+          </ul>
+        </div>
+        <div class="grupo" id="personajes">
+          <div class="grupo-titulo"><h3>Diablos y otros personajes</h3></div>
+          <p>Diablos, rostros de la noche con estrellas y lunas, y otros personajes tallados por el maestro.</p>
+          <ul class="galeria">
+            <li><figure>
+              <a href="img/mascaras/mascara-0153-1200.jpg" data-grande="img/mascaras/mascara-0153-1200.webp" data-titulo="Diablo" data-descripcion="Rostro negro brillante con cresta de puntas rojas, ojos de llamas anaranjadas y una amplia mueca.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0153-480.webp 480w, img/mascaras/mascara-0153-960.webp 960w, img/mascaras/mascara-0153-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0153-480.jpg" srcset="img/mascaras/mascara-0153-480.jpg 480w, img/mascaras/mascara-0153-960.jpg 960w, img/mascaras/mascara-0153-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de diablo negra con cresta de puntas rojas en la frente, ojos pintados en naranja y amplia sonrisa de dientes rayados en rojo" loading="lazy" decoding="async" style="object-position: 50% 45%"></picture></div>
+                <figcaption>Diablo negro de cresta roja</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0151-780.jpg" data-grande="img/mascaras/mascara-0151-780.webp" data-titulo="Rostro con alas" data-descripcion="Rostro negro de nariz afilada, con dos grandes alas talladas y un ave posada en lo alto de la cabeza.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0151-480.webp 480w, img/mascaras/mascara-0151-780.webp 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0151-480.jpg" srcset="img/mascaras/mascara-0151-480.jpg 480w, img/mascaras/mascara-0151-780.jpg 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara negra vista casi de perfil, con dos alas talladas en la cabeza y un ave negra posada en lo alto" loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Rostro negro con alas y ave</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0027-1440.jpg" data-grande="img/mascaras/mascara-0027-1440.webp" data-titulo="Tres rostros de la noche" data-descripcion="Tres rostros negros con bigote, decorados con estrellas, lunas crecientes y puntos dorados.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0027-480.webp 480w, img/mascaras/mascara-0027-960.webp 960w, img/mascaras/mascara-0027-1440.webp 1440w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0027-480.jpg" srcset="img/mascaras/mascara-0027-480.jpg 480w, img/mascaras/mascara-0027-960.jpg 960w, img/mascaras/mascara-0027-1440.jpg 1440w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="360" alt="Tres máscaras negras de rostro humano con bigote, decoradas con puntos, estrellas y lunas en dorado, amarillo y rojo, colgadas en una pared" loading="lazy" decoding="async" style="object-position: 52% 55%"></picture></div>
+                <figcaption>Tres rostros con estrellas y lunas</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0149-780.jpg" data-grande="img/mascaras/mascara-0149-780.webp" data-titulo="Hombre barbado" data-descripcion="Rostro de ojos azules, cejas gruesas y barba negra tallada mechón por mechón.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0149-480.webp 480w, img/mascaras/mascara-0149-780.webp 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0149-480.jpg" srcset="img/mascaras/mascara-0149-480.jpg 480w, img/mascaras/mascara-0149-780.jpg 780w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de hombre de piel clara con ojos azules, cejas negras gruesas y barba negra tallada, sobre fondo amarillo" loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Hombre barbado de ojos azules</figcaption>
+              </a>
+            </figure></li>
+          </ul>
+        </div>
+        <div class="grupo" id="otros">
+          <div class="grupo-titulo"><h3>Más animales</h3></div>
+          <p>Un tecolote sobre un tigre, un felino negro, un venado y un gorila muestran la variedad de su trabajo.</p>
+          <ul class="galeria">
+            <li><figure>
+              <a href="img/mascaras/mascara-0051-1200.jpg" data-grande="img/mascaras/mascara-0051-1200.webp" data-titulo="Tecolote y tigre" data-descripcion="Pieza compuesta: un tecolote gris sobre la cabeza de un tigre amarillo de hocico abierto y colmillos blancos.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0051-480.webp 480w, img/mascaras/mascara-0051-960.webp 960w, img/mascaras/mascara-0051-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0051-480.jpg" srcset="img/mascaras/mascara-0051-480.jpg 480w, img/mascaras/mascara-0051-960.jpg 960w, img/mascaras/mascara-0051-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara compuesta: cabeza de tecolote gris sobre un tigre amarillo con manchas negras y hocico abierto con colmillos" loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Tecolote sobre tigre</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0121-1200.jpg" data-grande="img/mascaras/mascara-0121-1200.webp" data-titulo="Felino negro" data-descripcion="Cabeza de felino en negro brillante, con orejas de rayas rojas, ojos anaranjados y colmillos color marfil.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0121-480.webp 480w, img/mascaras/mascara-0121-960.webp 960w, img/mascaras/mascara-0121-1200.webp 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0121-480.jpg" srcset="img/mascaras/mascara-0121-480.jpg 480w, img/mascaras/mascara-0121-960.jpg 960w, img/mascaras/mascara-0121-1200.jpg 1200w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="640" alt="Máscara de felino negro brillante vista de tres cuartos, con oreja de rayas rojas, ojos anaranjados y colmillos a la vista." loading="lazy" decoding="async" style="object-position: 50% 40%"></picture></div>
+                <figcaption>Felino negro de ojos anaranjados</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0019-720.jpg" data-grande="img/mascaras/mascara-0019-720.webp" data-titulo="Venado" data-descripcion="Astas negras ramificadas y un rostro lleno de color: grecas azules en la frente y franjas moradas en el hocico.">
+                <div class="marco" style="background: #d9d9d4"><picture><source type="image/webp" srcset="img/mascaras/mascara-0019-480.webp 480w, img/mascaras/mascara-0019-720.webp 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0019-480.jpg" srcset="img/mascaras/mascara-0019-480.jpg 480w, img/mascaras/mascara-0019-720.jpg 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="479" alt="Máscara de venado de madera tallada con astas negras, orejas anaranjadas y rostro pintado de azul, naranja y morado" loading="lazy" decoding="async" style="object-fit: contain"></picture></div>
+                <figcaption>Venado de astas negras</figcaption>
+              </a>
+            </figure></li>
+            <li><figure>
+              <a href="img/mascaras/mascara-0172-720.jpg" data-grande="img/mascaras/mascara-0172-720.webp" data-titulo="Gorila" data-descripcion="Pelo tallado en toda la superficie, ojos amarillos, colmillos color hueso y lengua roja de fuera.">
+                <div class="marco"><picture><source type="image/webp" srcset="img/mascaras/mascara-0172-480.webp 480w, img/mascaras/mascara-0172-720.webp 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"><img src="img/mascaras/mascara-0172-480.jpg" srcset="img/mascaras/mascara-0172-480.jpg 480w, img/mascaras/mascara-0172-720.jpg 720w" sizes="(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem" width="480" height="853" alt="Máscara de gorila negra con pelo tallado, ojos amarillos, colmillos color hueso y lengua roja de fuera" loading="lazy" decoding="async" style="object-position: 0% 40%"></picture></div>
+                <figcaption>Gorila de lengua roja</figcaption>
+              </a>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- /MÁSCARAS -->
 
     <!-- DANZA -->
     <section class="seccion seccion-oscura" id="danza" aria-labelledby="titulo-danza">
@@ -112,6 +290,11 @@
           <p class="texto-suave" style="margin-top:2rem">La danza está registrada en el <a href="https://sic.cultura.gob.mx/ficha.php?table=frpintangible&amp;table_id=300" rel="noopener">Inventario del Patrimonio Cultural Inmaterial</a> de la Secretaría de Cultura.</p>
         </div>
         <!-- IMAGEN-DANZA -->
+    <figure class="imagen-danza">
+          <picture><source type="image/webp" srcset="img/mascaras/mascara-0056-480.webp 480w, img/mascaras/mascara-0056-960.webp 960w, img/mascaras/mascara-0056-1200.webp 1200w" sizes="(max-width: 820px) 90vw, 34rem"><img src="img/mascaras/mascara-0056-480.jpg" srcset="img/mascaras/mascara-0056-480.jpg 480w, img/mascaras/mascara-0056-960.jpg 960w, img/mascaras/mascara-0056-1200.jpg 1200w" sizes="(max-width: 820px) 90vw, 34rem" width="480" height="640" alt="Máscara de tecolote blanca con puntos dorados, discos negros alrededor de los ojos rojos y fibra natural color crema" loading="lazy" decoding="async" style="object-position: 50% 45%"></picture>
+          <figcaption>Tecolote blanco con fibra natural</figcaption>
+        </figure>
+    <!-- /IMAGEN-DANZA -->
       </div>
     </section>
 

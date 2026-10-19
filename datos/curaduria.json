@@ -1,0 +1,95 @@
+{
+ "hero": "IMG-20250829-WA0043.jpg",
+ "hero_razon": "Es la pieza que mejor resume el oficio del maestro. Tiene tres rostros que comparten dos ojos, una banda dorada y, en la corona, un sol con cara y una luna creciente, todo con mucho color. Coincide con las máscaras del Tiempo «de dos o tres rostros» que describen las fuentes, un tema que también une al maestro con su familia: su máscara «El Tiempo» está en el Museum of International Folk Art y «El Padre Tiempo» de don Herminio está en el Museo Franz Mayer. Aun así, la identificación es de certeza media, y el pie o el texto alternativo no deben afirmar el personaje hasta confirmarlo. La foto es frontal y nítida, mide 1200×1600 y la máscara está sobre una pared lisa. RECORTES: en móvil (vertical) se usa casi completa: tal cual en 3:4, o en 9:16 con x 150–1050, que conserva toda la pieza (x ≈ 280–905, y ≈ 105–1490). En escritorio no conviene un recorte apaisado a todo lo ancho: la foto solo mide 1200 px de ancho, habría que ampliarla más de 1.5× y se perderían el sol o la barba. Es mejor poner la máscara completa a un lado y extender el fondo con el color de la pared (≈ RGB 206, 189, 159), o con un panel liso, donde vaya el texto. Si se prefiere una franja, 1200×600 entre y ≈ 560 y 1160 deja los tres rostros, de la banda dorada a la boca, pero sin el sol ni la barba. Antes de publicar, bajar los reflejos del barniz y corregir el tono cálido. ALTERNATIVAS: WA0153 es la mejor foto técnicamente (calidad 5, pared lisa con mucho margen, muy fácil de extender a lo ancho), pero el personaje (diablo) es de certeza media y la pieza es casi toda negra, lo que da una primera impresión sombría. WA0056 es un tecolote, personaje de la Danza de los Morenos, pero la fibra toca los bordes y eso dificulta extender el fondo. WA0146 es muy llamativa, pero solo mide 960 px de ancho. WA0027 es la única foto horizontal (recorte apaisado de 1600×975, y 125–1100, que deja fuera el interruptor), aunque es de calidad media y de tonos oscuros.",
+ "alternativas_hero": [
+  "IMG-20250829-WA0153.jpg",
+  "IMG-20250829-WA0056.jpg",
+  "IMG-20250829-WA0146.jpg",
+  "IMG-20250829-WA0027.jpg"
+ ],
+ "secciones": [
+  {
+   "titulo": "Animales de la Danza de los Morenos",
+   "descripcion": "Tecolotes, gallos, chivos, coyotes y perros están entre los animales de la Danza de los Morenos, que se baila en parejas de macho y hembra. Aquí se reúnen máscaras de esos animales; en el ave de cresta roja y en el animal de cuernos largos la identificación está por confirmar, y no consta en qué danza se usó cada pieza.",
+   "archivos": [
+    "IMG-20250829-WA0056.jpg",
+    "IMG-20250829-WA0147.jpg",
+    "IMG-20250829-WA0022.jpg",
+    "IMG-20250829-WA0030.jpg",
+    "IMG-20250829-WA0042.jpg",
+    "IMG-20250829-WA0065.jpg"
+   ]
+  },
+  {
+   "titulo": "Máscaras del Tiempo y rostros múltiples",
+   "descripcion": "Entre las obras del maestro, las fuentes mencionan las máscaras del Tiempo, que tienen dos o tres rostros. Aquí aparecen una máscara de tres rostros coronada por un sol y una luna, vista de frente y de lado, junto a un rostro coronado con media luna y dos piezas de rostro dividido entre hombre y calavera, cuyo personaje está por confirmar.",
+   "archivos": [
+    "IMG-20250829-WA0043.jpg",
+    "IMG-20250829-WA0041.jpg",
+    "IMG-20250829-WA0116.jpg",
+    "IMG-20250829-WA0146.jpg",
+    "IMG-20250829-WA0140.jpg",
+    "IMG-20250829-WA0125.jpg"
+   ]
+  },
+  {
+   "titulo": "Diablos y otros personajes",
+   "descripcion": "Las fuentes mencionan diablos entre las máscaras que talla el maestro. Aquí se reúnen un probable diablo de rostro negro y otros personajes —un rostro con alas y un ave, tres caras negras con estrellas y lunas doradas y un hombre barbado de ojos azules— cuyo nombre y danza están por confirmar.",
+   "archivos": [
+    "IMG-20250829-WA0153.jpg",
+    "IMG-20250829-WA0151.jpg",
+    "IMG-20250829-WA0027.jpg",
+    "IMG-20250829-WA0149.jpg"
+   ]
+  },
+  {
+   "titulo": "Otros animales y piezas compuestas",
+   "descripcion": "Una pieza que reúne un tecolote y un tigre, un felino negro, un venado y un gorila. No consta que se hayan usado en alguna danza, y el venado y el gorila no figuran entre los animales documentados de la Danza de los Morenos.",
+   "archivos": [
+    "IMG-20250829-WA0051.jpg",
+    "IMG-20250829-WA0121.jpg",
+    "IMG-20250829-WA0019.jpg",
+    "IMG-20250829-WA0172.jpg"
+   ]
+  }
+ ],
+ "duplicados_o_parecidas": [
+  "IMG-20250829-WA0041.jpg e IMG-20250829-WA0043.jpg son LA MISMA MÁSCARA (no lo señalaba el catálogo). Coinciden la banda dorada, con los mismos motivos (voluta, X y círculo entre dos medias lunas) en el mismo orden; el sol con cara, cejas gruesas y barbita negra; la luna creciente azul claro con dorado; la piel terracota, y la barba negra rizada. Las dos se tomaron en la misma pared, que tiene manchitas rojas. WA0043 es la vista de frente. WA0041 es la vista de tres cuartos desde el lado izquierdo: el rostro lateral con bigote se ve de frente, y el rostro central, de boca abierta, queda de perfil a la derecha. Hay que unificar las fichas: WA0041 debe describirse como la máscara de tres rostros y no como una de «dos rostros», y las «piezas en azul claro» de WA0043 son la luna creciente. En la web conviene presentarlas como una sola pieza con dos vistas, con WA0043 como principal y WA0041 como segunda imagen en la ficha o el visor (lightbox).",
+  "IMG-20250829-WA0140.jpg e IMG-20250829-WA0146.jpg son la misma máscara (mitad hombre, mitad calavera), como ya confirmó el verificador. La imagen principal debe ser WA0146, casi frontal, y WA0140 la segunda vista, del lado de la calavera, dentro de la misma ficha.",
+  "IMG-20250829-WA0125.jpg se parece a WA0140/WA0146 por el tema (rostro dividido entre hombre y calavera), pero es otra máscara: piel color carne, barba café, calavera amarilla con trazos negros y orejas distintas. Conviene mostrarlas juntas como variaciones del mismo tema, no como duplicado.",
+  "IMG-20250829-WA0116.jpg comparte con WA0041/WA0043 la corona, la banda metálica con X y la luna, pero es otra pieza: rostro amarillo y azul, corona de picos con llamas, media luna plateada con estrella y barba en punta. Puede ir junto a ellas en la misma sección.",
+  "Los tecolotes WA0022 (rojo), WA0056 (blanco con puntos dorados), WA0147 (café con cabellera) y el de WA0051 (gris, sobre el tigre) son cuatro piezas distintas. No hay duplicados, y juntos forman una buena serie para comparar.",
+  "IMG-20250829-WA0121.jpg (felino negro) e IMG-20250829-WA0153.jpg (diablo) tienen el mismo acabado negro brillante y ojos pintados parecidos (naranja, iris amarillo y pupila roja), pero son máscaras distintas: el felino tiene orejas puntiagudas y colmillos, y el diablo, una cresta de puntas rojas y la barbilla roja."
+ ],
+ "excluir_o_mejorar": [
+  "Consejo general: todas las fotos llegaron por WhatsApp (nombres IMG-…-WA…), que reduce y comprime las imágenes; la más ancha mide 1600 px y la mayoría 1200 px o menos. Hay que pedir a la familia los archivos originales del teléfono, enviados como «documento» o por correo o Drive, para que conserven la resolución. Sin ellos, ninguna foto da para un banner a pantalla completa en escritorio.",
+  "IMG-20250829-WA0022.jpg (tecolote rojo): es la más débil por tamaño (364×567) y el fondo negro está editado. Solo sirve como miniatura pequeña. Pedir el original o una foto nueva en la pared del taller, de frente y con luz pareja; si no se consigue, mostrarla pequeña o dejarla fuera.",
+  "IMG-20250829-WA0172.jpg (gorila): está desenfocada, tiene reflejos fuertes, una viga de madera y otro objeto cortado en el encuadre, y quizá un plástico junto a la lengua; además mide solo 720×1280. Repetirla de frente sobre una pared lisa, quitando el plástico. Si no hay foto nueva, usarla pequeña o excluirla.",
+  "IMG-20250829-WA0019.jpg (venado): está comprimida (720×722, parece captura de pantalla), tiene una franja negra arriba y las astas y el hocico tocan los bordes. Pedir el original o una toma nueva con más margen alrededor.",
+  "IMG-20250829-WA0042.jpg (coyote o perro): está sobre un piso de cemento con luz moteada y mide 720×1280. Colgarla en la pared y repetir la foto de frente, igual que las demás.",
+  "IMG-20250829-WA0030.jpg (ave de cresta roja): está sobre una mesa, tomada en ángulo, con una silla y el piso a la vista. Repetirla colgada en la pared, con la cámara a la altura de la máscara.",
+  "IMG-20250829-WA0027.jpg (tres rostros negros): son tres piezas en una sola toma, con un interruptor de luz; al recortarla, cada máscara queda de unos 450 a 700 px. Conservarla como foto de conjunto, pero pedir una foto individual de frente de cada una.",
+  "IMG-20250829-WA0116.jpg y IMG-20250829-WA0151.jpg: solo hay vistas casi de perfil, de 780×1040. Pedir una vista frontal de cada una; en WA0116, además, una del lado azul para saber si es un solo rostro dividido o dos rostros.",
+  "IMG-20250829-WA0125.jpg (hombre y calavera): la pared amarilla se confunde con la mitad de calavera, hay un objeto oscuro en la esquina y mide 780×1040. Repetirla sobre una pared clara y neutra.",
+  "IMG-20250829-WA0149.jpg (hombre barbado): es aceptable, pero el fondo amarillo intenso altera los colores y mide 780×1040. Conviene repetirla sobre una pared clara.",
+  "IMG-20250829-WA0147.jpg (tecolote con cabellera): tiene un ligero desenfoque y asoma otra máscara en la esquina. Repetirla bien enfocada, o recortar la esquina.",
+  "IMG-20250829-WA0065.jpg (animal de cuernos largos): hay una placa redonda en la pared, entre los cuernos, y la barba queda cortada abajo. Repetirla con más margen abajo y sin la placa, o retocarla.",
+  "IMG-20250829-WA0041.jpg: se ven el cordón para colgar y unas manchas rojas en la pared. Como es la segunda vista de WA0043, basta con un retoque.",
+  "Para todas las fotos nuevas: misma pared clara, luz de día indirecta (sin sol directo ni flash, para evitar los reflejos del barniz), cámara a la altura de la máscara, una toma de frente y otra de tres cuartos, y margen alrededor de la pieza para poder recortar."
+ ],
+ "fotos_que_faltan": [
+  "Retrato del maestro Gorgonio Candelario (con su permiso): uno de frente y otro en su taller, de preferencia con una máscara en las manos o trabajando. Una versión horizontal con espacio libre a un lado serviría además como hero de escritorio.",
+  "El taller «Mi Güelo Baci»: la fachada con el letrero o la esquina de Jazmín y Lirio, el interior, el banco de trabajo y las herramientas de talla y pintura.",
+  "El proceso de elaboración, en serie y con una misma pieza: madera en bruto, desbaste, talla de los detalles, lijado, pintura y acabado.",
+  "Detalles de las manos del maestro tallando y pintando.",
+  "Las maderas que usa, en bruto, para ilustrar la sección de materiales (nombrar las especies solo después de confirmarlas con él).",
+  "Las máscaras en uso: danzantes de la Danza de los Morenos con máscaras del maestro, con permiso de los danzantes; de ser posible, una pareja de animales, macho y hembra, como se baila. Esas fotos serían la única prueba visual de qué piezas se usan en la danza.",
+  "Personajes documentados de los que no hay ninguna foto: burro, bartolo, pastores, ángeles de pastorela y los siete pecados capitales. También sirve un tigre claramente identificado y un perro o coyote que el maestro identifique como tal.",
+  "Los machetes de madera y las sonajas que hace para los danzantes.",
+  "El reverso de alguna máscara (interior tallado, aberturas de los ojos, amarre y firma, si la tiene) y una foto que dé idea del tamaño, por ejemplo la máscara en manos de alguien.",
+  "Las vistas frontales que faltan de las piezas fotografiadas solo de lado (WA0116, WA0151 y el felino de WA0121) y una foto individual de cada una de las tres máscaras de WA0027.",
+  "Una foto horizontal de conjunto, con varias máscaras colgadas en la pared del taller, para el banner de escritorio y para la sección del taller.",
+  "Si la familia lo autoriza: fotos de la familia o históricas (don Herminio Candelario Dolores, su hermano Guadalupe) para contar el linaje mascarero.",
+  "Una o dos fotos de Suchitlán como contexto del lugar donde vive y trabaja."
+ ]
+}

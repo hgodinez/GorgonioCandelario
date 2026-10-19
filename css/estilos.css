@@ -1,5 +1,12 @@
 /* Gorgonio Candelario Castro, maestro mascarero de Suchitlán, Colima */
 
+/* Fuentes alojadas en el propio sitio (licencia SIL OFL, ver carpeta fuentes/) */
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fuentes/fraunces-latin-opsz-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("../fuentes/fraunces-latin-opsz-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fuentes/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fuentes/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fuentes/source-sans-3-latin-700-normal.woff2") format("woff2"); }
+
 :root {
   --papel: #f6eedd;
   --papel-2: #efe3c9;
@@ -147,8 +154,9 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .boton-secundario { background: transparent; color: var(--tinta); }
 .boton-secundario:hover { background: var(--tinta); color: var(--blanco); }
 
-.portada-imagen { position: relative; justify-self: center; width: min(100%, 30rem); }
-.portada-imagen::before {
+.portada-imagen { justify-self: center; width: min(100%, 30rem); margin: 0; }
+.portada-marco { position: relative; }
+.portada-marco::before {
   content: ""; position: absolute; inset: 1.25rem -1.25rem -1.25rem 1.25rem;
   background: var(--franjas); border-radius: var(--radio); opacity: 0.95;
 }
@@ -157,12 +165,13 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   border-radius: var(--radio); box-shadow: var(--sombra);
 }
 .portada-imagen figcaption {
-  position: relative; margin-top: 2rem; font-size: 0.9rem; color: var(--tinta-suave); text-align: right;
+  margin-top: 1.75rem; font-size: 0.9rem; color: var(--tinta-suave); text-align: right;
 }
 
 @media (max-width: 760px) {
   .portada .contenedor { grid-template-columns: 1fr; }
   .portada-imagen { width: min(100% - 1.25rem, 24rem); justify-self: start; }
+  .portada-marco img { aspect-ratio: 1 / 1; object-position: 50% 30%; }
 }
 
 /* Secciones */
@@ -243,8 +252,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .visor[open] { display: grid; grid-template-rows: auto 1fr auto; }
 .visor-barra { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; gap: 1rem; }
 .visor-contador { font-size: 0.9rem; color: #cbbfae; }
-.visor-imagen { position: relative; display: grid; place-items: center; min-height: 0; padding: 0 3.5rem; }
-.visor-imagen img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+.visor-imagen { position: relative; display: grid; place-items: center; min-height: 0; overflow: hidden; padding: 0 3.5rem; }
+.visor-imagen img {
+  width: auto; height: auto; max-width: 100%; max-height: calc(100dvh - 11rem);
+  object-fit: contain; border-radius: 6px;
+}
 .visor-texto { padding: 0.75rem var(--margen) 1.25rem; text-align: center; max-width: 48rem; margin: 0 auto; }
 .visor-texto h3 { margin: 0 0 0.25rem; font-size: 1.3rem; }
 .visor-texto p { margin: 0; color: #d8ccbb; font-size: 0.98rem; }
@@ -314,7 +326,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 .videos { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 @media (max-width: 760px) { .videos { grid-template-columns: 1fr; } }
-.video figure { margin: 0; }
+.video { margin: 0; }
 .video-marco {
   position: relative; aspect-ratio: 16 / 9; border-radius: var(--radio); overflow: hidden;
   background: #000; box-shadow: var(--sombra);

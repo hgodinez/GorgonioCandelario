@@ -1,4 +1,6 @@
-"""Genera los bloques de HTML (portada, galería, imagen de la danza) a partir de datos/mascaras.json
+"""Uso: python3 herramientas/generar_galeria.py .
+
+Genera los bloques de HTML (portada, galería, imagen de la danza) a partir de datos/mascaras.json
 y los inserta en index.html en lugar de los comentarios marcadores."""
 import json, sys, html, re, pathlib
 
@@ -17,7 +19,12 @@ def picture(f, sizes, lazy=True, clase=''):
     w0 = t[0]
     h0 = round(f['alto'] * w0 / f['ancho'])
     carga = 'loading="lazy" decoding="async"' if lazy else 'fetchpriority="high" decoding="async"'
-    estilo = f' style="object-position: {f["enfoque"]}"' if f.get('enfoque') else ''
+    reglas = []
+    if f.get('ajuste') == 'contain':
+        reglas.append('object-fit: contain')
+    if f.get('enfoque'):
+        reglas.append(f'object-position: {f["enfoque"]}')
+    estilo = f' style="{"; ".join(reglas)}"' if reglas else ''
     cl = f' class="{clase}"' if clase else ''
     return (f'<picture><source type="image/webp" srcset="{webp}" sizes="{sizes}">'
             f'<img{cl} src="img/mascaras/{slug}-{w0}.jpg" srcset="{jpg}" sizes="{sizes}" '
@@ -40,7 +47,7 @@ portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-porta
           </div>
         </div>
         <figure class="portada-imagen">
-          {picture(h, "(max-width: 760px) 90vw, 30rem", lazy=False)}
+          <div class="portada-marco">{picture(h, "(max-width: 760px) 90vw, 30rem", lazy=False)}</div>
           <figcaption>{e(h["pie"])}</figcaption>
         </figure>
       </div>
@@ -58,7 +65,7 @@ for i, s in enumerate(datos['secciones']):
         f = fotos[a]
         items.append(f'''            <li><figure>
               <a href="{grande(f)}.jpg" data-grande="{grande(f)}.webp" data-titulo="{e(f["personaje"])}" data-descripcion="{e(f["descripcion"])}">
-                <div class="marco">{picture(f, sizes)}</div>
+                <div class="marco"{f' style="background: {f["fondo"]}"' if f.get("fondo") else ""}>{picture(f, sizes)}</div>
                 <figcaption>{e(f["pie"])}</figcaption>
               </a>
             </figure></li>''')
