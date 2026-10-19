@@ -6,14 +6,25 @@
   var boton = document.querySelector(".menu-boton");
   var nav = document.getElementById("navegacion");
   if (boton && nav) {
+    var cerrarMenu = function (devolverFoco) {
+      nav.classList.remove("abierta");
+      boton.setAttribute("aria-expanded", "false");
+      if (devolverFoco) boton.focus();
+    };
     boton.addEventListener("click", function () {
       var abierto = nav.classList.toggle("abierta");
       boton.setAttribute("aria-expanded", String(abierto));
     });
     nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("abierta");
-        boton.setAttribute("aria-expanded", "false");
+      if (e.target.closest("a")) cerrarMenu(false);
+    });
+    // Esc cierra el menú; también se cierra si el foco sale de él
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("abierta")) cerrarMenu(true);
+    });
+    nav.addEventListener("focusout", function (e) {
+      if (nav.classList.contains("abierta") && e.relatedTarget && !nav.contains(e.relatedTarget) && e.relatedTarget !== boton) {
+        cerrarMenu(false);
       }
     });
   }
@@ -32,9 +43,11 @@
   // Visor de fotos
   var visor = document.getElementById("visor");
   if (visor && typeof visor.showModal === "function") {
-    var img = visor.querySelector(".visor-imagen img");
-    var titulo = visor.querySelector(".visor-texto h3");
-    var texto = visor.querySelector(".visor-texto p");
+    var img = document.createElement("img");
+    img.alt = "";
+    visor.querySelector(".visor-siguiente").before(img);
+    var titulo = visor.querySelector(".visor-titulo");
+    var texto = visor.querySelector(".visor-descripcion");
     var contador = visor.querySelector(".visor-contador");
     var enlaces = [];
     var actual = 0;
@@ -100,10 +113,11 @@
     b.addEventListener("click", function () {
       var f = document.createElement("iframe");
       f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.video + "?autoplay=1&rel=0";
-      f.title = b.getAttribute("aria-label");
+      f.title = b.getAttribute("aria-label").replace(/^Reproducir video:\s*/, "Video: ");
       f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       f.allowFullscreen = true;
       b.replaceWith(f);
+      f.focus();
     });
   });
 })();

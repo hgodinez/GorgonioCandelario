@@ -40,21 +40,21 @@ portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-porta
         <div>
           <p class="antetitulo">Maestro mascarero · Suchitlán, Colima</p>
           <h1 id="titulo-portada">Gorgonio Candelario <em>Castro</em></h1>
-          <p class="entrada">Máscaras de madera talladas y pintadas a mano en Suchitlán, Colima, para la Danza de los Morenos, las pastorelas y las danzas de su pueblo. Es un oficio que aprendió de su padre y de su abuelo.</p>
+          <p class="entrada">Talla y pinta a mano máscaras de madera para la Danza de los Morenos, las pastorelas y otras danzas de su pueblo. Heredó el oficio de su padre, el mascarero don Herminio Candelario.</p>
           <div class="botones">
             <a class="boton boton-principal" href="#mascaras">Ver las máscaras</a>
             <a class="boton boton-secundario" href="#taller">Visitar el taller</a>
           </div>
         </div>
         <figure class="portada-imagen">
-          <div class="portada-marco">{picture(h, "(max-width: 760px) 90vw, 30rem", lazy=False)}</div>
+          <div class="portada-marco">{picture(h, "(max-width: 440px) 88vw, (max-width: 760px) 24rem, (max-width: 1160px) 42vw, 30rem", lazy=False)}</div>
           <figcaption>{e(h["pie"])}</figcaption>
         </figure>
       </div>
     </section>'''
 
 # Galería
-sizes = "(max-width: 420px) 46vw, (max-width: 760px) 31vw, 17rem"
+sizes = "(max-width: 736px) 46vw, (max-width: 1003px) 30vw, 17rem"
 botones = ['<button type="button" data-filtro="todas" aria-pressed="true">Todas</button>']
 grupos = []
 for i, s in enumerate(datos['secciones']):
@@ -66,8 +66,8 @@ for i, s in enumerate(datos['secciones']):
         items.append(f'''            <li><figure>
               <a href="{grande(f)}.jpg" data-grande="{grande(f)}.webp" data-titulo="{e(f["personaje"])}" data-descripcion="{e(f["descripcion"])}">
                 <div class="marco"{f' style="background: {f["fondo"]}"' if f.get("fondo") else ""}>{picture(f, sizes)}</div>
-                <figcaption>{e(f["pie"])}</figcaption>
               </a>
+              <figcaption>{e(f["pie"])}</figcaption>
             </figure></li>''')
     grupos.append(f'''        <div class="grupo" id="{gid}">
           <div class="grupo-titulo"><h3>{e(s["titulo"])}</h3></div>
@@ -82,7 +82,7 @@ galeria = f'''<section class="seccion" id="mascaras" aria-labelledby="titulo-mas
         <div class="encabezado-seccion">
           <p class="antetitulo">Su obra</p>
           <h2 id="titulo-mascaras">Las máscaras</h2>
-          <p class="texto-suave">Cada máscara está tallada en una sola pieza de madera y pintada a mano. Toca cualquier foto para verla en grande.</p>
+          <p class="texto-suave">Una muestra de las máscaras que talla y pinta a mano en su taller. Toca una foto para verla en grande.</p>
         </div>
         <div class="filtros" role="group" aria-label="Filtrar máscaras">
           {chr(10).join("          " + b for b in botones).strip()}
@@ -93,7 +93,7 @@ galeria = f'''<section class="seccion" id="mascaras" aria-labelledby="titulo-mas
 
 d = fotos[datos['danza']['archivo']]
 imagen_danza = f'''<figure class="imagen-danza">
-          {picture(d, "(max-width: 820px) 90vw, 34rem")}
+          {picture(d, "(max-width: 820px) 92vw, (max-width: 1230px) 45vw, 34rem")}
           <figcaption>{e(d["pie"])}</figcaption>
         </figure>'''
 
