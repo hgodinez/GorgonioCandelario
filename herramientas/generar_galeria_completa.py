@@ -62,10 +62,52 @@ def tarjeta(slug):
     n = len(p['fotos'])
     vistas = f'<span class="pieza-vistas">{n} vistas</span>' if n > 1 else ''
     clase = 'pieza pieza-recorte' if fotos[fid].get('recorte') else 'pieza'
-    sub = f'<span>{e(p["pie"])}</span>' if p.get('pie') else ''
+    if p.get('pie'):
+        sub = f'<span>{e(p["pie"])}</span>'
+    elif p.get('certeza') == 'confirmada-familia':
+        sub = '<span>Confirmada por la familia</span>'
+    else:
+        sub = ''
     return (f'          <li class="{clase}"><figure>'
             f'{enlace(slug, fid, img(fid, "(max-width: 560px) 46vw, 15rem") + vistas)}'
             f'<figcaption><strong>{e(p["nombre"])}</strong>{sub}</figcaption></figure></li>')
+
+
+def subsala(sub, n=None):
+    tarjetas = '\n'.join(tarjeta(s) for s in sub['piezas'])
+    titulo = ''
+    if sub['titulo']:
+        nota = f'<span>{e(sub["nota"])}</span>' if sub.get('nota') else ''
+        titulo = f'<div class="subsala-titulo"><h3>{e(sub["titulo"])}</h3>{nota}</div>\n'
+    estilo = f' style="--n:{n}"' if n else ''
+    return f'''        <div class="subsala"{estilo}>
+          {titulo}<ul class="muro" data-conjunto>
+{tarjetas}
+          </ul>
+        </div>'''
+
+
+# Las subsalas de pocas piezas se acomodan lado a lado (hasta 4 piezas por fila)
+CHICA, POR_FILA = 3, 4
+
+
+def filas(subs):
+    grupo = []
+    for sub in subs + [None]:
+        chica = sub is not None and len(sub['piezas']) <= CHICA
+        if grupo and (not chica or sum(len(x['piezas']) for x in grupo) + len(sub['piezas']) > POR_FILA):
+            if len(grupo) == 1:
+                yield subsala(grupo[0])
+            else:
+                dentro = '\n'.join(subsala(x, len(x['piezas'])) for x in grupo)
+                yield f'        <div class="subsalas-fila">\n{dentro}\n        </div>'
+            grupo = []
+        if sub is None:
+            break
+        if chica:
+            grupo.append(sub)
+        else:
+            yield subsala(sub)
 
 
 # Salas
@@ -73,21 +115,9 @@ nav, bloques = [], []
 total_piezas = 0
 for n, sala in enumerate(g['salas'], 1):
     nav.append(f'<li><a href="#sala-{sala["id"]}">{e(sala["titulo"])}</a></li>')
-    partes = []
-    for sub in sala.get('subsalas') or [{'titulo': '', 'piezas': sala['piezas']}]:
-        if not sub['piezas']:
-            continue
-        total_piezas += len(sub['piezas'])
-        tarjetas = '\n'.join(tarjeta(s) for s in sub['piezas'])
-        titulo = ''
-        if sub['titulo']:
-            nota = f'<span>{e(sub["nota"])}</span>' if sub.get('nota') else ''
-            titulo = f'<div class="subsala-titulo"><h3>{e(sub["titulo"])}</h3>{nota}</div>\n'
-        partes.append(f'''        <div class="subsala">
-          {titulo}<ul class="muro" data-conjunto>
-{tarjetas}
-          </ul>
-        </div>''')
+    subs = [x for x in (sala.get('subsalas') or [{'titulo': '', 'piezas': sala['piezas']}]) if x['piezas']]
+    total_piezas += sum(len(x['piezas']) for x in subs)
+    partes = list(filas(subs))
     bloques.append(f'''    <section class="sala" id="sala-{sala["id"]}" aria-labelledby="titulo-sala-{sala["id"]}">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -114,16 +144,25 @@ def mosaico(ids, conjunto=True):
 def desfile(ids):
     """Máscaras recortadas que avanzan como la cuadrilla de la danza; la segunda pista es copia decorativa."""
     items, copia = [], []
-    for fid in ids:
+    for i, fid in enumerate(ids):
         t = tam[fid]
         anch = t['recorte_tamanos']
         src = ', '.join(f'img/galeria/recortes/{fid}-{w}.webp {w}w' for w in anch)
         h0 = round(t['recorte_h'] * anch[0] / t['recorte_w'])
-        imagen = (f'<img src="img/galeria/recortes/{fid}-{anch[0]}.webp" srcset="{src}" sizes="16rem" '
-                  f'width="{anch[0]}" height="{h0}" alt="{e(fotos[fid]["alt"])}" decoding="async">')
+        # La altura es clamp(9rem, 22vw, 17rem): el ancho mostrado depende de la proporción de cada máscara
+        r = t['recorte_w'] / t['recorte_h']
+        sizes = f'(max-width: 654px) {round(144 * r)}px, (max-width: 1236px) {22 * r:.1f}vw, {round(272 * r)}px'
+        carga = ' loading="lazy"' if i >= 4 else ''
+        imagen = (f'<img src="img/galeria/recortes/{fid}-{anch[0]}.webp" srcset="{src}" sizes="{sizes}" '
+                  f'width="{anch[0]}" height="{h0}" alt="{e(fotos[fid]["alt"])}"{carga} decoding="async">')
         items.append(f'            <li>{enlace(g["pieza_de"][fid], fid, imagen)}</li>')
-        copia.append(f'            <li>{imagen.replace(" alt=" + chr(34) + e(fotos[fid]["alt"]) + chr(34), " alt=" + chr(34) + chr(34))}</li>')
-    return ('<section class="desfile" aria-label="Desfile de máscaras">\n        <div class="desfile-pistas">\n'
+        decorativa = imagen.replace(f' alt="{e(fotos[fid]["alt"])}"', ' alt=""')
+        if 'loading=' not in decorativa:
+            decorativa = decorativa.replace(' decoding=', ' loading="lazy" decoding=')
+        copia.append(f'            <li>{decorativa}</li>')
+    return ('<div class="contenedor desfile-control"><button class="desfile-pausa" type="button" aria-controls="desfile">'
+            'Pausar el desfile</button></div>\n    '
+            '<section class="desfile" id="desfile" aria-label="Desfile de máscaras">\n        <div class="desfile-pistas">\n'
             '          <ul class="desfile-pista" data-conjunto>\n' + '\n'.join(items) + '\n          </ul>\n'
             '          <ul class="desfile-pista" aria-hidden="true" inert>\n' + '\n'.join(copia) + '\n          </ul>\n'
             '        </div>\n      </section>')
@@ -136,7 +175,7 @@ cuerpo = f'''<section class="galeria-entrada" aria-labelledby="titulo-galeria">
         <h1 id="titulo-galeria">Las máscaras de don Gorgonio</h1>
         <p>{e(g["entrada"])}</p>
         <ul class="galeria-cifras">
-          <li><strong>{total_piezas}</strong>máscaras</li>
+          <li><strong>{total_piezas}</strong>piezas</li>
           <li><strong>{total_fotos}</strong>fotografías</li>
           <li><strong>{len(g["salas"])}</strong>salas</li>
         </ul>
@@ -165,7 +204,7 @@ muestra = f'''<section class="seccion seccion-oscura muestra-galeria" id="mascar
         </div>
         {mosaico(g["muestra"])}
         <div class="botones">
-          <a class="boton boton-principal" href="galeria.html">Ver las {total_piezas} máscaras</a>
+          <a class="boton boton-principal" href="galeria.html">Ver las {total_piezas} piezas</a>
         </div>
       </div>
     </section>'''

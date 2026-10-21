@@ -6,13 +6,14 @@ from PIL import Image, ImageOps
 
 raiz = pathlib.Path(sys.argv[1])
 indice = json.loads((raiz / 'datos/album-indice.json').read_text(encoding='utf-8'))
-# fotos a las que ya se les quitó un texto sobrepuesto
-LIMPIAS = {'IMG-20261020-WA0086.jpg': 'fotos/limpias/borrego-anaranjado.jpg', 'IMG-20261020-WA0088.jpg': 'fotos/limpias/lince.jpg'}
 dst = raiz / 'img/galeria'
 dst.mkdir(parents=True, exist_ok=True)
-tamanos = {}
+# conserva lo que ya hay (por ejemplo, las medidas de los recortes del desfile)
+ruta_tam = raiz / 'datos/album-tamanos.json'
+tamanos = json.loads(ruta_tam.read_text(encoding='utf-8')) if ruta_tam.exists() else {}
 for f in indice['fotos']:
-    origen = raiz / LIMPIAS.get(f['archivo'], 'fotos/album/' + f['archivo'])
+    # versión limpia (sin letreros ni collage) si existe; ver limpiar_album.py
+    origen = raiz / f.get('limpia', 'fotos/album/' + f['archivo'])
     im = ImageOps.exif_transpose(Image.open(origen)).convert('RGB')
     hechos = []
     for w in (400, 800, 1400):
@@ -24,6 +25,6 @@ for f in indice['fotos']:
         if w == 800 or ww == im.width and 800 not in hechos and ww < 800:
             r.save(dst / f'{f["id"]}.jpg', 'JPEG', quality=80, optimize=True, progressive=True)
         hechos.append(ww)
-    tamanos[f['id']] = {'w': im.width, 'h': im.height, 'tamanos': hechos}
-(raiz / 'datos/album-tamanos.json').write_text(json.dumps(tamanos, indent=1), encoding='utf-8')
+    tamanos.setdefault(f['id'], {}).update(w=im.width, h=im.height, tamanos=hechos)
+ruta_tam.write_text(json.dumps(tamanos, indent=1), encoding='utf-8')
 print('ok', len(tamanos))

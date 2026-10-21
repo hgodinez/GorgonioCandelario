@@ -8,18 +8,27 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 
 | Carpeta / archivo | Contenido |
 |---|---|
-| `index.html` | La página completa |
+| `index.html` | La página principal: el maestro, la danza, la técnica, una muestra de la galería, reconocimientos, videos y el taller |
+| `galeria.html` | La galería completa: 122 piezas en 11 salas, con el desfile de máscaras recortadas |
 | `css/estilos.css` | Estilos (colores, tipografía y diseño adaptable a celular) |
-| `js/sitio.js` | Menú del celular, filtros de la galería, visor de fotos y videos que se cargan al tocarlos |
-| `img/mascaras/` | Fotos optimizadas para web (WebP y JPG en varios tamaños) |
+| `css/galeria.css` | Estilos de la galería (salas oscuras de museo, mosaico y desfile) |
+| `js/sitio.js` | Menú del celular, visor de fotos con sus vistas, desfile, navegación entre salas y videos que se cargan al tocarlos |
+| `img/mascaras/` | Fotos de la página principal optimizadas para web (WebP y JPG en varios tamaños) |
+| `img/galeria/` | Fotos del álbum optimizadas para la galería; en `recortes/`, las máscaras sin fondo del desfile |
 | `img/icono.svg` | Icono del sitio |
 | `fuentes/` | Tipografías Fraunces y Source Sans 3 (licencia SIL OFL) |
 | `fotos/originales/` | Fotos originales tal como llegaron (las de la danza, en `fotos/originales/danza/`) |
-| `fotos/limpias/` | Fotos de la danza listas para optimizar: sin el texto sobrepuesto de «BORREGO» y «LINCE» |
+| `fotos/album/` | Las 172 fotos del álbum de Google Fotos, tal como llegaron |
+| `fotos/limpias/` | Fotos listas para optimizar: sin letreros sobrepuestos, un solo panel de los collages y sin las esquinas de color de los marcos ovalados |
 | `datos/mascaras.json` | Catálogo de las fotos: título, descripción, texto alternativo, pie y sección de cada máscara |
 | `datos/danza.json` | Las nueve parejas de la Danza de los Morenos y la foto de cada una |
 | `datos/detalles.json` | Acercamientos de la sección de técnica (recorte, título y texto) |
 | `datos/curaduria.json` | Recomendaciones de la curaduría: fotos que faltan y fotos que conviene repetir |
+| `datos/album-catalogo.json` | Clasificación del álbum: qué pieza es cada foto, su certeza, fusiones, duplicados y salas |
+| `datos/recortes-revision.json` | Revisión de los recortes sin fondo (cuáles se aprobaron para el desfile) |
+| `datos/galeria.json` | Datos finales de la galería (salas, piezas, fotos, mosaico y desfile); lo escribe `armar_galeria.py` |
+| `datos/album-indice.json`, `datos/album-tamanos.json` | Índice de las fotos del álbum y sus medidas web |
+| `datos/preguntas-familia.md` | Preguntas pendientes para la familia, con los números de foto |
 | `herramientas/` | Scripts para optimizar fotos y regenerar la galería |
 | `investigacion/` | Investigación con fuentes sobre el maestro, su familia y la Danza de los Morenos |
 
@@ -48,6 +57,21 @@ python3 -m http.server 8000
 
    Para ponerle foto a una pareja de la danza, agrega el nombre del archivo en `datos/danza.json` y vuelve a correr el script.
 
+## Regenerar la galería
+
+La galería (`galeria.html` y la muestra de `index.html`) sale de las fotos del álbum. Si cambian las fotos, la clasificación o los nombres, corre en este orden (necesita Python con Pillow):
+
+```bash
+python3 herramientas/limpiar_album.py .        # versiones limpias en fotos/limpias
+python3 herramientas/optimizar_album.py .      # versiones web en img/galeria
+python3 herramientas/armar_galeria.py          # escribe datos/galeria.json
+python3 herramientas/generar_galeria_completa.py .
+```
+
+- Para cambiar el nombre, la descripción o la sala de una pieza, edita las tablas al principio de `armar_galeria.py` (`NOMBRES`, `DESCRIPCIONES`, `SALAS`, `APARTADAS`, etc.) y vuelve a correr los dos últimos pasos.
+- Cuando la familia conteste las preguntas de `datos/preguntas-familia.md`, marca las piezas confirmadas en `datos/album-catalogo.json` con `"certeza": "confirmada-familia"`; en la galería aparecen con la leyenda «Confirmada por la familia».
+- Las máscaras del desfile van sin fondo. Para agregar una, quita el fondo con `recortar_fondo.py` (necesita onnxruntime, numpy y el modelo isnet-general-use; el enlace está en el script), revisa el recorte, pásalo a tamaños web con `recortes_web.py` y márcalo en `datos/recortes-revision.json` con `"usar_recorte": true`.
+
 ## Publicar en GitHub Pages
 
 En GitHub, entra a **Settings → Pages**, elige **Deploy from a branch** y selecciona la rama y la carpeta `/ (root)`. Cuando ya haya dominio, agrega `og:url` y `og:image` en `index.html`; está marcado con un comentario `PENDIENTE`.
@@ -63,6 +87,9 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
 - [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
+- [ ] Las 12 preguntas de la galería en `datos/preguntas-familia.md`: el ocelote, el perro, los coyotes de arcoíris, los rostros negros, los seres encimados y otras piezas sin identificar.
+- [ ] Si son de don Gorgonio las piezas en tonos pastel (un felino y dos toros) y el ave azul de pico amarillo. Por ahora están fuera de la galería (`APARTADAS` en `armar_galeria.py`).
+- [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: un retrato del maestro, el taller, el proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`.
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.

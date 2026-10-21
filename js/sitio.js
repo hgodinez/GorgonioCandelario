@@ -1,4 +1,4 @@
-// Menú, filtros de la galería, visor de fotos y videos bajo demanda.
+// Menú, filtros de la galería, visor de fotos, desfile, salas y videos bajo demanda.
 (function () {
   "use strict";
 
@@ -82,7 +82,7 @@
           var b = document.createElement("button");
           b.type = "button";
           b.setAttribute("aria-label", "Vista " + (n + 1) + " de " + vistas.length);
-          b.setAttribute("aria-pressed", String(n === 0));
+          b.setAttribute("aria-pressed", String(v.src === a.dataset.grande));
           var m = document.createElement("img");
           m.src = v.mini;
           m.alt = "";
@@ -132,6 +132,53 @@
       if (Math.abs(dx) > 50) mostrar(actual + (dx < 0 ? 1 : -1));
       inicioX = null;
     });
+  }
+
+  // Desfile de máscaras: botón para pausarlo y, con el teclado, se detiene para mostrar la máscara enfocada
+  var desfile = document.getElementById("desfile");
+  var pausa = document.querySelector(".desfile-pausa");
+  if (desfile && pausa) {
+    pausa.addEventListener("click", function () {
+      var pausado = desfile.classList.toggle("pausado");
+      pausa.textContent = pausado ? "Reanudar el desfile" : "Pausar el desfile";
+    });
+    desfile.addEventListener("focusin", function (e) {
+      if (!e.target.matches(":focus-visible")) return;
+      desfile.classList.add("detenido");
+      e.target.scrollIntoView({ block: "nearest", inline: "center" });
+    });
+    desfile.addEventListener("focusout", function (e) {
+      var destino = e.relatedTarget;
+      if (destino && (desfile.contains(destino) || destino.closest("#visor"))) return;
+      desfile.classList.remove("detenido");
+      desfile.scrollLeft = 0;
+    });
+  }
+
+  // Navegación entre salas: marca la sala que se está viendo
+  var salasNav = document.querySelector(".salas-nav ul");
+  if (salasNav && "IntersectionObserver" in window) {
+    var porSala = {};
+    salasNav.querySelectorAll("a").forEach(function (a) { porSala[a.hash.slice(1)] = a; });
+    var quieto = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var primeraSala = document.querySelector(".sala[id]");
+    var observador = new IntersectionObserver(function (entradas) {
+      // Arriba de la primera sala ninguna queda marcada
+      if (primeraSala.getBoundingClientRect().top > window.innerHeight * 0.35) {
+        salasNav.querySelectorAll("a[aria-current]").forEach(function (o) { o.removeAttribute("aria-current"); });
+        salasNav.scrollTo({ left: 0 });
+        return;
+      }
+      entradas.forEach(function (en) {
+        var a = porSala[en.target.id];
+        if (!en.isIntersecting || !a || a.hasAttribute("aria-current")) return;
+        salasNav.querySelectorAll("a[aria-current]").forEach(function (o) { o.removeAttribute("aria-current"); });
+        a.setAttribute("aria-current", "location");
+        var ru = salasNav.getBoundingClientRect(), ra = a.getBoundingClientRect();
+        salasNav.scrollBy({ left: ra.left + ra.width / 2 - (ru.left + ru.width / 2), behavior: quieto.matches ? "auto" : "smooth" });
+      });
+    }, { rootMargin: "-35% 0px -60% 0px" });
+    document.querySelectorAll(".sala[id]").forEach(function (s) { observador.observe(s); });
   }
 
   // Videos: se carga YouTube solo cuando la persona hace clic

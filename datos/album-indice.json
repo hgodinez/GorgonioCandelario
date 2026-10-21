@@ -12,7 +12,8 @@
    "archivo": "IMG-20250829-WA0020.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a002.jpg"
   },
   {
    "id": "a003",
@@ -33,7 +34,8 @@
    "archivo": "IMG-20250829-WA0023.jpg",
    "w": 720,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a005.jpg"
   },
   {
    "id": "a006",
@@ -110,7 +112,8 @@
    "archivo": "IMG-20250829-WA0034.jpg",
    "w": 1031,
    "h": 604,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a016.jpg"
   },
   {
    "id": "a017",
@@ -138,7 +141,8 @@
    "archivo": "IMG-20250829-WA0038.jpg",
    "w": 540,
    "h": 960,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a020.jpg"
   },
   {
    "id": "a021",
@@ -187,7 +191,8 @@
    "archivo": "IMG-20250829-WA0045.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a027.jpg"
   },
   {
    "id": "a028",
@@ -236,7 +241,8 @@
    "archivo": "IMG-20250829-WA0052.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a034.jpg"
   },
   {
    "id": "a035",
@@ -411,7 +417,8 @@
    "archivo": "IMG-20250829-WA0077.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a059.jpg"
   },
   {
    "id": "a060",
@@ -481,7 +488,8 @@
    "archivo": "IMG-20250829-WA0088.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a069.jpg"
   },
   {
    "id": "a070",
@@ -1006,7 +1014,8 @@
    "archivo": "IMG-20250829-WA0164.jpg",
    "w": 253,
    "h": 430,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a144.jpg"
   },
   {
    "id": "a145",
@@ -1020,7 +1029,8 @@
    "archivo": "IMG-20250829-WA0166.jpg",
    "w": 1280,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a146.jpg"
   },
   {
    "id": "a147",
@@ -1069,7 +1079,8 @@
    "archivo": "IMG-20250829-WA0173.jpg",
    "w": 719,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a153.jpg"
   },
   {
    "id": "a154",
@@ -1146,7 +1157,8 @@
    "archivo": "IMG-20261020-WA0086.jpg",
    "w": 591,
    "h": 946,
-   "ya_en_sitio": "borrego-anaranjado.jpg"
+   "ya_en_sitio": "borrego-anaranjado.jpg",
+   "limpia": "fotos/limpias/borrego-anaranjado.jpg"
   },
   {
    "id": "a165",
@@ -1160,7 +1172,8 @@
    "archivo": "IMG-20261020-WA0088.jpg",
    "w": 720,
    "h": 960,
-   "ya_en_sitio": "lince.jpg"
+   "ya_en_sitio": "lince.jpg",
+   "limpia": "fotos/limpias/lince.jpg"
   },
   {
    "id": "a167",
@@ -1203,6 +1216,30 @@
    "w": 720,
    "h": 916,
    "ya_en_sitio": "felino-manchas-34.jpg"
+  },
+  {
+   "id": "a059b",
+   "archivo": "IMG-20250829-WA0077.jpg",
+   "vista_de": "a059",
+   "limpia": "fotos/limpias/a059b.jpg"
+  },
+  {
+   "id": "a034b",
+   "archivo": "IMG-20250829-WA0052.jpg",
+   "vista_de": "a034",
+   "limpia": "fotos/limpias/a034b.jpg"
+  },
+  {
+   "id": "a146b",
+   "archivo": "IMG-20250829-WA0166.jpg",
+   "vista_de": "a146",
+   "limpia": "fotos/limpias/a146b.jpg"
+  },
+  {
+   "id": "a146c",
+   "archivo": "IMG-20250829-WA0166.jpg",
+   "vista_de": "a146",
+   "limpia": "fotos/limpias/a146c.jpg"
   }
  ],
  "casi_duplicados": [

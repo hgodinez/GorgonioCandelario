@@ -5,8 +5,8 @@
   {
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
-   "subtitulo": "Nueve parejas de animales para el Domingo de Resurrección",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Según Guadalupe, hermano de don Gorgonio, el coyote de bigotes de arcoíris lo crearon su abuelo y su padre al ver a un coyote beber en un charco donde se reflejaba el arcoíris.",
+   "subtitulo": "Nueve parejas de animales, macho y hembra",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Según José Guadalupe Candelario, hermano de don Gorgonio, el coyote de bigotes de arcoíris lo crearon su abuelo y su padre al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
@@ -131,7 +131,7 @@
     },
     {
      "titulo": "Perros",
-     "nota": "",
+     "nota": "Por confirmar",
      "piezas": [
       "perro-blanco-mancha"
      ]
@@ -154,8 +154,8 @@
   {
    "id": "nahuales",
    "titulo": "Nahuales",
-   "subtitulo": "Seres que cambian de forma",
-   "texto": "Además de los animales de la danza, don Gorgonio talla nahuales, seres que en la tradición mexicana pueden cambiar de forma; no forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.",
+   "subtitulo": "Entre la persona y el animal",
+   "texto": "Además de los animales de la danza, don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.",
    "piezas": [
     "nahual-blanco",
     "nahual-negro",
@@ -227,7 +227,7 @@
    "id": "felinos",
    "titulo": "Felinos",
    "subtitulo": "Fauces abiertas y piel manchada",
-   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Los felinos de esta sala, casi todos de boca abierta y colmillos, no coinciden con los linces confirmados de la danza; todavía no sabemos si alguno es el ocelote o si son piezas aparte.",
+   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Los felinos de esta sala, casi todos de boca abierta y colmillos, no coinciden con los linces confirmados de la danza; todavía no sabemos si alguno es el ocelote, un nahual —como el nahual negro, de cara felina— o una pieza aparte.",
    "piezas": [
     "jaguar-rosetas",
     "felino-fauces-abiertas",
@@ -253,7 +253,6 @@
     "pavo-real-lila",
     "ave-pico-ganchudo",
     "ave-azul-pico-curvo",
-    "ave-azul-pico-amarillo",
     "pato",
     "buho-gris-pico-anaranjado",
     "buho-azul",
@@ -265,8 +264,8 @@
   {
    "id": "pelaje-de-pincel",
    "titulo": "Pelaje de pincel",
-   "subtitulo": "¿Coyotes, perros, zorras?",
-   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, quizá coyotes, perros o zorras, y una tiene grandes orejas de arcoíris. Todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.",
+   "subtitulo": "¿Coyotes, perros, zorros?",
+   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, quizá coyotes, perros o zorros, y una tiene grandes orejas de arcoíris. Todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.",
    "piezas": [
     "canido-gris-pinceladas",
     "canido-ocre-pinceladas",
@@ -283,7 +282,7 @@
    "id": "bestiario",
    "titulo": "Bestiario",
    "subtitulo": "Venados, toros, jirafas, cebras y otros animales",
-   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril y un gorila. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.",
+   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y dos animales de cuernos que podrían ser chivos. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.",
    "piezas": [
     "venado-astas-negras",
     "venado-astas-azules",
@@ -307,16 +306,81 @@
   }
  ],
  "piezas": {
-  "pato": {
-   "nombre": "Pato",
-   "descripcion": "Cabeza de pato café rojizo con coronilla negra brillante, ojos amarillos y pico ancho y abierto con borde color crema.",
+  "jaguar-amarillo-con-buho": {
+   "nombre": "Búho sobre felino amarillo",
+   "descripcion": "Felino amarillo con sombras anaranjadas y manchas negras de centro café, ojos verdes de rayos, colmillos blancos y lengua roja; encima, un búho gris verdoso con textura de plumas, ojos amarillos con pestañas negras curvas y pico gris.",
    "fotos": [
-    "a013",
-    "a151"
+    "a044",
+    "a033",
+    "a039",
+    "a072"
    ],
-   "principal": "a013",
+   "principal": "a044",
+   "categoria": "compuesta",
+   "certeza": "media"
+  },
+  "jirafa-amarilla": {
+   "nombre": "Jirafa amarilla",
+   "descripcion": "Cara alargada amarilla con retícula de líneas rojo coral, cuernitos gris azulado, orejas con interior rojo y ojos verdes.",
+   "fotos": [
+    "a139"
+   ],
+   "principal": "a139",
    "categoria": "otro-animal",
    "certeza": "alta"
+  },
+  "mariposa-azul": {
+   "nombre": "Mariposa de alas azul marino",
+   "descripcion": "Máscara en forma de mariposa: alas azul marino con puntos verdes y paneles amarillos con nervaduras negras y ocelos rojos, cuerpo morado con franjas rosas que forma la nariz y antenas color crema enroscadas.",
+   "fotos": [
+    "a015",
+    "a150"
+   ],
+   "principal": "a015",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "rostro-negro-calavera": {
+   "nombre": "Rostro negro con calavera",
+   "descripcion": "Rostro humano negro brillante y alargado, con arrugas talladas, pequeña calavera amarilla en lo alto de la frente, cejas y bigote grises, ojos amarillos con iris rojo oscuro y barbilla puntiaguda.",
+   "fotos": [
+    "a113",
+    "a115"
+   ],
+   "principal": "a113",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "tigre-blanco-con-buho": {
+   "nombre": "Búho sobre felino blanco de rayas",
+   "descripcion": "Cabeza de búho café jaspeado con ojos grandes amarillo-anaranjado y pico gris morado, sobre el rostro de un felino blanco con rayas y manchas negras, ojos azul verdoso, nariz rosa, colmillos amarillos y lengua roja.",
+   "fotos": [
+    "a002"
+   ],
+   "principal": "a002",
+   "categoria": "compuesta",
+   "certeza": "baja"
+  },
+  "felino-fauces-abiertas": {
+   "nombre": "Felino de fauces abiertas",
+   "descripcion": "Cabeza de felino anaranjada con manchas negras, rayas en el hocico, ojo verde amarillento, oreja roja y fauces rojas abiertas con colmillos blancos.",
+   "fotos": [
+    "a138"
+   ],
+   "principal": "a138",
+   "categoria": "danza-lince-ocelote",
+   "certeza": "baja"
+  },
+  "lince-manchas": {
+   "nombre": "Lince de manchas en orejas y hocico",
+   "descripcion": "Felino de cara ancha con fondo crema y rayas rojas, anaranjadas y negras, espiral en la frente, orejas blancas con manchas negras, ojos ámbar y hocico blanco con puntos negros.",
+   "fotos": [
+    "a171",
+    "a172"
+   ],
+   "principal": "a171",
+   "categoria": "danza-lince-ocelote",
+   "certeza": "confirmada-familia"
   },
   "nahual-negro": {
    "nombre": "Nahual negro",
@@ -328,45 +392,106 @@
    "categoria": "nahual",
    "certeza": "confirmada-familia"
   },
-  "venado-astas-negras": {
-   "nombre": "Venado de astas negras",
-   "descripcion": "Venado de frente turquesa con grecas en espiral, astas negras ramificadas con filete amarillo, orejas anaranjadas con borde de triángulos rojos y hocico anaranjado con franjas onduladas moradas.",
+  "elefante": {
+   "nombre": "Elefante",
+   "descripcion": "Cabeza roja de perfil con oreja grande rosa y morada, trompa enroscada con anillos cafés, colmillos amarillos y un mosaico de patrones geométricos.",
    "fotos": [
-    "a001"
+    "a010"
    ],
-   "principal": "a001",
+   "principal": "a010",
    "categoria": "otro-animal",
    "certeza": "alta"
   },
-  "guacamaya-verde-mate": {
-   "nombre": "Guacamaya verde mate",
-   "descripcion": "Guacamaya de cara verde mate con pico negro curvo, copete de franjas azul con trazos verdes, amarilla, roja y azul claro, y ojo de iris verde con lágrima negra.",
+  "diablo-toro-felinos": {
+   "nombre": "Diablo con toro y felinos",
+   "descripcion": "Rostro rojo con grandes cuernos negros y una pequeña cabeza de toro gris sobre la frente. Dos felinos amarillos moteados de azul y rojo enmarcan la cara y rodean los ojos verdes; tiene dientes blancos puntiagudos, colmillos claros y nariz roja chata.",
    "fotos": [
-    "a046"
+    "a019"
    ],
-   "principal": "a046",
-   "categoria": "danza-guacamaya",
+   "principal": "a019",
+   "categoria": "diablo",
+   "certeza": "media"
+  },
+  "gallo-anaranjado": {
+   "nombre": "Gallo anaranjado",
+   "descripcion": "Gallo de cara anaranjada con pico amarillo grueso, cresta escalonada color vino con triángulos amarillos, barbas rojas y ojos de iris verde.",
+   "fotos": [
+    "a163"
+   ],
+   "principal": "a163",
+   "categoria": "danza-gallo",
+   "certeza": "confirmada-familia"
+  },
+  "burro-azul-orejas-arcoiris": {
+   "nombre": "Posible burro azul de orejas de arcoíris",
+   "descripcion": "Cabeza azul grisáceo con pinceladas amarillas como pelaje, orejas largas y anchas con franjas concéntricas amarillo, rojo, verde y azul celeste, ojos verdes y hocico azul marino con blanco.",
+   "fotos": [
+    "a159"
+   ],
+   "principal": "a159",
+   "categoria": "danza-burro",
+   "certeza": "baja"
+  },
+  "borrego-anaranjado": {
+   "nombre": "Borrego anaranjado",
+   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente.",
+   "fotos": [
+    "a164"
+   ],
+   "principal": "a164",
+   "categoria": "danza-borrego",
+   "certeza": "confirmada-familia"
+  },
+  "hombre-barbado": {
+   "nombre": "Hombre barbado",
+   "descripcion": "Rostro humano de piel clara, calvo, con ceño marcado, cejas negras talladas, ojos azules de rayos, orejas visibles y gran barba negra tallada en surcos.",
+   "fotos": [
+    "a130"
+   ],
+   "principal": "a130",
+   "categoria": "rostro-humano",
+   "certeza": "media"
+  },
+  "chivo-rojo": {
+   "nombre": "Chivo rojo",
+   "descripcion": "Chivo de cara roja con franjas amarillas a los lados, cuernos largos y rectos negros con rayas blancas, orejas horizontales rojas con interior amarillo y barba de fibra clara.",
+   "fotos": [
+    "a047"
+   ],
+   "principal": "a047",
+   "categoria": "danza-chivo",
+   "certeza": "confirmada-familia"
+  },
+  "buho-plateado": {
+   "nombre": "Búho plateado",
+   "descripcion": "Búho de cara gris plateada, ojos negros con aro amarillo ancho rodeados de trazos negros, plumas negras en forma de gota en la frente y pico anaranjado.",
+   "fotos": [
+    "a079"
+   ],
+   "principal": "a079",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "vida-muerte-azul": {
+   "nombre": "Vida y muerte azul",
+   "descripcion": "Rostro partido a lo largo: la mitad viva es azul, con ojo de iris verde, oreja y barba y bigote en franjas onduladas de arcoíris que terminan en espiral; la mitad muerta es una calavera color hueso con cuenca vacía, ceja verde y dientes rayados de colores.",
+   "fotos": [
+    "a147"
+   ],
+   "principal": "a147",
+   "categoria": "vida-y-muerte",
    "certeza": "alta"
   },
-  "canido-gris-verdoso": {
-   "nombre": "Cánido gris verdoso",
-   "descripcion": "Cánido de aspecto de lobo pintado a pincel seco en gris, verde y café, con orejas de interior amarillo verdoso, ojos amarillos de iris verde y boca abierta color guinda.",
+  "tigre-anaranjado": {
+   "nombre": "Tigre anaranjado",
+   "descripcion": "Felino anaranjado de rayas negras con zonas blancas alrededor de los ojos verdes, orejas grises con textura de pelo y hocico abierto con lengua roja y colmillos blancos.",
    "fotos": [
-    "a083"
+    "a034",
+    "a034b"
    ],
-   "principal": "a083",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "buho-gris-verdoso": {
-   "nombre": "Búho gris verdoso",
-   "descripcion": "Búho de cara gris verdosa con trazos finos de plumaje, grandes ojos amarillos con círculos negros, pico amarillo y penachos rayados en la frente.",
-   "fotos": [
-    "a118"
-   ],
-   "principal": "a118",
-   "categoria": "danza-tecolote",
-   "certeza": "baja"
+   "principal": "a034",
+   "categoria": "otro-animal",
+   "certeza": "media"
   },
   "felino-rosetas": {
    "nombre": "Felino anaranjado de rosetas (¿ocelote?)",
@@ -379,19 +504,104 @@
    "categoria": "danza-lince-ocelote",
    "certeza": "media"
   },
-  "hombre-barbado": {
-   "nombre": "Hombre barbado",
-   "descripcion": "Rostro humano de piel clara, calvo, con ceño marcado, cejas negras talladas, ojos azules de rayos, orejas visibles y gran barba negra tallada en surcos.",
+  "guacamaya-verde": {
+   "nombre": "Guacamaya verde",
+   "descripcion": "Guacamaya de cara alargada verde olivo con pico negro curvo y copete de bandas roja, amarilla, azul celeste y anaranjada con franja central azul marino en espiga.",
    "fotos": [
-    "a130"
+    "a165"
    ],
-   "principal": "a130",
-   "categoria": "rostro-humano",
+   "principal": "a165",
+   "categoria": "danza-guacamaya",
+   "certeza": "confirmada-familia"
+  },
+  "el-tiempo-corona-azul": {
+   "nombre": "Tres rostros con corona de sol (¿El Tiempo?)",
+   "descripcion": "Máscara de tres rostros de piel gris beige con ojos azules y barba negra. La corona lleva una banda azul con X y cruces, un sol amarillo con cara en lo alto y, a un lado, un elemento oscuro con estrella.",
+   "fotos": [
+    "a094"
+   ],
+   "principal": "a094",
+   "categoria": "el-tiempo",
+   "certeza": "alta"
+  },
+  "canido-gris-pinceladas": {
+   "nombre": "Cánido gris de pinceladas amarillas",
+   "descripcion": "Cánido gris pizarra cubierto de pinceladas amarillo pálido como pelaje, con orejas altas, ojos verdes, hocico largo y nariz rojo óxido.",
+   "fotos": [
+    "a146",
+    "a146b",
+    "a146c"
+   ],
+   "principal": "a146",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "coyote-amarillo-anillos": {
+   "nombre": "Coyote amarillo de anillos",
+   "descripcion": "Coyote amarillo con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro.",
+   "fotos": [
+    "a087"
+   ],
+   "principal": "a087",
+   "categoria": "danza-coyote",
+   "certeza": "media"
+  },
+  "cebra-blanco-negro": {
+   "nombre": "Cebra blanca y negra",
+   "descripcion": "Cebra de franjas negras y blancas en todo el rostro, ojos color miel, nariz negra y orejas grises jaspeadas con interior dorado.",
+   "fotos": [
+    "a160"
+   ],
+   "principal": "a160",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "jaguar-rosetas": {
+   "nombre": "Felino de rosetas",
+   "descripcion": "Felino amarillo con rosetas negras de centro amarillo, hocico con puntos negros, nariz roja, ojos verdes y boca muy abierta con colmillos blancos y lengua roja.",
+   "fotos": [
+    "a058"
+   ],
+   "principal": "a058",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "vida-muerte-malva": {
+   "nombre": "Vida y muerte de barba de colores",
+   "descripcion": "Rostro partido a lo largo: una mitad es un hombre color malva con ojo azul de rayos y ceja y barba talladas en ondas rojas, amarillas, azul marino, rosas y azul claro; la otra es una calavera crema con cuenca oscura, ceja anaranjada y dientes rayados de colores.",
+   "fotos": [
+    "a127",
+    "a121"
+   ],
+   "principal": "a127",
+   "categoria": "vida-y-muerte",
+   "certeza": "alta"
+  },
+  "rostro-negro-ave-alada": {
+   "nombre": "Rostro negro con ave de alas abiertas",
+   "descripcion": "Rostro humano negro brillante de nariz larga y sonrisa con dientes amarillos; sobre la cabeza, un ave negra de pecho y pico color vino posada entre dos alas negras con nervaduras color vino; ojos amarillos con iris vino.",
+   "fotos": [
+    "a114",
+    "a032"
+   ],
+   "principal": "a114",
+   "categoria": "nahual",
+   "certeza": "baja"
+  },
+  "felino-lunares": {
+   "nombre": "Felino amarillo de lunares (¿ocelote?)",
+   "descripcion": "Felino amarillo con lunares rojos, anaranjados, negros y gris oscuro, orejas grises cepilladas, ojos verdes y hocico largo con rayas negras de bigote.",
+   "fotos": [
+    "a081",
+    "a073"
+   ],
+   "principal": "a081",
+   "categoria": "danza-lince-ocelote",
    "certeza": "media"
   },
   "coyote-blanco-esbelto": {
    "nombre": "Coyote blanco esbelto",
-   "descripcion": "Coyote blanco de rostro angosto con orejas ocre y azul marino, chevrón de franjas de arcoíris con hilera de puntitos, espirales pequeñas en las mejillas y nariz negra con colmillos blancos.",
+   "descripcion": "Coyote blanco de rostro angosto con orejas ocre y azul marino, franjas de arcoíris en V con hilera de puntitos, espirales pequeñas en las mejillas y nariz negra con colmillos blancos.",
    "fotos": [
     "a093",
     "a095"
@@ -399,6 +609,37 @@
    "principal": "a093",
    "categoria": "danza-coyote",
    "certeza": "alta"
+  },
+  "rostro-negro-tecolote": {
+   "nombre": "Rostro negro con búho",
+   "descripcion": "Rostro humano alargado, negro brillante, con un búho negro tallado en la frente (ojos anaranjados y pico gris); cejas doradas en picos, ojos con borde dorado, dientes amarillos, lengua roja de fuera y barbilla larga y puntiaguda.",
+   "fotos": [
+    "a043",
+    "a111"
+   ],
+   "principal": "a043",
+   "categoria": "nahual",
+   "certeza": "baja"
+  },
+  "diablo-marco-moteado-lengua-roja": {
+   "nombre": "Diablo de marco moteado y lengua roja",
+   "descripcion": "Diablo de rostro rojo con frente de franjas doradas y rojas, dos cabecitas color crema con manchas negras sobre las cejas y cuernos grises y negros hacia los lados. Un marco amarillo con círculos negros de borde azul rodea la cara; tiene colmillos largos grises y lengua roja de fuera.",
+   "fotos": [
+    "a064"
+   ],
+   "principal": "a064",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "pavo-real-lila": {
+   "nombre": "Ave de penacho de cara lila",
+   "descripcion": "Ave de rostro lila con cejas anaranjadas, ojos verdes, pico largo gris oscuro y penacho de plumas con ocelos rojo, amarillo y verde.",
+   "fotos": [
+    "a082"
+   ],
+   "principal": "a082",
+   "categoria": "otro-animal",
+   "certeza": "baja"
   },
   "borrego-amarillo": {
    "nombre": "Borrego amarillo",
@@ -411,14 +652,236 @@
    "categoria": "danza-borrego",
    "certeza": "confirmada-familia"
   },
-  "rostro-negro-calavera": {
-   "nombre": "Rostro negro con calavera",
-   "descripcion": "Rostro humano negro brillante y alargado, con arrugas talladas, pequeña calavera amarilla en lo alto de la frente, cejas y bigote grises, ojos amarillos con iris rojo oscuro y barbilla puntiaguda.",
+  "canido-negro-ojos-rojos": {
+   "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)",
+   "descripcion": "Máscara negra con mejillas blancas, orejas verdes y amarillas, línea amarilla al centro de la frente, banda de arcoíris en V sobre el hocico, ojos de iris rojo y nariz café.",
    "fotos": [
-    "a113",
-    "a115"
+    "a076"
    ],
-   "principal": "a113",
+   "principal": "a076",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "guacamaya-verde-mate": {
+   "nombre": "Guacamaya verde mate",
+   "descripcion": "Guacamaya de cara verde mate con pico negro curvo, copete de franjas azul con trazos verdes, amarilla, roja y azul claro, y ojo de iris verde con lágrima negra.",
+   "fotos": [
+    "a046"
+   ],
+   "principal": "a046",
+   "categoria": "danza-guacamaya",
+   "certeza": "alta"
+  },
+  "hombre-gorro-astros": {
+   "nombre": "Hombre barbado con gorro de astros",
+   "descripcion": "Rostro color piel con ojos azules de rayos, cejas negras gruesas, boca entreabierta con dientes y barba negra larga tallada en rizos. Lleva un gorro azul marino con puntos y destellos dorados, un sol y una media luna dorados a los lados y una franja dorada al centro con un rombo azul.",
+   "fotos": [
+    "a154"
+   ],
+   "principal": "a154",
+   "categoria": "rostro-humano",
+   "certeza": "baja"
+  },
+  "rostro-dos-tonos": {
+   "nombre": "Rostro de dos tonos",
+   "descripcion": "Rostro partido de arriba abajo: una mitad color piel rosado con arrugas talladas y otra anaranjada de ceño fruncido. Tiene cabello café oscuro, una bola roja en la frente, ojos azules, bigote negro en espiral, piocha negra y sonrisa torcida con dientes blancos.",
+   "fotos": [
+    "a158"
+   ],
+   "principal": "a158",
+   "categoria": "rostro-humano",
+   "certeza": "baja"
+  },
+  "venado-astas-negras": {
+   "nombre": "Venado de astas negras",
+   "descripcion": "Venado de frente turquesa con grecas en espiral, astas negras ramificadas con filete amarillo, orejas anaranjadas con borde de triángulos rojos y hocico anaranjado con franjas onduladas moradas.",
+   "fotos": [
+    "a001"
+   ],
+   "principal": "a001",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "canido-gris-fauces": {
+   "nombre": "Cánido gris de fauces abiertas",
+   "descripcion": "Cabeza de cánido gris y negro con pelaje a pinceladas, orejas de interior crema, ojos de diana azul y amarilla, nariz y labios rojos y hocico entreabierto con colmillos; borde inferior ondulado.",
+   "fotos": [
+    "a066",
+    "a075"
+   ],
+   "principal": "a066",
+   "categoria": "danza-perro",
+   "certeza": "baja"
+  },
+  "cebra-amarilla": {
+   "nombre": "Cebra amarilla y azul",
+   "descripcion": "Cebra con rayas amarillas y azul marino en V sobre la frente y la nariz, laterales de rayas blancas y negras, orejas amarillas con interior rosa y crin corta.",
+   "fotos": [
+    "a017"
+   ],
+   "principal": "a017",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "canido-cafe-naturalista": {
+   "nombre": "Cánido café naturalista",
+   "descripcion": "Cabeza alargada de cánido en café, gris y anaranjado a pinceladas, con orejas puntiagudas, ojos amarillos de iris azul y nariz café brillante.",
+   "fotos": [
+    "a070"
+   ],
+   "principal": "a070",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "gorila": {
+   "nombre": "Gorila",
+   "descripcion": "Rostro negro con pelo tallado en toda la superficie, ojos amarillos y boca abierta con colmillos color hueso y lengua roja de fuera.",
+   "fotos": [
+    "a152"
+   ],
+   "principal": "a152",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "nahual-cafe": {
+   "nombre": "Nahual café de cabellera",
+   "descripcion": "Cara alargada de ave, café oscuro cubierta de trazos amarillos como plumas, con anillos rojos de rayos amarillos alrededor de los ojos, pico largo con franja roja y larga cabellera de fibra café oscuro.",
+   "fotos": [
+    "a128"
+   ],
+   "principal": "a128",
+   "categoria": "nahual",
+   "certeza": "confirmada-familia"
+  },
+  "pantera-negra-ojos-amarillos": {
+   "nombre": "Felino negro de ojos amarillos",
+   "descripcion": "Felino negro brillante de orejas redondeadas, ojos amarillos con contorno gris, bigotes grises pintados, nariz rojiza y hocico abierto con lengua roja y colmillos amarillos.",
+   "fotos": [
+    "a037"
+   ],
+   "principal": "a037",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "gallo-cresta-roja": {
+   "nombre": "Gallo de cresta roja",
+   "descripcion": "Gallo de rostro blanco con cresta roja alta de picos negros, ojos amarillos de rayos negros, pico verde largo y barbillas amarillas con líneas cafés.",
+   "fotos": [
+    "a012"
+   ],
+   "principal": "a012",
+   "categoria": "danza-gallo",
+   "certeza": "confirmada-familia"
+  },
+  "pavo-real-pico-dorado": {
+   "nombre": "Ave de penacho y pico dorado",
+   "descripcion": "Ave azul marino con franjas blancas en V, pico dorado, banda dorada en la frente con rombo y puntos rojos, y penacho de plumas amarillas con rayas azules y ocelos morados.",
+   "fotos": [
+    "a027"
+   ],
+   "principal": "a027",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "diablo-marco-moteado-lengua-negra": {
+   "nombre": "Diablo de marco moteado y lengua de flecha",
+   "descripcion": "Diablo de rostro rojo brillante con frente de franjas doradas y rojas, grandes cuernos curvos claros de puntas oscuras y cejas en forma de animalitos crema con puntos negros. Un marco crema con círculos anaranjados y negros rodea la cara; tiene colmillos largos claros y lengua negra con una flecha dorada.",
+   "fotos": [
+    "a096"
+   ],
+   "principal": "a096",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "chivo-rojo-franjas-diagonales": {
+   "nombre": "Chivo rojo y amarillo de franjas diagonales",
+   "descripcion": "Chivo con franjas diagonales rojas y amarillas, cuernos largos y curvos negros con anillos blancos en relieve, ojo verde y barba de fibra blanca.",
+   "fotos": [
+    "a028"
+   ],
+   "principal": "a028",
+   "categoria": "danza-chivo",
+   "certeza": "alta"
+  },
+  "canido-gris": {
+   "nombre": "Cánido gris",
+   "descripcion": "Cánido de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
+   "fotos": [
+    "a100"
+   ],
+   "principal": "a100",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "pato": {
+   "nombre": "Pato",
+   "descripcion": "Cabeza de pato café rojizo con coronilla negra brillante, ojos amarillos y pico ancho y abierto con borde color crema.",
+   "fotos": [
+    "a013",
+    "a151"
+   ],
+   "principal": "a013",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "trio-rostros-negros-astros": {
+   "nombre": "Tres rostros negros con astros",
+   "descripcion": "Tres máscaras humanas negras brillantes con decoración dorada: una con líneas de puntos, estrellas rojas de cuatro puntas y barba en espiral; otra con orejas, estrellas de ocho puntas en la frente y la barbilla y bigote ondulado; la tercera con lunas, estrellas y una estrella fugaz.",
+   "fotos": [
+    "a009"
+   ],
+   "principal": "a009",
+   "categoria": "rostro-humano",
+   "certeza": "baja"
+  },
+  "pavo-real-pico-anaranjado": {
+   "nombre": "Ave de penacho y pico anaranjado",
+   "descripcion": "Ave de cara azul marino con franjas blancas, pico largo anaranjado, ojos amarillos y penacho en abanico de plumas amarillas y azules con ocelos verdes, azules y rojos.",
+   "fotos": [
+    "a108"
+   ],
+   "principal": "a108",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "jabali": {
+   "nombre": "Jabalí",
+   "descripcion": "Cabeza café grisácea con veteado tipo pelaje, cresta tallada sobre la frente, ojos anaranjados, colmillos blancos curvos y arrugas talladas en el hocico.",
+   "fotos": [
+    "a005"
+   ],
+   "principal": "a005",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "lince-buho-jaguar": {
+   "nombre": "Lince, búho y felino de rosetas",
+   "descripcion": "Pieza vertical con tres cabezas encimadas: arriba un lince crema con orejas de penacho negro y ojos verdes; al centro un búho gris oscuro con plumas trazadas en blanco y ojos amarillos; abajo un felino anaranjado con rosetas negras, ojos azules, colmillos blancos y lengua roja.",
+   "fotos": [
+    "a122",
+    "a098"
+   ],
+   "principal": "a122",
+   "categoria": "compuesta",
+   "certeza": "media"
+  },
+  "coyote-crema-ojos-azules": {
+   "nombre": "Coyote crema de ojos azules",
+   "descripcion": "Coyote de base crema con orejas amarillas por fuera y azul marino por dentro, franjas verde, roja, amarilla, azul marino y azul cielo en V, espirales de arcoíris en las mejillas y ojos blancos de iris azul.",
+   "fotos": [
+    "a020"
+   ],
+   "principal": "a020",
+   "categoria": "danza-coyote",
+   "certeza": "alta"
+  },
+  "calavera-y-rostro-negro-estrellas": {
+   "nombre": "Rostro negro de estrellas anaranjadas",
+   "descripcion": "Rostro negro alargado cubierto de puntos color crema en líneas onduladas, con estrellas anaranjadas de ocho puntas en la frente y la barbilla, ojos azules y bigote en espiral.",
+   "fotos": [
+    "a153"
+   ],
+   "principal": "a153",
    "categoria": "incierto",
    "certeza": "baja"
   },
@@ -434,414 +897,45 @@
    "categoria": "el-tiempo",
    "certeza": "confirmada-familia"
   },
-  "coyote-azul-orejas-largas": {
-   "nombre": "Coyote azul de orejas largas",
-   "descripcion": "Coyote azul cielo con orejas largas amarillas por dentro y azul marino por fuera, chevrón de arcoíris, espirales en las mejillas y nariz redonda color vino.",
+  "venado-astas-azules": {
+   "nombre": "Venado de astas azules",
+   "descripcion": "Venado de cara anaranjada con franja central amarilla moteada de negro, estrella roja en la frente, orejas azules y grandes astas azul marino con círculos rojos, amarillos y verdes.",
    "fotos": [
-    "a041",
-    "a029"
+    "a060",
+    "a056"
    ],
-   "principal": "a041",
-   "categoria": "danza-coyote",
-   "certeza": "alta"
-  },
-  "jirafa-amarilla": {
-   "nombre": "Jirafa amarilla",
-   "descripcion": "Cara alargada amarilla con retícula de líneas rojo coral, cuernitos gris azulado, orejas con interior rojo y ojos verdes.",
-   "fotos": [
-    "a139"
-   ],
-   "principal": "a139",
+   "principal": "a060",
    "categoria": "otro-animal",
    "certeza": "alta"
   },
-  "rostro-negro-ave-alada": {
-   "nombre": "Rostro negro con ave de alas abiertas",
-   "descripcion": "Rostro humano negro laqueado de nariz larga y sonrisa con dientes amarillos; sobre la cabeza, un ave negra de pecho y pico color vino posada entre dos alas negras con nervaduras color vino; ojos amarillos con iris vino.",
+  "pavo-real-ocelos-azules": {
+   "nombre": "Ave de penacho de tres plumas",
+   "descripcion": "Cabeza azul marino con franja blanca del ojo al cuello, pico dorado, banda dorada con puntos rojos y penacho de tres grandes plumas con ocelos azules.",
    "fotos": [
-    "a114",
-    "a032"
+    "a149"
    ],
-   "principal": "a114",
-   "categoria": "nahual",
-   "certeza": "baja"
-  },
-  "lince-manchas": {
-   "nombre": "Lince de manchas en orejas y hocico",
-   "descripcion": "Felino de cara ancha con fondo crema y rayas rojas, anaranjadas y negras, espiral en la frente, orejas blancas con manchas negras, ojos ámbar y hocico blanco con puntos negros.",
-   "fotos": [
-    "a171",
-    "a172"
-   ],
-   "principal": "a171",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "confirmada-familia"
-  },
-  "buho-gris-azulado": {
-   "nombre": "Búho gris azulado",
-   "descripcion": "Búho de cara gris azulada con franjas blancas, cejas azul marino, orejas cortas puntiagudas, ojos amarillo claro con rayos negros e iris azul y gran pico amarillo anaranjado.",
-   "fotos": [
-    "a078"
-   ],
-   "principal": "a078",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "canido-gris-fauces": {
-   "nombre": "Cánido gris de fauces abiertas",
-   "descripcion": "Cabeza de cánido gris y negro con pelaje a pinceladas, orejas de interior crema, ojos de diana azul y amarilla, nariz y labios rojos y hocico entreabierto con colmillos; borde inferior ondulado.",
-   "fotos": [
-    "a066",
-    "a075"
-   ],
-   "principal": "a066",
-   "categoria": "danza-perro",
-   "certeza": "baja"
-  },
-  "chivo-blanco-negro": {
-   "nombre": "Chivo blanco y negro",
-   "descripcion": "Chivo blanco y negro brillante con cuernos largos café oscuro, orejas negras de interior blanco, ojos amarillos de iris verde, boca verde y barba de fibra clara.",
-   "fotos": [
-    "a119"
-   ],
-   "principal": "a119",
-   "categoria": "danza-chivo",
-   "certeza": "alta"
-  },
-  "pavo-real-celeste": {
-   "nombre": "Pavo real de cara celeste",
-   "descripcion": "Ave de rostro azul celeste brillante, pico largo y recto café y penacho festoneado con plumas de ocelos verdes, rojos y morados.",
-   "fotos": [
-    "a006"
-   ],
-   "principal": "a006",
+   "principal": "a149",
    "categoria": "otro-animal",
    "certeza": "media"
   },
-  "coyote-crema-orejas-moradas": {
-   "nombre": "Coyote crema de orejas moradas",
-   "descripcion": "Coyote de base crema con orejas amarillas por fuera y moradas por dentro, bandas de arcoíris en la frente con puntitos y espiral de arcoíris en la mejilla; nariz y mandíbula negras.",
+  "jirafa-cafe": {
+   "nombre": "Jirafa café",
+   "descripcion": "Cabeza café rojiza brillante con retícula de líneas anaranjadas, dos cuernitos gris oscuro, ojos verdes y hocico anaranjado.",
    "fotos": [
-    "a084"
+    "a085"
    ],
-   "principal": "a084",
-   "categoria": "danza-coyote",
-   "certeza": "alta"
-  },
-  "mariposa-azul": {
-   "nombre": "Mariposa de alas azul marino",
-   "descripcion": "Máscara en forma de mariposa: alas azul marino con puntos verdes y paneles amarillos con nervaduras negras y ocelos rojos, cuerpo morado con franjas rosas que forma la nariz y antenas color crema enroscadas.",
-   "fotos": [
-    "a015",
-    "a150"
-   ],
-   "principal": "a015",
+   "principal": "a085",
    "categoria": "otro-animal",
    "certeza": "alta"
   },
-  "coyote-naturalista-ocre": {
-   "nombre": "Coyote naturalista ocre",
-   "descripcion": "Cánido de hocico largo y fino pintado a pinceladas ocre, café y anaranjado, con orejas de interior blanco, ojo ámbar de pupila azul y línea blanca en la boca.",
+  "pantera-negra-ojos-verdes": {
+   "nombre": "Felino negro de ojos verdes",
+   "descripcion": "Felino negro brillante de orejas puntiagudas con interior dorado, ojos verdes con anillo amarillo, nariz anaranjada, colmillos largos amarillos y lengua roja colgando.",
    "fotos": [
-    "a052"
+    "a048"
    ],
-   "principal": "a052",
-   "categoria": "danza-coyote",
-   "certeza": "media"
-  },
-  "chivo-azul-crema": {
-   "nombre": "Chivo azul y crema",
-   "descripcion": "Chivo azul con la parte central de la cara en crema, cuernos largos gris claro, orejas azules, ojos verdes y barba de fibra blanca.",
-   "fotos": [
-    "a090"
-   ],
-   "principal": "a090",
-   "categoria": "danza-chivo",
-   "certeza": "alta"
-  },
-  "canido-negro-boca-abierta": {
-   "nombre": "Cánido negro de boca abierta (¿coyote o perro?)",
-   "descripcion": "Máscara negra con línea amarilla de la frente al hocico, cejas y bandas de arcoíris sobre el hocico, ojo rojo con anillo verde, orejas verde olivo y mostaza, quijada blanca, nariz roja y boca abierta con lengua y colmillos.",
-   "fotos": [
-    "a157"
-   ],
-   "principal": "a157",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "rostro-lila-iguana-serpientes": {
-   "nombre": "Rostro lila con iguana y serpientes",
-   "descripcion": "Rostro lila con un gran ojo verde, cubierto por una iguana verde de cresta azul, serpientes amarillas con manchas cafés que muestran colmillos, y abajo un animal enroscado café anaranjado con manchas azules.",
-   "fotos": [
-    "a021"
-   ],
-   "principal": "a021",
-   "categoria": "compuesta",
-   "certeza": "baja"
-  },
-  "buho-gris-pico-anaranjado": {
-   "nombre": "Búho gris de pico anaranjado",
-   "descripcion": "Búho de cara gris verdosa jaspeada, ojos negros con aro anaranjado, trazos negros cortos en la frente y gran pico anaranjado; borde superior recto con dos puntas a los lados y cordón de fibra para colgar.",
-   "fotos": [
-    "a124",
-    "a071"
-   ],
-   "principal": "a124",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "coyote-crema-ojos-azules": {
-   "nombre": "Coyote crema de ojos azules",
-   "descripcion": "Coyote de base crema con orejas amarillas por fuera y azul marino por dentro, chevrón de franjas verde, roja, amarilla, azul marino y azul cielo, espirales de arcoíris en las mejillas y ojos blancos de iris azul.",
-   "fotos": [
-    "a020"
-   ],
-   "principal": "a020",
-   "categoria": "danza-coyote",
-   "certeza": "alta"
-  },
-  "canido-cafe-naturalista": {
-   "nombre": "Cánido café naturalista",
-   "descripcion": "Cabeza alargada de cánido en café, gris y anaranjado a pinceladas, con orejas puntiagudas, ojos amarillos de iris azul y nariz café brillante.",
-   "fotos": [
-    "a070"
-   ],
-   "principal": "a070",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "equino-rayado": {
-   "nombre": "Equino rayado",
-   "descripcion": "Equino gris de hocico largo con franjas anaranjadas en V, rayas blanco y negro tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
-   "fotos": [
-    "a161"
-   ],
-   "principal": "a161",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "canido-negro-ojos-cafes": {
-   "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)",
-   "descripcion": "Máscara negra brillante con mejillas blancas, línea amarilla del centro de la frente a la nariz, orejas anaranjadas y verde olivo, pequeñas bandas de arcoíris sobre los ojos y en el hocico, ojos cafés y nariz roja.",
-   "fotos": [
-    "a053"
-   ],
-   "principal": "a053",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "ave-negra-cabellera-azul": {
-   "nombre": "Ave negra de cabellera",
-   "descripcion": "Cabeza de ave negra cubierta de trazos cortos color crema como plumas, ojo rojo con rayas blancas, pico largo y curvo con borde crema y cabellera larga de fibra azul marino oscuro.",
-   "fotos": [
-    "a061"
-   ],
-   "principal": "a061",
-   "categoria": "nahual",
-   "certeza": "media"
-  },
-  "vida-muerte-azul": {
-   "nombre": "Vida y muerte azul",
-   "descripcion": "Rostro partido a lo largo: la mitad viva es azul, con ojo de iris verde, oreja y barba y bigote en franjas onduladas de arcoíris que terminan en espiral; la mitad muerta es una calavera color hueso con cuenca vacía, ceja verde y dientes rayados de colores.",
-   "fotos": [
-    "a147"
-   ],
-   "principal": "a147",
-   "categoria": "vida-y-muerte",
-   "certeza": "alta"
-  },
-  "ave-azul-pico-amarillo": {
-   "nombre": "Ave azul de pico amarillo",
-   "descripcion": "Collage de tres paneles: al centro, un ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo; a los lados, el tecolote rojo y un detalle del coyote de la danza.",
-   "fotos": [
-    "a065"
-   ],
-   "principal": "a065",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "toro-multicolor": {
-   "nombre": "Toro multicolor",
-   "descripcion": "Toro de frente roja con antifaz amarillo en V, mejillas azules con espirales verdes, orejas con franjas en espiral, ojos verdes y cuernos negros veteados.",
-   "fotos": [
-    "a016"
-   ],
-   "principal": "a016",
+   "principal": "a048",
    "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "gorila": {
-   "nombre": "Gorila",
-   "descripcion": "Rostro negro con pelo tallado en toda la superficie, ojos amarillos y boca abierta con colmillos color hueso y lengua roja de fuera.",
-   "fotos": [
-    "a152"
-   ],
-   "principal": "a152",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "jaguar-rosetas": {
-   "nombre": "Felino de rosetas",
-   "descripcion": "Felino amarillo con rosetas negras de centro amarillo, hocico con puntos negros, nariz roja, ojos verdes y boca muy abierta con colmillos blancos y lengua roja.",
-   "fotos": [
-    "a058"
-   ],
-   "principal": "a058",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "canido-ocre-pinceladas": {
-   "nombre": "Cánido ocre de pinceladas negras",
-   "descripcion": "Cánido amarillo ocre con pinceladas negras como pelaje, orejas altas, ojos verdes, nariz roja y mejilla rojo salmón.",
-   "fotos": [
-    "a156"
-   ],
-   "principal": "a156",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "coyote-amarillo-anillos": {
-   "nombre": "Coyote amarillo de anillos",
-   "descripcion": "Coyote amarillo con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro.",
-   "fotos": [
-    "a087"
-   ],
-   "principal": "a087",
-   "categoria": "danza-coyote",
-   "certeza": "media"
-  },
-  "diablo-marco-moteado-lengua-negra": {
-   "nombre": "Diablo de marco moteado y lengua de flecha",
-   "descripcion": "Diablo de rostro rojo brillante con frente de franjas doradas y rojas, grandes cuernos curvos claros de puntas oscuras y cejas en forma de animalitos crema con puntos negros. Un marco crema con círculos anaranjados y negros rodea la cara; tiene colmillos largos claros y lengua negra con una flecha dorada.",
-   "fotos": [
-    "a096"
-   ],
-   "principal": "a096",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "lince-buho-jaguar": {
-   "nombre": "Lince, búho y jaguar",
-   "descripcion": "Pieza vertical con tres cabezas encimadas: arriba un lince crema con orejas de penacho negro y ojos verdes; al centro un búho gris oscuro con plumas trazadas en blanco y ojos amarillos; abajo un felino anaranjado con rosetas negras, ojos azules, colmillos blancos y lengua roja.",
-   "fotos": [
-    "a122",
-    "a098"
-   ],
-   "principal": "a122",
-   "categoria": "compuesta",
-   "certeza": "media"
-  },
-  "hombre-aguila": {
-   "nombre": "Rostro humano con casco de águila",
-   "descripcion": "Rostro humano color piel rosado con ojo blanco y negro y ceja negra, cubierto por una cabeza de águila café con rayas amarillas a modo de casco; el pico queda sobre la frente y la mandíbula del ave bajo la barbilla.",
-   "fotos": [
-    "a120"
-   ],
-   "principal": "a120",
-   "categoria": "compuesta",
-   "certeza": "media"
-  },
-  "la-noche": {
-   "nombre": "La Noche",
-   "descripcion": "Máscara de dos rostros unidos, uno ocre y otro azul, de ojos azules y barba negra, con franjas rojas, amarillas y azules en cejas, mejillas y barbas. La corona tiene flamas amarillas y rojas, una diadema dorada con X rojas y círculos verdes, y una media luna plateada con estrella.",
-   "fotos": [
-    "a107",
-    "a097",
-    "a112"
-   ],
-   "principal": "a107",
-   "categoria": "la-noche",
-   "certeza": "confirmada-familia"
-  },
-  "diablo-marco-moteado-lengua-roja": {
-   "nombre": "Diablo de marco moteado y lengua roja",
-   "descripcion": "Diablo de rostro rojo con frente de franjas doradas y rojas, dos cabecitas color crema con manchas negras sobre las cejas y cuernos grises y negros hacia los lados. Un marco amarillo con círculos negros de borde azul rodea la cara; tiene colmillos largos grises y lengua roja de fuera.",
-   "fotos": [
-    "a064"
-   ],
-   "principal": "a064",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "rostro-doble-amarillo": {
-   "nombre": "Rostro doble amarillo con media luna",
-   "descripcion": "Máscara de rostro amarillo brillante con un segundo rostro de perfil a un lado, ojos verdes de rayos rojos, bigote y barba negros con remate en espiral. La corona tiene picos amarillos, una banda azul celeste con figuras moradas y estrella, y arriba una media luna azul con estrella.",
-   "fotos": [
-    "a143"
-   ],
-   "principal": "a143",
-   "categoria": "la-noche",
-   "certeza": "media"
-  },
-  "vida-muerte-barba-cafe": {
-   "nombre": "Vida y muerte de barba café",
-   "descripcion": "Rostro partido a la mitad: un lado es un hombre de piel clara con ojo azul, ceja y barba café en espirales; el otro es una calavera amarilla con ojo negro y blanco, dientes y líneas negras.",
-   "fotos": [
-    "a106"
-   ],
-   "principal": "a106",
-   "categoria": "vida-y-muerte",
-   "certeza": "alta"
-  },
-  "lince-franjas-zigzag": {
-   "nombre": "Lince de franjas y zigzag rojo",
-   "descripcion": "Lince de fondo crema con rayas diagonales rojas y negras, zigzag rojo y espiral en la frente, orejas grises jaspeadas, ojos de iris turquesa y hocico largo con puntos negros.",
-   "fotos": [
-    "a166"
-   ],
-   "principal": "a166",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "confirmada-familia"
-  },
-  "sol-y-luna": {
-   "nombre": "Sol y luna",
-   "descripcion": "Máscara de dos rostros que comparten los labios rojos: a un lado una media luna azul con ceja roja y mejilla roja, enmarcada en plata y azul marino con tres estrellas doradas; al otro, un sol amarillo de boca negra abierta con rayos ondulados amarillos, rojos y dorados.",
-   "fotos": [
-    "a155"
-   ],
-   "principal": "a155",
-   "categoria": "la-noche",
-   "certeza": "baja"
-  },
-  "pavo-real-anaranjado": {
-   "nombre": "Pavo real de cara anaranjada",
-   "descripcion": "Ave de rostro anaranjado brillante con pico largo rojo, ojos de iris azul y penacho verde con rayado azul y amarillo y tres ocelos rojo, amarillo y verde.",
-   "fotos": [
-    "a086"
-   ],
-   "principal": "a086",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "mandril": {
-   "nombre": "Mandril",
-   "descripcion": "Rostro de frente amarilla con arrugas talladas, antifaz negro punteado, nariz roja, mejillas y hocico azul cielo, orejas azules de borde dentado y cabellera de fibra morada.",
-   "fotos": [
-    "a148"
-   ],
-   "principal": "a148",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "coyote-blanco-arcoiris": {
-   "nombre": "Coyote blanco de arcoíris",
-   "descripcion": "Coyote de base blanca con orejas amarillas y azul marino, chevrón de franjas de arcoíris en la frente, espirales de arcoíris en las mejillas y línea de puntos de colores por el hocico. Ojos amarillos con iris verde y nariz negra.",
-   "fotos": [
-    "a024",
-    "a022"
-   ],
-   "principal": "a024",
-   "categoria": "danza-coyote",
-   "certeza": "confirmada-familia"
-  },
-  "canido-gris-pinceladas": {
-   "nombre": "Cánido gris de pinceladas amarillas",
-   "descripcion": "Cánido gris pizarra cubierto de pinceladas amarillo pálido como pelaje, con orejas altas, ojos verdes, hocico largo y nariz rojo óxido.",
-   "fotos": [
-    "a146"
-   ],
-   "principal": "a146",
-   "categoria": "danza-coyote",
    "certeza": "baja"
   },
   "burro-gris": {
@@ -855,145 +949,24 @@
    "categoria": "danza-burro",
    "certeza": "confirmada-familia"
   },
-  "jaguar-anaranjado-con-buho": {
-   "nombre": "Búho sobre jaguar anaranjado",
-   "descripcion": "Felino anaranjado con manchas café rojizo, ojos verde limón, colmillos blancos y lengua roja; encima, un búho gris de ojos amarillos y pico anaranjado, sin pestañas.",
+  "pavo-real-anaranjado": {
+   "nombre": "Ave de penacho de cara anaranjada",
+   "descripcion": "Ave de rostro anaranjado brillante con pico largo rojo, ojos de iris azul y penacho verde con rayado azul y amarillo y tres ocelos rojo, amarillo y verde.",
    "fotos": [
-    "a057"
+    "a086"
    ],
-   "principal": "a057",
-   "categoria": "compuesta",
+   "principal": "a086",
+   "categoria": "otro-animal",
    "certeza": "media"
   },
-  "pantera-negra-ojos-verdes": {
-   "nombre": "Felino negro de ojos verdes",
-   "descripcion": "Felino negro brillante de orejas puntiagudas con interior dorado, ojos verdes con anillo amarillo, nariz anaranjada, colmillos largos amarillos y lengua roja colgando.",
+  "perro-blanco-mancha": {
+   "nombre": "Perro blanco de mancha café",
+   "descripcion": "Perro blanco brillante con una mancha café en una oreja y alrededor de un ojo, ojos verdes, nariz café rojiza, lengua roja y puntos negros de bigote.",
    "fotos": [
-    "a048"
+    "a144"
    ],
-   "principal": "a048",
-   "categoria": "otro-animal",
-   "certeza": "baja"
-  },
-  "jirafa-cafe": {
-   "nombre": "Jirafa café",
-   "descripcion": "Cabeza café rojiza brillante con retícula de líneas anaranjadas, dos cuernitos gris oscuro, ojos verdes y hocico anaranjado.",
-   "fotos": [
-    "a085"
-   ],
-   "principal": "a085",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "rostro-negro-lengua": {
-   "nombre": "Rostro negro de lengua de fuera",
-   "descripcion": "Rostro negro laqueado, visto de perfil, con una oreja grande de interior rojo, un punto rojo en la frente y un ojo anaranjado de rayos con pestañas rojas. Tiene la boca abierta con dientes rayados de rojo y la lengua color piel de fuera.",
-   "fotos": [
-    "a105",
-    "a135"
-   ],
-   "principal": "a105",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "diablo-rojo-lengua": {
-   "nombre": "Diablo rojo de lengua de fuera",
-   "descripcion": "Diablo de rostro rojo intenso con cuernos largos negros de base clara, flamas negras y arrugas talladas en la frente, orejas puntiagudas anaranjadas y ojos amarillos de pupila rasgada. Tiene dientes amarillos, colmillos claros, lengua anaranjada de fuera, boca negra por dentro y barba negra.",
-   "fotos": [
-    "a008"
-   ],
-   "principal": "a008",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "coyote-blanco-anillos": {
-   "nombre": "Coyote blanco de anillos",
-   "descripcion": "Coyote blanco con orejas largas amarillas y azul marino y franjas concéntricas roja, amarilla, azul y verde alrededor de los ojos que bajan en V hasta el hocico. Nariz redonda color vino.",
-   "fotos": [
-    "a074"
-   ],
-   "principal": "a074",
-   "categoria": "danza-coyote",
-   "certeza": "alta"
-  },
-  "hombre-gorro-astros": {
-   "nombre": "Hombre barbado con gorro de astros",
-   "descripcion": "Rostro color piel con ojos azules de rayos, cejas negras gruesas, boca entreabierta con dientes y barba negra larga tallada en rizos. Lleva un gorro azul marino con puntos y destellos dorados, un sol y una media luna dorados a los lados y una franja dorada al centro con un rombo azul.",
-   "fotos": [
-    "a154"
-   ],
-   "principal": "a154",
-   "categoria": "rostro-humano",
-   "certeza": "baja"
-  },
-  "nahual-cafe": {
-   "nombre": "Nahual café de cabellera",
-   "descripcion": "Cara alargada de ave, café oscuro cubierta de trazos amarillos como plumas, con anillos rojos de rayos amarillos alrededor de los ojos, pico largo con franja roja y larga cabellera de fibra café oscuro.",
-   "fotos": [
-    "a128"
-   ],
-   "principal": "a128",
-   "categoria": "nahual",
-   "certeza": "confirmada-familia"
-  },
-  "chivo-rojo-franjas-diagonales": {
-   "nombre": "Chivo rojo y amarillo de franjas diagonales",
-   "descripcion": "Chivo con franjas diagonales rojas y amarillas, cuernos largos y curvos negros con anillos blancos en relieve, ojo verde y barba de fibra blanca.",
-   "fotos": [
-    "a028"
-   ],
-   "principal": "a028",
-   "categoria": "danza-chivo",
-   "certeza": "alta"
-  },
-  "buho-plateado": {
-   "nombre": "Búho plateado",
-   "descripcion": "Búho de cara gris plateada, ojos negros con aro amarillo ancho rodeados de trazos negros, plumas negras en forma de gota en la frente y pico anaranjado.",
-   "fotos": [
-    "a079"
-   ],
-   "principal": "a079",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "gallo-cresta-roja": {
-   "nombre": "Gallo de cresta roja",
-   "descripcion": "Gallo de rostro blanco con cresta roja alta de picos negros, ojos amarillos de rayos negros, pico verde largo y barbillas amarillas con líneas cafés.",
-   "fotos": [
-    "a012"
-   ],
-   "principal": "a012",
-   "categoria": "danza-gallo",
-   "certeza": "confirmada-familia"
-  },
-  "canido-gris": {
-   "nombre": "Cánido gris",
-   "descripcion": "Cánido de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
-   "fotos": [
-    "a100"
-   ],
-   "principal": "a100",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "pavo-real-lila": {
-   "nombre": "Pavo real de cara lila",
-   "descripcion": "Ave de rostro lila con cejas anaranjadas, ojos verdes, pico largo gris oscuro y penacho de plumas con ocelos rojo, amarillo y verde.",
-   "fotos": [
-    "a082"
-   ],
-   "principal": "a082",
-   "categoria": "otro-animal",
-   "certeza": "baja"
-  },
-  "coyote-negro-lineas-blancas": {
-   "nombre": "Cánido negro de líneas blancas (¿coyote o perro?)",
-   "descripcion": "Máscara negra con chevrón blanco en la frente, filetes blancos en orejas y hocico, espirales blancas en las mejillas, ojos amarillos de iris rojo y nariz roja redonda.",
-   "fotos": [
-    "a059"
-   ],
-   "principal": "a059",
-   "categoria": "danza-coyote",
+   "principal": "a144",
+   "categoria": "danza-perro",
    "certeza": "media"
   },
   "chivo-rojo-antifaz-amarillo": {
@@ -1006,14 +979,74 @@
    "categoria": "danza-chivo",
    "certeza": "alta"
   },
-  "ave-pico-ganchudo": {
-   "nombre": "Ave de pico ganchudo",
-   "descripcion": "Cabeza redonda de ave en rojo y verde a pincel seco con trazos azules como plumas, parche crema alrededor del ojo y pico ganchudo abierto negro y crema.",
+  "buho-azul": {
+   "nombre": "Búho azul",
+   "descripcion": "Búho de base azul con pincelado café que imita plumaje, trazos azul marino y amarillos alrededor de la cara, ojos negros con media luna amarilla y pico café con punta rosa.",
    "fotos": [
-    "a126"
+    "a050"
    ],
-   "principal": "a126",
-   "categoria": "danza-guacamaya",
+   "principal": "a050",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "coyote-crema-orejas-moradas": {
+   "nombre": "Coyote crema de orejas moradas",
+   "descripcion": "Coyote de base crema con orejas amarillas por fuera y moradas por dentro, bandas de arcoíris en la frente con puntitos y espiral de arcoíris en la mejilla; nariz y mandíbula negras.",
+   "fotos": [
+    "a084"
+   ],
+   "principal": "a084",
+   "categoria": "danza-coyote",
+   "certeza": "alta"
+  },
+  "chivo-morado": {
+   "nombre": "Animal morado de cuernos cortos (¿chivo?)",
+   "descripcion": "Cabeza morada clara con banda diagonal morado oscuro, cuernos cortos curvos hacia atrás, negros con rayas anaranjadas en relieve, ojo amarillo y hocico verde.",
+   "fotos": [
+    "a089"
+   ],
+   "principal": "a089",
+   "categoria": "danza-chivo",
+   "certeza": "baja"
+  },
+  "coyote-amarillo-orejas-verdes": {
+   "nombre": "Coyote amarillo de orejas verdes",
+   "descripcion": "Coyote amarillo con orejas verdes y franjas concéntricas negra, verde, roja y azul grisáceo alrededor del ojo que bajan por el hocico; mandíbula y cuello negros.",
+   "fotos": [
+    "a123"
+   ],
+   "principal": "a123",
+   "categoria": "danza-coyote",
+   "certeza": "media"
+  },
+  "canido-negro-ojos-cafes": {
+   "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)",
+   "descripcion": "Máscara negra brillante con mejillas blancas, línea amarilla del centro de la frente a la nariz, orejas anaranjadas y verde olivo, pequeñas bandas de arcoíris sobre los ojos y en el hocico, ojos cafés y nariz roja.",
+   "fotos": [
+    "a053"
+   ],
+   "principal": "a053",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "coyote-blanco-anillos": {
+   "nombre": "Coyote blanco de anillos",
+   "descripcion": "Coyote blanco con orejas largas amarillas y azul marino y franjas concéntricas roja, amarilla, azul y verde alrededor de los ojos que bajan en V hasta el hocico. Nariz redonda color vino.",
+   "fotos": [
+    "a074"
+   ],
+   "principal": "a074",
+   "categoria": "danza-coyote",
+   "certeza": "alta"
+  },
+  "canido-ocre-pinceladas": {
+   "nombre": "Cánido ocre de pinceladas negras",
+   "descripcion": "Cánido amarillo ocre con pinceladas negras como pelaje, orejas altas, ojos verdes, nariz roja y mejilla rojo salmón.",
+   "fotos": [
+    "a156"
+   ],
+   "principal": "a156",
+   "categoria": "danza-coyote",
    "certeza": "baja"
   },
   "rostro-negro-estrellas": {
@@ -1026,6 +1059,76 @@
    "categoria": "rostro-humano",
    "certeza": "baja"
   },
+  "lince-franjas-zigzag": {
+   "nombre": "Lince de franjas y zigzag rojo",
+   "descripcion": "Lince de fondo crema con rayas diagonales rojas y negras, zigzag rojo y espiral en la frente, orejas grises jaspeadas, ojos de iris turquesa y hocico largo con puntos negros.",
+   "fotos": [
+    "a166"
+   ],
+   "principal": "a166",
+   "categoria": "danza-lince-ocelote",
+   "certeza": "confirmada-familia"
+  },
+  "diablo-rojo-oscuro-lengua": {
+   "nombre": "Diablo rojo oscuro de lengua de fuera",
+   "descripcion": "Diablo de rostro rojo oscuro con cuernos largos negros de base clara, flamas negras y arrugas talladas en la frente, cejas negras de pelo tallado y ojos amarillos de pupila rasgada. Tiene colmillos claros, lengua roja anaranjada de fuera y barba negra.",
+   "fotos": [
+    "a007"
+   ],
+   "principal": "a007",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "mariposa-verde": {
+   "nombre": "Mariposa sobre fondo verde",
+   "descripcion": "Mariposa tallada sobre una base verde limón, con alas azul marino y amarillas decoradas con flores, espirales y círculos, cuerpo negro y antenas en espiral.",
+   "fotos": [
+    "a049"
+   ],
+   "principal": "a049",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "coyote-naturalista-ocre": {
+   "nombre": "Cánido ocre naturalista (¿coyote?)",
+   "descripcion": "Cánido de hocico largo y fino pintado a pinceladas ocre, café y anaranjado, con orejas de interior blanco, ojo ámbar de pupila azul y línea blanca en la boca.",
+   "fotos": [
+    "a052"
+   ],
+   "principal": "a052",
+   "categoria": "danza-coyote",
+   "certeza": "media"
+  },
+  "diablo-rojo-lengua": {
+   "nombre": "Diablo rojo de lengua de fuera",
+   "descripcion": "Diablo de rostro rojo intenso con cuernos largos negros de base clara, flamas negras y arrugas talladas en la frente, orejas puntiagudas anaranjadas y ojos amarillos de pupila rasgada. Tiene dientes amarillos, colmillos claros, lengua anaranjada de fuera, boca negra por dentro y barba negra.",
+   "fotos": [
+    "a008"
+   ],
+   "principal": "a008",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "mandril": {
+   "nombre": "Mandril",
+   "descripcion": "Rostro de frente amarilla con arrugas talladas, antifaz negro punteado, nariz roja, mejillas y hocico azul cielo, orejas azules de borde dentado y cabellera de fibra morada.",
+   "fotos": [
+    "a148"
+   ],
+   "principal": "a148",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "rostro-doble-amarillo": {
+   "nombre": "Rostro doble amarillo con media luna",
+   "descripcion": "Máscara de rostro amarillo brillante con un segundo rostro de perfil a un lado, ojos verdes de rayos rojos, bigote y barba negros con remate en espiral. La corona tiene picos amarillos, una banda azul celeste con figuras moradas y estrella, y arriba una media luna azul con estrella.",
+   "fotos": [
+    "a143"
+   ],
+   "principal": "a143",
+   "categoria": "la-noche",
+   "certeza": "media"
+  },
   "ave-negra-pico-largo": {
    "nombre": "Ave negra de pico largo",
    "descripcion": "Cabeza de ave negra brillante con trazos cortos amarillos como plumas, contorno del ojo rojo con rayas amarillas y pico muy largo y recto con borde rojo y filete amarillo.",
@@ -1034,6 +1137,67 @@
    ],
    "principal": "a042",
    "categoria": "nahual",
+   "certeza": "baja"
+  },
+  "pavo-real-celeste": {
+   "nombre": "Ave de penacho de cara celeste",
+   "descripcion": "Ave de rostro azul celeste brillante, pico largo y recto café y penacho festoneado con plumas de ocelos verdes, rojos y morados.",
+   "fotos": [
+    "a006"
+   ],
+   "principal": "a006",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "canido-negro-nariz-gris": {
+   "nombre": "Cánido negro de nariz gris (¿coyote o perro?)",
+   "descripcion": "Máscara negra con orejas anaranjada y verde, cejas anchas en franjas azul, roja, amarilla y azul marino, línea amarilla de la frente al hocico, banda de arcoíris sobre el hocico, mejilla blanca y nariz gris oscuro.",
+   "fotos": [
+    "a136"
+   ],
+   "principal": "a136",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "chivo-azul-cuernos-rojos": {
+   "nombre": "Chivo azul de cuernos rojos",
+   "descripcion": "Chivo de rostro alargado en franjas diagonales azul marino y celeste, cuernos largos y curvos rojos con rebordes amarillos, ojo amarillo de iris verde y franja verde en la boca.",
+   "fotos": [
+    "a062"
+   ],
+   "principal": "a062",
+   "categoria": "danza-chivo",
+   "certeza": "media"
+  },
+  "sol-y-luna": {
+   "nombre": "Sol y luna",
+   "descripcion": "Máscara de dos rostros que comparten los labios rojos: a un lado una media luna azul con ceja roja y mejilla roja, enmarcada en plata y azul marino con tres estrellas doradas; al otro, un sol amarillo de boca negra abierta con rayos ondulados amarillos, rojos y dorados.",
+   "fotos": [
+    "a155"
+   ],
+   "principal": "a155",
+   "categoria": "la-noche",
+   "certeza": "baja"
+  },
+  "coyote-blanco-orejas-turquesa": {
+   "nombre": "Coyote blanco de orejas turquesa",
+   "descripcion": "Coyote blanco con orejas amarillas y azul turquesa, franjas verde, azul marino, amarilla, roja y lila en V con puntos de colores, espiral de arcoíris en la mejilla y nariz café.",
+   "fotos": [
+    "a040"
+   ],
+   "principal": "a040",
+   "categoria": "danza-coyote",
+   "certeza": "alta"
+  },
+  "rostro-negro-lengua": {
+   "nombre": "Rostro negro de lengua de fuera",
+   "descripcion": "Rostro negro brillante con orejas grandes de interior rojo, un punto rojo en la frente y un ojo anaranjado de rayos con pestañas rojas. Tiene la boca abierta con dientes rayados de rojo y la lengua color piel de fuera.",
+   "fotos": [
+    "a105",
+    "a135"
+   ],
+   "principal": "a105",
+   "categoria": "incierto",
    "certeza": "baja"
   },
   "nahual-blanco": {
@@ -1047,96 +1211,27 @@
    "categoria": "nahual",
    "certeza": "confirmada-familia"
   },
-  "chivo-morado": {
-   "nombre": "Chivo morado",
-   "descripcion": "Cabeza morada clara con banda diagonal morado oscuro, cuernos cortos curvos hacia atrás, negros con rayas anaranjadas en relieve, ojo amarillo y hocico verde.",
+  "la-noche": {
+   "nombre": "La Noche",
+   "descripcion": "Máscara de dos rostros unidos, uno ocre y otro azul, de ojos azules y barba negra, con franjas rojas, amarillas y azules en cejas, mejillas y barbas. La corona tiene flamas amarillas y rojas, una diadema dorada con X rojas y círculos verdes, y una media luna plateada con estrella.",
    "fotos": [
-    "a089"
+    "a107",
+    "a097",
+    "a112"
    ],
-   "principal": "a089",
-   "categoria": "danza-chivo",
-   "certeza": "baja"
-  },
-  "lince-naturalista": {
-   "nombre": "Lince naturalista",
-   "descripcion": "Lince pintado a pinceladas ocre y gris con manchas grises, orejas de punta negra, ojos verde amarillo y gorguera rayada alrededor de la cara.",
-   "fotos": [
-    "a054"
-   ],
-   "principal": "a054",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "media"
-  },
-  "pavo-real-pico-anaranjado": {
-   "nombre": "Pavo real de pico anaranjado",
-   "descripcion": "Ave de cara azul marino con franjas blancas, pico largo anaranjado, ojos amarillos y penacho en abanico de plumas amarillas y azules con ocelos verdes, azules y rojos.",
-   "fotos": [
-    "a108"
-   ],
-   "principal": "a108",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "coyote-blanco-orejas-turquesa": {
-   "nombre": "Coyote blanco de orejas turquesa",
-   "descripcion": "Coyote blanco con orejas amarillas y azul turquesa, chevrón de franjas verde, azul marino, amarilla, roja y lila con puntos de colores, espiral de arcoíris en la mejilla y nariz café.",
-   "fotos": [
-    "a040"
-   ],
-   "principal": "a040",
-   "categoria": "danza-coyote",
-   "certeza": "alta"
-  },
-  "mariposa-verde": {
-   "nombre": "Mariposa sobre fondo verde",
-   "descripcion": "Mariposa tallada sobre una base verde limón, con alas azul marino y amarillas decoradas con flores, espirales y círculos, cuerpo negro y antenas en espiral.",
-   "fotos": [
-    "a049"
-   ],
-   "principal": "a049",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "chivo-rojo": {
-   "nombre": "Chivo rojo",
-   "descripcion": "Chivo de cara roja con franjas amarillas a los lados, cuernos largos y rectos negros con rayas blancas, orejas horizontales rojas con interior amarillo y barba de fibra clara.",
-   "fotos": [
-    "a047"
-   ],
-   "principal": "a047",
-   "categoria": "danza-chivo",
+   "principal": "a107",
+   "categoria": "la-noche",
    "certeza": "confirmada-familia"
   },
-  "buho-azul": {
-   "nombre": "Búho azul",
-   "descripcion": "Búho de base azul con pincelado café que imita plumaje, trazos azul marino y amarillos alrededor de la cara, ojos negros con media luna amarilla y pico café con punta rosa.",
+  "toro-cafe": {
+   "nombre": "Toro café",
+   "descripcion": "Toro de pintura realista: frente café rojizo con pelo tallado, mejillas negras, ojos amarillos, hocico rosado y cuernos grises de punta negra.",
    "fotos": [
-    "a050"
+    "a018"
    ],
-   "principal": "a050",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "gallo-cresta-azul": {
-   "nombre": "Gallo de cresta azul",
-   "descripcion": "Gallo de rostro blanco con cresta de franja central azul marino dentada, bandas anaranjadas, rojas y azul cielo, ojos amarillos de rayos negros, pico verde y adornos amarillos con espirales y puntos negros.",
-   "fotos": [
-    "a031",
-    "a067"
-   ],
-   "principal": "a031",
-   "categoria": "danza-gallo",
-   "certeza": "alta"
-  },
-  "jaguar-orejas-rojas": {
-   "nombre": "Felino de orejas rojas",
-   "descripcion": "Felino amarillo anaranjado con manchas negras redondeadas, puntos negros alrededor del ojo y rayas negras en el hocico; orejas rojas con interior blanco, ojo verde y hocico abierto con colmillos blancos.",
-   "fotos": [
-    "a063"
-   ],
-   "principal": "a063",
+   "principal": "a018",
    "categoria": "otro-animal",
-   "certeza": "media"
+   "certeza": "alta"
   },
   "ave-azul-pico-curvo": {
    "nombre": "Ave azul de pico curvo",
@@ -1148,279 +1243,45 @@
    "categoria": "otro-animal",
    "certeza": "baja"
   },
-  "canido-negro-nariz-gris": {
-   "nombre": "Cánido negro de nariz gris (¿coyote o perro?)",
-   "descripcion": "Máscara negra con orejas anaranjada y verde, cejas anchas en franjas azul, roja, amarilla y azul marino, línea amarilla de la frente al hocico, banda de arcoíris sobre el hocico, mejilla blanca y nariz gris oscuro.",
+  "coyote-azul-turquesa": {
+   "nombre": "Coyote azul turquesa",
+   "descripcion": "Coyote azul turquesa con orejas del mismo azul, bandas roja, amarilla, azul marino y anaranjada en V, espirales de colores en las mejillas y línea de puntos sobre el hocico.",
    "fotos": [
-    "a136"
+    "a091"
    ],
-   "principal": "a136",
+   "principal": "a091",
    "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "vida-muerte-malva": {
-   "nombre": "Vida y muerte de barba de colores",
-   "descripcion": "Rostro partido a lo largo: una mitad es un hombre color malva con ojo azul de rayos y ceja y barba talladas en ondas rojas, amarillas, azul marino, rosas y azul claro; la otra es una calavera crema con cuenca oscura, ceja anaranjada y dientes rayados de colores.",
-   "fotos": [
-    "a127",
-    "a121"
-   ],
-   "principal": "a127",
-   "categoria": "vida-y-muerte",
    "certeza": "alta"
   },
-  "venado-astas-azules": {
-   "nombre": "Venado de astas azules",
-   "descripcion": "Venado de cara anaranjada con franja central amarilla moteada de negro, estrella roja en la frente, orejas azules y grandes astas azul marino con círculos rojos, amarillos y verdes.",
+  "jaguar-anaranjado-con-buho": {
+   "nombre": "Búho sobre felino anaranjado",
+   "descripcion": "Felino anaranjado con manchas café rojizo, ojos verde limón, colmillos blancos y lengua roja; encima, un búho gris de ojos amarillos y pico anaranjado, sin pestañas.",
    "fotos": [
-    "a060",
-    "a056"
+    "a057"
    ],
-   "principal": "a060",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "canido-anaranjado": {
-   "nombre": "Cánido anaranjado (¿zorra?)",
-   "descripcion": "Cánido de hocico largo, anaranjado con trazos negros cortos que imitan pelo, orejas puntiagudas grises por dentro, ojos verde olivo con contorno blanco y nariz negra.",
-   "fotos": [
-    "a055",
-    "a036"
-   ],
-   "principal": "a055",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "chivo-azul-cuernos-rojos": {
-   "nombre": "Chivo azul de cuernos rojos",
-   "descripcion": "Chivo de rostro alargado en franjas diagonales azul marino y celeste, cuernos largos y curvos rojos con rebordes amarillos, ojo amarillo de iris verde y franja verde en la boca.",
-   "fotos": [
-    "a062"
-   ],
-   "principal": "a062",
-   "categoria": "danza-chivo",
-   "certeza": "media"
-  },
-  "cebra-blanco-negro": {
-   "nombre": "Cebra blanco y negro",
-   "descripcion": "Cebra de franjas negras y blancas en todo el rostro, ojos color miel, nariz negra y orejas grises jaspeadas con interior dorado.",
-   "fotos": [
-    "a160"
-   ],
-   "principal": "a160",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "diablo-cuernos-rayados": {
-   "nombre": "Diablo rojo de cuernos rayados",
-   "descripcion": "Diablo de rostro rojo brillante con cuernos curvos rayados en negro, ojos amarillos de iris anaranjado y ceño marcado en negro. Tiene nariz larga y ganchuda, boca abierta con colmillos blancos y dientes amarillos, y barbilla negra en punta.",
-   "fotos": [
-    "a162"
-   ],
-   "principal": "a162",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "chivo-azul-hocico-rosa": {
-   "nombre": "Chivo azul de hocico rosa",
-   "descripcion": "Rostro alargado azul y morado con cuernos jaspeados beige y gris, orejas amarillo limón, espiral morada en la frente sobre un rombo anaranjado, hocico rosa con líneas onduladas y ojos verdes.",
-   "fotos": [
-    "a003"
-   ],
-   "principal": "a003",
-   "categoria": "danza-chivo",
-   "certeza": "media"
-  },
-  "el-tiempo-corona-azul": {
-   "nombre": "El Tiempo de corona azul",
-   "descripcion": "Máscara de tres rostros de piel gris beige con ojos azules y barba negra. La corona lleva una banda azul con X y cruces, un sol amarillo con cara en lo alto y, a un lado, un elemento oscuro con estrella.",
-   "fotos": [
-    "a094"
-   ],
-   "principal": "a094",
-   "categoria": "el-tiempo",
-   "certeza": "alta"
-  },
-  "calavera-y-rostro-negro-estrellas": {
-   "nombre": "Calavera y rostro negro de estrellas",
-   "descripcion": "Collage con dos máscaras: una calavera color hueso con rasgos delineados en negro y un rostro negro alargado cubierto de puntos color crema en líneas onduladas, con estrellas anaranjadas de ocho puntas en frente y barbilla, ojos azules y bigote en espiral.",
-   "fotos": [
-    "a153"
-   ],
-   "principal": "a153",
-   "categoria": "incierto",
-   "certeza": "baja"
-  },
-  "diablo-rojo-oscuro-lengua": {
-   "nombre": "Diablo rojo oscuro de lengua de fuera",
-   "descripcion": "Diablo de rostro rojo oscuro con cuernos largos negros de base clara, flamas negras y arrugas talladas en la frente, cejas negras de pelo tallado y ojos amarillos de pupila rasgada. Tiene colmillos claros, lengua roja anaranjada de fuera y barba negra.",
-   "fotos": [
-    "a007"
-   ],
-   "principal": "a007",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "felino-fauces-abiertas": {
-   "nombre": "Felino de fauces abiertas",
-   "descripcion": "Cabeza de felino anaranjada con manchas negras, rayas en el hocico, ojo verde amarillento, oreja roja y fauces rojas abiertas con colmillos blancos.",
-   "fotos": [
-    "a138"
-   ],
-   "principal": "a138",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "baja"
-  },
-  "toro-azul": {
-   "nombre": "Toro azul",
-   "descripcion": "Toro azul rey con rombo en la frente rodeado de puntos, chevrones amarillos en la caña, costados salmón con espirales amarillas, orejas rojas con círculo rosa y azul, hocico negro y cuernos oscuros veteados.",
-   "fotos": [
-    "a141",
-    "a014"
-   ],
-   "principal": "a141",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "diablo-toro-felinos": {
-   "nombre": "Diablo con toro y felinos",
-   "descripcion": "Rostro rojo con grandes cuernos negros y una pequeña cabeza de toro gris sobre la frente. Dos felinos amarillos moteados de azul y rojo enmarcan la cara y rodean los ojos verdes; tiene dientes blancos puntiagudos, colmillos claros y nariz roja chata.",
-   "fotos": [
-    "a019"
-   ],
-   "principal": "a019",
-   "categoria": "diablo",
-   "certeza": "media"
-  },
-  "tigre-anaranjado": {
-   "nombre": "Tigre anaranjado",
-   "descripcion": "Felino anaranjado de rayas negras con zonas blancas alrededor de los ojos verdes, orejas grises con textura de pelo y hocico abierto con lengua roja y colmillos blancos.",
-   "fotos": [
-    "a034"
-   ],
-   "principal": "a034",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "elefante": {
-   "nombre": "Elefante",
-   "descripcion": "Cabeza roja de perfil con oreja grande rosa y morada, trompa enroscada con anillos cafés, colmillos amarillos y un mosaico de patrones geométricos.",
-   "fotos": [
-    "a010"
-   ],
-   "principal": "a010",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "tecolote-rojo": {
-   "nombre": "Tecolote rojo",
-   "descripcion": "Tecolote de rostro rojo con orejas puntiagudas, ojos blancos con rayos negros, franja verde lima que forma el pico curvo y motivo rojo y dorado en la frente.",
-   "fotos": [
-    "a004"
-   ],
-   "principal": "a004",
-   "categoria": "danza-tecolote",
-   "certeza": "confirmada-familia"
-  },
-  "tigre-blanco-con-buho": {
-   "nombre": "Búho sobre tigre blanco",
-   "descripcion": "Cabeza de búho café jaspeado con ojos grandes amarillo-anaranjado y pico gris morado, sobre el rostro de un felino blanco con rayas y manchas negras, ojos azul verdoso, nariz rosa, colmillos amarillos y lengua roja.",
-   "fotos": [
-    "a002"
-   ],
-   "principal": "a002",
+   "principal": "a057",
    "categoria": "compuesta",
-   "certeza": "baja"
-  },
-  "pantera-negra-ojos-amarillos": {
-   "nombre": "Felino negro de ojos amarillos",
-   "descripcion": "Felino negro brillante de orejas redondeadas, ojos amarillos con contorno gris, bigotes grises pintados, nariz rojiza y hocico abierto con lengua roja y colmillos amarillos.",
-   "fotos": [
-    "a037"
-   ],
-   "principal": "a037",
-   "categoria": "otro-animal",
    "certeza": "media"
   },
-  "jabali": {
-   "nombre": "Jabalí",
-   "descripcion": "Cabeza café grisácea con veteado tipo pelaje, cresta tallada sobre la frente, ojos anaranjados, colmillos blancos curvos y arrugas talladas en el hocico.",
+  "lince-naturalista": {
+   "nombre": "Lince naturalista",
+   "descripcion": "Lince pintado a pinceladas ocre y gris con manchas grises, orejas de punta negra, ojos verde amarillo y gorguera rayada alrededor de la cara.",
    "fotos": [
-    "a005"
+    "a054"
    ],
-   "principal": "a005",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "cebra-amarilla": {
-   "nombre": "Cebra amarilla y azul",
-   "descripcion": "Cebra con rayas amarillas y azul marino en V sobre frente y caña, laterales de rayas blancas y negras, orejas amarillas con interior rosa y crin corta.",
-   "fotos": [
-    "a017"
-   ],
-   "principal": "a017",
-   "categoria": "otro-animal",
-   "certeza": "alta"
-  },
-  "felino-lunares": {
-   "nombre": "Felino amarillo de lunares (¿ocelote?)",
-   "descripcion": "Felino amarillo con lunares rojos, anaranjados, negros y gris oscuro, orejas grises cepilladas, ojos verdes y hocico largo con rayas negras de bigote.",
-   "fotos": [
-    "a081",
-    "a073"
-   ],
-   "principal": "a081",
+   "principal": "a054",
    "categoria": "danza-lince-ocelote",
    "certeza": "media"
   },
-  "canido-negro-ojos-rojos": {
-   "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)",
-   "descripcion": "Máscara negra con mejillas blancas, orejas verdes y amarillas, línea amarilla al centro de la frente, banda de arcoíris en V sobre el hocico, ojos de iris rojo y nariz café.",
+  "buho-gris-pico-anaranjado": {
+   "nombre": "Búho gris de pico anaranjado",
+   "descripcion": "Búho de cara gris verdosa jaspeada, ojos negros con aro anaranjado, trazos negros cortos en la frente y gran pico anaranjado; borde superior recto con dos puntas a los lados y cordón de fibra para colgar.",
    "fotos": [
-    "a076"
+    "a124",
+    "a071"
    ],
-   "principal": "a076",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "pavo-real-pico-dorado": {
-   "nombre": "Pavo real de pico dorado",
-   "descripcion": "Ave azul marino con franjas blancas en V, pico dorado, banda dorada en la frente con rombo y puntos rojos, y penacho de plumas amarillas con rayas azules y ocelos morados.",
-   "fotos": [
-    "a027"
-   ],
-   "principal": "a027",
-   "categoria": "otro-animal",
-   "certeza": "media"
-  },
-  "guacamaya-verde": {
-   "nombre": "Guacamaya verde",
-   "descripcion": "Guacamaya de cara alargada verde olivo con pico negro curvo y copete de bandas roja, amarilla, azul celeste y anaranjada con franja central azul marino en espiga.",
-   "fotos": [
-    "a165"
-   ],
-   "principal": "a165",
-   "categoria": "danza-guacamaya",
-   "certeza": "confirmada-familia"
-  },
-  "borrego-anaranjado": {
-   "nombre": "Borrego anaranjado",
-   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente.",
-   "fotos": [
-    "a164"
-   ],
-   "principal": "a164",
-   "categoria": "danza-borrego",
-   "certeza": "confirmada-familia"
-  },
-  "burro-azul-orejas-arcoiris": {
-   "nombre": "Posible burro azul de orejas de arcoíris",
-   "descripcion": "Cabeza azul grisáceo con pinceladas amarillas como pelaje, orejas largas y anchas con franjas concéntricas amarillo, rojo, verde y azul celeste, ojos verdes y hocico azul marino con blanco.",
-   "fotos": [
-    "a159"
-   ],
-   "principal": "a159",
-   "categoria": "danza-burro",
+   "principal": "a124",
+   "categoria": "incierto",
    "certeza": "baja"
   },
   "tigre-blanco": {
@@ -1433,54 +1294,117 @@
    "categoria": "otro-animal",
    "certeza": "alta"
   },
-  "coyote-azul-turquesa": {
-   "nombre": "Coyote azul turquesa",
-   "descripcion": "Coyote azul turquesa con orejas del mismo azul, chevrón de bandas roja, amarilla, azul marino y anaranjada, espirales de colores en las mejillas y línea de puntos sobre el hocico.",
+  "chivo-azul-crema": {
+   "nombre": "Chivo azul y crema",
+   "descripcion": "Chivo azul con la parte central de la cara en crema, cuernos largos gris claro, orejas azules, ojos verdes y barba de fibra blanca.",
    "fotos": [
-    "a091"
+    "a090"
    ],
-   "principal": "a091",
+   "principal": "a090",
+   "categoria": "danza-chivo",
+   "certeza": "alta"
+  },
+  "canido-anaranjado": {
+   "nombre": "Cánido anaranjado (¿zorro?)",
+   "descripcion": "Cánido de hocico largo, anaranjado con trazos negros cortos que imitan pelo, orejas puntiagudas grises por dentro, ojos verde olivo con contorno blanco y nariz negra.",
+   "fotos": [
+    "a055",
+    "a036"
+   ],
+   "principal": "a055",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "chivo-azul-hocico-rosa": {
+   "nombre": "Chivo azul de hocico rosa (¿de la danza?)",
+   "descripcion": "Rostro alargado azul y morado con cuernos jaspeados beige y gris, orejas amarillo limón, espiral morada en la frente sobre un rombo anaranjado, hocico rosa con líneas onduladas y ojos verdes.",
+   "fotos": [
+    "a003"
+   ],
+   "principal": "a003",
+   "categoria": "danza-chivo",
+   "certeza": "media"
+  },
+  "coyote-blanco-arcoiris": {
+   "nombre": "Coyote blanco de arcoíris",
+   "descripcion": "Coyote de base blanca con orejas amarillas y azul marino, franjas de arcoíris en V en la frente, espirales de arcoíris en las mejillas y línea de puntos de colores por el hocico. Ojos amarillos con iris verde y nariz negra.",
+   "fotos": [
+    "a024",
+    "a022"
+   ],
+   "principal": "a024",
+   "categoria": "danza-coyote",
+   "certeza": "confirmada-familia"
+  },
+  "toro-multicolor": {
+   "nombre": "Toro multicolor",
+   "descripcion": "Toro de frente roja con antifaz amarillo en V, mejillas azules con espirales verdes, orejas con franjas en espiral, ojos verdes y cuernos negros veteados.",
+   "fotos": [
+    "a016"
+   ],
+   "principal": "a016",
+   "categoria": "otro-animal",
+   "certeza": "alta"
+  },
+  "ave-pico-ganchudo": {
+   "nombre": "Ave de pico ganchudo",
+   "descripcion": "Cabeza redonda de ave en rojo y verde a pincel seco con trazos azules como plumas, parche crema alrededor del ojo y pico ganchudo abierto negro y crema.",
+   "fotos": [
+    "a126"
+   ],
+   "principal": "a126",
+   "categoria": "danza-guacamaya",
+   "certeza": "baja"
+  },
+  "canido-gris-verdoso": {
+   "nombre": "Cánido gris verdoso",
+   "descripcion": "Cánido de aspecto de lobo pintado a pincel seco en gris, verde y café, con orejas de interior amarillo verdoso, ojos amarillos de iris verde y boca abierta color guinda.",
+   "fotos": [
+    "a083"
+   ],
+   "principal": "a083",
+   "categoria": "danza-coyote",
+   "certeza": "baja"
+  },
+  "rostro-lila-iguana-serpientes": {
+   "nombre": "Rostro lila con iguana y serpientes",
+   "descripcion": "Rostro lila con un gran ojo verde, cubierto por una iguana verde de cresta azul, serpientes amarillas con manchas cafés que muestran colmillos, y abajo un animal enroscado café anaranjado con manchas azules.",
+   "fotos": [
+    "a021"
+   ],
+   "principal": "a021",
+   "categoria": "compuesta",
+   "certeza": "baja"
+  },
+  "coyote-azul-orejas-largas": {
+   "nombre": "Coyote azul de orejas largas",
+   "descripcion": "Coyote azul cielo con orejas largas amarillas por dentro y azul marino por fuera, franjas de arcoíris en V, espirales en las mejillas y nariz redonda color vino.",
+   "fotos": [
+    "a041",
+    "a029"
+   ],
+   "principal": "a041",
    "categoria": "danza-coyote",
    "certeza": "alta"
   },
-  "coyote-amarillo-orejas-verdes": {
-   "nombre": "Coyote amarillo de orejas verdes",
-   "descripcion": "Coyote amarillo con orejas verdes y franjas concéntricas negra, verde, roja y azul grisáceo alrededor del ojo que bajan por el hocico; mandíbula y cuello negros.",
+  "ave-negra-cabellera-azul": {
+   "nombre": "Ave negra de cabellera",
+   "descripcion": "Cabeza de ave negra cubierta de trazos cortos color crema como plumas, ojo rojo con rayas blancas, pico largo y curvo con borde crema y cabellera larga de fibra azul marino oscuro.",
    "fotos": [
-    "a123"
+    "a061"
    ],
-   "principal": "a123",
-   "categoria": "danza-coyote",
+   "principal": "a061",
+   "categoria": "nahual",
    "certeza": "media"
   },
-  "diablo-criatura-alada": {
-   "nombre": "Diablo con criatura alada",
-   "descripcion": "Diablo de rostro rojo brillante con flamas negras en la frente, cuernos negros largos y curvos, ojos amarillos de pupila rasgada, dientes dorados y dos colmillos largos color hueso. Bajo la barbilla lleva una criatura negra alada de ojos amarillos y pico.",
+  "buho-gris-azulado": {
+   "nombre": "Búho gris azulado",
+   "descripcion": "Búho de cara gris azulada con franjas blancas, cejas azul marino, orejas cortas puntiagudas, ojos amarillo claro con rayos negros e iris azul y gran pico amarillo anaranjado.",
    "fotos": [
-    "a103"
+    "a078"
    ],
-   "principal": "a103",
-   "categoria": "diablo",
-   "certeza": "alta"
-  },
-  "perro-blanco-mancha": {
-   "nombre": "Perro blanco de mancha café",
-   "descripcion": "Perro blanco brillante con una mancha café en una oreja y alrededor de un ojo, ojos verdes, nariz café rojiza, lengua roja y puntos negros de bigote.",
-   "fotos": [
-    "a144"
-   ],
-   "principal": "a144",
-   "categoria": "danza-perro",
-   "certeza": "media"
-  },
-  "trio-rostros-negros-astros": {
-   "nombre": "Tres rostros negros con astros",
-   "descripcion": "Tres máscaras humanas negras laqueadas con decoración dorada: una con líneas de puntos, estrellas rojas de cuatro puntas y barba en espiral; otra con orejas, estrellas de ocho puntas en la frente y la barbilla y bigote ondulado; la tercera con lunas, estrellas y una estrella fugaz.",
-   "fotos": [
-    "a009"
-   ],
-   "principal": "a009",
-   "categoria": "rostro-humano",
+   "principal": "a078",
+   "categoria": "incierto",
    "certeza": "baja"
   },
   "felino-moteado": {
@@ -1493,9 +1417,71 @@
    "categoria": "danza-lince-ocelote",
    "certeza": "media"
   },
+  "gallo-cresta-azul": {
+   "nombre": "Gallo de cresta azul",
+   "descripcion": "Gallo de rostro blanco con cresta de franja central azul marino dentada, bandas anaranjadas, rojas y azul cielo, ojos amarillos de rayos negros, pico verde y adornos amarillos con espirales y puntos negros.",
+   "fotos": [
+    "a031",
+    "a067"
+   ],
+   "principal": "a031",
+   "categoria": "danza-gallo",
+   "certeza": "alta"
+  },
+  "vida-muerte-barba-cafe": {
+   "nombre": "Vida y muerte de barba café",
+   "descripcion": "Rostro partido a la mitad: un lado es un hombre de piel clara con ojo azul, ceja y barba café en espirales; el otro es una calavera amarilla con ojo negro y blanco, dientes y líneas negras.",
+   "fotos": [
+    "a106"
+   ],
+   "principal": "a106",
+   "categoria": "vida-y-muerte",
+   "certeza": "alta"
+  },
+  "equino-rayado": {
+   "nombre": "Equino rayado",
+   "descripcion": "Equino gris de hocico largo con franjas anaranjadas en V, rayas blanco y negro tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
+   "fotos": [
+    "a161"
+   ],
+   "principal": "a161",
+   "categoria": "incierto",
+   "certeza": "baja"
+  },
+  "diablo-criatura-alada": {
+   "nombre": "Diablo con criatura alada",
+   "descripcion": "Diablo de rostro rojo brillante con flamas negras en la frente, cuernos negros largos y curvos, ojos amarillos de pupila rasgada, dientes dorados y dos colmillos largos color hueso. Bajo la barbilla lleva una criatura negra alada de ojos amarillos y pico.",
+   "fotos": [
+    "a103"
+   ],
+   "principal": "a103",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "coyote-negro-lineas-blancas": {
+   "nombre": "Cánido negro de líneas blancas (¿coyote o perro?)",
+   "descripcion": "Máscara negra con una V blanca en la frente, filetes blancos en orejas y hocico, espirales blancas en las mejillas, ojos amarillos de iris rojo y nariz roja redonda.",
+   "fotos": [
+    "a059",
+    "a059b"
+   ],
+   "principal": "a059",
+   "categoria": "danza-coyote",
+   "certeza": "media"
+  },
+  "hombre-aguila": {
+   "nombre": "Rostro humano con casco de águila",
+   "descripcion": "Rostro humano color piel rosado con ojo blanco y negro y ceja negra, cubierto por una cabeza de águila café con rayas amarillas a modo de casco; el pico queda sobre la frente y la mandíbula del ave bajo la barbilla.",
+   "fotos": [
+    "a120"
+   ],
+   "principal": "a120",
+   "categoria": "compuesta",
+   "certeza": "media"
+  },
   "rostro-negro-cresta-roja": {
    "nombre": "Rostro negro de cresta roja",
-   "descripcion": "Rostro negro laqueado con hilera de picos rojos al centro de la cabeza, cejas rojas, ojos anaranjados en forma de flama, orejas felinas con interior rojo, sonrisa ancha de dientes crema rayados de rojo y barbilla roja.",
+   "descripcion": "Rostro negro brillante con hilera de picos rojos al centro de la cabeza, cejas rojas, ojos anaranjados en forma de flama, orejas felinas con interior rojo, sonrisa ancha de dientes crema rayados de rojo y barbilla roja.",
    "fotos": [
     "a134",
     "a104"
@@ -1504,540 +1490,87 @@
    "categoria": "nahual",
    "certeza": "baja"
   },
-  "rostro-negro-tecolote": {
-   "nombre": "Rostro negro con tecolote",
-   "descripcion": "Rostro humano alargado, negro brillante, con un tecolote negro tallado en la frente (ojos anaranjados y pico gris); cejas doradas en picos, ojos con borde dorado, dientes amarillos, lengua roja de fuera y barbilla larga y puntiaguda.",
+  "jaguar-orejas-rojas": {
+   "nombre": "Felino de orejas rojas",
+   "descripcion": "Felino amarillo anaranjado con manchas negras redondeadas, puntos negros alrededor del ojo y rayas negras en el hocico; orejas rojas con interior blanco, ojo verde y hocico abierto con colmillos blancos.",
    "fotos": [
-    "a043",
-    "a111"
+    "a063"
    ],
-   "principal": "a043",
-   "categoria": "nahual",
-   "certeza": "baja"
-  },
-  "pavo-real-ocelos-azules": {
-   "nombre": "Pavo real de tres plumas",
-   "descripcion": "Cabeza azul marino con franja blanca del ojo al cuello, pico dorado, banda dorada con puntos rojos y penacho de tres grandes plumas de pavo real con ocelos azules.",
-   "fotos": [
-    "a149"
-   ],
-   "principal": "a149",
+   "principal": "a063",
    "categoria": "otro-animal",
    "certeza": "media"
   },
-  "gallo-anaranjado": {
-   "nombre": "Gallo anaranjado",
-   "descripcion": "Gallo de cara anaranjada con pico amarillo grueso, cresta escalonada color vino con triángulos amarillos, barbas rojas y ojos de iris verde.",
+  "diablo-cuernos-rayados": {
+   "nombre": "Diablo rojo de cuernos rayados",
+   "descripcion": "Diablo de rostro rojo brillante con cuernos curvos rayados en negro, ojos amarillos de iris anaranjado y ceño marcado en negro. Tiene nariz larga y ganchuda, boca abierta con colmillos blancos y dientes amarillos, y barbilla negra en punta.",
    "fotos": [
-    "a163"
+    "a162"
    ],
-   "principal": "a163",
-   "categoria": "danza-gallo",
+   "principal": "a162",
+   "categoria": "diablo",
+   "certeza": "alta"
+  },
+  "tecolote-rojo": {
+   "nombre": "Tecolote rojo",
+   "descripcion": "Tecolote de rostro rojo con orejas puntiagudas, ojos blancos con rayos negros, franja verde lima que forma el pico curvo y motivo rojo y dorado en la frente.",
+   "fotos": [
+    "a004"
+   ],
+   "principal": "a004",
+   "categoria": "danza-tecolote",
    "certeza": "confirmada-familia"
   },
-  "rostro-dos-tonos": {
-   "nombre": "Rostro de dos tonos",
-   "descripcion": "Rostro partido de arriba abajo: una mitad color piel rosado con arrugas talladas y otra anaranjada de ceño fruncido. Tiene cabello café oscuro, una bola roja en la frente, ojos azules, bigote negro en espiral, piocha negra y sonrisa torcida con dientes blancos.",
+  "canido-negro-boca-abierta": {
+   "nombre": "Cánido negro de boca abierta (¿coyote o perro?)",
+   "descripcion": "Máscara negra con línea amarilla de la frente al hocico, cejas y bandas de arcoíris sobre el hocico, ojo rojo con anillo verde, orejas verde olivo y mostaza, quijada blanca, nariz roja y boca abierta con lengua y colmillos.",
    "fotos": [
-    "a158"
+    "a157"
    ],
-   "principal": "a158",
-   "categoria": "rostro-humano",
+   "principal": "a157",
+   "categoria": "danza-coyote",
    "certeza": "baja"
   },
-  "jaguar-amarillo-con-buho": {
-   "nombre": "Búho sobre jaguar amarillo",
-   "descripcion": "Felino amarillo con sombras anaranjadas y manchas negras de centro café, ojos verdes de rayos, colmillos blancos y lengua roja; encima, un búho gris verdoso con textura de plumas, ojos amarillos con pestañas negras curvas y pico gris.",
+  "chivo-blanco-negro": {
+   "nombre": "Chivo blanco y negro",
+   "descripcion": "Chivo blanco y negro brillante con cuernos largos café oscuro, orejas negras de interior blanco, ojos amarillos de iris verde, boca verde y barba de fibra clara.",
    "fotos": [
-    "a044",
-    "a033",
-    "a039",
-    "a072"
+    "a119"
    ],
-   "principal": "a044",
-   "categoria": "compuesta",
-   "certeza": "media"
+   "principal": "a119",
+   "categoria": "danza-chivo",
+   "certeza": "alta"
   },
-  "toro-cafe": {
-   "nombre": "Toro café",
-   "descripcion": "Toro de pintura realista: frente café rojizo con pelo tallado, mejillas negras, ojos amarillos, hocico rosado y cuernos grises de punta negra.",
+  "toro-azul": {
+   "nombre": "Toro azul",
+   "descripcion": "Toro azul rey con rombo en la frente rodeado de puntos, franjas amarillas en V sobre la nariz, costados salmón con espirales amarillas, orejas rojas con círculo rosa y azul, hocico negro y cuernos oscuros veteados.",
    "fotos": [
-    "a018"
+    "a141",
+    "a014"
    ],
-   "principal": "a018",
+   "principal": "a141",
    "categoria": "otro-animal",
    "certeza": "alta"
+  },
+  "buho-gris-verdoso": {
+   "nombre": "Búho gris verdoso",
+   "descripcion": "Búho de cara gris verdosa con trazos finos de plumaje, grandes ojos amarillos con círculos negros, pico amarillo y penachos rayados en la frente.",
+   "fotos": [
+    "a118"
+   ],
+   "principal": "a118",
+   "categoria": "danza-tecolote",
+   "certeza": "baja"
   }
  },
  "fotos": {
-  "a049": {
-   "alt": "Máscara de mariposa con alas azul marino y amarillas decoradas con espirales y antenas enroscadas",
-   "descripcion": "Pieza en forma de mariposa con alas azules y amarillas decoradas con espirales y puntos, sobre una base verde.",
-   "recorte": false
-  },
-  "a166": {
-   "alt": "Máscara de lince crema con rayas rojas y negras, zigzag rojo en la frente y ojos azules, vista de lado en pared crema",
-   "descripcion": "Lince de la Danza de los Morenos, crema con rayas rojas y negras, un zigzag rojo en la frente y orejas grises.",
-   "recorte": false
-  },
-  "a019": {
-   "alt": "Máscara de diablo rojo con grandes cuernos negros, un toro pequeño en la frente y felinos moteados alrededor",
-   "descripcion": "Máscara de diablo de rostro rojo con grandes cuernos negros y una cabecita de toro en la frente. Dos felinos amarillos moteados enmarcan la cara y rodean los ojos.",
-   "recorte": false
-  },
-  "a069": {
-   "alt": "Dos vistas de una máscara de tigre blanco con rayas negras, ojos verdes y fauces abiertas con colmillos",
-   "descripcion": "Collage con dos vistas de un tigre blanco de rayas negras y ojos verdes, con las fauces abiertas que muestran colmillos amarillos y la lengua roja.",
-   "recorte": false
-  },
-  "a045": {
-   "alt": "Máscara de felino anaranjada con rosetas negras, orejas rojas puntiagudas y ojos azules",
-   "descripcion": "Máscara de felino de hocico alargado y orejas altas, anaranjada con manchas negras en forma de roseta y ojos azules.",
-   "recorte": false
-  },
-  "a088": {
-   "alt": "Máscara de chivo roja y amarilla con cuernos largos rayados en blanco y negro y barba blanca",
-   "descripcion": "Máscara de chivo roja y amarilla con largos cuernos rayados en blanco y negro y barba de fibra blanca.",
-   "recorte": false
-  },
-  "a040": {
-   "alt": "Máscara de coyote blanca con franjas de arcoíris, espiral en la mejilla, orejas amarillas y azules y nariz café",
-   "descripcion": "Coyote de base blanca con orejas amarillas y azul turquesa, franjas de arcoíris en V, espiral en la mejilla y nariz café.",
-   "recorte": false
-  },
-  "a102": {
-   "alt": "Máscara de nahual negro con cara de felino, ojo naranja, orejas con rayas rojas y colmillos, vista de lado",
-   "descripcion": "Nahual negro de cara felina, con orejas puntiagudas rayadas en rojo, ojos naranjas y colmillos a la vista. No forma parte de la danza.",
-   "recorte": false
-  },
-  "a105": {
-   "alt": "Máscara negra brillante con ojos naranjas en forma de sol, orejas puntiagudas y la lengua de fuera",
-   "descripcion": "Máscara negra brillante de frente muy alta, con ojos naranjas como soles, orejas puntiagudas y la lengua de fuera.",
-   "recorte": false
-  },
-  "a165": {
-   "alt": "Máscara de guacamaya verde con pico negro y copete de bandas rojas, amarillas y azules, de frente en pared blanca",
-   "descripcion": "Guacamaya de la Danza de los Morenos, de cara verde y pico negro. La cabeza está pintada en bandas rojas, amarillas, azules y anaranjadas.",
-   "recorte": false
-  },
-  "a065": {
-   "alt": "Collage de tres máscaras: tecolote rojo de pico verde, ave azul de pico amarillo y coyote blanco de colores",
-   "descripcion": "Collage de tres máscaras: el tecolote rojo de pico verde, un ave azul de pico largo y amarillo, y un detalle del coyote blanco de franjas de colores.",
-   "recorte": false
-  },
   "a137": {
    "alt": "Máscara de El Tiempo de tres cuartos, con tres rostros, corona de sol con cara y estrella dorada",
    "descripcion": "El Tiempo visto de tres cuartos: se aprecian los tres rostros barbados, la banda dorada y la corona con el sol de cara humana y una estrella dorada sobre fondo azul.",
    "recorte": false
   },
-  "a149": {
-   "alt": "Máscara de ave azul marino con pico dorado y penacho de plumas de pavo real",
-   "descripcion": "Ave azul marino de pico dorado con un penacho de tres plumas de pavo real y una banda dorada con puntos rojos.",
-   "recorte": false
-  },
-  "a025": {
-   "alt": "Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona",
-   "descripcion": "El Tiempo de frente: tres rostros fundidos que comparten ojos, con bigotes y barba negros rizados, diadema dorada y corona con un sol con cara.",
-   "recorte": false
-  },
-  "a037": {
-   "alt": "Máscara de pantera negra con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos",
-   "descripcion": "Felino negro brillante con ojos amarillos, bigotes grises pintados, nariz rojiza y hocico abierto con colmillos amarillos.",
-   "recorte": false
-  },
-  "a114": {
-   "alt": "Máscara negra de rostro humano con un ave negra de alas abiertas posada en la cabeza",
-   "descripcion": "Rostro negro con un ave negra posada en la cabeza; las alas abiertas enmarcan la cara. Tiene ojos amarillos y cejas guinda.",
-   "recorte": false
-  },
-  "a161": {
-   "alt": "Máscara de madera de equino gris con franjas anaranjadas y rayas blanco y negro tipo cebra, orejas cafés, en pared blanca",
-   "descripcion": "Máscara de equino de hocico largo, pintada de gris con franjas anaranjadas en V y rayas blancas y negras a los lados, como de cebra. Tiene orejas cafés y un copete negro entre ellas.",
-   "recorte": false
-  },
-  "a076": {
-   "alt": "Máscara de coyote negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
-   "descripcion": "Coyote de rostro negro y mejillas blancas, con bandas de arcoíris que cruzan el hocico como bigotes y orejas verdes y amarillas.",
-   "recorte": false
-  },
-  "a028": {
-   "alt": "Máscara de chivo con franjas rojas y amarillas, cuernos largos negros con anillos blancos y barba de fibra blanca",
-   "descripcion": "Chivo de rostro con franjas diagonales rojas y amarillas, cuernos largos negros con anillos blancos y barba de fibra blanca.",
-   "recorte": false
-  },
-  "a039": {
-   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y colmillos, con un búho gris de ojos amarillos encima",
-   "descripcion": "Vista frontal cercana del felino amarillo con manchas en roseta, ojos verdes y colmillos, con un búho gris sobre la cabeza.",
-   "recorte": false
-  },
-  "a095": {
-   "alt": "Vista lateral de máscara de coyote blanca con espiral de arcoíris y orejas amarilla y azul",
-   "descripcion": "Vista lateral del coyote blanco de arcoíris, que deja ver el perfil del hocico y la espiral de colores en la mejilla.",
-   "recorte": false
-  },
-  "a111": {
-   "alt": "Máscara negra con tecolote en la frente, vista de tres cuartos, con cejas doradas y lengua roja",
-   "descripcion": "Vista de lado del rostro negro con un tecolote en la frente; se aprecian la nariz larga y la barbilla saliente.",
-   "recorte": false
-  },
-  "a121": {
-   "alt": "Máscara partida en rostro humano malva con barba de colores y calavera crema, vista de lado",
-   "descripcion": "Máscara de rostro partido: de un lado, un rostro humano color malva con barba tallada en ondas de colores; del otro, una calavera color crema con dientes pintados. Esta vista muestra sobre todo el lado de la calavera.",
-   "recorte": false
-  },
-  "a071": {
-   "alt": "Máscara de búho gris de ojos negros con aro anaranjado y pico anaranjado, vista de tres cuartos sobre pared amarilla",
-   "descripcion": "Máscara de búho de plumaje gris pintado a pinceladas, con grandes ojos negros de aro anaranjado y pico anaranjado.",
-   "recorte": false
-  },
-  "a010": {
-   "alt": "Máscara de elefante de perfil, roja con oreja rosa, trompa enroscada y patrones de colores",
-   "descripcion": "Máscara de elefante vista de perfil, roja con una gran oreja rosa y la trompa enroscada. Está cubierta de patrones de colores: hexágonos, gotas, chevrones y triángulos.",
-   "recorte": false
-  },
-  "a083": {
-   "alt": "Máscara de cánido gris de estilo realista con ojos amarillo verdoso y boca abierta",
-   "descripcion": "Máscara de cánido de estilo realista, con pelaje gris pintado a pincel, ojos amarillos y verdes y la boca abierta en color guinda.",
-   "recorte": false
-  },
-  "a035": {
-   "alt": "Máscara de nahual blanco con puntos dorados, cuencas negras, ojos rojos y cabellera de fibra clara, de tres cuartos",
-   "descripcion": "Nahual blanco visto de tres cuartos: base blanca con puntos dorados, grandes cuencas negras punteadas, ojos rojos, orejas rojas y cabellera de fibra clara.",
-   "recorte": false
-  },
-  "a167": {
-   "alt": "Máscara de burro gris con orejas largas rayadas y hocico blanco con fosas rosas, vista de perfil en pared blanca",
-   "descripcion": "Burro de la Danza de los Morenos visto de perfil: cara gris, orejas largas con rayitas blancas y hocico blanco con fosas nasales rosas.",
-   "recorte": false
-  },
-  "a047": {
-   "alt": "Máscara de chivo roja y amarilla con cuernos largos negros con rayas blancas y barba de fibra clara",
-   "descripcion": "Chivo de la Danza de los Morenos, rojo y amarillo, con largos cuernos negros rayados de blanco y barba de fibra.",
-   "recorte": false
-  },
-  "a036": {
-   "alt": "Máscara anaranjada de animal de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos",
-   "descripcion": "Máscara de animal de hocico largo, color anaranjado con trazos negros que imitan pelo, orejas grises con textura y ojo verde olivo.",
-   "recorte": false
-  },
-  "a151": {
-   "alt": "Máscara de pato café de perfil, con pico abierto y ojo amarillo",
-   "descripcion": "Cabeza de pato en tonos cafés con coronilla oscura, pico abierto y ojo amarillo.",
-   "recorte": false
-  },
-  "a066": {
-   "alt": "Máscara de cánido gris y negro con orejas puntiagudas, ojos azules y amarillos y hocico abierto con colmillos",
-   "descripcion": "Cánido de pelaje gris y negro con el hocico entreabierto, colmillos y lengua roja. Los ojos están pintados como dianas azules y amarillas.",
-   "recorte": false
-  },
-  "a124": {
-   "alt": "Máscara de búho gris con ojos negros de anillo naranja y pico anaranjado sobre pared amarilla",
-   "descripcion": "Máscara de búho en tonos grises moteados, con grandes ojos negros de anillo naranja y pico anaranjado, colgada sobre una pared amarilla.",
-   "recorte": false
-  },
-  "a123": {
-   "alt": "Máscara amarilla de coyote con orejas verdes y franjas de arcoíris alrededor del ojo, de perfil",
-   "descripcion": "Máscara de cánido amarilla, de orejas verdes, con franjas de colores en arcoíris alrededor del ojo y el hocico negro. Fotografiada de perfil sobre una pared azul claro.",
-   "recorte": false
-  },
-  "a100": {
-   "alt": "Máscara de cánido gris con trazos blancos, orejas doradas, ojos amarillos y nariz roja",
-   "descripcion": "Máscara de cánido gris con el pelaje marcado con trazos blancos, orejas doradas, ojos amarillos y nariz roja.",
-   "recorte": false
-  },
-  "a084": {
-   "alt": "Perfil de máscara de coyote crema con espirales de arcoíris y orejas amarilla y morada",
-   "descripcion": "Vista de perfil de una máscara de coyote de fondo crema con bandas y espirales de colores, orejas amarilla y morada y hocico negro.",
-   "recorte": false
-  },
-  "a070": {
-   "alt": "Máscara de cánido café y gris de hocico largo, orejas puntiagudas y ojos amarillos, vista de tres cuartos",
-   "descripcion": "Cánido de hocico largo pintado en tonos café, gris y anaranjado que imitan el pelaje, con ojos amarillos y nariz café.",
-   "recorte": false
-  },
-  "a106": {
-   "alt": "Máscara de rostro partido: mitad hombre barbado de ojo azul y mitad calavera amarilla",
-   "descripcion": "Rostro partido: de un lado, un hombre con barba y ojo azul; del otro, una calavera amarilla.",
-   "recorte": false
-  },
-  "a120": {
-   "alt": "Máscara de rostro humano de perfil dentro de una cabeza de águila café con pico amarillo",
-   "descripcion": "Rostro humano que asoma de una cabeza de águila: el pico queda sobre la frente y la mandíbula del ave bajo la barbilla.",
-   "recorte": false
-  },
-  "a050": {
-   "alt": "Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado",
-   "descripcion": "Máscara de búho azul y café, con grandes ojos negros de mirada entrecerrada y plumas sugeridas con trazos amarillos y azules.",
-   "recorte": false
-  },
-  "a048": {
-   "alt": "Máscara de felino negro con ojos verdes, nariz anaranjada, colmillos amarillos y lengua roja",
-   "descripcion": "Máscara de felino negro con ojos verdes, colmillos amarillos y la lengua roja de fuera.",
-   "recorte": false
-  },
-  "a013": {
-   "alt": "Máscara de pato en tonos cafés con ojos grandes blancos y pico ancho saliente",
-   "descripcion": "Máscara de pato en tonos cafés con la frente negra brillante y ojos grandes. El pico ancho y plano sobresale hacia el frente.",
-   "recorte": false
-  },
-  "a103": {
-   "alt": "Máscara de diablo rojo con cuernos negros, ojos amarillos y una criatura negra alada bajo la barbilla",
-   "descripcion": "Diablo de rostro rojo con grandes cuernos negros, ojos amarillos y colmillos largos. Bajo la barbilla lleva una criatura negra con las alas abiertas.",
-   "recorte": false
-  },
-  "a090": {
-   "alt": "Máscara de chivo azul y crema con cuernos largos grises y barba blanca",
-   "descripcion": "Máscara de chivo azul con la cara en color crema, cuernos largos gris claro y barba de fibra blanca.",
-   "recorte": false
-  },
-  "a081": {
-   "alt": "Máscara de felino amarilla con lunares rojos, anaranjados y negros y orejas grises",
-   "descripcion": "Máscara de felino de fondo amarillo cubierta de lunares rojos, anaranjados y negros, con orejas grises y ojos verdes.",
-   "recorte": false
-  },
-  "a156": {
-   "alt": "Máscara de cánido amarillo ocre con pinceladas negras, ojos verdes y nariz roja sobre pared blanca",
-   "descripcion": "Máscara de cánido amarillo ocre con pelaje de pinceladas negras, ojos verdes, nariz roja y mejilla rojiza.",
-   "recorte": false
-  },
-  "a016": {
-   "alt": "Máscara de toro con frente roja, antifaz amarillo, mejillas azules con espirales y cuernos negros",
-   "descripcion": "Máscara de toro con la frente roja, un antifaz amarillo que baja hasta la nariz y mejillas azules con espirales verdes. Lleva cuernos negros y orejas de franjas de colores.",
-   "recorte": false
-  },
-  "a002": {
-   "alt": "Dos vistas de una máscara con cabeza de búho café sobre un felino blanco de rayas negras con lengua roja",
-   "descripcion": "Máscara que une una cabeza de búho café sobre el rostro de un felino blanco con rayas negras y la lengua roja de fuera. La foto muestra la pieza de frente y de lado.",
-   "recorte": false
-  },
-  "a135": {
-   "alt": "Máscara negra de perfil con oreja de interior rojo, ojo anaranjado y lengua de fuera",
-   "descripcion": "Máscara negra de perfil con una oreja grande de interior rojo, ojo anaranjado y la lengua de fuera.",
-   "recorte": false
-  },
-  "a169": {
-   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, de frente en pared blanca",
-   "descripcion": "Borrego cimarrón de la Danza de los Morenos, amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos.",
-   "recorte": false
-  },
-  "a094": {
-   "alt": "Máscara de El Tiempo con tres rostros barbados, corona dorada y un sol con cara",
-   "descripcion": "Vista en tres cuartos de El Tiempo: tres rostros barbados bajo una corona dorada rematada por un sol con cara.",
-   "recorte": false
-  },
-  "a087": {
-   "alt": "Máscara de coyote amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes",
-   "descripcion": "Máscara de coyote amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.",
-   "recorte": false
-  },
   "a136": {
-   "alt": "Máscara negra de coyote con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
+   "alt": "Máscara de cánido negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
    "descripcion": "Máscara de cánido negra, de orejas verdes y amarillas, con cejas y una banda de arcoíris sobre el hocico.",
-   "recorte": false
-  },
-  "a091": {
-   "alt": "Máscara de coyote azul con bandas de colores en la frente y espirales en las mejillas",
-   "descripcion": "Máscara de coyote azul con el diseño de arcoíris: bandas en la frente, espirales en las mejillas y una línea de puntos sobre el hocico.",
-   "recorte": false
-  },
-  "a003": {
-   "alt": "Máscara de chivo con cuernos jaspeados, orejas amarillas y rostro azul, morado y rosa con líneas onduladas",
-   "descripcion": "Máscara de chivo de rostro alargado en azul, morado y rosa, con cuernos jaspeados y orejas amarillas. La frente lleva una espiral morada y el hocico, líneas onduladas.",
-   "recorte": false
-  },
-  "a134": {
-   "alt": "Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados",
-   "descripcion": "Máscara negra de sonrisa ancha, con una cresta de picos rojos en la frente y ojos anaranjados como flamas.",
-   "recorte": false
-  },
-  "a067": {
-   "alt": "Máscara de gallo blanco de pico verde con cresta de franjas azul, amarilla, roja y celeste, vista de perfil",
-   "descripcion": "Gallo de rostro blanco y pico verde visto de perfil. La cresta lleva franjas azul marino, amarilla, roja y celeste, y el ojo es amarillo con rayos negros.",
-   "recorte": false
-  },
-  "a012": {
-   "alt": "Máscara de gallo blanco con cresta roja, ojos amarillos de rayos negros y pico verde sobre una mesa de madera",
-   "descripcion": "Gallo de la Danza de los Morenos, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde. La familia confirmó la identificación.",
-   "recorte": false
-  },
-  "a056": {
-   "alt": "Máscara de venado anaranjada y amarilla con puntos negros y astas azules con círculos de colores, de cerca",
-   "descripcion": "Acercamiento a una máscara de venado de cara anaranjada y amarilla, con astas azules decoradas con círculos de colores.",
-   "recorte": false
-  },
-  "a057": {
-   "alt": "Máscara de felino anaranjado con manchas café y lengua roja, coronada por un tecolote gris de pico anaranjado",
-   "descripcion": "Máscara de felino anaranjado con manchas café y colmillos, con un tecolote gris tallado sobre la cabeza.",
-   "recorte": false
-  },
-  "a004": {
-   "alt": "Máscara roja de tecolote con ojos blancos de rayos negros y pico verde, sobre fondo negro",
-   "descripcion": "Tecolote de la Danza de los Morenos, de rostro rojo, ojos blancos con rayos negros y una franja verde que baja hasta formar el pico. La familia confirmó la identificación.",
-   "recorte": false
-  },
-  "a034": {
-   "alt": "Máscara de tigre anaranjado con rayas negras, ojos verdes y colmillos, de frente y de perfil en dos fotos",
-   "descripcion": "Tigre anaranjado con rayas negras, ojos verdes y hocico abierto con colmillos, visto de frente y de perfil en dos fotos.",
-   "recorte": false
-  },
-  "a020": {
-   "alt": "Máscara de coyote de rostro blanco con orejas amarillas, franjas y espirales de arcoíris y nariz negra",
-   "descripcion": "Coyote de rostro blanco con orejas amarillas, franjas de arcoíris en la frente y espirales de colores en las mejillas. Coincide con el diseño del coyote de la danza confirmado por la familia.",
-   "recorte": false
-  },
-  "a168": {
-   "alt": "Máscara de burro gris de frente, con orejas largas rayadas y hocico blanco con fosas nasales rosas, en pared blanca",
-   "descripcion": "Burro de la Danza de los Morenos visto de frente, con cara gris, orejas largas rayadas y hocico blanco con fosas nasales rosas.",
-   "recorte": false
-  },
-  "a041": {
-   "alt": "Máscara de coyote azul con orejas amarillas y espirales de colores del arcoíris en las mejillas",
-   "descripcion": "Máscara de coyote de base azul, con espirales de colores del arcoíris en las mejillas y franjas en la frente: el mismo diseño del coyote de la danza en otra combinación de color.",
-   "recorte": false
-  },
-  "a063": {
-   "alt": "Máscara de jaguar amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado",
-   "descripcion": "Cabeza de felino amarillo con manchas negras, orejas rojas y el hocico abierto que deja ver los colmillos. El barniz brillante resalta el ojo verde.",
-   "recorte": false
-  },
-  "a055": {
-   "alt": "Máscara de cánido anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes",
-   "descripcion": "Máscara de cánido anaranjado, con el pelo dibujado en trazos negros, orejas grises por dentro y ojos verdes.",
-   "recorte": false
-  },
-  "a143": {
-   "alt": "Máscara de dos rostros amarillos con barba negra y corona con media luna y estrella azules, sobre una mesa",
-   "descripcion": "Máscara de dos rostros amarillos que comparten los ojos, con barba negra y una corona de picos rematada por una media luna y una estrella azules.",
-   "recorte": false
-  },
-  "a148": {
-   "alt": "Máscara de mandril con nariz roja, mejillas azules acanaladas y cabellera de fibra morada",
-   "descripcion": "Máscara de mandril con nariz roja, mejillas azules acanaladas y hocico azul claro. Lleva orejas azules de borde dentado y una cabellera de fibra morada.",
-   "recorte": false
-  },
-  "a044": {
-   "alt": "Máscara de felino amarillo con manchas oscuras, colmillos y lengua roja, coronada por un tecolote gris de ojos amarillos",
-   "descripcion": "Máscara de felino moteado, de ojos verdes y colmillos, con un tecolote gris tallado sobre la cabeza.",
-   "recorte": false
-  },
-  "a072": {
-   "alt": "Detalle de un búho gris de ojos amarillos colocado sobre la cabeza de un felino amarillo con manchas",
-   "descripcion": "Detalle del búho gris de ojos amarillos que corona una máscara de felino amarillo con manchas. Solo se ve la parte de arriba del felino.",
-   "recorte": false
-  },
-  "a141": {
-   "alt": "Máscara de toro azul con cuernos oscuros, hocico negro y un costado anaranjado con espiral amarilla",
-   "descripcion": "Máscara de toro de base azul con un rombo en la frente y chevrones amarillos en la caña; un costado anaranjado lleva una espiral amarilla. Tiene hocico negro, orejas rojas y cuernos oscuros.",
-   "recorte": false
-  },
-  "a014": {
-   "alt": "Máscara de toro de cara azul con rombo morado en la frente, cuernos oscuros y orejas rojas",
-   "descripcion": "Máscara de toro de cara azul con un rombo morado en la frente y chevrones amarillos en la nariz. Tiene cuernos oscuros y orejas rojas con rosa.",
-   "recorte": false
-  },
-  "a079": {
-   "alt": "Máscara de búho gris con grandes ojos negros de aro amarillo y pico anaranjado, sobre tela roja estampada",
-   "descripcion": "Máscara de búho gris plateado con grandes ojos negros y amarillos, plumas negras pintadas en la frente y pico anaranjado.",
-   "recorte": false
-  },
-  "a058": {
-   "alt": "Máscara de jaguar amarilla con rosetas negras, ojos verdes y boca abierta con colmillos blancos",
-   "descripcion": "Máscara de jaguar amarillo con rosetas negras y la boca abierta, que muestra los colmillos y la lengua roja.",
-   "recorte": false
-  },
-  "a147": {
-   "alt": "Máscara de rostro partido, mitad azul con barba de arcoíris y mitad calavera color hueso",
-   "descripcion": "Rostro partido: la mitad viva es azul con barba de franjas de arcoíris; la otra mitad es una calavera color hueso con dientes pintados.",
-   "recorte": false
-  },
-  "a130": {
-   "alt": "Máscara de hombre de piel clara con barba negra tallada y ojos azules sobre pared amarilla",
-   "descripcion": "Máscara de hombre con barba negra tallada, cejas espesas y ojos azules, sobre una pared amarilla.",
-   "recorte": false
-  },
-  "a155": {
-   "alt": "Máscara de sol y luna: luna azul de perfil con estrellas doradas junto a un sol amarillo con rayos",
-   "descripcion": "Pieza de dos rostros: una luna azul de perfil con estrellas doradas y un sol amarillo de frente con rayos rojos y dorados, que comparten los labios.",
-   "recorte": false
-  },
-  "a139": {
-   "alt": "Máscara de jirafa amarilla con líneas color coral, cuernitos grises y ojos verdes, de frente",
-   "descripcion": "Máscara de jirafa amarilla con una red de líneas color coral, cuernitos grises y ojos verdes, sobre pared blanca.",
-   "recorte": false
-  },
-  "a074": {
-   "alt": "Máscara de coyote blanco con franjas de arcoíris alrededor de los ojos, orejas amarillas y nariz roja oscura",
-   "descripcion": "Coyote de rostro blanco con franjas de arcoíris que rodean los ojos y bajan hasta el hocico. Tiene orejas amarillas y azules y nariz color vino.",
-   "recorte": false
-  },
-  "a008": {
-   "alt": "Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada",
-   "descripcion": "Máscara de diablo de rojo brillante con cuernos largos, flamas negras en la frente y cejas talladas. De la boca salen colmillos claros y una lengua anaranjada.",
-   "recorte": false
-  },
-  "a093": {
-   "alt": "Máscara de coyote blanca con bandas y espirales de arcoíris y orejas amarillas y azules",
-   "descripcion": "Máscara de coyote blanca con bandas de arcoíris en la frente, espirales de colores en las mejillas y orejas amarillas y azules.",
-   "recorte": false
-  },
-  "a042": {
-   "alt": "Máscara de ave negra con pico largo bordeado de rojo y plumas pintadas con trazos amarillos, vista de lado",
-   "descripcion": "Máscara de ave negra de pico largo, con el pico bordeado de rojo y la cabeza cubierta de pequeños trazos amarillos que imitan plumas.",
-   "recorte": false
-  },
-  "a026": {
-   "alt": "Máscara anaranjada de animal con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos",
-   "descripcion": "Máscara de animal anaranjado con manchas negras en anillo, ojos azules, orejas grandes rojizas con textura de pelo y hocico amarillo con rayas negras.",
-   "recorte": false
-  },
-  "a053": {
-   "alt": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
-   "descripcion": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, una línea amarilla al centro y la nariz roja.",
-   "recorte": false
-  },
-  "a140": {
-   "alt": "Máscara de ave azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo",
-   "descripcion": "Máscara de ave azul con plumas pintadas en amarillo, ojo verde con pestañas y pico curvo amarillo.",
-   "recorte": false
-  },
-  "a027": {
-   "alt": "Máscara de pavo real azul con pico dorado y penacho de plumas amarillas con ojos morados, dos fotos lado a lado",
-   "descripcion": "Máscara de ave azul con franjas blancas, pico dorado, ojos amarillos y un penacho de plumas amarillas con ojos morados de pavo real. Son dos fotos de la misma pieza, lado a lado.",
-   "recorte": false
-  },
-  "a086": {
-   "alt": "Máscara de ave anaranjada con penacho verde de plumas de pavo real y pico rojo",
-   "descripcion": "Máscara de ave de rostro anaranjado con penacho verde de plumas tipo pavo real y pico largo rojo.",
-   "recorte": false
-  },
-  "a089": {
-   "alt": "Perfil de máscara morada de animal con cuernos curvos rayados y hocico verde",
-   "descripcion": "Máscara de perfil de un animal con cuernos, pintada en morado claro y oscuro, con cuernos curvos rayados en negro y anaranjado y hocico verde.",
-   "recorte": false
-  },
-  "a108": {
-   "alt": "Máscara de ave azul con pico anaranjado y copete de plumas amarillas y azules con ojos de pavo real",
-   "descripcion": "Ave de cara azul con pico anaranjado y un copete de plumas amarillas y azules con ojos como los del pavo real.",
-   "recorte": false
-  },
-  "a115": {
-   "alt": "Máscara negra de rostro alargado vista de tres cuartos, con calavera amarilla en la frente y bigote gris",
-   "descripcion": "Vista de lado del rostro negro con calavera; se aprecian la nariz ganchuda, las arrugas y la barbilla puntiaguda.",
-   "recorte": false
-  },
-  "a153": {
-   "alt": "Collage de una máscara de calavera color hueso y una máscara negra con puntos crema y estrellas anaranjadas",
-   "descripcion": "Collage con una calavera color hueso, vista dos veces, y un rostro negro cubierto de puntos crema y estrellas anaranjadas, de frente y de perfil.",
-   "recorte": false
-  },
-  "a073": {
-   "alt": "Máscara de felino amarillo con lunares rojos, negros y anaranjados, orejas grises y hocico largo, vista de perfil",
-   "descripcion": "Felino de rostro amarillo cubierto de lunares rojos, negros y anaranjados, con orejas grises y hocico largo rayado de negro.",
-   "recorte": false
-  },
-  "a138": {
-   "alt": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces abiertas con colmillos blancos",
-   "descripcion": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces rojas abiertas con colmillos blancos. Detrás se ve otra máscara de felino moteado.",
    "recorte": false
   },
   "a097": {
@@ -2045,94 +1578,14 @@
    "descripcion": "La Noche: máscara de dos rostros, uno ocre y otro azul, con barbas negras, corona de flamas y una media luna con estrella sobre el lado azul.",
    "recorte": false
   },
-  "a113": {
-   "alt": "Máscara negra de rostro alargado con arrugas, bigote gris y una pequeña calavera amarilla en la frente",
-   "descripcion": "Rostro negro y alargado, con arrugas talladas, cejas y bigote grises, y una pequeña calavera amarilla en la frente.",
+  "a079": {
+   "alt": "Máscara de búho gris con grandes ojos negros de aro amarillo y pico anaranjado, sobre tela roja estampada",
+   "descripcion": "Máscara de búho gris plateado con grandes ojos negros y amarillos, plumas negras pintadas en la frente y pico anaranjado.",
    "recorte": false
   },
-  "a150": {
-   "alt": "Máscara de mariposa de alas azules y amarillas con ocelos rojos y antenas en espiral, vista de lado",
-   "descripcion": "Máscara de mariposa vista de lado: alas azul marino con paneles amarillos y ocelos rojos, cuerpo negro con franjas rosas y antenas en espiral.",
-   "recorte": false
-  },
-  "a146": {
-   "alt": "Collage de tres vistas de una máscara de cánido gris con pinceladas amarillas, ojos verdes y nariz roja",
-   "descripcion": "Tres vistas de una máscara de cánido gris con pelaje sugerido por pinceladas amarillas, orejas altas, ojos verdes y nariz roja.",
-   "recorte": false
-  },
-  "a162": {
-   "alt": "Máscara de diablo rojo con cuernos rayados en negro, ojos amarillos y boca abierta con colmillos, en pared blanca",
-   "descripcion": "Diablo rojo de cuernos curvos con franjas negras, ojos amarillos y boca abierta con colmillos blancos. La barbilla termina en una punta negra.",
-   "recorte": false
-  },
-  "a032": {
-   "alt": "Máscara de rostro negro con sonrisa amarilla, alas negras extendidas y un ave negra posada sobre la frente",
-   "descripcion": "Rostro humano negro de sonrisa amarilla y ojos amarillos, con alas negras extendidas detrás de la cabeza y un ave negra de pico rojizo posada en la frente.",
-   "recorte": false
-  },
-  "a085": {
-   "alt": "Máscara de jirafa café con líneas anaranjadas, cuernitos grises y ojos verdes",
-   "descripcion": "Máscara de jirafa color café con retícula anaranjada, dos cuernitos grises y ojos verdes.",
-   "recorte": false
-  },
-  "a164": {
-   "alt": "Máscara de borrego anaranjado con escamas amarillas y cuernos enroscados blanco y negro, sobre pared crema",
-   "descripcion": "Borrego cimarrón de la Danza de los Morenos, anaranjado con escamas amarillas. Sus grandes cuernos enroscados, en blanco y negro, rodean la cara.",
-   "recorte": false
-  },
-  "a107": {
-   "alt": "Máscara La Noche de dos rostros, uno color piel y otro azul, con barba negra y corona con luna y estrella",
-   "descripcion": "La Noche, máscara de dos rostros: uno color piel y otro azul. La corona lleva una luna plateada con una estrella.",
-   "recorte": false
-  },
-  "a118": {
-   "alt": "Máscara de tecolote gris verdoso con grandes ojos amarillos y negros y pico amarillo sobre pared azul",
-   "descripcion": "Tecolote de cara gris verdosa con plumaje pintado a trazos finos, grandes ojos amarillos y pico amarillo.",
-   "recorte": false
-  },
-  "a096": {
-   "alt": "Máscara de diablo roja con cuernos grandes, colmillos y lengua negra con flecha dorada",
-   "descripcion": "Máscara de diablo de rostro rojo con grandes cuernos, colmillos largos y lengua negra con una flecha dorada; un marco crema con círculos rodea la cara.",
-   "recorte": false
-  },
-  "a152": {
-   "alt": "Máscara de gorila negra con pelo tallado, ojos amarillos, colmillos color hueso y lengua roja de fuera",
-   "descripcion": "Pelo tallado en toda la superficie, ojos amarillos, colmillos color hueso y la lengua roja de fuera.",
-   "recorte": false
-  },
-  "a029": {
-   "alt": "Máscara azul de orejas largas con franjas de arcoíris en V y espiral en la mejilla, vista de tres cuartos",
-   "descripcion": "Máscara de animal azul cielo con orejas largas amarillas y azul marino, franjas de arcoíris en V, espiral en la mejilla y nariz café rojiza.",
-   "recorte": false
-  },
-  "a024": {
-   "alt": "Máscara de coyote de frente, blanca con franjas de arcoíris en V, espirales en las mejillas y nariz negra",
-   "descripcion": "Coyote de la Danza de los Morenos visto de frente: base blanca, franjas de arcoíris en V, espirales en las mejillas, línea de puntos de colores en el hocico y nariz negra.",
-   "recorte": false
-  },
-  "a144": {
-   "alt": "Máscara de perro blanco con manchas cafés, ojos verdes y nariz café rojiza",
-   "descripcion": "Máscara de perro blanco con manchas cafés en una oreja y alrededor de un ojo, ojos verdes y nariz café rojiza; en el hocico lleva puntos negros.",
-   "recorte": false
-  },
-  "a163": {
-   "alt": "Máscara de gallo anaranjado con cresta color vino escalonada, pico amarillo y barbas rojas, de frente en pared blanca",
-   "descripcion": "Gallo de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.",
-   "recorte": false
-  },
-  "a001": {
-   "alt": "Máscara de venado con astas negras, orejas anaranjadas y rostro azul con grecas y franjas onduladas",
-   "descripcion": "Máscara de venado tallada y policromada, con astas negras de filete amarillo y orejas anaranjadas decoradas. El rostro combina grecas azules en la frente y franjas onduladas moradas en el hocico.",
-   "recorte": false
-  },
-  "a170": {
-   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, vista de lado en pared blanca",
-   "descripcion": "El mismo borrego amarillo de la Danza de los Morenos, visto de lado. Se aprecia el relieve de los cuernos enroscados rojos y amarillos.",
-   "recorte": false
-  },
-  "a054": {
-   "alt": "Máscara de lince realista con orejas de punta negra, ojos verdes y gorguera rayada",
-   "descripcion": "Máscara de lince de estilo realista, con orejas de punta negra, ojos verdes y una gorguera de pelo rayada alrededor de la cara.",
+  "a043": {
+   "alt": "Máscara negra de rostro alargado con lengua roja de fuera y un búho de ojos amarillos tallado en la frente",
+   "descripcion": "Rostro negro de expresión burlona, con la lengua roja de fuera y un tecolote tallado sobre la frente.",
    "recorte": false
   },
   "a082": {
@@ -2140,19 +1593,74 @@
    "descripcion": "Máscara de ave de rostro morado con penacho de plumas tipo pavo real y pico largo gris oscuro.",
    "recorte": false
   },
+  "a040": {
+   "alt": "Máscara de coyote blanca con franjas de arcoíris, espiral en la mejilla, orejas amarillas y azules y nariz café",
+   "descripcion": "Coyote de base blanca con orejas amarillas y azul turquesa, franjas de arcoíris en V, espiral en la mejilla y nariz café.",
+   "recorte": false
+  },
+  "a045": {
+   "alt": "Máscara de felino anaranjada con rosetas negras, orejas rojas puntiagudas y ojos azules",
+   "descripcion": "Máscara de felino de hocico alargado y orejas altas, anaranjada con manchas negras en forma de roseta y ojos azules.",
+   "recorte": false
+  },
+  "a034b": {
+   "alt": "El mismo tigre anaranjado visto de perfil, con las fauces abiertas",
+   "descripcion": "",
+   "recorte": false
+  },
+  "a055": {
+   "alt": "Máscara de cánido anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes",
+   "descripcion": "Máscara de cánido anaranjado, con el pelo dibujado en trazos negros, orejas grises por dentro y ojos verdes.",
+   "recorte": false
+  },
   "a060": {
    "alt": "Máscara de venado con cara anaranjada y amarilla y grandes astas azules ramificadas con círculos de colores",
    "descripcion": "Máscara de venado completa, de cara anaranjada y amarilla con puntos negros y grandes astas azules ramificadas con círculos de colores.",
    "recorte": false
   },
-  "a038": {
-   "alt": "Máscara de nahual blanco de frente con puntos dorados, cuencas negras, ojos rojos y una cabellera de fibra clara",
-   "descripcion": "Nahual blanco de frente: base blanca con puntos dorados, dos grandes cuencas negras punteadas, ojos rojos, orejas rojas y cabellera de fibra clara.",
+  "a044": {
+   "alt": "Máscara de felino amarillo con manchas oscuras, colmillos y lengua roja, coronada por un búho gris de ojos amarillos",
+   "descripcion": "Máscara de felino moteado, de ojos verdes y colmillos, con un tecolote gris tallado sobre la cabeza.",
    "recorte": false
   },
-  "a018": {
-   "alt": "Máscara de toro café rojizo con pelo tallado, ojos amarillos, cuernos grises y hocico rosado",
-   "descripcion": "Máscara de toro de estilo realista, café rojizo con el pelo tallado y mejillas negras. Tiene cuernos grises de punta negra y hocico rosado.",
+  "a025": {
+   "alt": "Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona",
+   "descripcion": "El Tiempo de frente: tres rostros fundidos que comparten ojos, con bigotes y barba negros rizados, diadema dorada y corona con un sol con cara.",
+   "recorte": false
+  },
+  "a020": {
+   "alt": "Máscara de coyote de rostro blanco con orejas amarillas, franjas y espirales de arcoíris y nariz negra",
+   "descripcion": "Coyote de rostro blanco con orejas amarillas, franjas de arcoíris en la frente y espirales de colores en las mejillas. Coincide con el diseño del coyote de la danza confirmado por la familia.",
+   "recorte": false
+  },
+  "a012": {
+   "alt": "Máscara de gallo blanco con cresta roja, ojos amarillos de rayos negros y pico verde sobre una mesa de madera",
+   "descripcion": "Gallo de la Danza de los Morenos, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde. La familia confirmó la identificación.",
+   "recorte": false
+  },
+  "a152": {
+   "alt": "Máscara de gorila negra con pelo tallado, ojos amarillos, colmillos color hueso y lengua roja de fuera",
+   "descripcion": "Pelo tallado en toda la superficie, ojos amarillos, colmillos color hueso y la lengua roja de fuera.",
+   "recorte": false
+  },
+  "a102": {
+   "alt": "Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado",
+   "descripcion": "Nahual negro de cara felina, con orejas puntiagudas rayadas en rojo, ojos naranjas y colmillos a la vista. No forma parte de la danza.",
+   "recorte": false
+  },
+  "a054": {
+   "alt": "Máscara de lince realista con orejas de punta negra, ojos verdes y gorguera rayada",
+   "descripcion": "Máscara de lince de estilo realista, con orejas de punta negra, ojos verdes y una gorguera de pelo rayada alrededor de la cara.",
+   "recorte": false
+  },
+  "a113": {
+   "alt": "Máscara negra de rostro alargado con arrugas, bigote gris y una pequeña calavera amarilla en la frente",
+   "descripcion": "Rostro negro y alargado, con arrugas talladas, cejas y bigote grises, y una pequeña calavera amarilla en la frente.",
+   "recorte": false
+  },
+  "a032": {
+   "alt": "Máscara de rostro negro con sonrisa amarilla, alas negras extendidas y un ave negra posada sobre la frente",
+   "descripcion": "Rostro humano negro de sonrisa amarilla y ojos amarillos, con alas negras extendidas detrás de la cabeza y un ave negra de pico rojizo posada en la frente.",
    "recorte": false
   },
   "a119": {
@@ -2160,9 +1668,194 @@
    "descripcion": "Chivo blanco y negro con cuernos largos color café, ojos verdes y barba de fibra.",
    "recorte": false
   },
-  "a127": {
-   "alt": "Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema",
-   "descripcion": "Máscara de rostro partido: la mitad izquierda es un rostro humano color malva con ojo azul y barba y bigote tallados en ondas de colores; la derecha es una calavera crema con dientes pintados.",
+  "a059": {
+   "alt": "Máscara de cánido negro con espirales blancas en las mejillas, ojos rojos y nariz roja",
+   "descripcion": "Dos vistas de una máscara de coyote negra con espirales y líneas blancas, ojos rojos y nariz roja.",
+   "recorte": false
+  },
+  "a029": {
+   "alt": "Máscara azul de orejas largas con franjas de arcoíris en V y espiral en la mejilla, vista de tres cuartos",
+   "descripcion": "Máscara de animal azul cielo con orejas largas amarillas y azul marino, franjas de arcoíris en V, espiral en la mejilla y nariz café rojiza.",
+   "recorte": false
+  },
+  "a159": {
+   "alt": "Máscara azul grisácea de orejas largas con franjas de colores, pinceladas amarillas y ojos verdes",
+   "descripcion": "Máscara de orejas largas en azul grisáceo, con pelaje de pinceladas amarillas y orejas de franjas de colores; el hocico es azul marino con manchas blancas.",
+   "recorte": false
+  },
+  "a147": {
+   "alt": "Máscara de rostro partido, mitad azul con barba de arcoíris y mitad calavera color hueso",
+   "descripcion": "Rostro partido: la mitad viva es azul con barba de franjas de arcoíris; la otra mitad es una calavera color hueso con dientes pintados.",
+   "recorte": false
+  },
+  "a126": {
+   "alt": "Máscara de ave roja y verde con trazos azules y pico ganchudo negro y crema, vista de lado",
+   "descripcion": "Máscara de ave de pico curvo, con plumaje rojo y verde rayado de azul y el pico abierto en negro y crema. En el borde izquierdo asoman otras máscaras.",
+   "recorte": false
+  },
+  "a161": {
+   "alt": "Máscara de madera de equino gris con franjas anaranjadas y rayas blanco y negro tipo cebra, orejas cafés, en pared blanca",
+   "descripcion": "Máscara de equino de hocico largo, pintada de gris con franjas anaranjadas en V y rayas blancas y negras a los lados, como de cebra. Tiene orejas cafés y un copete negro entre ellas.",
+   "recorte": false
+  },
+  "a039": {
+   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y colmillos, con un búho gris de ojos amarillos encima",
+   "descripcion": "Vista frontal cercana del felino amarillo con manchas en roseta, ojos verdes y colmillos, con un búho gris sobre la cabeza.",
+   "recorte": false
+  },
+  "a150": {
+   "alt": "Máscara de mariposa de alas azules y amarillas con ocelos rojos y antenas en espiral, vista de lado",
+   "descripcion": "Máscara de mariposa vista de lado: alas azul marino con paneles amarillos y ocelos rojos, cuerpo negro con franjas rosas y antenas en espiral.",
+   "recorte": false
+  },
+  "a072": {
+   "alt": "Detalle de un búho gris de ojos amarillos colocado sobre la cabeza de un felino amarillo con manchas",
+   "descripcion": "Detalle del búho gris de ojos amarillos que corona una máscara de felino amarillo con manchas. Solo se ve la parte de arriba del felino.",
+   "recorte": false
+  },
+  "a156": {
+   "alt": "Máscara de cánido amarillo ocre con pinceladas negras, ojos verdes y nariz roja sobre pared blanca",
+   "descripcion": "Máscara de cánido amarillo ocre con pelaje de pinceladas negras, ojos verdes, nariz roja y mejilla rojiza.",
+   "recorte": false
+  },
+  "a094": {
+   "alt": "Máscara de tres rostros barbados con banda azul, corona dorada y un sol con cara",
+   "descripcion": "Vista en tres cuartos de El Tiempo: tres rostros barbados bajo una corona dorada rematada por un sol con cara.",
+   "recorte": false
+  },
+  "a017": {
+   "alt": "Máscara de cebra con rayas amarillas y azul marino en la nariz, rayas negras y blancas y orejas rosas",
+   "descripcion": "Máscara de cebra con rayas amarillas y azul marino en la nariz y rayas negras y blancas a los lados. Las orejas son amarillas con interior rosa.",
+   "recorte": false
+  },
+  "a042": {
+   "alt": "Máscara de ave negra con pico largo bordeado de rojo y plumas pintadas con trazos amarillos, vista de lado",
+   "descripcion": "Máscara de ave negra de pico largo, con el pico bordeado de rojo y la cabeza cubierta de pequeños trazos amarillos que imitan plumas.",
+   "recorte": false
+  },
+  "a090": {
+   "alt": "Máscara de chivo azul y crema con cuernos largos grises y barba blanca",
+   "descripcion": "Máscara de chivo azul con la cara en color crema, cuernos largos gris claro y barba de fibra blanca.",
+   "recorte": false
+  },
+  "a005": {
+   "alt": "Máscara de jabalí café grisáceo con ojos anaranjados y colmillos blancos curvos",
+   "descripcion": "Máscara de jabalí en tonos cafés y grises que imitan el pelaje, con ojos anaranjados y colmillos blancos curvos. El hocico tiene arrugas talladas.",
+   "recorte": false
+  },
+  "a115": {
+   "alt": "Máscara negra de rostro alargado vista de tres cuartos, con calavera amarilla en la frente y bigote gris",
+   "descripcion": "Vista de lado del rostro negro con calavera; se aprecian la nariz ganchuda, las arrugas y la barbilla puntiaguda.",
+   "recorte": false
+  },
+  "a162": {
+   "alt": "Máscara de diablo rojo con cuernos rayados en negro, ojos amarillos y boca abierta con colmillos, en pared blanca",
+   "descripcion": "Diablo rojo de cuernos curvos con franjas negras, ojos amarillos y boca abierta con colmillos blancos. La barbilla termina en una punta negra.",
+   "recorte": false
+  },
+  "a023": {
+   "alt": "Máscara de El Tiempo de lado: rostros con barba negra rizada, corona con un sol con cara y una luna creciente azul",
+   "descripcion": "El Tiempo visto de lado: se distinguen los rostros de piel terracota con barba negra rizada, coronados por un sol con cara y una luna creciente azul y dorada.",
+   "recorte": false
+  },
+  "a059b": {
+   "alt": "La misma máscara de cánido negro vista de lado, con su espiral blanca en la mejilla",
+   "descripcion": "",
+   "recorte": false
+  },
+  "a049": {
+   "alt": "Máscara de mariposa con alas azul marino y amarillas decoradas con espirales y antenas enroscadas",
+   "descripcion": "Pieza en forma de mariposa con alas azules y amarillas decoradas con espirales y puntos, sobre una base verde.",
+   "recorte": false
+  },
+  "a004": {
+   "alt": "Máscara roja de tecolote con ojos blancos de rayos negros y pico verde, sobre fondo negro",
+   "descripcion": "Tecolote de la Danza de los Morenos, de rostro rojo, ojos blancos con rayos negros y una franja verde que baja hasta formar el pico. La familia confirmó la identificación.",
+   "recorte": false
+  },
+  "a098": {
+   "alt": "Máscara compuesta con lince, búho gris y felino manchado de fauces abiertas, apilados",
+   "descripcion": "Máscara compuesta de tres animales apilados: un lince arriba, un búho gris en medio y un felino manchado con las fauces abiertas abajo.",
+   "recorte": false
+  },
+  "a105": {
+   "alt": "Máscara negra brillante con ojos anaranjados en forma de sol, orejas puntiagudas y la lengua de fuera",
+   "descripcion": "Máscara negra brillante de frente muy alta, con ojos naranjas como soles, orejas puntiagudas y la lengua de fuera.",
+   "recorte": false
+  },
+  "a111": {
+   "alt": "Máscara negra con un búho en la frente, vista de tres cuartos, con cejas doradas y lengua roja",
+   "descripcion": "Vista de lado del rostro negro con un tecolote en la frente; se aprecian la nariz larga y la barbilla saliente.",
+   "recorte": false
+  },
+  "a157": {
+   "alt": "Máscara de cánido negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos",
+   "descripcion": "Máscara de cánido negro de hocico largo con franjas de arcoíris en la ceja y el hocico, orejas verdes y amarillas y boca abierta con colmillos.",
+   "recorte": false
+  },
+  "a063": {
+   "alt": "Máscara de felino amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado",
+   "descripcion": "Cabeza de felino amarillo con manchas negras, orejas rojas y el hocico abierto que deja ver los colmillos. El barniz brillante resalta el ojo verde.",
+   "recorte": false
+  },
+  "a047": {
+   "alt": "Máscara de chivo roja y amarilla con cuernos largos negros con rayas blancas y barba de fibra clara",
+   "descripcion": "Chivo de la Danza de los Morenos, rojo y amarillo, con largos cuernos negros rayados de blanco y barba de fibra.",
+   "recorte": false
+  },
+  "a166": {
+   "alt": "Máscara de lince crema con rayas rojas y negras, zigzag rojo en la frente y ojos azules, vista de lado en pared crema",
+   "descripcion": "Lince de la Danza de los Morenos, crema con rayas rojas y negras, un zigzag rojo en la frente y orejas grises.",
+   "recorte": false
+  },
+  "a144": {
+   "alt": "Máscara de perro blanco con manchas cafés, ojos verdes y nariz café rojiza",
+   "descripcion": "Máscara de perro blanco con manchas cafés en una oreja y alrededor de un ojo, ojos verdes y nariz café rojiza; en el hocico lleva puntos negros.",
+   "recorte": false
+  },
+  "a148": {
+   "alt": "Máscara de mandril con nariz roja, mejillas azules acanaladas y cabellera de fibra morada",
+   "descripcion": "Máscara de mandril con nariz roja, mejillas azules acanaladas y hocico azul claro. Lleva orejas azules de borde dentado y una cabellera de fibra morada.",
+   "recorte": false
+  },
+  "a091": {
+   "alt": "Máscara de coyote azul con bandas de colores en la frente y espirales en las mejillas",
+   "descripcion": "Máscara de coyote azul con el diseño de arcoíris: bandas en la frente, espirales en las mejillas y una línea de puntos sobre el hocico.",
+   "recorte": false
+  },
+  "a057": {
+   "alt": "Máscara de felino anaranjado con manchas café y lengua roja, coronada por un búho gris de pico anaranjado",
+   "descripcion": "Máscara de felino anaranjado con manchas café y colmillos, con un tecolote gris tallado sobre la cabeza.",
+   "recorte": false
+  },
+  "a135": {
+   "alt": "Máscara negra de perfil con oreja de interior rojo, ojo anaranjado y lengua de fuera",
+   "descripcion": "Máscara negra de perfil con una oreja grande de interior rojo, ojo anaranjado y la lengua de fuera.",
+   "recorte": false
+  },
+  "a070": {
+   "alt": "Máscara de cánido café y gris de hocico largo, orejas puntiagudas y ojos amarillos, vista de tres cuartos",
+   "descripcion": "Cánido de hocico largo pintado en tonos café, gris y anaranjado que imitan el pelaje, con ojos amarillos y nariz café.",
+   "recorte": false
+  },
+  "a134": {
+   "alt": "Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados",
+   "descripcion": "Máscara negra de sonrisa ancha, con una cresta de picos rojos en la frente y ojos anaranjados como flamas.",
+   "recorte": false
+  },
+  "a108": {
+   "alt": "Máscara de ave azul con pico anaranjado y copete de plumas amarillas y azules con ojos de pavo real",
+   "descripcion": "Ave de cara azul con pico anaranjado y un copete de plumas amarillas y azules con ojos como los del pavo real.",
+   "recorte": false
+  },
+  "a002": {
+   "alt": "Máscara con cabeza de búho café sobre un felino blanco de rayas negras con la lengua roja de fuera",
+   "descripcion": "Máscara que une una cabeza de búho café sobre el rostro de un felino blanco con rayas negras y la lengua roja de fuera. La foto muestra la pieza de frente y de lado.",
+   "recorte": false
+  },
+  "a103": {
+   "alt": "Máscara de diablo rojo con cuernos negros, ojos amarillos y una criatura negra alada bajo la barbilla",
+   "descripcion": "Diablo de rostro rojo con grandes cuernos negros, ojos amarillos y colmillos largos. Bajo la barbilla lleva una criatura negra con las alas abiertas.",
    "recorte": false
   },
   "a021": {
@@ -2170,19 +1863,264 @@
    "descripcion": "Máscara de rostro lila con un gran ojo verde, cubierta por una iguana verde, dos serpientes amarillas con manchas y colmillos, y un animal enroscado de manchas azules en la parte baja.",
    "recorte": false
   },
-  "a059": {
-   "alt": "Dos vistas de una máscara de coyote negra con espirales blancas en las mejillas, ojos rojos y nariz roja",
-   "descripcion": "Dos vistas de una máscara de coyote negra con espirales y líneas blancas, ojos rojos y nariz roja.",
+  "a007": {
+   "alt": "Máscara de diablo rojo oscuro con cuernos largos, orejas puntiagudas, colmillos y lengua roja de fuera",
+   "descripcion": "Máscara de diablo de rostro rojo oscuro con cuernos largos, orejas puntiagudas y cejas negras talladas. Tiene colmillos claros y la lengua roja de fuera.",
    "recorte": false
   },
-  "a122": {
-   "alt": "Máscara de madera con lince, búho y jaguar tallados uno encima de otro, sobre pared clara",
-   "descripcion": "Máscara compuesta con tres animales tallados uno sobre otro: un lince arriba, un búho al centro y un felino moteado con las fauces abiertas abajo.",
+  "a013": {
+   "alt": "Máscara de pato en tonos cafés con ojos grandes blancos y pico ancho saliente",
+   "descripcion": "Máscara de pato en tonos cafés con la frente negra brillante y ojos grandes. El pico ancho y plano sobresale hacia el frente.",
+   "recorte": false
+  },
+  "a006": {
+   "alt": "Máscara de ave de rostro azul celeste, pico largo café y penacho con plumas de pavo real",
+   "descripcion": "Máscara de ave de rostro azul celeste con pico largo café. El penacho lleva finas líneas amarillas y ocelos como de pluma de pavo real.",
+   "recorte": false
+  },
+  "a067": {
+   "alt": "Máscara de gallo blanco de pico verde con cresta de franjas azul, amarilla, roja y celeste, vista de perfil",
+   "descripcion": "Gallo de rostro blanco y pico verde visto de perfil. La cresta lleva franjas azul marino, amarilla, roja y celeste, y el ojo es amarillo con rayos negros.",
+   "recorte": false
+  },
+  "a087": {
+   "alt": "Máscara de coyote amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes",
+   "descripcion": "Máscara de coyote amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.",
+   "recorte": false
+  },
+  "a064": {
+   "alt": "Máscara de diablo rojo con cuernos de toro, colmillos largos, lengua de fuera y marco amarillo con círculos",
+   "descripcion": "Diablo de rostro rojo con cuernos de toro, orejas oscuras y largos colmillos. Sobre las cejas tiene dos pequeñas cabezas moteadas y saca la lengua.",
+   "recorte": false
+  },
+  "a035": {
+   "alt": "Máscara de nahual blanco con puntos dorados, cuencas negras, ojos rojos y cabellera de fibra clara, de tres cuartos",
+   "descripcion": "Nahual blanco visto de tres cuartos: base blanca con puntos dorados, grandes cuencas negras punteadas, ojos rojos, orejas rojas y cabellera de fibra clara.",
+   "recorte": false
+  },
+  "a172": {
+   "alt": "Máscara de lince crema con rayas rojas y negras, orejas con manchas negras y hocico punteado, algo de lado en pared blanca",
+   "descripcion": "El mismo lince de orejas manchadas, visto ligeramente de lado. Se aprecia el volumen del hocico punteado.",
+   "recorte": false
+  },
+  "a009": {
+   "alt": "Tres máscaras de rostro humano en negro brillante con estrellas, lunas, puntos y bigotes dorados",
+   "descripcion": "Tres máscaras de rostro humano pintadas de negro brillante y decoradas en dorado. Una lleva líneas de puntos y estrellas rojas, otra estrellas de ocho puntas y la tercera lunas y una estrella fugaz.",
+   "recorte": false
+  },
+  "a170": {
+   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, vista de lado en pared blanca",
+   "descripcion": "El mismo borrego amarillo de la Danza de los Morenos, visto de lado. Se aprecia el relieve de los cuernos enroscados rojos y amarillos.",
+   "recorte": false
+  },
+  "a033": {
+   "alt": "Máscara de felino amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima",
+   "descripcion": "Felino amarillo con manchas negras de centro café, ojos verdes y hocico abierto con colmillos, que lleva un búho gris de ojos amarillos sobre la cabeza.",
+   "recorte": false
+  },
+  "a058": {
+   "alt": "Máscara de felino amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos",
+   "descripcion": "Máscara de jaguar amarillo con rosetas negras y la boca abierta, que muestra los colmillos y la lengua roja.",
+   "recorte": false
+  },
+  "a003": {
+   "alt": "Máscara de chivo con cuernos jaspeados, orejas amarillas y rostro azul, morado y rosa con líneas onduladas",
+   "descripcion": "Máscara de chivo de rostro alargado en azul, morado y rosa, con cuernos jaspeados y orejas amarillas. La frente lleva una espiral morada y el hocico, líneas onduladas.",
+   "recorte": false
+  },
+  "a096": {
+   "alt": "Máscara de diablo roja con cuernos grandes, colmillos y lengua negra con flecha dorada",
+   "descripcion": "Máscara de diablo de rostro rojo con grandes cuernos, colmillos largos y lengua negra con una flecha dorada; un marco crema con círculos rodea la cara.",
+   "recorte": false
+  },
+  "a143": {
+   "alt": "Máscara de dos rostros amarillos con barba negra y corona con media luna y estrella azules, sobre una mesa",
+   "descripcion": "Máscara de dos rostros amarillos que comparten los ojos, con barba negra y una corona de picos rematada por una media luna y una estrella azules.",
+   "recorte": false
+  },
+  "a050": {
+   "alt": "Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado",
+   "descripcion": "Máscara de búho azul y café, con grandes ojos negros de mirada entrecerrada y plumas sugeridas con trazos amarillos y azules.",
+   "recorte": false
+  },
+  "a074": {
+   "alt": "Máscara de coyote blanco con franjas de arcoíris alrededor de los ojos, orejas amarillas y nariz roja oscura",
+   "descripcion": "Coyote de rostro blanco con franjas de arcoíris que rodean los ojos y bajan hasta el hocico. Tiene orejas amarillas y azules y nariz color vino.",
+   "recorte": false
+  },
+  "a053": {
+   "alt": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
+   "descripcion": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, una línea amarilla al centro y la nariz roja.",
+   "recorte": false
+  },
+  "a139": {
+   "alt": "Máscara de jirafa amarilla con líneas color coral, cuernitos grises y ojos verdes, de frente",
+   "descripcion": "Máscara de jirafa amarilla con una red de líneas color coral, cuernitos grises y ojos verdes, sobre pared blanca.",
+   "recorte": false
+  },
+  "a106": {
+   "alt": "Máscara de rostro partido: mitad hombre barbado de ojo azul y mitad calavera amarilla",
+   "descripcion": "Rostro partido: de un lado, un hombre con barba y ojo azul; del otro, una calavera amarilla.",
+   "recorte": false
+  },
+  "a100": {
+   "alt": "Máscara de cánido gris con trazos blancos, orejas doradas, ojos amarillos y nariz roja",
+   "descripcion": "Máscara de cánido gris con el pelaje marcado con trazos blancos, orejas doradas, ojos amarillos y nariz roja.",
+   "recorte": false
+  },
+  "a068": {
+   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
+   "descripcion": "Felino de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.",
+   "recorte": false
+  },
+  "a037": {
+   "alt": "Máscara de felino negro con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos",
+   "descripcion": "Felino negro brillante con ojos amarillos, bigotes grises pintados, nariz rojiza y hocico abierto con colmillos amarillos.",
+   "recorte": false
+  },
+  "a071": {
+   "alt": "Máscara de búho gris de ojos negros con aro anaranjado y pico anaranjado, vista de tres cuartos sobre pared amarilla",
+   "descripcion": "Máscara de búho de plumaje gris pintado a pinceladas, con grandes ojos negros de aro anaranjado y pico anaranjado.",
+   "recorte": false
+  },
+  "a127": {
+   "alt": "Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema",
+   "descripcion": "Máscara de rostro partido: la mitad izquierda es un rostro humano color malva con ojo azul y barba y bigote tallados en ondas de colores; la derecha es una calavera crema con dientes pintados.",
+   "recorte": false
+  },
+  "a081": {
+   "alt": "Máscara de felino amarilla con lunares rojos, anaranjados y negros y orejas grises",
+   "descripcion": "Máscara de felino de fondo amarillo cubierta de lunares rojos, anaranjados y negros, con orejas grises y ojos verdes.",
+   "recorte": false
+  },
+  "a015": {
+   "alt": "Máscara de mariposa con alas azul marino y amarillo, cuerpo morado como nariz y antenas enroscadas",
+   "descripcion": "Máscara de mariposa cuyo cuerpo forma la nariz y cuyas alas enmarcan los ojos. Las alas son azul marino con interior amarillo y ocelos de colores.",
+   "recorte": false
+  },
+  "a164": {
+   "alt": "Máscara de borrego anaranjado con escamas amarillas y cuernos enroscados blanco y negro, sobre pared crema",
+   "descripcion": "Borrego cimarrón de la Danza de los Morenos, anaranjado con escamas amarillas. Sus grandes cuernos enroscados, en blanco y negro, rodean la cara.",
+   "recorte": false
+  },
+  "a163": {
+   "alt": "Máscara de gallo anaranjado con cresta color vino escalonada, pico amarillo y barbas rojas, de frente en pared blanca",
+   "descripcion": "Gallo de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.",
+   "recorte": false
+  },
+  "a085": {
+   "alt": "Máscara de jirafa café con líneas anaranjadas, cuernitos grises y ojos verdes",
+   "descripcion": "Máscara de jirafa color café con retícula anaranjada, dos cuernitos grises y ojos verdes.",
+   "recorte": false
+  },
+  "a038": {
+   "alt": "Máscara de nahual blanco de frente con puntos dorados, cuencas negras, ojos rojos y una cabellera de fibra clara",
+   "descripcion": "Nahual blanco de frente: base blanca con puntos dorados, dos grandes cuencas negras punteadas, ojos rojos, orejas rojas y cabellera de fibra clara.",
+   "recorte": false
+  },
+  "a022": {
+   "alt": "Máscara de coyote blanca con franjas de arcoíris y espirales, orejas amarillas y azul marino, vista de tres cuartos",
+   "descripcion": "Coyote de la Danza de los Morenos en vista de tres cuartos: base blanca, orejas amarillas y azul marino, franjas de arcoíris en V y espirales en las mejillas.",
+   "recorte": false
+  },
+  "a086": {
+   "alt": "Máscara de ave anaranjada con penacho verde de plumas de pavo real y pico rojo",
+   "descripcion": "Máscara de ave de rostro anaranjado con penacho verde de plumas tipo pavo real y pico largo rojo.",
+   "recorte": false
+  },
+  "a010": {
+   "alt": "Máscara de elefante de perfil, roja con oreja rosa, trompa enroscada y patrones de colores",
+   "descripcion": "Máscara de elefante vista de perfil, roja con una gran oreja rosa y la trompa enroscada. Está cubierta de patrones de colores: hexágonos, gotas, chevrones y triángulos.",
+   "recorte": false
+  },
+  "a076": {
+   "alt": "Máscara de cánido negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
+   "descripcion": "Coyote de rostro negro y mejillas blancas, con bandas de arcoíris que cruzan el hocico como bigotes y orejas verdes y amarillas.",
+   "recorte": false
+  },
+  "a114": {
+   "alt": "Máscara negra de rostro humano con un ave negra de alas abiertas posada en la cabeza",
+   "descripcion": "Rostro negro con un ave negra posada en la cabeza; las alas abiertas enmarcan la cara. Tiene ojos amarillos y cejas guinda.",
+   "recorte": false
+  },
+  "a016": {
+   "alt": "Máscara de toro con frente roja, antifaz amarillo, mejillas azules con espirales y cuernos negros",
+   "descripcion": "Máscara de toro con la frente roja, un antifaz amarillo que baja hasta la nariz y mejillas azules con espirales verdes. Lleva cuernos negros y orejas de franjas de colores.",
    "recorte": false
   },
   "a104": {
-   "alt": "Máscara negra de perfil con oreja felina, cresta de picos rojos, ojo naranja y dientes rayados de rojo",
+   "alt": "Máscara negra de perfil con oreja felina, cresta de picos rojos, ojo anaranjado y dientes rayados de rojo",
    "descripcion": "Máscara negra vista de perfil, con oreja de felino, una cresta de picos rojos sobre la cabeza y dientes apretados con rayas rojas.",
+   "recorte": false
+  },
+  "a118": {
+   "alt": "Máscara de búho gris verdoso con grandes ojos amarillos y negros y pico amarillo sobre pared azul",
+   "descripcion": "Tecolote de cara gris verdosa con plumaje pintado a trazos finos, grandes ojos amarillos y pico amarillo.",
+   "recorte": false
+  },
+  "a056": {
+   "alt": "Máscara de venado anaranjada y amarilla con puntos negros y astas azules con círculos de colores, de cerca",
+   "descripcion": "Acercamiento a una máscara de venado de cara anaranjada y amarilla, con astas azules decoradas con círculos de colores.",
+   "recorte": false
+  },
+  "a122": {
+   "alt": "Máscara de madera con un lince, un búho y un felino de rosetas tallados uno encima de otro, sobre pared clara",
+   "descripcion": "Máscara compuesta con tres animales tallados uno sobre otro: un lince arriba, un búho al centro y un felino moteado con las fauces abiertas abajo.",
+   "recorte": false
+  },
+  "a019": {
+   "alt": "Máscara de diablo rojo con grandes cuernos negros, un toro pequeño en la frente y felinos moteados alrededor",
+   "descripcion": "Máscara de diablo de rostro rojo con grandes cuernos negros y una cabecita de toro en la frente. Dos felinos amarillos moteados enmarcan la cara y rodean los ojos.",
+   "recorte": false
+  },
+  "a034": {
+   "alt": "Máscara de tigre anaranjado con rayas negras, ojos verdes y colmillos, de frente",
+   "descripcion": "Tigre anaranjado con rayas negras, ojos verdes y hocico abierto con colmillos, visto de frente y de perfil en dos fotos.",
+   "recorte": false
+  },
+  "a092": {
+   "alt": "Máscara de rostro negro brillante con estrellas, cejas y bigote dorados",
+   "descripcion": "Máscara de rostro humano en negro brillante, decorada con estrellas, cejas y bigote dorados.",
+   "recorte": false
+  },
+  "a069": {
+   "alt": "Máscara de tigre blanco con rayas negras, ojos verdes y fauces abiertas con colmillos",
+   "descripcion": "Collage con dos vistas de un tigre blanco de rayas negras y ojos verdes, con las fauces abiertas que muestran colmillos amarillos y la lengua roja.",
+   "recorte": false
+  },
+  "a093": {
+   "alt": "Máscara de coyote blanca con bandas y espirales de arcoíris y orejas amarillas y azules",
+   "descripcion": "Máscara de coyote blanca con bandas de arcoíris en la frente, espirales de colores en las mejillas y orejas amarillas y azules.",
+   "recorte": false
+  },
+  "a075": {
+   "alt": "Máscara de cánido gris y negro vista de lado, con labios rojos, colmillos y ojo azul y amarillo",
+   "descripcion": "El mismo cánido gris y negro, visto desde el otro lado: hocico abierto con colmillos, labios rojos y orejas puntiagudas.",
+   "recorte": false
+  },
+  "a138": {
+   "alt": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces abiertas con colmillos blancos",
+   "descripcion": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces rojas abiertas con colmillos blancos. Detrás se ve otra máscara de felino moteado.",
+   "recorte": false
+  },
+  "a073": {
+   "alt": "Máscara de felino amarillo con lunares rojos, negros y anaranjados, orejas grises y hocico largo, vista de perfil",
+   "descripcion": "Felino de rostro amarillo cubierto de lunares rojos, negros y anaranjados, con orejas grises y hocico largo rayado de negro.",
+   "recorte": false
+  },
+  "a155": {
+   "alt": "Máscara de sol y luna: luna azul de perfil con estrellas doradas junto a un sol amarillo con rayos",
+   "descripcion": "Pieza de dos rostros: una luna azul de perfil con estrellas doradas y un sol amarillo de frente con rayos rojos y dorados, que comparten los labios.",
+   "recorte": false
+  },
+  "a089": {
+   "alt": "Perfil de máscara morada de animal con cuernos curvos rayados y hocico verde",
+   "descripcion": "Máscara de perfil de un animal con cuernos, pintada en morado claro y oscuro, con cuernos curvos rayados en negro y anaranjado y hocico verde.",
+   "recorte": false
+  },
+  "a052": {
+   "alt": "Máscara de cánido de estilo realista con pelaje café grisáceo, orejas altas y ojo ámbar, vista de tres cuartos",
+   "descripcion": "Máscara de coyote de estilo realista, con el pelaje pintado a pincel en tonos café, gris y anaranjado.",
    "recorte": false
   },
   "a160": {
@@ -2190,9 +2128,174 @@
    "descripcion": "Máscara de cebra de franjas negras y blancas, ojos color miel y orejas grises con interior dorado.",
    "recorte": false
   },
-  "a043": {
-   "alt": "Máscara negra de rostro alargado con lengua roja de fuera y un tecolote de ojos amarillos tallado en la frente",
-   "descripcion": "Rostro negro de expresión burlona, con la lengua roja de fuera y un tecolote tallado sobre la frente.",
+  "a169": {
+   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, de frente en pared blanca",
+   "descripcion": "Borrego cimarrón de la Danza de los Morenos, amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos.",
+   "recorte": false
+  },
+  "a095": {
+   "alt": "Vista lateral de máscara de coyote blanca con espiral de arcoíris y orejas amarilla y azul",
+   "descripcion": "Vista lateral del coyote blanco de arcoíris, que deja ver el perfil del hocico y la espiral de colores en la mejilla.",
+   "recorte": false
+  },
+  "a154": {
+   "alt": "Máscara de hombre con barba negra y gorro azul con estrellas, sol y luna dorados sobre pared amarilla",
+   "descripcion": "Rostro de hombre con barba negra tallada y un gorro azul cubierto de estrellas, puntos, un sol y una media luna dorados.",
+   "recorte": false
+  },
+  "a001": {
+   "alt": "Máscara de venado con astas negras, orejas anaranjadas y rostro azul con grecas y franjas onduladas",
+   "descripcion": "Máscara de venado tallada y policromada, con astas negras de filete amarillo y orejas anaranjadas decoradas. El rostro combina grecas azules en la frente y franjas onduladas moradas en el hocico.",
+   "recorte": false
+  },
+  "a061": {
+   "alt": "Máscara negra de pico largo con trazos crema, ojo rojo y cabellera de fibra oscura, vista de perfil",
+   "descripcion": "Máscara negra de pico largo y curvo, pintada con pequeños trazos color crema que imitan plumas. Tiene ojos rojos y una larga cabellera de fibra oscura.",
+   "recorte": false
+  },
+  "a140": {
+   "alt": "Máscara de ave azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo",
+   "descripcion": "Máscara de ave azul con plumas pintadas en amarillo, ojo verde con pestañas y pico curvo amarillo.",
+   "recorte": false
+  },
+  "a153": {
+   "alt": "Máscara negra alargada cubierta de puntos crema, con estrellas anaranjadas y bigote en espiral",
+   "descripcion": "Collage con una calavera color hueso, vista dos veces, y un rostro negro cubierto de puntos crema y estrellas anaranjadas, de frente y de perfil.",
+   "recorte": false
+  },
+  "a146": {
+   "alt": "Máscara de cánido gris con pinceladas amarillas, ojos verdes y nariz roja, de frente",
+   "descripcion": "Tres vistas de una máscara de cánido gris con pelaje sugerido por pinceladas amarillas, orejas altas, ojos verdes y nariz roja.",
+   "recorte": false
+  },
+  "a141": {
+   "alt": "Máscara de toro azul con cuernos oscuros, hocico negro y un costado anaranjado con espiral amarilla",
+   "descripcion": "Máscara de toro de base azul con un rombo en la frente y chevrones amarillos en la caña; un costado anaranjado lleva una espiral amarilla. Tiene hocico negro, orejas rojas y cuernos oscuros.",
+   "recorte": false
+  },
+  "a165": {
+   "alt": "Máscara de guacamaya verde con pico negro y copete de bandas rojas, amarillas y azules, de frente en pared blanca",
+   "descripcion": "Guacamaya de la Danza de los Morenos, de cara verde y pico negro. La cabeza está pintada en bandas rojas, amarillas, azules y anaranjadas.",
+   "recorte": false
+  },
+  "a146c": {
+   "alt": "El mismo cánido gris de pinceladas visto de tres cuartos",
+   "descripcion": "",
+   "recorte": false
+  },
+  "a084": {
+   "alt": "Perfil de máscara de coyote crema con espirales de arcoíris y orejas amarilla y morada",
+   "descripcion": "Vista de perfil de una máscara de coyote de fondo crema con bandas y espirales de colores, orejas amarilla y morada y hocico negro.",
+   "recorte": false
+  },
+  "a151": {
+   "alt": "Máscara de pato café de perfil, con pico abierto y ojo amarillo",
+   "descripcion": "Cabeza de pato en tonos cafés con coronilla oscura, pico abierto y ojo amarillo.",
+   "recorte": false
+  },
+  "a024": {
+   "alt": "Máscara de coyote de frente, blanca con franjas de arcoíris en V, espirales en las mejillas y nariz negra",
+   "descripcion": "Coyote de la Danza de los Morenos visto de frente: base blanca, franjas de arcoíris en V, espirales en las mejillas, línea de puntos de colores en el hocico y nariz negra.",
+   "recorte": false
+  },
+  "a158": {
+   "alt": "Máscara de hombre de rostro partido en piel rosada y anaranjado, con bigote negro y bola roja en la frente",
+   "descripcion": "Rostro de hombre partido en dos tonos, piel rosada y anaranjado, con bigote y piocha negros, sonrisa torcida y una bola roja en la frente.",
+   "recorte": false
+  },
+  "a028": {
+   "alt": "Máscara de chivo con franjas rojas y amarillas, cuernos largos negros con anillos blancos y barba de fibra blanca",
+   "descripcion": "Chivo de rostro con franjas diagonales rojas y amarillas, cuernos largos negros con anillos blancos y barba de fibra blanca.",
+   "recorte": false
+  },
+  "a014": {
+   "alt": "Máscara de toro de cara azul con rombo morado en la frente, cuernos oscuros y orejas rojas",
+   "descripcion": "Máscara de toro de cara azul con un rombo morado en la frente y chevrones amarillos en la nariz. Tiene cuernos oscuros y orejas rojas con rosa.",
+   "recorte": false
+  },
+  "a168": {
+   "alt": "Máscara de burro gris de frente, con orejas largas rayadas y hocico blanco con fosas nasales rosas, en pared blanca",
+   "descripcion": "Burro de la Danza de los Morenos visto de frente, con cara gris, orejas largas rayadas y hocico blanco con fosas nasales rosas.",
+   "recorte": false
+  },
+  "a130": {
+   "alt": "Máscara de hombre de piel clara con barba negra tallada y ojos azules sobre pared amarilla",
+   "descripcion": "Máscara de hombre con barba negra tallada, cejas espesas y ojos azules, sobre una pared amarilla.",
+   "recorte": false
+  },
+  "a062": {
+   "alt": "Máscara de chivo azul con largos cuernos rojos y amarillos, colgada de perfil en una pared crema",
+   "descripcion": "Chivo de rostro azul en dos tonos, con largos cuernos rojos de rebordes amarillos que se curvan hacia atrás. Los ojos son amarillos con iris verde.",
+   "recorte": false
+  },
+  "a171": {
+   "alt": "Máscara de lince crema con rayas rojas, anaranjadas y negras, orejas con manchas y hocico punteado, de frente en pared blanca",
+   "descripcion": "Lince de la Danza de los Morenos visto de frente: cara crema con rayas rojas, anaranjadas y negras, orejas manchadas y hocico con puntos negros.",
+   "recorte": false
+  },
+  "a107": {
+   "alt": "Máscara La Noche de dos rostros, uno ocre y otro azul, con barba negra y corona con luna y estrella",
+   "descripcion": "La Noche, máscara de dos rostros: uno color piel y otro azul. La corona lleva una luna plateada con una estrella.",
+   "recorte": false
+  },
+  "a066": {
+   "alt": "Máscara de cánido gris y negro con orejas puntiagudas, ojos azules y amarillos y hocico abierto con colmillos",
+   "descripcion": "Cánido de pelaje gris y negro con el hocico entreabierto, colmillos y lengua roja. Los ojos están pintados como dianas azules y amarillas.",
+   "recorte": false
+  },
+  "a088": {
+   "alt": "Máscara de chivo roja y amarilla con cuernos largos rayados en blanco y negro y barba blanca",
+   "descripcion": "Máscara de chivo roja y amarilla con largos cuernos rayados en blanco y negro y barba de fibra blanca.",
+   "recorte": false
+  },
+  "a046": {
+   "alt": "Máscara de guacamaya verde de perfil con pico negro y copete de franjas azul, amarilla y roja",
+   "descripcion": "Máscara de guacamaya vista de perfil: cara verde, pico negro curvo y un copete en franjas de colores.",
+   "recorte": false
+  },
+  "a146b": {
+   "alt": "El mismo cánido gris de pinceladas visto de lado",
+   "descripcion": "",
+   "recorte": false
+  },
+  "a027": {
+   "alt": "Máscara de ave azul con pico dorado y penacho de plumas amarillas con ojos morados",
+   "descripcion": "Máscara de ave azul con franjas blancas, pico dorado, ojos amarillos y un penacho de plumas amarillas con ojos morados de pavo real. Son dos fotos de la misma pieza, lado a lado.",
+   "recorte": false
+  },
+  "a018": {
+   "alt": "Máscara de toro café rojizo con pelo tallado, ojos amarillos, cuernos grises y hocico rosado",
+   "descripcion": "Máscara de toro de estilo realista, café rojizo con el pelo tallado y mejillas negras. Tiene cuernos grises de punta negra y hocico rosado.",
+   "recorte": false
+  },
+  "a036": {
+   "alt": "Máscara anaranjada de animal de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos",
+   "descripcion": "Máscara de animal de hocico largo, color anaranjado con trazos negros que imitan pelo, orejas grises con textura y ojo verde olivo.",
+   "recorte": false
+  },
+  "a121": {
+   "alt": "Máscara partida en rostro humano malva con barba de colores y calavera crema, vista de lado",
+   "descripcion": "Máscara de rostro partido: de un lado, un rostro humano color malva con barba tallada en ondas de colores; del otro, una calavera color crema con dientes pintados. Esta vista muestra sobre todo el lado de la calavera.",
+   "recorte": false
+  },
+  "a026": {
+   "alt": "Máscara anaranjada de animal con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos",
+   "descripcion": "Máscara de animal anaranjado con manchas negras en anillo, ojos azules, orejas grandes rojizas con textura de pelo y hocico amarillo con rayas negras.",
+   "recorte": false
+  },
+  "a041": {
+   "alt": "Máscara de coyote azul con orejas amarillas y espirales de colores del arcoíris en las mejillas",
+   "descripcion": "Máscara de coyote de base azul, con espirales de colores del arcoíris en las mejillas y franjas en la frente: el mismo diseño del coyote de la danza en otra combinación de color.",
+   "recorte": false
+  },
+  "a120": {
+   "alt": "Máscara de rostro humano de perfil dentro de una cabeza de águila café con pico amarillo",
+   "descripcion": "Rostro humano que asoma de una cabeza de águila: el pico queda sobre la frente y la mandíbula del ave bajo la barbilla.",
+   "recorte": false
+  },
+  "a123": {
+   "alt": "Máscara amarilla de coyote con orejas verdes y franjas de arcoíris alrededor del ojo, de perfil",
+   "descripcion": "Máscara de cánido amarilla, de orejas verdes, con franjas de colores en arcoíris alrededor del ojo y el hocico negro. Fotografiada de perfil sobre una pared azul claro.",
    "recorte": false
   },
   "a112": {
@@ -2205,14 +2308,9 @@
    "descripcion": "Nahual café de rostro alargado, con trazos amarillos como plumas, ojos rodeados de rojo y una larga cabellera de fibra oscura.",
    "recorte": false
   },
-  "a052": {
-   "alt": "Máscara de coyote realista con pelaje café grisáceo, orejas altas y ojo ámbar, vista de tres cuartos",
-   "descripcion": "Máscara de coyote de estilo realista, con el pelaje pintado a pincel en tonos café, gris y anaranjado.",
-   "recorte": false
-  },
-  "a154": {
-   "alt": "Máscara de hombre con barba negra y gorro azul con estrellas, sol y luna dorados sobre pared amarilla",
-   "descripcion": "Rostro de hombre con barba negra tallada y un gorro azul cubierto de estrellas, puntos, un sol y una media luna dorados.",
+  "a078": {
+   "alt": "Máscara de búho gris azulado con ojos amarillos de rayos negros y pico amarillo, de frente sobre pared blanca",
+   "descripcion": "Máscara de búho gris azulado con grandes ojos amarillos de rayos negros y un pico amarillo grande. Vista de frente.",
    "recorte": false
   },
   "a031": {
@@ -2220,282 +2318,195 @@
    "descripcion": "Ave de rostro blanco con ojos amarillos de rayos negros, pico verde y cresta alta con franja azul de triángulos y bandas anaranjada y roja.",
    "recorte": false
   },
-  "a078": {
-   "alt": "Máscara de búho gris azulado con ojos amarillos de rayos negros y pico amarillo, de frente sobre pared blanca",
-   "descripcion": "Máscara de búho gris azulado con grandes ojos amarillos de rayos negros y un pico amarillo grande. Vista de frente.",
+  "a149": {
+   "alt": "Máscara de ave azul marino con pico dorado y penacho de plumas de pavo real",
+   "descripcion": "Ave azul marino de pico dorado con un penacho de tres plumas de pavo real y una banda dorada con puntos rojos.",
    "recorte": false
   },
-  "a046": {
-   "alt": "Máscara de guacamaya verde de perfil con pico negro y copete de franjas azul, amarilla y roja",
-   "descripcion": "Máscara de guacamaya vista de perfil: cara verde, pico negro curvo y un copete en franjas de colores.",
+  "a048": {
+   "alt": "Máscara de felino negro con ojos verdes, nariz anaranjada, colmillos amarillos y lengua roja",
+   "descripcion": "Máscara de felino negro con ojos verdes, colmillos amarillos y la lengua roja de fuera.",
    "recorte": false
   },
-  "a062": {
-   "alt": "Máscara de chivo azul con largos cuernos rojos y amarillos, colgada de perfil en una pared crema",
-   "descripcion": "Chivo de rostro azul en dos tonos, con largos cuernos rojos de rebordes amarillos que se curvan hacia atrás. Los ojos son amarillos con iris verde.",
+  "a083": {
+   "alt": "Máscara de cánido gris de estilo realista con ojos amarillo verdoso y boca abierta",
+   "descripcion": "Máscara de cánido de estilo realista, con pelaje gris pintado a pincel, ojos amarillos y verdes y la boca abierta en color guinda.",
    "recorte": false
   },
-  "a157": {
-   "alt": "Máscara de cánido negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos",
-   "descripcion": "Máscara de cánido negro de hocico largo con franjas de arcoíris en la ceja y el hocico, orejas verdes y amarillas y boca abierta con colmillos.",
+  "a124": {
+   "alt": "Máscara de búho gris con ojos negros de anillo anaranjado y pico anaranjado sobre pared amarilla",
+   "descripcion": "Máscara de búho en tonos grises moteados, con grandes ojos negros de anillo naranja y pico anaranjado, colgada sobre una pared amarilla.",
    "recorte": false
   },
-  "a126": {
-   "alt": "Máscara de guacamaya roja y verde con trazos azules y pico curvo negro y crema, vista de lado",
-   "descripcion": "Máscara de ave de pico curvo, con plumaje rojo y verde rayado de azul y el pico abierto en negro y crema. En el borde izquierdo asoman otras máscaras.",
+  "a008": {
+   "alt": "Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada",
+   "descripcion": "Máscara de diablo de rojo brillante con cuernos largos, flamas negras en la frente y cejas talladas. De la boca salen colmillos claros y una lengua anaranjada.",
    "recorte": false
   },
-  "a064": {
-   "alt": "Máscara de diablo rojo con cuernos de toro, colmillos largos, lengua de fuera y marco amarillo con círculos",
-   "descripcion": "Diablo de rostro rojo con cuernos de toro, orejas oscuras y largos colmillos. Sobre las cejas tiene dos pequeñas cabezas moteadas y saca la lengua.",
-   "recorte": false
-  },
-  "a007": {
-   "alt": "Máscara de diablo rojo oscuro con cuernos largos, orejas puntiagudas, colmillos y lengua roja de fuera",
-   "descripcion": "Máscara de diablo de rostro rojo oscuro con cuernos largos, orejas puntiagudas y cejas negras talladas. Tiene colmillos claros y la lengua roja de fuera.",
-   "recorte": false
-  },
-  "a023": {
-   "alt": "Máscara de El Tiempo de lado: rostros con barba negra rizada, corona con un sol con cara y una luna creciente azul",
-   "descripcion": "El Tiempo visto de lado: se distinguen los rostros de piel terracota con barba negra rizada, coronados por un sol con cara y una luna creciente azul y dorada.",
-   "recorte": false
-  },
-  "a033": {
-   "alt": "Máscara de felino amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima",
-   "descripcion": "Felino amarillo con manchas negras de centro café, ojos verdes y hocico abierto con colmillos, que lleva un búho gris de ojos amarillos sobre la cabeza.",
-   "recorte": false
-  },
-  "a092": {
-   "alt": "Máscara de rostro negro brillante con estrellas, cejas y bigote dorados",
-   "descripcion": "Máscara de rostro humano en negro brillante, decorada con estrellas, cejas y bigote dorados.",
-   "recorte": false
-  },
-  "a171": {
-   "alt": "Máscara de lince crema con rayas rojas, anaranjadas y negras, orejas con manchas y hocico punteado, de frente en pared blanca",
-   "descripcion": "Lince de la Danza de los Morenos visto de frente: cara crema con rayas rojas, anaranjadas y negras, orejas manchadas y hocico con puntos negros.",
-   "recorte": false
-  },
-  "a061": {
-   "alt": "Máscara negra de pico largo con trazos crema, ojo rojo y cabellera de fibra oscura, vista de perfil",
-   "descripcion": "Máscara negra de pico largo y curvo, pintada con pequeños trazos color crema que imitan plumas. Tiene ojos rojos y una larga cabellera de fibra oscura.",
-   "recorte": false
-  },
-  "a006": {
-   "alt": "Máscara de ave de rostro azul celeste, pico largo café y penacho con plumas de pavo real",
-   "descripcion": "Máscara de ave de rostro azul celeste con pico largo café. El penacho lleva finas líneas amarillas y ocelos como de pluma de pavo real.",
-   "recorte": false
-  },
-  "a005": {
-   "alt": "Máscara de jabalí café grisáceo con ojos anaranjados y colmillos blancos curvos",
-   "descripcion": "Máscara de jabalí en tonos cafés y grises que imitan el pelaje, con ojos anaranjados y colmillos blancos curvos. El hocico tiene arrugas talladas.",
-   "recorte": false
-  },
-  "a158": {
-   "alt": "Máscara de hombre de rostro partido en piel rosada y anaranjado, con bigote negro y bola roja en la frente",
-   "descripcion": "Rostro de hombre partido en dos tonos, piel rosada y anaranjado, con bigote y piocha negros, sonrisa torcida y una bola roja en la frente.",
-   "recorte": false
-  },
-  "a172": {
-   "alt": "Máscara de lince crema con rayas rojas y negras, orejas con manchas negras y hocico punteado, algo de lado en pared blanca",
-   "descripcion": "El mismo lince de orejas manchadas, visto ligeramente de lado. Se aprecia el volumen del hocico punteado.",
-   "recorte": false
-  },
-  "a075": {
-   "alt": "Máscara de cánido gris y negro vista de lado, con labios rojos, colmillos y ojo azul y amarillo",
-   "descripcion": "El mismo cánido gris y negro, visto desde el otro lado: hocico abierto con colmillos, labios rojos y orejas puntiagudas.",
-   "recorte": false
-  },
-  "a159": {
-   "alt": "Máscara azul grisácea de orejas largas con franjas de colores, pinceladas amarillas y ojos verdes",
-   "descripcion": "Máscara de orejas largas en azul grisáceo, con pelaje de pinceladas amarillas y orejas de franjas de colores; el hocico es azul marino con manchas blancas.",
-   "recorte": false
-  },
-  "a017": {
-   "alt": "Máscara de cebra con rayas amarillas y azul marino en la nariz, rayas negras y blancas y orejas rosas",
-   "descripcion": "Máscara de cebra con rayas amarillas y azul marino en la nariz y rayas negras y blancas a los lados. Las orejas son amarillas con interior rosa.",
-   "recorte": false
-  },
-  "a015": {
-   "alt": "Máscara de mariposa con alas azul marino y amarillo, cuerpo morado como nariz y antenas enroscadas",
-   "descripcion": "Máscara de mariposa cuyo cuerpo forma la nariz y cuyas alas enmarcan los ojos. Las alas son azul marino con interior amarillo y ocelos de colores.",
-   "recorte": false
-  },
-  "a022": {
-   "alt": "Máscara de coyote blanca con franjas de arcoíris y espirales, orejas amarillas y azul marino, vista de tres cuartos",
-   "descripcion": "Coyote de la Danza de los Morenos en vista de tres cuartos: base blanca, orejas amarillas y azul marino, franjas de arcoíris en V y espirales en las mejillas.",
-   "recorte": false
-  },
-  "a098": {
-   "alt": "Máscara compuesta con lince, búho gris y felino manchado de fauces abiertas, apilados",
-   "descripcion": "Máscara compuesta de tres animales apilados: un lince arriba, un búho gris en medio y un felino manchado con las fauces abiertas abajo.",
-   "recorte": false
-  },
-  "a068": {
-   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
-   "descripcion": "Felino de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.",
-   "recorte": false
-  },
-  "a009": {
-   "alt": "Tres máscaras de rostro humano en negro brillante con estrellas, lunas, puntos y bigotes dorados",
-   "descripcion": "Tres máscaras de rostro humano pintadas de negro brillante y decoradas en dorado. Una lleva líneas de puntos y estrellas rojas, otra estrellas de ocho puntas y la tercera lunas y una estrella fugaz.",
+  "a167": {
+   "alt": "Máscara de burro gris con orejas largas rayadas y hocico blanco con fosas rosas, vista de perfil en pared blanca",
+   "descripcion": "Burro de la Danza de los Morenos visto de perfil: cara gris, orejas largas con rayitas blancas y hocico blanco con fosas nasales rosas.",
    "recorte": false
   }
  },
  "pieza_de": {
-  "a013": "pato",
-  "a151": "pato",
-  "a102": "nahual-negro",
-  "a001": "venado-astas-negras",
-  "a046": "guacamaya-verde-mate",
-  "a083": "canido-gris-verdoso",
-  "a118": "buho-gris-verdoso",
-  "a045": "felino-rosetas",
-  "a026": "felino-rosetas",
-  "a130": "hombre-barbado",
-  "a093": "coyote-blanco-esbelto",
-  "a095": "coyote-blanco-esbelto",
-  "a169": "borrego-amarillo",
-  "a170": "borrego-amarillo",
-  "a113": "rostro-negro-calavera",
-  "a115": "rostro-negro-calavera",
-  "a025": "el-tiempo",
-  "a023": "el-tiempo",
-  "a137": "el-tiempo",
-  "a041": "coyote-azul-orejas-largas",
-  "a029": "coyote-azul-orejas-largas",
-  "a139": "jirafa-amarilla",
-  "a114": "rostro-negro-ave-alada",
-  "a032": "rostro-negro-ave-alada",
-  "a171": "lince-manchas",
-  "a172": "lince-manchas",
-  "a078": "buho-gris-azulado",
-  "a066": "canido-gris-fauces",
-  "a075": "canido-gris-fauces",
-  "a119": "chivo-blanco-negro",
-  "a006": "pavo-real-celeste",
-  "a084": "coyote-crema-orejas-moradas",
-  "a015": "mariposa-azul",
-  "a150": "mariposa-azul",
-  "a052": "coyote-naturalista-ocre",
-  "a090": "chivo-azul-crema",
-  "a157": "canido-negro-boca-abierta",
-  "a021": "rostro-lila-iguana-serpientes",
-  "a124": "buho-gris-pico-anaranjado",
-  "a071": "buho-gris-pico-anaranjado",
-  "a020": "coyote-crema-ojos-azules",
-  "a070": "canido-cafe-naturalista",
-  "a161": "equino-rayado",
-  "a053": "canido-negro-ojos-cafes",
-  "a061": "ave-negra-cabellera-azul",
-  "a147": "vida-muerte-azul",
-  "a065": "ave-azul-pico-amarillo",
-  "a016": "toro-multicolor",
-  "a152": "gorila",
-  "a058": "jaguar-rosetas",
-  "a156": "canido-ocre-pinceladas",
-  "a087": "coyote-amarillo-anillos",
-  "a096": "diablo-marco-moteado-lengua-negra",
-  "a122": "lince-buho-jaguar",
-  "a098": "lince-buho-jaguar",
-  "a120": "hombre-aguila",
-  "a107": "la-noche",
-  "a097": "la-noche",
-  "a112": "la-noche",
-  "a064": "diablo-marco-moteado-lengua-roja",
-  "a143": "rostro-doble-amarillo",
-  "a106": "vida-muerte-barba-cafe",
-  "a166": "lince-franjas-zigzag",
-  "a155": "sol-y-luna",
-  "a086": "pavo-real-anaranjado",
-  "a148": "mandril",
-  "a024": "coyote-blanco-arcoiris",
-  "a022": "coyote-blanco-arcoiris",
-  "a146": "canido-gris-pinceladas",
-  "a168": "burro-gris",
-  "a167": "burro-gris",
-  "a057": "jaguar-anaranjado-con-buho",
-  "a048": "pantera-negra-ojos-verdes",
-  "a085": "jirafa-cafe",
-  "a105": "rostro-negro-lengua",
-  "a135": "rostro-negro-lengua",
-  "a008": "diablo-rojo-lengua",
-  "a074": "coyote-blanco-anillos",
-  "a154": "hombre-gorro-astros",
-  "a128": "nahual-cafe",
-  "a028": "chivo-rojo-franjas-diagonales",
-  "a079": "buho-plateado",
-  "a012": "gallo-cresta-roja",
-  "a100": "canido-gris",
-  "a082": "pavo-real-lila",
-  "a059": "coyote-negro-lineas-blancas",
-  "a088": "chivo-rojo-antifaz-amarillo",
-  "a126": "ave-pico-ganchudo",
-  "a092": "rostro-negro-estrellas",
-  "a042": "ave-negra-pico-largo",
-  "a038": "nahual-blanco",
-  "a035": "nahual-blanco",
-  "a089": "chivo-morado",
-  "a054": "lince-naturalista",
-  "a108": "pavo-real-pico-anaranjado",
-  "a040": "coyote-blanco-orejas-turquesa",
-  "a049": "mariposa-verde",
-  "a047": "chivo-rojo",
-  "a050": "buho-azul",
-  "a031": "gallo-cresta-azul",
-  "a067": "gallo-cresta-azul",
-  "a063": "jaguar-orejas-rojas",
-  "a140": "ave-azul-pico-curvo",
-  "a136": "canido-negro-nariz-gris",
-  "a127": "vida-muerte-malva",
-  "a121": "vida-muerte-malva",
-  "a060": "venado-astas-azules",
-  "a056": "venado-astas-azules",
-  "a055": "canido-anaranjado",
-  "a036": "canido-anaranjado",
-  "a062": "chivo-azul-cuernos-rojos",
-  "a160": "cebra-blanco-negro",
-  "a162": "diablo-cuernos-rayados",
-  "a003": "chivo-azul-hocico-rosa",
-  "a094": "el-tiempo-corona-azul",
-  "a153": "calavera-y-rostro-negro-estrellas",
-  "a007": "diablo-rojo-oscuro-lengua",
-  "a138": "felino-fauces-abiertas",
-  "a141": "toro-azul",
-  "a014": "toro-azul",
-  "a019": "diablo-toro-felinos",
-  "a034": "tigre-anaranjado",
-  "a010": "elefante",
-  "a004": "tecolote-rojo",
-  "a002": "tigre-blanco-con-buho",
-  "a037": "pantera-negra-ojos-amarillos",
-  "a005": "jabali",
-  "a017": "cebra-amarilla",
-  "a081": "felino-lunares",
-  "a073": "felino-lunares",
-  "a076": "canido-negro-ojos-rojos",
-  "a027": "pavo-real-pico-dorado",
-  "a165": "guacamaya-verde",
-  "a164": "borrego-anaranjado",
-  "a159": "burro-azul-orejas-arcoiris",
-  "a069": "tigre-blanco",
-  "a091": "coyote-azul-turquesa",
-  "a123": "coyote-amarillo-orejas-verdes",
-  "a103": "diablo-criatura-alada",
-  "a144": "perro-blanco-mancha",
-  "a009": "trio-rostros-negros-astros",
-  "a068": "felino-moteado",
-  "a134": "rostro-negro-cresta-roja",
-  "a104": "rostro-negro-cresta-roja",
-  "a043": "rostro-negro-tecolote",
-  "a111": "rostro-negro-tecolote",
-  "a149": "pavo-real-ocelos-azules",
-  "a163": "gallo-anaranjado",
-  "a158": "rostro-dos-tonos",
   "a044": "jaguar-amarillo-con-buho",
   "a033": "jaguar-amarillo-con-buho",
   "a039": "jaguar-amarillo-con-buho",
   "a072": "jaguar-amarillo-con-buho",
-  "a018": "toro-cafe"
+  "a139": "jirafa-amarilla",
+  "a015": "mariposa-azul",
+  "a150": "mariposa-azul",
+  "a113": "rostro-negro-calavera",
+  "a115": "rostro-negro-calavera",
+  "a002": "tigre-blanco-con-buho",
+  "a138": "felino-fauces-abiertas",
+  "a171": "lince-manchas",
+  "a172": "lince-manchas",
+  "a102": "nahual-negro",
+  "a010": "elefante",
+  "a019": "diablo-toro-felinos",
+  "a163": "gallo-anaranjado",
+  "a159": "burro-azul-orejas-arcoiris",
+  "a164": "borrego-anaranjado",
+  "a130": "hombre-barbado",
+  "a047": "chivo-rojo",
+  "a079": "buho-plateado",
+  "a147": "vida-muerte-azul",
+  "a034": "tigre-anaranjado",
+  "a034b": "tigre-anaranjado",
+  "a045": "felino-rosetas",
+  "a026": "felino-rosetas",
+  "a165": "guacamaya-verde",
+  "a094": "el-tiempo-corona-azul",
+  "a146": "canido-gris-pinceladas",
+  "a146b": "canido-gris-pinceladas",
+  "a146c": "canido-gris-pinceladas",
+  "a087": "coyote-amarillo-anillos",
+  "a160": "cebra-blanco-negro",
+  "a058": "jaguar-rosetas",
+  "a127": "vida-muerte-malva",
+  "a121": "vida-muerte-malva",
+  "a114": "rostro-negro-ave-alada",
+  "a032": "rostro-negro-ave-alada",
+  "a081": "felino-lunares",
+  "a073": "felino-lunares",
+  "a093": "coyote-blanco-esbelto",
+  "a095": "coyote-blanco-esbelto",
+  "a043": "rostro-negro-tecolote",
+  "a111": "rostro-negro-tecolote",
+  "a064": "diablo-marco-moteado-lengua-roja",
+  "a082": "pavo-real-lila",
+  "a169": "borrego-amarillo",
+  "a170": "borrego-amarillo",
+  "a076": "canido-negro-ojos-rojos",
+  "a046": "guacamaya-verde-mate",
+  "a154": "hombre-gorro-astros",
+  "a158": "rostro-dos-tonos",
+  "a001": "venado-astas-negras",
+  "a066": "canido-gris-fauces",
+  "a075": "canido-gris-fauces",
+  "a017": "cebra-amarilla",
+  "a070": "canido-cafe-naturalista",
+  "a152": "gorila",
+  "a128": "nahual-cafe",
+  "a037": "pantera-negra-ojos-amarillos",
+  "a012": "gallo-cresta-roja",
+  "a027": "pavo-real-pico-dorado",
+  "a096": "diablo-marco-moteado-lengua-negra",
+  "a028": "chivo-rojo-franjas-diagonales",
+  "a100": "canido-gris",
+  "a013": "pato",
+  "a151": "pato",
+  "a009": "trio-rostros-negros-astros",
+  "a108": "pavo-real-pico-anaranjado",
+  "a005": "jabali",
+  "a122": "lince-buho-jaguar",
+  "a098": "lince-buho-jaguar",
+  "a020": "coyote-crema-ojos-azules",
+  "a153": "calavera-y-rostro-negro-estrellas",
+  "a025": "el-tiempo",
+  "a023": "el-tiempo",
+  "a137": "el-tiempo",
+  "a060": "venado-astas-azules",
+  "a056": "venado-astas-azules",
+  "a149": "pavo-real-ocelos-azules",
+  "a085": "jirafa-cafe",
+  "a048": "pantera-negra-ojos-verdes",
+  "a168": "burro-gris",
+  "a167": "burro-gris",
+  "a086": "pavo-real-anaranjado",
+  "a144": "perro-blanco-mancha",
+  "a088": "chivo-rojo-antifaz-amarillo",
+  "a050": "buho-azul",
+  "a084": "coyote-crema-orejas-moradas",
+  "a089": "chivo-morado",
+  "a123": "coyote-amarillo-orejas-verdes",
+  "a053": "canido-negro-ojos-cafes",
+  "a074": "coyote-blanco-anillos",
+  "a156": "canido-ocre-pinceladas",
+  "a092": "rostro-negro-estrellas",
+  "a166": "lince-franjas-zigzag",
+  "a007": "diablo-rojo-oscuro-lengua",
+  "a049": "mariposa-verde",
+  "a052": "coyote-naturalista-ocre",
+  "a008": "diablo-rojo-lengua",
+  "a148": "mandril",
+  "a143": "rostro-doble-amarillo",
+  "a042": "ave-negra-pico-largo",
+  "a006": "pavo-real-celeste",
+  "a136": "canido-negro-nariz-gris",
+  "a062": "chivo-azul-cuernos-rojos",
+  "a155": "sol-y-luna",
+  "a040": "coyote-blanco-orejas-turquesa",
+  "a105": "rostro-negro-lengua",
+  "a135": "rostro-negro-lengua",
+  "a038": "nahual-blanco",
+  "a035": "nahual-blanco",
+  "a107": "la-noche",
+  "a097": "la-noche",
+  "a112": "la-noche",
+  "a018": "toro-cafe",
+  "a140": "ave-azul-pico-curvo",
+  "a091": "coyote-azul-turquesa",
+  "a057": "jaguar-anaranjado-con-buho",
+  "a054": "lince-naturalista",
+  "a124": "buho-gris-pico-anaranjado",
+  "a071": "buho-gris-pico-anaranjado",
+  "a069": "tigre-blanco",
+  "a090": "chivo-azul-crema",
+  "a055": "canido-anaranjado",
+  "a036": "canido-anaranjado",
+  "a003": "chivo-azul-hocico-rosa",
+  "a024": "coyote-blanco-arcoiris",
+  "a022": "coyote-blanco-arcoiris",
+  "a016": "toro-multicolor",
+  "a126": "ave-pico-ganchudo",
+  "a083": "canido-gris-verdoso",
+  "a021": "rostro-lila-iguana-serpientes",
+  "a041": "coyote-azul-orejas-largas",
+  "a029": "coyote-azul-orejas-largas",
+  "a061": "ave-negra-cabellera-azul",
+  "a078": "buho-gris-azulado",
+  "a068": "felino-moteado",
+  "a031": "gallo-cresta-azul",
+  "a067": "gallo-cresta-azul",
+  "a106": "vida-muerte-barba-cafe",
+  "a161": "equino-rayado",
+  "a103": "diablo-criatura-alada",
+  "a059": "coyote-negro-lineas-blancas",
+  "a059b": "coyote-negro-lineas-blancas",
+  "a120": "hombre-aguila",
+  "a134": "rostro-negro-cresta-roja",
+  "a104": "rostro-negro-cresta-roja",
+  "a063": "jaguar-orejas-rojas",
+  "a162": "diablo-cuernos-rayados",
+  "a004": "tecolote-rojo",
+  "a157": "canido-negro-boca-abierta",
+  "a119": "chivo-blanco-negro",
+  "a141": "toro-azul",
+  "a014": "toro-azul",
+  "a118": "buho-gris-verdoso"
  },
  "destacadas": [
   "a025",
@@ -2533,6 +2544,7 @@
   "a122"
  ],
  "apartadas": [
+  "ave-azul-pico-amarillo",
   "felino-multicolor-pastel",
   "toro-pastel-cuernos-azules",
   "toro-pastel-cuernos-rosas"
