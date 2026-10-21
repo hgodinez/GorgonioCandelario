@@ -61,6 +61,11 @@
       });
     }
 
+    // Tira de vistas cuando una pieza tiene varias fotos (data-vistas: [{src, alt, mini}])
+    var tira = document.createElement("div");
+    tira.className = "visor-vistas";
+    texto.after(tira);
+
     function mostrar(i) {
       actual = (i + enlaces.length) % enlaces.length;
       var a = enlaces[actual];
@@ -70,6 +75,26 @@
       titulo.textContent = a.dataset.titulo || "";
       texto.textContent = a.dataset.descripcion || "";
       contador.textContent = (actual + 1) + " de " + enlaces.length;
+      tira.textContent = "";
+      var vistas = a.dataset.vistas ? JSON.parse(a.dataset.vistas) : [];
+      if (vistas.length > 1) {
+        vistas.forEach(function (v, n) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "Vista " + (n + 1) + " de " + vistas.length);
+          b.setAttribute("aria-pressed", String(n === 0));
+          var m = document.createElement("img");
+          m.src = v.mini;
+          m.alt = "";
+          b.appendChild(m);
+          b.addEventListener("click", function () {
+            img.src = v.src;
+            img.alt = v.alt;
+            tira.querySelectorAll("button").forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+          });
+          tira.appendChild(b);
+        });
+      }
     }
 
     document.addEventListener("click", function (e) {

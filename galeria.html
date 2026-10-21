@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · Gorgonio Candelario, maestro mascarero</title>
+  <meta name="description" content="Galería de las máscaras de madera talladas y policromadas a mano por el maestro Gorgonio Candelario Castro, de Suchitlán, Colima: la Danza de los Morenos, El Tiempo, La Noche, nahuales y más.">
+  <meta name="theme-color" content="#1c1612">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Gorgonio Candelario · Maestro mascarero de Suchitlán, Colima">
+  <meta property="og:description" content="Máscaras de madera talladas y policromadas a mano en Suchitlán, Colima.">
+  <!-- PENDIENTE: cuando haya dominio, agregar og:url y og:image con URL absoluta (p. ej. img/mascaras/HERO-960.jpg) -->
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="preload" href="fuentes/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body class="pagina-galeria">
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g><path d="M32 3C16 3 8 14 8 28c0 17 11 33 24 33s24-16 24-33C56 14 48 3 32 3z" fill="#b9321c"/><path d="M14 18c5-6 11-9 18-9s13 3 18 9" fill="none" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M17 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><path d="M36 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><ellipse cx="22.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><ellipse cx="41.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><circle cx="22.5" cy="31" r="2.4" fill="#1c1612"/><circle cx="41.5" cy="31" r="2.4" fill="#1c1612"/><path d="M32 27v15" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M23 49c6 4 12 4 18 0" fill="none" stroke="#1c1612" stroke-width="3" stroke-linecap="round"/></g></svg>
+        <span>Gorgonio Candelario <small>Maestro mascarero</small></span>
+      </a>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="navegacion">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        Menú
+      </button>
+      <nav class="navegacion" id="navegacion" aria-label="Secciones">
+        <ul>
+          <li><a href="index.html#maestro">El maestro</a></li>
+          <li><a href="index.html#danza">La danza</a></li>
+          <li><a href="index.html#tecnica">La técnica</a></li>
+          <li><a href="galeria.html" aria-current="page">Galería</a></li>
+          <li><a href="index.html#reconocimientos">Reconocimientos</a></li>
+          <li><a href="index.html#videos">Videos</a></li>
+          <li><a href="index.html#taller">El taller</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- GALERIA -->
+    <!-- /GALERIA -->
+
+    <section class="galeria-cierre" aria-labelledby="titulo-cierre">
+      <div class="contenedor">
+        <h2 id="titulo-cierre">Conoce las máscaras en persona</h2>
+        <p>Don Gorgonio recibe en su taller Mi Güelo Baci, en Suchitlán, a quienes quieren conocer de cerca la talla policromada y llevarse una máscara hecha a mano.</p>
+        <div class="botones" style="justify-content:center">
+          <a class="boton boton-principal" href="index.html#taller">Visitar el taller</a>
+          <a class="boton boton-secundario" style="color:var(--blanco);border-color:var(--blanco)" href="index.html#danza">La Danza de los Morenos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="franjas" aria-hidden="true"></div>
+  <footer class="pie">
+    <div class="contenedor">
+      <div>
+        <strong>Gorgonio Candelario Castro</strong>
+        <p>Maestro mascarero · Suchitlán, Comala, Colima, México</p>
+      </div>
+      <div>
+        <p>Taller Mi Güelo Baci · Suchitlán, Comala, Colima</p>
+        <!-- PENDIENTE: confirmar quién tomó las fotos y cómo quiere que se le dé crédito. -->
+        <p>Fotografías de su obra: cortesía de la familia Candelario</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="visor" id="visor" aria-label="Visor de fotografías">
+    <div class="visor-barra">
+      <span class="visor-contador" aria-live="polite"></span>
+      <button class="visor-cerrar" type="button">Cerrar <span aria-hidden="true">✕</span></button>
+    </div>
+    <div class="visor-imagen">
+      <button class="visor-anterior" type="button" aria-label="Foto anterior">‹</button>
+      <button class="visor-siguiente" type="button" aria-label="Foto siguiente">›</button>
+    </div>
+    <div class="visor-texto" aria-live="polite" aria-atomic="true">
+      <p class="visor-titulo"></p>
+      <p class="visor-descripcion"></p>
+    </div>
+  </dialog>
+
+  <script src="js/sitio.js" defer></script>
+</body>
+</html>

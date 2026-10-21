@@ -1,0 +1,98 @@
+/* Galería: salas de museo con fondo oscuro */
+
+.pagina-galeria { background: #14100d; color: var(--blanco); }
+.pagina-galeria .encabezado { background: rgba(20, 16, 13, 0.92); border-bottom-color: rgba(255, 250, 240, 0.12); }
+.pagina-galeria .marca, .pagina-galeria .navegacion a { color: var(--blanco); }
+.pagina-galeria .marca small { color: #cbbfae; }
+.pagina-galeria .navegacion a:hover { background: rgba(255, 250, 240, 0.1); color: var(--blanco); }
+.pagina-galeria .navegacion a[aria-current="page"] { background: var(--cempasuchil); color: var(--tinta); }
+.pagina-galeria .menu-boton { background: var(--cempasuchil); color: var(--tinta); }
+@media (max-width: 1000px) {
+  .pagina-galeria .navegacion { background: #14100d; border-bottom-color: rgba(255, 250, 240, 0.12); }
+}
+.pagina-galeria a { color: var(--cempasuchil); }
+.pagina-galeria :focus-visible { outline-color: var(--cempasuchil); }
+
+/* Entrada */
+.galeria-entrada { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(1.5rem, 3vw, 2.5rem); }
+.galeria-entrada .antetitulo { color: var(--cempasuchil); }
+.galeria-entrada h1 { font-size: clamp(2.6rem, 7vw, 4.75rem); margin-bottom: 0.3em; }
+.galeria-entrada p { max-width: 44rem; font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #e2d7c6; }
+.galeria-cifras { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin-top: 1.25rem; padding: 0; list-style: none; }
+.galeria-cifras li { color: #cbbfae; font-size: 0.95rem; }
+.galeria-cifras strong { display: block; font-family: var(--fuente-titulos); font-size: 2rem; color: var(--blanco); line-height: 1.1; }
+
+/* Mosaico de destacadas */
+.mosaico {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 6px;
+  grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: clamp(7rem, 13vw, 11rem); grid-auto-flow: dense;
+}
+.mosaico li { overflow: hidden; border-radius: 6px; background: #221b16; }
+.mosaico li:nth-child(5n + 1) { grid-row: span 2; }
+.mosaico li:nth-child(7n + 3) { grid-column: span 2; grid-row: span 2; }
+.mosaico a { display: block; height: 100%; }
+.mosaico img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.6s ease; filter: saturate(1.05); }
+.mosaico a:hover img { transform: scale(1.06); filter: saturate(1.2); }
+@media (max-width: 760px) {
+  .mosaico { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 8rem; }
+  .mosaico li:nth-child(7n + 3) { grid-column: span 2; }
+}
+
+/* Navegación entre salas */
+.salas-nav {
+  position: sticky; top: 4rem; z-index: 20;
+  background: rgba(20, 16, 13, 0.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 250, 240, 0.1);
+}
+.salas-nav ul { list-style: none; margin: 0; padding: 0.6rem 0; display: flex; gap: 0.5rem; overflow-x: auto; scrollbar-width: thin; }
+.salas-nav a {
+  display: block; white-space: nowrap; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  color: var(--blanco); border: 1.5px solid rgba(255, 250, 240, 0.25); border-radius: 999px; padding: 0.4rem 0.95rem;
+}
+.salas-nav a:hover { background: rgba(255, 250, 240, 0.1); color: var(--blanco); }
+html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
+
+/* Salas */
+.sala { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid rgba(255, 250, 240, 0.08); }
+.sala-encabezado { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1rem 3rem; align-items: end; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }
+@media (max-width: 820px) { .sala-encabezado { grid-template-columns: minmax(0, 1fr); } }
+.sala-encabezado h2 { margin: 0; font-size: clamp(2rem, 4.5vw, 3.2rem); }
+.sala-encabezado .sala-sub { margin: 0.4rem 0 0; color: var(--cempasuchil); font-family: var(--fuente-titulos); font-style: italic; font-size: 1.15rem; }
+.sala-encabezado .sala-texto { margin: 0; color: #e2d7c6; }
+.sala-numero { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a89a87; margin-bottom: 0.5rem; }
+
+.subsala { margin-top: clamp(2rem, 4vw, 3rem); }
+.subsala:first-of-type { margin-top: 0; }
+.subsala-titulo { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255, 250, 240, 0.12); padding-bottom: 0.5rem; }
+.subsala-titulo h3 { margin: 0; font-size: 1.5rem; }
+.subsala-titulo span { color: #a89a87; font-size: 0.95rem; }
+
+/* Muro de piezas: columnas que respetan la forma de cada foto */
+.muro { column-width: 15rem; column-gap: clamp(0.9rem, 2vw, 1.5rem); margin: 0; padding: 0; list-style: none; }
+@media (max-width: 560px) { .muro { column-width: 9.5rem; column-gap: 0.75rem; } }
+.pieza { break-inside: avoid; margin: 0 0 clamp(1.1rem, 2.5vw, 1.75rem); }
+.pieza figure { margin: 0; }
+.pieza a { display: block; position: relative; border-radius: 8px; overflow: hidden; background: #221b16; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); }
+.pieza img { width: 100%; height: auto; transition: transform 0.5s ease; }
+.pieza a:hover img { transform: scale(1.03); }
+.pieza-vistas {
+  position: absolute; right: 0.5rem; bottom: 0.5rem;
+  background: rgba(20, 16, 13, 0.8); color: var(--blanco); font-size: 0.8rem; font-weight: 700;
+  border-radius: 999px; padding: 0.2rem 0.6rem;
+}
+.pieza figcaption { padding: 0.6rem 0.1rem 0; font-size: 0.98rem; line-height: 1.35; }
+.pieza figcaption strong { display: block; font-family: var(--fuente-titulos); font-weight: 600; font-size: 1.08rem; color: var(--blanco); }
+.pieza figcaption span { color: #b9ac99; font-size: 0.9rem; }
+
+/* Visor: tira de vistas de una misma pieza */
+.visor-vistas { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.6rem; flex-wrap: wrap; }
+.visor-vistas button { padding: 0; width: 3.25rem; height: 3.25rem; border-radius: 6px; overflow: hidden; border: 2px solid transparent; opacity: 0.7; }
+.visor-vistas button[aria-pressed="true"] { border-color: var(--cempasuchil); opacity: 1; }
+.visor-vistas img { width: 100%; height: 100%; object-fit: cover; }
+
+.galeria-cierre { padding: clamp(3rem, 6vw, 4.5rem) 0; text-align: center; border-top: 1px solid rgba(255, 250, 240, 0.08); }
+.galeria-cierre p { color: #e2d7c6; max-width: 40rem; margin: 0 auto 1.5rem; }
+
+/* Muestra de la galería en la página principal */
+.muestra-galeria .mosaico { margin-bottom: 1.75rem; }
