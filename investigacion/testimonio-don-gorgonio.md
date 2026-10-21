@@ -34,10 +34,10 @@ Fuente: una propuesta editorial que compartió quien encarga el sitio (21 de oct
 
 | Sección | Qué se agregó |
 |---|---|
-| Portada | El lema y el botón «Conoce su historia» |
+| Portada | El lema, dicho como enseñanza de su padre («Su padre le enseñó que antes de tallar hay que danzar»), y el botón «Conoce su historia» |
 | El maestro | «Un oficio que se aprende mirando», con la foto de archivo de don Herminio junto al párrafo sobre su padre, y «La tradición también se transforma», con la cita del padre y una foto de don Gorgonio pintando |
 | Entre el maestro y la danza | La cita del espíritu de las máscaras, con su retrato frente a la pared de máscaras, y «Hechas para danzar» |
 | La técnica | «La madera ya tiene una historia»: el tronco, el colorín para danzar y el cuajiote para adorno, y una foto de él tallando |
-| Antes del taller | «Lo llevamos en la sangre», con sus dos citas y la frase de cierre |
+| Antes del taller | «Ya lo tenemos en la sangre» (título tomado de su cita), con sus dos citas y la frase de cierre |
 
 Las imágenes de referencia de la propuesta vienen de otros sitios (Feria Maestros, El Heraldo de México, Artesanías Flor de Piña) y no se usaron. Las fotos de don Gorgonio del sitio son las que mandó la familia; falta saber quién las tomó (ver el pendiente de créditos).
