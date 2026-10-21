@@ -9,7 +9,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | Carpeta / archivo | Contenido |
 |---|---|
 | `index.html` | La página principal: el maestro, la danza, la técnica, una muestra de la galería, reconocimientos, videos y el taller |
-| `galeria.html` | La galería completa: 122 piezas en 11 salas, con el desfile de máscaras recortadas |
+| `galeria.html` | La galería completa: 126 piezas en 11 salas, con el desfile de máscaras recortadas |
 | `css/estilos.css` | Estilos (colores, tipografía y diseño adaptable a celular) |
 | `css/galeria.css` | Estilos de la galería (salas oscuras de museo, mosaico y desfile) |
 | `js/sitio.js` | Menú del celular, visor de fotos con sus vistas, desfile, navegación entre salas y videos que se cargan al tocarlos |
@@ -114,8 +114,8 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
 - [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
+- [ ] Una foto mejor del ave azul de pico amarillo: la única que hay es el panel central de un collage, de 172 px de ancho.
 - [ ] Que don Gorgonio conteste la encuesta en `preguntas/` (ver «La encuesta para don Gorgonio»). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`. La encuesta se arma con `herramientas/encuesta/generar_encuesta.py`.
-- [ ] Las piezas en tonos pastel (un felino y dos toros) y el ave azul de pico amarillo sí son de don Gorgonio: Humberto confirmó que todas las máscaras de las fotos son suyas. Siguen fuera de la galería (`APARTADAS` en `armar_galeria.py`); falta decidir si se agregan.
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio y una de su padre, don Herminio, en `fotos/originales/maestro/`.

@@ -119,62 +119,60 @@ Encuesta: https://humbertogodinez.com/GorgonioCandelario/preguntas/
 79. Felino negro de ojos amarillos
 80. Felino negro de ojos verdes
 81. Lince naturalista
+82. Felino multicolor
 
 ### Aves
 
-82. Ave de penacho y pico anaranjado
-83. Ave de penacho y pico dorado
-84. Ave de penacho de tres plumas
-85. Ave de penacho de cara celeste
-86. Ave de penacho de cara anaranjada
-87. Ave de penacho de cara lila
-88. Ave de pico ganchudo
-89. Ave azul de pico curvo
-90. Pato
-91. Búho gris de pico anaranjado
-92. Búho azul
-93. Búho plateado
-94. Búho gris verdoso
-95. Búho gris azulado
+83. Ave de penacho y pico anaranjado
+84. Ave de penacho y pico dorado
+85. Ave de penacho de tres plumas
+86. Ave de penacho de cara celeste
+87. Ave de penacho de cara anaranjada
+88. Ave de penacho de cara lila
+89. Ave de pico ganchudo
+90. Ave azul de pico curvo
+91. Ave azul de pico amarillo
+92. Pato
+93. Búho gris de pico anaranjado
+94. Búho azul
+95. Búho plateado
+96. Búho gris verdoso
+97. Búho gris azulado
 
 ### Pelaje de pincel
 
-96. Cánido gris de pinceladas amarillas
-97. Cánido ocre de pinceladas negras
-98. Posible burro azul de orejas de arcoíris
-99. Cánido ocre naturalista (¿coyote?)
-100. Cánido café naturalista
-101. Cánido anaranjado (¿zorro?)
-102. Cánido gris
-103. Cánido gris de fauces abiertas
-104. Cánido gris verdoso
+98. Cánido gris de pinceladas amarillas
+99. Cánido ocre de pinceladas negras
+100. Posible burro azul de orejas de arcoíris
+101. Cánido ocre naturalista (¿coyote?)
+102. Cánido café naturalista
+103. Cánido anaranjado (¿zorro?)
+104. Cánido gris
+105. Cánido gris de fauces abiertas
+106. Cánido gris verdoso
 
 ### Bestiario
 
-105. Venado de astas negras
-106. Venado de astas azules
-107. Toro azul
-108. Toro multicolor
-109. Toro café
-110. Jirafa amarilla
-111. Jirafa café
-112. Cebra blanca y negra
-113. Cebra amarilla y azul
-114. Equino rayado
-115. Elefante
-116. Jabalí
-117. Mandril
-118. Gorila
-119. Mariposa de alas azul marino
-120. Mariposa sobre fondo verde
-121. Chivo azul de hocico rosa (¿de la danza?)
-122. Animal morado de cuernos cortos (¿chivo?)
-
-### Otras máscaras
-
-123. Felino multicolor
-124. Toro en tonos pastel de cuernos ondulados
-125. Toro en tonos pastel de cuernos azules
+107. Venado de astas negras
+108. Venado de astas azules
+109. Toro azul
+110. Toro multicolor
+111. Toro café
+112. Toro en tonos pastel de cuernos ondulados
+113. Toro en tonos pastel de cuernos azules
+114. Jirafa amarilla
+115. Jirafa café
+116. Cebra blanca y negra
+117. Cebra amarilla y azul
+118. Equino rayado
+119. Elefante
+120. Jabalí
+121. Mandril
+122. Gorila
+123. Mariposa de alas azul marino
+124. Mariposa sobre fondo verde
+125. Chivo azul de hocico rosa (¿de la danza?)
+126. Animal morado de cuernos cortos (¿chivo?)
 
 ## Sobre él y el taller
 

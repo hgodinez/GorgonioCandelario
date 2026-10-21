@@ -20,11 +20,7 @@ opciones = dict(a.split('=', 1) for a in sys.argv[3:])
 salida.mkdir(parents=True, exist_ok=True)
 g = json.loads((raiz / 'datos/galeria.json').read_text(encoding='utf-8'))
 tam = json.loads((raiz / 'datos/album-tamanos.json').read_text(encoding='utf-8'))
-catalogo = json.loads((raiz / 'datos/album-catalogo.json').read_text(encoding='utf-8'))
 
-# Piezas que no están en la galería del sitio (se apartaron mientras no se sabía si eran de don Gorgonio;
-# Humberto confirmó que todas las máscaras de las fotos son suyas): también se preguntan
-APARTADAS = ['felino-multicolor-pastel', 'toro-pastel-cuernos-rosas', 'toro-pastel-cuernos-azules']
 VISTAS_MAX = 3   # foto principal y hasta dos vistas más
 ANCHO_MAX = 800  # pixeles de la foto en la encuesta
 
@@ -74,16 +70,8 @@ for sala in g['salas']:
             mascaras.append({
                 'id': slug, 'nombre': p['nombre'], 'ver': ver, 'duda': duda, 'sala': sala['titulo'], 'grupo': sub['titulo'],
                 'fotos': [foto(f) for f in fotos[:VISTAS_MAX]],
-                'confirmada': p.get('certeza') == 'confirmada-familia', 'apartada': False,
+                'confirmada': p.get('certeza') == 'confirmada-familia',
             })
-
-agrupadas = {x['pieza']: x for grupo in catalogo['agrupados'] for x in grupo['piezas']}
-for slug in APARTADAS:
-    p = agrupadas[slug]
-    fotos = [p['principal']] + [f for f in p['fotos'] if f != p['principal']]
-    ver, duda = para_ver(slug, p['nombre'])
-    mascaras.append({'id': slug, 'nombre': p['nombre'], 'ver': ver, 'duda': duda, 'sala': 'Otras máscaras', 'grupo': '',
-                     'fotos': [foto(f) for f in fotos[:VISTAS_MAX]], 'confirmada': False, 'apartada': True})
 
 for n, m in enumerate(mascaras, 1):
     m['n'] = n

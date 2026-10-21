@@ -2,11 +2,12 @@
 letreros sobrepuestos y rellena las esquinas de color de los marcos ovalados. Escribe en
 fotos/limpias/<id>.jpg (y <id>b.jpg, <id>c.jpg para vistas extra) y anota en
 datos/album-indice.json el archivo limpio de cada foto.
-Uso: python3 herramientas/limpiar_album.py ."""
+Uso: python3 herramientas/limpiar_album.py . [ids…]   (con ids, solo esas fotos; sin ids, todas)"""
 import sys, json, pathlib
 from PIL import Image, ImageOps, ImageFilter
 
 raiz = pathlib.Path(sys.argv[1])
+solo = set(sys.argv[2:])
 ruta_idx = raiz / 'datos/album-indice.json'
 indice = json.loads(ruta_idx.read_text(encoding='utf-8'))
 por_id = {f['id']: f for f in indice['fotos']}
@@ -53,6 +54,7 @@ PRINCIPAL = {
     'a144': (None, [(146, 388, 243, 425)], None),
     'a005': (None, [(200, 1150, 500, 1235)], None),
     'a016': (None, [(672, 420, 952, 540, 'h')], None),
+    'a065': ((195, 14, 367, 550), [], None),  # el ave azul, panel central de un collage (no hay otra foto)
 }
 # vistas extra: id nuevo -> (id de origen, recorte)
 EXTRAS = {
@@ -66,6 +68,7 @@ def abrir(fid):
     return ImageOps.exif_transpose(Image.open(raiz / 'fotos/album' / por_id[fid]['archivo'])).convert('RGB')
 
 for fid, (caja, letreros, esquinas) in PRINCIPAL.items():
+    if solo and fid not in solo: continue
     im = abrir(fid)
     if caja: im = im.crop(caja)
     for l in letreros: im = quitar_texto(im, l)
@@ -73,6 +76,7 @@ for fid, (caja, letreros, esquinas) in PRINCIPAL.items():
     im.save(dst / f'{fid}.jpg', quality=95)
     por_id[fid]['limpia'] = f'fotos/limpias/{fid}.jpg'
 for nid, (origen, caja) in EXTRAS.items():
+    if solo and nid not in solo: continue
     abrir(origen).crop(caja).save(dst / f'{nid}.jpg', quality=95)
     if nid not in por_id:
         e = {'id': nid, 'archivo': por_id[origen]['archivo'], 'vista_de': origen}

@@ -1,5 +1,5 @@
 """Genera las versiones web de las fotos del álbum (fotos/album) para la galería.
-Uso: python3 herramientas/optimizar_album.py .
+Uso: python3 herramientas/optimizar_album.py . [ids…]   (con ids, solo esas fotos; sin ids, todas)
 Escribe img/galeria/<id>-<ancho>.webp (y un .jpg de respaldo en 800) y datos/album-tamanos.json."""
 import sys, json, pathlib
 from PIL import Image, ImageOps
@@ -11,7 +11,12 @@ dst.mkdir(parents=True, exist_ok=True)
 # conserva lo que ya hay (por ejemplo, las medidas de los recortes del desfile)
 ruta_tam = raiz / 'datos/album-tamanos.json'
 tamanos = json.loads(ruta_tam.read_text(encoding='utf-8')) if ruta_tam.exists() else {}
+solo = set(sys.argv[2:])
 for f in indice['fotos']:
+    if solo and f['id'] not in solo:
+        continue
+    for viejo in dst.glob(f'{f["id"]}-*.webp'):  # los tamaños de antes (si la foto cambió de ancho)
+        viejo.unlink()
     # versión limpia (sin letreros ni collage) si existe; ver limpiar_album.py
     origen = raiz / f.get('limpia', 'fotos/album/' + f['archivo'])
     im = ImageOps.exif_transpose(Image.open(origen)).convert('RGB')

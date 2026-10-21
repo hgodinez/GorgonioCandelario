@@ -236,7 +236,8 @@
     "tigre-blanco",
     "pantera-negra-ojos-amarillos",
     "pantera-negra-ojos-verdes",
-    "lince-naturalista"
+    "lince-naturalista",
+    "felino-multicolor-pastel"
    ]
   },
   {
@@ -253,6 +254,7 @@
     "pavo-real-lila",
     "ave-pico-ganchudo",
     "ave-azul-pico-curvo",
+    "ave-azul-pico-amarillo",
     "pato",
     "buho-gris-pico-anaranjado",
     "buho-azul",
@@ -289,6 +291,8 @@
     "toro-azul",
     "toro-multicolor",
     "toro-cafe",
+    "toro-pastel-cuernos-rosas",
+    "toro-pastel-cuernos-azules",
     "jirafa-amarilla",
     "jirafa-cafe",
     "cebra-blanco-negro",
@@ -1142,6 +1146,17 @@
    "categoria": "danza-lince-ocelote",
    "certeza": "media"
   },
+  "felino-multicolor-pastel": {
+   "nombre": "Felino multicolor",
+   "descripcion": "Cabeza de felino de acabado mate en tonos pastel: frente azul con figuras geométricas lila, rosa y anaranjado, orejas amarillas con círculos lila, mejillas con hojas verdes y hocico crema con zigzag y puntitos.",
+   "fotos": [
+    "a099",
+    "a117"
+   ],
+   "principal": "a099",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
   "pavo-real-pico-anaranjado": {
    "nombre": "Ave de penacho y pico anaranjado",
    "descripcion": "Ave de cara azul marino con franjas blancas, pico largo anaranjado, ojos amarillos y penacho en abanico de plumas amarillas y azules con ocelos verdes, azules y rojos.",
@@ -1220,6 +1235,16 @@
    ],
    "principal": "a140",
    "categoria": "otro-animal",
+   "certeza": "baja"
+  },
+  "ave-azul-pico-amarillo": {
+   "nombre": "Ave azul de pico amarillo",
+   "descripcion": "Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo. Solo hay una foto pequeña de esta pieza.",
+   "fotos": [
+    "a065"
+   ],
+   "principal": "a065",
+   "categoria": "incierto",
    "certeza": "baja"
   },
   "pato": {
@@ -1429,6 +1454,28 @@
    "principal": "a018",
    "categoria": "otro-animal",
    "certeza": "alta"
+  },
+  "toro-pastel-cuernos-rosas": {
+   "nombre": "Toro en tonos pastel de cuernos ondulados",
+   "descripcion": "Toro cubierto de grecas en tonos pastel: cuernos largos pintados en ondas azules, rosas y salmón con punta anaranjada, orejas azul claro, rombo café en la frente, chevrones amarillos y rosas en la caña y antifaz rosa punteado.",
+   "fotos": [
+    "a142",
+    "a011"
+   ],
+   "principal": "a142",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
+  "toro-pastel-cuernos-azules": {
+   "nombre": "Toro en tonos pastel de cuernos azules",
+   "descripcion": "Toro con cuernos largos y orejas azul celeste; cara pintada en parches geométricos morado, lila, rosa, café y anaranjado, con zigzags y chevrones amarillos.",
+   "fotos": [
+    "a101",
+    "a129"
+   ],
+   "principal": "a101",
+   "categoria": "otro-animal",
+   "certeza": "media"
   },
   "jirafa-amarilla": {
    "nombre": "Jirafa amarilla",
@@ -2098,6 +2145,16 @@
    "descripcion": "Máscara de lince de estilo realista, con orejas de punta negra, ojos verdes y una gorguera de pelo rayada alrededor de la cara.",
    "recorte": false
   },
+  "a099": {
+   "alt": "Máscara de felino con diseños geométricos y florales en azul, morado, rosa y anaranjado",
+   "descripcion": "Máscara de felino de acabado mate con diseños geométricos y florales en azul, morado, rosa, anaranjado y verde.",
+   "recorte": false
+  },
+  "a117": {
+   "alt": "Máscara de felino de orejas redondas pintada con figuras geométricas y hojas en azul, lila, verde y negro",
+   "descripcion": "Cabeza de felino pintada con figuras geométricas y hojas en azul, lila, verde, naranja y negro.",
+   "recorte": false
+  },
   "a108": {
    "alt": "Máscara de ave azul con pico anaranjado y copete de plumas amarillas y azules con ojos de pavo real",
    "descripcion": "Ave de cara azul con pico anaranjado y un copete de plumas amarillas y azules con ojos como los del pavo real.",
@@ -2136,6 +2193,11 @@
   "a140": {
    "alt": "Máscara de ave azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo",
    "descripcion": "Máscara de ave azul con plumas pintadas en amarillo, ojo verde con pestañas y pico curvo amarillo.",
+   "recorte": false
+  },
+  "a065": {
+   "alt": "Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo",
+   "descripcion": "Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.",
    "recorte": false
   },
   "a013": {
@@ -2276,6 +2338,26 @@
   "a018": {
    "alt": "Máscara de toro café rojizo con pelo tallado, ojos amarillos, cuernos grises y hocico rosado",
    "descripcion": "Máscara de toro de estilo realista, café rojizo con el pelo tallado y mejillas negras. Tiene cuernos grises de punta negra y hocico rosado.",
+   "recorte": false
+  },
+  "a142": {
+   "alt": "Máscara de toro de frente con cuernos y orejas pintados de grecas azules, rosas y amarillas sobre pared azul",
+   "descripcion": "Cabeza de toro cubierta de grecas, zigzags y chevrones en azules, rosas, amarillos y anaranjados. Los cuernos largos y las orejas también van pintados.",
+   "recorte": false
+  },
+  "a011": {
+   "alt": "Máscara de toro de tres cuartos con cuernos y rostro pintados en mosaico geométrico de tonos pastel",
+   "descripcion": "Máscara de toro vista de tres cuartos, pintada como un mosaico geométrico en tonos pastel. Los cuernos llevan ondas rosas y azules con punta anaranjada.",
+   "recorte": false
+  },
+  "a101": {
+   "alt": "Máscara de toro con cuernos azul claro y cara de franjas rosas, moradas y amarillas sobre pared azul",
+   "descripcion": "Máscara de toro con cuernos y orejas azul claro. La cara está pintada con franjas y zigzags en rosa, morado, amarillo y naranja.",
+   "recorte": false
+  },
+  "a129": {
+   "alt": "Máscara de toro con cuernos azul celeste y cara pintada en parches morados, grises y zigzags amarillos",
+   "descripcion": "Cabeza de toro de cuernos azul celeste, con la cara pintada en parches geométricos morados, grises y rojos, y zigzags amarillos.",
    "recorte": false
   },
   "a139": {
@@ -2457,6 +2539,8 @@
   "a037": "pantera-negra-ojos-amarillos",
   "a048": "pantera-negra-ojos-verdes",
   "a054": "lince-naturalista",
+  "a099": "felino-multicolor-pastel",
+  "a117": "felino-multicolor-pastel",
   "a108": "pavo-real-pico-anaranjado",
   "a027": "pavo-real-pico-dorado",
   "a149": "pavo-real-ocelos-azules",
@@ -2465,6 +2549,7 @@
   "a082": "pavo-real-lila",
   "a126": "ave-pico-ganchudo",
   "a140": "ave-azul-pico-curvo",
+  "a065": "ave-azul-pico-amarillo",
   "a013": "pato",
   "a151": "pato",
   "a124": "buho-gris-pico-anaranjado",
@@ -2493,6 +2578,10 @@
   "a014": "toro-azul",
   "a016": "toro-multicolor",
   "a018": "toro-cafe",
+  "a142": "toro-pastel-cuernos-rosas",
+  "a011": "toro-pastel-cuernos-rosas",
+  "a101": "toro-pastel-cuernos-azules",
+  "a129": "toro-pastel-cuernos-azules",
   "a139": "jirafa-amarilla",
   "a085": "jirafa-cafe",
   "a160": "cebra-blanco-negro",
@@ -2543,12 +2632,7 @@
   "a168",
   "a122"
  ],
- "apartadas": [
-  "ave-azul-pico-amarillo",
-  "felino-multicolor-pastel",
-  "toro-pastel-cuernos-azules",
-  "toro-pastel-cuernos-rosas"
- ],
+ "apartadas": [],
  "desfile": [
   "a024",
   "a001",

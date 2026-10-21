@@ -25,9 +25,9 @@ piezas['rostro-negro-lengua']['fotos'] = ['a105', 'a135']; piezas['rostro-negro-
 
 descartar = set(sum((g['duplicados_descartar'] for g in d['agrupados']), [])) | {'a132', 'a145'}
 debiles = set(cur['fotos_debiles'])
-# piezas apartadas hasta que la familia confirme la autoría
-APARTADAS = {'felino-multicolor-pastel', 'toro-pastel-cuernos-rosas', 'toro-pastel-cuernos-azules',
-             'ave-azul-pico-amarillo'}  # esta última solo existe en un panel de collage de 170 px de ancho
+# piezas que no van en la galería. Ya ninguna: el felino y los toros en tonos pastel y el ave azul se habían
+# apartado mientras no se sabía si eran de don Gorgonio, y Humberto confirmó que todas las de las fotos son suyas
+APARTADAS = set()
 # nombres más neutrales donde la identificación no está confirmada
 NOMBRES = {
     'pantera-negra-ojos-amarillos': 'Felino negro de ojos amarillos',
@@ -90,6 +90,11 @@ ALTS = {
     'a034': 'Máscara de tigre anaranjado con rayas negras, ojos verdes y colmillos, de frente',
     'a146': 'Máscara de cánido gris con pinceladas amarillas, ojos verdes y nariz roja, de frente',
     'a153': 'Máscara negra alargada cubierta de puntos crema, con estrellas anaranjadas y bigote en espiral',
+    'a065': 'Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo',
+}
+# descripciones de fotos que ya no corresponden (la foto se recortó de un collage)
+DESC_FOTOS = {
+    'a065': 'Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.',
 }
 # vistas extra sacadas de los collages (ver limpiar_album.py): id -> (pieza, texto alternativo)
 EXTRA_VISTAS = {
@@ -111,6 +116,7 @@ REEMPLAZOS = [
     ('plumas de pavo real con ocelos azules', 'plumas con ocelos azules'),
 ]
 DESCRIPCIONES = {
+    'ave-azul-pico-amarillo': 'Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo. Solo hay una foto pequeña de esta pieza.',
     'calavera-y-rostro-negro-estrellas': 'Rostro negro alargado cubierto de puntos color crema en líneas onduladas, con estrellas anaranjadas de ocho puntas en la frente y la barbilla, ojos azules y bigote en espiral.',
 }
 # textos de las salas corregidos en la revisión
@@ -173,7 +179,7 @@ for f in usadas_fotos:
         fotos[f] = {'alt': EXTRA_VISTAS[f][1], 'descripcion': '', 'recorte': False}
         continue
     c = cat[f]
-    fotos[f] = {'alt': ALTS.get(f, c['alt']).rstrip('.'), 'descripcion': c['descripcion'], 'recorte': bool(qa.get(f, {}).get('usar_recorte'))}
+    fotos[f] = {'alt': ALTS.get(f, c['alt']).rstrip('.'), 'descripcion': DESC_FOTOS.get(f, c['descripcion']), 'recorte': bool(qa.get(f, {}).get('usar_recorte'))}
 pieza_de = {f: x for x in usadas for f in piezas[x]['fotos']}
 destacadas = [f for f in cur['destacadas'] if f in pieza_de]
 out = {
