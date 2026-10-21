@@ -56,14 +56,24 @@ def ventana(W, H, caja):
         if hi >= total - 1:
             q = min(q, total - lado)
         r, t = (0, total - lado) if lado <= total else (total - lado, 0)
-        if max(p, r) <= min(q, t):
-            p, q = max(p, r), min(q, t)
         centrado = round((lo + hi) / 2 - lado / 2)
-        if p > q:  # la máscara toca las dos orillas y aun así falta espacio
-            return centrado
-        if math.ceil(p) > math.floor(q):  # el margen cabe con menos de un pixel de holgura
-            return round((p + q) / 2)
-        return min(max(centrado, math.ceil(p)), math.floor(q))
+
+        def entre(u, v, x):  # x en [u, v] con pixeles enteros; si no cabe ninguno, el punto medio
+            a_, b_ = math.ceil(u), math.floor(v)
+            return min(max(x, a_), b_) if a_ <= b_ else round((u + v) / 2)
+        if p > q:
+            if lo <= 1 and hi >= total - 1 and lado > total:  # toca las dos orillas y falta espacio
+                return centrado
+            x = round((p + q) / 2)  # diferencia de redondeo, menor a un pixel
+            if lo <= 1:
+                x = max(x, 0)
+            if hi >= total - 1:
+                x = min(x, total - lado)
+            return x
+        if max(p, r) <= min(q, t):  # se puede cumplir el margen usando toda la foto posible
+            return entre(max(p, r), min(q, t), centrado)
+        # no se puede: el extremo de [p, q] más cercano a lo que aprovecha la foto
+        return entre(p, q, math.floor(q) if q < r else math.ceil(p))
 
     return colocar(ancho, W, ax, zx, x0, x1), colocar(alto, H, ay, zy, y0, y1), ancho, alto
 
