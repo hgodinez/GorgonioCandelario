@@ -104,16 +104,19 @@ tarjetas = []
 for i, par in enumerate(danza['parejas'], 1):
     if par.get('archivo'):
         f = fotos[par['archivo']]
-        imagen = f'<div class="pareja-imagen">{picture(f, "(max-width: 600px) 46vw, (max-width: 1000px) 30vw, 14rem")}</div>'
+        imagen = (f'<a class="pareja-imagen" href="{grande(f)}.jpg" data-grande="{grande(f)}.webp" '
+                  f'data-titulo="{e(par["nombre"])}" data-descripcion="{e(f["descripcion"])}">'
+                  f'{picture(f, "(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem")}</a>')
         clase = 'pareja'
     else:
         imagen = '<div class="pareja-imagen" aria-hidden="true"></div>'
         clase = 'pareja pareja-sin-foto'
+    nota = f'<span class="pareja-nota">{e(par["nota"])}</span>' if par.get('nota') else ''
     tarjetas.append(f'''            <li class="{clase}">
               {imagen}
-              <p><span class="pareja-numero">{i}</span> <strong>{e(par["nombre"])}</strong> <span class="pareja-nota">{e(par.get("nota", "macho y hembra"))}</span></p>
+              <p><span class="pareja-numero">{i}</span><span><strong>{e(par["nombre"])}</strong>{nota}</span></p>
             </li>''')
-parejas = f'''<ol class="parejas">
+parejas = f'''<ol class="parejas" data-conjunto>
 {chr(10).join(tarjetas)}
           </ol>'''
 

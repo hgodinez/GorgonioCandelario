@@ -53,8 +53,10 @@
     var actual = 0;
     var origen = null;
 
-    function visibles() {
-      return Array.prototype.filter.call(document.querySelectorAll(".galeria a[data-grande]"), function (a) {
+    // Fotos del mismo conjunto (las parejas de la danza) o de la galería, sin los grupos ocultos
+    function visibles(conjunto) {
+      var enlaces = conjunto ? conjunto.querySelectorAll("a[data-grande]") : document.querySelectorAll(".galeria a[data-grande]");
+      return Array.prototype.filter.call(enlaces, function (a) {
         return !a.closest(".grupo[hidden]");
       });
     }
@@ -71,10 +73,10 @@
     }
 
     document.addEventListener("click", function (e) {
-      var a = e.target.closest(".galeria a[data-grande]");
+      var a = e.target.closest(".galeria a[data-grande], [data-conjunto] a[data-grande]");
       if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
-      enlaces = visibles();
+      enlaces = visibles(a.closest("[data-conjunto]"));
       origen = a;
       mostrar(enlaces.indexOf(a));
       visor.showModal();

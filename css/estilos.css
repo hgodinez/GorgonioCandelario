@@ -398,28 +398,31 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 .parejas {
   list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 0.85rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid; gap: clamp(0.75rem, 2vw, 1.25rem); grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-@media (max-width: 900px) { .parejas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .parejas { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .parejas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pareja {
-  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0.9rem; align-items: center;
-  padding: 0.6rem; border-radius: var(--radio);
+  display: flex; flex-direction: column; gap: 0.75rem;
+  padding: 0.6rem 0.6rem 0.9rem; border-radius: var(--radio);
   background: rgba(255, 250, 240, 0.06); border: 1px solid rgba(255, 250, 240, 0.16);
 }
-.pareja-imagen { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: rgba(255, 250, 240, 0.08); position: relative; }
-.pareja-imagen img { width: 100%; height: 100%; object-fit: cover; }
+.pareja-imagen {
+  display: block; position: relative; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden;
+  background: rgba(255, 250, 240, 0.08);
+}
+.pareja-imagen img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+a.pareja-imagen:hover img { transform: scale(1.04); }
 .pareja-sin-foto .pareja-imagen::after {
-  content: ""; position: absolute; inset: 22%;
+  content: ""; position: absolute; inset: 32%;
   background: url("../img/icono.svg") center / contain no-repeat; opacity: 0.45; filter: grayscale(0.4);
 }
-.pareja p { margin: 0; line-height: 1.3; }
-.pareja strong { display: block; font-family: var(--fuente-titulos); font-size: 1.2rem; font-weight: 600; }
+.pareja p { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.6rem; align-items: start; line-height: 1.3; }
+.pareja strong { display: block; font-family: var(--fuente-titulos); font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; }
 .pareja-numero {
-  display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%;
-  background: var(--cempasuchil); color: var(--tinta); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;
+  display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+  background: var(--cempasuchil); color: var(--tinta); font-weight: 700; font-size: 0.85rem;
 }
-.pareja-nota { display: block; font-size: 0.92rem; color: #d8ccbb; }
+.pareja-nota { display: block; font-size: 0.92rem; color: #d8ccbb; margin-top: 0.15rem; }
 
 .danza-datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
 @media (max-width: 760px) { .danza-datos { grid-template-columns: minmax(0, 1fr); } }
@@ -473,3 +476,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   background: rgba(255, 250, 240, 0.06); border: 1px solid rgba(255, 250, 240, 0.16);
 }
 .danza-reconocimiento p:last-child { margin-bottom: 0; }
+
+.leyenda {
+  margin: clamp(2rem, 4vw, 3rem) 0 0; padding: 1.5rem 1.75rem; border-radius: var(--radio);
+  background: linear-gradient(135deg, rgba(185, 50, 28, 0.25), rgba(23, 128, 127, 0.25));
+  border-left: 6px solid var(--cempasuchil);
+}
+.leyenda p { margin: 0; font-size: 1.08rem; color: var(--blanco); }
+.leyenda .leyenda-titulo { font-family: var(--fuente-titulos); font-size: 1.35rem; font-weight: 600; margin-bottom: 0.5rem; }

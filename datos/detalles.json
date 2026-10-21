@@ -10,7 +10,7 @@
     0.545
    ],
    "titulo": "Puntos",
-   "texto": "Cientos de puntos dorados, uno por uno, sobre el blanco y el negro del nahual.",
+   "texto": "Cientos de puntos dorados, pintados uno por uno sobre el blanco y el negro del nahual.",
    "alt": "Acercamiento a la máscara del nahual blanco: discos negros y rostro blanco cubiertos de puntos dorados, ojo rojo",
    "tamanos": [
     360,
@@ -59,9 +59,9 @@
     0.75,
     0.415
    ],
-   "titulo": "Plumaje pintado",
-   "texto": "Pequeños trazos amarillos sobre café oscuro que imitan, uno a uno, las plumas del tecolote.",
-   "alt": "Acercamiento a la máscara de tecolote café: trazos amarillos que imitan plumas y ojos rodeados de discos rojos",
+   "titulo": "Trazos pintados",
+   "texto": "Pequeños trazos amarillos que, sobre el café oscuro, cubren todo el rostro del nahual.",
+   "alt": "Acercamiento a la máscara del nahual café: trazos amarillos sobre café oscuro y ojos rodeados de discos rojos",
    "tamanos": [
     360,
     480
@@ -77,7 +77,7 @@
     0.945
    ],
    "titulo": "Barba tallada",
-   "texto": "El pelo de la barba se talla en la madera, mechón por mechón, antes de pintarse.",
+   "texto": "En esta máscara, el pelo de la barba está tallado en la madera, mechón por mechón, antes de pintarse.",
    "alt": "Acercamiento a una barba negra tallada en madera con incisiones que imitan el pelo",
    "tamanos": [
     360,
@@ -128,7 +128,7 @@
     0.875
    ],
    "titulo": "Barba de colores",
-   "texto": "Ondas talladas y pintadas en rojo, amarillo, azul marino, celeste y salmón que terminan en espiral.",
+   "texto": "Ondas talladas y pintadas de rojo, amarillo, azul marino, celeste y salmón, que terminan en espiral.",
    "alt": "Acercamiento a una barba tallada en ondas pintadas de rojo, amarillo, azul marino, celeste y salmón",
    "tamanos": [
     360,

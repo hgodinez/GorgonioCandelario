@@ -14,7 +14,8 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `img/mascaras/` | Fotos optimizadas para web (WebP y JPG en varios tamaños) |
 | `img/icono.svg` | Icono del sitio |
 | `fuentes/` | Tipografías Fraunces y Source Sans 3 (licencia SIL OFL) |
-| `fotos/originales/` | Fotos originales tal como llegaron |
+| `fotos/originales/` | Fotos originales tal como llegaron (las de la danza, en `fotos/originales/danza/`) |
+| `fotos/limpias/` | Fotos de la danza listas para optimizar: sin el texto sobrepuesto de «BORREGO» y «LINCE» |
 | `datos/mascaras.json` | Catálogo de las fotos: título, descripción, texto alternativo, pie y sección de cada máscara |
 | `datos/danza.json` | Las nueve parejas de la Danza de los Morenos y la foto de cada una |
 | `datos/detalles.json` | Acercamientos de la sección de técnica (recorte, título y texto) |
@@ -36,7 +37,7 @@ python3 -m http.server 8000
    ```bash
    python3 herramientas/optimizar.py fotos/originales img/mascaras
    ```
-   El script imprime el ancho, el alto y los tamaños de cada foto.
+   El script imprime el ancho, el alto y los tamaños de cada foto. Para las fotos de la danza, usa `fotos/limpias` como origen. Si una foto trae texto encima, se puede borrar con `herramientas/quitar_texto.py`.
 3. Agrega la foto a `datos/mascaras.json`, dentro de `fotos` y de una de las `secciones`. Copia el formato de las demás.
 4. Si cambiaste los acercamientos de `datos/detalles.json`, regenéralos con `python3 herramientas/detalles.py .`
 5. Regenera la portada, la galería, las parejas de la danza y los acercamientos dentro de `index.html`:
@@ -61,7 +62,7 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] Qué simbolizan el burro, la guacamaya, el gallo y el perro; quién es el danzante 19 que cuenta el INPI, y si el bartolo sale con los Morenos.
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
-- [ ] Fotos de las parejas que no tienen foto: borregos, lince y ocelote, burros, guacamayas y perros.
+- [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: un retrato del maestro, el taller, el proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`.
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.

@@ -3,20 +3,29 @@
   "archivo": "IMG-20250829-WA0043.jpg"
  },
  "danza": {
-  "archivo": "IMG-20250829-WA0065.jpg",
-  "pie": "Chivo rojo, uno de los dos capitanes de la danza"
+  "archivo": "lince.jpg",
+  "pie": "Lince, de la pareja de felinos de la danza"
  },
  "secciones": [
   {
    "id": "animales",
-   "titulo": "Animales de la danza",
-   "descripcion": "Chivos, coyotes, tecolotes y gallos: algunos de los animales que bailan en parejas, macho y hembra, en la Danza de los Morenos.",
+   "titulo": "Los animales de la danza",
+   "descripcion": "Coyote, chivo, borregos, tecolote, linces, burro, guacamaya y gallos: ocho de las nueve parejas de la Danza de los Morenos.",
    "archivos": [
-    "IMG-20250829-WA0065.jpg",
     "IMG-20250829-WA0042.jpg",
+    "IMG-20250829-WA0065.jpg",
+    "borrego-anaranjado.jpg",
+    "borrego-amarillo-frente.jpg",
+    "borrego-amarillo-lado.jpg",
     "IMG-20250829-WA0022.jpg",
-    "IMG-20250829-WA0147.jpg",
-    "IMG-20250829-WA0030.jpg"
+    "lince.jpg",
+    "felino-manchas-frente.jpg",
+    "felino-manchas-34.jpg",
+    "burro-frente.jpg",
+    "burro-perfil.jpg",
+    "ave-verde.jpg",
+    "IMG-20250829-WA0030.jpg",
+    "ave-anaranjada.jpg"
    ]
   },
   {
@@ -35,9 +44,10 @@
   {
    "id": "personajes",
    "titulo": "Nahuales y otros personajes",
-   "descripcion": "Dos nahuales, uno blanco y otro negro con forma de felino; un rostro negro de cresta roja, otro con alas coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
+   "descripcion": "Tres nahuales, uno blanco, uno café con cabellera y otro negro con forma de felino; un rostro negro de cresta roja, otro con alas y coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
    "archivos": [
     "IMG-20250829-WA0056.jpg",
+    "IMG-20250829-WA0147.jpg",
     "IMG-20250829-WA0121.jpg",
     "IMG-20250829-WA0153.jpg",
     "IMG-20250829-WA0151.jpg",
@@ -472,10 +482,10 @@
     480,
     960
    ],
-   "personaje": "Tecolote de cabellera",
-   "descripcion": "Plumaje pintado con pequeños trazos amarillos, ojos rodeados de rojo y una abundante cabellera de fibra oscura.",
-   "pie": "Tecolote con cabellera de fibra",
-   "alt": "Máscara de tecolote de madera con plumaje pintado en amarillo, ojos rodeados de rojo y larga cabellera de fibra oscura",
+   "personaje": "Nahual de cabellera",
+   "descripcion": "Rostro alargado café oscuro cubierto de pequeños trazos amarillos, ojos rodeados de discos rojos, pico ganchudo y una abundante cabellera de fibra oscura.",
+   "pie": "Nahual café con cabellera de fibra",
+   "alt": "Máscara de nahual café oscuro con trazos amarillos, ojos rodeados de rojo, pico ganchudo y cabellera de fibra oscura",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 35%",
@@ -487,7 +497,8 @@
     "calidad_foto": 3,
     "problemas_foto": "Ligero desenfoque general; fondo azul claro (no se distingue si es el color de la pared o una dominante fría); asoma parte de otra máscara en la esquina inferior izquierda; resolución media (960×1280).",
     "notas": "VERIFICADOR: identificación confirmada por los discos faciales, los penachos y el pico ganchudo; la franja roja bajo el pico no tiene una lectura clara. VERIFICADOR: se quitó la frase 'pieza similar en el Museum of International Folk Art', porque no se ha comparado con esa pieza. La investigación solo registra que ese museo tiene una máscara suya de búho (tecolote) para la Danza de los Morenos. VERIFICADOR: se matizó la 'dominante fría', que puede ser el color real de la pared, y se acotó danza_probable. El material de la cabellera no se puede confirmar en la foto."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0149.jpg",
@@ -593,6 +604,197 @@
     "problemas_foto": "Reflejos fuertes del barniz y ligero desenfoque. Fondo con distracciones: una viga de madera y una zona clara desenfocada (quizá una ventana) arriba a la izquierda, y un objeto rojo y amarillo (probablemente otra máscara) cortado en el borde derecho. Sombras marcadas; junto a la lengua, del lado izquierdo, parece haber un trozo de plástico transparente; resolución baja (720×1280).",
     "notas": "El gorila no aparece entre los animales de la Danza de los Morenos que menciona la investigación, así que no se puede asignar a esa danza; conviene preguntarle a la familia. VERIFICADOR: la identificación como gorila es razonable (ceño, cresta de pelo, nariz chata de fosas anchas, orejas pequeñas, sin el hocico alargado de un perro, coyote o tigre). Se mantiene la certeza media porque los colmillos y la lengua de fuera son fantasiosos. VERIFICADOR: se quitó la suposición 'quizá sea un diseño propio': no hay datos sobre esta pieza, y la investigación solo dice en general que crea diseños nuevos a partir de los tradicionales. VERIFICADOR: 'ventana' y 'otra máscara' pasan a ser posibilidades, y se añadieron el desenfoque y el posible plástico junto a la lengua. También se rehízo el recorte, porque el cuadrado propuesto (de la frente a la punta de la lengua sin la viga) no cabía en una foto de 720 px de ancho."
    }
+  },
+  {
+   "archivo": "borrego-anaranjado.jpg",
+   "slug": "borrego-anaranjado",
+   "ancho": 591,
+   "alto": 880,
+   "tamanos": [
+    480,
+    591
+   ],
+   "personaje": "Borrego anaranjado",
+   "descripcion": "Rostro anaranjado cubierto de escamas amarillas, espiral negra en la frente, ojos verdes y grandes cuernos curvos, negros con dientes blancos.",
+   "pie": "Borrego anaranjado de cuernos blancos y negros",
+   "alt": "Máscara de borrego anaranjada con escamas amarillas pintadas, espiral negra en la frente y cuernos curvos negros y blancos",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 40%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "borrego-amarillo-frente.jpg",
+   "slug": "borrego-amarillo-frente",
+   "ancho": 601,
+   "alto": 1036,
+   "tamanos": [
+    480,
+    601
+   ],
+   "personaje": "Borrego amarillo",
+   "descripcion": "Rostro amarillo claro con escamas anaranjadas, espiral en la frente, ojos verdes y cuernos enroscados de franjas rojas y amarillas.",
+   "pie": "Borrego amarillo de cuernos enroscados",
+   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas, espiral en la frente y cuernos enroscados de franjas rojas y amarillas",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 35%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "borrego-amarillo-lado.jpg",
+   "slug": "borrego-amarillo-lado",
+   "ancho": 608,
+   "alto": 1024,
+   "tamanos": [
+    480,
+    608
+   ],
+   "personaje": "Borrego amarillo (vista lateral)",
+   "descripcion": "El mismo borrego visto de lado: los cuernos se enroscan en espiral junto a las orejas.",
+   "pie": "Borrego amarillo, vista lateral",
+   "alt": "Vista lateral de la máscara de borrego amarillo: cuernos enroscados de franjas rojas y amarillas y escamas anaranjadas",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 35%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "burro-frente.jpg",
+   "slug": "burro-frente",
+   "ancho": 720,
+   "alto": 1038,
+   "tamanos": [
+    480,
+    720
+   ],
+   "personaje": "Burro",
+   "descripcion": "Pelaje gris de pinceladas, orejas largas con franjas claras, ojos ámbar y hocico blanco con fosas rosas.",
+   "pie": "Burro de orejas largas",
+   "alt": "Máscara de burro gris de frente, con orejas largas de franjas claras, ojos ámbar y hocico blanco con fosas rosas",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 40%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "burro-perfil.jpg",
+   "slug": "burro-perfil",
+   "ancho": 720,
+   "alto": 1246,
+   "tamanos": [
+    480,
+    720
+   ],
+   "personaje": "Burro (vista lateral)",
+   "descripcion": "El mismo burro visto de lado, con sus orejas largas y el hocico blanco.",
+   "pie": "Burro, vista lateral",
+   "alt": "Vista lateral de la máscara de burro gris, con orejas largas y hocico blanco con fosa rosa",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 40%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "lince.jpg",
+   "slug": "lince",
+   "ancho": 720,
+   "alto": 960,
+   "tamanos": [
+    480,
+    720
+   ],
+   "personaje": "Lince",
+   "descripcion": "Hocico largo, orejas grises y franjas rojas, negras y amarillas, con un zigzag rojo en la frente.",
+   "pie": "Lince de franjas y zigzag rojo",
+   "alt": "Máscara de lince de tres cuartos, color crema con franjas rojas, negras y amarillas, orejas grises y zigzag rojo en la frente",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 40%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "felino-manchas-frente.jpg",
+   "slug": "felino-manchas-frente",
+   "ancho": 720,
+   "alto": 937,
+   "tamanos": [
+    480,
+    720
+   ],
+   "personaje": "Lince claro",
+   "descripcion": "Rostro claro con franjas rojas, anaranjadas y negras, ojos color miel, y orejas y hocico con manchas negras.",
+   "pie": "Lince de orejas manchadas",
+   "alt": "Máscara de lince de frente, color claro con franjas rojas, anaranjadas y negras, ojos color miel y manchas negras en orejas y hocico",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 45%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "felino-manchas-34.jpg",
+   "slug": "felino-manchas-34",
+   "ancho": 720,
+   "alto": 916,
+   "tamanos": [
+    480,
+    720
+   ],
+   "personaje": "Lince claro (vista de tres cuartos)",
+   "descripcion": "El mismo lince visto de tres cuartos.",
+   "pie": "Lince claro, tres cuartos",
+   "alt": "Vista de tres cuartos de la máscara de lince claro, con franjas rojas, anaranjadas y negras y manchas en orejas y hocico",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 45%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "ave-verde.jpg",
+   "slug": "ave-verde",
+   "ancho": 1032,
+   "alto": 1599,
+   "tamanos": [
+    480,
+    960,
+    1032
+   ],
+   "personaje": "Guacamaya",
+   "descripcion": "Rostro verde, pico negro largo y un copete de franjas roja, amarilla, azul y azul marino, con trazos que imitan plumas.",
+   "pie": "Guacamaya verde de pico negro",
+   "alt": "Máscara de guacamaya verde con pico negro largo y copete de franjas roja, amarilla, azul y azul marino",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 35%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "ave-anaranjada.jpg",
+   "slug": "ave-anaranjada",
+   "ancho": 669,
+   "alto": 1129,
+   "tamanos": [
+    480,
+    669
+   ],
+   "personaje": "Gallo anaranjado",
+   "descripcion": "Rostro anaranjado, pico amarillo, cresta café con triángulos amarillos y barbillas rojas a los lados.",
+   "pie": "Gallo anaranjado de cresta café",
+   "alt": "Máscara de gallo anaranjado de frente, con pico amarillo, cresta café con triángulos amarillos y barbillas rojas",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 35%",
+   "confirmado_por_familia": true,
+   "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
   }
  ]
 }

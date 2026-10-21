@@ -170,3 +170,17 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - El botón «Cómo llegar» ahora usa el formato documentado de Google Maps: `maps/dir/?api=1&destination=`.
 - Milenio: uso la versión normal (www) en lugar de la AMP.
 - ⚠ Hay que abrir a mano el video u3Pr0mBtlms y la nota «Comala, la vida que esconde un volcán». Solo aparecieron en búsquedas viejas.
+
+### Identificaciones confirmadas por la familia (21 de octubre de 2026)
+- **El Tiempo:** la máscara de tres rostros (0043 y 0041).
+- **La Noche:** la de dos rostros, con un lado azul (0116).
+- **Chivo rojo:** 0065.
+- **Animales de la danza:** tecolote (0022), gallo (0030) y coyote (0042).
+- **Nahuales:** el negro (0121), el blanco de puntos dorados (0056) y el café de cabellera (0147). Ninguno es parte de la danza.
+- **Fotos nuevas de la danza:**
+  - borregos (anaranjado y amarillo);
+  - burro;
+  - dos linces (uno con franjas y zigzag rojo, otro con manchas en orejas y hocico);
+  - guacamaya verde;
+  - gallo anaranjado.
+- ⚠ Faltan fotos de los perros y del ocelote.
