@@ -122,3 +122,51 @@ Fuentes:
 7. ¿Da talleres o recibe visitas?
 8. ¿Nos permite usar los videos de YouTube en el sitio?
 9. ¿Tiene alguna frase o historia propia que quiera contar en el sitio?
+
+---
+
+## 10. Segunda ronda de investigación (21 de octubre de 2026)
+
+### Las nueve parejas de la Danza de los Morenos
+La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas y gallos. Faltaba un animal porque el borrego venía repetido. **El que falta son los perros.**
+- El libro *Máscaras. Arte-presencia* del INPI enumera los nueve animales de Suchitlán: chivo, gato montés, coyote, burro, tecolote, gallo, guacamaya, borrego cimarrón y perro. Ocho coinciden con la lista de la familia: gato montés equivale a lince y ocelote, y borrego cimarrón a borregos. Solo queda el perro. https://www.gob.mx/cms/uploads/attachment/file/812179/Libro-Mascaras-Arte-presencia-INPI.pdf
+- La ficha del Inventario del Patrimonio Cultural Inmaterial menciona al perro. Su informante es José Guadalupe Candelario. https://sic.cultura.gob.mx/ficha.php?table=frpintangible&table_id=300
+- ⚠ El INPI cuenta 19 danzantes; hay que preguntar quién es el que sobra (¿el bartolo?).
+
+### Datos de la danza
+- **Capitanes:** al frente van el coyote (capitán número uno) y el chivo (número dos), y detrás sus hembras. Lo dice Guadalupe en Portal Colimote (2023) y lo confirma El Pulso de Colima (2023). Antes iba al frente el burro, según la Universidad de Colima (2015).
+- **Qué simboliza cada animal** (Alas y Viento, Sección Amarilla): el coyote, la inteligencia; el chivo, la unión y la fuerza; el tecolote, la sabiduría; los felinos, la agilidad y la destreza; los borregos cimarrones, la fuerza y la testarudez. ⚠ Falta lo que simbolizan el burro, la guacamaya, el gallo y el perro.
+- **Por qué son nueve:** por los nueve meses de embarazo de la Virgen y los nueve días del novenario de un difunto (El Pulso de Colima, 2023).
+- **Fechas:** Sábado de Gloria, Domingo de Resurrección, 3 de mayo y Pentecostés, además de las invitaciones. En Semana Santa empieza de madrugada.
+- **Música:** una vihuela. Antes era de violín y esa melodía se perdió. Guadalupe organiza la danza, la enseña y toca (Universidad de Colima, 2015; blog escolar de Suchitlán, 2015).
+- **Traje:** de yute, con capa de costales de ixtle. Cada danzante lleva una sonaja de bule pintada y un machete de madera o un bastón (SIC; México Desconocido).
+- **Reconocimientos:** salió en el billete de la Lotería Nacional por los 500 años de Colima (28 de julio de 2023). INAH, «Foto del día», 2023: https://www.inah.gob.mx//foto-del-dia/danza-de-morenos-animales-y-religiosidad-en-suchitlan
+- **Leyenda del coyote de bigotes de arcoíris:** según Guadalupe, su abuelo y su padre lo crearon después de ver a un coyote beber agua en un charco donde se reflejaba el arcoíris (El Pulso de Colima, 14 de julio de 2023).
+- ⚠ **Antigüedad:** Guadalupe dijo «más de 200 años» en 2023 y «más de 70» en 2012.
+- **Videos de la danza:** https://www.youtube.com/watch?v=teMTlD1CO-o (Guadalupe la explica) y https://www.youtube.com/watch?v=2LT88Jh8fkk (Feria de Todos Santos de 2024).
+
+### Técnica (casi todo documentado en el taller de José Guadalupe; falta confirmarlo con don Gorgonio)
+- **Maderas:** colorín, también llamado tzompantle (*Erythrina*), que es la principal; cuajiote (*Bursera galeottiana*), y galeana, más dura. Go Manzanillo dice que don Gorgonio usa colorín.
+- **Corte:** en luna llena. Se le quita la corteza al árbol a metro y medio del suelo, se espera ocho días y se derriba sin tocar la raíz (Guadalupe).
+- **Herramientas:** machete, angaro (término local; ⚠ falta saber cómo es), cuchillos de varios tamaños y lija (SIC; El Pulso de Colima).
+- **Proceso:**
+  1. Cortar y seccionar el tronco.
+  2. Vaciar la pieza por dentro.
+  3. Dar forma con el angaro.
+  4. Afinar con cuchillo.
+  5. Abrir los ojos, la nariz y la boca.
+  6. Lijar y pulir.
+  7. Resanar.
+  8. Aplicar una base blanca de blanco de España.
+  9. Pintar varias manos. ⚠ Guadalupe dice pintura de aceite o mate; la SIC, acrílica.
+- **Cuernos:** los del borrego cimarrón se tallan en la misma madera; los del chivo se pegan y se clavan.
+- **Tiempo de trabajo:** unos 3 días por máscara, de hasta 12 horas diarias (Esaú López). Un borrego cimarrón lleva de 10 a 15 días (Guadalupe).
+
+### Links corregidos
+- Las fichas del Museum of International Folk Art (MOIFA) estaban cortadas. Ahora tienen la URL completa:
+  - https://collection.moifa.org/objects/82011/buho-owl-dance-mask-for-dance-of-the-morenos-or-dance-of-t
+  - https://collection.moifa.org/objects/82012/el-tiempo-time-dance-mask-for-dance-of-the-pastorela-chri
+- Quité el enlace de vLex porque pide registro.
+- El botón «Cómo llegar» ahora usa el formato documentado de Google Maps: `maps/dir/?api=1&destination=`.
+- Milenio: uso la versión normal (www) en lugar de la AMP.
+- ⚠ Hay que abrir a mano el video u3Pr0mBtlms y la nota «Comala, la vida que esconde un volcán». Solo aparecieron en búsquedas viejas.

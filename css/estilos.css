@@ -285,15 +285,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 /* Danza */
 
-.personajes { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 1.25rem 0 0; }
-.personajes li {
-  border: 1.5px solid rgba(255, 250, 240, 0.35); border-radius: 999px; padding: 0.3rem 0.85rem; font-weight: 600; font-size: 0.95rem;
-}
 
-.fechas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; list-style: none; padding: 0; }
-.fechas li { border-top: 4px solid var(--cempasuchil); padding-top: 0.75rem; }
-.fechas strong { display: block; font-family: var(--fuente-titulos); font-size: 1.15rem; }
-@media (max-width: 640px) { .fechas { grid-template-columns: 1fr; } }
 
 .imagen-danza { margin: 0; }
 .imagen-danza img { border-radius: var(--radio); width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
@@ -471,3 +463,13 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   background: var(--papel-2); border-left: 6px solid var(--turquesa);
 }
 .nota-tecnica p:last-child { margin-bottom: 0; }
+
+.entrada-danza { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.55; color: var(--blanco); }
+.subtitulo-tecnica { margin: clamp(2rem, 4vw, 3rem) 0 1rem; font-size: clamp(1.35rem, 2.6vw, 1.75rem); }
+.subtitulo-prensa { margin: 2rem 0 0.25rem; font-size: 1.3rem; }
+.subtitulo-prensa:first-of-type { margin-top: 0; }
+.danza-reconocimiento {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem); padding: 1.5rem; border-radius: var(--radio);
+  background: rgba(255, 250, 240, 0.06); border: 1px solid rgba(255, 250, 240, 0.16);
+}
+.danza-reconocimiento p:last-child { margin-bottom: 0; }

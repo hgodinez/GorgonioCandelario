@@ -1,0 +1,14 @@
+{
+ "fuente": "Parejas según la familia Candelario y el libro «Máscaras. Arte-presencia» (INPI); símbolos según José Guadalupe Candelario (Alas y Viento, Sección Amarilla); capitanes según Portal Colimote y El Pulso de Colima (2023).",
+ "parejas": [
+  {"nombre": "Coyotes", "archivo": "IMG-20250829-WA0042.jpg", "nota": "Capitán · la inteligencia"},
+  {"nombre": "Chivos", "archivo": "IMG-20250829-WA0065.jpg", "nota": "Capitán · la unión y la fuerza"},
+  {"nombre": "Borregos cimarrones", "archivo": null, "nota": "La fuerza y la testarudez"},
+  {"nombre": "Tecolotes", "archivo": "IMG-20250829-WA0022.jpg", "nota": "La sabiduría"},
+  {"nombre": "Lince y ocelote", "archivo": null, "nota": "Los felinos · la agilidad y la destreza"},
+  {"nombre": "Burros", "archivo": null, "nota": "Macho y hembra"},
+  {"nombre": "Guacamayas", "archivo": null, "nota": "Macho y hembra"},
+  {"nombre": "Gallos", "archivo": "IMG-20250829-WA0030.jpg", "nota": "Macho y hembra"},
+  {"nombre": "Perros", "archivo": null, "nota": "Macho y hembra"}
+ ]
+}
