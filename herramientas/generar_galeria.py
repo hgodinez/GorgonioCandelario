@@ -50,9 +50,10 @@ portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-porta
         <div>
           <p class="antetitulo">Maestro mascarero · Suchitlán, Colima</p>
           <h1 id="titulo-portada">Gorgonio Candelario <em>Castro</em></h1>
+          <p class="lema">Antes de tallar, hay que danzar.</p>
           <p class="entrada">Talla y pinta a mano máscaras de madera para la Danza de los Morenos, las pastorelas y otras danzas de su pueblo. Heredó el oficio de su padre, el mascarero don Herminio Candelario.</p>
           <div class="botones">
-            <a class="boton boton-principal" href="#danza">Conoce la danza</a>
+            <a class="boton boton-principal" href="#maestro">Conoce su historia</a>
             <a class="boton boton-secundario" href="#mascaras">Ver las máscaras</a>
           </div>
         </div>

@@ -6,7 +6,8 @@ src, dst = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
 dst.mkdir(parents=True, exist_ok=True)
 WIDTHS = [480, 960, 1440]
 # Recortes (izq, arriba, der, abajo) para quitar defectos de las fotos originales
-RECORTES = {'IMG-20250829-WA0019.jpg': (0, 4, 720, 722)}  # franja negra arriba
+RECORTES = {'IMG-20250829-WA0019.jpg': (0, 4, 720, 722),  # franja negra arriba
+            'maestro-pintando.jpg': (0, 60, 640, 420)}  # cuadro de video: sin las franjas negras
 meta = {}
 for f in sorted(src.glob('*.jpg')):
     im = ImageOps.exif_transpose(Image.open(f)).convert('RGB')

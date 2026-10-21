@@ -14,6 +14,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `css/galeria.css` | Estilos de la galería (salas oscuras de museo, mosaico y desfile) |
 | `js/sitio.js` | Menú del celular, visor de fotos con sus vistas, desfile, navegación entre salas y videos que se cargan al tocarlos |
 | `img/mascaras/` | Fotos de la página principal optimizadas para web (WebP y JPG en varios tamaños) |
+| `img/maestro/` | Fotos de don Gorgonio optimizadas para web |
 | `img/galeria/` | Fotos del álbum optimizadas para la galería; en `recortes/`, las máscaras sin fondo del desfile |
 | `img/icono.svg` | Icono del sitio |
 | `fuentes/` | Tipografías Fraunces y Source Sans 3 (licencia SIL OFL) |
@@ -92,5 +93,7 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] Si son de don Gorgonio las piezas en tonos pastel (un felino y dos toros) y el ave azul de pico amarillo. Por ahora están fuera de la galería (`APARTADAS` en `armar_galeria.py`).
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
-- [ ] Fotos que faltan: un retrato del maestro, el taller, el proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`.
+- [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio en `fotos/originales/maestro/`.
+- [ ] Quién tomó las tres fotos de don Gorgonio y si se pueden usar. El retrato frente a la pared azul parece de un fotógrafo profesional, y la foto en la que pinta es un cuadro de un video.
+- [ ] De dónde viene la transcripción del testimonio de don Gorgonio, para dar el crédito de sus citas (ver `investigacion/testimonio-don-gorgonio.md`).
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.
