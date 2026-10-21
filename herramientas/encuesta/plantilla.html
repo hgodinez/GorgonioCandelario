@@ -127,6 +127,13 @@ textarea { min-height: 6.5rem; resize: vertical; }
 
 .pregunta-otra, #uso-otro-caja { display: grid; gap: 0.6rem; }
 .pasos-audio { font-size: 1.05rem; color: var(--tinta-suave); }
+.grabadora { display: grid; gap: 0.6rem; }
+.grabadora .boton.grabando { background: var(--bermellon); border-color: var(--bermellon); }
+.grabadora .boton svg { width: 1.2em; height: 1.2em; flex: none; }
+.audios { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.audios li { display: grid; gap: 0.3rem; font-size: 1.05rem; color: var(--turquesa); font-weight: 700; }
+.audios audio { width: 100%; }
+.estado-guardado { font-weight: 700; }
 .cierre-mascara { display: grid; gap: 0.6rem; padding-top: 0.4rem; border-top: 1px solid var(--borde); }
 
 /* Barra de abajo */
@@ -170,9 +177,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
 <div class="envoltura"><div class="franjas" aria-hidden="true"></div></div>
 <div id="app" class="envoltura">
   <main class="pantalla inicio">
-    <h1 tabindex="-1">Don Gorgonio: cuéntenos de sus máscaras</h1>
-    <p class="saludo">Estamos haciendo la página de internet de su trabajo y queremos ponerle bien el nombre a cada máscara.</p>
-    <p>Le vamos a enseñar sus máscaras una por una. De cada una le preguntamos tres cosas:</p>
+    <h1 tabindex="-1">Don Gorgonio: cuénteme de sus máscaras</h1>
+    <p class="saludo">Estoy haciendo la página de internet de su trabajo y quiero ponerle bien el nombre a cada máscara.</p>
+    <p>Le voy a enseñar sus máscaras una por una. De cada una le pregunto tres cosas:</p>
     <ol class="pasos">
       <li>Qué es</li>
       <li>En qué danza o fiesta se usa</li>
@@ -197,6 +204,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   var M = D.mascaras, G = D.generales, TOTAL = M.length;
   var DESTINO = String(D.destino || "").replace(/\D/g, "");
   var A_QUIEN = D.destino_nombre || "";
+  var SB = D.supabase && D.supabase.url && D.supabase.key ? D.supabase : null;
   var CLAVE = "encuesta-gorgonio-v1";
   var NOMBRES = ["Coyote", "Perro", "Chivo", "Borrego", "Tecolote", "Lince", "Ocelote", "Tigre", "Jaguar", "Burro", "Guacamaya", "Gallo", "Venado", "Toro", "Nahual", "Diablo", "La Muerte"];
   var OTRA = "Otra danza o fiesta", NO_SE = "No sé", ADORNO = "No se baila, es de adorno";
@@ -222,7 +230,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     Object.keys(obj(g)).forEach(function (k) { var v = obj(g[k]); o[k] = { opcion: txt(v.opcion), texto: txt(v.texto) }; });
     return o;
   }
-  var estado = { r: {}, g: {}, gAct: "", pos: "inicio", ultima: 0, enviadas: {}, mandado: {} };
+  var estado = { r: {}, g: {}, gAct: "", pos: "inicio", ultima: 0, enviadas: {}, mandado: {}, audios: {}, salida: {}, clave: "", dispositivo: "" };
   var hayAlmacen = false;
   try { localStorage.setItem(CLAVE + "-p", "1"); localStorage.removeItem(CLAVE + "-p"); hayAlmacen = true; } catch (e) {}
   try {
@@ -235,7 +243,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
     estado.ultima = Math.min(Math.max(parseInt(g0.ultima, 10) || 0, 0), TOTAL);
     estado.enviadas = obj(g0.enviadas);
     estado.mandado = obj(g0.mandado);
+    Object.keys(obj(g0.audios)).forEach(function (k) {
+      if (Array.isArray(g0.audios[k])) estado.audios[k] = g0.audios[k].filter(function (a) { return a && typeof a.archivo === "string"; });
+    });
+    estado.salida = obj(g0.salida);
+    estado.clave = txt(g0.clave);
+    estado.dispositivo = txt(g0.dispositivo);
   } catch (e) {}
+  // La clave secreta viene en el enlace (…?clave=XXXX) y se recuerda en este teléfono
+  try { var claveUrl = new URLSearchParams(location.search).get("clave"); if (claveUrl) estado.clave = claveUrl.trim(); } catch (e) {}
+  if (!estado.dispositivo) {
+    try { estado.dispositivo = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(8)), function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+    catch (e) { estado.dispositivo = String(Math.random()).slice(2, 14); }
+  }
 
   function guardarLocal() {
     if (!hayAlmacen) return;
@@ -251,18 +271,182 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function tocada(id) { var r = respuesta(id); r.act = new Date().toISOString(); return r; }
   function contestada(id) {
     var r = estado.r[id];
-    return !!(r && (r.es || r.suya || r.que_es.trim() || r.uso.length || r.significado.trim() ||
+    return !!((estado.audios["m:" + id] || []).length || r && (r.es || r.suya || r.que_es.trim() || r.uso.length || r.significado.trim() ||
       (r.uso.indexOf(OTRA) >= 0 && r.uso_otro.trim())));
   }
   function cuantas() { return M.filter(function (m) { return contestada(m.id); }).length; }
   function textoGeneral(q) { var v = estado.g[q.id]; return v ? [v.opcion, v.texto.trim()].filter(Boolean).join(". ") : ""; }
-  function generalesContestadas() { return G.filter(function (q) { return textoGeneral(q); }).length; }
+  function generalesContestadas() { return G.filter(function (q) { return textoGeneral(q) || (estado.audios["g:" + q.id] || []).length; }).length; }
 
+  function enLinea() { return modo === "db" || (sbActivo() && !sbFallo); }
   function dondeSeGuarda() {
+    if (sbActivo() && !sbFallo) return textoSync();
     if (modo === "db") return "Lo que contesta se guarda en línea.";
-    if (hayAlmacen) return "Lo que contesta se queda guardado en este teléfono, pero no nos llega solo: mándelo con el botón verde.";
-    return "Este teléfono no puede guardar lo que conteste. Mándelo por WhatsApp antes de cerrar la página.";
+    if (hayAlmacen) return "Lo que contesta se queda guardado en este teléfono, pero no me llega solo: mándemelo con el botón verde.";
+    return "Este teléfono no puede guardar lo que conteste. Mándemelo por WhatsApp antes de cerrar la página.";
   }
+
+  // ---------- Supabase: cada respuesta se manda por internet en cuanto se puede ----------
+  var sbFallo = false, sbEnviando = false, sbEspera = 0, sbTiempo = null, sbSinRed = false;
+  function sbActivo() { return !!(SB && estado.clave); }
+  function encabezados(extra) {
+    var h = { apikey: SB.key };
+    if (/^eyJ/.test(SB.key)) h.Authorization = "Bearer " + SB.key; // las claves anon viejas son JWT
+    return Object.assign(h, extra || {});
+  }
+  function pendientesSalida() { return Object.keys(estado.salida).length; }
+  function textoSync() {
+    if (sbEnviando || pendientesSalida()) return sbSinRed ? "Sin internet por ahora: se guarda en cuanto haya conexión." : "Guardando…";
+    return "✓ Guardado. Lo que contesta me llega solo.";
+  }
+  function pintarSync() {
+    var t = dondeSeGuarda();
+    app.querySelectorAll(".estado-guardado").forEach(function (el) { el.textContent = t; });
+  }
+  function encolar(tipo, pregunta, numero, nombre, resp) {
+    if (!sbActivo() || sbFallo) return;
+    estado.salida[tipo + ":" + pregunta] = { tipo: tipo, pregunta: pregunta, numero: numero, nombre: nombre, respuesta: resp, t: new Date().toISOString() };
+    guardarLocal();
+    clearTimeout(sbTiempo);
+    sbTiempo = setTimeout(enviarSalida, 1500);
+    pintarSync();
+  }
+  function encolarMascara(id) {
+    var m = porId[id], r = estado.r[id];
+    encolar("mascara", id, m.n, m.nombre, { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, significado: r.significado });
+  }
+  function encolarGeneral(qid) {
+    var k = G.findIndex(function (q) { return q.id === qid; }), v = estado.g[qid] || { opcion: "", texto: "" };
+    encolar("general", qid, k + 1, G[k].texto, { opcion: v.opcion, texto: v.texto });
+  }
+  function enviarSalida() {
+    if (!sbActivo() || sbFallo || sbEnviando) return;
+    var claves = Object.keys(estado.salida);
+    if (!claves.length) { pintarSync(); return; }
+    var k = claves[0], it = estado.salida[k];
+    sbEnviando = true; pintarSync();
+    fetch(SB.url.replace(/\/$/, "") + "/rest/v1/respuestas", {
+      method: "POST",
+      headers: encabezados({ "Content-Type": "application/json", Prefer: "return=minimal" }),
+      body: JSON.stringify({ clave: estado.clave, dispositivo: estado.dispositivo, tipo: it.tipo, pregunta: it.pregunta, numero: it.numero, nombre: it.nombre, respuesta: it.respuesta })
+    }).then(function (res) {
+      sbEnviando = false;
+      if (res.ok) {
+        if (estado.salida[k] && estado.salida[k].t === it.t) delete estado.salida[k];
+        sbEspera = 0; sbSinRed = false; guardarLocal(); pintarSync();
+        if (pendientesSalida()) enviarSalida();
+      } else if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429) {
+        // la clave no sirve o la base de datos no lo acepta: se sigue por WhatsApp
+        sbFallo = true;
+        anunciar("No se pudo guardar en internet. Sus respuestas quedan en este teléfono para mandarlas por WhatsApp.");
+        render(false);
+      } else { reintentarSalida(); }
+    }, function () { sbEnviando = false; reintentarSalida(); });
+  }
+  function reintentarSalida() {
+    sbSinRed = true; pintarSync();
+    sbEspera = Math.min(60000, (sbEspera || 1500) * 2);
+    clearTimeout(sbTiempo);
+    sbTiempo = setTimeout(enviarSalida, sbEspera + Math.random() * 1000);
+  }
+  window.addEventListener("online", function () { sbEspera = 0; enviarSalida(); subirPendientes(); });
+
+  // ---------- Grabar audios en la página (solo con Supabase) ----------
+  var grabando = null, audiosSesion = {}, audiosPendientes = [];
+  function puedeGrabar() {
+    return sbActivo() && !sbFallo && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  }
+  var MIC = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1a7 7 0 0 0 6-6.9h-2z"/></svg>';
+  function duracion(seg) { seg = Math.round(seg); return Math.floor(seg / 60) + ":" + ("0" + (seg % 60)).slice(-2); }
+  function grabadora(ambito, numero, nombre) {
+    var guardados = estado.audios[ambito] || [];
+    var lista = guardados.map(function (a, k) {
+      var url = audiosSesion[a.archivo];
+      return '<li>✓ Audio ' + (k + 1) + ' guardado (' + duracion(a.seg || 0) + ')' + (url ? '<audio controls preload="none" src="' + esc(url) + '"></audio>' : "") + '</li>';
+    }).join("");
+    var pend = audiosPendientes.filter(function (x) { return x.ambito === ambito; }).length;
+    return '<div class="grabadora" data-ambito="' + esc(ambito) + '" data-numero="' + esc(numero) + '" data-nombre="' + esc(nombre) + '">' +
+      '<div class="acciones"><button class="boton whatsapp" type="button" data-grabar>' + MIC + '<span>Grabar un audio</span></button></div>' +
+      '<p class="nota grabadora-estado" aria-live="polite">' + (pend ? "Hay un audio sin guardar. Toque «Intentar otra vez»." : "") + '</p>' +
+      (pend ? '<div class="acciones"><button class="boton" type="button" data-reintentar>Intentar otra vez</button></div>' : "") +
+      (lista ? '<ul class="audios">' + lista + '</ul>' : "") + '</div>';
+  }
+  function elegirFormato() {
+    var opciones = ["audio/webm;codecs=opus", "audio/mp4", "audio/ogg;codecs=opus", "audio/webm"];
+    for (var k = 0; k < opciones.length; k++) { try { if (MediaRecorder.isTypeSupported(opciones[k])) return opciones[k]; } catch (e) {} }
+    return "";
+  }
+  function avisoGrabadora(caja, texto) { var el = caja && caja.querySelector(".grabadora-estado"); if (el) el.textContent = texto; }
+  function empezarGrabacion(caja) {
+    var ambito = caja.dataset.ambito;
+    avisoGrabadora(caja, "Pidiendo permiso para usar el micrófono…");
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (flujo) {
+      var formato = elegirFormato(), rec;
+      try { rec = formato ? new MediaRecorder(flujo, { mimeType: formato }) : new MediaRecorder(flujo); }
+      catch (e) { flujo.getTracks().forEach(function (t) { t.stop(); }); avisoGrabadora(caja, "Este teléfono no puede grabar aquí. Mándeme el audio por WhatsApp."); return; }
+      var trozos = [], inicio = Date.now();
+      grabando = { ambito: ambito, numero: caja.dataset.numero, nombre: caja.dataset.nombre, rec: rec, inicio: inicio, reloj: null };
+      rec.ondataavailable = function (e) { if (e.data && e.data.size) trozos.push(e.data); };
+      rec.onstop = function () {
+        flujo.getTracks().forEach(function (t) { t.stop(); });
+        var g = grabando; grabando = null;
+        clearInterval(g.reloj);
+        var tipo = (rec.mimeType || formato || "audio/webm").split(";")[0];
+        var blob = new Blob(trozos, { type: tipo });
+        var seg = (Date.now() - g.inicio) / 1000;
+        var cajaAhora = app.querySelector('.grabadora[data-ambito="' + g.ambito + '"]');
+        if (cajaAhora) { var b = cajaAhora.querySelector("[data-grabar]"); b.classList.remove("grabando"); b.querySelector("span").textContent = "Grabar otro audio"; }
+        if (!blob.size || seg < 1) { avisoGrabadora(cajaAhora, "El audio salió vacío. Intente otra vez."); return; }
+        subirAudio({ ambito: g.ambito, numero: g.numero, nombre: g.nombre, blob: blob, tipo: tipo, seg: seg });
+      };
+      rec.start(1000);
+      var boton = caja.querySelector("[data-grabar]");
+      boton.classList.add("grabando");
+      var tic = function () {
+        var s0 = (Date.now() - inicio) / 1000;
+        var b = app.querySelector('.grabadora[data-ambito="' + ambito + '"] [data-grabar] span');
+        if (b) b.textContent = "Terminar y guardar (" + duracion(s0) + ")";
+        if (s0 > 600 && grabando) grabando.rec.stop(); // máximo 10 minutos por audio
+      };
+      tic();
+      grabando.reloj = setInterval(tic, 1000);
+      avisoGrabadora(caja, "Grabando… hable con calma. Cuando termine, toque el botón otra vez.");
+    }, function () {
+      avisoGrabadora(caja, "El teléfono no dejó usar el micrófono. Cuando se lo pregunte, toque «Permitir». También puede mandarme el audio por WhatsApp.");
+    });
+  }
+  function nombreArchivo(a) {
+    var ext = { "audio/webm": "webm", "audio/mp4": "m4a", "audio/ogg": "ogg", "audio/mpeg": "mp3", "audio/aac": "aac", "audio/wav": "wav" }[a.tipo] || "webm";
+    var parte = a.ambito.replace(/^[mg]:/, "").replace(/[^a-z0-9-]/gi, "-");
+    var n = a.numero ? ("00" + a.numero).slice(-3) + "-" : "";
+    return estado.clave + "/" + (a.ambito.charAt(0) === "g" ? "usted-" : "") + n + parte + "-" + Date.now() + "." + ext;
+  }
+  function subirAudio(a) {
+    var caja = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
+    avisoGrabadora(caja, "Guardando el audio…");
+    a.archivo = a.archivo || nombreArchivo(a);
+    fetch(SB.url.replace(/\/$/, "") + "/storage/v1/object/audios/" + a.archivo.split("/").map(encodeURIComponent).join("/"), {
+      method: "POST", headers: encabezados({ "Content-Type": a.tipo, "x-upsert": "false" }), body: a.blob
+    }).then(function (res) {
+      if (!res.ok) throw res;
+      audiosPendientes = audiosPendientes.filter(function (x) { return x !== a; });
+      (estado.audios[a.ambito] = estado.audios[a.ambito] || []).push({ archivo: a.archivo, seg: Math.round(a.seg), t: new Date().toISOString() });
+      try { audiosSesion[a.archivo] = URL.createObjectURL(a.blob); } catch (e) {}
+      guardarLocal();
+      encolar("audio", a.archivo, Number(a.numero) || null, a.nombre, { archivo: a.archivo, segundos: Math.round(a.seg), de: a.ambito });
+      if (!editando()) render(false);
+      anunciar("Audio guardado");
+    }).catch(function () {
+      if (audiosPendientes.indexOf(a) < 0) audiosPendientes.push(a);
+      if (!editando()) render(false);
+      var c = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
+      avisoGrabadora(c, "No se pudo guardar el audio, quizá por falta de internet. No cierre la página y toque «Intentar otra vez».");
+    });
+  }
+  function subirPendientes() { audiosPendientes.slice().forEach(subirAudio); }
+  window.addEventListener("beforeunload", function (e) {
+    if (audiosPendientes.length || grabando) { e.preventDefault(); e.returnValue = ""; }
+  });
 
   // ---------- Guardar en línea: solo si quien abre la página puede escribir ----------
   var db = null, modo = "local", quitar = [];
@@ -372,7 +556,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var lista = [];
     M.forEach(function (m) {
       if (!contestada(m.id)) return;
-      var r = estado.r[m.id], l = [m.n + ". " + m.nombre];
+      var r = respuesta(m.id), l = [m.n + ". " + m.nombre];
       if (r.suya) l.push("¿La hizo usted?: " + ({ si: "sí", no: "no, otra persona", nose: "no sabe" })[r.suya]);
       if (r.es === "si") l.push("Es: sí, está bien el nombre");
       else if (r.es === "otra") l.push("Es: " + (r.que_es.trim() || "otra cosa (sin decir qué)"));
@@ -382,6 +566,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
       var usos = r.uso.map(function (u) { return u === OTRA && r.uso_otro.trim() ? r.uso_otro.trim() : u; });
       if (usos.length) l.push("Se usa en: " + usos.join(", "));
       if (r.significado.trim()) l.push("Significa: " + r.significado.trim());
+      var na = (estado.audios["m:" + m.id] || []).length;
+      if (na) l.push(na === 1 ? "Mandó 1 audio" : "Mandó " + na + " audios");
       lista.push({ id: m.id, texto: l.join("\n") });
     });
     G.forEach(function (q, k) {
@@ -420,6 +606,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 
   // ---------- Pantallas ----------
   function ir(pos, sinHistorial) {
+    if (grabando) grabando.rec.stop();
     estado.pos = String(pos);
     if (/^\d+$/.test(estado.pos)) estado.ultima = Number(estado.pos);
     guardarLocal();
@@ -452,13 +639,13 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function mandarLoQueLlevo(nota) {
     var n = cuantas() + generalesContestadas();
     return '<div class="cierre-mascara">' + (nota ? '<p class="nota">' + nota + '</p>' : "") +
-      '<p class="nota">' + esc(dondeSeGuarda()) + '</p>' +
-      (n ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button></div>' : "") + '</div>';
+      '<p class="nota estado-guardado">' + esc(dondeSeGuarda()) + '</p>' +
+      (n && !enLinea() ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button></div>' : "") + '</div>';
   }
 
   function pantallaMascara(i) {
     var m = M[i - 1], r = respuesta(m.id);
-    var sala = m.sala === "La Danza de los Morenos" ? '<p class="sala">Nosotros la pusimos con la Danza de los Morenos' + (m.grupo ? " (" + esc(m.grupo) + ")" : "") + '</p>' : "";
+    var sala = m.sala === "La Danza de los Morenos" ? '<p class="sala">La puse con la Danza de los Morenos' + (m.grupo ? " (" + esc(m.grupo) + ")" : "") + '</p>' : "";
     var vistas = m.fotos.length > 1 ? '<div class="vistas"><span>Más fotos, tóquelas:</span>' + m.fotos.map(function (f, k) {
       return '<button type="button" data-vista="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="Foto ' + (k + 1) + ' de ' + m.fotos.length + '"><img src="' + esc(f) + '" alt=""></button>';
     }).join("") + '</div>' : "";
@@ -467,17 +654,17 @@ textarea { min-height: 6.5rem; resize: vertical; }
       opciones("suya", [{ v: "si", t: "Sí, es mía" }, { v: "no", t: "No, la hizo otra persona" }, { v: "nose", t: "No sé" }], r.suya, false, "p-suya") + '</section>' : "";
     var listaEs, ayudaEs;
     if (m.duda && m.duda.length) {
-      ayudaEs = "No estamos seguros. ¿Es " + m.duda.join(" o ") + "?";
+      ayudaEs = "No estoy seguro. ¿Es " + m.duda.join(" o ") + "?";
       listaEs = m.duda.map(function (d) { return { v: cap(d), t: m.duda.length === 1 ? "Sí, es " + d : cap(d) }; })
         .concat([{ v: "otra", t: "Es otra cosa" }, { v: "nose", t: "No sé" }]);
     } else {
-      ayudaEs = m.confirmada ? "Su familia ya nos dijo este nombre. ¿Está bien?" : "Si no está bien, díganos qué animal o personaje es.";
+      ayudaEs = m.confirmada ? "Su familia ya me dijo este nombre. ¿Está bien?" : "Si no está bien, dígame qué animal o personaje es.";
       listaEs = [{ v: "si", t: "Sí, está bien" }, { v: "otra", t: "No, es otra cosa" }, { v: "nose", t: "No sé" }];
     }
     var otroUso = r.uso.indexOf(OTRA) >= 0;
     app.innerHTML = barra("Máscara " + i + " de " + TOTAL, Math.round(i / TOTAL * 100)) +
       '<main class="pantalla">' +
-      '<div class="ficha">' + sala + '<p class="llamamos">' + (m.confirmada ? "Su familia nos dijo que es:" : "Nosotros le pusimos este nombre, pero puede estar mal:") + '</p>' +
+      '<div class="ficha">' + sala + '<p class="llamamos">' + (m.confirmada ? "Su familia me dijo que es:" : "Le puse este nombre, pero puede estar mal:") + '</p>' +
       '<h1 tabindex="-1">' + esc(m.ver) + '</h1></div>' +
       '<figure class="foto"><img id="foto" src="' + esc(m.fotos[0]) + '" alt="Foto de la máscara ' + i + ': ' + esc(m.ver) + '"></figure>' + vistas +
       suya +
@@ -498,13 +685,15 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<section class="pregunta"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
       '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
       '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
-      '<p class="ayuda" id="audio-' + i + '">Si prefiere, mándenos un audio:</p>' +
-      '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
-      '<li>Toque el botón verde. Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja el chat de la persona que le mandó esta encuesta.") + '</li>' +
-      '<li>Mande ese mensaje.</li>' +
-      '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
-      '<li>Regrese aquí para seguir.</li></ol>' +
-      '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>' +
+      (puedeGrabar()
+        ? '<p class="ayuda">Si prefiere, grábeme un audio: toque el botón verde, hable, y cuando termine tóquelo otra vez.</p>' + grabadora("m:" + m.id, m.n, m.nombre)
+        : '<p class="ayuda" id="audio-' + i + '">Si prefiere, mándeme un audio:</p>' +
+          '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
+          '<li>Toque el botón verde. Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".") + '</li>' +
+          '<li>Mande ese mensaje.</li>' +
+          '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
+          '<li>Regrese aquí para seguir.</li></ol>' +
+          '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>') +
       '</section>' +
       mandarLoQueLlevo(i % 10 === 0 ? "¿Ya se cansó? Puede seguir otro día, aquí mismo." : "") +
       '</main>';
@@ -520,7 +709,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Todas sus máscaras</h1>' +
       '<p class="ayuda">Lleva ' + hechas + ' de ' + TOTAL + ' contestadas. Toque una para verla.</p></div>' +
       '<div class="acciones"><button class="boton" type="button" data-ir="usted">Preguntas sobre usted</button>' +
-      (hechas + generalesContestadas() ? '<button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button>' : "") + '</div>' +
+      (hechas + generalesContestadas() ? '<button class="boton' + (enLinea() ? "" : " whatsapp") + '" type="button" data-ir="enviar">' + (enLinea() ? "Ver mis respuestas" : "Mandar lo que llevo") + '</button>' : "") + '</div>' +
       '<ul class="rejilla">' + M.map(function (m) {
         var ok = contestada(m.id);
         return '<li><button type="button" data-ir="' + m.n + '" class="' + (ok ? "contestada" : "") + (m.n === ultima ? " aqui" : "") + '" aria-label="Máscara ' + m.n + ': ' + esc(m.ver) + (ok ? ", contestada" : "") + '">' +
@@ -534,8 +723,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function pantallaUsted() {
     app.innerHTML = barra("Preguntas sobre usted", null) +
       '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Unas preguntas sobre usted y su taller</h1>' +
-      '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. Si prefiere, mándenos audios por WhatsApp diciendo el número de la pregunta.</p>' +
-      '<div class="acciones"><a class="boton chico" href="' + esc(wa("Sobre las preguntas de usted y su taller, le mando unos audios:")) + '" target="_blank" rel="noopener">Contestar con audios de WhatsApp</a></div></div>' +
+      (puedeGrabar()
+        ? '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. En cada pregunta puede escribir o grabarme un audio.</p></div>'
+        : '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. Si prefiere, mándeme audios por WhatsApp diciendo el número de la pregunta.</p>' +
+          '<div class="acciones"><a class="boton chico" href="' + esc(wa("Sobre las preguntas de usted y su taller, le mando unos audios:")) + '" target="_blank" rel="noopener">Contestar con audios de WhatsApp</a></div></div>') +
       G.map(function (q, k) {
         var v = estado.g[q.id] || { opcion: "", texto: "" }, h = "g-" + q.id;
         var campo = q.corto
@@ -545,7 +736,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
           (q.foto ? '<img class="foto-pregunta" src="' + esc(q.foto) + '" alt="' + esc(q.alt || "") + '">' : "") +
           (q.enlaces ? '<div class="acciones">' + q.enlaces.map(function (e) { return '<a class="boton chico" href="' + esc(e[1]) + '" target="_blank" rel="noopener">' + esc(e[0]) + '</a>'; }).join("") + '</div>' : "") +
           (q.opciones ? opciones("g:" + q.id, q.opciones.map(function (o) { return { v: o, t: o }; }), v.opcion, false, h) : "") +
-          campo + '</section>';
+          campo + (puedeGrabar() ? grabadora("g:" + q.id, k + 1, q.texto) : "") + '</section>';
       }).join("") + mandarLoQueLlevo("") + '</main>';
     nav.hidden = false;
     atras.textContent = "← Máscaras";
@@ -560,20 +751,24 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var aMandar = mandarTodo || !yaMando ? lista : nuevos;
     var ps = partes(aMandar), todo = ps.map(function (p) { return p.texto; }).join("\n\n");
     var hechas = cuantas(), gen = generalesContestadas(), ultima = estado.ultima || 1;
-    var aQuien = A_QUIEN ? "a " + esc(A_QUIEN) : "a la persona que le mandó esta encuesta";
+    var miChat = "Escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".";
     var pasos = '<ol class="pasos">' +
       '<li>Toque el botón verde.</li>' +
-      '<li>Se abre WhatsApp con el mensaje ya escrito.' + (DESTINO ? "" : " Escoja el chat de la persona que le mandó esta encuesta.") + ' Toque la flecha para enviarlo.</li>' +
+      '<li>Se abre WhatsApp con el mensaje ya escrito.' + (DESTINO ? "" : " " + miChat) + ' Toque la flecha para enviarlo.</li>' +
       (ps.length > 1 ? '<li>Regrese aquí y toque el siguiente botón verde.</li>' : "") + '</ol>';
     var cuerpo;
     if (!lista.length) {
       cuerpo = '<p>Todavía no hay respuestas. Regrese a las máscaras para empezar.</p>';
+    } else if (sbActivo() && !sbFallo) {
+      cuerpo = '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
+        '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>' +
+        '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>';
     } else if (!aMandar.length) {
-      cuerpo = '<p class="aviso">Ya nos mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
+      cuerpo = '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
         '<div class="acciones"><button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button></div>';
     } else {
-      cuerpo = '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandarlas por WhatsApp " + aQuien + "."
-          : (A_QUIEN ? "Para que sus respuestas le lleguen " + aQuien + ":" : "Para que sus respuestas nos lleguen:")) + '</p>' + pasos +
+      cuerpo = '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
+          : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
         (yaMando && !mandarTodo ? '<p class="nota">Solo va lo nuevo desde la última vez (' + aMandar.length + (aMandar.length === 1 ? " respuesta" : " respuestas") + ').</p>' : "") +
         '<div class="partes">' + ps.map(function (p, k) {
           var ya = !!estado.enviadas[p.clave];
@@ -624,18 +819,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var hechas = cuantas() + generalesContestadas();
     var seguir = estado.ultima ? Math.min(estado.ultima, TOTAL) : 1;
     app.innerHTML = '<main class="pantalla inicio">' +
-      '<h1 tabindex="-1">Don Gorgonio: cuéntenos de sus máscaras</h1>' +
-      (D.firma ? '<p>Le saluda ' + esc(D.firma) + '.</p>' : "") +
-      '<p class="saludo">Estamos haciendo la página de internet de su trabajo y queremos ponerle bien el nombre a cada máscara.</p>' +
-      '<p>Le vamos a enseñar sus máscaras una por una. De cada una le preguntamos tres cosas:</p>' +
+      '<h1 tabindex="-1">Don Gorgonio: cuénteme de sus máscaras</h1>' +
+      '<p class="saludo">' + (D.firma ? "Soy " + esc(D.firma) + ". " : "") + 'Estoy haciendo la página de internet de su trabajo y quiero ponerle bien el nombre a cada máscara.</p>' +
+      '<p>Le voy a enseñar sus máscaras una por una. De cada una le pregunto tres cosas:</p>' +
       '<ol class="pasos"><li>Qué es</li><li>En qué danza o fiesta se usa</li><li>Qué significa</li></ol>' +
       '<p>Conteste las que pueda. No tiene que contestar todas ni hacerlo en un solo día; si no sabe alguna, toque «Siguiente».</p>' +
-      (modo === "db" ? "" : hayAlmacen
-        ? '<p class="aviso">Lo que conteste se queda guardado en este teléfono, pero no nos llega solo: cuando quiera, toque el botón verde «Mandar lo que llevo» y nos llega por WhatsApp. Para seguir otro día, abra otra vez el enlace en este mismo teléfono.</p>'
-        : '<p class="aviso">Este teléfono no puede guardar lo que conteste. Antes de cerrar la página, toque el botón verde «Mandar lo que llevo» para que nos llegue por WhatsApp.</p>') +
+      (sbActivo() && !sbFallo
+        ? '<p class="aviso">Lo que conteste me llega solo, por internet. Puede contestar poco a poco y seguir otro día con este mismo enlace.' + (puedeGrabar() ? " Si prefiere hablar en vez de escribir, en cada máscara puede grabarme un audio." : "") + '</p>'
+        : modo === "db" ? "" : hayAlmacen
+        ? '<p class="aviso">Lo que conteste se queda guardado en este teléfono, pero no me llega solo: cuando quiera, toque el botón verde «Mandar lo que llevo» y me llega por WhatsApp. Para seguir otro día, abra otra vez el enlace en este mismo teléfono.</p>'
+        : '<p class="aviso">Este teléfono no puede guardar lo que conteste. Antes de cerrar la página, toque el botón verde «Mandar lo que llevo» para que me llegue por WhatsApp.</p>') +
       '<div class="acciones">' + (hechas
         ? '<button class="boton principal" type="button" data-ir="' + seguir + '">Seguir en la máscara ' + seguir + '</button>' +
-          '<button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button><button class="boton" type="button" data-ir="todas">Ver todas</button>'
+          (enLinea() ? "" : '<button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button>') + '<button class="boton" type="button" data-ir="todas">Ver todas</button>'
         : '<button class="boton principal" type="button" data-ir="1">Empezar</button>') + '</div>' +
       '<p class="nota">' + (hechas ? "Lleva " + cuantas() + " de " + TOTAL + " máscaras contestadas." : "Son las " + TOTAL + " máscaras que tenemos en fotos. Al final hay unas preguntas sobre usted y el taller.") + '</p></main>';
     nav.hidden = true;
@@ -674,9 +870,16 @@ textarea { min-height: 6.5rem; resize: vertical; }
       r0.que_es = r0.que_es === b.dataset.sugerencia ? "" : b.dataset.sugerencia;
       campo.value = r0.que_es;
       app.querySelectorAll("[data-sugerencia]").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.sugerencia === r0.que_es)); });
-      guardarLocal(); subirMascara(m.id);
+      guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
       return;
     }
+    if (b.hasAttribute("data-grabar")) {
+      var caja = b.closest(".grabadora");
+      if (grabando && grabando.ambito === caja.dataset.ambito) grabando.rec.stop();
+      else if (!grabando) empezarGrabacion(caja);
+      return;
+    }
+    if (b.hasAttribute("data-reintentar")) { subirPendientes(); return; }
     if (!b.dataset.campo) return;
     var c = b.dataset.campo, v = b.dataset.valor;
     if (c.indexOf("g:") === 0) {
@@ -684,7 +887,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       g.opcion = g.opcion === v ? "" : v;
       estado.gAct = new Date().toISOString();
       marcarGrupo(b, g.opcion);
-      guardarLocal(); subirGenerales();
+      guardarLocal(); subirGenerales(); encolarGeneral(id);
       return;
     }
     if (!m) return;
@@ -707,7 +910,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       marcarGrupo(b, r[c]);
       if (c === "es") document.getElementById("otra").hidden = r.es !== "otra";
     }
-    guardarLocal(); subirMascara(m.id);
+    guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
   });
   app.addEventListener("input", function (e) {
     var t = e.target;
@@ -715,7 +918,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       var g = estado.g[t.dataset.general] = Object.assign({ opcion: "", texto: "" }, estado.g[t.dataset.general]);
       g.texto = t.value;
       estado.gAct = new Date().toISOString();
-      guardarLocal(); subirGenerales();
+      guardarLocal(); subirGenerales(); encolarGeneral(t.dataset.general);
       return;
     }
     if (t.dataset.texto) {
@@ -724,7 +927,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       var r = tocada(m.id);
       r[t.dataset.texto] = t.value;
       if (t.dataset.texto === "que_es") app.querySelectorAll("[data-sugerencia]").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.sugerencia === t.value)); });
-      guardarLocal(); subirMascara(m.id);
+      guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
     }
   });
   atras.addEventListener("click", function () {
@@ -750,5 +953,6 @@ textarea { min-height: 6.5rem; resize: vertical; }
   try { history.replaceState({ pos: estado.pos }, ""); } catch (e) {}
   render(false);
   conectar();
+  enviarSalida();
 })();
 </script>

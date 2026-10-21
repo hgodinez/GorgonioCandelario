@@ -1,6 +1,14 @@
 """Arma la encuesta para don Gorgonio (una máscara por pantalla) a partir de datos/galeria.json.
-Escribe la página y una lista de archivos para publicarla como Artifact de claude.ai.
-Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida [destino=52XXXXXXXXXX] [nombre="Nombre"] [firma="..."] [enlace=URL]
+Hay dos salidas:
+  * Para el sitio (modo=sitio): preguntas/index.html, una página escondida del sitio (no va en el
+    menú y los buscadores no la indexan) que usa las fotos de img/galeria. Si se le dan los datos de
+    Supabase, cada respuesta y cada audio se guardan por internet (ver herramientas/encuesta/supabase.sql);
+    si no, se guardan en el teléfono y se mandan por WhatsApp.
+  * Para claude.ai: la página y una lista de archivos para publicarla como Artifact.
+Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida [modo=sitio] [destino=52XXXXXXXXXX]
+       [nombre="Nombre"] [firma="..."] [enlace=URL] [supabase_url=https://xxxx.supabase.co] [supabase_key=...]
+modo=sitio: escribe preguntas/index.html en el sitio (carpeta_salida se ignora salvo para archivos.json).
+supabase_key: la clave pública (anon o publishable) del proyecto; NUNCA la secreta (service_role/sb_secret).
 destino: WhatsApp (con 52) al que llegan las respuestas; nombre: a quién le llegan; firma: quién saluda al inicio;
 enlace: dirección de la encuesta publicada, para el documento de preguntas.
 Salida: carpeta_salida/encuesta.html, carpeta_salida/archivos.json ({ruta publicada: ruta en el repo})
@@ -21,6 +29,7 @@ VISTAS_MAX = 3   # foto principal y hasta dos vistas más
 ANCHO_MAX = 800  # pixeles de la foto en la encuesta
 
 archivos = {}
+SITIO = opciones.get('modo') == 'sitio'
 
 # En pantalla se evitan palabras técnicas; el nombre original va en el texto de WhatsApp y en línea
 PALABRAS = [('Cánido', 'Perro o coyote'), ('naturalista', 'pintado al natural')]
@@ -46,6 +55,8 @@ def para_ver(slug, nombre):
 
 def foto(fid):
     w = max([x for x in tam[fid]['tamanos'] if x <= ANCHO_MAX] or tam[fid]['tamanos'][:1])
+    if SITIO:  # la página vive en preguntas/ y usa las fotos que ya tiene el sitio
+        return f'../img/galeria/{fid}-{w}.webp'
     ruta = f'img/{fid}.webp'
     archivos[ruta] = f'img/galeria/{fid}-{w}.webp'
     return ruta
@@ -84,16 +95,16 @@ GENERALES = [
      'opciones': ['Mi papá', 'Mi abuelo', 'Mi bisabuelo', 'Más atrás', 'No sé']},
     {'id': 'guelo-baci', 'texto': '¿Qué quiere decir el nombre de su taller, «Mi Güelo Baci»?'},
     {'id': 'premios', 'texto': '¿Qué premios ha recibido y en qué año? ¿En qué año lo nombraron Gran Maestro del Arte Popular?'},
-    {'id': 'perros', 'texto': 'Tenemos que en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?',
+    {'id': 'perros', 'texto': 'Según lo que encontré, en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?',
      'opciones': ['Sí, está bien', 'No, falta o sobra alguna', 'No sé']},
-    {'id': 'simbolos', 'texto': 'Nos contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?'},
+    {'id': 'simbolos', 'texto': 'Me contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?'},
     {'id': 'tecnica', 'texto': '¿Qué pintura usa? ¿Con qué hace el pelo y las barbas de las máscaras?'},
     {'id': 'taller', 'texto': '¿Qué días y a qué hora se le puede visitar en el taller? ¿Da clases? ¿Manda máscaras a otras ciudades?'},
-    {'id': 'videos', 'texto': '¿Nos da permiso de poner en su página estos dos videos donde sale usted?',
+    {'id': 'videos', 'texto': '¿Me da permiso de poner en su página estos dos videos donde sale usted?',
      'enlaces': [['Ver el video «Hacedor de máscaras»', 'https://www.youtube.com/watch?v=IcQFjwiqZJI'],
                  ['Ver el video del taller', 'https://www.youtube.com/watch?v=u3Pr0mBtlms']],
      'opciones': ['Sí', 'No', 'No los he visto']},
-    {'id': 'fotos', 'texto': '¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo ponemos el nombre de esa persona en la página?'},
+    {'id': 'fotos', 'texto': '¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo pongo el nombre de esa persona en la página?'},
     {'id': 'ave-azul', 'texto': 'En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?',
      'foto': foto('a065'), 'alt': 'Tres máscaras juntas: un tecolote rojo, un ave azul de pico largo y amarillo, y un coyote blanco',
      'opciones': ['Sí', 'No', 'No sé']},
@@ -102,11 +113,35 @@ GENERALES = [
 
 datos = {'mascaras': mascaras, 'generales': GENERALES,
          'destino': re.sub(r'\D', '', opciones.get('destino', '')), 'destino_nombre': opciones.get('nombre', ''),
-         'firma': opciones.get('firma', '')}
+         'firma': opciones.get('firma', ''),
+         'supabase': {'url': opciones.get('supabase_url', ''), 'key': opciones.get('supabase_key', '')}}
+assert not datos['supabase']['key'].startswith(('sb_secret', 'service')), 'esa es la clave secreta: use la pública (anon o publishable)'
 plantilla = (pathlib.Path(__file__).parent / 'plantilla.html').read_text(encoding='utf-8')
 assert '/*DATOS*/null' in plantilla
 html = plantilla.replace('/*DATOS*/null', json.dumps(datos, ensure_ascii=False).replace('</', '<\\/'))
-(salida / 'encuesta.html').write_text(html, encoding='utf-8')
+if SITIO:
+    # Página completa para el sitio: fuentes del propio sitio y fuera de los buscadores
+    fuentes = re.compile(r'<link rel="preconnect"[^>]*>\n<link rel="preconnect"[^>]*>\n<link rel="stylesheet" href="https://fonts.googleapis.com[^>]*>\n')
+    assert fuentes.search(html)
+    html = fuentes.sub('', html).replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '')
+    caras = """@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fuentes/fraunces-latin-opsz-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fuentes/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fuentes/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fuentes/source-sans-3-latin-700-normal.woff2") format("woff2"); }
+:root { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+"""
+    html = html.replace('<style>\n', '<style>\n' + caras, 1)
+    html = ('<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+            '<meta name="robots" content="noindex, nofollow">\n<link rel="icon" href="../img/icono.svg" type="image/svg+xml">\n'
+            + html.replace('<style>', '<style>', 1).replace('</style>\n', '</style>\n</head>\n<body>\n', 1) + '</body>\n</html>\n')
+    (raiz / 'preguntas').mkdir(exist_ok=True)
+    (raiz / 'preguntas/index.html').write_text(html, encoding='utf-8')
+else:
+    (salida / 'encuesta.html').write_text(html, encoding='utf-8')
 (salida / 'archivos.json').write_text(json.dumps(archivos, indent=1), encoding='utf-8')
 # El mismo cuestionario como documento sencillo, con la misma numeración que la encuesta
 lineas = [

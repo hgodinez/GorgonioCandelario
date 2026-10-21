@@ -75,6 +75,25 @@ python3 herramientas/generar_galeria_completa.py .
 - Cuando la familia conteste las preguntas de `datos/preguntas-familia.md`, marca las piezas confirmadas en `datos/album-catalogo.json` con `"certeza": "confirmada-familia"`; en la galería aparecen con la leyenda «Confirmada por la familia».
 - Las máscaras del desfile van sin fondo. Para agregar una, quita el fondo con `recortar_fondo.py` (necesita onnxruntime, numpy y el modelo isnet-general-use; el enlace está en el script), revisa el recorte, pásalo a tamaños web con `recortes_web.py` y márcalo en `datos/recortes-revision.json` con `"usar_recorte": true`.
 
+## La encuesta para don Gorgonio
+
+`preguntas/index.html` es una página escondida del sitio: no está en el menú y los buscadores no la indexan. Le enseña sus máscaras una por una (qué es, en qué danza o fiesta se usa y qué significa), más unas preguntas sobre él y el taller. Habla en primera persona, de parte de Humberto.
+
+- **Con Supabase** (lo normal): cada respuesta y cada audio que graba en la página se guardan solos por internet. El enlace que se le manda lleva una clave secreta: `…/preguntas/?clave=XXXX`. Sin la clave, la página no puede guardar nada en la base de datos.
+- **Sin Supabase o sin la clave**: lo que conteste se guarda en su teléfono y lo manda con el botón verde de WhatsApp.
+
+Para preparar Supabase (una sola vez): en el proyecto, abre «SQL Editor», pega `herramientas/encuesta/supabase.sql` con la clave en lugar de `CAMBIA-ESTA-CLAVE` y toca «Run». Crea la tabla `respuestas` (la página solo puede agregar renglones, no leerlos), la vista `ultimas_respuestas` y el depósito privado `audios`. Las respuestas se leen en el panel de Supabase: Table Editor → `respuestas`, o en SQL Editor con `select numero, nombre, respuesta, creado from ultimas_respuestas order by tipo, numero;`. Los audios están en Storage → `audios`.
+
+Para volver a armar la página (por ejemplo, si cambian las máscaras):
+
+```bash
+python3 herramientas/encuesta/generar_encuesta.py . /tmp/encuesta modo=sitio firma=Humberto nombre=Humberto \
+  supabase_url=https://xbmlsctofrofspjoyxyw.supabase.co supabase_key=<clave pública sb_publishable_…> \
+  enlace=https://humbertogodinez.com/GorgonioCandelario/preguntas/ [destino=52XXXXXXXXXX]
+```
+
+La clave pública (`sb_publishable_…`) puede ir en la página; la secreta (`sb_secret_…` o `service_role`) nunca. El mismo script, sin `modo=sitio`, arma la versión para claude.ai.
+
 ## Publicar en GitHub Pages
 
 En GitHub, entra a **Settings → Pages**, elige **Deploy from a branch** y selecciona la rama y la carpeta `/ (root)`. Cuando ya haya dominio, agrega `og:url` y `og:image` en `index.html`; está marcado con un comentario `PENDIENTE`.
@@ -89,7 +108,7 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
 - [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
-- [ ] Que don Gorgonio conteste la encuesta: https://claude.ai/artifact/4aD8EM9gR3y1vpgU86ByHx (una máscara por pantalla: qué es, en qué danza o fiesta se usa y qué significa, más preguntas sobre él). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`. La encuesta se arma con `herramientas/encuesta/generar_encuesta.py`.
+- [ ] Que don Gorgonio conteste la encuesta en `preguntas/` (ver «La encuesta para don Gorgonio»). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`. La encuesta se arma con `herramientas/encuesta/generar_encuesta.py`.
 - [ ] Si son de don Gorgonio las piezas en tonos pastel (un felino y dos toros) y el ave azul de pico amarillo. Por ahora están fuera de la galería (`APARTADAS` en `armar_galeria.py`).
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".

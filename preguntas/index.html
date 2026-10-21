@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../img/icono.svg" type="image/svg+xml">
+<title>Preguntas a don Gorgonio</title>
+<style>
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fuentes/fraunces-latin-opsz-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fuentes/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fuentes/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fuentes/source-sans-3-latin-700-normal.woff2") format("woff2"); }
+:root { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Una máscara por pantalla, como una ficha de museo en el celular: el nombre arriba, la foto y las
+   tres preguntas; barra fija abajo con botones grandes */
+:root {
+  --papel: #f6eedd;
+  --papel-2: #ecdfc4;
+  --tinta: #1c1612;
+  --tinta-suave: #54473d;
+  --bermellon: #b9321c;
+  --bermellon-oscuro: #8f2414;
+  --turquesa: #146f6e;
+  --borde: rgba(28, 22, 18, 0.2);
+  --borde-control: #857463;
+  --sobre-acento: #fffaf0;
+  --whatsapp: #1b7d3d;
+  --franjas: repeating-linear-gradient(90deg, #b9321c 0 28px, #e8a01a 28px 44px, #1c1612 44px 52px, #17807f 52px 76px, #fffaf0 76px 82px, #3b7a36 82px 100px);
+  --titulos: "Fraunces", Georgia, "Times New Roman", serif;
+  --texto: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1a1512; --papel-2: #2a221c; --tinta: #f6eedd; --tinta-suave: #d3c5b1;
+    --bermellon: #e0624a; --bermellon-oscuro: #f08a74; --turquesa: #4fb7b5;
+    --borde: rgba(246, 238, 221, 0.22); --borde-control: #8d7f70; --sobre-acento: #1a1512; --whatsapp: #3fbf6a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1a1512; --papel-2: #2a221c; --tinta: #f6eedd; --tinta-suave: #d3c5b1;
+  --bermellon: #e0624a; --bermellon-oscuro: #f08a74; --turquesa: #4fb7b5;
+  --borde: rgba(246, 238, 221, 0.22); --borde-control: #8d7f70; --sobre-acento: #1a1512; --whatsapp: #3fbf6a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 6rem; scroll-padding-bottom: 7rem; }
+body {
+  background: var(--papel); color: var(--tinta);
+  font-family: var(--texto); font-size: 1.2rem; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--papel); }
+.envoltura { max-width: 34rem; margin-inline: auto; }
+h1, h2 { font-family: var(--titulos); font-weight: 650; text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; }
+p { margin: 0; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 3px; }
+::placeholder { color: var(--tinta-suave); opacity: 1; }
+.solo-lector { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.franjas { height: 8px; background: var(--franjas); border-radius: 0 0 4px 4px; }
+
+/* Barra de arriba */
+.barra {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--papel); padding-block: 0.55rem; border-bottom: 1px solid var(--borde);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.progreso { flex: 1; min-width: 0; display: grid; gap: 0.3rem; }
+.progreso-texto { font-weight: 700; font-size: 1.05rem; }
+.progreso-barra { height: 10px; border-radius: 99px; background: var(--papel-2); overflow: hidden; }
+.progreso-barra i { display: block; height: 100%; background: var(--bermellon); border-radius: 99px; }
+
+/* Botones */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  min-height: 3.25rem; padding: 0.55rem 1.1rem; border-radius: 999px;
+  border: 2px solid var(--tinta); background: transparent; color: var(--tinta);
+  font-weight: 700; font-size: 1.15rem; text-decoration: none; cursor: pointer; text-align: center;
+}
+.boton.principal { background: var(--bermellon); border-color: var(--bermellon); color: var(--sobre-acento); }
+.boton.whatsapp { background: var(--whatsapp); border-color: var(--whatsapp); color: var(--sobre-acento); }
+.boton.whatsapp.ancho { width: 100%; }
+.boton.whatsapp.mandada { background: transparent; color: var(--whatsapp); }
+.boton.chico { min-height: 2.75rem; font-size: 1rem; padding: 0.35rem 0.9rem; }
+
+/* Pantallas */
+.pantalla { display: grid; gap: 1.1rem; padding-block: 1rem 7rem; }
+.inicio { padding-block: 1.6rem 3rem; gap: 1.2rem; }
+.inicio .saludo { font-family: var(--titulos); font-size: 1.35rem; }
+.pasos { margin: 0; padding-left: 1.6rem; display: grid; gap: 0.3rem; }
+.pasos li::marker { color: var(--bermellon); font-weight: 700; }
+.nota { color: var(--tinta-suave); }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.aviso { padding: 0.9rem 1rem; border-radius: 12px; border: 2px solid var(--bermellon); }
+
+.ficha { display: grid; gap: 0.3rem; }
+.sala { font-size: 1rem; font-weight: 700; color: var(--bermellon-oscuro); }
+.llamamos { color: var(--tinta-suave); font-size: 1.05rem; }
+.ficha h1 { font-size: 1.7rem; }
+
+.foto { margin: 0; background: var(--papel-2); border-radius: 14px; overflow: hidden; display: grid; place-items: center; }
+.foto img { width: 100%; height: clamp(10rem, 30vh, 24rem); height: clamp(10rem, 30svh, 24rem); object-fit: contain; }
+.vistas { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+.vistas span { color: var(--tinta-suave); font-size: 1rem; }
+.vistas button { padding: 0; width: 3.5rem; height: 3.5rem; border-radius: 10px; overflow: hidden; border: 3px solid transparent; background: var(--papel-2); cursor: pointer; }
+.vistas button[aria-pressed="true"] { border-color: var(--bermellon); }
+.vistas img { width: 100%; height: 100%; object-fit: cover; }
+
+.pregunta { display: grid; gap: 0.7rem; padding: 1rem; border-radius: 14px; background: var(--papel-2); }
+.ayuda { color: var(--tinta-suave); font-size: 1.05rem; }
+.opciones { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.opcion {
+  min-height: 3.25rem; padding: 0.5rem 1rem 0.5rem 0.7rem; border-radius: 12px; cursor: pointer;
+  border: 2px solid var(--borde-control); background: var(--papel); font-weight: 600; font-size: 1.1rem; text-align: left;
+}
+/* la ✓ siempre ocupa su lugar, para que los botones no brinquen al elegir */
+.opcion::before, .sugerencias button::before { content: "✓"; content: "✓" / ""; display: inline-block; width: 1.1em; visibility: hidden; }
+.opcion[aria-pressed="true"], .sugerencias button[aria-pressed="true"] { border-color: var(--bermellon); background: var(--bermellon); color: var(--sobre-acento); }
+.opcion[aria-pressed="true"]::before, .sugerencias button[aria-pressed="true"]::before { visibility: visible; }
+.sugerencias { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.sugerencias button { min-height: 3rem; padding: 0.3rem 0.85rem 0.3rem 0.55rem; border-radius: 999px; border: 2px solid var(--borde-control); background: var(--papel); cursor: pointer; font-size: 1.1rem; }
+label { font-weight: 700; }
+input[type="text"], textarea {
+  width: 100%; padding: 0.7rem 0.85rem; border-radius: 12px;
+  border: 2px solid var(--borde-control); background: var(--papel); font-size: 1.15rem;
+}
+input.corto { max-width: 10rem; }
+textarea { min-height: 6.5rem; resize: vertical; }
+.foto-pregunta { width: 100%; border-radius: 12px; }
+
+.pregunta-otra, #uso-otro-caja { display: grid; gap: 0.6rem; }
+.pasos-audio { font-size: 1.05rem; color: var(--tinta-suave); }
+.grabadora { display: grid; gap: 0.6rem; }
+.grabadora .boton.grabando { background: var(--bermellon); border-color: var(--bermellon); }
+.grabadora .boton svg { width: 1.2em; height: 1.2em; flex: none; }
+.audios { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.audios li { display: grid; gap: 0.3rem; font-size: 1.05rem; color: var(--turquesa); font-weight: 700; }
+.audios audio { width: 100%; }
+.estado-guardado { font-weight: 700; }
+.cierre-mascara { display: grid; gap: 0.6rem; padding-top: 0.4rem; border-top: 1px solid var(--borde); }
+
+/* Barra de abajo */
+.navegacion {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--papel); border-top: 1px solid var(--borde);
+  padding-top: 0.7rem;
+  padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  transition: transform 0.2s ease;
+}
+.navegacion .envoltura { display: grid; grid-template-columns: 1fr 1.4fr; gap: 0.75rem; }
+.navegacion .boton { white-space: nowrap; padding-inline: 0.6rem; }
+/* mientras escribe en el celular, la barra de abajo se quita para no tapar lo que escribe */
+@media (pointer: coarse) { .escribiendo .navegacion { transform: translateY(110%); } }
+/* pantallas bajas (teléfono acostado, mucho zoom): las barras dejan de flotar */
+@media (max-height: 34rem) {
+  .barra, .navegacion { position: static; }
+  .pantalla { padding-bottom: 1.5rem; }
+}
+
+/* Todas */
+.rejilla { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: 0.6rem; }
+.rejilla button { position: relative; width: 100%; padding: 0; border: 3px solid transparent; border-radius: 12px; overflow: hidden; background: var(--papel-2); cursor: pointer; aspect-ratio: 3 / 4; max-width: 100%; }
+.rejilla img { width: 100%; height: 100%; object-fit: cover; }
+.rejilla .num { position: absolute; left: 0.3rem; top: 0.3rem; background: var(--papel); color: var(--tinta); border-radius: 8px; padding: 0 0.4rem; font-weight: 700; font-size: 0.95rem; }
+.rejilla .listo { position: absolute; right: 0.3rem; bottom: 0.3rem; background: var(--turquesa); color: var(--sobre-acento); border-radius: 99px; padding: 0 0.5rem; font-weight: 700; font-size: 0.9rem; }
+.rejilla button.contestada { border-color: var(--turquesa); }
+.rejilla button.aqui { outline: 3px solid var(--bermellon); outline-offset: 2px; }
+
+.resumen { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--papel-2); border-radius: 14px; padding: 1rem; font-family: var(--texto); font-size: 1rem; margin: 0; }
+.partes { display: grid; gap: 0.6rem; }
+
+@media (prefers-reduced-motion: reduce) { .navegacion { transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .boton, .opcion, .vistas button, .sugerencias button { transition: background-color 0.15s ease, border-color 0.15s ease; }
+}
+</style>
+</head>
+<body>
+
+<div class="envoltura"><div class="franjas" aria-hidden="true"></div></div>
+<div id="app" class="envoltura">
+  <main class="pantalla inicio">
+    <h1 tabindex="-1">Don Gorgonio: cuénteme de sus máscaras</h1>
+    <p class="saludo">Estoy haciendo la página de internet de su trabajo y quiero ponerle bien el nombre a cada máscara.</p>
+    <p>Le voy a enseñar sus máscaras una por una. De cada una le pregunto tres cosas:</p>
+    <ol class="pasos">
+      <li>Qué es</li>
+      <li>En qué danza o fiesta se usa</li>
+      <li>Qué significa</li>
+    </ol>
+    <div class="acciones"><button class="boton principal" type="button" data-ir="1">Empezar</button></div>
+  </main>
+</div>
+<nav class="navegacion" id="navegacion" hidden aria-label="Avanzar o regresar">
+  <div class="envoltura">
+    <button class="boton" type="button" id="atras">← Anterior</button>
+    <button class="boton principal" type="button" id="adelante">Siguiente →</button>
+  </div>
+</nav>
+<p class="solo-lector" id="anuncio" role="status"></p>
+
+<script>
+(function () {
+  "use strict";
+  document.documentElement.lang = "es";
+  var D = {"mascaras": [{"id": "coyote-blanco-arcoiris", "nombre": "Coyote blanco de arcoíris", "ver": "Coyote blanco de arcoíris", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a024-720.webp", "../img/galeria/a022-720.webp"], "confirmada": true, "apartada": false, "n": 1}, {"id": "coyote-blanco-esbelto", "nombre": "Coyote blanco esbelto", "ver": "Coyote blanco esbelto", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a093-780.webp", "../img/galeria/a095-780.webp"], "confirmada": false, "apartada": false, "n": 2}, {"id": "coyote-crema-ojos-azules", "nombre": "Coyote crema de ojos azules", "ver": "Coyote crema de ojos azules", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a020-540.webp"], "confirmada": false, "apartada": false, "n": 3}, {"id": "coyote-crema-orejas-moradas", "nombre": "Coyote crema de orejas moradas", "ver": "Coyote crema de orejas moradas", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a084-480.webp"], "confirmada": false, "apartada": false, "n": 4}, {"id": "coyote-blanco-orejas-turquesa", "nombre": "Coyote blanco de orejas turquesa", "ver": "Coyote blanco de orejas turquesa", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a040-800.webp"], "confirmada": false, "apartada": false, "n": 5}, {"id": "coyote-azul-orejas-largas", "nombre": "Coyote azul de orejas largas", "ver": "Coyote azul de orejas largas", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a041-800.webp", "../img/galeria/a029-800.webp"], "confirmada": false, "apartada": false, "n": 6}, {"id": "coyote-azul-turquesa", "nombre": "Coyote azul turquesa", "ver": "Coyote azul turquesa", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a091-800.webp"], "confirmada": false, "apartada": false, "n": 7}, {"id": "coyote-blanco-anillos", "nombre": "Coyote blanco de anillos", "ver": "Coyote blanco de anillos", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a074-720.webp"], "confirmada": false, "apartada": false, "n": 8}, {"id": "coyote-amarillo-anillos", "nombre": "Coyote amarillo de anillos", "ver": "Coyote amarillo de anillos", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a087-480.webp"], "confirmada": false, "apartada": false, "n": 9}, {"id": "coyote-amarillo-orejas-verdes", "nombre": "Coyote amarillo de orejas verdes", "ver": "Coyote amarillo de orejas verdes", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a123-800.webp"], "confirmada": false, "apartada": false, "n": 10}, {"id": "coyote-negro-lineas-blancas", "nombre": "Cánido negro de líneas blancas (¿coyote o perro?)", "ver": "Perro o coyote negro de líneas blancas", "duda": ["coyote", "perro"], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a059-636.webp", "../img/galeria/a059b-636.webp"], "confirmada": false, "apartada": false, "n": 11}, {"id": "canido-negro-ojos-cafes", "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)", "ver": "Perro o coyote negro de ojos cafés", "duda": ["coyote", "perro"], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a053-800.webp"], "confirmada": false, "apartada": false, "n": 12}, {"id": "canido-negro-nariz-gris", "nombre": "Cánido negro de nariz gris (¿coyote o perro?)", "ver": "Perro o coyote negro de nariz gris", "duda": ["coyote", "perro"], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a136-780.webp"], "confirmada": false, "apartada": false, "n": 13}, {"id": "canido-negro-boca-abierta", "nombre": "Cánido negro de boca abierta (¿coyote o perro?)", "ver": "Perro o coyote negro de boca abierta", "duda": ["coyote", "perro"], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a157-800.webp"], "confirmada": false, "apartada": false, "n": 14}, {"id": "canido-negro-ojos-rojos", "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)", "ver": "Perro o coyote negro de ojos rojos", "duda": ["coyote", "perro"], "sala": "La Danza de los Morenos", "grupo": "Coyotes", "fotos": ["../img/galeria/a076-320.webp"], "confirmada": false, "apartada": false, "n": 15}, {"id": "chivo-rojo", "nombre": "Chivo rojo", "ver": "Chivo rojo", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a047-800.webp"], "confirmada": true, "apartada": false, "n": 16}, {"id": "chivo-rojo-antifaz-amarillo", "nombre": "Chivo rojo de antifaz amarillo", "ver": "Chivo rojo de antifaz amarillo", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a088-480.webp"], "confirmada": false, "apartada": false, "n": 17}, {"id": "chivo-rojo-franjas-diagonales", "nombre": "Chivo rojo y amarillo de franjas diagonales", "ver": "Chivo rojo y amarillo de franjas diagonales", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a028-800.webp"], "confirmada": false, "apartada": false, "n": 18}, {"id": "chivo-azul-cuernos-rojos", "nombre": "Chivo azul de cuernos rojos", "ver": "Chivo azul de cuernos rojos", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a062-800.webp"], "confirmada": false, "apartada": false, "n": 19}, {"id": "chivo-azul-crema", "nombre": "Chivo azul y crema", "ver": "Chivo azul y crema", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a090-480.webp"], "confirmada": false, "apartada": false, "n": 20}, {"id": "chivo-blanco-negro", "nombre": "Chivo blanco y negro", "ver": "Chivo blanco y negro", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Chivos", "fotos": ["../img/galeria/a119-800.webp"], "confirmada": false, "apartada": false, "n": 21}, {"id": "borrego-anaranjado", "nombre": "Borrego anaranjado", "ver": "Borrego anaranjado", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Borregos cimarrones", "fotos": ["../img/galeria/a164-591.webp"], "confirmada": true, "apartada": false, "n": 22}, {"id": "borrego-amarillo", "nombre": "Borrego amarillo", "ver": "Borrego amarillo", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Borregos cimarrones", "fotos": ["../img/galeria/a169-601.webp", "../img/galeria/a170-608.webp"], "confirmada": true, "apartada": false, "n": 23}, {"id": "tecolote-rojo", "nombre": "Tecolote rojo", "ver": "Tecolote rojo", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Tecolotes", "fotos": ["../img/galeria/a004-364.webp"], "confirmada": true, "apartada": false, "n": 24}, {"id": "lince-franjas-zigzag", "nombre": "Lince de franjas y zigzag rojo", "ver": "Lince de franjas y zigzag rojo", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Lince y ocelote", "fotos": ["../img/galeria/a166-720.webp"], "confirmada": true, "apartada": false, "n": 25}, {"id": "lince-manchas", "nombre": "Lince de manchas en orejas y hocico", "ver": "Lince de manchas en orejas y hocico", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Lince y ocelote", "fotos": ["../img/galeria/a171-720.webp", "../img/galeria/a172-720.webp"], "confirmada": true, "apartada": false, "n": 26}, {"id": "felino-lunares", "nombre": "Felino amarillo de lunares (¿ocelote?)", "ver": "Felino amarillo de lunares", "duda": ["ocelote"], "sala": "La Danza de los Morenos", "grupo": "Lince y ocelote", "fotos": ["../img/galeria/a081-800.webp", "../img/galeria/a073-800.webp"], "confirmada": false, "apartada": false, "n": 27}, {"id": "felino-rosetas", "nombre": "Felino anaranjado de rosetas (¿ocelote?)", "ver": "Felino anaranjado de rosetas", "duda": ["ocelote"], "sala": "La Danza de los Morenos", "grupo": "Lince y ocelote", "fotos": ["../img/galeria/a045-800.webp", "../img/galeria/a026-800.webp"], "confirmada": false, "apartada": false, "n": 28}, {"id": "felino-moteado", "nombre": "Felino anaranjado moteado (¿ocelote?)", "ver": "Felino anaranjado moteado", "duda": ["ocelote"], "sala": "La Danza de los Morenos", "grupo": "Lince y ocelote", "fotos": ["../img/galeria/a068-800.webp"], "confirmada": false, "apartada": false, "n": 29}, {"id": "burro-gris", "nombre": "Burro gris", "ver": "Burro gris", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Burros", "fotos": ["../img/galeria/a168-720.webp", "../img/galeria/a167-720.webp"], "confirmada": true, "apartada": false, "n": 30}, {"id": "guacamaya-verde", "nombre": "Guacamaya verde", "ver": "Guacamaya verde", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Guacamayas", "fotos": ["../img/galeria/a165-800.webp"], "confirmada": true, "apartada": false, "n": 31}, {"id": "guacamaya-verde-mate", "nombre": "Guacamaya verde mate", "ver": "Guacamaya verde mate", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Guacamayas", "fotos": ["../img/galeria/a046-800.webp"], "confirmada": false, "apartada": false, "n": 32}, {"id": "gallo-cresta-roja", "nombre": "Gallo de cresta roja", "ver": "Gallo de cresta roja", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Gallos", "fotos": ["../img/galeria/a012-800.webp"], "confirmada": true, "apartada": false, "n": 33}, {"id": "gallo-cresta-azul", "nombre": "Gallo de cresta azul", "ver": "Gallo de cresta azul", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Gallos", "fotos": ["../img/galeria/a031-800.webp", "../img/galeria/a067-800.webp"], "confirmada": false, "apartada": false, "n": 34}, {"id": "gallo-anaranjado", "nombre": "Gallo anaranjado", "ver": "Gallo anaranjado", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Gallos", "fotos": ["../img/galeria/a163-669.webp"], "confirmada": true, "apartada": false, "n": 35}, {"id": "perro-blanco-mancha", "nombre": "Perro blanco de mancha café", "ver": "Perro blanco de mancha café", "duda": [], "sala": "La Danza de los Morenos", "grupo": "Perros", "fotos": ["../img/galeria/a144-253.webp"], "confirmada": false, "apartada": false, "n": 36}, {"id": "el-tiempo", "nombre": "El Tiempo", "ver": "El Tiempo", "duda": [], "sala": "El Tiempo y La Noche", "grupo": "", "fotos": ["../img/galeria/a025-800.webp", "../img/galeria/a023-800.webp", "../img/galeria/a137-800.webp"], "confirmada": true, "apartada": false, "n": 37}, {"id": "el-tiempo-corona-azul", "nombre": "Tres rostros con corona de sol (¿El Tiempo?)", "ver": "Tres rostros con corona de sol", "duda": ["El Tiempo"], "sala": "El Tiempo y La Noche", "grupo": "", "fotos": ["../img/galeria/a094-480.webp"], "confirmada": false, "apartada": false, "n": 38}, {"id": "la-noche", "nombre": "La Noche", "ver": "La Noche", "duda": [], "sala": "El Tiempo y La Noche", "grupo": "", "fotos": ["../img/galeria/a107-780.webp", "../img/galeria/a097-780.webp", "../img/galeria/a112-780.webp"], "confirmada": true, "apartada": false, "n": 39}, {"id": "rostro-doble-amarillo", "nombre": "Rostro doble amarillo con media luna", "ver": "Rostro doble amarillo con media luna", "duda": [], "sala": "El Tiempo y La Noche", "grupo": "", "fotos": ["../img/galeria/a143-720.webp"], "confirmada": false, "apartada": false, "n": 40}, {"id": "sol-y-luna", "nombre": "Sol y luna", "ver": "Sol y luna", "duda": [], "sala": "El Tiempo y La Noche", "grupo": "", "fotos": ["../img/galeria/a155-720.webp"], "confirmada": false, "apartada": false, "n": 41}, {"id": "nahual-blanco", "nombre": "Nahual blanco", "ver": "Nahual blanco", "duda": [], "sala": "Nahuales", "grupo": "", "fotos": ["../img/galeria/a038-800.webp", "../img/galeria/a035-800.webp"], "confirmada": true, "apartada": false, "n": 42}, {"id": "nahual-negro", "nombre": "Nahual negro", "ver": "Nahual negro", "duda": [], "sala": "Nahuales", "grupo": "", "fotos": ["../img/galeria/a102-800.webp"], "confirmada": true, "apartada": false, "n": 43}, {"id": "nahual-cafe", "nombre": "Nahual café de cabellera", "ver": "Nahual café de cabellera", "duda": [], "sala": "Nahuales", "grupo": "", "fotos": ["../img/galeria/a128-800.webp"], "confirmada": true, "apartada": false, "n": 44}, {"id": "ave-negra-cabellera-azul", "nombre": "Ave negra de cabellera", "ver": "Ave negra de cabellera", "duda": [], "sala": "Nahuales", "grupo": "", "fotos": ["../img/galeria/a061-480.webp"], "confirmada": false, "apartada": false, "n": 45}, {"id": "ave-negra-pico-largo", "nombre": "Ave negra de pico largo", "ver": "Ave negra de pico largo", "duda": [], "sala": "Nahuales", "grupo": "", "fotos": ["../img/galeria/a042-800.webp"], "confirmada": false, "apartada": false, "n": 46}, {"id": "diablo-rojo-lengua", "nombre": "Diablo rojo de lengua de fuera", "ver": "Diablo rojo de lengua de fuera", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a008-800.webp"], "confirmada": false, "apartada": false, "n": 47}, {"id": "diablo-rojo-oscuro-lengua", "nombre": "Diablo rojo oscuro de lengua de fuera", "ver": "Diablo rojo oscuro de lengua de fuera", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a007-720.webp"], "confirmada": false, "apartada": false, "n": 48}, {"id": "diablo-criatura-alada", "nombre": "Diablo con criatura alada", "ver": "Diablo con criatura alada", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a103-800.webp"], "confirmada": false, "apartada": false, "n": 49}, {"id": "diablo-cuernos-rayados", "nombre": "Diablo rojo de cuernos rayados", "ver": "Diablo rojo de cuernos rayados", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a162-800.webp"], "confirmada": false, "apartada": false, "n": 50}, {"id": "diablo-marco-moteado-lengua-negra", "nombre": "Diablo de marco moteado y lengua de flecha", "ver": "Diablo de marco moteado y lengua de flecha", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a096-720.webp"], "confirmada": false, "apartada": false, "n": 51}, {"id": "diablo-marco-moteado-lengua-roja", "nombre": "Diablo de marco moteado y lengua roja", "ver": "Diablo de marco moteado y lengua roja", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a064-800.webp"], "confirmada": false, "apartada": false, "n": 52}, {"id": "diablo-toro-felinos", "nombre": "Diablo con toro y felinos", "ver": "Diablo con toro y felinos", "duda": [], "sala": "Diablos", "grupo": "", "fotos": ["../img/galeria/a019-640.webp"], "confirmada": false, "apartada": false, "n": 53}, {"id": "vida-muerte-malva", "nombre": "Vida y muerte de barba de colores", "ver": "Vida y muerte de barba de colores", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a127-800.webp", "../img/galeria/a121-800.webp"], "confirmada": false, "apartada": false, "n": 54}, {"id": "vida-muerte-barba-cafe", "nombre": "Vida y muerte de barba café", "ver": "Vida y muerte de barba café", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a106-780.webp"], "confirmada": false, "apartada": false, "n": 55}, {"id": "vida-muerte-azul", "nombre": "Vida y muerte azul", "ver": "Vida y muerte azul", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a147-800.webp"], "confirmada": false, "apartada": false, "n": 56}, {"id": "rostro-dos-tonos", "nombre": "Rostro de dos tonos", "ver": "Rostro de dos tonos", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a158-800.webp"], "confirmada": false, "apartada": false, "n": 57}, {"id": "hombre-barbado", "nombre": "Hombre barbado", "ver": "Hombre barbado", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a130-780.webp"], "confirmada": false, "apartada": false, "n": 58}, {"id": "hombre-gorro-astros", "nombre": "Hombre barbado con gorro de astros", "ver": "Hombre barbado con gorro de astros", "duda": [], "sala": "Vida y muerte, y otros rostros", "grupo": "", "fotos": ["../img/galeria/a154-780.webp"], "confirmada": false, "apartada": false, "n": 59}, {"id": "rostro-negro-cresta-roja", "nombre": "Rostro negro de cresta roja", "ver": "Rostro negro de cresta roja", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a134-800.webp", "../img/galeria/a104-800.webp"], "confirmada": false, "apartada": false, "n": 60}, {"id": "rostro-negro-tecolote", "nombre": "Rostro negro con búho", "ver": "Rostro negro con búho", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a043-800.webp", "../img/galeria/a111-780.webp"], "confirmada": false, "apartada": false, "n": 61}, {"id": "rostro-negro-ave-alada", "nombre": "Rostro negro con ave de alas abiertas", "ver": "Rostro negro con ave de alas abiertas", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a114-780.webp", "../img/galeria/a032-800.webp"], "confirmada": false, "apartada": false, "n": 62}, {"id": "rostro-negro-calavera", "nombre": "Rostro negro con calavera", "ver": "Rostro negro con calavera", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a113-780.webp", "../img/galeria/a115-780.webp"], "confirmada": false, "apartada": false, "n": 63}, {"id": "rostro-negro-lengua", "nombre": "Rostro negro de lengua de fuera", "ver": "Rostro negro de lengua de fuera", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a105-800.webp", "../img/galeria/a135-780.webp"], "confirmada": false, "apartada": false, "n": 64}, {"id": "trio-rostros-negros-astros", "nombre": "Tres rostros negros con astros", "ver": "Tres rostros negros con astros", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a009-800.webp"], "confirmada": false, "apartada": false, "n": 65}, {"id": "rostro-negro-estrellas", "nombre": "Rostro negro de estrellas doradas", "ver": "Rostro negro de estrellas doradas", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a092-480.webp"], "confirmada": false, "apartada": false, "n": 66}, {"id": "calavera-y-rostro-negro-estrellas", "nombre": "Rostro negro de estrellas anaranjadas", "ver": "Rostro negro de estrellas anaranjadas", "duda": [], "sala": "Rostros negros", "grupo": "", "fotos": ["../img/galeria/a153-382.webp"], "confirmada": false, "apartada": false, "n": 67}, {"id": "lince-buho-jaguar", "nombre": "Lince, búho y felino de rosetas", "ver": "Lince, búho y felino de rosetas", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a122-800.webp", "../img/galeria/a098-800.webp"], "confirmada": false, "apartada": false, "n": 68}, {"id": "jaguar-amarillo-con-buho", "nombre": "Búho sobre felino amarillo", "ver": "Búho sobre felino amarillo", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a044-800.webp", "../img/galeria/a033-800.webp", "../img/galeria/a039-800.webp"], "confirmada": false, "apartada": false, "n": 69}, {"id": "jaguar-anaranjado-con-buho", "nombre": "Búho sobre felino anaranjado", "ver": "Búho sobre felino anaranjado", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a057-800.webp"], "confirmada": false, "apartada": false, "n": 70}, {"id": "tigre-blanco-con-buho", "nombre": "Búho sobre felino blanco de rayas", "ver": "Búho sobre felino blanco de rayas", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a002-632.webp"], "confirmada": false, "apartada": false, "n": 71}, {"id": "hombre-aguila", "nombre": "Rostro humano con casco de águila", "ver": "Rostro humano con casco de águila", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a120-800.webp"], "confirmada": false, "apartada": false, "n": 72}, {"id": "rostro-lila-iguana-serpientes", "nombre": "Rostro lila con iguana y serpientes", "ver": "Rostro lila con iguana y serpientes", "duda": [], "sala": "Seres encimados", "grupo": "", "fotos": ["../img/galeria/a021-800.webp"], "confirmada": false, "apartada": false, "n": 73}, {"id": "jaguar-rosetas", "nombre": "Felino de rosetas", "ver": "Felino de rosetas", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a058-800.webp"], "confirmada": false, "apartada": false, "n": 74}, {"id": "felino-fauces-abiertas", "nombre": "Felino de fauces abiertas", "ver": "Felino de fauces abiertas", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a138-800.webp"], "confirmada": false, "apartada": false, "n": 75}, {"id": "jaguar-orejas-rojas", "nombre": "Felino de orejas rojas", "ver": "Felino de orejas rojas", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a063-800.webp"], "confirmada": false, "apartada": false, "n": 76}, {"id": "tigre-anaranjado", "nombre": "Tigre anaranjado", "ver": "Tigre anaranjado", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a034-636.webp", "../img/galeria/a034b-637.webp"], "confirmada": false, "apartada": false, "n": 77}, {"id": "tigre-blanco", "nombre": "Tigre blanco", "ver": "Tigre blanco", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a069-640.webp"], "confirmada": false, "apartada": false, "n": 78}, {"id": "pantera-negra-ojos-amarillos", "nombre": "Felino negro de ojos amarillos", "ver": "Felino negro de ojos amarillos", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a037-800.webp"], "confirmada": false, "apartada": false, "n": 79}, {"id": "pantera-negra-ojos-verdes", "nombre": "Felino negro de ojos verdes", "ver": "Felino negro de ojos verdes", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a048-800.webp"], "confirmada": false, "apartada": false, "n": 80}, {"id": "lince-naturalista", "nombre": "Lince naturalista", "ver": "Lince pintado al natural", "duda": [], "sala": "Felinos", "grupo": "", "fotos": ["../img/galeria/a054-800.webp"], "confirmada": false, "apartada": false, "n": 81}, {"id": "pavo-real-pico-anaranjado", "nombre": "Ave de penacho y pico anaranjado", "ver": "Ave de penacho y pico anaranjado", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a108-780.webp"], "confirmada": false, "apartada": false, "n": 82}, {"id": "pavo-real-pico-dorado", "nombre": "Ave de penacho y pico dorado", "ver": "Ave de penacho y pico dorado", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a027-604.webp"], "confirmada": false, "apartada": false, "n": 83}, {"id": "pavo-real-ocelos-azules", "nombre": "Ave de penacho de tres plumas", "ver": "Ave de penacho de tres plumas", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a149-480.webp"], "confirmada": false, "apartada": false, "n": 84}, {"id": "pavo-real-celeste", "nombre": "Ave de penacho de cara celeste", "ver": "Ave de penacho de cara celeste", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a006-780.webp"], "confirmada": false, "apartada": false, "n": 85}, {"id": "pavo-real-anaranjado", "nombre": "Ave de penacho de cara anaranjada", "ver": "Ave de penacho de cara anaranjada", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a086-480.webp"], "confirmada": false, "apartada": false, "n": 86}, {"id": "pavo-real-lila", "nombre": "Ave de penacho de cara lila", "ver": "Ave de penacho de cara lila", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a082-480.webp"], "confirmada": false, "apartada": false, "n": 87}, {"id": "ave-pico-ganchudo", "nombre": "Ave de pico ganchudo", "ver": "Ave de pico ganchudo", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a126-800.webp"], "confirmada": false, "apartada": false, "n": 88}, {"id": "ave-azul-pico-curvo", "nombre": "Ave azul de pico curvo", "ver": "Ave azul de pico curvo", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a140-720.webp"], "confirmada": false, "apartada": false, "n": 89}, {"id": "pato", "nombre": "Pato", "ver": "Pato", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a013-720.webp", "../img/galeria/a151-720.webp"], "confirmada": false, "apartada": false, "n": 90}, {"id": "buho-gris-pico-anaranjado", "nombre": "Búho gris de pico anaranjado", "ver": "Búho gris de pico anaranjado", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a124-780.webp", "../img/galeria/a071-800.webp"], "confirmada": false, "apartada": false, "n": 91}, {"id": "buho-azul", "nombre": "Búho azul", "ver": "Búho azul", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a050-800.webp"], "confirmada": false, "apartada": false, "n": 92}, {"id": "buho-plateado", "nombre": "Búho plateado", "ver": "Búho plateado", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a079-480.webp"], "confirmada": false, "apartada": false, "n": 93}, {"id": "buho-gris-verdoso", "nombre": "Búho gris verdoso", "ver": "Búho gris verdoso", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a118-800.webp"], "confirmada": false, "apartada": false, "n": 94}, {"id": "buho-gris-azulado", "nombre": "Búho gris azulado", "ver": "Búho gris azulado", "duda": [], "sala": "Aves", "grupo": "", "fotos": ["../img/galeria/a078-480.webp"], "confirmada": false, "apartada": false, "n": 95}, {"id": "canido-gris-pinceladas", "nombre": "Cánido gris de pinceladas amarillas", "ver": "Perro o coyote gris de pinceladas amarillas", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a146-374.webp", "../img/galeria/a146b-385.webp", "../img/galeria/a146c-419.webp"], "confirmada": false, "apartada": false, "n": 96}, {"id": "canido-ocre-pinceladas", "nombre": "Cánido ocre de pinceladas negras", "ver": "Perro o coyote ocre de pinceladas negras", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a156-800.webp"], "confirmada": false, "apartada": false, "n": 97}, {"id": "burro-azul-orejas-arcoiris", "nombre": "Posible burro azul de orejas de arcoíris", "ver": "Posible burro azul de orejas de arcoíris", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a159-800.webp"], "confirmada": false, "apartada": false, "n": 98}, {"id": "coyote-naturalista-ocre", "nombre": "Cánido ocre naturalista (¿coyote?)", "ver": "Perro o coyote ocre pintado al natural", "duda": ["coyote"], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a052-800.webp"], "confirmada": false, "apartada": false, "n": 99}, {"id": "canido-cafe-naturalista", "nombre": "Cánido café naturalista", "ver": "Perro o coyote café pintado al natural", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a070-800.webp"], "confirmada": false, "apartada": false, "n": 100}, {"id": "canido-anaranjado", "nombre": "Cánido anaranjado (¿zorro?)", "ver": "Perro o coyote anaranjado", "duda": ["zorro"], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a055-800.webp", "../img/galeria/a036-800.webp"], "confirmada": false, "apartada": false, "n": 101}, {"id": "canido-gris", "nombre": "Cánido gris", "ver": "Perro o coyote gris", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a100-800.webp"], "confirmada": false, "apartada": false, "n": 102}, {"id": "canido-gris-fauces", "nombre": "Cánido gris de fauces abiertas", "ver": "Perro o coyote gris de fauces abiertas", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a066-720.webp", "../img/galeria/a075-720.webp"], "confirmada": false, "apartada": false, "n": 103}, {"id": "canido-gris-verdoso", "nombre": "Cánido gris verdoso", "ver": "Perro o coyote gris verdoso", "duda": [], "sala": "Pelaje de pincel", "grupo": "", "fotos": ["../img/galeria/a083-480.webp"], "confirmada": false, "apartada": false, "n": 104}, {"id": "venado-astas-negras", "nombre": "Venado de astas negras", "ver": "Venado de astas negras", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a001-720.webp"], "confirmada": false, "apartada": false, "n": 105}, {"id": "venado-astas-azules", "nombre": "Venado de astas azules", "ver": "Venado de astas azules", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a060-800.webp", "../img/galeria/a056-800.webp"], "confirmada": false, "apartada": false, "n": 106}, {"id": "toro-azul", "nombre": "Toro azul", "ver": "Toro azul", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a141-720.webp", "../img/galeria/a014-720.webp"], "confirmada": false, "apartada": false, "n": 107}, {"id": "toro-multicolor", "nombre": "Toro multicolor", "ver": "Toro multicolor", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a016-800.webp"], "confirmada": false, "apartada": false, "n": 108}, {"id": "toro-cafe", "nombre": "Toro café", "ver": "Toro café", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a018-800.webp"], "confirmada": false, "apartada": false, "n": 109}, {"id": "jirafa-amarilla", "nombre": "Jirafa amarilla", "ver": "Jirafa amarilla", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a139-800.webp"], "confirmada": false, "apartada": false, "n": 110}, {"id": "jirafa-cafe", "nombre": "Jirafa café", "ver": "Jirafa café", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a085-480.webp"], "confirmada": false, "apartada": false, "n": 111}, {"id": "cebra-blanco-negro", "nombre": "Cebra blanca y negra", "ver": "Cebra blanca y negra", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a160-800.webp"], "confirmada": false, "apartada": false, "n": 112}, {"id": "cebra-amarilla", "nombre": "Cebra amarilla y azul", "ver": "Cebra amarilla y azul", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a017-720.webp"], "confirmada": false, "apartada": false, "n": 113}, {"id": "equino-rayado", "nombre": "Equino rayado", "ver": "Animal rayado", "duda": ["caballo", "burro", "cebra"], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a161-800.webp"], "confirmada": false, "apartada": false, "n": 114}, {"id": "elefante", "nombre": "Elefante", "ver": "Elefante", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a010-800.webp"], "confirmada": false, "apartada": false, "n": 115}, {"id": "jabali", "nombre": "Jabalí", "ver": "Jabalí", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a005-720.webp"], "confirmada": false, "apartada": false, "n": 116}, {"id": "mandril", "nombre": "Mandril", "ver": "Mandril", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a148-720.webp"], "confirmada": false, "apartada": false, "n": 117}, {"id": "gorila", "nombre": "Gorila", "ver": "Gorila", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a152-720.webp"], "confirmada": false, "apartada": false, "n": 118}, {"id": "mariposa-azul", "nombre": "Mariposa de alas azul marino", "ver": "Mariposa de alas azul marino", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a015-720.webp", "../img/galeria/a150-720.webp"], "confirmada": false, "apartada": false, "n": 119}, {"id": "mariposa-verde", "nombre": "Mariposa sobre fondo verde", "ver": "Mariposa sobre fondo verde", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a049-800.webp"], "confirmada": false, "apartada": false, "n": 120}, {"id": "chivo-azul-hocico-rosa", "nombre": "Chivo azul de hocico rosa (¿de la danza?)", "ver": "Chivo azul de hocico rosa", "duda": [], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a003-720.webp"], "confirmada": false, "apartada": false, "n": 121}, {"id": "chivo-morado", "nombre": "Animal morado de cuernos cortos (¿chivo?)", "ver": "Animal morado de cuernos cortos", "duda": ["chivo"], "sala": "Bestiario", "grupo": "", "fotos": ["../img/galeria/a089-480.webp"], "confirmada": false, "apartada": false, "n": 122}, {"id": "felino-multicolor-pastel", "nombre": "Felino multicolor", "ver": "Felino multicolor", "duda": [], "sala": "Otras máscaras", "grupo": "", "fotos": ["../img/galeria/a099-800.webp", "../img/galeria/a117-800.webp"], "confirmada": false, "apartada": true, "n": 123}, {"id": "toro-pastel-cuernos-rosas", "nombre": "Toro en tonos pastel de cuernos ondulados", "ver": "Toro en tonos pastel de cuernos ondulados", "duda": [], "sala": "Otras máscaras", "grupo": "", "fotos": ["../img/galeria/a142-800.webp", "../img/galeria/a011-800.webp"], "confirmada": false, "apartada": true, "n": 124}, {"id": "toro-pastel-cuernos-azules", "nombre": "Toro en tonos pastel de cuernos azules", "ver": "Toro en tonos pastel de cuernos azules", "duda": [], "sala": "Otras máscaras", "grupo": "", "fotos": ["../img/galeria/a101-800.webp", "../img/galeria/a129-800.webp"], "confirmada": false, "apartada": true, "n": 125}], "generales": [{"id": "nacimiento", "texto": "¿En qué año nació?", "corto": true}, {"id": "empezo", "texto": "¿A qué edad empezó a tallar máscaras? ¿Quién le enseñó?"}, {"id": "generacion", "texto": "¿Hasta quién de su familia se acuerda que hacía máscaras?", "opciones": ["Mi papá", "Mi abuelo", "Mi bisabuelo", "Más atrás", "No sé"]}, {"id": "guelo-baci", "texto": "¿Qué quiere decir el nombre de su taller, «Mi Güelo Baci»?"}, {"id": "premios", "texto": "¿Qué premios ha recibido y en qué año? ¿En qué año lo nombraron Gran Maestro del Arte Popular?"}, {"id": "perros", "texto": "Según lo que encontré, en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?", "opciones": ["Sí, está bien", "No, falta o sobra alguna", "No sé"]}, {"id": "simbolos", "texto": "Me contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?"}, {"id": "tecnica", "texto": "¿Qué pintura usa? ¿Con qué hace el pelo y las barbas de las máscaras?"}, {"id": "taller", "texto": "¿Qué días y a qué hora se le puede visitar en el taller? ¿Da clases? ¿Manda máscaras a otras ciudades?"}, {"id": "videos", "texto": "¿Me da permiso de poner en su página estos dos videos donde sale usted?", "enlaces": [["Ver el video «Hacedor de máscaras»", "https://www.youtube.com/watch?v=IcQFjwiqZJI"], ["Ver el video del taller", "https://www.youtube.com/watch?v=u3Pr0mBtlms"]], "opciones": ["Sí", "No", "No los he visto"]}, {"id": "fotos", "texto": "¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo pongo el nombre de esa persona en la página?"}, {"id": "ave-azul", "texto": "En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?", "foto": "../img/galeria/a065-562.webp", "alt": "Tres máscaras juntas: un tecolote rojo, un ave azul de pico largo y amarillo, y un coyote blanco", "opciones": ["Sí", "No", "No sé"]}, {"id": "mas", "texto": "¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya."}], "destino": "", "destino_nombre": "Humberto", "firma": "Humberto", "supabase": {"url": "https://xbmlsctofrofspjoyxyw.supabase.co", "key": "sb_publishable_gB_R4E24SWECbSrSxPH5Lg_83k-wZYn"}};
+  var M = D.mascaras, G = D.generales, TOTAL = M.length;
+  var DESTINO = String(D.destino || "").replace(/\D/g, "");
+  var A_QUIEN = D.destino_nombre || "";
+  var SB = D.supabase && D.supabase.url && D.supabase.key ? D.supabase : null;
+  var CLAVE = "encuesta-gorgonio-v1";
+  var NOMBRES = ["Coyote", "Perro", "Chivo", "Borrego", "Tecolote", "Lince", "Ocelote", "Tigre", "Jaguar", "Burro", "Guacamaya", "Gallo", "Venado", "Toro", "Nahual", "Diablo", "La Muerte"];
+  var OTRA = "Otra danza o fiesta", NO_SE = "No sé", ADORNO = "No se baila, es de adorno";
+  var USOS = ["Danza de los Morenos", "Pastorela", OTRA, ADORNO, NO_SE];
+  var app = document.getElementById("app");
+  var nav = document.getElementById("navegacion");
+  var atras = document.getElementById("atras");
+  var adelante = document.getElementById("adelante");
+  var porId = {};
+  M.forEach(function (m) { porId[m.id] = m; });
+
+  // ---------- Estado, siempre normalizado ----------
+  function txt(v) { return typeof v === "string" ? v : v == null ? "" : String(v); }
+  function obj(o) { return o && typeof o === "object" && !Array.isArray(o) ? o : {}; }
+  function limpiaR(x) {
+    x = obj(x);
+    return { es: txt(x.es), suya: txt(x.suya), que_es: txt(x.que_es),
+      uso: Array.isArray(x.uso) ? x.uso.filter(function (u) { return typeof u === "string"; }) : [],
+      uso_otro: txt(x.uso_otro), significado: txt(x.significado), act: txt(x.act) };
+  }
+  function limpiaG(g) {
+    var o = {};
+    Object.keys(obj(g)).forEach(function (k) { var v = obj(g[k]); o[k] = { opcion: txt(v.opcion), texto: txt(v.texto) }; });
+    return o;
+  }
+  var estado = { r: {}, g: {}, gAct: "", pos: "inicio", ultima: 0, enviadas: {}, mandado: {}, audios: {}, salida: {}, clave: "", dispositivo: "" };
+  var hayAlmacen = false;
+  try { localStorage.setItem(CLAVE + "-p", "1"); localStorage.removeItem(CLAVE + "-p"); hayAlmacen = true; } catch (e) {}
+  try {
+    var g0 = obj(JSON.parse(localStorage.getItem(CLAVE) || "null"));
+    Object.keys(obj(g0.r)).forEach(function (k) { if (porId[k]) estado.r[k] = limpiaR(g0.r[k]); });
+    estado.g = limpiaG(g0.g);
+    estado.gAct = txt(g0.gAct);
+    var p0 = txt(g0.pos);
+    estado.pos = /^(\d+|todas|usted|enviar|inicio)$/.test(p0) ? p0 : "inicio";
+    estado.ultima = Math.min(Math.max(parseInt(g0.ultima, 10) || 0, 0), TOTAL);
+    estado.enviadas = obj(g0.enviadas);
+    estado.mandado = obj(g0.mandado);
+    Object.keys(obj(g0.audios)).forEach(function (k) {
+      if (Array.isArray(g0.audios[k])) estado.audios[k] = g0.audios[k].filter(function (a) { return a && typeof a.archivo === "string"; });
+    });
+    estado.salida = obj(g0.salida);
+    estado.clave = txt(g0.clave);
+    estado.dispositivo = txt(g0.dispositivo);
+  } catch (e) {}
+  // La clave secreta viene en el enlace (…?clave=XXXX) y se recuerda en este teléfono
+  try { var claveUrl = new URLSearchParams(location.search).get("clave"); if (claveUrl) estado.clave = claveUrl.trim(); } catch (e) {}
+  if (!estado.dispositivo) {
+    try { estado.dispositivo = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(8)), function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
+    catch (e) { estado.dispositivo = String(Math.random()).slice(2, 14); }
+  }
+
+  function guardarLocal() {
+    if (!hayAlmacen) return;
+    try { localStorage.setItem(CLAVE, JSON.stringify(estado)); }
+    catch (e) { hayAlmacen = false; anunciar("Este teléfono ya no puede guardar sus respuestas. Mándelas por WhatsApp antes de cerrar."); }
+  }
+  function anunciar(t) { document.getElementById("anuncio").textContent = t; }
+
+  function respuesta(id) {
+    if (!estado.r[id]) estado.r[id] = limpiaR({});
+    return estado.r[id];
+  }
+  function tocada(id) { var r = respuesta(id); r.act = new Date().toISOString(); return r; }
+  function contestada(id) {
+    var r = estado.r[id];
+    return !!((estado.audios["m:" + id] || []).length || r && (r.es || r.suya || r.que_es.trim() || r.uso.length || r.significado.trim() ||
+      (r.uso.indexOf(OTRA) >= 0 && r.uso_otro.trim())));
+  }
+  function cuantas() { return M.filter(function (m) { return contestada(m.id); }).length; }
+  function textoGeneral(q) { var v = estado.g[q.id]; return v ? [v.opcion, v.texto.trim()].filter(Boolean).join(". ") : ""; }
+  function generalesContestadas() { return G.filter(function (q) { return textoGeneral(q) || (estado.audios["g:" + q.id] || []).length; }).length; }
+
+  function enLinea() { return modo === "db" || (sbActivo() && !sbFallo); }
+  function dondeSeGuarda() {
+    if (sbActivo() && !sbFallo) return textoSync();
+    if (modo === "db") return "Lo que contesta se guarda en línea.";
+    if (hayAlmacen) return "Lo que contesta se queda guardado en este teléfono, pero no me llega solo: mándemelo con el botón verde.";
+    return "Este teléfono no puede guardar lo que conteste. Mándemelo por WhatsApp antes de cerrar la página.";
+  }
+
+  // ---------- Supabase: cada respuesta se manda por internet en cuanto se puede ----------
+  var sbFallo = false, sbEnviando = false, sbEspera = 0, sbTiempo = null, sbSinRed = false;
+  function sbActivo() { return !!(SB && estado.clave); }
+  function encabezados(extra) {
+    var h = { apikey: SB.key };
+    if (/^eyJ/.test(SB.key)) h.Authorization = "Bearer " + SB.key; // las claves anon viejas son JWT
+    return Object.assign(h, extra || {});
+  }
+  function pendientesSalida() { return Object.keys(estado.salida).length; }
+  function textoSync() {
+    if (sbEnviando || pendientesSalida()) return sbSinRed ? "Sin internet por ahora: se guarda en cuanto haya conexión." : "Guardando…";
+    return "✓ Guardado. Lo que contesta me llega solo.";
+  }
+  function pintarSync() {
+    var t = dondeSeGuarda();
+    app.querySelectorAll(".estado-guardado").forEach(function (el) { el.textContent = t; });
+  }
+  function encolar(tipo, pregunta, numero, nombre, resp) {
+    if (!sbActivo() || sbFallo) return;
+    estado.salida[tipo + ":" + pregunta] = { tipo: tipo, pregunta: pregunta, numero: numero, nombre: nombre, respuesta: resp, t: new Date().toISOString() };
+    guardarLocal();
+    clearTimeout(sbTiempo);
+    sbTiempo = setTimeout(enviarSalida, 1500);
+    pintarSync();
+  }
+  function encolarMascara(id) {
+    var m = porId[id], r = estado.r[id];
+    encolar("mascara", id, m.n, m.nombre, { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, significado: r.significado });
+  }
+  function encolarGeneral(qid) {
+    var k = G.findIndex(function (q) { return q.id === qid; }), v = estado.g[qid] || { opcion: "", texto: "" };
+    encolar("general", qid, k + 1, G[k].texto, { opcion: v.opcion, texto: v.texto });
+  }
+  function enviarSalida() {
+    if (!sbActivo() || sbFallo || sbEnviando) return;
+    var claves = Object.keys(estado.salida);
+    if (!claves.length) { pintarSync(); return; }
+    var k = claves[0], it = estado.salida[k];
+    sbEnviando = true; pintarSync();
+    fetch(SB.url.replace(/\/$/, "") + "/rest/v1/respuestas", {
+      method: "POST",
+      headers: encabezados({ "Content-Type": "application/json", Prefer: "return=minimal" }),
+      body: JSON.stringify({ clave: estado.clave, dispositivo: estado.dispositivo, tipo: it.tipo, pregunta: it.pregunta, numero: it.numero, nombre: it.nombre, respuesta: it.respuesta })
+    }).then(function (res) {
+      sbEnviando = false;
+      if (res.ok) {
+        if (estado.salida[k] && estado.salida[k].t === it.t) delete estado.salida[k];
+        sbEspera = 0; sbSinRed = false; guardarLocal(); pintarSync();
+        if (pendientesSalida()) enviarSalida();
+      } else if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429) {
+        // la clave no sirve o la base de datos no lo acepta: se sigue por WhatsApp
+        sbFallo = true;
+        anunciar("No se pudo guardar en internet. Sus respuestas quedan en este teléfono para mandarlas por WhatsApp.");
+        render(false);
+      } else { reintentarSalida(); }
+    }, function () { sbEnviando = false; reintentarSalida(); });
+  }
+  function reintentarSalida() {
+    sbSinRed = true; pintarSync();
+    sbEspera = Math.min(60000, (sbEspera || 1500) * 2);
+    clearTimeout(sbTiempo);
+    sbTiempo = setTimeout(enviarSalida, sbEspera + Math.random() * 1000);
+  }
+  window.addEventListener("online", function () { sbEspera = 0; enviarSalida(); subirPendientes(); });
+
+  // ---------- Grabar audios en la página (solo con Supabase) ----------
+  var grabando = null, audiosSesion = {}, audiosPendientes = [];
+  function puedeGrabar() {
+    return sbActivo() && !sbFallo && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+  }
+  var MIC = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1a7 7 0 0 0 6-6.9h-2z"/></svg>';
+  function duracion(seg) { seg = Math.round(seg); return Math.floor(seg / 60) + ":" + ("0" + (seg % 60)).slice(-2); }
+  function grabadora(ambito, numero, nombre) {
+    var guardados = estado.audios[ambito] || [];
+    var lista = guardados.map(function (a, k) {
+      var url = audiosSesion[a.archivo];
+      return '<li>✓ Audio ' + (k + 1) + ' guardado (' + duracion(a.seg || 0) + ')' + (url ? '<audio controls preload="none" src="' + esc(url) + '"></audio>' : "") + '</li>';
+    }).join("");
+    var pend = audiosPendientes.filter(function (x) { return x.ambito === ambito; }).length;
+    return '<div class="grabadora" data-ambito="' + esc(ambito) + '" data-numero="' + esc(numero) + '" data-nombre="' + esc(nombre) + '">' +
+      '<div class="acciones"><button class="boton whatsapp" type="button" data-grabar>' + MIC + '<span>Grabar un audio</span></button></div>' +
+      '<p class="nota grabadora-estado" aria-live="polite">' + (pend ? "Hay un audio sin guardar. Toque «Intentar otra vez»." : "") + '</p>' +
+      (pend ? '<div class="acciones"><button class="boton" type="button" data-reintentar>Intentar otra vez</button></div>' : "") +
+      (lista ? '<ul class="audios">' + lista + '</ul>' : "") + '</div>';
+  }
+  function elegirFormato() {
+    var opciones = ["audio/webm;codecs=opus", "audio/mp4", "audio/ogg;codecs=opus", "audio/webm"];
+    for (var k = 0; k < opciones.length; k++) { try { if (MediaRecorder.isTypeSupported(opciones[k])) return opciones[k]; } catch (e) {} }
+    return "";
+  }
+  function avisoGrabadora(caja, texto) { var el = caja && caja.querySelector(".grabadora-estado"); if (el) el.textContent = texto; }
+  function empezarGrabacion(caja) {
+    var ambito = caja.dataset.ambito;
+    avisoGrabadora(caja, "Pidiendo permiso para usar el micrófono…");
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (flujo) {
+      var formato = elegirFormato(), rec;
+      try { rec = formato ? new MediaRecorder(flujo, { mimeType: formato }) : new MediaRecorder(flujo); }
+      catch (e) { flujo.getTracks().forEach(function (t) { t.stop(); }); avisoGrabadora(caja, "Este teléfono no puede grabar aquí. Mándeme el audio por WhatsApp."); return; }
+      var trozos = [], inicio = Date.now();
+      grabando = { ambito: ambito, numero: caja.dataset.numero, nombre: caja.dataset.nombre, rec: rec, inicio: inicio, reloj: null };
+      rec.ondataavailable = function (e) { if (e.data && e.data.size) trozos.push(e.data); };
+      rec.onstop = function () {
+        flujo.getTracks().forEach(function (t) { t.stop(); });
+        var g = grabando; grabando = null;
+        clearInterval(g.reloj);
+        var tipo = (rec.mimeType || formato || "audio/webm").split(";")[0];
+        var blob = new Blob(trozos, { type: tipo });
+        var seg = (Date.now() - g.inicio) / 1000;
+        var cajaAhora = app.querySelector('.grabadora[data-ambito="' + g.ambito + '"]');
+        if (cajaAhora) { var b = cajaAhora.querySelector("[data-grabar]"); b.classList.remove("grabando"); b.querySelector("span").textContent = "Grabar otro audio"; }
+        if (!blob.size || seg < 1) { avisoGrabadora(cajaAhora, "El audio salió vacío. Intente otra vez."); return; }
+        subirAudio({ ambito: g.ambito, numero: g.numero, nombre: g.nombre, blob: blob, tipo: tipo, seg: seg });
+      };
+      rec.start(1000);
+      var boton = caja.querySelector("[data-grabar]");
+      boton.classList.add("grabando");
+      var tic = function () {
+        var s0 = (Date.now() - inicio) / 1000;
+        var b = app.querySelector('.grabadora[data-ambito="' + ambito + '"] [data-grabar] span');
+        if (b) b.textContent = "Terminar y guardar (" + duracion(s0) + ")";
+        if (s0 > 600 && grabando) grabando.rec.stop(); // máximo 10 minutos por audio
+      };
+      tic();
+      grabando.reloj = setInterval(tic, 1000);
+      avisoGrabadora(caja, "Grabando… hable con calma. Cuando termine, toque el botón otra vez.");
+    }, function () {
+      avisoGrabadora(caja, "El teléfono no dejó usar el micrófono. Cuando se lo pregunte, toque «Permitir». También puede mandarme el audio por WhatsApp.");
+    });
+  }
+  function nombreArchivo(a) {
+    var ext = { "audio/webm": "webm", "audio/mp4": "m4a", "audio/ogg": "ogg", "audio/mpeg": "mp3", "audio/aac": "aac", "audio/wav": "wav" }[a.tipo] || "webm";
+    var parte = a.ambito.replace(/^[mg]:/, "").replace(/[^a-z0-9-]/gi, "-");
+    var n = a.numero ? ("00" + a.numero).slice(-3) + "-" : "";
+    return estado.clave + "/" + (a.ambito.charAt(0) === "g" ? "usted-" : "") + n + parte + "-" + Date.now() + "." + ext;
+  }
+  function subirAudio(a) {
+    var caja = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
+    avisoGrabadora(caja, "Guardando el audio…");
+    a.archivo = a.archivo || nombreArchivo(a);
+    fetch(SB.url.replace(/\/$/, "") + "/storage/v1/object/audios/" + a.archivo.split("/").map(encodeURIComponent).join("/"), {
+      method: "POST", headers: encabezados({ "Content-Type": a.tipo, "x-upsert": "false" }), body: a.blob
+    }).then(function (res) {
+      if (!res.ok) throw res;
+      audiosPendientes = audiosPendientes.filter(function (x) { return x !== a; });
+      (estado.audios[a.ambito] = estado.audios[a.ambito] || []).push({ archivo: a.archivo, seg: Math.round(a.seg), t: new Date().toISOString() });
+      try { audiosSesion[a.archivo] = URL.createObjectURL(a.blob); } catch (e) {}
+      guardarLocal();
+      encolar("audio", a.archivo, Number(a.numero) || null, a.nombre, { archivo: a.archivo, segundos: Math.round(a.seg), de: a.ambito });
+      if (!editando()) render(false);
+      anunciar("Audio guardado");
+    }).catch(function () {
+      if (audiosPendientes.indexOf(a) < 0) audiosPendientes.push(a);
+      if (!editando()) render(false);
+      var c = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
+      avisoGrabadora(c, "No se pudo guardar el audio, quizá por falta de internet. No cierre la página y toque «Intentar otra vez».");
+    });
+  }
+  function subirPendientes() { audiosPendientes.slice().forEach(subirAudio); }
+  window.addEventListener("beforeunload", function (e) {
+    if (audiosPendientes.length || grabando) { e.preventDefault(); e.returnValue = ""; }
+  });
+
+  // ---------- Guardar en línea: solo si quien abre la página puede escribir ----------
+  var db = null, modo = "local", quitar = [];
+  var pendientes = {}, tiempos = {}, escribiendo = {}, esperando = {}, reintentos = {};
+  var TERMINALES = ["invalid_argument", "transform_error", "revoked", "not_granted", "capability_disabled", "capability_removed"];
+
+  function pasarALocal() {
+    db = null; modo = "local";
+    quitar.forEach(function (f) { try { f(); } catch (e) {} });
+    quitar = [];
+    anunciar("Sus respuestas se guardan en este teléfono.");
+  }
+  function programar(ruta, datos) {
+    if (!db) return;
+    pendientes[ruta] = datos;
+    clearTimeout(tiempos[ruta]);
+    tiempos[ruta] = setTimeout(function () { escribir(ruta); }, 800);
+  }
+  function escribir(ruta) {
+    if (!db || escribiendo[ruta] || esperando[ruta] || !pendientes[ruta]) return;
+    var datos = pendientes[ruta];
+    delete pendientes[ruta];
+    escribiendo[ruta] = true;
+    db.doc(ruta).set(datos).then(function () {
+      reintentos[ruta] = 0;
+    }, function (e) {
+      var code = e && e.code;
+      if (code === "quota_exceeded") {
+        anunciar("No se pudo guardar en línea: ya no hay espacio. Queda guardado en este teléfono.");
+      } else if (TERMINALES.indexOf(code) >= 0) {
+        pasarALocal();
+      } else {
+        reintentos[ruta] = (reintentos[ruta] || 0) + 1;
+        if (!pendientes[ruta]) pendientes[ruta] = datos;
+        esperando[ruta] = true;
+        setTimeout(function () { esperando[ruta] = false; escribir(ruta); },
+          Math.min(30000, 1500 * Math.pow(2, reintentos[ruta] - 1)) + Math.random() * 1000);
+      }
+    }).then(function () {
+      escribiendo[ruta] = false;
+      if (pendientes[ruta]) escribir(ruta);
+    });
+  }
+  function subirMascara(id) {
+    var m = porId[id];
+    programar("respuestas/" + id, Object.assign({}, estado.r[id], { n: m.n, nombre: m.nombre }));
+  }
+  function subirGenerales() {
+    programar("generales/sobre-usted", { respuestas: estado.g, act: estado.gAct });
+  }
+  function editando() {
+    var a = document.activeElement;
+    return !!(a && (a.tagName === "INPUT" || a.tagName === "TEXTAREA"));
+  }
+
+  function conectar() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (res) {
+      var base = res[0], usuario = res[1];
+      if (!base || !usuario) return;
+      return usuario.can("data.write").catch(function () { return null; }).then(function (si) {
+        if (si !== true) return;
+        db = base; modo = "db";
+        anunciar("Sus respuestas se guardan en línea.");
+        var migrado = false;
+        quitar.push(db.collection("respuestas").onSnapshot(function (snap) {
+          var enLinea = {}, cambio = false;
+          snap.docs.forEach(function (d) {
+            if (!porId[d.id]) return;
+            enLinea[d.id] = true;
+            if (pendientes["respuestas/" + d.id] || escribiendo["respuestas/" + d.id] || esperando["respuestas/" + d.id]) return;
+            var remota = limpiaR(d.data()), local = estado.r[d.id];
+            if (local && contestada(d.id) && local.act > remota.act) { subirMascara(d.id); return; } // lo de aquí es más nuevo
+            if (JSON.stringify(local) !== JSON.stringify(remota)) { estado.r[d.id] = remota; cambio = true; }
+          });
+          var definitiva = !(snap.metadata && snap.metadata.fromCache);
+          if (!migrado && definitiva) {
+            migrado = true;
+            // lo contestado en este teléfono antes de entrar se sube, de a poco
+            Object.keys(estado.r).filter(function (id) { return !enLinea[id] && contestada(id); })
+              .forEach(function (id, k) { setTimeout(function () { subirMascara(id); }, 400 * k); });
+          }
+          if (cambio) { guardarLocal(); if (!editando()) render(false); }
+        }, function () { pasarALocal(); }));
+        quitar.push(db.doc("generales/sobre-usted").onSnapshot(function (d) {
+          var r = "generales/sobre-usted";
+          if (pendientes[r] || escribiendo[r] || esperando[r]) return;
+          var definitiva = !(d.metadata && d.metadata.fromCache);
+          var x = d.exists ? obj(d.data()) : null;
+          if (x && txt(x.act) >= estado.gAct) {
+            var nuevo = limpiaG(x.respuestas);
+            if (JSON.stringify(nuevo) !== JSON.stringify(estado.g)) {
+              estado.g = nuevo; estado.gAct = txt(x.act); guardarLocal();
+              if (!editando()) render(false);
+            }
+          } else if (definitiva && generalesContestadas()) {
+            subirGenerales();
+          }
+        }, function () {}));
+      });
+    }).catch(function () {});
+  }
+
+  // ---------- WhatsApp ----------
+  function wa(texto) { return "https://wa.me/" + DESTINO + "?text=" + encodeURIComponent(texto); }
+  function bloques() {
+    var lista = [];
+    M.forEach(function (m) {
+      if (!contestada(m.id)) return;
+      var r = respuesta(m.id), l = [m.n + ". " + m.nombre];
+      if (r.suya) l.push("¿La hizo usted?: " + ({ si: "sí", no: "no, otra persona", nose: "no sabe" })[r.suya]);
+      if (r.es === "si") l.push("Es: sí, está bien el nombre");
+      else if (r.es === "otra") l.push("Es: " + (r.que_es.trim() || "otra cosa (sin decir qué)"));
+      else if (r.es === "nose") l.push("Es: no sabe");
+      else if (r.es) l.push("Es: " + r.es);
+      else if (r.que_es.trim()) l.push("Es: " + r.que_es.trim());
+      var usos = r.uso.map(function (u) { return u === OTRA && r.uso_otro.trim() ? r.uso_otro.trim() : u; });
+      if (usos.length) l.push("Se usa en: " + usos.join(", "));
+      if (r.significado.trim()) l.push("Significa: " + r.significado.trim());
+      var na = (estado.audios["m:" + m.id] || []).length;
+      if (na) l.push(na === 1 ? "Mandó 1 audio" : "Mandó " + na + " audios");
+      lista.push({ id: m.id, texto: l.join("\n") });
+    });
+    G.forEach(function (q, k) {
+      var t = textoGeneral(q);
+      if (t) lista.push({ id: "g:" + q.id, texto: "Sobre usted, pregunta " + (k + 1) + ". " + q.texto + "\n" + t });
+    });
+    return lista;
+  }
+  // Partes de un tamaño seguro para un enlace de WhatsApp, medido ya codificado
+  function partes(lista) {
+    var LIM = 2800, largo = function (x) { return encodeURIComponent(x).length; };
+    var piezas = [];
+    lista.forEach(function (b) {
+      if (largo(b.texto) <= LIM) { piezas.push(b); return; }
+      var trozo = "";
+      b.texto.split(/(\s+)/).forEach(function (w) {
+        if (trozo.trim() && largo(trozo + w) > LIM - 60) { piezas.push({ id: b.id, texto: trozo.trim() + " (sigue…)", parcial: true }); trozo = ""; }
+        trozo += w;
+      });
+      if (trozo.trim()) piezas.push({ id: b.id, texto: trozo.trim(), fin: b.texto });
+    });
+    var res = [], actual = null;
+    piezas.forEach(function (b) {
+      if (actual && largo(actual.texto + "\n\n" + b.texto) > LIM) { res.push(actual); actual = null; }
+      if (!actual) actual = { texto: "", bloques: [] };
+      actual.texto += (actual.texto ? "\n\n" : "") + b.texto;
+      actual.bloques.push(b);
+    });
+    if (actual) res.push(actual);
+    return res.map(function (p, k) {
+      p.texto = "Respuestas de don Gorgonio sobre sus máscaras" + (res.length > 1 ? " (parte " + (k + 1) + " de " + res.length + ")" : "") + "\n\n" + p.texto;
+      p.clave = p.texto.length + ":" + p.texto.slice(-40);
+      return p;
+    });
+  }
+
+  // ---------- Pantallas ----------
+  function ir(pos, sinHistorial) {
+    if (grabando) grabando.rec.stop();
+    estado.pos = String(pos);
+    if (/^\d+$/.test(estado.pos)) estado.ultima = Number(estado.pos);
+    guardarLocal();
+    if (!sinHistorial) { try { history.pushState({ pos: estado.pos }, ""); } catch (e) {} }
+    render(true);
+  }
+
+  function barra(titulo, avance, boton) {
+    return '<header class="barra">' +
+      '<div class="progreso"><span class="progreso-texto">' + esc(titulo) + '</span>' +
+      (avance == null ? "" : '<span class="progreso-barra" aria-hidden="true"><i style="width:' + avance + '%"></i></span>') + '</div>' +
+      (boton === undefined ? '<button class="boton chico" type="button" data-ir="todas">Ver todas</button>' : boton) + '</header>';
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function opciones(campo, lista, elegidas, multiple, etiqueta) {
+    return '<div class="opciones" role="group" aria-labelledby="' + etiqueta + '">' + lista.map(function (o) {
+      var on = multiple ? elegidas.indexOf(o.v) >= 0 : elegidas === o.v;
+      return '<button class="opcion" type="button" data-campo="' + campo + '" data-valor="' + esc(o.v) + '"' + (multiple ? ' data-multiple="1"' : "") + ' aria-pressed="' + on + '">' + esc(o.t) + '</button>';
+    }).join("") + '</div>';
+  }
+
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  function mandarLoQueLlevo(nota) {
+    var n = cuantas() + generalesContestadas();
+    return '<div class="cierre-mascara">' + (nota ? '<p class="nota">' + nota + '</p>' : "") +
+      '<p class="nota estado-guardado">' + esc(dondeSeGuarda()) + '</p>' +
+      (n && !enLinea() ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button></div>' : "") + '</div>';
+  }
+
+  function pantallaMascara(i) {
+    var m = M[i - 1], r = respuesta(m.id);
+    var sala = m.sala === "La Danza de los Morenos" ? '<p class="sala">La puse con la Danza de los Morenos' + (m.grupo ? " (" + esc(m.grupo) + ")" : "") + '</p>' : "";
+    var vistas = m.fotos.length > 1 ? '<div class="vistas"><span>Más fotos, tóquelas:</span>' + m.fotos.map(function (f, k) {
+      return '<button type="button" data-vista="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="Foto ' + (k + 1) + ' de ' + m.fotos.length + '"><img src="' + esc(f) + '" alt=""></button>';
+    }).join("") + '</div>' : "";
+    var n = 1;
+    var suya = m.apartada ? '<section class="pregunta"><h2 id="p-suya">' + (n++) + '. ¿Esta máscara la hizo usted?</h2>' +
+      opciones("suya", [{ v: "si", t: "Sí, es mía" }, { v: "no", t: "No, la hizo otra persona" }, { v: "nose", t: "No sé" }], r.suya, false, "p-suya") + '</section>' : "";
+    var listaEs, ayudaEs;
+    if (m.duda && m.duda.length) {
+      ayudaEs = "No estoy seguro. ¿Es " + m.duda.join(" o ") + "?";
+      listaEs = m.duda.map(function (d) { return { v: cap(d), t: m.duda.length === 1 ? "Sí, es " + d : cap(d) }; })
+        .concat([{ v: "otra", t: "Es otra cosa" }, { v: "nose", t: "No sé" }]);
+    } else {
+      ayudaEs = m.confirmada ? "Su familia ya me dijo este nombre. ¿Está bien?" : "Si no está bien, dígame qué animal o personaje es.";
+      listaEs = [{ v: "si", t: "Sí, está bien" }, { v: "otra", t: "No, es otra cosa" }, { v: "nose", t: "No sé" }];
+    }
+    var otroUso = r.uso.indexOf(OTRA) >= 0;
+    app.innerHTML = barra("Máscara " + i + " de " + TOTAL, Math.round(i / TOTAL * 100)) +
+      '<main class="pantalla">' +
+      '<div class="ficha">' + sala + '<p class="llamamos">' + (m.confirmada ? "Su familia me dijo que es:" : "Le puse este nombre, pero puede estar mal:") + '</p>' +
+      '<h1 tabindex="-1">' + esc(m.ver) + '</h1></div>' +
+      '<figure class="foto"><img id="foto" src="' + esc(m.fotos[0]) + '" alt="Foto de la máscara ' + i + ': ' + esc(m.ver) + '"></figure>' + vistas +
+      suya +
+      '<section class="pregunta"><h2 id="p-es">' + (n++) + '. ¿Está bien el nombre?</h2>' +
+      '<p class="ayuda">' + esc(ayudaEs) + '</p>' +
+      opciones("es", listaEs, r.es, false, "p-es") +
+      '<div id="otra"' + (r.es === "otra" ? "" : " hidden") + ' class="pregunta-otra">' +
+      '<p class="ayuda" id="toque-nombre">Toque un nombre o escríbalo:</p>' +
+      '<div class="sugerencias" role="group" aria-labelledby="toque-nombre">' + NOMBRES.map(function (x) {
+        return '<button type="button" data-sugerencia="' + esc(x) + '" aria-pressed="' + (r.que_es === x) + '">' + esc(x) + '</button>';
+      }).join("") + '</div>' +
+      '<label for="que-es">¿Qué es?</label><input type="text" id="que-es" data-texto="que_es" autocomplete="off" value="' + esc(r.que_es) + '" placeholder="Escriba qué animal o personaje es"></div>' +
+      '</section>' +
+      '<section class="pregunta"><h2 id="p-uso">' + (n++) + '. ¿En qué danza o fiesta se usa?</h2><p class="ayuda">Puede tocar más de una.</p>' +
+      opciones("uso", USOS.map(function (u) { return { v: u, t: u }; }), r.uso, true, "p-uso") +
+      '<div id="uso-otro-caja"' + (otroUso ? "" : " hidden") + '><label for="uso-otro">¿Cuál danza o fiesta?</label><input type="text" id="uso-otro" data-texto="uso_otro" autocomplete="off" value="' + esc(r.uso_otro) + '"></div>' +
+      '</section>' +
+      '<section class="pregunta"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
+      '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
+      '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
+      (puedeGrabar()
+        ? '<p class="ayuda">Si prefiere, grábeme un audio: toque el botón verde, hable, y cuando termine tóquelo otra vez.</p>' + grabadora("m:" + m.id, m.n, m.nombre)
+        : '<p class="ayuda" id="audio-' + i + '">Si prefiere, mándeme un audio:</p>' +
+          '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
+          '<li>Toque el botón verde. Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".") + '</li>' +
+          '<li>Mande ese mensaje.</li>' +
+          '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
+          '<li>Regrese aquí para seguir.</li></ol>' +
+          '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>') +
+      '</section>' +
+      mandarLoQueLlevo(i % 10 === 0 ? "¿Ya se cansó? Puede seguir otro día, aquí mismo." : "") +
+      '</main>';
+    nav.hidden = false;
+    atras.textContent = i === 1 ? "← Inicio" : "← Anterior";
+    adelante.textContent = i === TOTAL ? "Sobre usted →" : "Siguiente →";
+    if (i < TOTAL) { var pre = new Image(); pre.src = M[i].fotos[0]; }
+  }
+
+  function pantallaTodas() {
+    var hechas = cuantas(), ultima = estado.ultima || 1;
+    app.innerHTML = barra("Todas sus máscaras", null, '<button class="boton chico" type="button" data-ir="' + ultima + '">← Volver</button>') +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Todas sus máscaras</h1>' +
+      '<p class="ayuda">Lleva ' + hechas + ' de ' + TOTAL + ' contestadas. Toque una para verla.</p></div>' +
+      '<div class="acciones"><button class="boton" type="button" data-ir="usted">Preguntas sobre usted</button>' +
+      (hechas + generalesContestadas() ? '<button class="boton' + (enLinea() ? "" : " whatsapp") + '" type="button" data-ir="enviar">' + (enLinea() ? "Ver mis respuestas" : "Mandar lo que llevo") + '</button>' : "") + '</div>' +
+      '<ul class="rejilla">' + M.map(function (m) {
+        var ok = contestada(m.id);
+        return '<li><button type="button" data-ir="' + m.n + '" class="' + (ok ? "contestada" : "") + (m.n === ultima ? " aqui" : "") + '" aria-label="Máscara ' + m.n + ': ' + esc(m.ver) + (ok ? ", contestada" : "") + '">' +
+          '<img src="' + esc(m.fotos[0]) + '" alt="" loading="lazy"><span class="num">' + m.n + '</span>' + (ok ? '<span class="listo">✓</span>' : "") + '</button></li>';
+      }).join("") + '</ul></main>';
+    nav.hidden = true;
+    var aqui = app.querySelector(".rejilla .aqui");
+    if (aqui && estado.ultima) setTimeout(function () { aqui.scrollIntoView({ block: "center" }); }, 0);
+  }
+
+  function pantallaUsted() {
+    app.innerHTML = barra("Preguntas sobre usted", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Unas preguntas sobre usted y su taller</h1>' +
+      (puedeGrabar()
+        ? '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. En cada pregunta puede escribir o grabarme un audio.</p></div>'
+        : '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. Si prefiere, mándeme audios por WhatsApp diciendo el número de la pregunta.</p>' +
+          '<div class="acciones"><a class="boton chico" href="' + esc(wa("Sobre las preguntas de usted y su taller, le mando unos audios:")) + '" target="_blank" rel="noopener">Contestar con audios de WhatsApp</a></div></div>') +
+      G.map(function (q, k) {
+        var v = estado.g[q.id] || { opcion: "", texto: "" }, h = "g-" + q.id;
+        var campo = q.corto
+          ? '<input type="text" class="corto" inputmode="numeric" id="t-' + q.id + '" data-general="' + q.id + '" value="' + esc(v.texto) + '" autocomplete="off">'
+          : '<textarea id="t-' + q.id + '" data-general="' + q.id + '" rows="2" placeholder="' + (q.opciones ? "Si quiere, explique aquí" : "Escriba aquí") + '">' + esc(v.texto) + '</textarea>';
+        return '<section class="pregunta"><h2 id="' + h + '"><label for="t-' + q.id + '">' + (k + 1) + '. ' + esc(q.texto) + '</label></h2>' +
+          (q.foto ? '<img class="foto-pregunta" src="' + esc(q.foto) + '" alt="' + esc(q.alt || "") + '">' : "") +
+          (q.enlaces ? '<div class="acciones">' + q.enlaces.map(function (e) { return '<a class="boton chico" href="' + esc(e[1]) + '" target="_blank" rel="noopener">' + esc(e[0]) + '</a>'; }).join("") + '</div>' : "") +
+          (q.opciones ? opciones("g:" + q.id, q.opciones.map(function (o) { return { v: o, t: o }; }), v.opcion, false, h) : "") +
+          campo + (puedeGrabar() ? grabadora("g:" + q.id, k + 1, q.texto) : "") + '</section>';
+      }).join("") + mandarLoQueLlevo("") + '</main>';
+    nav.hidden = false;
+    atras.textContent = "← Máscaras";
+    adelante.textContent = "Mandar →";
+  }
+
+  var mandarTodo = false;
+  function pantallaEnviar() {
+    var lista = bloques();
+    var nuevos = lista.filter(function (b) { return estado.mandado[b.id] !== b.texto; });
+    var yaMando = lista.length - nuevos.length;
+    var aMandar = mandarTodo || !yaMando ? lista : nuevos;
+    var ps = partes(aMandar), todo = ps.map(function (p) { return p.texto; }).join("\n\n");
+    var hechas = cuantas(), gen = generalesContestadas(), ultima = estado.ultima || 1;
+    var miChat = "Escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".";
+    var pasos = '<ol class="pasos">' +
+      '<li>Toque el botón verde.</li>' +
+      '<li>Se abre WhatsApp con el mensaje ya escrito.' + (DESTINO ? "" : " " + miChat) + ' Toque la flecha para enviarlo.</li>' +
+      (ps.length > 1 ? '<li>Regrese aquí y toque el siguiente botón verde.</li>' : "") + '</ol>';
+    var cuerpo;
+    if (!lista.length) {
+      cuerpo = '<p>Todavía no hay respuestas. Regrese a las máscaras para empezar.</p>';
+    } else if (sbActivo() && !sbFallo) {
+      cuerpo = '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
+        '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>' +
+        '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>';
+    } else if (!aMandar.length) {
+      cuerpo = '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
+        '<div class="acciones"><button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button></div>';
+    } else {
+      cuerpo = '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
+          : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
+        (yaMando && !mandarTodo ? '<p class="nota">Solo va lo nuevo desde la última vez (' + aMandar.length + (aMandar.length === 1 ? " respuesta" : " respuestas") + ').</p>' : "") +
+        '<div class="partes">' + ps.map(function (p, k) {
+          var ya = !!estado.enviadas[p.clave];
+          var titulo = "Mandar por WhatsApp" + (ps.length > 1 ? " (parte " + (k + 1) + " de " + ps.length + ")" : "");
+          return '<a class="boton whatsapp ancho' + (ya ? " mandada" : "") + '" data-parte="' + k + '" href="' + esc(wa(p.texto)) + '" target="_blank" rel="noopener">' + (ya ? "✓ Ya la abrió · " : "") + titulo + '</a>';
+        }).join("") + '</div>' +
+        '<p class="nota">Si no se abre WhatsApp, toque «Copiar el texto» y péguelo en un mensaje.</p>' +
+        '<div class="acciones"><button class="boton" type="button" id="copiar">Copiar el texto</button>' +
+        (yaMando && !mandarTodo ? '<button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button>' : "") + '</div>' +
+        '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(todo) + '</pre>';
+    }
+    app.innerHTML = barra("Mandar respuestas", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Mandar sus respuestas</h1>' +
+      '<p class="ayuda">Contestó ' + hechas + ' de ' + TOTAL + ' máscaras y ' + gen + ' de ' + G.length + ' preguntas sobre usted.</p></div>' +
+      cuerpo +
+      '<p class="nota">Puede seguir contestando después. Lo que ya contestó no se borra.</p>' +
+      '<div class="acciones"><button class="boton" type="button" data-ir="' + ultima + '">Volver a la máscara ' + ultima + '</button></div></main>';
+    nav.hidden = true;
+    app.querySelectorAll("a[data-parte]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        var p = ps[Number(a.dataset.parte)];
+        estado.enviadas[p.clave] = true;
+        p.bloques.forEach(function (b) { if (!b.parcial) estado.mandado[b.id] = b.fin || b.texto; });
+        guardarLocal();
+        a.classList.add("mandada");
+        a.textContent = "✓ Ya la abrió · " + a.textContent.replace(/^✓ Ya la abrió · /, "");
+      });
+    });
+    var otraVez = document.getElementById("todo-otra-vez");
+    if (otraVez) otraVez.addEventListener("click", function () { mandarTodo = true; render(true); });
+    var copiar = document.getElementById("copiar");
+    if (copiar) copiar.addEventListener("click", function () {
+      var hecho = function () { copiar.textContent = "Copiado"; anunciar("Texto copiado"); setTimeout(function () { copiar.textContent = "Copiar el texto"; }, 2500); };
+      var seleccionar = function () {
+        var pre = document.getElementById("resumen"), sel = window.getSelection(), rango = document.createRange();
+        rango.selectNodeContents(pre); sel.removeAllRanges(); sel.addRange(rango);
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) {}
+        if (ok) { hecho(); return; }
+        copiar.textContent = "Deje el dedo sobre el texto de abajo y toque «Copiar»";
+        setTimeout(function () { copiar.textContent = "Copiar el texto"; }, 6000);
+      };
+      try { navigator.clipboard.writeText(todo).then(hecho, seleccionar); } catch (e) { seleccionar(); }
+    });
+  }
+
+  function pantallaInicio() {
+    var hechas = cuantas() + generalesContestadas();
+    var seguir = estado.ultima ? Math.min(estado.ultima, TOTAL) : 1;
+    app.innerHTML = '<main class="pantalla inicio">' +
+      '<h1 tabindex="-1">Don Gorgonio: cuénteme de sus máscaras</h1>' +
+      '<p class="saludo">' + (D.firma ? "Soy " + esc(D.firma) + ". " : "") + 'Estoy haciendo la página de internet de su trabajo y quiero ponerle bien el nombre a cada máscara.</p>' +
+      '<p>Le voy a enseñar sus máscaras una por una. De cada una le pregunto tres cosas:</p>' +
+      '<ol class="pasos"><li>Qué es</li><li>En qué danza o fiesta se usa</li><li>Qué significa</li></ol>' +
+      '<p>Conteste las que pueda. No tiene que contestar todas ni hacerlo en un solo día; si no sabe alguna, toque «Siguiente».</p>' +
+      (sbActivo() && !sbFallo
+        ? '<p class="aviso">Lo que conteste me llega solo, por internet. Puede contestar poco a poco y seguir otro día con este mismo enlace.' + (puedeGrabar() ? " Si prefiere hablar en vez de escribir, en cada máscara puede grabarme un audio." : "") + '</p>'
+        : modo === "db" ? "" : hayAlmacen
+        ? '<p class="aviso">Lo que conteste se queda guardado en este teléfono, pero no me llega solo: cuando quiera, toque el botón verde «Mandar lo que llevo» y me llega por WhatsApp. Para seguir otro día, abra otra vez el enlace en este mismo teléfono.</p>'
+        : '<p class="aviso">Este teléfono no puede guardar lo que conteste. Antes de cerrar la página, toque el botón verde «Mandar lo que llevo» para que me llegue por WhatsApp.</p>') +
+      '<div class="acciones">' + (hechas
+        ? '<button class="boton principal" type="button" data-ir="' + seguir + '">Seguir en la máscara ' + seguir + '</button>' +
+          (enLinea() ? "" : '<button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button>') + '<button class="boton" type="button" data-ir="todas">Ver todas</button>'
+        : '<button class="boton principal" type="button" data-ir="1">Empezar</button>') + '</div>' +
+      '<p class="nota">' + (hechas ? "Lleva " + cuantas() + " de " + TOTAL + " máscaras contestadas." : "Son las " + TOTAL + " máscaras que tenemos en fotos. Al final hay unas preguntas sobre usted y el taller.") + '</p></main>';
+    nav.hidden = true;
+  }
+
+  function render(moverFoco) {
+    var p = estado.pos, n = Number(p);
+    if (p === "todas") pantallaTodas();
+    else if (p === "usted") pantallaUsted();
+    else if (p === "enviar") pantallaEnviar();
+    else if (/^\d+$/.test(p) && n >= 1 && n <= TOTAL) pantallaMascara(n);
+    else { estado.pos = "inicio"; pantallaInicio(); }
+    if (moverFoco) {
+      if (p !== "todas") window.scrollTo(0, 0);
+      var h = app.querySelector("h1");
+      if (h) h.focus({ preventScroll: true });
+    }
+  }
+
+  // ---------- Eventos ----------
+  function marcarGrupo(b, valor) {
+    b.parentNode.querySelectorAll(".opcion").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.valor === valor)); });
+  }
+  app.addEventListener("click", function (e) {
+    var b = e.target.closest("button, a");
+    if (!b || !app.contains(b)) return;
+    if (b.dataset.ir) { ir(b.dataset.ir); return; }
+    var n = Number(estado.pos), m = M[n - 1];
+    if (b.dataset.vista != null && m) {
+      document.getElementById("foto").src = m.fotos[Number(b.dataset.vista)];
+      app.querySelectorAll("[data-vista]").forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+      return;
+    }
+    if (b.dataset.sugerencia && m) {
+      var r0 = tocada(m.id), campo = document.getElementById("que-es");
+      r0.que_es = r0.que_es === b.dataset.sugerencia ? "" : b.dataset.sugerencia;
+      campo.value = r0.que_es;
+      app.querySelectorAll("[data-sugerencia]").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.sugerencia === r0.que_es)); });
+      guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
+      return;
+    }
+    if (b.hasAttribute("data-grabar")) {
+      var caja = b.closest(".grabadora");
+      if (grabando && grabando.ambito === caja.dataset.ambito) grabando.rec.stop();
+      else if (!grabando) empezarGrabacion(caja);
+      return;
+    }
+    if (b.hasAttribute("data-reintentar")) { subirPendientes(); return; }
+    if (!b.dataset.campo) return;
+    var c = b.dataset.campo, v = b.dataset.valor;
+    if (c.indexOf("g:") === 0) {
+      var id = c.slice(2), g = estado.g[id] = Object.assign({ opcion: "", texto: "" }, estado.g[id]);
+      g.opcion = g.opcion === v ? "" : v;
+      estado.gAct = new Date().toISOString();
+      marcarGrupo(b, g.opcion);
+      guardarLocal(); subirGenerales(); encolarGeneral(id);
+      return;
+    }
+    if (!m) return;
+    var r = tocada(m.id);
+    if (b.dataset.multiple) {
+      var i = r.uso.indexOf(v);
+      if (i >= 0) {
+        r.uso.splice(i, 1);
+        if (v === OTRA) { r.uso_otro = ""; document.getElementById("uso-otro").value = ""; }
+      } else if (v === NO_SE || v === ADORNO) {
+        r.uso = [v]; r.uso_otro = ""; document.getElementById("uso-otro").value = "";
+      } else {
+        r.uso = r.uso.filter(function (u) { return u !== NO_SE && u !== ADORNO; });
+        r.uso.push(v);
+      }
+      b.parentNode.querySelectorAll(".opcion").forEach(function (o) { o.setAttribute("aria-pressed", String(r.uso.indexOf(o.dataset.valor) >= 0)); });
+      document.getElementById("uso-otro-caja").hidden = r.uso.indexOf(OTRA) < 0;
+    } else {
+      r[c] = r[c] === v ? "" : v;
+      marcarGrupo(b, r[c]);
+      if (c === "es") document.getElementById("otra").hidden = r.es !== "otra";
+    }
+    guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
+  });
+  app.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.dataset.general) {
+      var g = estado.g[t.dataset.general] = Object.assign({ opcion: "", texto: "" }, estado.g[t.dataset.general]);
+      g.texto = t.value;
+      estado.gAct = new Date().toISOString();
+      guardarLocal(); subirGenerales(); encolarGeneral(t.dataset.general);
+      return;
+    }
+    if (t.dataset.texto) {
+      var m = M[Number(estado.pos) - 1];
+      if (!m) return;
+      var r = tocada(m.id);
+      r[t.dataset.texto] = t.value;
+      if (t.dataset.texto === "que_es") app.querySelectorAll("[data-sugerencia]").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.sugerencia === t.value)); });
+      guardarLocal(); subirMascara(m.id); encolarMascara(m.id);
+    }
+  });
+  atras.addEventListener("click", function () {
+    var p = estado.pos, n = Number(p);
+    if (p === "usted") ir(TOTAL); else if (n > 1) ir(n - 1); else ir("inicio");
+  });
+  adelante.addEventListener("click", function () {
+    var p = estado.pos, n = Number(p);
+    if (p === "usted") ir("enviar"); else if (n >= TOTAL) ir("usted"); else ir(n + 1);
+  });
+  document.addEventListener("focusin", function (e) {
+    if (/^(INPUT|TEXTAREA)$/.test(e.target.tagName)) document.body.classList.add("escribiendo");
+  });
+  document.addEventListener("focusout", function () {
+    setTimeout(function () { if (!editando()) document.body.classList.remove("escribiendo"); }, 0);
+  });
+  window.addEventListener("popstate", function (e) {
+    var p = e.state && e.state.pos;
+    if (!p) return;
+    ir(p, true);
+  });
+
+  try { history.replaceState({ pos: estado.pos }, ""); } catch (e) {}
+  render(false);
+  conectar();
+  enviarSalida();
+})();
+</script>
+</body>
+</html>
