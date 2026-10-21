@@ -126,6 +126,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 .foto-pregunta { width: 100%; border-radius: 12px; }
 
 .pregunta-otra, #uso-otro-caja { display: grid; gap: 0.6rem; }
+.pasos-audio { font-size: 1.05rem; color: var(--tinta-suave); }
 .cierre-mascara { display: grid; gap: 0.6rem; padding-top: 0.4rem; border-top: 1px solid var(--borde); }
 
 /* Barra de abajo */
@@ -497,8 +498,13 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<section class="pregunta"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
       '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
       '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
-      '<p class="ayuda">Si le cuesta escribir, mándenos mejor un audio:</p>' +
-      '<div class="acciones"><a class="boton chico" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio de WhatsApp</a></div>' +
+      '<p class="ayuda" id="audio-' + i + '">Si prefiere, mándenos un audio:</p>' +
+      '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
+      '<li>Toque el botón verde. Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja el chat de la persona que le mandó esta encuesta.") + '</li>' +
+      '<li>Mande ese mensaje.</li>' +
+      '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
+      '<li>Regrese aquí para seguir.</li></ol>' +
+      '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>' +
       '</section>' +
       mandarLoQueLlevo(i % 10 === 0 ? "¿Ya se cansó? Puede seguir otro día, aquí mismo." : "") +
       '</main>';
