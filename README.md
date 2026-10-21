@@ -95,7 +95,7 @@ Para volver a armar la página (por ejemplo, si cambian las máscaras):
 ```bash
 python3 herramientas/encuesta/generar_encuesta.py . /tmp/encuesta modo=sitio firma=Humberto nombre=Humberto \
   supabase_url=https://xbmlsctofrofspjoyxyw.supabase.co supabase_key=<clave pública sb_publishable_…> \
-  enlace=https://humbertogodinez.com/GorgonioCandelario/preguntas/ [destino=52XXXXXXXXXX]
+  enlace=https://humbertogodinez.com/GorgonioCandelario/preguntas/ destino=16466454572
 ```
 
 La clave pública (`sb_publishable_…`) puede ir en la página; la secreta (`sb_secret_…` o `service_role`) nunca. El mismo script, sin `modo=sitio`, arma la versión para claude.ai.

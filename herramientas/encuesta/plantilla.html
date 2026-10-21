@@ -315,9 +315,15 @@ textarea { min-height: 6.5rem; resize: vertical; }
       return navigator.onLine === false ? "Sin internet por ahora: se guarda en cuanto haya conexión."
         : "Todavía no se guarda; lo intento otra vez solo. Lo que contesta no se pierde.";
     }
-    if (Object.keys(estado.rechazadas).length && noLlegaron().length) return "Casi todo me llegó, pero algo no se pudo guardar por internet: mándemelo con el botón verde «Mandar lo que no llegó».";
+    var sinSubir = audiosPendientes.filter(function (x) { return !x.definitivo; });
+    if (sinSubir.length) return sinSubir.some(function (x) { return x.subiendo; }) ? "Guardando el audio…"
+      : "Todavía no se guarda un audio; lo intento otra vez solo. No cierre la página.";
+    if (faltaPorWhatsapp()) return "Casi todo me llegó, pero algo no se pudo guardar por internet: mándemelo con el botón verde «Mandar lo que no llegó».";
     return "✓ Guardado. Lo que contesta me llega solo.";
   }
+  // lo que no llegó por internet y hay que mandar por WhatsApp: respuestas que la base no aceptó y audios que Storage no aceptó
+  function audiosMalos() { return audiosPendientes.filter(function (x) { return x.definitivo; }); }
+  function faltaPorWhatsapp() { return audiosMalos().length > 0 || Object.keys(estado.rechazadas).length > 0 && noLlegaron().length > 0; }
   function pintarSync() {
     var t = dondeSeGuarda();
     app.querySelectorAll(".estado-guardado").forEach(function (el) { el.textContent = t; });
@@ -446,7 +452,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
   window.addEventListener("online", function () { sbEspera = 0; enviarSalida(); subirPendientes(); });
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden") vaciarSalida();
-    else { sbEspera = 0; enviarSalida(); subirPendientes(); }
+    else {
+      sbEspera = 0; enviarSalida(); subirPendientes();
+      if (grabando && grabando.rec && grabando.rec.state === "recording") noApagar(true); // el teléfono lo suelta al ocultarse
+    }
   });
 
   // ---------- Grabar audios en la página (solo con Supabase) ----------
@@ -470,14 +479,17 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var mios = audiosPendientes.filter(function (x) { return x.ambito === ambito; });
     var pend = mios.filter(function (x) { return !x.subiendo && !x.definitivo; }).length;
     var malos = mios.filter(function (x) { return x.definitivo; });
-    var activo = !!(grabando && grabando.ambito === ambito && grabando.rec);
+    var activo = !!(grabando && grabando.ambito === ambito && grabando.rec), boton = puedeGrabar();
+    var vacia = '<div class="grabadora" data-ambito="' + esc(ambito) + '" data-numero="' + esc(numero) + '" data-nombre="' + esc(nombre) + '"';
+    // sin grabadora (falló la clave, no hay micrófono): la caja solo aparece si hay audios que enseñar
+    if (!boton && !guardados.length && !mios.length) return vacia + ' hidden><p class="nota grabadora-estado" aria-live="polite"></p></div>';
     var aviso = activo ? GRABANDO
       : malos.length ? "No pude guardar " + (malos.length === 1 ? "este audio" : "estos audios") + " por internet. Mándemelo por WhatsApp, por favor."
       : pend ? "El audio todavía no se guarda, quizá por falta de internet. Lo intento otra vez solo; no cierre la página."
       : mios.length ? "Guardando el audio…" : "";
-    return '<div class="grabadora" data-ambito="' + esc(ambito) + '" data-numero="' + esc(numero) + '" data-nombre="' + esc(nombre) + '">' +
-      '<div class="acciones"><button class="boton whatsapp' + (activo ? " grabando" : "") + '" type="button" data-grabar>' + MIC + '<span>' +
-      (activo ? "Terminar y guardar (" + duracion((Date.now() - grabando.inicio) / 1000) + ")" : guardados.length ? "Grabar otro audio" : "Grabar un audio") + '</span></button></div>' +
+    return vacia + '>' +
+      (boton ? '<div class="acciones"><button class="boton whatsapp' + (activo ? " grabando" : "") + '" type="button" data-grabar>' + MIC + '<span>' +
+      (activo ? "Terminar y guardar (" + duracion((Date.now() - grabando.inicio) / 1000) + ")" : guardados.length ? "Grabar otro audio" : "Grabar un audio") + '</span></button></div>' : "") +
       '<p class="nota grabadora-estado" aria-live="polite">' + esc(aviso) + '</p>' +
       (pend ? '<div class="acciones"><button class="boton" type="button" data-reintentar>Intentar otra vez</button></div>' : "") +
       (malos.length ? '<div class="acciones">' + malos.map(function (a) {
@@ -487,6 +499,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
   }
   // vuelve a pintar solo la grabadora, sin tocar lo que esté escribiendo
   function refrescarGrabadora(ambito, aviso) {
+    pintarSync();
+    if (estado.pos === "enviar") { if (!editando()) render(false); return; } // la lista de lo que no llegó cambió
     var caja = cajaDe(ambito);
     if (!caja) return;
     var foco = caja.contains(document.activeElement), t = document.createElement("div");
@@ -494,8 +508,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var nueva = t.firstChild;
     caja.parentNode.replaceChild(nueva, caja);
     if (foco) { var b = nueva.querySelector("[data-grabar]"); if (b) b.focus({ preventScroll: true }); }
-    if (aviso) avisoGrabadora(nueva, aviso);
+    if (aviso) { nueva.hidden = false; avisoGrabadora(nueva, aviso); }
   }
+  // la caja de audios de una pregunta, también cuando ya no se puede grabar
+  function cajaAudios(ambito, numero, nombre) { return sbActivo() ? grabadora(ambito, numero, nombre) : ""; }
   function elegirFormato() {
     var opciones = ["audio/webm;codecs=opus", "audio/mp4", "audio/ogg;codecs=opus", "audio/webm"];
     for (var k = 0; k < opciones.length; k++) { try { if (MediaRecorder.isTypeSupported(opciones[k])) return opciones[k]; } catch (e) {} }
@@ -506,7 +522,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function noApagar(si) {
     try {
       if (!si) { if (despierto) despierto.release(); despierto = null; return; }
-      if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function (w) { if (grabando) despierto = w; else w.release(); }, function () {});
+      if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function (w) {
+        if (despierto) despierto.release().catch(function () {});
+        if (grabando) despierto = w; else { despierto = null; w.release().catch(function () {}); }
+      }, function () {});
     } catch (e) {}
   }
   function pararGrabacion() {
@@ -572,6 +591,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
     if (a.subiendo || !sbActivo()) return; // ya va en camino (doble toque, evento online, reintento solo)
     a.subiendo = true; clearTimeout(a.reloj);
     a.archivo = a.archivo || nombreArchivo(a);
+    if (a.archivo.indexOf(estado.clave + "/") !== 0) { // la clave del enlace cambió: va a la carpeta de la nueva
+      idbBorrar(a.archivo); a.archivo = estado.clave + "/" + a.archivo.split("/").slice(1).join("/"); idbGuardar(a);
+    }
     refrescarGrabadora(a.ambito);
     var ctl = typeof AbortController === "function" ? new AbortController() : null;
     // si no termina en un buen rato (cuenta con una conexión lenta) se corta y se vuelve a intentar
@@ -869,7 +891,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 
   function mandarLoQueLlevo(nota) {
     var n = cuantas() + generalesContestadas();
-    var boton = !n ? "" : sbActivo() && !sbFallo && noLlegaron().length ? "Mandar lo que no llegó" : enLinea() ? "" : "Mandar lo que llevo";
+    var boton = sbActivo() && !sbFallo && faltaPorWhatsapp() ? "Mandar lo que no llegó" : !n || enLinea() ? "" : "Mandar lo que llevo";
     return '<div class="cierre-mascara">' + (nota ? '<p class="nota">' + nota + '</p>' : "") +
       '<p class="nota estado-guardado">' + esc(dondeSeGuarda()) + '</p>' +
       (boton ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">' + boton + '</button></div>' : "") + '</div>';
@@ -925,7 +947,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
           '<li>Mande ese mensaje.</li>' +
           '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
           '<li>Regrese aquí para seguir.</li></ol>' +
-          '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>') +
+          '<div class="acciones"><a class="boton whatsapp" href="' + esc(wa("Máscara " + i + ": " + m.nombre + ". Le mando un audio:")) + '" target="_blank" rel="noopener">Contestar con un audio</a></div>' +
+          cajaAudios("m:" + m.id, m.n, m.nombre)) +
       '</section>' +
       mandarLoQueLlevo(i % 10 === 0 ? "¿Ya se cansó? Puede seguir otro día, aquí mismo." : "") +
       '</main>';
@@ -968,7 +991,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
           (q.foto ? '<img class="foto-pregunta" src="' + esc(q.foto) + '" alt="' + esc(q.alt || "") + '">' : "") +
           (q.enlaces ? '<div class="acciones">' + q.enlaces.map(function (e) { return '<a class="boton chico" href="' + esc(e[1]) + '" target="_blank" rel="noopener">' + esc(e[0]) + '</a>'; }).join("") + '</div>' : "") +
           (q.opciones ? opciones("g:" + q.id, q.opciones.map(function (o) { return { v: o, t: o }; }), v.opcion, false, h) : "") +
-          campo + (puedeGrabar() ? grabadora("g:" + q.id, k + 1, q.texto) : "") + '</section>';
+          campo + cajaAudios("g:" + q.id, k + 1, q.texto) + '</section>';
       }).join("") + mandarLoQueLlevo("") + '</main>';
     nav.hidden = false;
     atras.textContent = "← Máscaras";
@@ -993,20 +1016,29 @@ textarea { min-height: 6.5rem; resize: vertical; }
       var titulo = "Mandar por WhatsApp" + (ps.length > 1 ? " (parte " + (k + 1) + " de " + ps.length + ")" : "");
       return '<a class="boton whatsapp ancho' + (ya ? " mandada" : "") + '" data-parte="' + k + '" href="' + esc(wa(p.texto)) + '" target="_blank" rel="noopener">' + (ya ? "✓ Ya la abrió · " : "") + titulo + '</a>';
     }).join("") + '</div>';
+    var malos = audiosMalos(), sinSubir = audiosPendientes.some(function (x) { return !x.definitivo; });
+    var audiosHtml = malos.length ? '<p class="aviso">' + (malos.length === 1 ? "Este audio no se pudo guardar por internet. Mándemelo por WhatsApp:" : "Estos audios no se pudieron guardar por internet. Mándemelos por WhatsApp:") + '</p>' +
+      '<div class="partes">' + malos.map(function (a) {
+        var d = datosAmbito(a.ambito) || {};
+        return '<button class="boton whatsapp ancho" type="button" data-compartir="' + esc(a.archivo) + '">Mandar por WhatsApp el audio de ' +
+          (a.ambito.charAt(0) === "m" ? "la máscara " + d.numero : "la pregunta " + d.numero + " sobre usted") + '</button>';
+      }).join("") + '</div>' : "";
     var cuerpo;
-    if (!lista.length) {
+    if (!lista.length && !malos.length) {
       cuerpo = '<p>Todavía no hay respuestas. Regrese a las máscaras para empezar.</p>';
     } else if (porInternet) {
-      cuerpo = (aMandar.length
+      cuerpo = audiosHtml + (aMandar.length
           ? '<p class="aviso">Casi todo me llegó por internet, pero esto no se pudo guardar. Mándemelo por WhatsApp:</p>' + pasos + botones
+          : malos.length ? ""
           : '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
-            '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>') +
-        '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>';
+            (sinSubir ? "" : '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>')) +
+        (lista.length ? '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>' : "");
     } else if (!aMandar.length) {
-      cuerpo = '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
-        '<div class="acciones"><button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button></div>';
+      cuerpo = audiosHtml + (lista.length ? '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
+        '<div class="acciones"><button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button></div>' : "");
     } else {
-      cuerpo = '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
+      cuerpo = audiosHtml;
+      cuerpo += '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
           : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
         (yaMando && !mandarTodo ? '<p class="nota">Solo va lo nuevo desde la última vez (' + aMandar.length + (aMandar.length === 1 ? " respuesta" : " respuestas") + ').</p>' : "") +
         botones +

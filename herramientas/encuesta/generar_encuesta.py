@@ -5,11 +5,11 @@ Hay dos salidas:
     Supabase, cada respuesta y cada audio se guardan por internet (ver herramientas/encuesta/supabase.sql);
     si no, se guardan en el teléfono y se mandan por WhatsApp.
   * Para claude.ai: la página y una lista de archivos para publicarla como Artifact.
-Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida [modo=sitio] [destino=52XXXXXXXXXX]
+Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida [modo=sitio] [destino=16466454572]
        [nombre="Nombre"] [firma="..."] [enlace=URL] [supabase_url=https://xxxx.supabase.co] [supabase_key=...]
 modo=sitio: escribe preguntas/index.html en el sitio (carpeta_salida se ignora salvo para archivos.json).
 supabase_key: la clave pública (anon o publishable) del proyecto; NUNCA la secreta (service_role/sb_secret).
-destino: WhatsApp (con 52) al que llegan las respuestas; nombre: a quién le llegan; firma: quién saluda al inicio;
+destino: WhatsApp al que llegan las respuestas, con el código de país (1 Estados Unidos, 52 México); nombre: a quién le llegan; firma: quién saluda al inicio;
 enlace: dirección de la encuesta publicada, para el documento de preguntas.
 Salida: carpeta_salida/encuesta.html, carpeta_salida/archivos.json ({ruta publicada: ruta en el repo})
 y datos/preguntas-para-don-gorgonio.md (el mismo cuestionario como documento, con los mismos números)."""
