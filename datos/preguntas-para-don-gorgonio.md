@@ -3,6 +3,7 @@
 Todo lo que falta preguntarle, en un solo lugar. La forma más fácil de contestar es la encuesta en línea:
 enseña cada máscara con su foto y guarda las respuestas. Este documento tiene las mismas preguntas y los
 mismos números, por si prefiere contestar por WhatsApp, por teléfono o en papel («la 12 es un perro»).
+Encuesta: https://claude.ai/artifact/4aD8EM9gR3y1vpgU86ByHx
 
 ## De cada máscara
 
@@ -180,16 +181,16 @@ En las tres últimas (123 a 125) se pregunta además si las hizo él.
 
 1. ¿En qué año nació?
 2. ¿A qué edad empezó a tallar máscaras? ¿Quién le enseñó?
-3. ¿Usted es la tercera o la cuarta generación de mascareros de su familia?
+3. ¿Hasta quién de su familia se acuerda que hacía máscaras?
 4. ¿Qué quiere decir el nombre de su taller, «Mi Güelo Baci»?
 5. ¿Qué premios ha recibido y en qué año? ¿En qué año lo nombraron Gran Maestro del Arte Popular?
-6. En la Danza de los Morenos, ¿la novena pareja son los perros?
-7. En la danza, ¿qué representan el burro, la guacamaya, el gallo y el perro?
-8. ¿Qué madera usa? ¿Qué pintura? ¿Con qué hace el pelo y las barbas?
+6. Tenemos que en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?
+7. Nos contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?
+8. ¿Qué pintura usa? ¿Con qué hace el pelo y las barbas de las máscaras?
 9. ¿Qué días y a qué hora se le puede visitar en el taller? ¿Da clases? ¿Manda máscaras a otras ciudades?
-10. ¿Nos da permiso de poner en su página los dos videos de YouTube donde sale usted?
-11. ¿Quién tomó las fotos de las máscaras y cómo quiere que aparezca su nombre?
-12. Hay una foto chiquita, en un collage, de un ave azul de pico amarillo. ¿Es suya?
+10. ¿Nos da permiso de poner en su página estos dos videos donde sale usted?
+11. ¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo ponemos el nombre de esa persona en la página?
+12. En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?
 13. ¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.
 
 ## Fotos que nos faltan

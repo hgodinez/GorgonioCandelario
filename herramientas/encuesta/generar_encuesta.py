@@ -1,11 +1,14 @@
 """Arma la encuesta para don Gorgonio (una máscara por pantalla) a partir de datos/galeria.json.
 Escribe la página y una lista de archivos para publicarla como Artifact de claude.ai.
-Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida
+Uso: python3 herramientas/encuesta/generar_encuesta.py . carpeta_salida [destino=52XXXXXXXXXX] [nombre="Nombre"] [firma="..."] [enlace=URL]
+destino: WhatsApp (con 52) al que llegan las respuestas; nombre: a quién le llegan; firma: quién saluda al inicio;
+enlace: dirección de la encuesta publicada, para el documento de preguntas.
 Salida: carpeta_salida/encuesta.html, carpeta_salida/archivos.json ({ruta publicada: ruta en el repo})
 y datos/preguntas-para-don-gorgonio.md (el mismo cuestionario como documento, con los mismos números)."""
-import json, sys, pathlib
+import json, re, sys, pathlib
 
 raiz, salida = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
+opciones = dict(a.split('=', 1) for a in sys.argv[3:])
 salida.mkdir(parents=True, exist_ok=True)
 g = json.loads((raiz / 'datos/galeria.json').read_text(encoding='utf-8'))
 tam = json.loads((raiz / 'datos/album-tamanos.json').read_text(encoding='utf-8'))
@@ -18,6 +21,27 @@ VISTAS_MAX = 3   # foto principal y hasta dos vistas más
 ANCHO_MAX = 800  # pixeles de la foto en la encuesta
 
 archivos = {}
+
+# En pantalla se evitan palabras técnicas; el nombre original va en el texto de WhatsApp y en línea
+PALABRAS = [('Cánido', 'Perro o coyote'), ('naturalista', 'pintado al natural')]
+DUDAS_FIJAS = {'equino-rayado': ('Animal rayado', ['caballo', 'burro', 'cebra'])}
+
+
+def para_ver(slug, nombre):
+    """(nombre para mostrar, opciones de la duda): «Cánido negro (¿coyote o perro?)» da
+    («Perro o coyote negro», ['coyote', 'perro']). «(¿de la danza?)» no es duda del nombre."""
+    if slug in DUDAS_FIJAS:
+        return DUDAS_FIJAS[slug]
+    duda = []
+    d = re.search(r'\s*\(¿(.+?)\?\)\s*$', nombre)
+    if d and 'danza' not in d.group(1):
+        duda = re.split(r'\s+o\s+', d.group(1))
+        nombre = nombre[:d.start()]
+    elif d:
+        nombre = nombre[:d.start()]
+    for a, b in PALABRAS:
+        nombre = nombre.replace(a, b)
+    return nombre, duda
 
 
 def foto(fid):
@@ -33,8 +57,9 @@ for sala in g['salas']:
         for slug in sub['piezas']:
             p = g['piezas'][slug]
             fotos = [p['principal']] + [f for f in p['fotos'] if f != p['principal']]
+            ver, duda = para_ver(slug, p['nombre'])
             mascaras.append({
-                'id': slug, 'nombre': p['nombre'], 'sala': sala['titulo'], 'grupo': sub['titulo'],
+                'id': slug, 'nombre': p['nombre'], 'ver': ver, 'duda': duda, 'sala': sala['titulo'], 'grupo': sub['titulo'],
                 'fotos': [foto(f) for f in fotos[:VISTAS_MAX]],
                 'confirmada': p.get('certeza') == 'confirmada-familia', 'apartada': False,
             })
@@ -43,34 +68,41 @@ agrupadas = {x['pieza']: x for grupo in catalogo['agrupados'] for x in grupo['pi
 for slug in APARTADAS:
     p = agrupadas[slug]
     fotos = [p['principal']] + [f for f in p['fotos'] if f != p['principal']]
-    mascaras.append({'id': slug, 'nombre': p['nombre'], 'sala': 'Otras máscaras', 'grupo': '',
+    ver, duda = para_ver(slug, p['nombre'])
+    mascaras.append({'id': slug, 'nombre': p['nombre'], 'ver': ver, 'duda': duda, 'sala': 'Otras máscaras', 'grupo': '',
                      'fotos': [foto(f) for f in fotos[:VISTAS_MAX]], 'confirmada': False, 'apartada': True})
 
 for n, m in enumerate(mascaras, 1):
     m['n'] = n
 
-# Preguntas sobre él y el taller: id estable, texto y, si aplica, opciones para tocar
+# Preguntas sobre él y el taller: id estable, texto y, si aplica, opciones para tocar, una foto,
+# enlaces o un campo corto
 GENERALES = [
-    {'id': 'nacimiento', 'texto': '¿En qué año nació?'},
+    {'id': 'nacimiento', 'texto': '¿En qué año nació?', 'corto': True},
     {'id': 'empezo', 'texto': '¿A qué edad empezó a tallar máscaras? ¿Quién le enseñó?'},
-    {'id': 'generacion', 'texto': '¿Usted es la tercera o la cuarta generación de mascareros de su familia?',
-     'opciones': ['Tercera', 'Cuarta', 'Otra']},
+    {'id': 'generacion', 'texto': '¿Hasta quién de su familia se acuerda que hacía máscaras?',
+     'opciones': ['Mi papá', 'Mi abuelo', 'Mi bisabuelo', 'Más atrás', 'No sé']},
     {'id': 'guelo-baci', 'texto': '¿Qué quiere decir el nombre de su taller, «Mi Güelo Baci»?'},
     {'id': 'premios', 'texto': '¿Qué premios ha recibido y en qué año? ¿En qué año lo nombraron Gran Maestro del Arte Popular?'},
-    {'id': 'perros', 'texto': 'En la Danza de los Morenos, ¿la novena pareja son los perros?',
-     'opciones': ['Sí, son los perros', 'No, es otro animal']},
-    {'id': 'simbolos', 'texto': 'En la danza, ¿qué representan el burro, la guacamaya, el gallo y el perro?'},
-    {'id': 'tecnica', 'texto': '¿Qué madera usa? ¿Qué pintura? ¿Con qué hace el pelo y las barbas?'},
+    {'id': 'perros', 'texto': 'Tenemos que en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?',
+     'opciones': ['Sí, está bien', 'No, falta o sobra alguna', 'No sé']},
+    {'id': 'simbolos', 'texto': 'Nos contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?'},
+    {'id': 'tecnica', 'texto': '¿Qué pintura usa? ¿Con qué hace el pelo y las barbas de las máscaras?'},
     {'id': 'taller', 'texto': '¿Qué días y a qué hora se le puede visitar en el taller? ¿Da clases? ¿Manda máscaras a otras ciudades?'},
-    {'id': 'videos', 'texto': '¿Nos da permiso de poner en su página los dos videos de YouTube donde sale usted?',
-     'opciones': ['Sí', 'No']},
-    {'id': 'fotos', 'texto': '¿Quién tomó las fotos de las máscaras y cómo quiere que aparezca su nombre?'},
-    {'id': 'ave-azul', 'texto': 'Hay una foto chiquita, en un collage, de un ave azul de pico amarillo. ¿Es suya?',
+    {'id': 'videos', 'texto': '¿Nos da permiso de poner en su página estos dos videos donde sale usted?',
+     'enlaces': [['Ver el video «Hacedor de máscaras»', 'https://www.youtube.com/watch?v=IcQFjwiqZJI'],
+                 ['Ver el video del taller', 'https://www.youtube.com/watch?v=u3Pr0mBtlms']],
+     'opciones': ['Sí', 'No', 'No los he visto']},
+    {'id': 'fotos', 'texto': '¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo ponemos el nombre de esa persona en la página?'},
+    {'id': 'ave-azul', 'texto': 'En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?',
+     'foto': foto('a065'), 'alt': 'Tres máscaras juntas: un tecolote rojo, un ave azul de pico largo y amarillo, y un coyote blanco',
      'opciones': ['Sí', 'No', 'No sé']},
     {'id': 'mas', 'texto': '¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.'},
 ]
 
-datos = {'mascaras': mascaras, 'generales': GENERALES, 'destino': ''}
+datos = {'mascaras': mascaras, 'generales': GENERALES,
+         'destino': re.sub(r'\D', '', opciones.get('destino', '')), 'destino_nombre': opciones.get('nombre', ''),
+         'firma': opciones.get('firma', '')}
 plantilla = (pathlib.Path(__file__).parent / 'plantilla.html').read_text(encoding='utf-8')
 assert '/*DATOS*/null' in plantilla
 html = plantilla.replace('/*DATOS*/null', json.dumps(datos, ensure_ascii=False).replace('</', '<\\/'))
@@ -82,6 +114,7 @@ lineas = [
     'Todo lo que falta preguntarle, en un solo lugar. La forma más fácil de contestar es la encuesta en línea:',
     'enseña cada máscara con su foto y guarda las respuestas. Este documento tiene las mismas preguntas y los',
     'mismos números, por si prefiere contestar por WhatsApp, por teléfono o en papel («la 12 es un perro»).',
+] + ([f"Encuesta: {opciones['enlace']}"] if opciones.get('enlace') else []) + [
     '', '## De cada máscara', '',
     '1. ¿Qué es? (¿está bien el nombre que le pusimos?)',
     '2. ¿En qué danza o fiesta se usa? (Danza de los Morenos, Pastorela, otra, o no se baila)',

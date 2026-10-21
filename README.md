@@ -89,7 +89,7 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
 - [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
-- [ ] Las 12 preguntas de la galería en `datos/preguntas-familia.md`: el ocelote, el perro, los coyotes de arcoíris, los rostros negros, los seres encimados y otras piezas sin identificar.
+- [ ] Que don Gorgonio conteste la encuesta: https://claude.ai/artifact/4aD8EM9gR3y1vpgU86ByHx (una máscara por pantalla: qué es, en qué danza o fiesta se usa y qué significa, más preguntas sobre él). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`. La encuesta se arma con `herramientas/encuesta/generar_encuesta.py`.
 - [ ] Si son de don Gorgonio las piezas en tonos pastel (un felino y dos toros) y el ave azul de pico amarillo. Por ahora están fuera de la galería (`APARTADAS` en `armar_galeria.py`).
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
 - [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
