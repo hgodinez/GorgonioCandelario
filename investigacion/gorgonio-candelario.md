@@ -160,7 +160,7 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
   8. Aplicar una base blanca de blanco de España.
   9. Pintar varias manos. ⚠ Guadalupe dice pintura de aceite o mate; la SIC, acrílica.
 - **Cuernos:** los del borrego cimarrón se tallan en la misma madera; los del chivo se pegan y se clavan.
-- **Tiempo de trabajo:** unos 3 días por máscara, de hasta 12 horas diarias (Esaú López). Un borrego cimarrón lleva de 10 a 15 días (Guadalupe).
+- **Tiempo de trabajo:** unos 3 días por máscara, de hasta 12 horas diarias (Esaú López). Un borrego cimarrón lleva de 10 a 15 días (Guadalupe). En el sitio se usa el dato de la familia: a don Gorgonio le lleva unos 10 días terminar una máscara (ver abajo).
 
 ### Links corregidos
 - Las fichas del Museum of International Folk Art (MOIFA) estaban cortadas. Ahora tienen la URL completa:
@@ -183,4 +183,5 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
   - dos linces (uno con franjas y zigzag rojo, otro con manchas en orejas y hocico);
   - guacamaya verde;
   - gallo anaranjado.
+- **Tiempo de trabajo:** a don Gorgonio le lleva unos 10 días terminar una máscara.
 - ⚠ Faltan fotos de los perros y del ocelote.
