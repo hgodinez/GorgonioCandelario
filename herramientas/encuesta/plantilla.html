@@ -146,8 +146,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   transition: transform 0.2s ease;
 }
-.navegacion .envoltura { display: grid; grid-template-columns: 1fr 1.4fr; gap: 0.75rem; }
-.navegacion .boton { white-space: nowrap; padding-inline: 0.6rem; }
+.navegacion .envoltura { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 0.75rem; }
+.navegacion .boton { white-space: normal; line-height: 1.15; padding-inline: 0.6rem; }
 /* mientras escribe en el celular, la barra de abajo se quita para no tapar lo que escribe */
 @media (pointer: coarse) { .escribiendo .navegacion { transform: translateY(110%); } }
 /* pantallas bajas (teléfono acostado, mucho zoom): las barras dejan de flotar */
@@ -230,7 +230,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     Object.keys(obj(g)).forEach(function (k) { var v = obj(g[k]); o[k] = { opcion: txt(v.opcion), texto: txt(v.texto) }; });
     return o;
   }
-  var estado = { r: {}, g: {}, gAct: "", pos: "inicio", ultima: 0, enviadas: {}, mandado: {}, audios: {}, salida: {}, clave: "", dispositivo: "" };
+  var estado = { r: {}, g: {}, gAct: "", pos: "inicio", ultima: 0, enviadas: {}, mandado: {}, audios: {}, salida: {}, sbHecho: {}, rechazadas: {}, clave: "", dispositivo: "" };
   var hayAlmacen = false;
   try { localStorage.setItem(CLAVE + "-p", "1"); localStorage.removeItem(CLAVE + "-p"); hayAlmacen = true; } catch (e) {}
   try {
@@ -247,11 +247,16 @@ textarea { min-height: 6.5rem; resize: vertical; }
       if (Array.isArray(g0.audios[k])) estado.audios[k] = g0.audios[k].filter(function (a) { return a && typeof a.archivo === "string"; });
     });
     estado.salida = obj(g0.salida);
+    estado.sbHecho = obj(g0.sbHecho);
+    estado.rechazadas = obj(g0.rechazadas);
     estado.clave = txt(g0.clave);
     estado.dispositivo = txt(g0.dispositivo);
   } catch (e) {}
-  // La clave secreta viene en el enlace (…?clave=XXXX) y se recuerda en este teléfono
-  try { var claveUrl = new URLSearchParams(location.search).get("clave"); if (claveUrl) estado.clave = claveUrl.trim(); } catch (e) {}
+  // La clave secreta viene en el enlace (…?clave=XXXX) y se recuerda en este teléfono. Solo letras sin acento,
+  // números, - o _: lo que aceptan la base de datos y los nombres de los audios
+  var CLAVE_OK = /^[A-Za-z0-9_-]{8,100}$/;
+  try { var claveUrl = (new URLSearchParams(location.search).get("clave") || "").trim(); if (CLAVE_OK.test(claveUrl)) estado.clave = claveUrl; } catch (e) {}
+  if (!CLAVE_OK.test(estado.clave)) estado.clave = "";
   if (!estado.dispositivo) {
     try { estado.dispositivo = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(8)), function (b) { return ("0" + b.toString(16)).slice(-2); }).join(""); }
     catch (e) { estado.dispositivo = String(Math.random()).slice(2, 14); }
@@ -282,11 +287,14 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function dondeSeGuarda() {
     if (sbActivo() && !sbFallo) return textoSync();
     if (modo === "db") return "Lo que contesta se guarda en línea.";
-    if (hayAlmacen) return "Lo que contesta se queda guardado en este teléfono, pero no me llega solo: mándemelo con el botón verde.";
-    return "Este teléfono no puede guardar lo que conteste. Mándemelo por WhatsApp antes de cerrar la página.";
+    var fallo = sbActivo() ? "No pude guardar por internet. " : "";
+    if (hayAlmacen) return fallo + "Lo que contesta se queda guardado en este teléfono, pero no me llega solo: cuando quiera, mándemelo con el botón verde «Mandar lo que llevo».";
+    return fallo + "Este teléfono no puede guardar lo que conteste. Mándemelo por WhatsApp antes de cerrar la página.";
   }
 
   // ---------- Supabase: cada respuesta se manda por internet en cuanto se puede ----------
+  // estado.salida: lo que falta por mandar (sigue ahí si se cierra la página); estado.sbHecho: huella de lo
+  // último que llegó de cada pregunta; estado.rechazadas: lo que la base no aceptó (eso va por WhatsApp)
   var sbFallo = false, sbEnviando = false, sbEspera = 0, sbTiempo = null, sbSinRed = false;
   function sbActivo() { return !!(SB && estado.clave); }
   function encabezados(extra) {
@@ -294,54 +302,99 @@ textarea { min-height: 6.5rem; resize: vertical; }
     if (/^eyJ/.test(SB.key)) h.Authorization = "Bearer " + SB.key; // las claves anon viejas son JWT
     return Object.assign(h, extra || {});
   }
+  function urlSB(ruta) { return SB.url.replace(/\/$/, "") + ruta; }
   function pendientesSalida() { return Object.keys(estado.salida).length; }
+  function huella(o) {
+    var s = JSON.stringify(o), h = 5381;
+    for (var i = 0; i < s.length; i++) h = (h * 33 + s.charCodeAt(i)) | 0;
+    return s.length + "." + (h >>> 0).toString(36);
+  }
   function textoSync() {
-    if (sbEnviando || pendientesSalida()) return sbSinRed ? "Sin internet por ahora: se guarda en cuanto haya conexión." : "Guardando…";
+    if (sbEnviando || pendientesSalida()) {
+      if (!sbSinRed) return "Guardando…";
+      return navigator.onLine === false ? "Sin internet por ahora: se guarda en cuanto haya conexión."
+        : "Todavía no se guarda; lo intento otra vez solo. Lo que contesta no se pierde.";
+    }
+    if (Object.keys(estado.rechazadas).length && noLlegaron().length) return "Casi todo me llegó, pero algo no se pudo guardar por internet: mándemelo con el botón verde «Mandar lo que no llegó».";
     return "✓ Guardado. Lo que contesta me llega solo.";
   }
   function pintarSync() {
     var t = dondeSeGuarda();
     app.querySelectorAll(".estado-guardado").forEach(function (el) { el.textContent = t; });
   }
+  function fila(it) {
+    return { clave: estado.clave, dispositivo: estado.dispositivo, tipo: it.tipo, pregunta: it.pregunta,
+      numero: it.numero == null ? null : it.numero, nombre: it.nombre == null ? null : it.nombre, respuesta: it.respuesta };
+  }
   function encolar(tipo, pregunta, numero, nombre, resp) {
-    if (!sbActivo() || sbFallo) return;
+    if (!sbActivo()) return;
+    // se aparta aunque ahora no haya internet o falle la clave: se manda en cuanto se pueda, o al volver a abrir
     estado.salida[tipo + ":" + pregunta] = { tipo: tipo, pregunta: pregunta, numero: numero, nombre: nombre, respuesta: resp, t: new Date().toISOString() };
     guardarLocal();
-    clearTimeout(sbTiempo);
-    sbTiempo = setTimeout(enviarSalida, 1500);
+    // sin internet manda el reintento con espera: un cambio nuevo no lo adelanta
+    if (!sbFallo && !sbSinRed) { clearTimeout(sbTiempo); sbTiempo = setTimeout(enviarSalida, 1500); }
     pintarSync();
   }
-  function encolarMascara(id) {
-    var m = porId[id], r = estado.r[id];
-    encolar("mascara", id, m.n, m.nombre, { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, significado: r.significado });
+  function datosMascara(id) {
+    var r = estado.r[id] || limpiaR({});
+    return { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, significado: r.significado };
   }
-  function encolarGeneral(qid) {
-    var k = G.findIndex(function (q) { return q.id === qid; }), v = estado.g[qid] || { opcion: "", texto: "" };
-    encolar("general", qid, k + 1, G[k].texto, { opcion: v.opcion, texto: v.texto });
+  function datosGeneral(qid) { var v = estado.g[qid] || { opcion: "", texto: "" }; return { opcion: v.opcion, texto: v.texto }; }
+  function datosAudio(archivo, seg, ambito) { return { archivo: archivo, segundos: seg, de: ambito }; }
+  // número y nombre de una máscara («m:slug») o de una pregunta sobre él («g:id»)
+  function datosAmbito(ambito) {
+    if (ambito.indexOf("m:") === 0) { var m = porId[ambito.slice(2)]; return m ? { numero: m.n, nombre: m.nombre } : null; }
+    var k = G.findIndex(function (q) { return "g:" + q.id === ambito; });
+    return k >= 0 ? { numero: k + 1, nombre: G[k].texto } : null;
   }
+  function encolarMascara(id) { var m = porId[id]; encolar("mascara", id, m.n, m.nombre, datosMascara(id)); }
+  function encolarGeneral(qid) { var d = datosAmbito("g:" + qid); encolar("general", qid, d.numero, d.nombre, datosGeneral(qid)); }
+  function quitarDeSalida(k, it) { if (estado.salida[k] && estado.salida[k].t === it.t) delete estado.salida[k]; }
   function enviarSalida() {
     if (!sbActivo() || sbFallo || sbEnviando) return;
     var claves = Object.keys(estado.salida);
     if (!claves.length) { pintarSync(); return; }
     var k = claves[0], it = estado.salida[k];
     sbEnviando = true; pintarSync();
-    fetch(SB.url.replace(/\/$/, "") + "/rest/v1/respuestas", {
+    // si no contesta en 20 s (el teléfono cambió de red, por ejemplo) se corta y se vuelve a intentar
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var plazo = setTimeout(function () { if (ctl) ctl.abort(); }, 20000);
+    fetch(urlSB("/rest/v1/respuestas"), {
       method: "POST",
       headers: encabezados({ "Content-Type": "application/json", Prefer: "return=minimal" }),
-      body: JSON.stringify({ clave: estado.clave, dispositivo: estado.dispositivo, tipo: it.tipo, pregunta: it.pregunta, numero: it.numero, nombre: it.nombre, respuesta: it.respuesta })
+      body: JSON.stringify(fila(it)),
+      signal: ctl ? ctl.signal : undefined
     }).then(function (res) {
-      sbEnviando = false;
+      clearTimeout(plazo);
       if (res.ok) {
-        if (estado.salida[k] && estado.salida[k].t === it.t) delete estado.salida[k];
+        sbEnviando = false;
+        estado.sbHecho[k] = huella(it.respuesta); delete estado.rechazadas[k];
+        quitarDeSalida(k, it);
         sbEspera = 0; sbSinRed = false; guardarLocal(); pintarSync();
         if (pendientesSalida()) enviarSalida();
+      } else if (res.status === 401 || res.status === 403 || res.status === 404) {
+        sbFallar(); // la clave no sirve o falta la tabla: se sigue por WhatsApp
       } else if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429) {
-        // la clave no sirve o la base de datos no lo acepta: se sigue por WhatsApp
-        sbFallo = true;
-        anunciar("No se pudo guardar en internet. Sus respuestas quedan en este teléfono para mandarlas por WhatsApp.");
-        render(false);
-      } else { reintentarSalida(); }
-    }, function () { sbEnviando = false; reintentarSalida(); });
+        res.json().catch(function () { return {}; }).then(function (e) {
+          if (res.status === 413 || /^2[23]/.test(String(e && e.code || ""))) {
+            // la base no acepta ese renglón (muy largo, dato inválido): se aparta para WhatsApp y se sigue con lo demás
+            sbEnviando = false;
+            estado.rechazadas[k] = huella(it.respuesta);
+            quitarDeSalida(k, it);
+            guardarLocal(); pintarSync(); enviarSalida();
+          } else sbFallar();
+        });
+      } else { sbEnviando = false; reintentarSalida(); }
+    }, function () { clearTimeout(plazo); sbEnviando = false; reintentarSalida(); });
+  }
+  function sbFallar() {
+    sbEnviando = false; sbFallo = true; clearTimeout(sbTiempo);
+    pararGrabacion(); // su audio se guarda o queda pendiente
+    anunciar("No pude guardar por internet. Sus respuestas quedan en este teléfono para mandarlas por WhatsApp.");
+    if (editando()) { pintarSync(); return; } // los botones de WhatsApp salen en la siguiente pantalla
+    render(false);
+    var mn = app.querySelector("main");
+    if (mn && estado.pos !== "inicio") mn.insertAdjacentHTML("afterbegin", '<p class="aviso">No pude guardar por internet. Desde ahora lo que conteste se queda en este teléfono: cuando quiera, mándemelo con el botón verde «Mandar lo que llevo».</p>');
   }
   function reintentarSalida() {
     sbSinRed = true; pintarSync();
@@ -349,27 +402,99 @@ textarea { min-height: 6.5rem; resize: vertical; }
     clearTimeout(sbTiempo);
     sbTiempo = setTimeout(enviarSalida, sbEspera + Math.random() * 1000);
   }
+  // Al salir de la página (botón de inicio, cambiar a WhatsApp, cerrar) lo pendiente sale en un solo envío
+  // que el teléfono termina aunque la página se cierre. No se quita de la cola: si ya llegó, la próxima vez
+  // llega repetido y en ultimas_respuestas cuenta el más nuevo
+  function vaciarSalida() {
+    if (!sbActivo() || sbFallo || !pendientesSalida()) return;
+    var filas = [], bytes = 2;
+    Object.keys(estado.salida).forEach(function (k) {
+      var f = JSON.stringify(fila(estado.salida[k])), b = encodeURIComponent(f).replace(/%[0-9A-F]{2}/g, "x").length + 1;
+      if (bytes + b < 60000) { filas.push(f); bytes += b; } // keepalive admite hasta 64 KB
+    });
+    if (!filas.length) return;
+    try {
+      fetch(urlSB("/rest/v1/respuestas"), { method: "POST", keepalive: true,
+        headers: encabezados({ "Content-Type": "application/json", Prefer: "return=minimal" }), body: "[" + filas.join(",") + "]" }).catch(function () {});
+    } catch (e) {}
+  }
+  // Al abrir: lo que se contestó antes de tener la clave o mientras falló internet, y no ha llegado, se aparta
+  function ponerAlDia() {
+    if (!sbActivo()) return;
+    var falta = function (k, datos, conAlgo) {
+      if (estado.salida[k]) return false;
+      var h = huella(datos);
+      if (estado.sbHecho[k] === h || estado.rechazadas[k] === h) return false;
+      return conAlgo || !!estado.sbHecho[k]; // lo que cambió después de llegar va aunque ahora esté vacío
+    };
+    M.forEach(function (m) {
+      var r = estado.r[m.id];
+      if (r && falta("mascara:" + m.id, datosMascara(m.id), !!(r.es || r.suya || r.que_es.trim() || r.uso.length || r.uso_otro.trim() || r.significado.trim()))) encolarMascara(m.id);
+    });
+    G.forEach(function (q) {
+      var v = estado.g[q.id];
+      if (v && falta("general:" + q.id, datosGeneral(q.id), !!(v.opcion || v.texto.trim()))) encolarGeneral(q.id);
+    });
+    Object.keys(estado.audios).forEach(function (amb) {
+      var d = datosAmbito(amb);
+      if (d) estado.audios[amb].forEach(function (a) {
+        var datos = datosAudio(a.archivo, a.seg || 0, amb);
+        if (falta("audio:" + a.archivo, datos, true)) encolar("audio", a.archivo, d.numero, d.nombre, datos);
+      });
+    });
+  }
   window.addEventListener("online", function () { sbEspera = 0; enviarSalida(); subirPendientes(); });
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") vaciarSalida();
+    else { sbEspera = 0; enviarSalida(); subirPendientes(); }
+  });
 
   // ---------- Grabar audios en la página (solo con Supabase) ----------
-  var grabando = null, audiosSesion = {}, audiosPendientes = [];
+  // grabando: la grabación en curso; se aparta ANTES de pedir el micrófono, para que un doble toque no abra
+  // dos. audiosPendientes: los que faltan por subir; también se guardan en el teléfono (IndexedDB) para que
+  // no se pierdan si se cierra la página
+  var grabando = null, micNegado = false, permisoMic = "", despierto = null, audiosSesion = {}, audiosPendientes = [];
+  var GRABANDO = "Grabando… hable con calma. Cuando termine, toque el botón rojo «Terminar y guardar».";
   function puedeGrabar() {
-    return sbActivo() && !sbFallo && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
+    return sbActivo() && !sbFallo && !micNegado && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
   }
   var MIC = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-2.1a7 7 0 0 0 6-6.9h-2z"/></svg>';
   function duracion(seg) { seg = Math.round(seg); return Math.floor(seg / 60) + ":" + ("0" + (seg % 60)).slice(-2); }
+  function cajaDe(ambito) { return app.querySelector('.grabadora[data-ambito="' + ambito + '"]'); }
   function grabadora(ambito, numero, nombre) {
     var guardados = estado.audios[ambito] || [];
     var lista = guardados.map(function (a, k) {
       var url = audiosSesion[a.archivo];
       return '<li>✓ Audio ' + (k + 1) + ' guardado (' + duracion(a.seg || 0) + ')' + (url ? '<audio controls preload="none" src="' + esc(url) + '"></audio>' : "") + '</li>';
     }).join("");
-    var pend = audiosPendientes.filter(function (x) { return x.ambito === ambito; }).length;
+    var mios = audiosPendientes.filter(function (x) { return x.ambito === ambito; });
+    var pend = mios.filter(function (x) { return !x.subiendo && !x.definitivo; }).length;
+    var malos = mios.filter(function (x) { return x.definitivo; });
+    var activo = !!(grabando && grabando.ambito === ambito && grabando.rec);
+    var aviso = activo ? GRABANDO
+      : malos.length ? "No pude guardar " + (malos.length === 1 ? "este audio" : "estos audios") + " por internet. Mándemelo por WhatsApp, por favor."
+      : pend ? "El audio todavía no se guarda, quizá por falta de internet. Lo intento otra vez solo; no cierre la página."
+      : mios.length ? "Guardando el audio…" : "";
     return '<div class="grabadora" data-ambito="' + esc(ambito) + '" data-numero="' + esc(numero) + '" data-nombre="' + esc(nombre) + '">' +
-      '<div class="acciones"><button class="boton whatsapp" type="button" data-grabar>' + MIC + '<span>Grabar un audio</span></button></div>' +
-      '<p class="nota grabadora-estado" aria-live="polite">' + (pend ? "Hay un audio sin guardar. Toque «Intentar otra vez»." : "") + '</p>' +
+      '<div class="acciones"><button class="boton whatsapp' + (activo ? " grabando" : "") + '" type="button" data-grabar>' + MIC + '<span>' +
+      (activo ? "Terminar y guardar (" + duracion((Date.now() - grabando.inicio) / 1000) + ")" : guardados.length ? "Grabar otro audio" : "Grabar un audio") + '</span></button></div>' +
+      '<p class="nota grabadora-estado" aria-live="polite">' + esc(aviso) + '</p>' +
       (pend ? '<div class="acciones"><button class="boton" type="button" data-reintentar>Intentar otra vez</button></div>' : "") +
+      (malos.length ? '<div class="acciones">' + malos.map(function (a) {
+        return '<button class="boton whatsapp" type="button" data-compartir="' + esc(a.archivo) + '">Mandar por WhatsApp el audio que no se guardó</button>';
+      }).join("") + '</div>' : "") +
       (lista ? '<ul class="audios">' + lista + '</ul>' : "") + '</div>';
+  }
+  // vuelve a pintar solo la grabadora, sin tocar lo que esté escribiendo
+  function refrescarGrabadora(ambito, aviso) {
+    var caja = cajaDe(ambito);
+    if (!caja) return;
+    var foco = caja.contains(document.activeElement), t = document.createElement("div");
+    t.innerHTML = grabadora(ambito, caja.dataset.numero, caja.dataset.nombre);
+    var nueva = t.firstChild;
+    caja.parentNode.replaceChild(nueva, caja);
+    if (foco) { var b = nueva.querySelector("[data-grabar]"); if (b) b.focus({ preventScroll: true }); }
+    if (aviso) avisoGrabadora(nueva, aviso);
   }
   function elegirFormato() {
     var opciones = ["audio/webm;codecs=opus", "audio/mp4", "audio/ogg;codecs=opus", "audio/webm"];
@@ -377,42 +502,64 @@ textarea { min-height: 6.5rem; resize: vertical; }
     return "";
   }
   function avisoGrabadora(caja, texto) { var el = caja && caja.querySelector(".grabadora-estado"); if (el) el.textContent = texto; }
+  // que la pantalla no se apague mientras habla (se apagaría a los pocos segundos sin tocarla)
+  function noApagar(si) {
+    try {
+      if (!si) { if (despierto) despierto.release(); despierto = null; return; }
+      if (navigator.wakeLock) navigator.wakeLock.request("screen").then(function (w) { if (grabando) despierto = w; else w.release(); }, function () {});
+    } catch (e) {}
+  }
+  function pararGrabacion() {
+    var g = grabando;
+    if (!g) return;
+    if (g.rec) { if (g.rec.state !== "inactive") g.rec.stop(); }
+    else { g.cancelado = true; grabando = null; } // todavía pedía el permiso del micrófono
+  }
+  function sinMicrofono() {
+    micNegado = true;
+    anunciar("El teléfono no me deja usar el micrófono. Puede mandarme el audio por WhatsApp.");
+    if (!editando()) render(false); // en lugar de la grabadora salen los pasos para mandar el audio por WhatsApp
+  }
   function empezarGrabacion(caja) {
-    var ambito = caja.dataset.ambito;
-    avisoGrabadora(caja, "Pidiendo permiso para usar el micrófono…");
+    var g = { ambito: caja.dataset.ambito, rec: null, inicio: 0, reloj: null, cancelado: false, tope: false };
+    grabando = g;
+    avisoGrabadora(caja, permisoMic === "granted" ? "Preparando el micrófono…" : "El teléfono le va a preguntar si me deja usar el micrófono. Toque «Permitir».");
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (flujo) {
-      var formato = elegirFormato(), rec;
-      try { rec = formato ? new MediaRecorder(flujo, { mimeType: formato }) : new MediaRecorder(flujo); }
-      catch (e) { flujo.getTracks().forEach(function (t) { t.stop(); }); avisoGrabadora(caja, "Este teléfono no puede grabar aquí. Mándeme el audio por WhatsApp."); return; }
-      var trozos = [], inicio = Date.now();
-      grabando = { ambito: ambito, numero: caja.dataset.numero, nombre: caja.dataset.nombre, rec: rec, inicio: inicio, reloj: null };
-      rec.ondataavailable = function (e) { if (e.data && e.data.size) trozos.push(e.data); };
-      rec.onstop = function () {
-        flujo.getTracks().forEach(function (t) { t.stop(); });
-        var g = grabando; grabando = null;
-        clearInterval(g.reloj);
-        var tipo = (rec.mimeType || formato || "audio/webm").split(";")[0];
-        var blob = new Blob(trozos, { type: tipo });
-        var seg = (Date.now() - g.inicio) / 1000;
-        var cajaAhora = app.querySelector('.grabadora[data-ambito="' + g.ambito + '"]');
-        if (cajaAhora) { var b = cajaAhora.querySelector("[data-grabar]"); b.classList.remove("grabando"); b.querySelector("span").textContent = "Grabar otro audio"; }
-        if (!blob.size || seg < 1) { avisoGrabadora(cajaAhora, "El audio salió vacío. Intente otra vez."); return; }
-        subirAudio({ ambito: g.ambito, numero: g.numero, nombre: g.nombre, blob: blob, tipo: tipo, seg: seg });
-      };
-      rec.start(1000);
-      var boton = caja.querySelector("[data-grabar]");
-      boton.classList.add("grabando");
-      var tic = function () {
-        var s0 = (Date.now() - inicio) / 1000;
-        var b = app.querySelector('.grabadora[data-ambito="' + ambito + '"] [data-grabar] span');
-        if (b) b.textContent = "Terminar y guardar (" + duracion(s0) + ")";
-        if (s0 > 600 && grabando) grabando.rec.stop(); // máximo 10 minutos por audio
-      };
-      tic();
-      grabando.reloj = setInterval(tic, 1000);
-      avisoGrabadora(caja, "Grabando… hable con calma. Cuando termine, toque el botón otra vez.");
-    }, function () {
-      avisoGrabadora(caja, "El teléfono no dejó usar el micrófono. Cuando se lo pregunte, toque «Permitir». También puede mandarme el audio por WhatsApp.");
+      var soltar = function () { flujo.getTracks().forEach(function (t) { t.stop(); }); };
+      if (g.cancelado || grabando !== g) { soltar(); return; }
+      var formato = elegirFormato(), rec, trozos = [];
+      try {
+        rec = formato ? new MediaRecorder(flujo, { mimeType: formato }) : new MediaRecorder(flujo);
+        rec.ondataavailable = function (e) { if (e.data && e.data.size) trozos.push(e.data); };
+        rec.onstop = function () {
+          soltar(); clearInterval(g.reloj); noApagar(false);
+          if (grabando === g) grabando = null; // siempre la suya, nunca otra grabación
+          var tipo = (rec.mimeType || formato || "audio/webm").split(";")[0].trim() || "audio/webm";
+          var blob = new Blob(trozos, { type: tipo }), seg = (Date.now() - g.inicio) / 1000;
+          if (!blob.size || seg < 1) { refrescarGrabadora(g.ambito, "El audio salió vacío. Para grabar, toque otra vez el botón verde."); return; }
+          var d = datosAmbito(g.ambito) || {};
+          var a = { ambito: g.ambito, numero: d.numero, nombre: d.nombre, blob: blob, tipo: tipo, seg: seg, tope: g.tope };
+          a.archivo = nombreArchivo(a);
+          audiosPendientes.push(a); idbGuardar(a);
+          subirAudio(a);
+        };
+        rec.start(1000);
+      } catch (e) { soltar(); grabando = null; sinMicrofono(); return; }
+      g.rec = rec; g.inicio = Date.now();
+      g.reloj = setInterval(function () {
+        var s0 = (Date.now() - g.inicio) / 1000, b = app.querySelector('.grabadora[data-ambito="' + g.ambito + '"] [data-grabar] span');
+        if (b && grabando === g) b.textContent = "Terminar y guardar (" + duracion(s0) + ")";
+        if (s0 > 600 && rec.state !== "inactive") { g.tope = true; rec.stop(); } // máximo 10 minutos por audio
+      }, 1000);
+      noApagar(true);
+      refrescarGrabadora(g.ambito);
+      anunciar("Grabando");
+    }, function (err) {
+      if (grabando === g) grabando = null;
+      if (g.cancelado) return;
+      var n = err && err.name;
+      if (n === "NotAllowedError" || n === "SecurityError" || n === "NotFoundError" || n === "NotSupportedError") sinMicrofono();
+      else avisoGrabadora(cajaDe(g.ambito), "No pude usar el micrófono. Espere un momento y toque otra vez el botón verde.");
     });
   }
   function nombreArchivo(a) {
@@ -422,31 +569,111 @@ textarea { min-height: 6.5rem; resize: vertical; }
     return estado.clave + "/" + (a.ambito.charAt(0) === "g" ? "usted-" : "") + n + parte + "-" + Date.now() + "." + ext;
   }
   function subirAudio(a) {
-    var caja = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
-    avisoGrabadora(caja, "Guardando el audio…");
+    if (a.subiendo || !sbActivo()) return; // ya va en camino (doble toque, evento online, reintento solo)
+    a.subiendo = true; clearTimeout(a.reloj);
     a.archivo = a.archivo || nombreArchivo(a);
-    fetch(SB.url.replace(/\/$/, "") + "/storage/v1/object/audios/" + a.archivo.split("/").map(encodeURIComponent).join("/"), {
-      method: "POST", headers: encabezados({ "Content-Type": a.tipo, "x-upsert": "false" }), body: a.blob
+    refrescarGrabadora(a.ambito);
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    // si no termina en un buen rato (cuenta con una conexión lenta) se corta y se vuelve a intentar
+    var plazo = setTimeout(function () { if (ctl) ctl.abort(); }, Math.max(60000, a.blob.size / 5));
+    fetch(urlSB("/storage/v1/object/audios/" + a.archivo.split("/").map(encodeURIComponent).join("/")), {
+      method: "POST", headers: encabezados({ "Content-Type": a.tipo, "x-upsert": "false" }), body: a.blob, signal: ctl ? ctl.signal : undefined
     }).then(function (res) {
-      if (!res.ok) throw res;
+      if (res.ok || res.status === 409) return; // 409: ya estaba guardado (se perdió la respuesta de un intento anterior)
+      return res.text().catch(function () { return ""; }).then(function (t) {
+        if (/"statusCode"\s*:\s*"?409|Duplicate|already exists/i.test(t)) return;
+        var sc = /"statusCode"\s*:\s*"?(\d{3})/.exec(t); // Storage a veces pone el código de verdad en el cuerpo
+        throw { status: sc ? Number(sc[1]) : res.status };
+      });
+    }).then(function () {
+      clearTimeout(plazo); a.subiendo = false; a.espera = 0;
       audiosPendientes = audiosPendientes.filter(function (x) { return x !== a; });
-      (estado.audios[a.ambito] = estado.audios[a.ambito] || []).push({ archivo: a.archivo, seg: Math.round(a.seg), t: new Date().toISOString() });
+      idbBorrar(a.archivo);
+      var lista = estado.audios[a.ambito] = estado.audios[a.ambito] || [];
+      if (!lista.some(function (x) { return x.archivo === a.archivo; })) lista.push({ archivo: a.archivo, seg: Math.round(a.seg), t: new Date().toISOString() });
       try { audiosSesion[a.archivo] = URL.createObjectURL(a.blob); } catch (e) {}
       guardarLocal();
-      encolar("audio", a.archivo, Number(a.numero) || null, a.nombre, { archivo: a.archivo, segundos: Math.round(a.seg), de: a.ambito });
-      if (!editando()) render(false);
+      var d = datosAmbito(a.ambito) || {};
+      encolar("audio", a.archivo, d.numero || null, d.nombre || a.nombre || null, datosAudio(a.archivo, Math.round(a.seg), a.ambito));
+      refrescarGrabadora(a.ambito, a.tope ? "El audio llegó a 10 minutos y ya quedó guardado. Si quiere seguir hablando, toque «Grabar otro audio»."
+        : "✓ Listo: el audio " + lista.length + " quedó guardado. Ya me llegó.");
       anunciar("Audio guardado");
-    }).catch(function () {
-      if (audiosPendientes.indexOf(a) < 0) audiosPendientes.push(a);
-      if (!editando()) render(false);
-      var c = app.querySelector('.grabadora[data-ambito="' + a.ambito + '"]');
-      avisoGrabadora(c, "No se pudo guardar el audio, quizá por falta de internet. No cierre la página y toque «Intentar otra vez».");
+    }, function (err) {
+      clearTimeout(plazo); a.subiendo = false;
+      var st = err && err.status;
+      if (st >= 400 && st < 500 && st !== 408 && st !== 429) {
+        // no lo acepta (permiso, tipo de archivo, tamaño): reintentar no sirve, mejor por WhatsApp
+        a.definitivo = true;
+        refrescarGrabadora(a.ambito);
+        anunciar("No pude guardar el audio por internet. Mándemelo por WhatsApp, por favor.");
+        return;
+      }
+      a.espera = Math.min(120000, (a.espera || 5000) * 2);
+      a.reloj = setTimeout(function () { subirAudio(a); }, a.espera);
+      refrescarGrabadora(a.ambito);
+      anunciar("El audio todavía no se guarda. Lo intento otra vez solo.");
     });
   }
-  function subirPendientes() { audiosPendientes.slice().forEach(subirAudio); }
+  function subirPendientes() { audiosPendientes.filter(function (x) { return !x.definitivo; }).forEach(subirAudio); }
+  // El audio que no se pudo subir: se manda como archivo por WhatsApp (o se abre WhatsApp para grabarlo ahí)
+  function compartirAudio(a) {
+    var d = datosAmbito(a.ambito) || {}, archivo = null;
+    var texto = (a.ambito.charAt(0) === "m" ? "Máscara " : "Pregunta sobre mí ") + (d.numero || "") + ": " + (d.nombre || "") + ". Le mando un audio:";
+    try { archivo = new File([a.blob], a.archivo.split("/").pop(), { type: a.tipo }); } catch (e) {}
+    if (archivo && navigator.canShare && navigator.canShare({ files: [archivo] })) {
+      navigator.share({ files: [archivo], text: texto }).then(function () {
+        audiosPendientes = audiosPendientes.filter(function (x) { return x !== a; });
+        idbBorrar(a.archivo);
+        refrescarGrabadora(a.ambito, "✓ Listo. ¡Gracias!");
+      }, function () {});
+    } else {
+      window.open(wa(texto), "_blank", "noopener");
+    }
+  }
   window.addEventListener("beforeunload", function (e) {
-    if (audiosPendientes.length || grabando) { e.preventDefault(); e.returnValue = ""; }
+    if (grabando || audiosPendientes.some(function (x) { return !x.definitivo; })) { e.preventDefault(); e.returnValue = ""; }
   });
+  // Audios pendientes guardados en el teléfono: si se cerró la página antes de subirlos, se suben ahora
+  var idb = null;
+  function idbHacer(f) { if (!idb) return; try { f(idb.transaction("pendientes", "readwrite").objectStore("pendientes")); } catch (e) {} }
+  function idbGuardar(a) {
+    idbHacer(function (s) { s.put({ archivo: a.archivo, ambito: a.ambito, numero: a.numero, nombre: a.nombre, tipo: a.tipo, seg: a.seg, tope: !!a.tope, blob: a.blob }); });
+  }
+  function idbBorrar(archivo) { idbHacer(function (s) { s.delete(archivo); }); }
+  if (SB) {
+    try {
+      var pet = indexedDB.open("encuesta-gorgonio-audios", 1);
+      pet.onupgradeneeded = function () { pet.result.createObjectStore("pendientes", { keyPath: "archivo" }); };
+      pet.onsuccess = function () {
+        idb = pet.result;
+        audiosPendientes.forEach(idbGuardar); // los que se grabaron mientras se abría
+        try {
+          var lee = idb.transaction("pendientes").objectStore("pendientes").getAll();
+          lee.onsuccess = function () {
+            (lee.result || []).forEach(function (a) {
+              if (a && a.blob && typeof a.archivo === "string" && typeof a.ambito === "string" &&
+                  !audiosPendientes.some(function (x) { return x.archivo === a.archivo; })) {
+                audiosPendientes.push(a); refrescarGrabadora(a.ambito);
+              }
+            });
+            subirPendientes();
+          };
+        } catch (e) {}
+      };
+    } catch (e) {}
+    // si el micrófono ya está bloqueado para la página, desde el principio se ofrece WhatsApp
+    try {
+      navigator.permissions.query({ name: "microphone" }).then(function (p) {
+        var ver = function () {
+          permisoMic = p.state;
+          var antes = micNegado;
+          micNegado = p.state === "denied";
+          if (antes !== micNegado && !grabando && !editando()) render(false);
+        };
+        ver(); p.onchange = ver;
+      }, function () {});
+    } catch (e) {}
+  }
 
   // ---------- Guardar en línea: solo si quien abre la página puede escribir ----------
   var db = null, modo = "local", quitar = [];
@@ -567,15 +794,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
       if (usos.length) l.push("Se usa en: " + usos.join(", "));
       if (r.significado.trim()) l.push("Significa: " + r.significado.trim());
       var na = (estado.audios["m:" + m.id] || []).length;
-      if (na) l.push(na === 1 ? "Mandó 1 audio" : "Mandó " + na + " audios");
+      if (na) l.push(na === 1 ? "Grabó 1 audio" : "Grabó " + na + " audios");
       lista.push({ id: m.id, texto: l.join("\n") });
     });
     G.forEach(function (q, k) {
-      var t = textoGeneral(q);
-      if (t) lista.push({ id: "g:" + q.id, texto: "Sobre usted, pregunta " + (k + 1) + ". " + q.texto + "\n" + t });
+      var na = (estado.audios["g:" + q.id] || []).length;
+      var l = [textoGeneral(q), na ? (na === 1 ? "Grabó 1 audio" : "Grabó " + na + " audios") : ""].filter(Boolean).join("\n");
+      if (l) lista.push({ id: "g:" + q.id, texto: "Sobre usted, pregunta " + (k + 1) + ". " + q.texto + "\n" + l });
     });
     return lista;
   }
+  // Con Supabase, lo que la base no aceptó (y no ha mandado por WhatsApp)
+  function rechazada(id) { return !!estado.rechazadas[id.indexOf("g:") === 0 ? "general:" + id.slice(2) : "mascara:" + id]; }
+  function noLlegaron() { return bloques().filter(function (b) { return rechazada(b.id) && estado.mandado[b.id] !== b.texto; }); }
   // Partes de un tamaño seguro para un enlace de WhatsApp, medido ya codificado
   function partes(lista) {
     var LIM = 2800, largo = function (x) { return encodeURIComponent(x).length; };
@@ -606,7 +837,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 
   // ---------- Pantallas ----------
   function ir(pos, sinHistorial) {
-    if (grabando) grabando.rec.stop();
+    pararGrabacion();
     estado.pos = String(pos);
     if (/^\d+$/.test(estado.pos)) estado.ultima = Number(estado.pos);
     guardarLocal();
@@ -638,9 +869,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
 
   function mandarLoQueLlevo(nota) {
     var n = cuantas() + generalesContestadas();
+    var boton = !n ? "" : sbActivo() && !sbFallo && noLlegaron().length ? "Mandar lo que no llegó" : enLinea() ? "" : "Mandar lo que llevo";
     return '<div class="cierre-mascara">' + (nota ? '<p class="nota">' + nota + '</p>' : "") +
       '<p class="nota estado-guardado">' + esc(dondeSeGuarda()) + '</p>' +
-      (n && !enLinea() ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button></div>' : "") + '</div>';
+      (boton ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">' + boton + '</button></div>' : "") + '</div>';
   }
 
   function pantallaMascara(i) {
@@ -654,7 +886,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       opciones("suya", [{ v: "si", t: "Sí, es mía" }, { v: "no", t: "No, la hizo otra persona" }, { v: "nose", t: "No sé" }], r.suya, false, "p-suya") + '</section>' : "";
     var listaEs, ayudaEs;
     if (m.duda && m.duda.length) {
-      ayudaEs = "No estoy seguro. ¿Es " + m.duda.join(" o ") + "?";
+      ayudaEs = "No estoy seguro. ¿Es " + (m.duda.length > 2 ? m.duda.slice(0, -1).join(", ") + " o " + m.duda[m.duda.length - 1] : m.duda.join(" o ")) + "?";
       listaEs = m.duda.map(function (d) { return { v: cap(d), t: m.duda.length === 1 ? "Sí, es " + d : cap(d) }; })
         .concat([{ v: "otra", t: "Es otra cosa" }, { v: "nose", t: "No sé" }]);
     } else {
@@ -686,10 +918,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
       '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
       (puedeGrabar()
-        ? '<p class="ayuda">Si prefiere, grábeme un audio: toque el botón verde, hable, y cuando termine tóquelo otra vez.</p>' + grabadora("m:" + m.id, m.n, m.nombre)
-        : '<p class="ayuda" id="audio-' + i + '">Si prefiere, mándeme un audio:</p>' +
+        ? '<p class="ayuda">Si prefiere hablar, cuénteme todo de esta máscara en un audio: toque el botón verde «Grabar un audio», hable y, cuando termine, toque el botón rojo «Terminar y guardar».</p>' + grabadora("m:" + m.id, m.n, m.nombre)
+        : '<p class="ayuda" id="audio-' + i + '">' + (micNegado ? "El teléfono no me deja usar el micrófono aquí, pero puede mandarme un audio por WhatsApp:" : "Si prefiere, mándeme un audio:") + '</p>' +
           '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
-          '<li>Toque el botón verde. Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".") + '</li>' +
+          '<li>Toque el botón verde «Contestar con un audio». Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".") + '</li>' +
           '<li>Mande ese mensaje.</li>' +
           '<li>Deje apretado el micrófono mientras habla. Al soltarlo, el audio se manda.</li>' +
           '<li>Regrese aquí para seguir.</li></ol>' +
@@ -709,7 +941,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Todas sus máscaras</h1>' +
       '<p class="ayuda">Lleva ' + hechas + ' de ' + TOTAL + ' contestadas. Toque una para verla.</p></div>' +
       '<div class="acciones"><button class="boton" type="button" data-ir="usted">Preguntas sobre usted</button>' +
-      (hechas + generalesContestadas() ? '<button class="boton' + (enLinea() ? "" : " whatsapp") + '" type="button" data-ir="enviar">' + (enLinea() ? "Ver mis respuestas" : "Mandar lo que llevo") + '</button>' : "") + '</div>' +
+      (hechas + generalesContestadas() ? '<button class="boton' + (enLinea() ? "" : " whatsapp") + '" type="button" data-ir="enviar">' + (enLinea() ? "Ver sus respuestas" : "Mandar lo que llevo") + '</button>' : "") + '</div>' +
       '<ul class="rejilla">' + M.map(function (m) {
         var ok = contestada(m.id);
         return '<li><button type="button" data-ir="' + m.n + '" class="' + (ok ? "contestada" : "") + (m.n === ultima ? " aqui" : "") + '" aria-label="Máscara ' + m.n + ': ' + esc(m.ver) + (ok ? ", contestada" : "") + '">' +
@@ -726,7 +958,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       (puedeGrabar()
         ? '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. En cada pregunta puede escribir o grabarme un audio.</p></div>'
         : '<p class="ayuda">Igual que con las máscaras: conteste las que quiera. Si prefiere, mándeme audios por WhatsApp diciendo el número de la pregunta.</p>' +
-          '<div class="acciones"><a class="boton chico" href="' + esc(wa("Sobre las preguntas de usted y su taller, le mando unos audios:")) + '" target="_blank" rel="noopener">Contestar con audios de WhatsApp</a></div></div>') +
+          '<div class="acciones"><a class="boton chico" href="' + esc(wa("Le mando unos audios para las preguntas sobre mí y mi taller (digo el número de cada pregunta):")) + '" target="_blank" rel="noopener">Contestar con audios de WhatsApp</a></div></div>') +
       G.map(function (q, k) {
         var v = estado.g[q.id] || { opcion: "", texto: "" }, h = "g-" + q.id;
         var campo = q.corto
@@ -740,15 +972,15 @@ textarea { min-height: 6.5rem; resize: vertical; }
       }).join("") + mandarLoQueLlevo("") + '</main>';
     nav.hidden = false;
     atras.textContent = "← Máscaras";
-    adelante.textContent = "Mandar →";
+    adelante.textContent = enLinea() ? "Terminar →" : "Mandar →";
   }
 
   var mandarTodo = false;
   function pantallaEnviar() {
-    var lista = bloques();
+    var lista = bloques(), porInternet = sbActivo() && !sbFallo;
     var nuevos = lista.filter(function (b) { return estado.mandado[b.id] !== b.texto; });
     var yaMando = lista.length - nuevos.length;
-    var aMandar = mandarTodo || !yaMando ? lista : nuevos;
+    var aMandar = porInternet ? noLlegaron() : mandarTodo || !yaMando ? lista : nuevos;
     var ps = partes(aMandar), todo = ps.map(function (p) { return p.texto; }).join("\n\n");
     var hechas = cuantas(), gen = generalesContestadas(), ultima = estado.ultima || 1;
     var miChat = "Escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".";
@@ -756,12 +988,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<li>Toque el botón verde.</li>' +
       '<li>Se abre WhatsApp con el mensaje ya escrito.' + (DESTINO ? "" : " " + miChat) + ' Toque la flecha para enviarlo.</li>' +
       (ps.length > 1 ? '<li>Regrese aquí y toque el siguiente botón verde.</li>' : "") + '</ol>';
+    var botones = '<div class="partes">' + ps.map(function (p, k) {
+      var ya = !!estado.enviadas[p.clave];
+      var titulo = "Mandar por WhatsApp" + (ps.length > 1 ? " (parte " + (k + 1) + " de " + ps.length + ")" : "");
+      return '<a class="boton whatsapp ancho' + (ya ? " mandada" : "") + '" data-parte="' + k + '" href="' + esc(wa(p.texto)) + '" target="_blank" rel="noopener">' + (ya ? "✓ Ya la abrió · " : "") + titulo + '</a>';
+    }).join("") + '</div>';
     var cuerpo;
     if (!lista.length) {
       cuerpo = '<p>Todavía no hay respuestas. Regrese a las máscaras para empezar.</p>';
-    } else if (sbActivo() && !sbFallo) {
-      cuerpo = '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
-        '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>' +
+    } else if (porInternet) {
+      cuerpo = (aMandar.length
+          ? '<p class="aviso">Casi todo me llegó por internet, pero esto no se pudo guardar. Mándemelo por WhatsApp:</p>' + pasos + botones
+          : '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
+            '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>') +
         '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>';
     } else if (!aMandar.length) {
       cuerpo = '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
@@ -770,18 +1009,14 @@ textarea { min-height: 6.5rem; resize: vertical; }
       cuerpo = '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
           : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
         (yaMando && !mandarTodo ? '<p class="nota">Solo va lo nuevo desde la última vez (' + aMandar.length + (aMandar.length === 1 ? " respuesta" : " respuestas") + ').</p>' : "") +
-        '<div class="partes">' + ps.map(function (p, k) {
-          var ya = !!estado.enviadas[p.clave];
-          var titulo = "Mandar por WhatsApp" + (ps.length > 1 ? " (parte " + (k + 1) + " de " + ps.length + ")" : "");
-          return '<a class="boton whatsapp ancho' + (ya ? " mandada" : "") + '" data-parte="' + k + '" href="' + esc(wa(p.texto)) + '" target="_blank" rel="noopener">' + (ya ? "✓ Ya la abrió · " : "") + titulo + '</a>';
-        }).join("") + '</div>' +
+        botones +
         '<p class="nota">Si no se abre WhatsApp, toque «Copiar el texto» y péguelo en un mensaje.</p>' +
         '<div class="acciones"><button class="boton" type="button" id="copiar">Copiar el texto</button>' +
         (yaMando && !mandarTodo ? '<button class="boton" type="button" id="todo-otra-vez">Mandar todo otra vez</button>' : "") + '</div>' +
         '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(todo) + '</pre>';
     }
-    app.innerHTML = barra("Mandar respuestas", null) +
-      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Mandar sus respuestas</h1>' +
+    app.innerHTML = barra(enLinea() ? "Sus respuestas" : "Mandar respuestas", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">' + (enLinea() ? "¡Muchas gracias, don Gorgonio!" : "Mandar sus respuestas") + '</h1>' +
       '<p class="ayuda">Contestó ' + hechas + ' de ' + TOTAL + ' máscaras y ' + gen + ' de ' + G.length + ' preguntas sobre usted.</p></div>' +
       cuerpo +
       '<p class="nota">Puede seguir contestando después. Lo que ya contestó no se borra.</p>' +
@@ -825,7 +1060,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<ol class="pasos"><li>Qué es</li><li>En qué danza o fiesta se usa</li><li>Qué significa</li></ol>' +
       '<p>Conteste las que pueda. No tiene que contestar todas ni hacerlo en un solo día; si no sabe alguna, toque «Siguiente».</p>' +
       (sbActivo() && !sbFallo
-        ? '<p class="aviso">Lo que conteste me llega solo, por internet. Puede contestar poco a poco y seguir otro día con este mismo enlace.' + (puedeGrabar() ? " Si prefiere hablar en vez de escribir, en cada máscara puede grabarme un audio." : "") + '</p>'
+        ? '<p class="aviso">Lo que conteste me llega solo, por internet. Puede contestar poco a poco y seguir otro día con este mismo enlace. Si lo abre en otro teléfono, ahí no verá lo que ya contestó, pero a mí ya me llegó.' + (puedeGrabar() ? " Si prefiere hablar en vez de escribir, en cada máscara puede grabarme un audio." : "") + '</p>'
         : modo === "db" ? "" : hayAlmacen
         ? '<p class="aviso">Lo que conteste se queda guardado en este teléfono, pero no me llega solo: cuando quiera, toque el botón verde «Mandar lo que llevo» y me llega por WhatsApp. Para seguir otro día, abra otra vez el enlace en este mismo teléfono.</p>'
         : '<p class="aviso">Este teléfono no puede guardar lo que conteste. Antes de cerrar la página, toque el botón verde «Mandar lo que llevo» para que me llegue por WhatsApp.</p>') +
@@ -833,7 +1068,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
         ? '<button class="boton principal" type="button" data-ir="' + seguir + '">Seguir en la máscara ' + seguir + '</button>' +
           (enLinea() ? "" : '<button class="boton whatsapp" type="button" data-ir="enviar">Mandar lo que llevo</button>') + '<button class="boton" type="button" data-ir="todas">Ver todas</button>'
         : '<button class="boton principal" type="button" data-ir="1">Empezar</button>') + '</div>' +
-      '<p class="nota">' + (hechas ? "Lleva " + cuantas() + " de " + TOTAL + " máscaras contestadas." : "Son las " + TOTAL + " máscaras que tenemos en fotos. Al final hay unas preguntas sobre usted y el taller.") + '</p></main>';
+      '<p class="nota">' + (hechas ? "Lleva " + cuantas() + " de " + TOTAL + " máscaras contestadas." : "Son las " + TOTAL + " máscaras de las que tengo foto. Al final hay unas preguntas sobre usted y su taller.") + '</p></main>';
     nav.hidden = true;
   }
 
@@ -875,11 +1110,22 @@ textarea { min-height: 6.5rem; resize: vertical; }
     }
     if (b.hasAttribute("data-grabar")) {
       var caja = b.closest(".grabadora");
-      if (grabando && grabando.ambito === caja.dataset.ambito) grabando.rec.stop();
-      else if (!grabando) empezarGrabacion(caja);
+      if (!grabando) empezarGrabacion(caja);
+      else if (grabando.ambito === caja.dataset.ambito) {
+        // mientras pide el permiso, o justo al empezar (doble toque), el toque no cuenta
+        if (grabando.rec && Date.now() - grabando.inicio > 800) pararGrabacion();
+      } else if (grabando.rec) {
+        pararGrabacion();
+        avisoGrabadora(caja, "Guardé el audio que estaba grabando en otra pregunta. Para grabar aquí, toque otra vez el botón verde.");
+      }
       return;
     }
     if (b.hasAttribute("data-reintentar")) { subirPendientes(); return; }
+    if (b.dataset.compartir) {
+      var au = audiosPendientes.filter(function (x) { return x.archivo === b.dataset.compartir; })[0];
+      if (au) compartirAudio(au);
+      return;
+    }
     if (!b.dataset.campo) return;
     var c = b.dataset.campo, v = b.dataset.valor;
     if (c.indexOf("g:") === 0) {
@@ -951,6 +1197,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   });
 
   try { history.replaceState({ pos: estado.pos }, ""); } catch (e) {}
+  ponerAlDia();
   render(false);
   conectar();
   enviarSalida();

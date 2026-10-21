@@ -48,6 +48,8 @@ def para_ver(slug, nombre):
         nombre = nombre[:d.start()]
     elif d:
         nombre = nombre[:d.start()]
+    if nombre.startswith('Cánido'):  # en pantalla dice «Perro o coyote»: que la respuesta diga cuál es
+        duda = ['coyote', 'perro'] + [x for x in duda if x not in ('coyote', 'perro')]
     for a, b in PALABRAS:
         nombre = nombre.replace(a, b)
     return nombre, duda
@@ -151,7 +153,7 @@ lineas = [
     'mismos números, por si prefiere contestar por WhatsApp, por teléfono o en papel («la 12 es un perro»).',
 ] + ([f"Encuesta: {opciones['enlace']}"] if opciones.get('enlace') else []) + [
     '', '## De cada máscara', '',
-    '1. ¿Qué es? (¿está bien el nombre que le pusimos?)',
+    '1. ¿Qué es? (¿está bien el nombre que le puse?)',
     '2. ¿En qué danza o fiesta se usa? (Danza de los Morenos, Pastorela, otra, o no se baila)',
     '3. ¿Qué significa?', '',
     'En las tres últimas (123 a 125) se pregunta además si las hizo él.', '',
@@ -167,7 +169,7 @@ for m in mascaras:
     lineas.append(f"{m['n']}. {grupo}{m['nombre']}{nota}")
 lineas += ['', '## Sobre él y el taller', '']
 lineas += [f"{k}. {q['texto']}" for k, q in enumerate(GENERALES, 1)]
-lineas += ['', '## Fotos que nos faltan', '',
+lineas += ['', '## Fotos que me faltan', '',
            '- Un retrato de don Gorgonio, su taller y él trabajando.',
            '- Los perros y el ocelote de la Danza de los Morenos.',
            '- Las fotos originales del teléfono (las que llegaron por WhatsApp están comprimidas).', '']

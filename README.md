@@ -82,7 +82,13 @@ python3 herramientas/generar_galeria_completa.py .
 - **Con Supabase** (lo normal): cada respuesta y cada audio que graba en la página se guardan solos por internet. El enlace que se le manda lleva una clave secreta: `…/preguntas/?clave=XXXX`. Sin la clave, la página no puede guardar nada en la base de datos.
 - **Sin Supabase o sin la clave**: lo que conteste se guarda en su teléfono y lo manda con el botón verde de WhatsApp.
 
-Para preparar Supabase (una sola vez): en el proyecto, abre «SQL Editor», pega `herramientas/encuesta/supabase.sql` con la clave en lugar de `CAMBIA-ESTA-CLAVE` y toca «Run». Crea la tabla `respuestas` (la página solo puede agregar renglones, no leerlos), la vista `ultimas_respuestas` y el depósito privado `audios`. Las respuestas se leen en el panel de Supabase: Table Editor → `respuestas`, o en SQL Editor con `select numero, nombre, respuesta, creado from ultimas_respuestas order by tipo, numero;`. Los audios están en Storage → `audios`.
+Para preparar Supabase (una sola vez): en el proyecto, abre «SQL Editor», pega `herramientas/encuesta/supabase.sql`, cambia `CAMBIA-ESTA-CLAVE` (una sola vez, en el bloque `do $$`) por la clave y toca «Run». Cambia la clave solo en el SQL Editor, no en el archivo del repositorio. La clave lleva de 16 a 100 letras sin acento, números, `-` o `_`; para sacar una: `python3 -c "import secrets; print('gc-' + secrets.token_hex(12))"`. El script crea la tabla `respuestas` (la página solo puede agregar renglones, no leerlos), la vista `ultimas_respuestas` y el depósito privado `audios`. Se puede volver a correr sin perder respuestas.
+
+- **Leer las respuestas**: en el panel de Supabase, Table Editor → `respuestas`, o en SQL Editor con `select dispositivo, numero, nombre, respuesta, creado from ultimas_respuestas order by dispositivo, tipo, numero;`. Los renglones `audio` solo dicen qué archivo se grabó.
+- **Oír los audios**: Storage → `audios` → la carpeta con la clave → toca el archivo (se oye ahí mismo o se descarga).
+- **Antes de mandarle el enlace**: pruébalo tú y luego borra tus pruebas con `truncate public.respuestas;` y tus audios de prueba en Storage.
+- **El plan gratis pausa el proyecto tras una semana sin uso.** Antes de mandar el enlace, y cada pocos días mientras conteste, abre el panel de Supabase; si dice *Paused*, toca *Restore*. Mientras tanto la página no pierde nada: lo guarda en el teléfono y lo manda cuando vuelve a funcionar.
+- **Al terminar la encuesta, o si el enlace se filtra**, cierra las escrituras con las dos líneas `drop policy …` del final de `supabase.sql`. Si se filtró, vuelve a correr el bloque `do $$` con una clave nueva y manda el enlace nuevo.
 
 Para volver a armar la página (por ejemplo, si cambian las máscaras):
 

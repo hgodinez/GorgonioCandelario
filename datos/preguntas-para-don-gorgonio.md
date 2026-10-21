@@ -7,7 +7,7 @@ Encuesta: https://humbertogodinez.com/GorgonioCandelario/preguntas/
 
 ## De cada máscara
 
-1. ¿Qué es? (¿está bien el nombre que le pusimos?)
+1. ¿Qué es? (¿está bien el nombre que le puse?)
 2. ¿En qué danza o fiesta se usa? (Danza de los Morenos, Pastorela, otra, o no se baila)
 3. ¿Qué significa?
 
@@ -193,7 +193,7 @@ En las tres últimas (123 a 125) se pregunta además si las hizo él.
 12. En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?
 13. ¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.
 
-## Fotos que nos faltan
+## Fotos que me faltan
 
 - Un retrato de don Gorgonio, su taller y él trabajando.
 - Los perros y el ocelote de la Danza de los Morenos.
