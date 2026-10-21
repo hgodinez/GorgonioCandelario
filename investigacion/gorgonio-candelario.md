@@ -185,4 +185,5 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
   - gallo anaranjado.
 - **Tiempo de trabajo:** a don Gorgonio le lleva unos 10 días terminar una máscara.
 - **Foto de don Herminio:** la foto chica del hombre de camisa blanca tallando junto a un tronco es de don Herminio Candelario Dolores, el padre (identificada por quien encarga el sitio). Las otras tres fotos son de don Gorgonio.
+- **Autoría de las fotos:** todas las máscaras de las fotos son de don Gorgonio; él le pasó las fotos a quien encarga el sitio (Humberto). Eso incluye las piezas en tonos pastel y el ave azul de pico amarillo, que se habían apartado por la duda.
 - ⚠ Faltan fotos de los perros y del ocelote.

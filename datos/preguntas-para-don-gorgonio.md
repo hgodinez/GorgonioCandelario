@@ -12,8 +12,6 @@ Encuesta: https://humbertogodinez.com/GorgonioCandelario/preguntas/
    Si es de la Danza de los Morenos: ¿es macho o hembra? (se baila en parejas)
 3. ¿Qué significa?
 
-En las tres últimas (123 a 125) se pregunta además si las hizo él.
-
 ## Las máscaras
 
 
@@ -191,8 +189,7 @@ En las tres últimas (123 a 125) se pregunta además si las hizo él.
 9. ¿Qué días y a qué hora se le puede visitar en el taller? ¿Da clases? ¿Manda máscaras a otras ciudades?
 10. ¿Me da permiso de poner en su página estos dos videos donde sale usted?
 11. ¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo pongo el nombre de esa persona en la página?
-12. En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?
-13. ¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.
+12. ¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.
 
 ## Fotos que me faltan
 

@@ -860,7 +860,6 @@ textarea { min-height: 6.5rem; resize: vertical; }
     M.forEach(function (m) {
       if (!contestada(m.id)) return;
       var r = respuesta(m.id), l = [m.n + ". " + m.nombre];
-      if (r.suya) l.push("¿La hizo usted?: " + ({ si: "sí", no: "no, otra persona", nose: "no sabe" })[r.suya]);
       if (r.es === "si") l.push("Es: sí, está bien el nombre");
       else if (r.es === "otra") l.push("Es: " + (r.que_es.trim() || "otra cosa (sin decir qué)"));
       else if (r.es === "nose") l.push("Es: no sabe");
@@ -963,15 +962,13 @@ textarea { min-height: 6.5rem; resize: vertical; }
       return '<button type="button" data-vista="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="Foto ' + (k + 1) + ' de ' + m.fotos.length + '"><img src="' + esc(f) + '" alt=""></button>';
     }).join("") + '</div>' : "";
     var n = 1;
-    var suya = m.apartada ? '<section class="pregunta"><h2 id="p-suya">' + (n++) + '. ¿Esta máscara la hizo usted?</h2>' +
-      opciones("suya", [{ v: "si", t: "Sí, es mía" }, { v: "no", t: "No, la hizo otra persona" }, { v: "nose", t: "No sé" }], r.suya, false, "p-suya") + '</section>' : "";
     var listaEs, ayudaEs;
     if (m.duda && m.duda.length) {
       ayudaEs = "No estoy seguro. ¿Es " + (m.duda.length > 2 ? m.duda.slice(0, -1).join(", ") + " o " + m.duda[m.duda.length - 1] : m.duda.join(" o ")) + "?";
       listaEs = m.duda.map(function (d) { return { v: cap(d), t: m.duda.length === 1 ? "Sí, es " + d : cap(d) }; })
         .concat([{ v: "otra", t: "Es otra cosa" }, { v: "nose", t: "No sé" }]);
     } else {
-      ayudaEs = m.confirmada ? "Su familia ya me dijo este nombre." : "Este nombre se lo puse yo y puede estar mal. Si no está bien, dígame qué animal o personaje es.";
+      ayudaEs = ""; // solo se pregunta
       listaEs = [{ v: "si", t: "Sí, está bien" }, { v: "otra", t: "No, es otra cosa" }, { v: "nose", t: "No sé" }];
     }
     var otroUso = r.uso.indexOf(OTRA) >= 0;
@@ -979,10 +976,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<main class="pantalla">' +
       '<div class="ficha">' + sala + '<h1 tabindex="-1">' + esc(m.ver) + '</h1></div>' +
       '<figure class="foto"><img id="foto" src="' + esc(m.fotos[0]) + '" alt="Foto de la máscara ' + i + ': ' + esc(m.ver) + '"></figure>' + vistas +
-      suya +
       '<section class="pregunta"><h2 id="p-es">' + (n++) + '. ¿Está bien el nombre?</h2>' +
       '<p class="nombre-pregunta">«' + esc(m.ver) + '»</p>' +
-      '<p class="ayuda">' + esc(ayudaEs) + '</p>' +
+      (ayudaEs ? '<p class="ayuda">' + esc(ayudaEs) + '</p>' : "") +
       opciones("es", listaEs, r.es, false, "p-es") +
       '<div id="otra"' + (r.es === "otra" ? "" : " hidden") + ' class="pregunta-otra">' +
       '<p class="ayuda" id="toque-nombre">Toque un nombre o escríbalo:</p>' +

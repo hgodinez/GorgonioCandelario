@@ -14,7 +14,6 @@ select numero, nombre,
   nullif(respuesta->>'uso_otro', '') as cual_otra,
   case respuesta->>'sexo' when 'macho' then 'macho' when 'hembra' then 'hembra' when 'nose' then 'no sabe' end as macho_o_hembra,
   nullif(respuesta->>'significado', '') as significado,
-  case respuesta->>'suya' when 'si' then 'sí' when 'no' then 'no, otra persona' when 'nose' then 'no sabe' end as la_hizo_el,
   creado
 from public.ultimas_respuestas
 where tipo = 'mascara'

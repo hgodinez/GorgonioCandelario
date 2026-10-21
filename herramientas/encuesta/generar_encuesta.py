@@ -22,8 +22,8 @@ g = json.loads((raiz / 'datos/galeria.json').read_text(encoding='utf-8'))
 tam = json.loads((raiz / 'datos/album-tamanos.json').read_text(encoding='utf-8'))
 catalogo = json.loads((raiz / 'datos/album-catalogo.json').read_text(encoding='utf-8'))
 
-# Piezas que se apartaron de la galería hasta saber si son de don Gorgonio (la cuarta solo
-# existe en un collage diminuto, así que se pregunta en «Sobre usted»)
+# Piezas que no están en la galería del sitio (se apartaron mientras no se sabía si eran de don Gorgonio;
+# Humberto confirmó que todas las máscaras de las fotos son suyas): también se preguntan
 APARTADAS = ['felino-multicolor-pastel', 'toro-pastel-cuernos-rosas', 'toro-pastel-cuernos-azules']
 VISTAS_MAX = 3   # foto principal y hasta dos vistas más
 ANCHO_MAX = 800  # pixeles de la foto en la encuesta
@@ -107,9 +107,6 @@ GENERALES = [
                  ['Ver el video del taller', 'https://www.youtube.com/watch?v=u3Pr0mBtlms']],
      'opciones': ['Sí', 'No', 'No los he visto']},
     {'id': 'fotos', 'texto': '¿Quién tomó las fotos de las máscaras y las fotos de usted? ¿Cómo pongo el nombre de esa persona en la página?'},
-    {'id': 'ave-azul', 'texto': 'En esta foto, ¿la máscara de en medio, el ave azul de pico largo y amarillo, es suya?',
-     'foto': foto('a065'), 'alt': 'Tres máscaras juntas: un tecolote rojo, un ave azul de pico largo y amarillo, y un coyote blanco',
-     'opciones': ['Sí', 'No', 'No sé']},
     {'id': 'mas', 'texto': '¿Hay algo más que quiera contar en su página? Una historia, un recuerdo o una frase suya.'},
 ]
 
@@ -157,7 +154,6 @@ lineas = [
     '2. ¿En qué danza o fiesta se usa? (Danza de los Morenos, Pastorela, otra, o no se baila)',
     '   Si es de la Danza de los Morenos: ¿es macho o hembra? (se baila en parejas)',
     '3. ¿Qué significa?', '',
-    'En las tres últimas (123 a 125) se pregunta además si las hizo él.', '',
     '## Las máscaras', '',
 ]
 sala = None
