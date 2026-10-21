@@ -3,7 +3,8 @@
   "archivo": "IMG-20250829-WA0043.jpg"
  },
  "danza": {
-  "archivo": "IMG-20250829-WA0056.jpg"
+  "archivo": "IMG-20250829-WA0065.jpg",
+  "pie": "Chivo rojo, uno de los dos capitanes de la danza"
  },
  "secciones": [
   {
@@ -13,9 +14,8 @@
    "archivos": [
     "IMG-20250829-WA0065.jpg",
     "IMG-20250829-WA0042.jpg",
-    "IMG-20250829-WA0056.jpg",
-    "IMG-20250829-WA0147.jpg",
     "IMG-20250829-WA0022.jpg",
+    "IMG-20250829-WA0147.jpg",
     "IMG-20250829-WA0030.jpg"
    ]
   },
@@ -34,9 +34,10 @@
   },
   {
    "id": "personajes",
-   "titulo": "El nahual y otros personajes",
-   "descripcion": "Un nahual con forma de felino, un rostro negro de cresta roja, otro con alas coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
+   "titulo": "Nahuales y otros personajes",
+   "descripcion": "Dos nahuales, uno blanco y otro negro con forma de felino; un rostro negro de cresta roja, otro con alas coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
    "archivos": [
+    "IMG-20250829-WA0056.jpg",
     "IMG-20250829-WA0121.jpg",
     "IMG-20250829-WA0153.jpg",
     "IMG-20250829-WA0151.jpg",
@@ -283,10 +284,10 @@
     960,
     1200
    ],
-   "personaje": "Tecolote blanco",
+   "personaje": "Nahual blanco",
    "descripcion": "Rostro blanco con puntos dorados, discos negros alrededor de los ojos rojos y largos mechones de fibra color crema.",
-   "pie": "Tecolote blanco con mechones de fibra",
-   "alt": "Máscara de tecolote blanca con puntos dorados, discos negros alrededor de los ojos rojos y mechones de fibra color crema",
+   "pie": "Nahual blanco con mechones de fibra",
+   "alt": "Máscara de nahual blanca con puntos dorados, discos negros alrededor de los ojos rojos y mechones de fibra color crema",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 45%",
@@ -298,7 +299,8 @@
     "calidad_foto": 4,
     "problemas_foto": "Fondo de pared crema con sombras suaves de la fibra; la fibra toca los bordes laterales del encuadre; tono ligeramente cálido.",
     "notas": "Los tecolotes (búhos) son personajes de la Danza de los Morenos; su búho de 1995 en el Museum of International Folk Art puede servir de comparación. Confirmar con el maestro qué fibra usa. VERIFICADOR: identificación confirmada (discos faciales, penachos y pico). Se precisó que la fibra sale de orificios en la frente y en el borde inferior, y se anotó que toca los bordes laterales de la foto."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0065.jpg",
@@ -365,9 +367,9 @@
     960,
     1200
    ],
-   "personaje": "Nahual",
+   "personaje": "Nahual negro",
    "descripcion": "Nahual con forma de felino, en negro brillante: orejas puntiagudas con rayas rojas, ojos anaranjados y colmillos color marfil.",
-   "pie": "Nahual de ojos anaranjados",
+   "pie": "Nahual negro de ojos anaranjados",
    "alt": "Máscara de nahual con forma de felino, negra y brillante, vista de tres cuartos, con oreja de rayas rojas, ojo anaranjado y colmillos",
    "ajuste": "cover",
    "fondo": "",

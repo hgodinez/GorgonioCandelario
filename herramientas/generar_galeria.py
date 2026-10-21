@@ -95,7 +95,7 @@ galeria = f'''<section class="seccion" id="mascaras" aria-labelledby="titulo-mas
 d = fotos[datos['danza']['archivo']]
 imagen_danza = f'''<figure class="imagen-danza">
           {picture(d, "(max-width: 820px) 92vw, (max-width: 1230px) 45vw, 34rem")}
-          <figcaption>{e(d["pie"])}</figcaption>
+          <figcaption>{e(datos['danza'].get('pie') or d["pie"])}</figcaption>
         </figure>'''
 
 # Las nueve parejas de la danza
