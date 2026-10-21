@@ -10,7 +10,7 @@ from PIL import Image, ImageOps
 
 PROPORCION = 3 / 4   # ancho / alto de la tarjeta
 MARGEN = 0.06        # aire alrededor de la máscara, en fracción de su alto
-MARGEN_MIN = 0.03    # si la foto no da para MARGEN, al menos esto (se completa con pared)
+MARGEN_MIN = 0.05    # si la foto no da para MARGEN, al menos esto (se completa con pared)
 ANCHOS = (360, 540, 720)
 SALTO, BANDA = 3, 16  # la orilla de la pared se mide en una banda de 16 px, sin los 3 px del borde
 
@@ -49,13 +49,20 @@ def ventana(W, H, caja):
             inicio = 0
         elif hi >= total - 1 and lo > 1:
             inicio = total - lado
+        else:  # no cabe y no toca orillas: usar toda la foto y repartir la pared que falta
+            inicio = min(0, max(total - lado, inicio))
         return inicio
     wx, wy = colocar(cx, ancho, W, x0, x1), colocar(cy, alto, H, y0, y1)
     return wx, wy, ancho, alto
 
 
 def suavizar(v, sigma):
-    """Promedio gaussiano a lo largo del primer eje (v: n x 3)."""
+    """Mediana móvil (quita detalles angostos como la punta de un cuerno o un clavo junto a la
+    orilla) y luego promedio gaussiano, a lo largo del primer eje (v: n x 3)."""
+    m = max(5, round(len(v) * 0.04)) | 1
+    if len(v) > m:
+        p = np.pad(v, ((m // 2, m // 2), (0, 0)), mode='edge')
+        v = np.median(np.lib.stride_tricks.sliding_window_view(p, m, axis=0), axis=-1)
     r = max(1, round(3 * sigma))
     k = np.exp(-0.5 * (np.arange(-r, r + 1) / sigma) ** 2)
     k /= k.sum()
@@ -73,10 +80,13 @@ def prolongar(lienzo, foto_caja, caja_masc, semilla):
     mx0, my0, mx1, my1 = caja_masc
     azar = np.random.default_rng(semilla)
     sigma = max(2.0, h * 0.01)
-    # color de reserva: la orilla de la foto fuera de la caja de la máscara
-    orilla = np.concatenate([a[fy0:fy1, fx0:fx0 + 2].reshape(-1, 3), a[fy0:fy1, fx1 - 2:fx1].reshape(-1, 3),
-                             a[fy0:fy0 + 2, fx0:fx1].reshape(-1, 3), a[fy1 - 2:fy1, fx0:fx1].reshape(-1, 3)])
-    reserva = np.median(orilla, axis=0)
+    # color de reserva: la orilla de la foto (2 px) fuera de la caja de la máscara
+    anillo = np.zeros((h, w), bool)
+    anillo[fy0:fy1, fx0:fx1] = True
+    anillo[fy0 + 2:fy1 - 2, fx0 + 2:fx1 - 2] = False
+    fuera = anillo.copy()
+    fuera[max(my0, 0):max(my1, 0), max(mx0, 0):max(mx1, 0)] = False
+    reserva = np.median(a[fuera] if fuera.any() else a[anillo], axis=0)
 
     def banda(inicio, limite, hacia):
         """Rango de la banda de pared desde la orilla `inicio` hacia la máscara (`limite`)."""
@@ -146,11 +156,13 @@ for n, par in enumerate(danza['parejas']):
         continue
     im = ImageOps.exif_transpose(Image.open(origen(par['archivo']))).convert('RGB')
     W, H = im.size
+    x0, y0, x1, y1 = par['caja']
+    if not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+        sys.exit(f'La caja de «{par["nombre"]}» {par["caja"]} se sale de la foto ({W}x{H}).')
     wx, wy, ancho, alto = ventana(W, H, par['caja'])
     lienzo = Image.new('RGB', (ancho, alto))
     lienzo.paste(im.crop((max(wx, 0), max(wy, 0), min(wx + ancho, W), min(wy + alto, H))), (max(-wx, 0), max(-wy, 0)))
     foto_caja = (max(-wx, 0), max(-wy, 0), min(W - wx, ancho), min(H - wy, alto))
-    x0, y0, x1, y1 = par['caja']
     rellena = foto_caja != (0, 0, ancho, alto)
     if rellena:
         lienzo = prolongar(lienzo, foto_caja, (x0 - wx, y0 - wy, x1 - wx, y1 - wy), semilla=n)

@@ -57,7 +57,7 @@ python3 -m http.server 8000
 
    Para ponerle foto a una pareja de la danza, agrega el nombre del archivo y la caja de la máscara en `datos/danza.json`, corre `python3 herramientas/tarjetas_danza.py .` y vuelve a correr el script.
 
-   Las tarjetas de las parejas muestran la máscara completa. Salen de `herramientas/tarjetas_danza.py`, que encuadra cada foto en proporción 3:4 a partir de la caja de la máscara (`caja` en `datos/danza.json`: izquierda, arriba, derecha y abajo, en pixeles de la foto). Si la foto no alcanza, prolonga la pared con el color de su orilla (necesita numpy además de Pillow). Si cambias la foto de una pareja sin volver a hacer su tarjeta, `generar_galeria.py` te lo avisa. La caja se puede medir a mano en cualquier editor de fotos o con el modelo de `recortar_fondo.py`.
+   Las tarjetas de las parejas muestran la máscara completa. Salen de `herramientas/tarjetas_danza.py` (necesita Pillow y numpy), que encuadra cada foto en proporción 3:4 a partir de la caja de la máscara (`caja` en `datos/danza.json`: izquierda, arriba, derecha y abajo, en pixeles de la foto). Si la foto no alcanza, prolonga la pared con el color de su orilla. Si cambias el archivo de una pareja sin volver a hacer su tarjeta, `generar_galeria.py` te lo avisa; si solo cambias la caja o reemplazas la foto con el mismo nombre, vuelve a correr `tarjetas_danza.py`. La caja se puede medir a mano en cualquier editor de fotos o con el modelo de `recortar_fondo.py`.
 
 ## Regenerar la galería
 
