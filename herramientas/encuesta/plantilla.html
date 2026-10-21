@@ -123,7 +123,8 @@ input.corto { max-width: 10rem; }
 textarea { min-height: 6.5rem; resize: vertical; }
 .foto-pregunta { width: 100%; border-radius: 12px; }
 
-.pregunta-otra, #uso-otro-caja { display: grid; gap: 0.6rem; }
+.pregunta-otra, #uso-otro-caja, #sexo-caja { display: grid; gap: 0.6rem; }
+.subpregunta { font-weight: 700; }
 .pasos-audio { font-size: 1.05rem; color: var(--tinta-suave); }
 .grabadora { display: grid; gap: 0.6rem; }
 .grabadora .boton.grabando { background: var(--bermellon); border-color: var(--bermellon); color: var(--sobre-acento); }
@@ -214,7 +215,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
   var CLAVE = "encuesta-gorgonio-v1";
   var NOMBRES = ["Coyote", "Perro", "Chivo", "Borrego", "Tecolote", "Lince", "Ocelote", "Tigre", "Jaguar", "Burro", "Guacamaya", "Gallo", "Venado", "Toro", "Nahual", "Diablo", "La Muerte"];
   var OTRA = "Otra danza o fiesta", NO_SE = "No sé", ADORNO = "No se baila, es de adorno";
-  var USOS = ["Danza de los Morenos", "Pastorela", OTRA, ADORNO, NO_SE];
+  var DANZA = "Danza de los Morenos", USOS = [DANZA, "Pastorela", OTRA, ADORNO, NO_SE];
+  // en la Danza de los Morenos se baila en parejas de macho y hembra
+  var SEXOS = { macho: "macho", hembra: "hembra", nose: "no sabe" };
   var app = document.getElementById("app");
   var nav = document.getElementById("navegacion");
   var atras = document.getElementById("atras");
@@ -229,7 +232,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     x = obj(x);
     return { es: txt(x.es), suya: txt(x.suya), que_es: txt(x.que_es),
       uso: Array.isArray(x.uso) ? x.uso.filter(function (u) { return typeof u === "string"; }) : [],
-      uso_otro: txt(x.uso_otro), significado: txt(x.significado), act: txt(x.act) };
+      uso_otro: txt(x.uso_otro), sexo: SEXOS[x.sexo] ? x.sexo : "", significado: txt(x.significado), act: txt(x.act) };
   }
   function limpiaG(g) {
     var o = {};
@@ -295,7 +298,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function tocada(id) { var r = respuesta(id); r.act = new Date().toISOString(); return r; }
   function contestada(id) {
     var r = estado.r[id];
-    return !!((estado.audios["m:" + id] || []).length || r && (r.es || r.suya || r.que_es.trim() || r.uso.length || r.significado.trim() ||
+    return !!((estado.audios["m:" + id] || []).length || r && (r.es || r.suya || r.que_es.trim() || r.uso.length || r.sexo || r.significado.trim() ||
       (r.uso.indexOf(OTRA) >= 0 && r.uso_otro.trim())));
   }
   function cuantas() { return M.filter(function (m) { return contestada(m.id); }).length; }
@@ -370,7 +373,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   }
   function datosMascara(id) {
     var r = estado.r[id] || limpiaR({});
-    return { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, significado: r.significado };
+    return { es: r.es, suya: r.suya, que_es: r.que_es, uso: r.uso, uso_otro: r.uso_otro, sexo: r.sexo, significado: r.significado };
   }
   function datosGeneral(qid) { var v = estado.g[qid] || { opcion: "", texto: "" }; return { opcion: v.opcion, texto: v.texto }; }
   function datosAudio(archivo, seg, ambito) { return { archivo: archivo, segundos: seg, de: ambito }; }
@@ -466,7 +469,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     };
     M.forEach(function (m) {
       var r = estado.r[m.id];
-      if (r && falta("mascara:" + m.id, datosMascara(m.id), !!(r.es || r.suya || r.que_es.trim() || r.uso.length || r.uso_otro.trim() || r.significado.trim()))) encolarMascara(m.id);
+      if (r && falta("mascara:" + m.id, datosMascara(m.id), !!(r.es || r.suya || r.que_es.trim() || r.uso.length || r.uso_otro.trim() || r.sexo || r.significado.trim()))) encolarMascara(m.id);
     });
     G.forEach(function (q) {
       var v = estado.g[q.id];
@@ -862,6 +865,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       else if (r.que_es.trim()) l.push("Es: " + r.que_es.trim());
       var usos = r.uso.map(function (u) { return u === OTRA && r.uso_otro.trim() ? r.uso_otro.trim() : u; });
       if (usos.length) l.push("Se usa en: " + usos.join(", "));
+      if (r.sexo) l.push("En la danza es: " + SEXOS[r.sexo]);
       if (r.significado.trim()) l.push("Significa: " + r.significado.trim());
       var na = (estado.audios["m:" + m.id] || []).length;
       if (na) l.push(na === 1 ? "Grabó 1 audio" : "Grabó " + na + " audios");
@@ -986,6 +990,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '</section>' +
       '<section class="pregunta"><h2 id="p-uso">' + (n++) + '. ¿En qué danza o fiesta se usa?</h2><p class="ayuda">Puede tocar más de una.</p>' +
       opciones("uso", USOS.map(function (u) { return { v: u, t: u }; }), r.uso, true, "p-uso") +
+      '<div id="sexo-caja"' + (r.uso.indexOf(DANZA) >= 0 ? "" : " hidden") + '><p class="subpregunta" id="p-sexo">En la danza, ¿esta máscara es macho o hembra?</p>' +
+      opciones("sexo", [{ v: "macho", t: "Macho" }, { v: "hembra", t: "Hembra" }, { v: "nose", t: "No sé" }], r.sexo, false, "p-sexo") + '</div>' +
       '<div id="uso-otro-caja"' + (otroUso ? "" : " hidden") + '><label for="uso-otro">¿Cuál danza o fiesta?</label><input type="text" id="uso-otro" data-texto="uso_otro" autocomplete="off" value="' + esc(r.uso_otro) + '"></div>' +
       '</section>' +
       '<section class="pregunta"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
@@ -1262,6 +1268,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
       }
       b.parentNode.querySelectorAll(".opcion").forEach(function (o) { o.setAttribute("aria-pressed", String(r.uso.indexOf(o.dataset.valor) >= 0)); });
       document.getElementById("uso-otro-caja").hidden = r.uso.indexOf(OTRA) < 0;
+      // macho o hembra solo se pregunta para la Danza de los Morenos
+      var conDanza = r.uso.indexOf(DANZA) >= 0, cajaSexo = document.getElementById("sexo-caja");
+      cajaSexo.hidden = !conDanza;
+      if (!conDanza && r.sexo) { r.sexo = ""; cajaSexo.querySelectorAll(".opcion").forEach(function (o) { o.setAttribute("aria-pressed", "false"); }); }
     } else {
       r[c] = r[c] === v ? "" : v;
       marcarGrupo(b, r[c]);

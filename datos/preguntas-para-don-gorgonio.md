@@ -9,6 +9,7 @@ Encuesta: https://humbertogodinez.com/GorgonioCandelario/preguntas/
 
 1. ¿Qué es? (¿está bien el nombre que le puse?)
 2. ¿En qué danza o fiesta se usa? (Danza de los Morenos, Pastorela, otra, o no se baila)
+   Si es de la Danza de los Morenos: ¿es macho o hembra? (se baila en parejas)
 3. ¿Qué significa?
 
 En las tres últimas (123 a 125) se pregunta además si las hizo él.
