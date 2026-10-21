@@ -326,14 +326,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function faltaPorWhatsapp() { return audiosMalos().length > 0 || Object.keys(estado.rechazadas).length > 0 && noLlegaron().length > 0; }
   function pintarSync() {
     var t = dondeSeGuarda();
-    app.querySelectorAll(".estado-guardado").forEach(function (el) { el.textContent = t; });
+    app.querySelectorAll(".estado-guardado").forEach(function (el) { if (!el.closest(".cierre-mascara")) el.textContent = t; });
+    // el pie entero, para que el botón que nombra el texto siempre esté en la pantalla
+    app.querySelectorAll(".cierre-mascara").forEach(function (el) {
+      var nuevo = mandarLoQueLlevo(el.dataset.nota || "");
+      if (el.dataset.firma !== /data-firma="([^"]*)"/.exec(nuevo)[1]) el.outerHTML = nuevo;
+    });
   }
   function fila(it) {
     return { clave: estado.clave, dispositivo: estado.dispositivo, tipo: it.tipo, pregunta: it.pregunta,
       numero: it.numero == null ? null : it.numero, nombre: it.nombre == null ? null : it.nombre, respuesta: it.respuesta };
   }
   function encolar(tipo, pregunta, numero, nombre, resp) {
-    if (!sbActivo()) return;
+    if (!sbActivo()) { pintarSync(); return; }
     // se aparta aunque ahora no haya internet o falle la clave: se manda en cuanto se pueda, o al volver a abrir
     estado.salida[tipo + ":" + pregunta] = { tipo: tipo, pregunta: pregunta, numero: numero, nombre: nombre, respuesta: resp, t: new Date().toISOString() };
     guardarLocal();
@@ -378,6 +383,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
         quitarDeSalida(k, it);
         sbEspera = 0; sbSinRed = false; guardarLocal(); pintarSync();
         if (pendientesSalida()) enviarSalida();
+        else if (estado.pos === "enviar" && !editando()) render(false); // ya llegó todo
       } else if (res.status === 401 || res.status === 403 || res.status === 404) {
         sbFallar(); // la clave no sirve o falta la tabla: se sigue por WhatsApp
       } else if (res.status >= 400 && res.status < 500 && res.status !== 408 && res.status !== 429) {
@@ -397,13 +403,19 @@ textarea { min-height: 6.5rem; resize: vertical; }
     sbEnviando = false; sbFallo = true; clearTimeout(sbTiempo);
     pararGrabacion(); // su audio se guarda o queda pendiente
     anunciar("No pude guardar por internet. Sus respuestas quedan en este teléfono para mandarlas por WhatsApp.");
-    if (editando()) { pintarSync(); return; } // los botones de WhatsApp salen en la siguiente pantalla
+    if (editando()) { // no se pinta todo para no cerrar el teclado
+      pintarSync();
+      app.querySelectorAll(".grabadora").forEach(function (c) { refrescarGrabadora(c.dataset.ambito); });
+      return;
+    }
     render(false);
     var mn = app.querySelector("main");
-    if (mn && estado.pos !== "inicio") mn.insertAdjacentHTML("afterbegin", '<p class="aviso">No pude guardar por internet. Desde ahora lo que conteste se queda en este teléfono: cuando quiera, mándemelo con el botón verde «Mandar lo que llevo».</p>');
+    if (mn && estado.pos !== "inicio" && estado.pos !== "enviar") mn.insertAdjacentHTML("afterbegin", '<p class="aviso">No pude guardar por internet. Desde ahora lo que conteste se queda en este teléfono: cuando quiera, mándemelo con el botón verde «Mandar lo que llevo».</p>');
   }
   function reintentarSalida() {
+    var antes = sbSinRed;
     sbSinRed = true; pintarSync();
+    if (!antes && estado.pos === "enviar") render(false); // ahí se ofrece WhatsApp para lo que no ha llegado
     sbEspera = Math.min(60000, (sbEspera || 1500) * 2);
     clearTimeout(sbTiempo);
     sbTiempo = setTimeout(enviarSalida, sbEspera + Math.random() * 1000);
@@ -462,7 +474,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   // grabando: la grabación en curso; se aparta ANTES de pedir el micrófono, para que un doble toque no abra
   // dos. audiosPendientes: los que faltan por subir; también se guardan en el teléfono (IndexedDB) para que
   // no se pierdan si se cierra la página
-  var grabando = null, micNegado = false, permisoMic = "", despierto = null, audiosSesion = {}, audiosPendientes = [];
+  var grabando = null, micNegado = false, negaciones = 0, permisoMic = "", despierto = null, audiosSesion = {}, audiosPendientes = [];
   var GRABANDO = "Grabando… hable con calma. Cuando termine, toque el botón rojo «Terminar y guardar».";
   function puedeGrabar() {
     return sbActivo() && !sbFallo && !micNegado && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.MediaRecorder);
@@ -484,7 +496,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
     // sin grabadora (falló la clave, no hay micrófono): la caja solo aparece si hay audios que enseñar
     if (!boton && !guardados.length && !mios.length) return vacia + ' hidden><p class="nota grabadora-estado" aria-live="polite"></p></div>';
     var aviso = activo ? GRABANDO
-      : malos.length ? "No pude guardar " + (malos.length === 1 ? "este audio" : "estos audios") + " por internet. Mándemelo por WhatsApp, por favor."
+      : malos.length ? "No pude guardar " + (malos.length === 1 ? "este audio" : "estos audios") + " por internet. " + (malos.every(compartible)
+        ? (malos.length === 1 ? "Mándemelo" : "Mándemelos") + " por WhatsApp, por favor."
+        : "Toque el botón verde: se abre WhatsApp; ahí mande el mensaje y deje apretado el micrófono para grabarlo otra vez.")
       : pend ? "El audio todavía no se guarda, quizá por falta de internet. Lo intento otra vez solo; no cierre la página."
       : mios.length ? "Guardando el audio…" : "";
     return vacia + '>' +
@@ -493,7 +507,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<p class="nota grabadora-estado" aria-live="polite">' + esc(aviso) + '</p>' +
       (pend ? '<div class="acciones"><button class="boton" type="button" data-reintentar>Intentar otra vez</button></div>' : "") +
       (malos.length ? '<div class="acciones">' + malos.map(function (a) {
-        return '<button class="boton whatsapp" type="button" data-compartir="' + esc(a.archivo) + '">Mandar por WhatsApp el audio que no se guardó</button>';
+        return '<button class="boton whatsapp" type="button" data-compartir="' + esc(a.archivo) + '">' + (compartible(a) ? "Mandar por WhatsApp el audio que no se guardó" : "Grabarlo otra vez en WhatsApp") + '</button>';
       }).join("") + '</div>' : "") +
       (lista ? '<ul class="audios">' + lista + '</ul>' : "") + '</div>';
   }
@@ -577,7 +591,16 @@ textarea { min-height: 6.5rem; resize: vertical; }
       if (grabando === g) grabando = null;
       if (g.cancelado) return;
       var n = err && err.name;
-      if (n === "NotAllowedError" || n === "SecurityError" || n === "NotFoundError" || n === "NotSupportedError") sinMicrofono();
+      if (n === "NotAllowedError") {
+        // ¿lo bloqueó o solo cerró la pregunta? Si solo la cerró, la grabadora se queda para volver a intentar
+        var decidir = function (st) {
+          negaciones++;
+          if (st === "denied" || !st && negaciones >= 2) sinMicrofono();
+          else avisoGrabadora(cajaDe(g.ambito), "No me dio permiso del micrófono. Para grabar, toque otra vez el botón verde y luego «Permitir».");
+        };
+        try { navigator.permissions.query({ name: "microphone" }).then(function (p) { permisoMic = p.state; decidir(p.state); }, function () { decidir(""); }); }
+        catch (e) { decidir(""); }
+      } else if (n === "SecurityError" || n === "NotFoundError" || n === "NotSupportedError") sinMicrofono();
       else avisoGrabadora(cajaDe(g.ambito), "No pude usar el micrófono. Espere un momento y toque otra vez el botón verde.");
     });
   }
@@ -638,6 +661,9 @@ textarea { min-height: 6.5rem; resize: vertical; }
   }
   function subirPendientes() { audiosPendientes.filter(function (x) { return !x.definitivo; }).forEach(subirAudio); }
   // El audio que no se pudo subir: se manda como archivo por WhatsApp (o se abre WhatsApp para grabarlo ahí)
+  function compartible(a) {
+    try { return !!(navigator.canShare && navigator.canShare({ files: [new File([a.blob], a.archivo.split("/").pop(), { type: a.tipo })] })); } catch (e) { return false; }
+  }
   function compartirAudio(a) {
     var d = datosAmbito(a.ambito) || {}, archivo = null;
     var texto = (a.ambito.charAt(0) === "m" ? "Máscara " : "Pregunta sobre mí ") + (d.numero || "") + ": " + (d.nombre || "") + ". Le mando un audio:";
@@ -650,6 +676,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       }, function () {});
     } else {
       window.open(wa(texto), "_blank", "noopener");
+      avisoGrabadora(cajaDe(a.ambito), "En WhatsApp mande el mensaje y luego deje apretado el micrófono para grabar el audio otra vez.");
     }
   }
   window.addEventListener("beforeunload", function (e) {
@@ -827,7 +854,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
     return lista;
   }
   // Con Supabase, lo que la base no aceptó (y no ha mandado por WhatsApp)
-  function rechazada(id) { return !!estado.rechazadas[id.indexOf("g:") === 0 ? "general:" + id.slice(2) : "mascara:" + id]; }
+  function claveSalida(id) { return id.indexOf("g:") === 0 ? "general:" + id.slice(2) : "mascara:" + id; }
+  function rechazada(id) { return !!estado.rechazadas[claveSalida(id)]; }
   function noLlegaron() { return bloques().filter(function (b) { return rechazada(b.id) && estado.mandado[b.id] !== b.texto; }); }
   // Partes de un tamaño seguro para un enlace de WhatsApp, medido ya codificado
   function partes(lista) {
@@ -860,6 +888,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
   // ---------- Pantallas ----------
   function ir(pos, sinHistorial) {
     pararGrabacion();
+    // al cambiar de pantalla, lo pendiente sale de una vez (sin esperar el segundo y medio)
+    if (sbActivo() && !sbFallo && !sbSinRed && pendientesSalida()) { clearTimeout(sbTiempo); enviarSalida(); }
     estado.pos = String(pos);
     if (/^\d+$/.test(estado.pos)) estado.ultima = Number(estado.pos);
     guardarLocal();
@@ -892,9 +922,10 @@ textarea { min-height: 6.5rem; resize: vertical; }
   function mandarLoQueLlevo(nota) {
     var n = cuantas() + generalesContestadas();
     var boton = sbActivo() && !sbFallo && faltaPorWhatsapp() ? "Mandar lo que no llegó" : !n || enLinea() ? "" : "Mandar lo que llevo";
-    return '<div class="cierre-mascara">' + (nota ? '<p class="nota">' + nota + '</p>' : "") +
+    var dentro = (nota ? '<p class="nota">' + esc(nota) + '</p>' : "") +
       '<p class="nota estado-guardado">' + esc(dondeSeGuarda()) + '</p>' +
-      (boton ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">' + boton + '</button></div>' : "") + '</div>';
+      (boton ? '<div class="acciones"><button class="boton whatsapp" type="button" data-ir="enviar">' + boton + '</button></div>' : "");
+    return '<div class="cierre-mascara" data-nota="' + esc(nota) + '" data-firma="' + huella(dentro) + '">' + dentro + '</div>';
   }
 
   function pantallaMascara(i) {
@@ -940,7 +971,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
       '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
       (puedeGrabar()
-        ? '<p class="ayuda">Si prefiere hablar, cuénteme todo de esta máscara en un audio: toque el botón verde «Grabar un audio», hable y, cuando termine, toque el botón rojo «Terminar y guardar».</p>' + grabadora("m:" + m.id, m.n, m.nombre)
+        ? '<p class="ayuda">Si prefiere hablar, cuénteme todo de esta máscara en un audio: toque el botón verde del micrófono, hable y, cuando termine, toque el botón rojo «Terminar y guardar».</p>' + grabadora("m:" + m.id, m.n, m.nombre)
         : '<p class="ayuda" id="audio-' + i + '">' + (micNegado ? "El teléfono no me deja usar el micrófono aquí, pero puede mandarme un audio por WhatsApp:" : "Si prefiere, mándeme un audio:") + '</p>' +
           '<ol class="pasos pasos-audio" aria-labelledby="audio-' + i + '">' +
           '<li>Toque el botón verde «Contestar con un audio». Se abre WhatsApp con el número de esta máscara ya escrito' + (DESTINO ? "." : "; escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".") + '</li>' +
@@ -1003,7 +1034,11 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var lista = bloques(), porInternet = sbActivo() && !sbFallo;
     var nuevos = lista.filter(function (b) { return estado.mandado[b.id] !== b.texto; });
     var yaMando = lista.length - nuevos.length;
-    var aMandar = porInternet ? noLlegaron() : mandarTodo || !yaMando ? lista : nuevos;
+    // por internet solo va por WhatsApp lo que la base no aceptó y, si no hay internet, lo que espera en la cola
+    var enCola = porInternet && sbSinRed ? lista.filter(function (b) { return estado.salida[claveSalida(b.id)]; }) : [];
+    var porWa = {};
+    (porInternet ? noLlegaron().concat(enCola) : []).forEach(function (b) { porWa[b.id] = true; });
+    var aMandar = porInternet ? lista.filter(function (b) { return porWa[b.id]; }) : mandarTodo || !yaMando ? lista : nuevos;
     var ps = partes(aMandar), todo = ps.map(function (p) { return p.texto; }).join("\n\n");
     var hechas = cuantas(), gen = generalesContestadas(), ultima = estado.ultima || 1;
     var miChat = "Escoja mi chat" + (A_QUIEN ? " (" + esc(A_QUIEN) + ")" : "") + ".";
@@ -1017,10 +1052,11 @@ textarea { min-height: 6.5rem; resize: vertical; }
       return '<a class="boton whatsapp ancho' + (ya ? " mandada" : "") + '" data-parte="' + k + '" href="' + esc(wa(p.texto)) + '" target="_blank" rel="noopener">' + (ya ? "✓ Ya la abrió · " : "") + titulo + '</a>';
     }).join("") + '</div>';
     var malos = audiosMalos(), sinSubir = audiosPendientes.some(function (x) { return !x.definitivo; });
-    var audiosHtml = malos.length ? '<p class="aviso">' + (malos.length === 1 ? "Este audio no se pudo guardar por internet. Mándemelo por WhatsApp:" : "Estos audios no se pudieron guardar por internet. Mándemelos por WhatsApp:") + '</p>' +
+    var audiosHtml = malos.length ? '<p class="aviso">' + (malos.length === 1 ? "Este audio no se pudo guardar por internet. Mándemelo por WhatsApp:" : "Estos audios no se pudieron guardar por internet. Mándemelos por WhatsApp:") +
+      (malos.every(compartible) ? "" : " si el botón solo abre WhatsApp, ahí mande el mensaje y deje apretado el micrófono para grabarlo otra vez.") + '</p>' +
       '<div class="partes">' + malos.map(function (a) {
         var d = datosAmbito(a.ambito) || {};
-        return '<button class="boton whatsapp ancho" type="button" data-compartir="' + esc(a.archivo) + '">Mandar por WhatsApp el audio de ' +
+        return '<button class="boton whatsapp ancho" type="button" data-compartir="' + esc(a.archivo) + '">' + (compartible(a) ? "Mandar por WhatsApp" : "Grabar otra vez en WhatsApp") + ' el audio de ' +
           (a.ambito.charAt(0) === "m" ? "la máscara " + d.numero : "la pregunta " + d.numero + " sobre usted") + '</button>';
       }).join("") + '</div>' : "";
     var cuerpo;
@@ -1028,10 +1064,11 @@ textarea { min-height: 6.5rem; resize: vertical; }
       cuerpo = '<p>Todavía no hay respuestas. Regrese a las máscaras para empezar.</p>';
     } else if (porInternet) {
       cuerpo = audiosHtml + (aMandar.length
-          ? '<p class="aviso">Casi todo me llegó por internet, pero esto no se pudo guardar. Mándemelo por WhatsApp:</p>' + pasos + botones
+          ? '<p class="aviso">' + (enCola.length ? "Todavía no me llega todo: parece que no hay internet. Deje esta página abierta y se manda sola, o mándemelo por WhatsApp:"
+              : "Casi todo me llegó por internet, pero esto no se pudo guardar. Mándemelo por WhatsApp:") + '</p>' + pasos + botones
           : malos.length ? ""
           : '<p class="aviso estado-guardado">' + esc(textoSync()) + '</p>' +
-            (sinSubir ? "" : '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>')) +
+            (sinSubir || sbEnviando || pendientesSalida() ? "" : '<p>No tiene que mandar nada: cada respuesta me llega por internet en cuanto la contesta. ¡Muchas gracias!</p>')) +
         (lista.length ? '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(lista.map(function (b) { return b.texto; }).join("\n\n")) + '</pre>' : "");
     } else if (!aMandar.length) {
       cuerpo = audiosHtml + (lista.length ? '<p class="aviso">Ya me mandó todo lo que ha contestado. ¡Muchas gracias!</p>' +
@@ -1039,7 +1076,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
     } else {
       cuerpo = audiosHtml;
       cuerpo += '<p>' + (modo === "db" ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandármelas por WhatsApp."
-          : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
+          : sbActivo() && sbFallo ? "No pude guardar por internet. Para que sus respuestas me lleguen:" : "Para que sus respuestas me lleguen:") + '</p>' + pasos +
         (yaMando && !mandarTodo ? '<p class="nota">Solo va lo nuevo desde la última vez (' + aMandar.length + (aMandar.length === 1 ? " respuesta" : " respuestas") + ').</p>' : "") +
         botones +
         '<p class="nota">Si no se abre WhatsApp, toque «Copiar el texto» y péguelo en un mensaje.</p>' +
