@@ -1,9 +1,10 @@
 """Arma datos/galeria.json a partir de la clasificación del álbum (datos/album-catalogo.json)
 y la revisión de recortes (datos/recortes-revision.json). Uso: python3 herramientas/armar_galeria.py
-Después hay que volver a fijar el desfile y la muestra (ver README) y correr generar_galeria_completa.py."""
+Después: python3 herramientas/recortes_web.py . <carpeta_recortes> <ids del desfile> (si cambió el desfile)
+y python3 herramientas/generar_galeria_completa.py ."""
 import json, sys, pathlib
 S = pathlib.Path(__file__).resolve().parent.parent / 'datos'
-R = pathlib.Path('/home/user/GorgonioCandelario')
+R = pathlib.Path(__file__).resolve().parent.parent
 d = json.loads((S / 'album-catalogo.json').read_text())
 qa = {v['id']: v for v in json.loads((S / 'recortes-revision.json').read_text())}
 cat = {c['id']: c for c in d['catalogo']}
@@ -92,6 +93,17 @@ out = {
     'fotos': fotos, 'pieza_de': pieza_de, 'destacadas': destacadas, 'muestra': destacadas[:12],
     'apartadas': sorted(APARTADAS),
 }
+# En las salas se muestra siempre la foto original; los recortes aprobados forman el desfile de la entrada
+PREFERENCIA = ['a024', 'a001', 'a007', 'a169', 'a006', 'a121', 'a152', 'a018', 'a043', 'a073', 'a167', 'a108', 'a141', 'a052', 'a136', 'a066', 'a080', 'a036']
+aprobados = [f for f, v in fotos.items() if v['recorte']]
+desfile, vistas = [], set()
+for f in [x for x in PREFERENCIA if x in aprobados] + [x for x in aprobados if x not in PREFERENCIA]:
+    if pieza_de[f] not in vistas:
+        vistas.add(pieza_de[f]); desfile.append(f)
+for v in fotos.values():
+    v['recorte'] = False
+out['desfile'] = desfile
+out['muestra'] = destacadas[:15]  # 15 llena el mosaico sin huecos en todos los anchos
 (R / 'datos/galeria.json').write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
 print('salas', len(salas), '| piezas', len(usadas), '| fotos', len(usadas_fotos), '| con recorte', sum(1 for f in fotos.values() if f['recorte']))
 print(' '.join(sorted(f for f, v in fotos.items() if v['recorte'])))
