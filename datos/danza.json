@@ -4,42 +4,153 @@
   {
    "nombre": "Coyotes",
    "archivo": "IMG-20250829-WA0042.jpg",
-   "nota": "Capitán · la inteligencia"
+   "nota": "Capitán · la inteligencia",
+   "caja": [
+    108,
+    22,
+    623,
+    1261
+   ],
+   "tarjeta": {
+    "slug": "mascara-0042-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   },
   {
    "nombre": "Chivos",
    "archivo": "IMG-20250829-WA0065.jpg",
-   "nota": "Capitán · la unión y la fuerza"
+   "nota": "Capitán · la unión y la fuerza",
+   "caja": [
+    235,
+    0,
+    972,
+    1516
+   ],
+   "tarjeta": {
+    "slug": "mascara-0065-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   },
   {
    "nombre": "Borregos cimarrones",
    "archivo": "borrego-anaranjado.jpg",
-   "nota": "La fuerza y la testarudez"
+   "nota": "La fuerza y la testarudez",
+   "caja": [
+    52,
+    29,
+    499,
+    874
+   ],
+   "tarjeta": {
+    "slug": "borrego-anaranjado-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     672
+    ]
+   }
   },
   {
    "nombre": "Tecolotes",
    "archivo": "IMG-20250829-WA0022.jpg",
-   "nota": "La sabiduría"
+   "nota": "La sabiduría",
+   "caja": [
+    15,
+    6,
+    346,
+    560
+   ],
+   "tarjeta": {
+    "slug": "mascara-0022-tarjeta",
+    "tamanos": [
+     360,
+     440
+    ]
+   }
   },
   {
    "nombre": "Lince y ocelote",
    "archivo": "felino-manchas-frente.jpg",
-   "nota": "Los felinos · la agilidad y la destreza"
+   "nota": "Los felinos · la agilidad y la destreza",
+   "caja": [
+    78,
+    37,
+    649,
+    881
+   ],
+   "tarjeta": {
+    "slug": "felino-manchas-frente-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     703
+    ]
+   }
   },
   {
    "nombre": "Burros",
    "archivo": "burro-frente.jpg",
-   "nota": ""
+   "nota": "",
+   "caja": [
+    31,
+    54,
+    658,
+    967
+   ],
+   "tarjeta": {
+    "slug": "burro-frente-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   },
   {
    "nombre": "Guacamayas",
    "archivo": "ave-verde.jpg",
-   "nota": ""
+   "nota": "",
+   "caja": [
+    186,
+    40,
+    833,
+    1576
+   ],
+   "tarjeta": {
+    "slug": "ave-verde-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   },
   {
    "nombre": "Gallos",
    "archivo": "ave-anaranjada.jpg",
-   "nota": ""
+   "nota": "",
+   "caja": [
+    69,
+    31,
+    592,
+    1098
+   ],
+   "tarjeta": {
+    "slug": "ave-anaranjada-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   },
   {
    "nombre": "Perros",

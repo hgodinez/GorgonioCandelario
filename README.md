@@ -21,7 +21,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `fotos/album/` | Las 172 fotos del álbum de Google Fotos, tal como llegaron |
 | `fotos/limpias/` | Fotos listas para optimizar: sin letreros sobrepuestos, un solo panel de los collages y sin las esquinas de color de los marcos ovalados |
 | `datos/mascaras.json` | Catálogo de las fotos: título, descripción, texto alternativo, pie y sección de cada máscara |
-| `datos/danza.json` | Las nueve parejas de la Danza de los Morenos y la foto de cada una |
+| `datos/danza.json` | Las nueve parejas de la Danza de los Morenos, la foto de cada una y la caja de la máscara para su tarjeta |
 | `datos/detalles.json` | Acercamientos de la sección de técnica (recorte, título y texto) |
 | `datos/curaduria.json` | Recomendaciones de la curaduría: fotos que faltan y fotos que conviene repetir |
 | `datos/album-catalogo.json` | Clasificación del álbum: qué pieza es cada foto, su certeza, fusiones, duplicados y salas |
@@ -56,6 +56,8 @@ python3 -m http.server 8000
    El script solo reemplaza lo que está entre los comentarios `<!-- PORTADA -->`, `<!-- MÁSCARAS -->`, `<!-- IMAGEN-DANZA -->`, `<!-- PAREJAS -->` y `<!-- DETALLES -->`. El resto de la página se edita a mano.
 
    Para ponerle foto a una pareja de la danza, agrega el nombre del archivo en `datos/danza.json` y vuelve a correr el script.
+
+   Las tarjetas de las parejas muestran la máscara completa. Salen de `herramientas/tarjetas_danza.py`, que encuadra cada foto en proporción 3:4 a partir de la caja de la máscara (`caja` en `datos/danza.json`: izquierda, arriba, derecha y abajo, en pixeles de la foto). Si la foto no alcanza, prolonga la pared. Al cambiar la foto de una pareja, anota su caja y corre `python3 herramientas/tarjetas_danza.py .` antes de `generar_galeria.py`. La caja se puede medir a mano en cualquier editor de fotos o con el modelo de `recortar_fondo.py`.
 
 ## Regenerar la galería
 

@@ -116,7 +116,7 @@ DESCRIPCIONES = {
 # textos de las salas corregidos en la revisión
 SALAS = {
     'danza-de-los-morenos': {'subtitulo': 'Nueve parejas de animales, macho y hembra',
-        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Según José Guadalupe Candelario, hermano de don Gorgonio, el coyote de bigotes de arcoíris lo crearon su abuelo y su padre al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.'},
+        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.'},
     'nahuales': {'subtitulo': 'Entre la persona y el animal',
         'texto': 'Además de los animales de la danza, don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.'},
     'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Los felinos de esta sala, casi todos de boca abierta y colmillos, no coinciden con los linces confirmados de la danza; todavía no sabemos si alguno es el ocelote, un nahual —como el nahual negro, de cara felina— o una pieza aparte.'},
@@ -149,11 +149,11 @@ PAREJAS = [('danza-coyote', 'Coyotes', 'Capitán · la inteligencia'), ('danza-c
            ('danza-guacamaya', 'Guacamayas', ''), ('danza-gallo', 'Gallos', ''), ('danza-perro', 'Perros', 'Por confirmar')]
 ORDEN = ['danza-de-los-morenos', 'el-tiempo-y-la-noche', 'nahuales', 'diablos', 'vida-y-muerte', 'rostros-negros', 'seres-encimados', 'felinos', 'aves', 'pelaje-de-pincel', 'bestiario']
 salas_cur = {s['id']: s for s in cur['salas']}
-salas, usadas = [], set()
+salas, usadas = [], {}  # dict como conjunto ordenado: la salida no cambia de orden entre corridas
 for sid in ORDEN:
     s = dict(salas_cur[sid], **SALAS.get(sid, {}))
     lista = [x for x in s['piezas'] if x in piezas and x not in APARTADAS and x not in usadas]
-    usadas.update(lista)
+    usadas.update(dict.fromkeys(lista))
     s['piezas'] = lista
     if sid == 'danza-de-los-morenos':
         s['subsalas'] = []
@@ -166,7 +166,7 @@ for sid in ORDEN:
 faltan = [x for x in piezas if x not in usadas and x not in APARTADAS]
 print('piezas sin sala:', faltan)
 
-usadas_fotos = {f for x in usadas for f in piezas[x]['fotos']}
+usadas_fotos = dict.fromkeys(f for x in usadas for f in piezas[x]['fotos'])
 fotos = {}
 for f in usadas_fotos:
     if f in EXTRA_VISTAS:

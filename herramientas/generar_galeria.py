@@ -34,6 +34,15 @@ def picture(f, sizes, lazy=True, clase=''):
 def grande(f):
     return f'img/mascaras/{f["slug"]}-{f["tamanos"][-1]}'
 
+def tarjeta(t, alt, sizes):
+    """Foto 3:4 de una pareja de la danza con la máscara completa (la hace tarjetas_danza.py)."""
+    webp = ', '.join(f'img/mascaras/{t["slug"]}-{w}.webp {w}w' for w in t['tamanos'])
+    jpg = ', '.join(f'img/mascaras/{t["slug"]}-{w}.jpg {w}w' for w in t['tamanos'])
+    w0 = t['tamanos'][0]
+    return (f'<picture><source type="image/webp" srcset="{webp}" sizes="{sizes}">'
+            f'<img src="img/mascaras/{t["slug"]}-{w0}.jpg" srcset="{jpg}" sizes="{sizes}" '
+            f'width="{w0}" height="{round(w0 * 4 / 3)}" alt="{e(alt)}" loading="lazy" decoding="async"></picture>')
+
 # Portada
 h = fotos[datos['portada']['archivo']]
 portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-portada">
@@ -66,9 +75,10 @@ tarjetas = []
 for i, par in enumerate(danza['parejas'], 1):
     if par.get('archivo'):
         f = fotos[par['archivo']]
+        tam = "(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem"
+        foto = tarjeta(par['tarjeta'], f['alt'], tam) if par.get('tarjeta') else picture(f, tam)
         imagen = (f'<a class="pareja-imagen" href="{grande(f)}.jpg" data-grande="{grande(f)}.webp" '
-                  f'data-titulo="{e(par["nombre"])}" data-descripcion="{e(f["descripcion"])}">'
-                  f'{picture(f, "(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem")}</a>')
+                  f'data-titulo="{e(par["nombre"])}" data-descripcion="{e(f["descripcion"])}">{foto}</a>')
         clase = 'pareja'
     else:
         imagen = '<div class="pareja-imagen" aria-hidden="true"></div>'
