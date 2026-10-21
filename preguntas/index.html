@@ -166,13 +166,16 @@ textarea { min-height: 6.5rem; resize: vertical; }
 /* «Siguiente» es lo más visible de la pantalla; «Anterior» se queda discreto */
 #adelante { min-height: 3.75rem; font-size: 1.3rem; }
 #atras { border-color: var(--borde-control); font-weight: 600; }
-/* mientras el teclado del celular está abierto, la barra de abajo se quita para no tapar lo que escribe */
-@media (pointer: coarse) { .escribiendo .navegacion { transform: translateY(110%); } }
 /* pantallas bajas (teléfono acostado, mucho zoom): las barras dejan de flotar */
 @media (max-height: 34rem) {
   .barra, .navegacion { position: static; }
   .pantalla { padding-bottom: 1.5rem; }
 }
+/* con el teclado del celular abierto, la barra de abajo va pegada encima del teclado (la sube el JS), más
+   compacta, para que «Siguiente» se siga viendo mientras escribe */
+.con-teclado .navegacion { position: fixed; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+.con-teclado .navegacion .boton, .con-teclado #adelante { min-height: 2.9rem; }
+.con-teclado #adelante { font-size: 1.15rem; }
 
 /* Todas */
 .rejilla { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: 0.6rem; }
@@ -999,17 +1002,17 @@ textarea { min-height: 6.5rem; resize: vertical; }
       '<div class="sugerencias" role="group" aria-labelledby="toque-nombre">' + NOMBRES.map(function (x) {
         return '<button type="button" data-sugerencia="' + esc(x) + '" aria-pressed="' + (r.que_es === x) + '">' + esc(x) + '</button>';
       }).join("") + '</div>' +
-      '<label for="que-es">¿Qué es?</label><input type="text" id="que-es" data-texto="que_es" autocomplete="off" value="' + esc(r.que_es) + '" placeholder="Escriba qué animal o personaje es"></div>' +
+      '<label for="que-es">¿Qué es?</label><input type="text" id="que-es" data-texto="que_es" autocomplete="off" enterkeyhint="done" value="' + esc(r.que_es) + '" placeholder="Escriba qué animal o personaje es"></div>' +
       '</section>' +
       '<section class="pregunta"><h2 id="p-uso">' + (n++) + '. ¿En qué danza o fiesta se usa?</h2><p class="ayuda">Puede tocar más de una.</p>' +
       opciones("uso", USOS.map(function (u) { return { v: u, t: u }; }), r.uso, true, "p-uso") +
       '<div id="sexo-caja"' + (r.uso.indexOf(DANZA) >= 0 ? "" : " hidden") + '><p class="subpregunta" id="p-sexo">En la danza, ¿esta máscara es macho o hembra?</p>' +
       opciones("sexo", [{ v: "macho", t: "Macho" }, { v: "hembra", t: "Hembra" }, { v: "nose", t: "No sé" }], r.sexo, false, "p-sexo") + '</div>' +
-      '<div id="uso-otro-caja"' + (otroUso ? "" : " hidden") + '><label for="uso-otro">¿Cuál danza o fiesta?</label><input type="text" id="uso-otro" data-texto="uso_otro" autocomplete="off" value="' + esc(r.uso_otro) + '"></div>' +
+      '<div id="uso-otro-caja"' + (otroUso ? "" : " hidden") + '><label for="uso-otro">¿Cuál danza o fiesta?</label><input type="text" id="uso-otro" data-texto="uso_otro" autocomplete="off" enterkeyhint="done" value="' + esc(r.uso_otro) + '"></div>' +
       '</section>' +
       '<section class="pregunta"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
       '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
-      '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea>' +
+      '<textarea id="significado" data-texto="significado" rows="4" enterkeyhint="done">' + esc(r.significado) + '</textarea>' +
       '</section>' +
       seccionAudio(m) +
       mandarLoQueLlevo(i % 10 === 0 ? "¿Ya se cansó? Puede seguir otro día, aquí mismo." : "") +
@@ -1074,8 +1077,8 @@ textarea { min-height: 6.5rem; resize: vertical; }
       G.map(function (q, k) {
         var v = estado.g[q.id] || { opcion: "", texto: "" }, h = "g-" + q.id;
         var campo = q.corto
-          ? '<input type="text" class="corto" inputmode="numeric" id="t-' + q.id + '" data-general="' + q.id + '" value="' + esc(v.texto) + '" autocomplete="off">'
-          : '<textarea id="t-' + q.id + '" data-general="' + q.id + '" rows="2" placeholder="' + (q.opciones ? "Si quiere, explique aquí" : "Escriba aquí") + '">' + esc(v.texto) + '</textarea>';
+          ? '<input type="text" class="corto" inputmode="numeric" id="t-' + q.id + '" data-general="' + q.id + '" value="' + esc(v.texto) + '" autocomplete="off" enterkeyhint="done">'
+          : '<textarea id="t-' + q.id + '" data-general="' + q.id + '" rows="2" enterkeyhint="done" placeholder="' + (q.opciones ? "Si quiere, explique aquí" : "Escriba aquí") + '">' + esc(v.texto) + '</textarea>';
         return '<section class="pregunta"><h2 id="' + h + '"><label for="t-' + q.id + '">' + (k + 1) + '. ' + esc(q.texto) + '</label></h2>' +
           (q.foto ? '<img class="foto-pregunta" src="' + esc(q.foto) + '" alt="' + esc(q.alt || "") + '">' : "") +
           (q.enlaces ? '<div class="acciones">' + q.enlaces.map(function (e) { return '<a class="boton chico" href="' + esc(e[1]) + '" target="_blank" rel="noopener">' + esc(e[0]) + '</a>'; }).join("") + '</div>' : "") +
@@ -1318,16 +1321,41 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var p = estado.pos, n = Number(p);
     if (p === "usted") ir("enviar"); else if (n >= TOTAL) ir("usted"); else ir(n + 1);
   });
-  // La barra de abajo se quita solo mientras el teclado está en la pantalla, no mientras el cuadro tiene el
-  // foco: si cierra el teclado con el botón de atrás, el foco se queda en el cuadro y «Siguiente» debe regresar
+  // Con el teclado abierto, la barra de abajo se sube y queda justo encima del teclado, para que «Siguiente»
+  // siempre se vea. Se mira el tamaño de la pantalla, no el foco: así la barra no brinca en medio de un toque
+  // a «Siguiente» (el cuadro pierde el foco antes del clic) y regresa abajo cuando el teclado se cierra, aunque
+  // el foco se quede en el cuadro (botón de atrás). Cubre los dos modos de los navegadores: el teclado tapa la
+  // ventana (se achica visualViewport) o la ventana se encoge (se achica innerHeight).
+  var altoLibre = window.innerHeight, anchoAntes = window.innerWidth;
   function revisarTeclado() {
-    var vv = window.visualViewport;
-    var abierto = editando() && (!vv || window.innerHeight - vv.height * (vv.scale || 1) > 120);
-    document.body.classList.toggle("escribiendo", abierto);
+    var vv = window.visualViewport, alto = window.innerHeight;
+    if (window.innerWidth !== anchoAntes) { anchoAntes = window.innerWidth; altoLibre = alto; } // giró el teléfono
+    altoLibre = Math.max(altoLibre, alto);
+    if (vv && vv.scale > 1.05) { document.body.classList.remove("con-teclado"); nav.style.transform = ""; return; } // con zoom no se mueve
+    var tapado = vv ? Math.max(0, alto - (vv.offsetTop + vv.height)) : 0;
+    var visible = vv ? vv.height : alto;
+    var abierto = (tapado > 120 || altoLibre - alto > 120) && visible >= 300; // muy poca pantalla: la barra se queda abajo del teclado
+    document.body.classList.toggle("con-teclado", abierto);
+    nav.style.transform = abierto && tapado ? "translateY(" + (-tapado) + "px)" : "";
+    var a = document.activeElement;
+    if (abierto && a && /^(INPUT|TEXTAREA)$/.test(a.tagName)) {
+      // que el cuadro donde escribe no quede debajo de la barra
+      var r = a.getBoundingClientRect(), arriba = vv ? vv.offsetTop : 0;
+      var d = Math.min(r.bottom - (arriba + visible - nav.offsetHeight - 8), r.top - arriba - 8);
+      if (d > 0) window.scrollBy(0, d);
+    }
   }
-  document.addEventListener("focusin", revisarTeclado);
-  document.addEventListener("focusout", function () { setTimeout(revisarTeclado, 0); });
-  if (window.visualViewport) window.visualViewport.addEventListener("resize", revisarTeclado);
+  document.addEventListener("focusin", function () { setTimeout(revisarTeclado, 0); });
+  window.addEventListener("resize", revisarTeclado);
+  if (window.visualViewport) { window.visualViewport.addEventListener("resize", revisarTeclado); window.visualViewport.addEventListener("scroll", revisarTeclado); }
+  // Enter (en el teclado sale como «listo») cierra el teclado en vez de empezar otro renglón
+  function cerrarTeclado(e) { e.preventDefault(); e.target.blur(); }
+  app.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) cerrarTeclado(e);
+  });
+  app.addEventListener("beforeinput", function (e) {
+    if ((e.inputType === "insertLineBreak" || e.inputType === "insertParagraph") && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) cerrarTeclado(e);
+  });
   window.addEventListener("popstate", function (e) {
     var p = e.state && e.state.pos;
     if (!p) return;
