@@ -555,3 +555,10 @@ a.pareja-imagen:hover img { transform: scale(1.04); }
 }
 .cita-cierre figcaption { color: var(--cempasuchil); }
 .raices-contenido .raices-final { font-family: var(--fuente-titulos); font-size: clamp(1.2rem, 2.2vw, 1.45rem); color: var(--cempasuchil); margin-bottom: 0; }
+
+/* Foto de archivo de don Herminio: pequeña, junto al párrafo que habla de él */
+.foto-herminio { float: right; width: 9rem; margin: 0.3rem 0 1rem 1.5rem; }
+.foto-herminio img { width: 100%; border-radius: 10px; box-shadow: var(--sombra); }
+.foto-herminio figcaption { margin-top: 0.45rem; font-size: 0.85rem; line-height: 1.35; color: var(--tinta-suave); }
+@media (max-width: 520px) { .foto-herminio { width: 7.5rem; margin-left: 1rem; } }
+.linaje { clear: both; }

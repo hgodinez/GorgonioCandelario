@@ -35,7 +35,7 @@ Fuente: una propuesta editorial que compartió quien encarga el sitio (21 de oct
 | Sección | Qué se agregó |
 |---|---|
 | Portada | El lema y el botón «Conoce su historia» |
-| El maestro | «Un oficio que se aprende mirando» y «La tradición también se transforma», con la cita del padre y una foto de don Gorgonio pintando |
+| El maestro | «Un oficio que se aprende mirando», con la foto de archivo de don Herminio junto al párrafo sobre su padre, y «La tradición también se transforma», con la cita del padre y una foto de don Gorgonio pintando |
 | Entre el maestro y la danza | La cita del espíritu de las máscaras, con su retrato frente a la pared de máscaras, y «Hechas para danzar» |
 | La técnica | «La madera ya tiene una historia»: el tronco, el colorín para danzar y el cuajiote para adorno, y una foto de él tallando |
 | Antes del taller | «Lo llevamos en la sangre», con sus dos citas y la frase de cierre |
