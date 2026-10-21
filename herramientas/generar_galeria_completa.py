@@ -111,6 +111,24 @@ def mosaico(ids, conjunto=True):
     return f'<ul class="mosaico"{" data-conjunto" if conjunto else ""}>\n' + '\n'.join(items) + '\n        </ul>'
 
 
+def desfile(ids):
+    """Máscaras recortadas que avanzan como la cuadrilla de la danza; la segunda pista es copia decorativa."""
+    items, copia = [], []
+    for fid in ids:
+        t = tam[fid]
+        anch = t['recorte_tamanos']
+        src = ', '.join(f'img/galeria/recortes/{fid}-{w}.webp {w}w' for w in anch)
+        h0 = round(t['recorte_h'] * anch[0] / t['recorte_w'])
+        imagen = (f'<img src="img/galeria/recortes/{fid}-{anch[0]}.webp" srcset="{src}" sizes="16rem" '
+                  f'width="{anch[0]}" height="{h0}" alt="{e(fotos[fid]["alt"])}" decoding="async">')
+        items.append(f'            <li>{enlace(g["pieza_de"][fid], fid, imagen)}</li>')
+        copia.append(f'            <li>{imagen.replace(" alt=" + chr(34) + e(fotos[fid]["alt"]) + chr(34), " alt=" + chr(34) + chr(34))}</li>')
+    return ('<section class="desfile" aria-label="Desfile de máscaras">\n        <div class="desfile-pistas">\n'
+            '          <ul class="desfile-pista" data-conjunto>\n' + '\n'.join(items) + '\n          </ul>\n'
+            '          <ul class="desfile-pista" aria-hidden="true" inert>\n' + '\n'.join(copia) + '\n          </ul>\n'
+            '        </div>\n      </section>')
+
+
 total_fotos = sum(len(piezas[s]['fotos']) for sala in g['salas'] for sub in (sala.get('subsalas') or [{'piezas': sala['piezas']}]) for s in sub['piezas'])
 cuerpo = f'''<section class="galeria-entrada" aria-labelledby="titulo-galeria">
       <div class="contenedor">
@@ -124,9 +142,7 @@ cuerpo = f'''<section class="galeria-entrada" aria-labelledby="titulo-galeria">
         </ul>
       </div>
     </section>
-    <div class="contenedor">
-        {mosaico(g["destacadas"])}
-    </div>
+    {desfile(g["desfile"])}
     <nav class="salas-nav" aria-label="Salas de la galería">
       <div class="contenedor"><ul>{"".join(nav)}</ul></div>
     </nav>

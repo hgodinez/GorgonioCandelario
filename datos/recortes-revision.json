@@ -1,0 +1,862 @@
+[
+ {
+  "id": "a001",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a002",
+  "usar_recorte": false,
+  "problema": "Collage de dos fotos con fondo azul; el recorte deja trozos de pared"
+ },
+ {
+  "id": "a003",
+  "usar_recorte": false,
+  "problema": "Cuerno izquierdo cortado por el encuadre, queda un fragmento suelto; orejas semitransparentes"
+ },
+ {
+  "id": "a004",
+  "usar_recorte": false,
+  "problema": "Parte trasera de la oreja derecha (amarilla con manchas) semitransparente"
+ },
+ {
+  "id": "a005",
+  "usar_recorte": false,
+  "problema": "Conserva el texto 'JABALI' de la foto"
+ },
+ {
+  "id": "a006",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a007",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a008",
+  "usar_recorte": false,
+  "problema": "Queda una franja clara del soporte blanco de la pared sobre la cabeza, entre los cuernos"
+ },
+ {
+  "id": "a049",
+  "usar_recorte": false,
+  "problema": "Antenas semitransparentes y reflejo amarillo de la pared en los bordes de las alas"
+ },
+ {
+  "id": "a050",
+  "usar_recorte": false,
+  "problema": "Huecos transparentes en el recorte: junto a la ceja izquierda y en las rayas al lado del pico"
+ },
+ {
+  "id": "a051",
+  "usar_recorte": false,
+  "problema": "Collage de tres fotos; quedan etiquetas y manchas de pared"
+ },
+ {
+  "id": "a052",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a053",
+  "usar_recorte": false,
+  "problema": "Se ve la pared amarilla por los huecos de los ojos y el reflejo amarillo tiñe los bordes"
+ },
+ {
+  "id": "a054",
+  "usar_recorte": false,
+  "problema": "Escéptico: Halo visible: un contorno fino amarillo-oliva (reflejo de la pared amarilla) rodea las puntas negras de las orejas, los lóbulos negros de la gorguera y el borde inferior; destaca sobre fondo oscuro y se nota también a media escala. Además queda una sombra gris semitransparente junto a la placa lateral derecha."
+ },
+ {
+  "id": "a055",
+  "usar_recorte": false,
+  "problema": "Resto de sombra difusa junto al hocico, del lado derecho"
+ },
+ {
+  "id": "a056",
+  "usar_recorte": false,
+  "problema": "Astas cortadas por el borde de la foto (puntas truncadas)"
+ },
+ {
+  "id": "a097",
+  "usar_recorte": false,
+  "problema": "Queda un trozo de sombra o pared entre las puntas de la corona"
+ },
+ {
+  "id": "a098",
+  "usar_recorte": false,
+  "problema": "Colmillos del jaguar desvanecidos y bordes inferiores difusos"
+ },
+ {
+  "id": "a099",
+  "usar_recorte": false,
+  "problema": "Borde superior de la oreja derecha borroso o difuminado"
+ },
+ {
+  "id": "a100",
+  "usar_recorte": false,
+  "problema": "Se pierde la parte inferior de la mandíbula; queda un goteo suelto y el borde del hocico es irregular"
+ },
+ {
+  "id": "a101",
+  "usar_recorte": false,
+  "problema": "Cuerno derecho semitransparente; bordes con restos de pared"
+ },
+ {
+  "id": "a102",
+  "usar_recorte": false,
+  "problema": "Neblina de sombra bajo la barbilla y borde izquierdo difuso"
+ },
+ {
+  "id": "a103",
+  "usar_recorte": false,
+  "problema": "Halo beige visible alrededor de los cuernos"
+ },
+ {
+  "id": "a104",
+  "usar_recorte": false,
+  "problema": "Fragmentos sueltos de la cresta del lado opuesto flotan junto al perfil"
+ },
+ {
+  "id": "a145",
+  "usar_recorte": false,
+  "problema": "Collage de varias fotos"
+ },
+ {
+  "id": "a146",
+  "usar_recorte": false,
+  "problema": "Collage de tres fotos"
+ },
+ {
+  "id": "a147",
+  "usar_recorte": false,
+  "problema": "Neblina de sombra en la base y bordes borrosos (foto de baja resolución)"
+ },
+ {
+  "id": "a148",
+  "usar_recorte": false,
+  "problema": "Se pierde el pelo de fibra y la parte superior de la máscara queda dañada o transparente"
+ },
+ {
+  "id": "a149",
+  "usar_recorte": false,
+  "problema": "Pico semitransparente (se ve el fondo a través)"
+ },
+ {
+  "id": "a150",
+  "usar_recorte": false,
+  "problema": "Fragmento suelto arriba a la derecha (antena cortada por el encuadre) y borde del ala irregular"
+ },
+ {
+  "id": "a151",
+  "usar_recorte": false,
+  "problema": "Halo claro a lo largo del borde de la cabeza"
+ },
+ {
+  "id": "a152",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a009",
+  "usar_recorte": false,
+  "problema": "Grupo de 3 mascaras; queda una mancha translucida de pared/sombra junto a la mascara del centro"
+ },
+ {
+  "id": "a010",
+  "usar_recorte": false,
+  "problema": "Los triangulos blancos del costado de la trompa quedaron semitransparentes"
+ },
+ {
+  "id": "a011",
+  "usar_recorte": false,
+  "problema": "El cuerno izquierdo esta cortado por el borde de la foto; huecos en la franja inferior derecha"
+ },
+ {
+  "id": "a012",
+  "usar_recorte": false,
+  "problema": "El lado izquierdo de la cresta roja quedo semitransparente (bruma)"
+ },
+ {
+  "id": "a013",
+  "usar_recorte": false,
+  "problema": "Quedo un trozo grande de pared/sombra beige bajo el pico"
+ },
+ {
+  "id": "a014",
+  "usar_recorte": false,
+  "problema": "Escéptico: Halo claro de 1-2 px alrededor de ambos cuernos oscuros: el borde es ~2.5x más brillante que el interior, se nota sobre fondo oscuro. Además queda una cuña gris de pared entre la base del cuerno derecho y la oreja derecha (y una franja oscura de sombra en el lado izquierdo). Mostrar la foto original."
+ },
+ {
+  "id": "a015",
+  "usar_recorte": false,
+  "problema": "Bruma y sombra de la pared alrededor de las antenas; borde translucido"
+ },
+ {
+  "id": "a016",
+  "usar_recorte": false,
+  "problema": "Falta el cuerno y la oreja derechos; queda un resto del letrero TORO MULTICOLOR"
+ },
+ {
+  "id": "a057",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de la pared en el contorno; mota suelta arriba"
+ },
+ {
+  "id": "a058",
+  "usar_recorte": false,
+  "problema": "Huecos transparentes en el ojo derecho y en una mancha del costado"
+ },
+ {
+  "id": "a059",
+  "usar_recorte": false,
+  "problema": "Collage de dos fotos; ademas halo amarillo"
+ },
+ {
+  "id": "a060",
+  "usar_recorte": false,
+  "problema": "Las puntas de la cornamenta izquierda estan cortadas por el borde de la foto"
+ },
+ {
+  "id": "a061",
+  "usar_recorte": false,
+  "problema": "El pelo de fibra quedo como bruma blanquecina con halo"
+ },
+ {
+  "id": "a062",
+  "usar_recorte": false,
+  "problema": "Restos del clavo/alambre junto a la punta del cuerno y de la pieza de montaje tras los cuernos"
+ },
+ {
+  "id": "a063",
+  "usar_recorte": false,
+  "problema": "Zonas semitransparentes, huecos y restos de otro objeto bajo el hocico"
+ },
+ {
+  "id": "a064",
+  "usar_recorte": false,
+  "problema": "El cuerno y la oreja derechos quedaron semitransparentes"
+ },
+ {
+  "id": "a105",
+  "usar_recorte": false,
+  "problema": "Los dientes y la lengua quedaron semitransparentes"
+ },
+ {
+  "id": "a106",
+  "usar_recorte": false,
+  "problema": "Borde derecho e inferior difuso con halo amarillo; partes translucidas en los dientes"
+ },
+ {
+  "id": "a107",
+  "usar_recorte": false,
+  "problema": "Bruma de sombra de la pared detras de la corona y en el costado derecho"
+ },
+ {
+  "id": "a108",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a109",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de la pared en el contorno; mota suelta arriba"
+ },
+ {
+  "id": "a110",
+  "usar_recorte": false,
+  "problema": "Borde beige claro alrededor de toda la mascara; se ve como halo sobre fondo oscuro"
+ },
+ {
+  "id": "a111",
+  "usar_recorte": false,
+  "problema": "Halo claro en el borde izquierdo; zona translucida en la boca"
+ },
+ {
+  "id": "a112",
+  "usar_recorte": false,
+  "problema": "Bruma de sombra en el lado derecho de la corona; oreja translucida"
+ },
+ {
+  "id": "a153",
+  "usar_recorte": false,
+  "problema": "Collage de varias fotos"
+ },
+ {
+  "id": "a154",
+  "usar_recorte": false,
+  "problema": "La nariz/centro de la cara y la boca quedaron transparentes"
+ },
+ {
+  "id": "a155",
+  "usar_recorte": false,
+  "problema": "La mascara esta cortada por el borde derecho de la foto; puntas de los rayos inferiores translucidas"
+ },
+ {
+  "id": "a156",
+  "usar_recorte": false,
+  "problema": "Pequenos huecos (el blanco del ojo, las rayas entre las orejas) y un resto difuso en el borde derecho"
+ },
+ {
+  "id": "a157",
+  "usar_recorte": false,
+  "problema": "La parte inferior trasera (mandibula/costado gris) quedo semitransparente"
+ },
+ {
+  "id": "a158",
+  "usar_recorte": false,
+  "problema": "Los dientes blancos quedaron como un hueco transparente"
+ },
+ {
+  "id": "a159",
+  "usar_recorte": false,
+  "problema": "Resto de la mascara vecina junto a la oreja derecha; el blanco del ojo quedo transparente"
+ },
+ {
+  "id": "a160",
+  "usar_recorte": false,
+  "problema": "Las rayas blancas de la cebra quedaron transparentes"
+ },
+ {
+  "id": "a017",
+  "usar_recorte": false,
+  "problema": "Falta la oreja derecha completa; bordes difusos"
+ },
+ {
+  "id": "a018",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a019",
+  "usar_recorte": false,
+  "problema": "La fibra superior queda como neblina; cuernos semitransparentes"
+ },
+ {
+  "id": "a020",
+  "usar_recorte": false,
+  "problema": "Mejilla y borde derecho semitransparentes/difusos; el original es captura de pantalla"
+ },
+ {
+  "id": "a021",
+  "usar_recorte": false,
+  "problema": "Huecos y zonas semitransparentes; se perdió la parte interior oscura de la máscara"
+ },
+ {
+  "id": "a022",
+  "usar_recorte": false,
+  "problema": "Parte inferior negra (mandíbula/lateral) recortada de forma incompleta"
+ },
+ {
+  "id": "a023",
+  "usar_recorte": false,
+  "problema": "Restos semitransparentes de pared/hilo entre la luna y el sol de la corona"
+ },
+ {
+  "id": "a024",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a065",
+  "usar_recorte": false,
+  "problema": "Collage de tres fotos; quedan fantasmas de las otras máscaras"
+ },
+ {
+  "id": "a066",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a067",
+  "usar_recorte": false,
+  "problema": "Pared amarilla semitransparente dentro de la cresta"
+ },
+ {
+  "id": "a068",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de la pared en los bordes; ojo parcialmente transparente"
+ },
+ {
+  "id": "a069",
+  "usar_recorte": false,
+  "problema": "Collage de dos fotos"
+ },
+ {
+  "id": "a070",
+  "usar_recorte": false,
+  "problema": "Queda un trozo del gancho/cuerda en la parte inferior"
+ },
+ {
+  "id": "a071",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de pared, ojo izquierdo transparente y clavo visible"
+ },
+ {
+  "id": "a072",
+  "usar_recorte": false,
+  "problema": "Queda un trozo de la figura de abajo; halo en los bordes"
+ },
+ {
+  "id": "a113",
+  "usar_recorte": false,
+  "problema": "Escéptico: Máscara negra laqueada sobre pared amarilla: el contorno conserva un filo amarillo/oliva claro (píxeles semitransparentes con color de pared ~191,168,109) que sobre fondo oscuro se ve como halo, muy marcado en el borde derecho y la esquina superior; además los huecos bajo los ojos y la boca siguen rellenos con la pared caqui."
+ },
+ {
+  "id": "a114",
+  "usar_recorte": false,
+  "problema": "Restos de pared entre las patas y alas del ave superior"
+ },
+ {
+  "id": "a115",
+  "usar_recorte": false,
+  "problema": "Escéptico: Mismo problema que a113: filo amarillento de pared a lo largo del contorno izquierdo y superior de la máscara negra (halo visible sobre fondo oscuro) y el hueco bajo el ojo sigue relleno de pared caqui."
+ },
+ {
+  "id": "a116",
+  "usar_recorte": false,
+  "problema": "Leve neblina gris junto a la base de la oreja y borde irregular en la oreja derecha"
+ },
+ {
+  "id": "a117",
+  "usar_recorte": false,
+  "problema": "Hocico y mandíbula semitransparentes"
+ },
+ {
+  "id": "a118",
+  "usar_recorte": false,
+  "problema": "Clavo de la pared visible arriba y leve halo en el borde superior"
+ },
+ {
+  "id": "a119",
+  "usar_recorte": false,
+  "problema": "La barba de fibra desapareció; restos de fibra junto a los cuernos"
+ },
+ {
+  "id": "a120",
+  "usar_recorte": false,
+  "problema": "Sombra incluida como halo difuso en el borde derecho"
+ },
+ {
+  "id": "a161",
+  "usar_recorte": false,
+  "problema": "Lado derecho y parte inferior semitransparentes"
+ },
+ {
+  "id": "a162",
+  "usar_recorte": false,
+  "problema": "Clavos y alambre visibles; boca con restos semitransparentes"
+ },
+ {
+  "id": "a163",
+  "usar_recorte": false,
+  "problema": "Sombra gris bajo los flecos rojos inferiores; bordes laterales suaves"
+ },
+ {
+  "id": "a164",
+  "usar_recorte": false,
+  "problema": "Cuerno y oreja derechos semitransparentes"
+ },
+ {
+  "id": "a165",
+  "usar_recorte": false,
+  "problema": "Halo claro visible en el borde superior"
+ },
+ {
+  "id": "a166",
+  "usar_recorte": false,
+  "problema": "Borde inferior difuso y borroso"
+ },
+ {
+  "id": "a167",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a168",
+  "usar_recorte": false,
+  "problema": "Hocico blanco semitransparente"
+ },
+ {
+  "id": "a025",
+  "usar_recorte": false,
+  "problema": "Quedan restos de pared beige (textura de estuco) dentro de la corona, entre el sol y las puntas"
+ },
+ {
+  "id": "a026",
+  "usar_recorte": false,
+  "problema": "Escéptico: Transparencia parcial dentro de la mascara: en la mejilla inferior derecha las zonas naranjas entre manchas quedaron semitransparentes (alfa ~0.3-0.6, se ve el fondo a traves), y el borde inferior de la mandibula queda difuso."
+ },
+ {
+  "id": "a027",
+  "usar_recorte": false,
+  "problema": "Es un collage de dos fotos de la misma máscara"
+ },
+ {
+  "id": "a028",
+  "usar_recorte": false,
+  "problema": "Desapareció la barba de fibra blanca bajo el hocico; la punta del cuerno quedó difusa"
+ },
+ {
+  "id": "a029",
+  "usar_recorte": false,
+  "problema": "Escéptico: Conserva parte de la sombra de la pared bajo el borde inferior izquierdo: banda gris oliva con borde difuminado que en fondo claro se ve como mancha y en oscuro como bulto gris."
+ },
+ {
+  "id": "a030",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a031",
+  "usar_recorte": false,
+  "problema": "Los costados naranjas de la cresta quedaron semitransparentes y se ven oscurecidos"
+ },
+ {
+  "id": "a032",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a073",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a074",
+  "usar_recorte": false,
+  "problema": "Escéptico: Queda una franja de sombra de pared beige a lo largo de todo el borde derecho, con un escalon recto junto a la oreja derecha. Tambien conserva el gancho metalico de colgar entre las orejas."
+ },
+ {
+  "id": "a075",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a076",
+  "usar_recorte": false,
+  "problema": "Faltan las mejillas blancas y la oreja derecha; hay una franja transparente en la frente"
+ },
+ {
+  "id": "a077",
+  "usar_recorte": false,
+  "problema": "Halo rosado de la pared en los bordes y el hocico; foto de muy baja resolución"
+ },
+ {
+  "id": "a078",
+  "usar_recorte": false,
+  "problema": "El pico desapareció (quedó transparente)"
+ },
+ {
+  "id": "a079",
+  "usar_recorte": false,
+  "problema": "Halo oscuro de la tela en los bordes superiores y laterales; foto de baja resolución"
+ },
+ {
+  "id": "a080",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a121",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a122",
+  "usar_recorte": false,
+  "problema": "Halo gris de la pared en el borde del búho y un pequeño hueco junto a la gorguera del lince"
+ },
+ {
+  "id": "a123",
+  "usar_recorte": false,
+  "problema": "Se perdió la mandíbula inferior negra; el borde inferior quedó difuso"
+ },
+ {
+  "id": "a124",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de la pared alrededor de la cara y el ojo izquierdo semitransparente"
+ },
+ {
+  "id": "a125",
+  "usar_recorte": false,
+  "problema": "Mancha de pared detrás de la oreja de la máscara central; el borde derecho de la tercera máscara quedó difuso"
+ },
+ {
+  "id": "a126",
+  "usar_recorte": false,
+  "problema": "Incluye el clavo de la pared arriba; mancha semitransparente bajo el pico inferior"
+ },
+ {
+  "id": "a127",
+  "usar_recorte": false,
+  "problema": "Zonas semitransparentes en la mejilla y en los dientes"
+ },
+ {
+  "id": "a128",
+  "usar_recorte": false,
+  "problema": "La fibra del pelo quedó con bruma blanca de la pared en la parte inferior"
+ },
+ {
+  "id": "a169",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a170",
+  "usar_recorte": false,
+  "problema": "La mejilla derecha quedó transparente; se ve el fondo entre las escamas"
+ },
+ {
+  "id": "a171",
+  "usar_recorte": false,
+  "problema": "Las partes blancas de las orejas quedaron semitransparentes"
+ },
+ {
+  "id": "a172",
+  "usar_recorte": false,
+  "problema": "Las partes blancas de las orejas quedaron semitransparentes en parte"
+ },
+ {
+  "id": "a033",
+  "usar_recorte": false,
+  "problema": "Ojo derecho del jaguar y parte de la mejilla semitransparentes; huecos entre dientes y mandíbula"
+ },
+ {
+  "id": "a034",
+  "usar_recorte": false,
+  "problema": "Collage de dos fotos (tigre de frente y de perfil)"
+ },
+ {
+  "id": "a035",
+  "usar_recorte": false,
+  "problema": "Se perdió el cabello de fibra"
+ },
+ {
+  "id": "a036",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a037",
+  "usar_recorte": false,
+  "problema": "Resto de otro objeto tras la oreja izquierda; mandíbula inferior semitransparente"
+ },
+ {
+  "id": "a038",
+  "usar_recorte": false,
+  "problema": "Se perdió el cabello de fibra"
+ },
+ {
+  "id": "a039",
+  "usar_recorte": false,
+  "problema": "Manchas transparentes en la cara, orejas y dientes difusos, bordes con bruma"
+ },
+ {
+  "id": "a040",
+  "usar_recorte": false,
+  "problema": "Se eliminó la parte negra inferior/lateral de la máscara (posible pieza de la máscara)"
+ },
+ {
+  "id": "a081",
+  "usar_recorte": false,
+  "problema": "Oreja derecha convertida en bruma semitransparente junto con la sombra"
+ },
+ {
+  "id": "a082",
+  "usar_recorte": false,
+  "problema": "Halo claro en los bordes laterales y pequeñas muescas; baja resolución"
+ },
+ {
+  "id": "a083",
+  "usar_recorte": false,
+  "problema": "Hueco transparente en el ojo izquierdo; borde rosado de la pared en el contorno inferior"
+ },
+ {
+  "id": "a084",
+  "usar_recorte": false,
+  "problema": "Escéptico: Halo gris claro (pared) en el borde de las zonas negras: panel lateral oscuro y mandíbula, visible sobre fondo oscuro. Además queda una mancha gris verdosa entre la nariz y el labio inferior, probablemente pared vista por la abertura de la boca. La fuente es diminuta (recorte de 221x357) y se verá borrosa al ampliarla."
+ },
+ {
+  "id": "a085",
+  "usar_recorte": false,
+  "problema": "El ojo del lado lejano quedó semitransparente"
+ },
+ {
+  "id": "a086",
+  "usar_recorte": false,
+  "problema": "Borde izquierdo de la cresta difuso/irregular con restos semitransparentes"
+ },
+ {
+  "id": "a087",
+  "usar_recorte": false,
+  "problema": "Incluye la sombra de la pared abajo a la izquierda"
+ },
+ {
+  "id": "a088",
+  "usar_recorte": false,
+  "problema": "Se eliminó la barba de fibra"
+ },
+ {
+  "id": "a129",
+  "usar_recorte": false,
+  "problema": "Falta el cuerno izquierdo; interior de la oreja derecha semitransparente"
+ },
+ {
+  "id": "a130",
+  "usar_recorte": false,
+  "problema": "Halo amarillo de la pared en el contorno de la barba; mechón de fibra semitransparente"
+ },
+ {
+  "id": "a131",
+  "usar_recorte": false,
+  "problema": "Oreja derecha convertida en bruma semitransparente junto con la sombra"
+ },
+ {
+  "id": "a132",
+  "usar_recorte": false,
+  "problema": "Escéptico: Fleco amarillo-ocre de la pared en el contorno: se dibuja una línea dorada alrededor del hueco entre el ala y el pájaro, y a lo largo de los bordes de las alas. Se nota sobre fondo oscuro porque la máscara es negra brillante. Ala, pájaro y pico están completos, pero el halo es visible."
+ },
+ {
+  "id": "a133",
+  "usar_recorte": false,
+  "problema": "Resto de pared entre el penacho azul y los pétalos del sol; extremo derecho de la banda semitransparente"
+ },
+ {
+  "id": "a134",
+  "usar_recorte": false,
+  "problema": "Se ve la pared beige dentro de los huecos de los ojos; leve halo en los bordes"
+ },
+ {
+  "id": "a135",
+  "usar_recorte": false,
+  "problema": "Lado inferior izquierdo de la máscara semitransparente (bruma)"
+ },
+ {
+  "id": "a136",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a041",
+  "usar_recorte": false,
+  "problema": "Neblina/sombra beige de la pared en el lado derecho y abajo a la izquierda del hocico (halo visible)."
+ },
+ {
+  "id": "a042",
+  "usar_recorte": false,
+  "problema": "Queda un trozo de otro objeto rojo (otra máscara) abajo a la derecha."
+ },
+ {
+  "id": "a043",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a044",
+  "usar_recorte": false,
+  "problema": "Falta un trozo junto al colmillo izquierdo (se ve el fondo) y la punta de la oreja derecha del búho quedó semitransparente."
+ },
+ {
+  "id": "a045",
+  "usar_recorte": false,
+  "problema": "Escéptico: Queda el alambre/colgador entre las orejas, semitransparente y fantasmal; junto a la base de la oreja izquierda queda una cuña gris de sombra semitransparente, y el interior rosa de la oreja derecha sale parcialmente transparente (alfa moteado)."
+ },
+ {
+  "id": "a046",
+  "usar_recorte": false,
+  "problema": "El blanco del ojo quedó transparente (hueco) y hay neblina de sombra abajo a la derecha."
+ },
+ {
+  "id": "a047",
+  "usar_recorte": false,
+  "problema": "Desapareció la barba de fibra blanca bajo el hocico."
+ },
+ {
+  "id": "a048",
+  "usar_recorte": false,
+  "problema": "Neblina/halo amarillento en el lado derecho de la mandíbula y junto al colmillo derecho."
+ },
+ {
+  "id": "a089",
+  "usar_recorte": false,
+  "problema": "Imagen de baja resolución, bordes blandos con halo y restos grisáceos detrás de los cuernos."
+ },
+ {
+  "id": "a090",
+  "usar_recorte": false,
+  "problema": "Desapareció la barba de fibra blanca; baja resolución y bordes blandos."
+ },
+ {
+  "id": "a091",
+  "usar_recorte": false,
+  "problema": "Neblina de sombra junto a la parte baja del hocico (halo a ambos lados)."
+ },
+ {
+  "id": "a092",
+  "usar_recorte": false,
+  "problema": "Restos de pared texturizada arriba a la izquierda y neblina en el lado derecho."
+ },
+ {
+  "id": "a093",
+  "usar_recorte": false,
+  "problema": "Halo de sombra junto a la oreja izquierda y a lo largo del lado derecho de la mandíbula."
+ },
+ {
+  "id": "a094",
+  "usar_recorte": false,
+  "problema": "Baja resolución (209x358), bordes blandos con halo marrón."
+ },
+ {
+  "id": "a095",
+  "usar_recorte": false,
+  "problema": "Escéptico: Quedan restos de la sombra de la pared en la mejilla inferior izquierda: una mancha gris semitransparente que se ve sobre fondo claro. El borde lateral derecho, junto a la línea de puntos, sale difuso y semitransparente."
+ },
+ {
+  "id": "a096",
+  "usar_recorte": false,
+  "problema": "Halo blanco borroso alrededor de la punta del colmillo derecho y bordes blandos abajo."
+ },
+ {
+  "id": "a137",
+  "usar_recorte": false,
+  "problema": "Zona crema dudosa (pared/sombra) entre el sol y la corona, semitransparente con neblina en la parte de arriba."
+ },
+ {
+  "id": "a138",
+  "usar_recorte": false,
+  "problema": "Quedan restos de malla/red bajo la mandíbula y fragmentos de otro objeto arriba a la derecha; hay huecos en la parte baja."
+ },
+ {
+  "id": "a139",
+  "usar_recorte": false,
+  "problema": "Bordes borrosos con neblina en el lado izquierdo de la cara y en la punta de la oreja derecha."
+ },
+ {
+  "id": "a140",
+  "usar_recorte": false,
+  "problema": "Las pinceladas amarillas del lado derecho quedaron transparentes (huecos dentro de la máscara)."
+ },
+ {
+  "id": "a141",
+  "usar_recorte": true,
+  "problema": ""
+ },
+ {
+  "id": "a142",
+  "usar_recorte": false,
+  "problema": "Pequeño agujero transparente en la frente (arriba a la derecha) y bordes dudosos en el flequillo inferior."
+ },
+ {
+  "id": "a143",
+  "usar_recorte": false,
+  "problema": "Mancha de neblina entre las puntas de la corona (junto a la luna)."
+ },
+ {
+  "id": "a144",
+  "usar_recorte": false,
+  "problema": "Muy baja resolución (196x393), bordes blandos con halo grisáceo de la pared en el lado izquierdo."
+ }
+]
