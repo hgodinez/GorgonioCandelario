@@ -4,7 +4,7 @@ máscara completa: encuadra la caja de la máscara anotada en datos/danza.json (
 pared con el color de su orilla (sin reflejar nada de lo que hay junto a la máscara).
 Escribe img/mascaras/<slug>-tarjeta-<ancho>.webp y .jpg y anota «tarjeta» en datos/danza.json.
 Requiere Pillow y numpy. Uso: python3 herramientas/tarjetas_danza.py ."""
-import json, sys, pathlib
+import json, math, re, sys, pathlib
 import numpy as np
 from PIL import Image, ImageOps
 
@@ -26,34 +26,46 @@ def origen(archivo):
 
 
 def ventana(W, H, caja):
+    """Ventana (x, y, ancho, alto) en pixeles de la foto; puede salirse de ella (eso se llena con pared)."""
     x0, y0, x1, y1 = caja
     bw, bh = x1 - x0, y1 - y0
-    toca_v = y0 <= 1 and y1 >= H - 1  # la máscara toca arriba y abajo: no cabe pared en ese eje
-    toca_h = x0 <= 1 and x1 >= W - 1
-    alto = bh * (1 + 2 * MARGEN)
-    if alto > H:  # la foto no da: usar todo el alto, sin bajar del margen mínimo
-        alto = H if toca_v else max(H, bh * (1 + 2 * MARGEN_MIN))
-    ancho = alto * PROPORCION
-    minimo = W if toca_h else bw * (1 + 2 * MARGEN)
-    if ancho < minimo:  # máscara ancha: manda el ancho
-        ancho = minimo
+
+    def extremos(lo, hi, total, b):
+        """Hasta dónde debe llegar la ventana en un eje. Cada lado lleva MARGEN si la foto lo tiene
+        y nunca menos de MARGEN_MIN (lo que falte es pared); el lado donde la máscara toca la orilla
+        de la foto no lleva margen, para no inventar pared junto a un corte."""
+        a = 0 if lo <= 1 else lo - max(MARGEN_MIN * b, min(MARGEN * b, lo))
+        z = total if hi >= total - 1 else hi + max(MARGEN_MIN * b, min(MARGEN * b, total - hi))
+        return a, z
+
+    ay, zy = extremos(y0, y1, H, bh)
+    ax, zx = extremos(x0, x1, W, bw)
+    alto, ancho = zy - ay, zx - ax
+    if ancho < alto * PROPORCION:
+        ancho = alto * PROPORCION
+    else:  # máscara ancha: manda el ancho
         alto = ancho / PROPORCION
     ancho, alto = round(ancho), round(alto)
-    cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
 
-    def colocar(centro, lado, total, lo, hi):
-        inicio = round(centro - lado / 2)
-        if lado <= total:  # cabe: se recorre para no salirse de la foto
-            inicio = min(max(inicio, 0), total - lado)
-        elif lo <= 1 and hi < total - 1:  # la máscara toca la orilla: no se inventa pared de ese lado
-            inicio = 0
-        elif hi >= total - 1 and lo > 1:
-            inicio = total - lado
-        else:  # no cabe y no toca orillas: usar toda la foto y repartir la pared que falta
-            inicio = min(0, max(total - lado, inicio))
-        return inicio
-    wx, wy = colocar(cx, ancho, W, x0, x1), colocar(cy, alto, H, y0, y1)
-    return wx, wy, ancho, alto
+    def colocar(lado, total, a, z, lo, hi):
+        """Inicio de la ventana en un eje: cubre [a, z], no pone pared antes de una orilla que la
+        máscara toca, aprovecha toda la foto que pueda y, dentro de eso, se centra en la máscara."""
+        p, q = z - lado, a
+        if lo <= 1:
+            p = max(p, 0)
+        if hi >= total - 1:
+            q = min(q, total - lado)
+        r, t = (0, total - lado) if lado <= total else (total - lado, 0)
+        if max(p, r) <= min(q, t):
+            p, q = max(p, r), min(q, t)
+        centrado = round((lo + hi) / 2 - lado / 2)
+        if p > q:  # la máscara toca las dos orillas y aun así falta espacio
+            return centrado
+        if math.ceil(p) > math.floor(q):  # el margen cabe con menos de un pixel de holgura
+            return round((p + q) / 2)
+        return min(max(centrado, math.ceil(p)), math.floor(q))
+
+    return colocar(ancho, W, ax, zx, x0, x1), colocar(alto, H, ay, zy, y0, y1), ancho, alto
 
 
 def suavizar(v, sigma):
@@ -150,15 +162,30 @@ def prolongar(lienzo, foto_caja, caja_masc, semilla):
     return Image.fromarray(np.clip(a, 0, 255).round().astype(np.uint8), 'RGB')
 
 
+def borrar_tarjetas(slug, menos=()):
+    for f in (raiz / 'img/mascaras').glob(f'{slug}-tarjeta-*'):
+        m = re.fullmatch(rf'{re.escape(slug)}-tarjeta-(\d+)\.(webp|jpg)', f.name)
+        if m and int(m.group(1)) not in menos:
+            f.unlink()
+
+
+# primero se revisan todas las cajas, para no dejar el trabajo a medias
+for par in danza['parejas']:
+    if par.get('archivo') and par.get('caja'):
+        W, H = ImageOps.exif_transpose(Image.open(origen(par['archivo']))).size
+        x0, y0, x1, y1 = par['caja']
+        if not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
+            sys.exit(f'La caja de «{par["nombre"]}» {par["caja"]} se sale de la foto ({W}x{H}).')
+
 for n, par in enumerate(danza['parejas']):
     if not par.get('archivo') or not par.get('caja'):
+        if par.get('archivo') in fotos:
+            borrar_tarjetas(fotos[par['archivo']]['slug'])
         par.pop('tarjeta', None)
         continue
     im = ImageOps.exif_transpose(Image.open(origen(par['archivo']))).convert('RGB')
     W, H = im.size
     x0, y0, x1, y1 = par['caja']
-    if not (0 <= x0 < x1 <= W and 0 <= y0 < y1 <= H):
-        sys.exit(f'La caja de «{par["nombre"]}» {par["caja"]} se sale de la foto ({W}x{H}).')
     wx, wy, ancho, alto = ventana(W, H, par['caja'])
     lienzo = Image.new('RGB', (ancho, alto))
     lienzo.paste(im.crop((max(wx, 0), max(wy, 0), min(wx + ancho, W), min(wy + alto, H))), (max(-wx, 0), max(-wy, 0)))
@@ -176,6 +203,7 @@ for n, par in enumerate(danza['parejas']):
         t.save(raiz / f'img/mascaras/{slug}-tarjeta-{a}.webp', 'WEBP', quality=82, method=6)
         t.save(raiz / f'img/mascaras/{slug}-tarjeta-{a}.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
         hechos.append(a)
+    borrar_tarjetas(slug, hechos)  # tamaños viejos que ya no se usan
     # «archivo» liga la tarjeta con su foto: si cambia la foto, generar_galeria.py pide volver a correr esto
     par['tarjeta'] = {'archivo': par['archivo'], 'slug': f'{slug}-tarjeta', 'tamanos': hechos}
     print(par['nombre'], (wx, wy, ancho, alto), 'con pared prolongada' if rellena else '', hechos)
