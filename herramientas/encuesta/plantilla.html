@@ -1,0 +1,585 @@
+<title>Preguntas a don Gorgonio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Una máscara por pantalla, como una ficha de museo en el celular; barra fija abajo con botones grandes */
+:root {
+  --papel: #f6eedd;
+  --papel-2: #ecdfc4;
+  --tinta: #1c1612;
+  --tinta-suave: #54473d;
+  --bermellon: #b9321c;
+  --bermellon-oscuro: #8f2414;
+  --cempasuchil: #e8a01a;
+  --turquesa: #146f6e;
+  --borde: rgba(28, 22, 18, 0.2);
+  --sobre-acento: #fffaf0;
+  --whatsapp: #1b7d3d;
+  --franjas: repeating-linear-gradient(90deg, #b9321c 0 28px, #e8a01a 28px 44px, #1c1612 44px 52px, #17807f 52px 76px, #fffaf0 76px 82px, #3b7a36 82px 100px);
+  --titulos: "Fraunces", Georgia, "Times New Roman", serif;
+  --texto: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --papel: #1a1512; --papel-2: #2a221c; --tinta: #f6eedd; --tinta-suave: #d3c5b1;
+    --bermellon: #e0624a; --bermellon-oscuro: #f08a74; --cempasuchil: #f0b03a; --turquesa: #4fb7b5;
+    --borde: rgba(246, 238, 221, 0.22); --sobre-acento: #1a1512; --whatsapp: #3fbf6a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --papel: #1a1512; --papel-2: #2a221c; --tinta: #f6eedd; --tinta-suave: #d3c5b1;
+  --bermellon: #e0624a; --bermellon-oscuro: #f08a74; --cempasuchil: #f0b03a; --turquesa: #4fb7b5;
+  --borde: rgba(246, 238, 221, 0.22); --sobre-acento: #1a1512; --whatsapp: #3fbf6a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--papel); color: var(--tinta);
+  font-family: var(--texto); font-size: 1.2rem; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--papel); }
+.envoltura { max-width: 34rem; margin-inline: auto; }
+h1, h2 { font-family: var(--titulos); font-weight: 650; text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; }
+p { margin: 0; }
+button, input, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 3px; }
+
+.franjas { height: 8px; background: var(--franjas); border-radius: 0 0 4px 4px; }
+
+/* Barra de arriba */
+.barra {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--papel); padding-block: 0.6rem; border-bottom: 1px solid var(--borde);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.progreso { flex: 1; min-width: 0; display: grid; gap: 0.3rem; }
+.progreso-texto { font-weight: 700; font-size: 1.05rem; }
+.progreso-barra { height: 10px; border-radius: 99px; background: var(--papel-2); overflow: hidden; }
+.progreso-barra i { display: block; height: 100%; background: var(--bermellon); border-radius: 99px; }
+.estado { font-size: 0.9rem; color: var(--tinta-suave); }
+
+/* Botones */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  min-height: 3.25rem; padding: 0.55rem 1.1rem; border-radius: 999px;
+  border: 2px solid var(--tinta); background: transparent; color: var(--tinta);
+  font-weight: 700; font-size: 1.15rem; text-decoration: none; cursor: pointer;
+}
+.boton.principal { background: var(--bermellon); border-color: var(--bermellon); color: var(--sobre-acento); }
+.boton.whatsapp { background: var(--whatsapp); border-color: var(--whatsapp); color: var(--sobre-acento); width: 100%; }
+.boton.chico { min-height: 2.75rem; font-size: 1rem; padding: 0.35rem 0.9rem; }
+.boton:disabled { opacity: 0.45; cursor: default; }
+
+/* Pantallas */
+.pantalla { display: grid; gap: 1.4rem; padding-block: 1.2rem 7rem; }
+.inicio { padding-block: 1.6rem 3rem; gap: 1.2rem; }
+.inicio .saludo { font-family: var(--titulos); font-size: 1.35rem; }
+.pasos { margin: 0; padding-left: 1.6rem; display: grid; gap: 0.3rem; font-size: 1.25rem; }
+.pasos li::marker { color: var(--bermellon); font-weight: 700; }
+.nota { color: var(--tinta-suave); }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.foto { margin: 0; background: var(--papel-2); border-radius: 14px; overflow: hidden; display: grid; place-items: center; }
+.foto img { width: 100%; height: min(62vh, 32rem); object-fit: contain; }
+.vistas { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+.vistas span { color: var(--tinta-suave); font-size: 1rem; }
+.vistas button { padding: 0; width: 4.25rem; height: 4.25rem; border-radius: 10px; overflow: hidden; border: 3px solid transparent; background: var(--papel-2); cursor: pointer; }
+.vistas button[aria-pressed="true"] { border-color: var(--bermellon); }
+.vistas img { width: 100%; height: 100%; object-fit: cover; }
+
+.ficha { display: grid; gap: 0.35rem; }
+.sala { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bermellon-oscuro); }
+.llamamos { color: var(--tinta-suave); font-size: 1.05rem; }
+.ficha h1 { font-size: 1.75rem; }
+.confirmada { color: var(--turquesa); font-weight: 700; font-size: 1rem; }
+
+.pregunta { display: grid; gap: 0.7rem; padding: 1rem; border-radius: 14px; background: var(--papel-2); }
+.ayuda { color: var(--tinta-suave); font-size: 1.05rem; }
+.opciones { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.opcion {
+  min-height: 3.25rem; padding: 0.5rem 1rem; border-radius: 12px; cursor: pointer;
+  border: 2px solid var(--borde); background: var(--papel); font-weight: 600; font-size: 1.1rem; text-align: left;
+}
+.opcion[aria-pressed="true"] { border-color: var(--bermellon); background: var(--bermellon); color: var(--sobre-acento); }
+.opcion[aria-pressed="true"]::before { content: "✓ "; }
+.sugerencias { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.sugerencias button { min-height: 2.6rem; padding: 0.25rem 0.8rem; border-radius: 999px; border: 1.5px solid var(--borde); background: var(--papel); cursor: pointer; font-size: 1rem; }
+label { font-weight: 700; }
+input[type="text"], textarea {
+  width: 100%; padding: 0.7rem 0.85rem; border-radius: 12px;
+  border: 2px solid var(--borde); background: var(--papel); font-size: 1.15rem;
+}
+textarea { min-height: 6.5rem; resize: vertical; }
+
+/* Barra de abajo */
+.navegacion {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--papel); border-top: 1px solid var(--borde);
+  padding-top: 0.7rem;
+  padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.navegacion .envoltura { display: grid; grid-template-columns: 1fr 1.4fr; gap: 0.75rem; }
+
+/* Todas */
+.rejilla { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr)); gap: 0.6rem; }
+.rejilla button { position: relative; width: 100%; padding: 0; border: 3px solid transparent; border-radius: 12px; overflow: hidden; background: var(--papel-2); cursor: pointer; aspect-ratio: 3 / 4; max-width: 100%; }
+.rejilla img { width: 100%; height: 100%; object-fit: cover; }
+.rejilla .num { position: absolute; left: 0.3rem; top: 0.3rem; background: var(--papel); color: var(--tinta); border-radius: 8px; padding: 0 0.4rem; font-weight: 700; font-size: 0.95rem; }
+.rejilla .listo { position: absolute; right: 0.3rem; bottom: 0.3rem; background: var(--turquesa); color: var(--sobre-acento); border-radius: 99px; padding: 0 0.5rem; font-weight: 700; font-size: 0.9rem; }
+.rejilla button.contestada { border-color: var(--turquesa); }
+
+.resumen { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--papel-2); border-radius: 14px; padding: 1rem; font-family: var(--texto); font-size: 1rem; margin: 0; }
+.partes { display: grid; gap: 0.6rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .boton, .opcion, .vistas button { transition: background-color 0.15s ease, border-color 0.15s ease; }
+}
+</style>
+
+<div class="envoltura"><div class="franjas" aria-hidden="true"></div></div>
+<div id="app" class="envoltura">
+  <main class="pantalla inicio" id="pantalla-inicio">
+    <h1 tabindex="-1">Don Gorgonio: cuéntenos de sus máscaras</h1>
+    <p class="saludo">Estamos haciendo la página de internet de su trabajo y queremos ponerle bien el nombre a cada máscara.</p>
+    <p>Le vamos a enseñar sus máscaras una por una. De cada una le preguntamos tres cosas:</p>
+    <ol class="pasos">
+      <li>Qué es</li>
+      <li>En qué danza o fiesta se usa</li>
+      <li>Qué significa</li>
+    </ol>
+    <p>Conteste las que pueda. Si no sabe o no quiere contestar alguna, toque «Siguiente». Lo que conteste se va guardando.</p>
+    <div class="acciones"><button class="boton principal" type="button" data-ir="1" id="empezar">Empezar</button></div>
+    <p class="nota" id="nota-inicio">Son las máscaras que tenemos en fotos. Al final hay unas preguntas sobre usted y el taller.</p>
+  </main>
+</div>
+<nav class="navegacion" id="navegacion" hidden aria-label="Avanzar o regresar">
+  <div class="envoltura">
+    <button class="boton" type="button" id="atras">← Anterior</button>
+    <button class="boton principal" type="button" id="adelante">Siguiente →</button>
+  </div>
+</nav>
+
+<script>
+(function () {
+  "use strict";
+  document.documentElement.lang = "es";
+  var D = /*DATOS*/null;
+  var M = D.mascaras, G = D.generales, TOTAL = M.length;
+  var CLAVE = "encuesta-gorgonio-v1";
+  var NOMBRES = ["Coyote", "Perro", "Chivo", "Borrego", "Tecolote", "Lince", "Ocelote", "Tigre", "Jaguar", "Burro", "Guacamaya", "Gallo", "Venado", "Toro", "Nahual", "Diablo", "La Muerte"];
+  var USOS = ["Danza de los Morenos", "Pastorela", "Otra danza o fiesta", "No se baila, es de adorno", "No sé"];
+  var app = document.getElementById("app");
+  var nav = document.getElementById("navegacion");
+  var atras = document.getElementById("atras");
+  var adelante = document.getElementById("adelante");
+
+  var estado = { r: {}, g: {}, pos: "inicio" };
+  try {
+    var guardado = JSON.parse(localStorage.getItem(CLAVE) || "null");
+    if (guardado && typeof guardado === "object") {
+      estado.r = guardado.r || {}; estado.g = guardado.g || {}; estado.pos = guardado.pos || "inicio";
+    }
+  } catch (e) { /* sin almacenamiento: se trabaja en memoria */ }
+
+  function guardarLocal() {
+    try { localStorage.setItem(CLAVE, JSON.stringify(estado)); } catch (e) {}
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function respuesta(id) {
+    var r = estado.r[id];
+    if (!r || typeof r !== "object") r = estado.r[id] = {};
+    if (!Array.isArray(r.uso)) r.uso = [];
+    return r;
+  }
+  function contestada(id) {
+    var r = estado.r[id];
+    return !!(r && (r.es || r.suya || (r.que_es || "").trim() || (r.uso && r.uso.length) || (r.uso_otro || "").trim() || (r.significado || "").trim()));
+  }
+  function cuantas() { return M.filter(function (m) { return contestada(m.id); }).length; }
+  function generalesContestadas() { return G.filter(function (q) { var v = estado.g[q.id]; return v && ((v.opcion || "") + (v.texto || "")).trim(); }).length; }
+
+  // ---------- Guardar en línea (solo si quien abre la página puede escribir) ----------
+  var db = null, modo = "local";
+  var pendientes = {}, tiempos = {}, escribiendo = {}, reintentos = {};
+  var estadoTexto = "";
+  function aviso(texto) {
+    estadoTexto = texto;
+    var el = document.getElementById("estado");
+    if (el) el.textContent = texto;
+  }
+  function avisoPorModo() { aviso(modo === "db" ? "Se guarda en línea" : "Se guarda en este teléfono"); }
+
+  function programar(ruta, datos) {
+    if (!db) return;
+    pendientes[ruta] = datos;
+    clearTimeout(tiempos[ruta]);
+    tiempos[ruta] = setTimeout(function () { escribir(ruta); }, 800);
+  }
+  function escribir(ruta) {
+    if (!db || escribiendo[ruta] || !pendientes[ruta]) return;
+    var datos = pendientes[ruta];
+    delete pendientes[ruta];
+    escribiendo[ruta] = true;
+    aviso("Guardando…");
+    db.doc(ruta).set(datos).then(function () {
+      reintentos[ruta] = 0;
+      avisoPorModo();
+    }, function (e) {
+      var code = e && e.code;
+      if (code === "unavailable" && !reintentos[ruta]) {
+        reintentos[ruta] = 1;
+        if (!pendientes[ruta]) pendientes[ruta] = datos;
+        setTimeout(function () { escribir(ruta); }, 1200 + Math.random() * 1200);
+      } else if (code === "quota_exceeded") {
+        aviso("No se pudo guardar en línea: ya no hay espacio. Queda guardado en este teléfono.");
+      } else {
+        db = null; modo = "local";
+        aviso("Se guarda en este teléfono");
+      }
+    }).then(function () {
+      escribiendo[ruta] = false;
+      if (pendientes[ruta]) escribir(ruta);
+    });
+  }
+  function subirMascara(id) {
+    var m = porId[id];
+    programar("respuestas/" + id, Object.assign({}, estado.r[id], { n: m.n, nombre: m.nombre, actualizado: new Date().toISOString() }));
+  }
+  function subirGenerales() {
+    programar("generales/sobre-usted", { respuestas: estado.g, actualizado: new Date().toISOString() });
+  }
+  var porId = {};
+  M.forEach(function (m) { porId[m.id] = m; });
+
+  function editando() {
+    var a = document.activeElement;
+    return a && (a.tagName === "INPUT" || a.tagName === "TEXTAREA");
+  }
+
+  function conectar() {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    Promise.all([window.claude.use("db"), window.claude.use("user")]).then(function (res) {
+      var base = res[0], usuario = res[1];
+      if (!base) return;
+      var puede = usuario ? usuario.can("data.write").catch(function () { return null; }) : Promise.resolve(null);
+      return puede.then(function (si) {
+        if (si === false) return;
+        db = base; modo = "db"; avisoPorModo();
+        var primera = true;
+        db.collection("respuestas").onSnapshot(function (snap) {
+          var enLinea = {};
+          snap.docs.forEach(function (d) {
+            enLinea[d.id] = true;
+            if (pendientes["respuestas/" + d.id] || escribiendo["respuestas/" + d.id]) return;
+            var x = d.data() || {};
+            estado.r[d.id] = { es: x.es || "", suya: x.suya || "", que_es: x.que_es || "", uso: Array.isArray(x.uso) ? x.uso.slice() : [], uso_otro: x.uso_otro || "", significado: x.significado || "" };
+          });
+          if (primera) {
+            primera = false;
+            // lo contestado en este teléfono antes de entrar se sube
+            Object.keys(estado.r).forEach(function (id) { if (!enLinea[id] && porId[id] && contestada(id)) subirMascara(id); });
+          }
+          guardarLocal();
+          if (!editando()) render(false);
+        }, function () { db = null; modo = "local"; avisoPorModo(); });
+        db.doc("generales/sobre-usted").onSnapshot(function (d) {
+          if (pendientes["generales/sobre-usted"] || escribiendo["generales/sobre-usted"]) return;
+          if (d.exists && d.data() && d.data().respuestas) {
+            estado.g = JSON.parse(JSON.stringify(d.data().respuestas));
+            guardarLocal();
+            if (!editando()) render(false);
+          } else if (generalesContestadas()) {
+            subirGenerales();
+          }
+        }, function () {});
+      });
+    }).catch(function () {});
+  }
+
+  // ---------- Pantallas ----------
+  function ir(pos) {
+    estado.pos = String(pos);
+    guardarLocal();
+    render(true);
+  }
+
+  function barra(titulo, avance) {
+    return '<header class="barra">' +
+      '<div class="progreso"><span class="progreso-texto">' + esc(titulo) + '</span>' +
+      (avance == null ? "" : '<span class="progreso-barra" aria-hidden="true"><i style="width:' + avance + '%"></i></span>') +
+      '<span class="estado" id="estado" aria-live="polite">' + esc(estadoTexto) + '</span></div>' +
+      '<button class="boton chico" type="button" data-ir="todas">Ver todas</button></header>';
+  }
+
+  function opciones(campo, lista, elegidas, multiple) {
+    return '<div class="opciones" role="group">' + lista.map(function (o) {
+      var on = multiple ? elegidas.indexOf(o.v) >= 0 : elegidas === o.v;
+      return '<button class="opcion" type="button" data-campo="' + campo + '" data-valor="' + esc(o.v) + '"' + (multiple ? ' data-multiple="1"' : "") + ' aria-pressed="' + on + '">' + esc(o.t) + '</button>';
+    }).join("") + '</div>';
+  }
+
+  function pantallaMascara(i) {
+    var m = M[i - 1], r = respuesta(m.id);
+    var grupo = m.grupo ? m.sala + " · " + m.grupo : m.sala;
+    var vistas = m.fotos.length > 1 ? '<div class="vistas"><span>Otras fotos:</span>' + m.fotos.map(function (f, k) {
+      return '<button type="button" data-vista="' + k + '" aria-pressed="' + (k === 0) + '" aria-label="Foto ' + (k + 1) + ' de ' + m.fotos.length + '"><img src="' + esc(f) + '" alt=""></button>';
+    }).join("") + '</div>' : "";
+    var n = 1;
+    var suya = m.apartada ? '<section class="pregunta" aria-labelledby="p-suya"><h2 id="p-suya">' + (n++) + '. ¿Esta máscara la hizo usted?</h2>' +
+      opciones("suya", [{ v: "si", t: "Sí, es mía" }, { v: "no", t: "No, la hizo otra persona" }, { v: "nose", t: "No sé" }], r.suya || "", false) + '</section>' : "";
+    var html = barra("Máscara " + i + " de " + TOTAL, Math.round(i / TOTAL * 100)) +
+      '<main class="pantalla">' +
+      '<figure class="foto"><img id="foto" src="' + esc(m.fotos[0]) + '" alt="Foto de la máscara ' + i + ': ' + esc(m.nombre) + '"></figure>' + vistas +
+      '<div class="ficha"><p class="sala">' + esc(grupo) + '</p><p class="llamamos">' + (m.confirmada ? "La familia nos dijo que es:" : "Nosotros le pusimos de nombre:") + '</p>' +
+      '<h1 tabindex="-1">' + esc(m.nombre) + '</h1>' + (m.confirmada ? '<p class="confirmada">✓ Confirmada por la familia</p>' : "") + '</div>' +
+      suya +
+      '<section class="pregunta" aria-labelledby="p-es"><h2 id="p-es">' + (n++) + '. ¿Qué es esta máscara?</h2>' +
+      '<p class="ayuda">' + (m.confirmada ? "¿Está bien este nombre?" : "¿Está bien el nombre que le pusimos?") + '</p>' +
+      opciones("es", [{ v: "si", t: "Sí, está bien" }, { v: "otra", t: "No, es otra cosa" }, { v: "nose", t: "No sé" }], r.es || "", false) +
+      '<div class="otra" id="otra"' + (r.es === "otra" ? "" : " hidden") + '>' +
+      '<label for="que-es">¿Qué es?</label><input type="text" id="que-es" data-texto="que_es" autocomplete="off" value="' + esc(r.que_es) + '" placeholder="Escriba qué animal o qué personaje es">' +
+      '<div class="sugerencias" aria-label="Nombres para tocar">' + NOMBRES.map(function (x) { return '<button type="button" data-sugerencia="' + esc(x) + '">' + esc(x) + '</button>'; }).join("") + '</div></div>' +
+      '</section>' +
+      '<section class="pregunta" aria-labelledby="p-uso"><h2 id="p-uso">' + (n++) + '. ¿En qué danza o fiesta se usa?</h2><p class="ayuda">Puede tocar más de una.</p>' +
+      opciones("uso", USOS.map(function (u) { return { v: u, t: u }; }), r.uso, true) +
+      '<div id="uso-otro-caja"' + (r.uso.indexOf("Otra danza o fiesta") >= 0 ? "" : " hidden") + '><label for="uso-otro">¿Cuál danza o fiesta?</label><input type="text" id="uso-otro" data-texto="uso_otro" autocomplete="off" value="' + esc(r.uso_otro) + '"></div>' +
+      '</section>' +
+      '<section class="pregunta" aria-labelledby="p-sig"><h2 id="p-sig"><label for="significado">' + (n++) + '. ¿Qué significa?</label></h2>' +
+      '<p class="ayuda">Lo que sepa: qué representa, quién la baila, alguna historia.</p>' +
+      '<textarea id="significado" data-texto="significado" rows="4">' + esc(r.significado) + '</textarea></section>' +
+      '</main>';
+    app.innerHTML = html;
+    nav.hidden = false;
+    atras.textContent = i === 1 ? "← Inicio" : "← Anterior";
+    adelante.textContent = i === TOTAL ? "Seguir →" : "Siguiente →";
+    // adelanta la foto de la siguiente
+    if (i < TOTAL) { var pre = new Image(); pre.src = M[i].fotos[0]; }
+  }
+
+  function pantallaTodas() {
+    var hechas = cuantas();
+    app.innerHTML = barra("Todas sus máscaras", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Todas sus máscaras</h1>' +
+      '<p class="ayuda">Lleva ' + hechas + ' de ' + TOTAL + ' contestadas. Toque una para verla.</p></div>' +
+      '<div class="acciones"><button class="boton" type="button" data-ir="usted">Preguntas sobre usted</button><button class="boton principal" type="button" data-ir="enviar">Mandar respuestas</button></div>' +
+      '<ul class="rejilla">' + M.map(function (m) {
+        var ok = contestada(m.id);
+        return '<li><button type="button" data-ir="' + m.n + '" class="' + (ok ? "contestada" : "") + '" aria-label="Máscara ' + m.n + ': ' + esc(m.nombre) + (ok ? ", contestada" : "") + '">' +
+          '<img src="' + esc(m.fotos[0]) + '" alt="" loading="lazy"><span class="num">' + m.n + '</span>' + (ok ? '<span class="listo">✓</span>' : "") + '</button></li>';
+      }).join("") + '</ul></main>';
+    nav.hidden = true;
+  }
+
+  function pantallaUsted() {
+    app.innerHTML = barra("Preguntas sobre usted", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Unas preguntas sobre usted y su taller</h1>' +
+      '<p class="ayuda">Igual que con las máscaras: conteste las que quiera.</p></div>' +
+      G.map(function (q, k) {
+        var v = estado.g[q.id] || {};
+        return '<section class="pregunta" aria-labelledby="g-' + q.id + '"><h2 id="g-' + q.id + '"><label for="t-' + q.id + '">' + (k + 1) + '. ' + esc(q.texto) + '</label></h2>' +
+          (q.opciones ? opciones("g:" + q.id, q.opciones.map(function (o) { return { v: o, t: o }; }), v.opcion || "", false) : "") +
+          '<textarea id="t-' + q.id + '" data-general="' + q.id + '" rows="2" placeholder="' + (q.opciones ? "Si quiere, explique aquí" : "Escriba aquí") + '">' + esc(v.texto) + '</textarea></section>';
+      }).join("") + '</main>';
+    nav.hidden = false;
+    atras.textContent = "← Máscaras";
+    adelante.textContent = "Mandar →";
+  }
+
+  function textoRespuestas() {
+    var bloques = [];
+    M.forEach(function (m) {
+      if (!contestada(m.id)) return;
+      var r = estado.r[m.id], l = [m.n + ". " + m.nombre];
+      if (r.suya) l.push("¿La hizo usted?: " + ({ si: "sí", no: "no, otra persona", nose: "no sabe" })[r.suya]);
+      if (r.es === "si") l.push("Es: sí, está bien el nombre");
+      else if (r.es === "otra") l.push("Es: " + ((r.que_es || "").trim() || "otra cosa (sin decir qué)"));
+      else if (r.es === "nose") l.push("Es: no sabe");
+      else if ((r.que_es || "").trim()) l.push("Es: " + r.que_es.trim());
+      var usos = (r.uso || []).map(function (u) { return u === "Otra danza o fiesta" && (r.uso_otro || "").trim() ? r.uso_otro.trim() : u; });
+      if (usos.length) l.push("Se usa en: " + usos.join(", "));
+      if ((r.significado || "").trim()) l.push("Significa: " + r.significado.trim());
+      bloques.push(l.join("\n"));
+    });
+    var gen = [];
+    G.forEach(function (q) {
+      var v = estado.g[q.id];
+      var t = v ? [v.opcion, (v.texto || "").trim()].filter(Boolean).join(". ") : "";
+      if (t) gen.push("• " + q.texto + "\n" + t);
+    });
+    if (gen.length) bloques.push("Sobre usted y el taller:\n" + gen.join("\n"));
+    return bloques;
+  }
+
+  function partes(bloques) {
+    var LIM = 1800, res = [], actual = "";
+    bloques.forEach(function (b) {
+      if (actual && (actual.length + b.length + 2) > LIM) { res.push(actual); actual = ""; }
+      actual += (actual ? "\n\n" : "") + b;
+    });
+    if (actual) res.push(actual);
+    return res.map(function (t, k) {
+      return "Respuestas de don Gorgonio sobre sus máscaras" + (res.length > 1 ? " (parte " + (k + 1) + " de " + res.length + ")" : "") + "\n\n" + t;
+    });
+  }
+
+  function pantallaEnviar() {
+    var bloques = textoRespuestas(), ps = partes(bloques), todo = ps.join("\n\n");
+    var destino = (D.destino || "").replace(/\D/g, "");
+    var hechas = cuantas(), gen = generalesContestadas();
+    var explicacion = modo === "db"
+      ? "Sus respuestas ya quedaron guardadas en línea. Si quiere, también puede mandarlas por WhatsApp."
+      : "Sus respuestas están guardadas solo en este teléfono. Para que nos lleguen, toque el botón verde y mándelas por WhatsApp a quien le pasó esta encuesta.";
+    app.innerHTML = barra("Mandar respuestas", null) +
+      '<main class="pantalla"><div class="ficha"><h1 tabindex="-1">Mandar sus respuestas</h1>' +
+      '<p class="ayuda">Contestó ' + hechas + ' de ' + TOTAL + ' máscaras y ' + gen + ' de ' + G.length + ' preguntas sobre usted.</p></div>' +
+      (bloques.length ? '<p>' + explicacion + '</p>' +
+        '<div class="partes">' + ps.map(function (t, k) {
+          var url = "https://wa.me/" + destino + "?text=" + encodeURIComponent(t);
+          return '<a class="boton whatsapp" href="' + esc(url) + '" target="_blank" rel="noopener">Mandar por WhatsApp' + (ps.length > 1 ? " (parte " + (k + 1) + " de " + ps.length + ")" : "") + '</a>';
+        }).join("") + '</div>' +
+        '<p class="nota">Si no se abre WhatsApp, toque «Copiar el texto» y péguelo en un mensaje.</p>' +
+        '<div class="acciones"><button class="boton" type="button" id="copiar">Copiar el texto</button></div>' +
+        '<h2>Así quedaron sus respuestas</h2><pre class="resumen" id="resumen">' + esc(todo) + '</pre>'
+        : '<p>Todavía no hay respuestas. Toque «Ver todas» o regrese a las máscaras para empezar.</p>') +
+      '<p class="nota">Puede seguir contestando después. Lo que ya contestó no se borra.</p>' +
+      '<div class="acciones"><button class="boton" type="button" data-ir="1">Volver a las máscaras</button></div></main>';
+    nav.hidden = true;
+    var copiar = document.getElementById("copiar");
+    if (copiar) copiar.addEventListener("click", function () {
+      var hecho = function () { copiar.textContent = "Copiado"; setTimeout(function () { copiar.textContent = "Copiar el texto"; }, 2500); };
+      var seleccionar = function () {
+        var pre = document.getElementById("resumen"), sel = window.getSelection(), rango = document.createRange();
+        rango.selectNodeContents(pre); sel.removeAllRanges(); sel.addRange(rango);
+        copiar.textContent = "Ya está seleccionado: cópielo";
+      };
+      try {
+        navigator.clipboard.writeText(todo).then(hecho, seleccionar);
+      } catch (e) { seleccionar(); }
+    });
+  }
+
+  function pantallaInicio() {
+    var hechas = cuantas();
+    app.innerHTML = '<main class="pantalla inicio">' +
+      '<h1 tabindex="-1">Don Gorgonio: cuéntenos de sus máscaras</h1>' +
+      '<p class="saludo">Estamos haciendo la página de internet de su trabajo y queremos ponerle bien el nombre a cada máscara.</p>' +
+      '<p>Le vamos a enseñar sus máscaras una por una. De cada una le preguntamos tres cosas:</p>' +
+      '<ol class="pasos"><li>Qué es</li><li>En qué danza o fiesta se usa</li><li>Qué significa</li></ol>' +
+      '<p>Conteste las que pueda. Si no sabe o no quiere contestar alguna, toque «Siguiente». Lo que conteste se va guardando.</p>' +
+      '<div class="acciones">' + (hechas
+        ? '<button class="boton principal" type="button" data-ir="' + siguientePendiente() + '">Seguir donde se quedó</button><button class="boton" type="button" data-ir="todas">Ver todas</button>'
+        : '<button class="boton principal" type="button" data-ir="1">Empezar</button>') + '</div>' +
+      '<p class="nota">' + (hechas ? "Lleva " + hechas + " de " + TOTAL + " máscaras contestadas." : "Son las " + TOTAL + " máscaras que tenemos en fotos. Al final hay unas preguntas sobre usted y el taller.") + '</p></main>';
+    nav.hidden = true;
+  }
+
+  function siguientePendiente() {
+    for (var k = 0; k < M.length; k++) if (!contestada(M[k].id)) return M[k].n;
+    return "usted";
+  }
+
+  function render(moverFoco) {
+    var p = estado.pos, n = Number(p);
+    if (p === "todas") pantallaTodas();
+    else if (p === "usted") pantallaUsted();
+    else if (p === "enviar") pantallaEnviar();
+    else if (n >= 1 && n <= TOTAL) pantallaMascara(n);
+    else { estado.pos = "inicio"; pantallaInicio(); }
+    if (moverFoco) {
+      window.scrollTo(0, 0);
+      var h = app.querySelector("h1");
+      if (h) h.focus({ preventScroll: true });
+    }
+  }
+
+  // ---------- Eventos ----------
+  app.addEventListener("click", function (e) {
+    var b = e.target.closest("button, a");
+    if (!b || !app.contains(b)) return;
+    if (b.dataset.ir) { ir(b.dataset.ir); return; }
+    var n = Number(estado.pos);
+    if (b.dataset.vista != null) {
+      var m = M[n - 1], k = Number(b.dataset.vista);
+      var img = document.getElementById("foto");
+      img.src = m.fotos[k];
+      app.querySelectorAll("[data-vista]").forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+      return;
+    }
+    if (b.dataset.sugerencia) {
+      var campo = document.getElementById("que-es");
+      campo.value = b.dataset.sugerencia;
+      campo.dispatchEvent(new Event("input", { bubbles: true }));
+      return;
+    }
+    if (b.dataset.campo) {
+      var c = b.dataset.campo, v = b.dataset.valor;
+      if (c.indexOf("g:") === 0) {
+        var id = c.slice(2), g = estado.g[id] = Object.assign({}, estado.g[id]);
+        g.opcion = g.opcion === v ? "" : v;
+        marcarGrupo(b, g.opcion);
+        guardarLocal(); subirGenerales();
+        return;
+      }
+      var m2 = M[n - 1], r = respuesta(m2.id);
+      if (b.dataset.multiple) {
+        var i = r.uso.indexOf(v);
+        if (i >= 0) r.uso.splice(i, 1); else r.uso.push(v);
+        b.setAttribute("aria-pressed", String(r.uso.indexOf(v) >= 0));
+        document.getElementById("uso-otro-caja").hidden = r.uso.indexOf("Otra danza o fiesta") < 0;
+      } else {
+        r[c] = r[c] === v ? "" : v;
+        marcarGrupo(b, r[c]);
+        if (c === "es") {
+          var otra = document.getElementById("otra");
+          otra.hidden = r.es !== "otra";
+          if (r.es === "otra") document.getElementById("que-es").focus();
+        }
+      }
+      guardarLocal(); subirMascara(m2.id);
+    }
+  });
+  function marcarGrupo(b, valor) {
+    b.parentNode.querySelectorAll(".opcion").forEach(function (o) { o.setAttribute("aria-pressed", String(o.dataset.valor === valor)); });
+  }
+  app.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.dataset.general) {
+      var g = estado.g[t.dataset.general] = Object.assign({}, estado.g[t.dataset.general]);
+      g.texto = t.value;
+      guardarLocal(); subirGenerales();
+      return;
+    }
+    if (t.dataset.texto) {
+      var m = M[Number(estado.pos) - 1], r = respuesta(m.id);
+      r[t.dataset.texto] = t.value;
+      guardarLocal(); subirMascara(m.id);
+    }
+  });
+  atras.addEventListener("click", function () {
+    var p = estado.pos, n = Number(p);
+    if (p === "usted") ir(TOTAL); else if (n > 1) ir(n - 1); else ir("inicio");
+  });
+  adelante.addEventListener("click", function () {
+    var p = estado.pos, n = Number(p);
+    if (p === "usted") ir("enviar"); else if (n >= TOTAL) ir("usted"); else ir(n + 1);
+  });
+
+  avisoPorModo();
+  render(false);
+  conectar();
+})();
+</script>
