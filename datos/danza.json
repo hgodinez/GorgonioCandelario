@@ -12,6 +12,7 @@
     1261
    ],
    "tarjeta": {
+    "archivo": "IMG-20250829-WA0042.jpg",
     "slug": "mascara-0042-tarjeta",
     "tamanos": [
      360,
@@ -26,11 +27,12 @@
    "nota": "Capitán · la unión y la fuerza",
    "caja": [
     235,
-    0,
+    5,
     972,
-    1516
+    1600
    ],
    "tarjeta": {
+    "archivo": "IMG-20250829-WA0065.jpg",
     "slug": "mascara-0065-tarjeta",
     "tamanos": [
      360,
@@ -50,6 +52,7 @@
     874
    ],
    "tarjeta": {
+    "archivo": "borrego-anaranjado.jpg",
     "slug": "borrego-anaranjado-tarjeta",
     "tamanos": [
      360,
@@ -69,6 +72,7 @@
     560
    ],
    "tarjeta": {
+    "archivo": "IMG-20250829-WA0022.jpg",
     "slug": "mascara-0022-tarjeta",
     "tamanos": [
      360,
@@ -87,6 +91,7 @@
     881
    ],
    "tarjeta": {
+    "archivo": "felino-manchas-frente.jpg",
     "slug": "felino-manchas-frente-tarjeta",
     "tamanos": [
      360,
@@ -103,9 +108,10 @@
     31,
     54,
     658,
-    967
+    985
    ],
    "tarjeta": {
+    "archivo": "burro-frente.jpg",
     "slug": "burro-frente-tarjeta",
     "tamanos": [
      360,
@@ -125,6 +131,7 @@
     1576
    ],
    "tarjeta": {
+    "archivo": "ave-verde.jpg",
     "slug": "ave-verde-tarjeta",
     "tamanos": [
      360,
@@ -144,6 +151,7 @@
     1098
    ],
    "tarjeta": {
+    "archivo": "ave-anaranjada.jpg",
     "slug": "ave-anaranjada-tarjeta",
     "tamanos": [
      360,
