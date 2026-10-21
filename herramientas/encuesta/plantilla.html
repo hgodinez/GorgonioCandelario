@@ -155,7 +155,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 /* «Siguiente» es lo más visible de la pantalla; «Anterior» se queda discreto */
 #adelante { min-height: 3.75rem; font-size: 1.3rem; }
 #atras { border-color: var(--borde-control); font-weight: 600; }
-/* mientras escribe en el celular, la barra de abajo se quita para no tapar lo que escribe */
+/* mientras el teclado del celular está abierto, la barra de abajo se quita para no tapar lo que escribe */
 @media (pointer: coarse) { .escribiendo .navegacion { transform: translateY(110%); } }
 /* pantallas bajas (teléfono acostado, mucho zoom): las barras dejan de flotar */
 @media (max-height: 34rem) {
@@ -1305,12 +1305,16 @@ textarea { min-height: 6.5rem; resize: vertical; }
     var p = estado.pos, n = Number(p);
     if (p === "usted") ir("enviar"); else if (n >= TOTAL) ir("usted"); else ir(n + 1);
   });
-  document.addEventListener("focusin", function (e) {
-    if (/^(INPUT|TEXTAREA)$/.test(e.target.tagName)) document.body.classList.add("escribiendo");
-  });
-  document.addEventListener("focusout", function () {
-    setTimeout(function () { if (!editando()) document.body.classList.remove("escribiendo"); }, 0);
-  });
+  // La barra de abajo se quita solo mientras el teclado está en la pantalla, no mientras el cuadro tiene el
+  // foco: si cierra el teclado con el botón de atrás, el foco se queda en el cuadro y «Siguiente» debe regresar
+  function revisarTeclado() {
+    var vv = window.visualViewport;
+    var abierto = editando() && (!vv || window.innerHeight - vv.height * (vv.scale || 1) > 120);
+    document.body.classList.toggle("escribiendo", abierto);
+  }
+  document.addEventListener("focusin", revisarTeclado);
+  document.addEventListener("focusout", function () { setTimeout(revisarTeclado, 0); });
+  if (window.visualViewport) window.visualViewport.addEventListener("resize", revisarTeclado);
   window.addEventListener("popstate", function (e) {
     var p = e.state && e.state.pos;
     if (!p) return;
