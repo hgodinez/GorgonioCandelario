@@ -18,7 +18,7 @@ Cada dato lleva su fuente. Lo marcado **⚠ verificar** viene de una sola fuente
 | Abuelo | Don Basilio | Feria Maestros |
 | Hermano | José Guadalupe Candelario Castro, también mascarero y organizador de la Danza de los Morenos | México Desconocido; El Pulso de Colima |
 | Taller | **"Mi Güelo Baci"**, en Jazmín esquina Lirio, Suchitlán | México Desconocido; AmoMéxico |
-| Teléfono publicado | (312) 100 6716 ⚠ verificar (puede estar desactualizado) | AmoMéxico |
+| Teléfono publicado | (312) 100 6716. La familia confirmó que es correcto y que lo mejor es escribir por WhatsApp (+52 312 100 6716) | AmoMéxico; familia |
 
 *Sobre el nombre del taller:* "Mi Güelo Baci" parece significar "mi abuelo Basilio", en honor al abuelo, don Basilio. Es una deducción nuestra; hay que confirmarla con él. Puede ser un buen tema para el sitio.
 

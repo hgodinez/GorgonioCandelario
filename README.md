@@ -82,7 +82,6 @@ En GitHub, entra a **Settings → Pages**, elige **Deploy from a branch** y sele
 
 Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están marcados con comentarios `PENDIENTE`.
 
-- [ ] Teléfono o WhatsApp actual del taller. El que aparece (312 100 6716) es el que publicó AmoMéxico y podría estar desactualizado.
 - [ ] Permiso para usar los dos videos de YouTube.
 - [ ] Que la novena pareja de la danza son los perros. Lo dicen el libro del INPI y la ficha de patrimonio, pero falta que lo confirme la familia.
 - [ ] Qué simbolizan el burro, la guacamaya, el gallo y el perro; quién es el danzante 19 que cuenta el INPI, y si el bartolo sale con los Morenos.
