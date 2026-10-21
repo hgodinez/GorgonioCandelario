@@ -173,7 +173,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
 }
 /* con el teclado del celular abierto, la barra de abajo va pegada encima del teclado (la sube el JS), más
    compacta, para que «Siguiente» se siga viendo mientras escribe */
-.con-teclado .navegacion { position: fixed; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+.con-teclado .navegacion { position: fixed; padding-top: 0.4rem; padding-bottom: 0.4rem; transition: none; } /* sin animación: sigue al teclado al instante */
 .con-teclado .navegacion .boton, .con-teclado #adelante { min-height: 2.9rem; }
 .con-teclado #adelante { font-size: 1.15rem; }
 
@@ -1326,19 +1326,23 @@ textarea { min-height: 6.5rem; resize: vertical; }
   // a «Siguiente» (el cuadro pierde el foco antes del clic) y regresa abajo cuando el teclado se cierra, aunque
   // el foco se quede en el cuadro (botón de atrás). Cubre los dos modos de los navegadores: el teclado tapa la
   // ventana (se achica visualViewport) o la ventana se encoge (se achica innerHeight).
-  var altoLibre = window.innerHeight, anchoAntes = window.innerWidth;
-  function revisarTeclado() {
+  var altoLibre = window.innerHeight, anchoAntes = window.innerWidth, corregirHasta = 0;
+  function revisarTeclado(ev) {
+    // el cuadro se acomoda solo justo después de abrir el teclado o tocar un cuadro, no mientras él mueve la página
+    if (!ev || ev.type !== "scroll") corregirHasta = Date.now() + 800;
     var vv = window.visualViewport, alto = window.innerHeight;
     if (window.innerWidth !== anchoAntes) { anchoAntes = window.innerWidth; altoLibre = alto; } // giró el teléfono
     altoLibre = Math.max(altoLibre, alto);
     if (vv && vv.scale > 1.05) { document.body.classList.remove("con-teclado"); nav.style.transform = ""; return; } // con zoom no se mueve
     var tapado = vv ? Math.max(0, alto - (vv.offsetTop + vv.height)) : 0;
     var visible = vv ? vv.height : alto;
-    var abierto = (tapado > 120 || altoLibre - alto > 120) && visible >= 300; // muy poca pantalla: la barra se queda abajo del teclado
+    // el teclado se nota porque la parte visible se achica (aunque esté recorrida hacia abajo) o porque la ventana
+    // se encoge; con muy poca pantalla (teléfono acostado) la barra se queda abajo del teclado
+    var abierto = ((vv ? alto - vv.height : 0) > 120 || altoLibre - alto > 120) && visible >= 200;
     document.body.classList.toggle("con-teclado", abierto);
     nav.style.transform = abierto && tapado ? "translateY(" + (-tapado) + "px)" : "";
     var a = document.activeElement;
-    if (abierto && a && /^(INPUT|TEXTAREA)$/.test(a.tagName)) {
+    if (abierto && Date.now() < corregirHasta && a && /^(INPUT|TEXTAREA)$/.test(a.tagName)) {
       // que el cuadro donde escribe no quede debajo de la barra
       var r = a.getBoundingClientRect(), arriba = vv ? vv.offsetTop : 0;
       var d = Math.min(r.bottom - (arriba + visible - nav.offsetHeight - 8), r.top - arriba - 8);
@@ -1351,7 +1355,7 @@ textarea { min-height: 6.5rem; resize: vertical; }
   // Enter (en el teclado sale como «listo») cierra el teclado en vez de empezar otro renglón
   function cerrarTeclado(e) { e.preventDefault(); e.target.blur(); }
   app.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" && !e.shiftKey && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) cerrarTeclado(e);
+    if (e.key === "Enter" && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) cerrarTeclado(e);
   });
   app.addEventListener("beforeinput", function (e) {
     if ((e.inputType === "insertLineBreak" || e.inputType === "insertParagraph") && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) cerrarTeclado(e);
