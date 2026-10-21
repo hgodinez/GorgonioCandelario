@@ -9,20 +9,20 @@
   {
    "id": "animales",
    "titulo": "Animales de la danza",
-   "descripcion": "Tecolotes, gallos, chivos, perros y coyotes bailan en parejas, macho y hembra, en la Danza de los Morenos. Aquí, algunas de sus máscaras de animales.",
+   "descripcion": "Chivos, coyotes, tecolotes y gallos: algunos de los animales que bailan en parejas, macho y hembra, en la Danza de los Morenos.",
    "archivos": [
+    "IMG-20250829-WA0065.jpg",
+    "IMG-20250829-WA0042.jpg",
     "IMG-20250829-WA0056.jpg",
     "IMG-20250829-WA0147.jpg",
     "IMG-20250829-WA0022.jpg",
-    "IMG-20250829-WA0030.jpg",
-    "IMG-20250829-WA0042.jpg",
-    "IMG-20250829-WA0065.jpg"
+    "IMG-20250829-WA0030.jpg"
    ]
   },
   {
    "id": "rostros",
-   "titulo": "Rostros múltiples",
-   "descripcion": "Las máscaras del Tiempo tienen dos o tres rostros. Aquí, una máscara de tres rostros coronada por un sol, vista de frente y de lado, un rostro coronado con media luna y rostros partidos entre la vida y la muerte.",
+   "titulo": "El Tiempo, La Noche y otros rostros",
+   "descripcion": "El Tiempo tiene tres rostros y La Noche, dos, uno de ellos azul. Junto a ellas, rostros partidos entre la vida y la muerte.",
    "archivos": [
     "IMG-20250829-WA0043.jpg",
     "IMG-20250829-WA0041.jpg",
@@ -34,9 +34,10 @@
   },
   {
    "id": "personajes",
-   "titulo": "Rostros y personajes",
-   "descripcion": "Rostros humanos y fantásticos: uno negro de cresta roja, otro con alas coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
+   "titulo": "El nahual y otros personajes",
+   "descripcion": "Un nahual con forma de felino, un rostro negro de cresta roja, otro con alas coronado por un ave, tres máscaras negras con estrellas y lunas, y un hombre barbado.",
    "archivos": [
+    "IMG-20250829-WA0121.jpg",
     "IMG-20250829-WA0153.jpg",
     "IMG-20250829-WA0151.jpg",
     "IMG-20250829-WA0027.jpg",
@@ -46,10 +47,9 @@
   {
    "id": "otros",
    "titulo": "Otros animales",
-   "descripcion": "También talla otros animales: un tecolote sobre un tigre, un felino negro, un venado y hasta un gorila.",
+   "descripcion": "También talla otros animales: un tecolote sobre un tigre, un venado y hasta un gorila.",
    "archivos": [
     "IMG-20250829-WA0051.jpg",
-    "IMG-20250829-WA0121.jpg",
     "IMG-20250829-WA0019.jpg",
     "IMG-20250829-WA0172.jpg"
    ]
@@ -105,7 +105,8 @@
     "calidad_foto": 2,
     "problemas_foto": "Resolución muy baja (364×567); el fondo es negro puro (RGB 0,0,0), señal de que se recortó o editó digitalmente; el centro negro de los ojos se confunde con el fondo y no se distingue si son aberturas; las puntas de las orejas casi tocan el borde superior.",
     "notas": "El tecolote (búho) es personaje documentado de la Danza de los Morenos (y hay un búho suyo para esa danza en el MOIFA), pero no hay datos de que esta pieza en particular se haya usado en la danza. Buscar una versión de mayor resolución. VERIFICADOR: se mantiene tecolote con certeza alta (ojos redondos frontales, penachos y pico corto curvo); las manchas negras de las orejas recuerdan a un felino, pero el pico descarta un tigre. Corregí el color de las orejas: son rojas por dentro y por fuera una amarilla y otra anaranjada. Cambié \"chevrón\" (no está en el diccionario académico) por \"V dorada\". Corregí el adorno de la frente: es un motivo dorado de lazos, no rojo anaranjado. Eliminé la afirmación de que el pico es del mismo tipo que el de WA0030: aquí es corto y curvo, y allá es largo y puntiagudo; solo coinciden en el color verde. En problemas_foto confirmé que el fondo es negro puro."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0027.jpg",
@@ -144,10 +145,10 @@
     960,
     1200
    ],
-   "personaje": "Ave de cresta roja",
+   "personaje": "Gallo",
    "descripcion": "Rostro blanco, gran cresta roja de puntas negras, ojos amarillos y un largo pico verde.",
-   "pie": "Ave de cresta roja y pico verde",
-   "alt": "Máscara de ave, posiblemente gallo, con rostro blanco, cresta roja de puntas negras, ojos amarillos y pico verde largo, sobre una mesa de madera",
+   "pie": "Gallo de cresta roja",
+   "alt": "Máscara de gallo con rostro blanco, cresta roja de puntas negras, ojos amarillos y pico verde largo",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 40%",
@@ -159,7 +160,8 @@
     "calidad_foto": 3,
     "problemas_foto": "Fondo con distracciones (veta de la mesa, silla en la esquina superior izquierda y piso de mosaico abajo y a la izquierda); foto tomada en ángulo sobre la mesa, lo que deforma un poco las proporciones; la punta del pico sobresale de la mesa y queda a unos 35 px del borde inferior, junto a un objeto blanco.",
     "notas": "La cresta roja apunta a gallo, personaje documentado de la Danza de los Morenos. Confirmar con el maestro. VERIFICADOR: se mantienen gallo y certeza media, pero el pico es largo y puntiagudo, no corto como el de un gallo, así que podría ser otra ave de cresta roja (por ejemplo, un pájaro carpintero). Por eso cambié la danza de \"probable\" a \"posible, si es gallo\" y en el pie y el alt dije \"posiblemente gallo\". Corregí \"pico curvo\" por \"largo y puntiagudo\" y eliminé que es del mismo tipo que el del tecolote (WA0022), que es corto y curvo; solo coinciden en el color. Cambié \"alerones\" por \"piezas\" laterales. Corregí el recorte: el rango y 250–1450 cortaba la punta del pico, que llega a y ≈ 1565."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0041.jpg",
@@ -171,10 +173,10 @@
     960,
     1200
    ],
-   "personaje": "Máscara de tres rostros (vista lateral)",
+   "personaje": "El Tiempo (vista lateral)",
    "descripcion": "La misma máscara vista de lado: el rostro con bigote queda de frente y el central, de perfil.",
-   "pie": "Tres rostros, vista lateral",
-   "alt": "Vista lateral de la máscara de tres rostros: rostro barbado color terracota, coronado por una luna creciente azul y un sol con cara",
+   "pie": "El Tiempo, vista lateral",
+   "alt": "Vista lateral de la máscara de El Tiempo: rostro barbado color terracota, coronado por una luna creciente azul y un sol con cara",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 30%",
@@ -186,7 +188,8 @@
     "calidad_foto": 4,
     "problemas_foto": "Reflejos de luz en la superficie brillante; pequeñas manchas rojas en la pared arriba a la izquierda; cordón para colgar visible entre la punta triangular y el sol; foto tomada en ángulo, que acorta el lado izquierdo del rostro; la luna queda cerca del borde superior.",
     "notas": "Los dos rostros y el sol y la luna corresponden a las máscaras del Tiempo descritas en la investigación (dos o tres rostros); las fuentes asocian la máscara del Tiempo a la pastorela (pieza del MOIFA de 1995 y \"El Padre Tiempo\" de don Herminio). Conviene fotografiarla de frente y por ambos lados. VERIFICADOR: se mantienen máscara del Tiempo y certeza media. Cambié la danza de \"probable\" a \"posible\": la relación con la pastorela viene de otras piezas y la identificación del personaje no es segura. Cambié \"varios rostros\" por \"dos rostros\", que es lo que se ve. Corregí la descripción: las cejas son negras pintadas (solo bigote y barba están tallados en mechones); el \"pico rojo y amarillo\" es una punta triangular, y \"pico\" se confundía con un pico de ave. La hipótesis de un tercer rostro del lado izquierdo es poco probable, porque ahí se ven una oreja y cabello. En problemas_foto añadí el ángulo de la toma y precisé dónde está el cordón."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0042.jpg",
@@ -197,10 +200,10 @@
     480,
     720
    ],
-   "personaje": "Perro o coyote",
+   "personaje": "Coyote",
    "descripcion": "Hocico largo, orejas puntiagudas y franjas de colores que forman una V en la frente y espirales en las mejillas.",
-   "pie": "Perro o coyote de franjas y espirales",
-   "alt": "Máscara de coyote o perro blanca, con orejas amarillas, franjas de colores en V, espirales en las mejillas y nariz negra",
+   "pie": "Coyote de franjas y espirales",
+   "alt": "Máscara de coyote blanca, con orejas amarillas, franjas de colores en V, espirales en las mejillas y nariz negra",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 35%",
@@ -212,7 +215,8 @@
     "calidad_foto": 3,
     "problemas_foto": "Fondo de piso de cemento con luz moteada; resolución baja (720×1280, compresión de WhatsApp); encuadre ajustado en la parte inferior.",
     "notas": "Por la forma podría ser coyote o perro; ambos están entre los animales de la Danza de los Morenos. No hay elementos que permitan distinguir cuál de los dos es. VERIFICADOR: identificación y certeza sin cambios (tampoco se descarta otro cánido). En la descripción, lo que hay bajo la nariz se ve como una cavidad tallada y no como un hueco pasante; se quitó que las ranuras bajo los ojos sean 'para ver' (es probable, pero no se ve); se añadió la hilera de puntitos que sigue la V y el borde inferior negro."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0043.jpg",
@@ -224,10 +228,10 @@
     960,
     1200
    ],
-   "personaje": "Máscara de tres rostros",
+   "personaje": "El Tiempo",
    "descripcion": "Tres rostros que comparten dos ojos, bajo una banda dorada y una corona rematada por un sol con cara y una luna creciente.",
-   "pie": "Tres rostros coronados por un sol",
-   "alt": "Máscara de tres rostros con barba negra rizada, banda dorada y corona rematada por un sol con cara",
+   "pie": "El Tiempo, máscara de tres rostros",
+   "alt": "Máscara de El Tiempo: tres rostros color terracota con barba negra rizada, banda dorada y corona rematada por un sol con cara",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 30%",
@@ -239,7 +243,8 @@
     "calidad_foto": 4,
     "problemas_foto": "Reflejos del barniz brillante; fondo de pared texturizada color crema; tono ligeramente cálido.",
     "notas": "Los tres rostros con ojos compartidos coinciden con las máscaras del Tiempo de dos o tres rostros que describe la investigación. El 'Tiempo' suyo del Museum of International Folk Art es de Pastorela, pero no consta que esta pieza se haya usado en danza. El círculo entre medias lunas y las piezas azules podrían aludir a la luna frente al sol; confirmar con el maestro. VERIFICADOR: se cambió 'lampiño' por 'sin bigote' (solo se ve un perfil sin bigote, de labios cerrados); se añadió la barbita negra del sol; la danza bajó de 'probable' a 'posible' porque la identificación como Tiempo es media y la investigación solo documenta una máscara del Tiempo de Pastorela. La certeza media se mantiene: la corona solar podría corresponder también a otro personaje."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0051.jpg",
@@ -305,10 +310,10 @@
     960,
     1200
    ],
-   "personaje": "Animal de cuernos largos",
-   "descripcion": "Cara roja y amarilla, cuernos negros con anillos blancos y una barba de fibra clara.",
-   "pie": "Cuernos largos y barba de fibra",
-   "alt": "Máscara roja y amarilla de animal de cuernos largos, posiblemente chivo, con cuernos negros de anillos blancos y barba de fibra clara",
+   "personaje": "Chivo rojo",
+   "descripcion": "Cara roja y amarilla, cuernos largos negros con anillos blancos y una barba de fibra clara.",
+   "pie": "Chivo rojo de cuernos anillados",
+   "alt": "Máscara de chivo roja y amarilla con dos cuernos largos negros anillados de blanco y barba de fibra clara",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 30%",
@@ -320,7 +325,8 @@
     "calidad_foto": 3,
     "problemas_foto": "Tapa o placa redonda visible en la pared, entre los cuernos; sombra marcada a la derecha y una franja de sombra arriba a la izquierda; la punta del cuerno izquierdo casi toca el borde superior y la barba queda cortada en el borde inferior; tono amarillento.",
     "notas": "El chivo está entre los animales de la Danza de los Morenos. VERIFICADOR: la certeza bajó de alta a media y la danza de 'probable' a 'posible': los cuernos largos, casi rectos y anillados se parecen más a los de un antílope o una gacela que a los de un chivo; solo la barba de fibra apoya la identificación como chivo. Se corrigieron las orejas (rojas con el borde superior anaranjado, no amarillas por dentro) y la boca (es la punta verde del hocico, con puntitos negros a los lados). La placa de la pared no se ve con claridad si es metálica."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0116.jpg",
@@ -331,10 +337,10 @@
     480,
     780
    ],
-   "personaje": "Rostro coronado con media luna",
-   "descripcion": "Rostro de barba negra dividido en dos colores, con corona de picos y llamas, y una media luna plateada con estrella.",
-   "pie": "Rostro coronado con media luna",
-   "alt": "Máscara policromada vista de perfil: rostro amarillo de barba negra, corona de picos con llamas rojas y media luna con estrella sobre el lado azul",
+   "personaje": "La Noche",
+   "descripcion": "Dos rostros, uno amarillo y otro azul, con barba negra, corona de picos y llamas, y una media luna plateada con estrella.",
+   "pie": "La Noche, máscara de dos rostros",
+   "alt": "Máscara de La Noche vista de perfil: rostro amarillo y rostro azul con barba negra, corona de picos con llamas y media luna con estrella",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 40%",
@@ -346,7 +352,8 @@
     "calidad_foto": 3,
     "problemas_foto": "Resolución baja (780×1040, compresión de WhatsApp); solo vista casi de perfil, la mitad azul apenas se ve; ligero tono cálido en la pared y pequeñas manchas en ella a la derecha.",
     "notas": "VERIFICADOR: (1) 'dividido en dos mitades' pasa a 'parece dividido': desde este ángulo no se puede confirmar si la parte azul es la otra mitad del mismo rostro o un segundo rostro; la doble punta de barba y las franjas del bigote del lado azul sugieren lo primero. (2) La banda no es claramente dorada (se ve metálica, entre dorado y plateado) y las franjas que se llamaban 'moradas' son rosa viejo; las de la oreja son radiales y las de mejilla y sien van en ángulo, no en zigzag. (3) 'Cruces rojas' precisado como aspas rojo oscuro y círculos verdes con cruz roja; se añade el remate redondo de la corona. Identificación y certeza baja se mantienen: las lecturas sol/luna o día/noche son solo hipótesis no documentadas en la investigación; también podría ser un rey u otro personaje coronado. Falta una foto frontal; preguntar a don Gorgonio el nombre y la danza."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0121.jpg",
@@ -358,10 +365,10 @@
     960,
     1200
    ],
-   "personaje": "Felino negro",
-   "descripcion": "Cabeza de felino en negro brillante, con rayas rojas en la oreja que se ve de frente, ojos anaranjados y colmillos color marfil.",
-   "pie": "Felino negro de ojos anaranjados",
-   "alt": "Máscara de felino negro brillante vista de tres cuartos, con oreja de rayas rojas, ojos anaranjados y colmillos a la vista",
+   "personaje": "Nahual",
+   "descripcion": "Nahual con forma de felino, en negro brillante: orejas puntiagudas con rayas rojas, ojos anaranjados y colmillos color marfil.",
+   "pie": "Nahual de ojos anaranjados",
+   "alt": "Máscara de nahual con forma de felino, negra y brillante, vista de tres cuartos, con oreja de rayas rojas, ojo anaranjado y colmillos",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 40%",
@@ -373,7 +380,8 @@
     "calidad_foto": 4,
     "problemas_foto": "Reflejos del barniz en la frente, la mejilla y el hocico; pared con tono amarillento; un objeto ajeno apenas visible en el borde superior derecho; vista de tres cuartos, el otro lado del rostro no se ve.",
     "notas": "VERIFICADOR: (1) Solo una oreja se ve de frente con rayas rojas; la otra se ve de espaldas, así que se corrigió 'orejas decoradas con rayas rojas por dentro'. (2) Las rayas rojas están en los dientes delanteros, no en los colmillos. (3) danza_probable cambia de 'Danza de los Morenos (posible)' a 'desconocida': la investigación menciona tigres en esa danza, pero no se sabe si este felino negro es ese personaje (podría ser otro felino o una pieza decorativa). (4) 'Naranjas' cambia a 'anaranjados' en alt y pie. Se mantiene certeza media para 'felino': orejas, hocico corto con puntos de bigotes y colmillos lo sostienen, aunque no se descarta otro carnívoro."
-   }
+   },
+   "confirmado_por_familia": true
   },
   {
    "archivo": "IMG-20250829-WA0125.jpg",

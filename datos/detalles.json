@@ -1,0 +1,139 @@
+{
+ "detalles": [
+  {
+   "id": "puntos",
+   "archivo": "IMG-20250829-WA0056.jpg",
+   "caja": [
+    0.25,
+    0.17,
+    0.75,
+    0.545
+   ],
+   "titulo": "Puntos",
+   "texto": "Cientos de puntos dorados, uno por uno, sobre el blanco y el negro del tecolote.",
+   "alt": "Acercamiento a la máscara de tecolote blanco: discos negros y rostro blanco cubiertos de puntos dorados, ojo rojo",
+   "tamanos": [
+    360,
+    600
+   ]
+  },
+  {
+   "id": "espirales",
+   "archivo": "IMG-20250829-WA0042.jpg",
+   "caja": [
+    0.12,
+    0.4,
+    0.78,
+    0.7713
+   ],
+   "titulo": "Filetes y espirales",
+   "texto": "Franjas paralelas de colores que forman una V en la frente y se enroscan en las mejillas del coyote.",
+   "alt": "Acercamiento a la máscara de coyote: franjas azul, rojo, amarillo y verde que forman una V y espirales en las mejillas",
+   "tamanos": [
+    360,
+    475
+   ]
+  },
+  {
+   "id": "grecas",
+   "archivo": "IMG-20250829-WA0019.jpg",
+   "caja": [
+    0.3,
+    0.38,
+    0.7,
+    0.7811
+   ],
+   "titulo": "Grecas",
+   "texto": "Grecas azules en la frente del venado y franjas onduladas en el hocico.",
+   "alt": "Acercamiento a la máscara de venado: grecas en espiral azul marino sobre azul celeste y franjas onduladas",
+   "tamanos": [
+    288
+   ]
+  },
+  {
+   "id": "plumaje",
+   "archivo": "IMG-20250829-WA0147.jpg",
+   "caja": [
+    0.25,
+    0.04,
+    0.75,
+    0.415
+   ],
+   "titulo": "Plumaje pintado",
+   "texto": "Pequeños trazos amarillos sobre café oscuro que imitan, uno a uno, las plumas del tecolote.",
+   "alt": "Acercamiento a la máscara de tecolote café: trazos amarillos que imitan plumas y ojos rodeados de discos rojos",
+   "tamanos": [
+    360,
+    480
+   ]
+  },
+  {
+   "id": "barba-tallada",
+   "archivo": "IMG-20250829-WA0149.jpg",
+   "caja": [
+    0.15,
+    0.42,
+    0.85,
+    0.945
+   ],
+   "titulo": "Barba tallada",
+   "texto": "El pelo de la barba se talla en la madera, mechón por mechón, antes de pintarse.",
+   "alt": "Acercamiento a una barba negra tallada en madera con incisiones que imitan el pelo",
+   "tamanos": [
+    360,
+    546
+   ]
+  },
+  {
+   "id": "corona",
+   "archivo": "IMG-20250829-WA0043.jpg",
+   "caja": [
+    0.22,
+    0.0,
+    0.78,
+    0.42
+   ],
+   "titulo": "Un sol en la corona",
+   "texto": "El sol con cara, sus rayos y la banda dorada que coronan la máscara de El Tiempo.",
+   "alt": "Acercamiento a la corona de la máscara de El Tiempo: sol amarillo con cara y rayos rojos y azules sobre una banda dorada",
+   "tamanos": [
+    360,
+    672
+   ]
+  },
+  {
+   "id": "cuernos",
+   "archivo": "IMG-20250829-WA0065.jpg",
+   "caja": [
+    0.2,
+    0.22,
+    0.8,
+    0.67
+   ],
+   "titulo": "Cuernos anillados",
+   "texto": "Los cuernos del chivo llevan anillos en relieve, pintados de blanco sobre negro.",
+   "alt": "Acercamiento a la máscara de chivo: base de los cuernos negros con anillos blancos en relieve, orejas rojas y frente amarilla",
+   "tamanos": [
+    360,
+    720
+   ]
+  },
+  {
+   "id": "barba-color",
+   "archivo": "IMG-20250829-WA0146.jpg",
+   "caja": [
+    0.05,
+    0.5,
+    0.55,
+    0.875
+   ],
+   "titulo": "Barba de colores",
+   "texto": "Ondas talladas y pintadas en rojo, amarillo, azul marino, celeste y salmón que terminan en espiral.",
+   "alt": "Acercamiento a una barba tallada en ondas pintadas de rojo, amarillo, azul marino, celeste y salmón",
+   "tamanos": [
+    360,
+    480
+   ]
+  }
+ ]
+}

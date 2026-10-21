@@ -1,7 +1,8 @@
 """Uso: python3 herramientas/generar_galeria.py .
 
-Genera los bloques de HTML (portada, galería, imagen de la danza) a partir de datos/mascaras.json
-y los inserta en index.html en lugar de los comentarios marcadores."""
+Genera los bloques de HTML (portada, galería, imagen de la danza, parejas de la danza y
+acercamientos de la técnica) a partir de datos/mascaras.json, datos/danza.json y
+datos/detalles.json, y los inserta en index.html en lugar de los comentarios marcadores."""
 import json, sys, html, re, pathlib
 
 raiz = pathlib.Path(sys.argv[1])
@@ -97,6 +98,41 @@ imagen_danza = f'''<figure class="imagen-danza">
           <figcaption>{e(d["pie"])}</figcaption>
         </figure>'''
 
+# Las nueve parejas de la danza
+danza = json.loads((raiz / 'datos/danza.json').read_text(encoding='utf-8'))
+tarjetas = []
+for i, par in enumerate(danza['parejas'], 1):
+    if par.get('archivo'):
+        f = fotos[par['archivo']]
+        imagen = f'<div class="pareja-imagen">{picture(f, "(max-width: 600px) 46vw, (max-width: 1000px) 30vw, 14rem")}</div>'
+        clase = 'pareja'
+    else:
+        imagen = '<div class="pareja-imagen" aria-hidden="true"></div>'
+        clase = 'pareja pareja-sin-foto'
+    tarjetas.append(f'''            <li class="{clase}">
+              {imagen}
+              <p><span class="pareja-numero">{i}</span> <strong>{e(par["nombre"])}</strong> <span class="pareja-nota">{e(par.get("nota", "macho y hembra"))}</span></p>
+            </li>''')
+parejas = f'''<ol class="parejas">
+{chr(10).join(tarjetas)}
+          </ol>'''
+
+# Acercamientos de la técnica
+detalles = json.loads((raiz / 'datos/detalles.json').read_text(encoding='utf-8'))['detalles']
+items_det = []
+for d in detalles:
+    t = d['tamanos']
+    webp = ', '.join(f'img/detalles/{d["id"]}-{w}.webp {w}w' for w in t)
+    jpg = ', '.join(f'img/detalles/{d["id"]}-{w}.jpg {w}w' for w in t)
+    sz = "(max-width: 600px) 46vw, (max-width: 1000px) 23vw, 16rem"
+    items_det.append(f'''            <li><figure>
+              <picture><source type="image/webp" srcset="{webp}" sizes="{sz}"><img src="img/detalles/{d["id"]}-{t[0]}.jpg" srcset="{jpg}" sizes="{sz}" width="{t[0]}" height="{t[0]}" alt="{e(d["alt"])}" loading="lazy" decoding="async"></picture>
+              <figcaption><strong>{e(d["titulo"])}</strong> {e(d["texto"])}</figcaption>
+            </figure></li>''')
+acercamientos = f'''<ul class="detalles">
+{chr(10).join(items_det)}
+          </ul>'''
+
 p = raiz / 'index.html'
 s = p.read_text(encoding='utf-8')
 def reemplazar(s, marcador, bloque):
@@ -106,5 +142,7 @@ def reemplazar(s, marcador, bloque):
 s = reemplazar(s, 'PORTADA', portada)
 s = reemplazar(s, 'MÁSCARAS', galeria)
 s = reemplazar(s, 'IMAGEN-DANZA', imagen_danza)
+s = reemplazar(s, 'PAREJAS', parejas)
+s = reemplazar(s, 'DETALLES', acercamientos)
 p.write_text(s, encoding='utf-8')
 print('ok', len(fotos), 'fotos,', len(datos['secciones']), 'secciones')

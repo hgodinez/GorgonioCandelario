@@ -398,3 +398,76 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .filtros button[aria-pressed="true"] { border: 3px solid Highlight; text-decoration: underline; }
   .video-portada::after { forced-color-adjust: none; }
 }
+
+/* Danza: las nueve parejas y datos */
+
+.subtitulo-seccion { margin: clamp(2.5rem, 5vw, 3.5rem) 0 0.4rem; font-size: clamp(1.5rem, 3vw, 2rem); }
+.subtitulo-seccion + p { max-width: 44rem; margin-bottom: 1.5rem; }
+
+.parejas {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0.85rem; grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) { .parejas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .parejas { grid-template-columns: minmax(0, 1fr); } }
+.pareja {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0.9rem; align-items: center;
+  padding: 0.6rem; border-radius: var(--radio);
+  background: rgba(255, 250, 240, 0.06); border: 1px solid rgba(255, 250, 240, 0.16);
+}
+.pareja-imagen { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: rgba(255, 250, 240, 0.08); position: relative; }
+.pareja-imagen img { width: 100%; height: 100%; object-fit: cover; }
+.pareja-sin-foto .pareja-imagen::after {
+  content: ""; position: absolute; inset: 22%;
+  background: url("../img/icono.svg") center / contain no-repeat; opacity: 0.45; filter: grayscale(0.4);
+}
+.pareja p { margin: 0; line-height: 1.3; }
+.pareja strong { display: block; font-family: var(--fuente-titulos); font-size: 1.2rem; font-weight: 600; }
+.pareja-numero {
+  display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+  background: var(--cempasuchil); color: var(--tinta); font-weight: 700; font-size: 0.85rem; margin-bottom: 0.35rem;
+}
+.pareja-nota { display: block; font-size: 0.92rem; color: #d8ccbb; }
+
+.danza-datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+@media (max-width: 760px) { .danza-datos { grid-template-columns: minmax(0, 1fr); } }
+.danza-dato {
+  border-top: 4px solid var(--cempasuchil); padding: 1rem 0 0;
+}
+.danza-dato:nth-child(2) { border-top-color: var(--bermellon); }
+.danza-dato:nth-child(3) { border-top-color: var(--turquesa); }
+.danza-dato:nth-child(4) { border-top-color: var(--verde); }
+.danza-dato h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.danza-dato p, .danza-dato ul { margin: 0 0 0.6rem; color: #e9dfcf; }
+.danza-dato ul { padding-left: 1.1rem; }
+.danza-dato li { margin-bottom: 0.25rem; }
+
+/* Técnica: maderas, herramientas y acercamientos */
+
+.maderas { list-style: none; margin: 0 0 clamp(2rem, 4vw, 3rem); padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+.maderas li { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); padding: 1.1rem 1.25rem; }
+.maderas strong { display: block; font-family: var(--fuente-titulos); font-size: 1.2rem; }
+.maderas em { display: block; color: var(--turquesa); font-size: 0.95rem; margin-bottom: 0.4rem; }
+.maderas p { margin: 0; color: var(--tinta-suave); font-size: 0.98rem; }
+
+.pasos-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .pasos-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .pasos-6 { grid-template-columns: minmax(0, 1fr); } }
+.pasos li:nth-child(5)::before { background: var(--verde); }
+.pasos li:nth-child(6)::before { background: var(--bermellon-oscuro); }
+
+.detalles {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: clamp(0.75rem, 2vw, 1.25rem); grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1000px) { .detalles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.detalles figure { margin: 0; }
+.detalles img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radio); box-shadow: var(--sombra); }
+.detalles figcaption { padding-top: 0.6rem; font-size: 0.95rem; color: var(--tinta-suave); line-height: 1.45; }
+.detalles figcaption strong { display: block; color: var(--tinta); font-family: var(--fuente-titulos); font-size: 1.1rem; font-weight: 600; }
+
+.nota-tecnica {
+  margin-top: clamp(2rem, 4vw, 3rem); padding: 1.25rem 1.5rem; border-radius: var(--radio);
+  background: var(--papel-2); border-left: 6px solid var(--turquesa);
+}
+.nota-tecnica p:last-child { margin-bottom: 0; }
