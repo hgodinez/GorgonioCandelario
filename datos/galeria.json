@@ -1,12 +1,12 @@
 {
- "entrada": "Una selección de las máscaras que don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca cualquier pieza para verla en grande y recorrer todas sus vistas.",
+ "entrada": "Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca cualquier pieza para verla en grande y recorrer todas sus vistas.",
  "entrada_corta": "Más de un centenar de máscaras talladas y pintadas a mano, ordenadas en salas como en un museo: la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos y un bestiario completo.",
  "salas": [
   {
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
    "subtitulo": "Nueve parejas de animales, macho y hembra",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
@@ -142,7 +142,7 @@
    "id": "el-tiempo-y-la-noche",
    "titulo": "El Tiempo y La Noche",
    "subtitulo": "Varios rostros bajo una corona de astros",
-   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
+   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
    "piezas": [
     "el-tiempo",
     "el-tiempo-corona-azul",
@@ -155,7 +155,7 @@
    "id": "nahuales",
    "titulo": "Nahuales",
    "subtitulo": "Entre la persona y el animal",
-   "texto": "Además de los animales de la danza, don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.",
+   "texto": "Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.",
    "piezas": [
     "nahual-blanco",
     "nahual-negro",
@@ -168,7 +168,7 @@
    "id": "diablos",
    "titulo": "Diablos",
    "subtitulo": "Cuernos, colmillos y lenguas de fuera",
-   "texto": "Fuera de la danza, don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Todavía no sabemos en qué fiesta se usó cada uno.",
+   "texto": "Fuera de la danza, Don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Todavía no sabemos en qué fiesta se usó cada uno.",
    "piezas": [
     "diablo-rojo-lengua",
     "diablo-rojo-oscuro-lengua",

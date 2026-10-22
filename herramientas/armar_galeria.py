@@ -122,9 +122,9 @@ DESCRIPCIONES = {
 # textos de las salas corregidos en la revisión
 SALAS = {
     'danza-de-los-morenos': {'subtitulo': 'Nueve parejas de animales, macho y hembra',
-        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.'},
+        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: coyotes, chivos, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el coyote y el chivo como capitanes. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificó la familia llevan la marca «Confirmada por la familia»; las demás se agruparon por su parecido y esperan su confirmación.'},
     'nahuales': {'subtitulo': 'Entre la persona y el animal',
-        'texto': 'Además de los animales de la danza, don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.'},
+        'texto': 'Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.'},
     'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Los felinos de esta sala, casi todos de boca abierta y colmillos, no coinciden con los linces confirmados de la danza; todavía no sabemos si alguno es el ocelote, un nahual —como el nahual negro, de cara felina— o una pieza aparte.'},
     'pelaje-de-pincel': {'subtitulo': '¿Coyotes, perros, zorros?',
         'texto': 'En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, quizá coyotes, perros o zorros, y una tiene grandes orejas de arcoíris. Todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.'},
@@ -183,7 +183,7 @@ for f in usadas_fotos:
 pieza_de = {f: x for x in usadas for f in piezas[x]['fotos']}
 destacadas = [f for f in cur['destacadas'] if f in pieza_de]
 out = {
-    'entrada': 'Una selección de las máscaras que don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca cualquier pieza para verla en grande y recorrer todas sus vistas.',
+    'entrada': 'Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca cualquier pieza para verla en grande y recorrer todas sus vistas.',
     'entrada_corta': 'Más de un centenar de máscaras talladas y pintadas a mano, ordenadas en salas como en un museo: la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos y un bestiario completo.',
     'salas': salas,
     'piezas': {x: {k: piezas[x][k] for k in ('nombre', 'descripcion', 'fotos', 'principal', 'categoria', 'certeza')} for x in usadas},
