@@ -10,7 +10,7 @@
   {
    "id": "animales",
    "titulo": "Los animales de la danza",
-   "descripcion": "Coyote, chivo, borregos, tecolote, linces, burro, guacamaya y gallos: ocho de las nueve parejas de la Danza de los Morenos.",
+   "descripcion": "Coyote, chivo, borregos, tecolote, linces, burro, guacamaya, gallos y perro: las nueve parejas de la Danza de los Morenos.",
    "archivos": [
     "IMG-20250829-WA0042.jpg",
     "IMG-20250829-WA0065.jpg",
@@ -25,7 +25,8 @@
     "burro-perfil.jpg",
     "ave-verde.jpg",
     "IMG-20250829-WA0030.jpg",
-    "ave-anaranjada.jpg"
+    "ave-anaranjada.jpg",
+    "perro-xolo.jpg"
    ]
   },
   {
@@ -786,10 +787,10 @@
     480,
     669
    ],
-   "personaje": "Gallo anaranjado",
+   "personaje": "Gallina anaranjada",
    "descripcion": "Rostro anaranjado, pico amarillo, cresta color vino con triángulos amarillos y barbillas rojas a los lados.",
-   "pie": "Gallo anaranjado de cresta color vino",
-   "alt": "Máscara de gallo anaranjado de frente, con pico amarillo, cresta color vino con triángulos amarillos y barbillas rojas",
+   "pie": "Gallina anaranjada de cresta color vino",
+   "alt": "Máscara de gallina anaranjada de frente, con pico amarillo, cresta color vino con triángulos amarillos y barbillas rojas",
    "ajuste": "cover",
    "fondo": "",
    "enfoque": "50% 35%",

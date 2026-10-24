@@ -62,7 +62,8 @@ NOMBRES = {
     'canido-anaranjado': 'Cánido anaranjado (¿zorro?)',
     'calavera-y-rostro-negro-estrellas': 'Rostro negro de estrellas anaranjadas',
 }
-# textos alternativos que afirmaban una especie no confirmada o describían collages ya recortados
+# textos alternativos que afirmaban una especie no confirmada o describían collages ya recortados,
+# y los de las piezas que identificó Don Gorgonio, con el nombre que les dio
 ALTS = {
     'a058': 'Máscara de felino amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos',
     'a063': 'Máscara de felino amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado',
@@ -79,7 +80,7 @@ ALTS = {
     'a118': 'Máscara de búho gris verdoso con grandes ojos amarillos y negros y pico amarillo sobre pared azul',
     'a122': 'Máscara de madera con un lince, un búho y un felino de rosetas tallados uno encima de otro, sobre pared clara',
     'a094': 'Máscara de tres rostros barbados con banda azul, corona dorada y un sol con cara',
-    'a027': 'Máscara de ave azul con pico dorado y penacho de plumas amarillas con ojos morados',
+    'a027': 'Máscara de pavo real azul con pico dorado y penacho de plumas amarillas con ojos morados',
     'a107': 'Máscara La Noche de dos rostros, uno ocre y otro azul, con barba negra y corona con luna y estrella',
     'a102': 'Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado',
     'a104': 'Máscara negra de perfil con oreja felina, cresta de picos rojos, ojo anaranjado y dientes rayados de rojo',
@@ -90,11 +91,31 @@ ALTS = {
     'a034': 'Máscara de tigre anaranjado con rayas negras, ojos verdes y colmillos, de frente',
     'a146': 'Máscara de cánido gris con pinceladas amarillas, ojos verdes y nariz roja, de frente',
     'a153': 'Máscara negra alargada cubierta de puntos crema, con estrellas anaranjadas y bigote en espiral',
-    'a065': 'Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo',
+    'a065': 'Máscara de pelícano de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo',
+    'a163': 'Máscara de gallina anaranjada con cresta color vino escalonada, pico amarillo y barbas rojas, de frente en pared blanca',
+    'a119': 'Máscara de chiva blanca y negra con cuernos largos color café, ojos verdes y barba de fibra',
+    'a087': 'Máscara de coyota amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes',
+    'a020': 'Máscara de coyota de rostro blanco con orejas amarillas, franjas y espirales de arcoíris y nariz negra',
+    'a157': 'Máscara de perro xoloitzcuintle negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos',
+    'a089': 'Perfil de máscara de chiva morada con cuernos curvos rayados y hocico verde',
+    'a081': 'Máscara de ocelote amarillo con lunares rojos, anaranjados y negros y orejas grises',
+    'a073': 'Máscara de ocelote amarillo con lunares rojos, negros y anaranjados, orejas grises y hocico largo, vista de perfil',
+    'a045': 'Máscara de jaguar anaranjado con rosetas negras, orejas rojas puntiagudas y ojos azules',
+    'a026': 'Máscara de jaguar anaranjado con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos',
+    'a099': 'Máscara de jaguar multicolor con diseños geométricos y florales en azul, morado, rosa y anaranjado',
+    'a117': 'Máscara de jaguar multicolor de orejas redondas, pintada con figuras geométricas y hojas en azul, lila, verde y negro',
+    'a140': 'Máscara de águila azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo',
+    'a055': 'Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes',
+    'a036': 'Máscara de zorro anaranjado de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos',
+    'a083': 'Máscara de lobo gris de estilo realista con ojos amarillo verdoso y boca abierta',
 }
-# descripciones de fotos que ya no corresponden (la foto se recortó de un collage)
+# descripciones de fotos que ya no corresponden (la foto se recortó de un collage, o Don Gorgonio dijo que es hembra)
 DESC_FOTOS = {
-    'a065': 'Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.',
+    'a065': 'Máscara de pelícano de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.',
+    'a163': 'Gallina de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.',
+    'a119': 'Chiva blanca y negra con cuernos largos color café, ojos verdes y barba de fibra.',
+    'a087': 'Máscara de coyota amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.',
+    'a020': 'Coyota de rostro blanco con orejas amarillas, franjas de arcoíris en la frente y espirales de colores en las mejillas. Coincide con el diseño del coyote de la danza confirmado por la familia.',
 }
 # vistas extra sacadas de los collages (ver limpiar_album.py): id -> (pieza, texto alternativo)
 EXTRA_VISTAS = {
@@ -116,7 +137,11 @@ REEMPLAZOS = [
     ('plumas de pavo real con ocelos azules', 'plumas con ocelos azules'),
 ]
 DESCRIPCIONES = {
-    'ave-azul-pico-amarillo': 'Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo. Solo hay una foto pequeña de esta pieza.',
+    'ave-azul-pico-amarillo': 'Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo.',
+    'gallo-anaranjado': 'Gallina de cara anaranjada con pico amarillo grueso, cresta escalonada color vino con triángulos amarillos, barbas rojas y ojos de iris verde.',
+    'chivo-blanco-negro': 'Chiva blanca y negra brillante con cuernos largos café oscuro, orejas negras de interior blanco, ojos amarillos de iris verde, boca verde y barba de fibra clara.',
+    'coyote-amarillo-anillos': 'Coyota amarilla con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro.',
+    'coyote-crema-ojos-azules': 'Coyota de base crema con orejas amarillas por fuera y azul marino por dentro, franjas verde, roja, amarilla, azul marino y azul cielo en V, espirales de arcoíris en las mejillas y ojos blancos de iris azul.',
     'calavera-y-rostro-negro-estrellas': 'Rostro negro alargado cubierto de puntos color crema en líneas onduladas, con estrellas anaranjadas de ocho puntas en la frente y la barbilla, ojos azules y bigote en espiral.',
 }
 # Lo que contestó Don Gorgonio en la encuesta (23 de octubre de 2026; ver datos/respuestas-don-gorgonio.json):
@@ -154,32 +179,32 @@ MOVER = {
     'canido-gris-verdoso': ('pelaje-de-pincel', 'otro-animal'),
 }
 DICE_DON_GORGONIO = {
-    'coyote-blanco-arcoiris': 'Según Don Gorgonio, es macho y el segundo capitán de la Danza de los Morenos, y representa la inteligencia.',
+    'coyote-blanco-arcoiris': 'Según Don Gorgonio, es el coyote, segundo capitán de la Danza de los Morenos, y representa la inteligencia.',
     'coyote-blanco-esbelto': 'Según Don Gorgonio, es el mismo coyote blanco de arcoíris en otra expresión de forma.',
     'coyote-crema-ojos-azules': 'Según Don Gorgonio, es una coyota.',
     'coyote-amarillo-anillos': 'Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.',
-    'canido-negro-boca-abierta': 'Según Don Gorgonio, es un perro xoloitzcuintle, macho, de la Danza de los Morenos, y representa la fidelidad y la compañía.',
+    'canido-negro-boca-abierta': 'Según Don Gorgonio, es un perro xoloitzcuintle macho de la Danza de los Morenos y representa la fidelidad y la compañía.',
     'chivo-rojo-antifaz-amarillo': 'Según Don Gorgonio, es el chivo, primer capitán de la Danza de los Morenos, y representa la unión y la fuerza.',
-    'chivo-blanco-negro': 'Según Don Gorgonio, es la chiva, la hembra de la Danza de los Morenos, y representa la unión y la fuerza.',
-    'borrego-anaranjado': 'Según Don Gorgonio, es el borrego, macho, de la Danza de los Morenos, y representa el triunfo y la fortuna.',
-    'tecolote-rojo': 'Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la sabiduría.',
-    'lince-franjas-zigzag': 'Según Don Gorgonio, es el lince, hembra, de la Danza de los Morenos, y representa la agudeza visual y el sigilo.',
-    'felino-lunares': 'Según Don Gorgonio, es un ocelote, macho, de la Danza de los Morenos, y representa la audacia y el valor.',
+    'chivo-blanco-negro': 'Según Don Gorgonio, es la chiva de la Danza de los Morenos y representa la unión y la fuerza.',
+    'borrego-anaranjado': 'Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa el triunfo y la fortuna.',
+    'tecolote-rojo': 'Según Don Gorgonio, es un tecolote macho de la Danza de los Morenos y representa la sabiduría.',
+    'lince-franjas-zigzag': 'Según Don Gorgonio, es un lince hembra de la Danza de los Morenos y representa la agudeza visual y el sigilo.',
+    'felino-lunares': 'Según Don Gorgonio, es un ocelote macho de la Danza de los Morenos y representa la audacia y el valor.',
     'felino-rosetas': 'Según Don Gorgonio, es un jaguar de adorno, que no se baila, y representa la valentía y el poder.',
-    'burro-gris': 'Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la docilidad y la resistencia.',
-    'guacamaya-verde': 'Según Don Gorgonio, es la guacamaya, hembra, de la Danza de los Morenos, y representa la fertilidad y la abundancia.',
-    'gallo-anaranjado': 'Según Don Gorgonio, es la gallina, hembra, de la Danza de los Morenos, y representa la maternidad y la prosperidad.',
+    'burro-gris': 'Según Don Gorgonio, es un burro macho de la Danza de los Morenos y representa la docilidad y la resistencia.',
+    'guacamaya-verde': 'Según Don Gorgonio, es una guacamaya hembra de la Danza de los Morenos y representa la fertilidad y la abundancia.',
+    'gallo-anaranjado': 'Según Don Gorgonio, es la gallina de la Danza de los Morenos y representa la maternidad y la prosperidad.',
     'el-tiempo': 'Según Don Gorgonio, esta máscara es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo.',
     'sol-y-luna': 'Según Don Gorgonio, es El Ocaso, una máscara de adorno que representa el final del día.',
     'diablo-marco-moteado-lengua-negra': 'Según Don Gorgonio, es el Diablo el Pecado: se usa en las pastorelas y representa los siete pecados capitales.',
     'vida-muerte-malva': 'Según Don Gorgonio, es la Dualidad vida y muerte, una máscara de adorno que representa el ciclo de la vida.',
-    'lince-naturalista': 'Según Don Gorgonio, es un lince, macho, de la Danza de los Morenos, y representa la agudeza visual y el sigilo.',
+    'lince-naturalista': 'Según Don Gorgonio, es un lince macho de la Danza de los Morenos y representa la agudeza visual y el sigilo.',
     'felino-multicolor-pastel': 'Según Don Gorgonio, es un jaguar multicolor de adorno y representa la valentía y el poder.',
-    'pavo-real-pico-dorado': 'Según Don Gorgonio, es un pavo real y representa la belleza y la elegancia.',
+    'pavo-real-pico-dorado': 'Según Don Gorgonio, es un pavo real hembra de la Danza de los Morenos y representa la belleza y la elegancia.',
     'ave-azul-pico-curvo': 'Según Don Gorgonio, es un águila multicolor de adorno y representa el liderazgo y la libertad.',
     'ave-azul-pico-amarillo': 'Según Don Gorgonio, es un pelícano de adorno y representa la generosidad y el sacrificio.',
     'pato': 'Según Don Gorgonio, es de adorno y representa el equilibrio y la resiliencia.',
-    'buho-azul': 'Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la sabiduría.',
+    'buho-azul': 'Según Don Gorgonio, es un búho macho de la Danza de los Morenos y representa la sabiduría.',
     'canido-anaranjado': 'Según Don Gorgonio, es un zorro de adorno y representa la adaptabilidad y la astucia.',
     'canido-gris-verdoso': 'Según Don Gorgonio, es un lobo de adorno y representa la astucia y la autenticidad.',
     'toro-cafe': 'Según Don Gorgonio, es de adorno y representa la fuerza y la ascendencia.',
@@ -191,20 +216,22 @@ DICE_DON_GORGONIO = {
     'chivo-azul-hocico-rosa': 'Según Don Gorgonio, es un chivo multicolor de adorno y representa la unión y la fuerza.',
     'chivo-morado': 'Según Don Gorgonio, es una chiva morada de la Danza de los Morenos y representa la unión y la fuerza.',
 }
+# notas del sitio que van después de lo que dijo Don Gorgonio
+NOTAS = {'ave-azul-pico-amarillo': 'Solo hay una foto pequeña de esta pieza.'}
 # textos de las salas corregidos en la revisión
 SALAS = {
     'danza-de-los-morenos': {'subtitulo': 'Nueve parejas de animales, macho y hembra',
-        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan una marca; las demás se agruparon por su parecido y esperan su confirmación.'},
-    'el-tiempo-y-la-noche': {'texto': 'El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, los tres rostros del Tiempo representan las tres etapas de la vida: niño, adulto y viejo; y El Ocaso, la máscara de sol y luna, representa el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.'},
+        'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás se agruparon por su parecido y esperan confirmación.'},
+    'el-tiempo-y-la-noche': {'texto': 'El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, el Tiempo de esta sala es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.'},
     'diablos': {'texto': 'Fuera de la danza, Don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Uno de ellos es el Diablo el Pecado, que según Don Gorgonio se usa en las pastorelas y representa los siete pecados capitales; de los demás todavía no sabemos en qué fiesta se usó cada uno.'},
     'vida-y-muerte': {'texto': 'En estas máscaras un mismo rostro se parte a lo largo: de un lado, un hombre de barba tallada; del otro, una calavera. Don Gorgonio llama a una de ellas Dualidad vida y muerte, y dice que representa el ciclo de la vida. Las acompañan otros rostros humanos, entre ellos un hombre calvo de barba negra, otro con gorro de sol y luna y uno de dos tonos, cuyos personajes aún no conocemos.'},
-    'aves': {'texto': 'Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y está en su sala; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.'},
+    'aves': {'texto': 'Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y pasó a la sala de la Danza de los Morenos, con los tecolotes; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.'},
     'nahuales': {'subtitulo': 'Entre la persona y el animal',
         'texto': 'Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.'},
-    'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos de la danza es la del lince y el ocelote, como confirmó Don Gorgonio; los dos están en la sala de la danza. Aquí quedan felinos de adorno, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es un nahual —como el nahual negro, de cara felina— o una pieza aparte.'},
-    'pelaje-de-pincel': {'subtitulo': 'Zorros, lobos y otros animales de hocico largo',
+    'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es de la danza, un nahual —como el nahual negro, de cara felina— o una pieza aparte.'},
+    'pelaje-de-pincel': {'subtitulo': 'Un zorro, un lobo y otros animales de hocico largo',
         'texto': 'En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, y una tiene grandes orejas de arcoíris. Don Gorgonio identificó un zorro y un lobo, los dos de adorno; de las demás todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.'},
-    'bestiario': {'texto': 'Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que los toros, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.'},
+    'bestiario': {'texto': 'Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.'},
 }
 for slug, nombre in list(NOMBRES.items()) + list(NOMBRES_DON_GORGONIO.items()):
     if slug in piezas: piezas[slug]['nombre'] = nombre
@@ -220,6 +247,8 @@ for slug, p in piezas.items():
         p['descripcion'] = DESCRIPCIONES[slug]
     if slug in DICE_DON_GORGONIO:
         p['descripcion'] = p['descripcion'].rstrip() + ' ' + DICE_DON_GORGONIO[slug]
+    if slug in NOTAS:
+        p['descripcion'] = p['descripcion'].rstrip() + ' ' + NOTAS[slug]
 
 for slug, p in list(piezas.items()):
     fotos = [f for f in p['fotos'] if f not in descartar]
@@ -236,7 +265,7 @@ PAREJAS = [('danza-chivo', 'Chivos', 'Primer capitán · la unión y la fuerza')
            ('danza-borrego', 'Borregos cimarrones', 'El triunfo y la fortuna'), ('danza-tecolote', 'Tecolotes', 'La sabiduría'),
            ('danza-lince-ocelote', 'Lince y ocelote', 'El lince, la agudeza visual y el sigilo; el ocelote, la audacia y el valor'),
            ('danza-burro', 'Burros', 'La docilidad y la resistencia'), ('danza-guacamaya', 'Guacamayas', 'La fertilidad y la abundancia'),
-           ('danza-gallo', 'Gallos', 'La maternidad y la prosperidad'), ('danza-perro', 'Perros', 'La fidelidad y la compañía')]
+           ('danza-gallo', 'Gallos', 'La gallina, la maternidad y la prosperidad'), ('danza-perro', 'Perros', 'La fidelidad y la compañía')]
 ORDEN = ['danza-de-los-morenos', 'el-tiempo-y-la-noche', 'nahuales', 'diablos', 'vida-y-muerte', 'rostros-negros', 'seres-encimados', 'felinos', 'aves', 'pelaje-de-pincel', 'bestiario']
 salas_cur = {s['id']: dict(s, piezas=[x for x in s['piezas'] if x not in MOVER]) for s in cur['salas']}
 for slug, (sala, categoria) in MOVER.items():

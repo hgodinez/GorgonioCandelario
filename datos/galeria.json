@@ -6,7 +6,7 @@
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
    "subtitulo": "Nueve parejas de animales, macho y hembra",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan una marca; las demás se agruparon por su parecido y esperan su confirmación.",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás se agruparon por su parecido y esperan confirmación.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
@@ -125,7 +125,7 @@
     },
     {
      "titulo": "Gallos",
-     "nota": "La maternidad y la prosperidad",
+     "nota": "La gallina, la maternidad y la prosperidad",
      "piezas": [
       "gallo-cresta-roja",
       "gallo-cresta-azul",
@@ -146,7 +146,7 @@
    "id": "el-tiempo-y-la-noche",
    "titulo": "El Tiempo y La Noche",
    "subtitulo": "Varios rostros bajo una corona de astros",
-   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, los tres rostros del Tiempo representan las tres etapas de la vida: niño, adulto y viejo; y El Ocaso, la máscara de sol y luna, representa el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
+   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, el Tiempo de esta sala es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
    "piezas": [
     "el-tiempo",
     "el-tiempo-corona-azul",
@@ -231,7 +231,7 @@
    "id": "felinos",
    "titulo": "Felinos",
    "subtitulo": "Fauces abiertas y piel manchada",
-   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos de la danza es la del lince y el ocelote, como confirmó Don Gorgonio; los dos están en la sala de la danza. Aquí quedan felinos de adorno, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es un nahual —como el nahual negro, de cara felina— o una pieza aparte.",
+   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es de la danza, un nahual —como el nahual negro, de cara felina— o una pieza aparte.",
    "piezas": [
     "jaguar-rosetas",
     "felino-fauces-abiertas",
@@ -248,7 +248,7 @@
    "id": "aves",
    "titulo": "Aves",
    "subtitulo": "Penachos, picos largos y ojos redondos",
-   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y está en su sala; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.",
+   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y pasó a la sala de la Danza de los Morenos, con los tecolotes; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.",
    "piezas": [
     "pavo-real-pico-anaranjado",
     "pavo-real-pico-dorado",
@@ -269,7 +269,7 @@
   {
    "id": "pelaje-de-pincel",
    "titulo": "Pelaje de pincel",
-   "subtitulo": "Zorros, lobos y otros animales de hocico largo",
+   "subtitulo": "Un zorro, un lobo y otros animales de hocico largo",
    "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, y una tiene grandes orejas de arcoíris. Don Gorgonio identificó un zorro y un lobo, los dos de adorno; de las demás todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.",
    "piezas": [
     "canido-gris-pinceladas",
@@ -287,7 +287,7 @@
    "id": "bestiario",
    "titulo": "Bestiario",
    "subtitulo": "Venados, toros, jirafas, cebras y otros animales",
-   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que los toros, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.",
+   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.",
    "piezas": [
     "venado-astas-negras",
     "venado-astas-azules",
@@ -314,7 +314,7 @@
  "piezas": {
   "coyote-blanco-arcoiris": {
    "nombre": "Coyote blanco de arcoíris",
-   "descripcion": "Coyote de base blanca con orejas amarillas y azul marino, franjas de arcoíris en V en la frente, espirales de arcoíris en las mejillas y línea de puntos de colores por el hocico. Ojos amarillos con iris verde y nariz negra. Según Don Gorgonio, es macho y el segundo capitán de la Danza de los Morenos, y representa la inteligencia.",
+   "descripcion": "Coyote de base blanca con orejas amarillas y azul marino, franjas de arcoíris en V en la frente, espirales de arcoíris en las mejillas y línea de puntos de colores por el hocico. Ojos amarillos con iris verde y nariz negra. Según Don Gorgonio, es el coyote, segundo capitán de la Danza de los Morenos, y representa la inteligencia.",
    "fotos": [
     "a024",
     "a022"
@@ -336,7 +336,7 @@
   },
   "coyote-crema-ojos-azules": {
    "nombre": "Coyota crema de ojos azules",
-   "descripcion": "Coyote de base crema con orejas amarillas por fuera y azul marino por dentro, franjas verde, roja, amarilla, azul marino y azul cielo en V, espirales de arcoíris en las mejillas y ojos blancos de iris azul. Según Don Gorgonio, es una coyota.",
+   "descripcion": "Coyota de base crema con orejas amarillas por fuera y azul marino por dentro, franjas verde, roja, amarilla, azul marino y azul cielo en V, espirales de arcoíris en las mejillas y ojos blancos de iris azul. Según Don Gorgonio, es una coyota.",
    "fotos": [
     "a020"
    ],
@@ -397,7 +397,7 @@
   },
   "coyote-amarillo-anillos": {
    "nombre": "Coyota amarilla de anillos",
-   "descripcion": "Coyote amarillo con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro. Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.",
+   "descripcion": "Coyota amarilla con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro. Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.",
    "fotos": [
     "a087"
    ],
@@ -508,7 +508,7 @@
   },
   "chivo-blanco-negro": {
    "nombre": "Chiva blanca y negra",
-   "descripcion": "Chivo blanco y negro brillante con cuernos largos café oscuro, orejas negras de interior blanco, ojos amarillos de iris verde, boca verde y barba de fibra clara. Según Don Gorgonio, es la chiva, la hembra de la Danza de los Morenos, y representa la unión y la fuerza.",
+   "descripcion": "Chiva blanca y negra brillante con cuernos largos café oscuro, orejas negras de interior blanco, ojos amarillos de iris verde, boca verde y barba de fibra clara. Según Don Gorgonio, es la chiva de la Danza de los Morenos y representa la unión y la fuerza.",
    "fotos": [
     "a119"
    ],
@@ -518,7 +518,7 @@
   },
   "borrego-anaranjado": {
    "nombre": "Borrego anaranjado",
-   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente. Según Don Gorgonio, es el borrego, macho, de la Danza de los Morenos, y representa el triunfo y la fortuna.",
+   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente. Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa el triunfo y la fortuna.",
    "fotos": [
     "a164"
    ],
@@ -539,7 +539,7 @@
   },
   "tecolote-rojo": {
    "nombre": "Tecolote rojo",
-   "descripcion": "Tecolote de rostro rojo con orejas puntiagudas, ojos blancos con rayos negros, franja verde lima que forma el pico curvo y motivo rojo y dorado en la frente. Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la sabiduría.",
+   "descripcion": "Tecolote de rostro rojo con orejas puntiagudas, ojos blancos con rayos negros, franja verde lima que forma el pico curvo y motivo rojo y dorado en la frente. Según Don Gorgonio, es un tecolote macho de la Danza de los Morenos y representa la sabiduría.",
    "fotos": [
     "a004"
    ],
@@ -549,7 +549,7 @@
   },
   "lince-franjas-zigzag": {
    "nombre": "Lince de franjas y zigzag rojo",
-   "descripcion": "Lince de fondo crema con rayas diagonales rojas y negras, zigzag rojo y espiral en la frente, orejas grises jaspeadas, ojos de iris turquesa y hocico largo con puntos negros. Según Don Gorgonio, es el lince, hembra, de la Danza de los Morenos, y representa la agudeza visual y el sigilo.",
+   "descripcion": "Lince de fondo crema con rayas diagonales rojas y negras, zigzag rojo y espiral en la frente, orejas grises jaspeadas, ojos de iris turquesa y hocico largo con puntos negros. Según Don Gorgonio, es un lince hembra de la Danza de los Morenos y representa la agudeza visual y el sigilo.",
    "fotos": [
     "a166"
    ],
@@ -570,7 +570,7 @@
   },
   "felino-lunares": {
    "nombre": "Ocelote amarillo de lunares",
-   "descripcion": "Felino amarillo con lunares rojos, anaranjados, negros y gris oscuro, orejas grises cepilladas, ojos verdes y hocico largo con rayas negras de bigote. Según Don Gorgonio, es un ocelote, macho, de la Danza de los Morenos, y representa la audacia y el valor.",
+   "descripcion": "Felino amarillo con lunares rojos, anaranjados, negros y gris oscuro, orejas grises cepilladas, ojos verdes y hocico largo con rayas negras de bigote. Según Don Gorgonio, es un ocelote macho de la Danza de los Morenos y representa la audacia y el valor.",
    "fotos": [
     "a081",
     "a073"
@@ -591,7 +591,7 @@
   },
   "burro-gris": {
    "nombre": "Burro gris",
-   "descripcion": "Burro gris jaspeado a pincel seco con orejas muy largas café y anaranjadas, copete negro, ojos con contorno anaranjado y hocico blanco con fosas nasales rosas. Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la docilidad y la resistencia.",
+   "descripcion": "Burro gris jaspeado a pincel seco con orejas muy largas café y anaranjadas, copete negro, ojos con contorno anaranjado y hocico blanco con fosas nasales rosas. Según Don Gorgonio, es un burro macho de la Danza de los Morenos y representa la docilidad y la resistencia.",
    "fotos": [
     "a168",
     "a167"
@@ -602,7 +602,7 @@
   },
   "guacamaya-verde": {
    "nombre": "Guacamaya verde",
-   "descripcion": "Guacamaya de cara alargada verde olivo con pico negro curvo y copete de bandas roja, amarilla, azul celeste y anaranjada con franja central azul marino en espiga. Según Don Gorgonio, es la guacamaya, hembra, de la Danza de los Morenos, y representa la fertilidad y la abundancia.",
+   "descripcion": "Guacamaya de cara alargada verde olivo con pico negro curvo y copete de bandas roja, amarilla, azul celeste y anaranjada con franja central azul marino en espiga. Según Don Gorgonio, es una guacamaya hembra de la Danza de los Morenos y representa la fertilidad y la abundancia.",
    "fotos": [
     "a165"
    ],
@@ -643,7 +643,7 @@
   },
   "gallo-anaranjado": {
    "nombre": "Gallina anaranjada",
-   "descripcion": "Gallo de cara anaranjada con pico amarillo grueso, cresta escalonada color vino con triángulos amarillos, barbas rojas y ojos de iris verde. Según Don Gorgonio, es la gallina, hembra, de la Danza de los Morenos, y representa la maternidad y la prosperidad.",
+   "descripcion": "Gallina de cara anaranjada con pico amarillo grueso, cresta escalonada color vino con triángulos amarillos, barbas rojas y ojos de iris verde. Según Don Gorgonio, es la gallina de la Danza de los Morenos y representa la maternidad y la prosperidad.",
    "fotos": [
     "a163"
    ],
@@ -663,7 +663,7 @@
   },
   "canido-negro-boca-abierta": {
    "nombre": "Perro xoloitzcuintle",
-   "descripcion": "Máscara negra con línea amarilla de la frente al hocico, cejas y bandas de arcoíris sobre el hocico, ojo rojo con anillo verde, orejas verde olivo y mostaza, quijada blanca, nariz roja y boca abierta con lengua y colmillos. Según Don Gorgonio, es un perro xoloitzcuintle, macho, de la Danza de los Morenos, y representa la fidelidad y la compañía.",
+   "descripcion": "Máscara negra con línea amarilla de la frente al hocico, cejas y bandas de arcoíris sobre el hocico, ojo rojo con anillo verde, orejas verde olivo y mostaza, quijada blanca, nariz roja y boca abierta con lengua y colmillos. Según Don Gorgonio, es un perro xoloitzcuintle macho de la Danza de los Morenos y representa la fidelidad y la compañía.",
    "fotos": [
     "a157"
    ],
@@ -673,7 +673,7 @@
   },
   "lince-naturalista": {
    "nombre": "Lince naturalista",
-   "descripcion": "Lince pintado a pinceladas ocre y gris con manchas grises, orejas de punta negra, ojos verde amarillo y gorguera rayada alrededor de la cara. Según Don Gorgonio, es un lince, macho, de la Danza de los Morenos, y representa la agudeza visual y el sigilo.",
+   "descripcion": "Lince pintado a pinceladas ocre y gris con manchas grises, orejas de punta negra, ojos verde amarillo y gorguera rayada alrededor de la cara. Según Don Gorgonio, es un lince macho de la Danza de los Morenos y representa la agudeza visual y el sigilo.",
    "fotos": [
     "a054"
    ],
@@ -683,7 +683,7 @@
   },
   "buho-azul": {
    "nombre": "Búho azul",
-   "descripcion": "Búho de base azul con pincelado café que imita plumaje, trazos azul marino y amarillos alrededor de la cara, ojos negros con media luna amarilla y pico café con punta rosa. Según Don Gorgonio, es macho, de la Danza de los Morenos, y representa la sabiduría.",
+   "descripcion": "Búho de base azul con pincelado café que imita plumaje, trazos azul marino y amarillos alrededor de la cara, ojos negros con media luna amarilla y pico café con punta rosa. Según Don Gorgonio, es un búho macho de la Danza de los Morenos y representa la sabiduría.",
    "fotos": [
     "a050"
    ],
@@ -1191,7 +1191,7 @@
   },
   "pavo-real-pico-dorado": {
    "nombre": "Pavo real de pico dorado",
-   "descripcion": "Ave azul marino con franjas blancas en V, pico dorado, banda dorada en la frente con rombo y puntos rojos, y penacho de plumas amarillas con rayas azules y ocelos morados. Según Don Gorgonio, es un pavo real y representa la belleza y la elegancia.",
+   "descripcion": "Ave azul marino con franjas blancas en V, pico dorado, banda dorada en la frente con rombo y puntos rojos, y penacho de plumas amarillas con rayas azules y ocelos morados. Según Don Gorgonio, es un pavo real hembra de la Danza de los Morenos y representa la belleza y la elegancia.",
    "fotos": [
     "a027"
    ],
@@ -1261,7 +1261,7 @@
   },
   "ave-azul-pico-amarillo": {
    "nombre": "Pelícano",
-   "descripcion": "Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo. Solo hay una foto pequeña de esta pieza. Según Don Gorgonio, es un pelícano de adorno y representa la generosidad y el sacrificio.",
+   "descripcion": "Ave de rostro azul y frente roja con espirales celestes, ojos redondos de iris anaranjado y un pico largo, recto y amarillo. Según Don Gorgonio, es un pelícano de adorno y representa la generosidad y el sacrificio. Solo hay una foto pequeña de esta pieza.",
    "fotos": [
     "a065"
    ],
@@ -1633,8 +1633,8 @@
    "recorte": false
   },
   "a020": {
-   "alt": "Máscara de coyote de rostro blanco con orejas amarillas, franjas y espirales de arcoíris y nariz negra",
-   "descripcion": "Coyote de rostro blanco con orejas amarillas, franjas de arcoíris en la frente y espirales de colores en las mejillas. Coincide con el diseño del coyote de la danza confirmado por la familia.",
+   "alt": "Máscara de coyota de rostro blanco con orejas amarillas, franjas y espirales de arcoíris y nariz negra",
+   "descripcion": "Coyota de rostro blanco con orejas amarillas, franjas de arcoíris en la frente y espirales de colores en las mejillas. Coincide con el diseño del coyote de la danza confirmado por la familia.",
    "recorte": false
   },
   "a084": {
@@ -1668,8 +1668,8 @@
    "recorte": false
   },
   "a087": {
-   "alt": "Máscara de coyote amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes",
-   "descripcion": "Máscara de coyote amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.",
+   "alt": "Máscara de coyota amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes",
+   "descripcion": "Máscara de coyota amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.",
    "recorte": false
   },
   "a123": {
@@ -1728,8 +1728,8 @@
    "recorte": false
   },
   "a119": {
-   "alt": "Máscara de chivo blanco y negro con cuernos largos color café, ojos verdes y barba de fibra",
-   "descripcion": "Chivo blanco y negro con cuernos largos color café, ojos verdes y barba de fibra.",
+   "alt": "Máscara de chiva blanca y negra con cuernos largos color café, ojos verdes y barba de fibra",
+   "descripcion": "Chiva blanca y negra con cuernos largos color café, ojos verdes y barba de fibra.",
    "recorte": false
   },
   "a164": {
@@ -1768,12 +1768,12 @@
    "recorte": false
   },
   "a081": {
-   "alt": "Máscara de felino amarilla con lunares rojos, anaranjados y negros y orejas grises",
+   "alt": "Máscara de ocelote amarillo con lunares rojos, anaranjados y negros y orejas grises",
    "descripcion": "Máscara de felino de fondo amarillo cubierta de lunares rojos, anaranjados y negros, con orejas grises y ojos verdes.",
    "recorte": false
   },
   "a073": {
-   "alt": "Máscara de felino amarillo con lunares rojos, negros y anaranjados, orejas grises y hocico largo, vista de perfil",
+   "alt": "Máscara de ocelote amarillo con lunares rojos, negros y anaranjados, orejas grises y hocico largo, vista de perfil",
    "descripcion": "Felino de rostro amarillo cubierto de lunares rojos, negros y anaranjados, con orejas grises y hocico largo rayado de negro.",
    "recorte": false
   },
@@ -1818,8 +1818,8 @@
    "recorte": false
   },
   "a163": {
-   "alt": "Máscara de gallo anaranjado con cresta color vino escalonada, pico amarillo y barbas rojas, de frente en pared blanca",
-   "descripcion": "Gallo de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.",
+   "alt": "Máscara de gallina anaranjada con cresta color vino escalonada, pico amarillo y barbas rojas, de frente en pared blanca",
+   "descripcion": "Gallina de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.",
    "recorte": false
   },
   "a144": {
@@ -1828,7 +1828,7 @@
    "recorte": false
   },
   "a157": {
-   "alt": "Máscara de cánido negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos",
+   "alt": "Máscara de perro xoloitzcuintle negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos",
    "descripcion": "Máscara de cánido negro de hocico largo con franjas de arcoíris en la ceja y el hocico, orejas verdes y amarillas y boca abierta con colmillos.",
    "recorte": false
   },
@@ -1843,7 +1843,7 @@
    "recorte": false
   },
   "a089": {
-   "alt": "Perfil de máscara morada de animal con cuernos curvos rayados y hocico verde",
+   "alt": "Perfil de máscara de chiva morada con cuernos curvos rayados y hocico verde",
    "descripcion": "Máscara de perfil de un animal con cuernos, pintada en morado claro y oscuro, con cuernos curvos rayados en negro y anaranjado y hocico verde.",
    "recorte": false
   },
@@ -2148,22 +2148,22 @@
    "recorte": false
   },
   "a099": {
-   "alt": "Máscara de felino con diseños geométricos y florales en azul, morado, rosa y anaranjado",
+   "alt": "Máscara de jaguar multicolor con diseños geométricos y florales en azul, morado, rosa y anaranjado",
    "descripcion": "Máscara de felino de acabado mate con diseños geométricos y florales en azul, morado, rosa, anaranjado y verde.",
    "recorte": false
   },
   "a117": {
-   "alt": "Máscara de felino de orejas redondas pintada con figuras geométricas y hojas en azul, lila, verde y negro",
+   "alt": "Máscara de jaguar multicolor de orejas redondas, pintada con figuras geométricas y hojas en azul, lila, verde y negro",
    "descripcion": "Cabeza de felino pintada con figuras geométricas y hojas en azul, lila, verde, naranja y negro.",
    "recorte": false
   },
   "a045": {
-   "alt": "Máscara de felino anaranjada con rosetas negras, orejas rojas puntiagudas y ojos azules",
+   "alt": "Máscara de jaguar anaranjado con rosetas negras, orejas rojas puntiagudas y ojos azules",
    "descripcion": "Máscara de felino de hocico alargado y orejas altas, anaranjada con manchas negras en forma de roseta y ojos azules.",
    "recorte": false
   },
   "a026": {
-   "alt": "Máscara anaranjada de animal con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos",
+   "alt": "Máscara de jaguar anaranjado con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos",
    "descripcion": "Máscara de animal anaranjado con manchas negras en anillo, ojos azules, orejas grandes rojizas con textura de pelo y hocico amarillo con rayas negras.",
    "recorte": false
   },
@@ -2173,7 +2173,7 @@
    "recorte": false
   },
   "a027": {
-   "alt": "Máscara de ave azul con pico dorado y penacho de plumas amarillas con ojos morados",
+   "alt": "Máscara de pavo real azul con pico dorado y penacho de plumas amarillas con ojos morados",
    "descripcion": "Máscara de ave azul con franjas blancas, pico dorado, ojos amarillos y un penacho de plumas amarillas con ojos morados de pavo real. Son dos fotos de la misma pieza, lado a lado.",
    "recorte": false
   },
@@ -2203,13 +2203,13 @@
    "recorte": false
   },
   "a140": {
-   "alt": "Máscara de ave azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo",
+   "alt": "Máscara de águila azul con trazos amarillos, ojo verde con pestañas y pico curvo amarillo",
    "descripcion": "Máscara de ave azul con plumas pintadas en amarillo, ojo verde con pestañas y pico curvo amarillo.",
    "recorte": false
   },
   "a065": {
-   "alt": "Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo",
-   "descripcion": "Máscara de ave de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.",
+   "alt": "Máscara de pelícano de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo",
+   "descripcion": "Máscara de pelícano de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.",
    "recorte": false
   },
   "a013": {
@@ -2283,12 +2283,12 @@
    "recorte": false
   },
   "a055": {
-   "alt": "Máscara de cánido anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes",
+   "alt": "Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes",
    "descripcion": "Máscara de cánido anaranjado, con el pelo dibujado en trazos negros, orejas grises por dentro y ojos verdes.",
    "recorte": false
   },
   "a036": {
-   "alt": "Máscara anaranjada de animal de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos",
+   "alt": "Máscara de zorro anaranjado de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos",
    "descripcion": "Máscara de animal de hocico largo, color anaranjado con trazos negros que imitan pelo, orejas grises con textura y ojo verde olivo.",
    "recorte": false
   },
@@ -2308,7 +2308,7 @@
    "recorte": false
   },
   "a083": {
-   "alt": "Máscara de cánido gris de estilo realista con ojos amarillo verdoso y boca abierta",
+   "alt": "Máscara de lobo gris de estilo realista con ojos amarillo verdoso y boca abierta",
    "descripcion": "Máscara de cánido de estilo realista, con pelaje gris pintado a pincel, ojos amarillos y verdes y la boca abierta en color guinda.",
    "recorte": false
   },

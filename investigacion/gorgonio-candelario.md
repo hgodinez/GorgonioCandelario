@@ -134,7 +134,7 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - ⚠ El INPI cuenta 19 danzantes; hay que preguntar quién es el que sobra (¿el bartolo?).
 
 ### Datos de la danza
-- **Capitanes:** al frente van el coyote (capitán número uno) y el chivo (número dos), y detrás sus hembras. ⚠ Don Gorgonio dice lo contrario: el chivo es el primero (encuesta, 23 de octubre de 2026). Lo dice Guadalupe en Portal Colimote (2023) y lo confirma El Pulso de Colima (2023). Antes iba al frente el burro, según la Universidad de Colima (2015).
+- **Capitanes:** al frente van el coyote (capitán número uno) y el chivo (número dos), y detrás sus hembras. Lo dice Guadalupe en Portal Colimote (2023) y lo confirma El Pulso de Colima (2023). Antes iba al frente el burro, según la Universidad de Colima (2015). ⚠ Don Gorgonio dice lo contrario: el chivo es el primero y el coyote el segundo (encuesta, 23 de octubre de 2026).
 - **Qué simboliza cada animal** (Alas y Viento, Sección Amarilla): el coyote, la inteligencia; el chivo, la unión y la fuerza; el tecolote, la sabiduría; los felinos, la agilidad y la destreza; los borregos cimarrones, la fuerza y la testarudez. Lo que faltaba (burro, guacamaya, gallo y perro) lo contestó Don Gorgonio en la encuesta; ver «Respuestas de Don Gorgonio».
 - **Por qué son nueve:** por los nueve meses de embarazo de la Virgen y los nueve días del novenario de un difunto (El Pulso de Colima, 2023).
 - **Fechas:** Sábado de Gloria, Domingo de Resurrección, 3 de mayo y Pentecostés, además de las invitaciones. En Semana Santa empieza de madrugada.
@@ -237,6 +237,7 @@ Contestó desde su teléfono, de 20:18 a 22:32 (hora de Colima), 36 de las 126 m
 **Diferencias con lo publicado (hay que aclararlas con él):**
 - ⚠ **Orden de los capitanes:** Don Gorgonio dice que el chivo es el primer capitán y el coyote el segundo. Guadalupe había dicho lo contrario (Portal Colimote, 2023; El Pulso de Colima, 2023). El sitio sigue a Don Gorgonio.
 - ⚠ **Borrego:** para Don Gorgonio representa «triunfo y fortuna»; Alas y Viento decía «la fuerza y la testarudez». Los felinos: él dice agudeza visual y sigilo (lince) y audacia y valor (ocelote); Alas y Viento, «la agilidad y la destreza». El sitio sigue a Don Gorgonio.
-- ⚠ **Pavo real (84):** lo marcó como de la Danza de los Morenos, hembra, pero el pavo real no está entre las nueve parejas. En el sitio se queda en la sala de aves, sin decir que es de la danza.
+- ⚠ **Pavo real (84):** lo marcó como de la Danza de los Morenos, hembra, pero el pavo real no está entre las nueve parejas. El sitio sigue a Don Gorgonio: su ficha y el texto de la sala de aves dicen que, según él, es de la danza. La pieza se queda en la sala de aves hasta aclarar con qué pareja sale.
 - ⚠ **El Tiempo (37):** dice que esta máscara es de adorno; la del museo de Santa Fe está catalogada como de la Pastorela. Puede que haya de los dos usos.
+- **Gallina (35):** la familia la había llamado gallo anaranjado; Don Gorgonio dice que es la gallina, hembra. El sitio la llama gallina, y la nota de la pareja de gallos dice que lo que simboliza es de la gallina.
 - ⚠ **Máscaras 2 y 3:** escribió que la 2 es el mismo coyote blanco de arcoíris en otra expresión de forma y que la 3 es una coyota hembra, pero después quitó lo que había marcado. El sitio usa lo que dejó escrito.

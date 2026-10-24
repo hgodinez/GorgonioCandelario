@@ -112,8 +112,8 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] Permiso para usar los dos videos de YouTube.
 - [ ] Quién es el danzante 19 que cuenta el INPI y si el bartolo sale con los Morenos.
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
-- [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
-- [ ] Una foto mejor del ave azul de pico amarillo: la única que hay es el panel central de un collage, de 172 px de ancho.
+- [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las otras máscaras de vida y muerte tienen nombre (a una Don Gorgonio la llama Dualidad vida y muerte).
+- [ ] Una foto mejor del pelícano (antes «ave azul de pico amarillo»): la única que hay es el panel central de un collage, de 172 px de ancho.
 - [ ] La encuesta en `preguntas/`: el 23 de octubre de 2026 Don Gorgonio contestó 36 de las 126 máscaras y su año de nacimiento; sus respuestas ya están en el sitio (ver `datos/respuestas-don-gorgonio.json` y la investigación). Faltan las demás máscaras y las preguntas sobre él y el taller. Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`.
 - [ ] Aclarar con Don Gorgonio lo que no cuadra con lo publicado: el orden de los capitanes (él dice que el chivo es el primero; Guadalupe había dicho que el coyote), si el pavo real (máscara 84) es de la Danza de los Morenos, y las máscaras 2 y 3, en las que quitó lo que había marcado.
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
