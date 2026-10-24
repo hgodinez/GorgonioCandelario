@@ -64,6 +64,8 @@ def tarjeta(slug):
     clase = 'pieza pieza-recorte' if fotos[fid].get('recorte') else 'pieza'
     if p.get('pie'):
         sub = f'<span>{e(p["pie"])}</span>'
+    elif p.get('certeza') == 'confirmada-maestro':
+        sub = '<span>Confirmada por Don Gorgonio</span>'
     elif p.get('certeza') == 'confirmada-familia':
         sub = '<span>Confirmada por la familia</span>'
     else:

@@ -795,6 +795,25 @@
    "enfoque": "50% 35%",
    "confirmado_por_familia": true,
    "origen": "fotos/originales/danza (enviadas por la familia el 21-oct-2026)"
+  },
+  {
+   "archivo": "perro-xolo.jpg",
+   "slug": "perro-xolo",
+   "ancho": 1200,
+   "alto": 1600,
+   "tamanos": [
+    480,
+    960,
+    1200
+   ],
+   "personaje": "Perro xoloitzcuintle",
+   "descripcion": "Rostro negro brillante con una línea amarilla de la frente al hocico, cejas y bandas de arcoíris, ojo rojo con anillo verde, orejas verde olivo y mostaza, quijada blanca y boca abierta con la lengua de fuera.",
+   "pie": "Perro xoloitzcuintle",
+   "alt": "Máscara de perro xoloitzcuintle de tres cuartos: rostro negro con línea amarilla, bandas de arcoíris en el hocico y la ceja, orejas verde olivo y mostaza, y boca abierta",
+   "ajuste": "cover",
+   "fondo": "",
+   "enfoque": "50% 40%",
+   "origen": "fotos/album/IMG-20260622-WA0035.jpg (a157); Don Gorgonio la identificó como perro xoloitzcuintle de la danza (encuesta, 23-oct-2026)"
   }
  ]
 }

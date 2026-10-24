@@ -23,6 +23,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `fotos/limpias/` | Fotos listas para optimizar: sin letreros sobrepuestos, un solo panel de los collages y sin las esquinas de color de los marcos ovalados |
 | `datos/mascaras.json` | Catálogo de las fotos: título, descripción, texto alternativo, pie y sección de cada máscara |
 | `datos/danza.json` | Las nueve parejas de la Danza de los Morenos, la foto de cada una y la caja de la máscara para su tarjeta |
+| `datos/respuestas-don-gorgonio.json` | Lo que contestó Don Gorgonio en la encuesta (última versión de cada respuesta). De ahí salen los nombres, las salas y los significados que `armar_galeria.py` marca como «Confirmada por Don Gorgonio» |
 | `datos/detalles.json` | Acercamientos de la sección de técnica (recorte, título y texto) |
 | `datos/curaduria.json` | Recomendaciones de la curaduría: fotos que faltan y fotos que conviene repetir |
 | `datos/album-catalogo.json` | Clasificación del álbum: qué pieza es cada foto, su certeza, fusiones, duplicados y salas |
@@ -109,15 +110,14 @@ En GitHub, entra a **Settings → Pages**, elige **Deploy from a branch** y sele
 Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están marcados con comentarios `PENDIENTE`.
 
 - [ ] Permiso para usar los dos videos de YouTube.
-- [ ] Que la novena pareja de la danza son los perros. Lo dicen el libro del INPI y la ficha de patrimonio, pero falta que lo confirme la familia.
-- [ ] Qué simbolizan el burro, la guacamaya, el gallo y el perro; quién es el danzante 19 que cuenta el INPI, y si el bartolo sale con los Morenos.
+- [ ] Quién es el danzante 19 que cuenta el INPI y si el bartolo sale con los Morenos.
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro, el tipo de pintura y la fibra.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las máscaras de vida y muerte tienen nombre.
-- [ ] Fotos de las parejas que faltan: los perros y el ocelote (las dos máscaras de felino que hay son linces).
 - [ ] Una foto mejor del ave azul de pico amarillo: la única que hay es el panel central de un collage, de 172 px de ancho.
-- [ ] Que don Gorgonio conteste la encuesta en `preguntas/` (ver «La encuesta para don Gorgonio»). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`. La encuesta se arma con `herramientas/encuesta/generar_encuesta.py`.
+- [ ] La encuesta en `preguntas/`: el 23 de octubre de 2026 Don Gorgonio contestó 36 de las 126 máscaras y su año de nacimiento; sus respuestas ya están en el sitio (ver `datos/respuestas-don-gorgonio.json` y la investigación). Faltan las demás máscaras y las preguntas sobre él y el taller. Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`.
+- [ ] Aclarar con Don Gorgonio lo que no cuadra con lo publicado: el orden de los capitanes (él dice que el chivo es el primero; Guadalupe había dicho que el coyote), si el pavo real (máscara 84) es de la Danza de los Morenos, y las máscaras 2 y 3, en las que quitó lo que había marcado.
 - [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
-- [ ] Año de nacimiento, a qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
+- [ ] A qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio y una de su padre, don Herminio, en `fotos/originales/maestro/`.
 - [ ] Quién tomó las fotos de don Gorgonio y de don Herminio, y si se pueden usar. El retrato frente a la pared azul parece de un fotógrafo profesional, y la foto en la que pinta es un cuadro de un video.
 - [ ] De dónde viene la transcripción del testimonio de don Gorgonio, para dar el crédito de sus citas (ver `investigacion/testimonio-don-gorgonio.md`).

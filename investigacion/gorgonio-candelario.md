@@ -134,8 +134,8 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - ⚠ El INPI cuenta 19 danzantes; hay que preguntar quién es el que sobra (¿el bartolo?).
 
 ### Datos de la danza
-- **Capitanes:** al frente van el coyote (capitán número uno) y el chivo (número dos), y detrás sus hembras. Lo dice Guadalupe en Portal Colimote (2023) y lo confirma El Pulso de Colima (2023). Antes iba al frente el burro, según la Universidad de Colima (2015).
-- **Qué simboliza cada animal** (Alas y Viento, Sección Amarilla): el coyote, la inteligencia; el chivo, la unión y la fuerza; el tecolote, la sabiduría; los felinos, la agilidad y la destreza; los borregos cimarrones, la fuerza y la testarudez. ⚠ Falta lo que simbolizan el burro, la guacamaya, el gallo y el perro.
+- **Capitanes:** al frente van el coyote (capitán número uno) y el chivo (número dos), y detrás sus hembras. ⚠ Don Gorgonio dice lo contrario: el chivo es el primero (encuesta, 23 de octubre de 2026). Lo dice Guadalupe en Portal Colimote (2023) y lo confirma El Pulso de Colima (2023). Antes iba al frente el burro, según la Universidad de Colima (2015).
+- **Qué simboliza cada animal** (Alas y Viento, Sección Amarilla): el coyote, la inteligencia; el chivo, la unión y la fuerza; el tecolote, la sabiduría; los felinos, la agilidad y la destreza; los borregos cimarrones, la fuerza y la testarudez. Lo que faltaba (burro, guacamaya, gallo y perro) lo contestó Don Gorgonio en la encuesta; ver «Respuestas de Don Gorgonio».
 - **Por qué son nueve:** por los nueve meses de embarazo de la Virgen y los nueve días del novenario de un difunto (El Pulso de Colima, 2023).
 - **Fechas:** Sábado de Gloria, Domingo de Resurrección, 3 de mayo y Pentecostés, además de las invitaciones. En Semana Santa empieza de madrugada.
 - **Música:** una vihuela. Antes era de violín y esa melodía se perdió. Guadalupe organiza la danza, la enseña y toca (Universidad de Colima, 2015; blog escolar de Suchitlán, 2015).
@@ -186,4 +186,57 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - **Tiempo de trabajo:** a don Gorgonio le lleva unos 10 días terminar una máscara.
 - **Foto de don Herminio:** la foto chica del hombre de camisa blanca tallando junto a un tronco es de don Herminio Candelario Dolores, el padre (identificada por quien encarga el sitio). Las otras tres fotos son de don Gorgonio.
 - **Autoría de las fotos:** todas las máscaras de las fotos son de don Gorgonio; él le pasó las fotos a quien encarga el sitio (Humberto). Eso incluye las piezas en tonos pastel y el ave azul de pico amarillo, que se habían apartado por la duda.
-- ⚠ Faltan fotos de los perros y del ocelote.
+- ⚠ Faltan fotos de los perros y del ocelote. (Resuelto con la encuesta: ver abajo.)
+
+### Respuestas de Don Gorgonio a la encuesta (23 de octubre de 2026)
+Contestó desde su teléfono, de 20:18 a 22:32 (hora de Colima), 36 de las 126 máscaras y una pregunta sobre él. No sabemos si lo ayudó alguien de la familia. Es la última versión de cada respuesta, copiada tal cual (los datos están en `datos/respuestas-don-gorgonio.json`).
+
+- **Año de nacimiento:** 1977.
+- **1. Coyote blanco de arcoíris**: sí, está bien; Danza de los Morenos; macho; significado: «El coyote segundo  capitán de la danza de los Morenos, que representa la inteligencia.».
+- **2. Coyote blanco esbelto**: (nada marcado); «Esta pieza es la misma que el coyote blanco arcoíris, solo que en  otra expresión de forma.». ⚠ Al final quitó lo que había marcado y quedó solo lo escrito. Antes había marcado: {"uso": ["Danza de los Morenos"], "sexo": "macho", "que_es": "Esta pieza es la misma que el coyote blanco arcoíris, solo que en  otra expresión de forma.", "significado": "representa la inteligencia"}
+- **3. Coyote crema de ojos azules**: (nada marcado); «Coyota Hembra». ⚠ Al final quitó lo que había marcado y quedó solo lo escrito. Antes había marcado: {"es": "otra", "que_es": "Coyota Hembra"}
+- **9. Coyote amarillo de anillos**: otra cosa; «Coyota»; Danza de los Morenos; hembra; significado: «integrante de la  danza de los morenos representa la inteligencia.».
+- **14. Cánido negro de boca abierta (¿coyote o perro?)**: otra cosa; «Perro Xoloitzcuintle»; Danza de los Morenos; macho; significado: «Integrante de la Danza de los Morenos representa fiel y compañía.».
+- **17. Chivo rojo de antifaz amarillo**: otra cosa; «El Chivo»; Danza de los Morenos; macho; significado: «El chivo primer capitán de la danza de los morenos representa la unión y fuerza.».
+- **21. Chivo blanco y negro**: otra cosa; «La Chiva»; Danza de los Morenos; hembra; significado: «Integrante de la danza de los morenos  representa Unión y Fuerza.».
+- **22. Borrego anaranjado**: otra cosa; «El Borrego»; Danza de los Morenos; macho; significado: «integrante de la danza de los morenos que representa triunfo y fortuna».
+- **24. Tecolote rojo**: sí, está bien; Danza de los Morenos; macho; significado: «Integrante de la danza de los morenos que representa la sabiduria.».
+- **25. Lince de franjas y zigzag rojo**: otra cosa; «El Lince»; Danza de los Morenos; hembra; significado: «El lince integrante de la danza de los morenos representa agudeza visual y sigilo».
+- **27. Felino amarillo de lunares (¿ocelote?)**: Ocelote; Danza de los Morenos; macho; significado: «Audacia y Valor».
+- **28. Felino anaranjado de rosetas (¿ocelote?)**: otra cosa; «Jaguar»; No se baila, es de adorno; significado: «Valentía y Poder».
+- **30. Burro gris**: sí, está bien; Danza de los Morenos; macho; significado: «integrante de la danza de los morenos que representa dócil y resistencia.».
+- **31. Guacamaya verde**: otra cosa; «La Guacamaya»; Danza de los Morenos; hembra; significado: «Integrantes de la danza de los morenos que representa la fertilidad y abundancia».
+- **35. Gallo anaranjado**: otra cosa; «La Gallina»; Danza de los Morenos; hembra; significado: «Integrante de la danza de los morenos que representa maternidad y prosperidad».
+- **37. El Tiempo**: sí, está bien; No se baila, es de adorno; significado: «Mascaras del tiempo representa las tres etapas de la vida niño, adulto y viejo.».
+- **41. Sol y luna**: otra cosa; «El Ocaso»; No se baila, es de adorno; significado: «La mascaras de ocaso representa el final del dia.».
+- **51. Diablo de marco moteado y lengua de flecha**: otra cosa; «Diablo el Pecado»; Pastorela; significado: «La mascaras del pecado se usa en las pastorelas y representa lo siete pecados capitales.».
+- **54. Vida y muerte de barba de colores**: otra cosa; «Dualidad vida y muerte»; No se baila, es de adorno; significado: «Representa el ciclo de la vida».
+- **81. Lince naturalista**: otra cosa; «Lince»; Danza de los Morenos; macho; significado: «Integrante de la danza de los morenos representa la agudeza visual y sigilo.».
+- **82. Felino multicolor**: otra cosa; «Jaguar Multicolor»; No se baila, es de adorno; significado: «representa Valentía y poder».
+- **84. Ave de penacho y pico dorado**: otra cosa; «Pavo Real»; Danza de los Morenos; hembra; significado: «integrante de la danza de los morenos que representa la belleza y elegancia.».
+- **90. Ave azul de pico curvo**: otra cosa; «Aguila Multicolor»; No se baila, es de adorno; significado: «Representa liderazgo y libertad.».
+- **91. Ave azul de pico amarillo**: otra cosa; «Pelicano»; No se baila, es de adorno; significado: «Generosidad y sacrificio».
+- **92. Pato**: sí, está bien; No se baila, es de adorno; significado: «representa el equilibrio y resiliencia».
+- **94. Búho azul**: sí, está bien; Danza de los Morenos; macho; significado: «integrante de la danza de los morenos que representa la sabiduría».
+- **103. Cánido anaranjado (¿zorro?)**: Zorro; No se baila, es de adorno; significado: «representa adaptabilidad y astucia».
+- **106. Cánido gris verdoso**: otra cosa; «Lobo»; No se baila, es de adorno; significado: «Representa astucia y autenticidad».
+- **111. Toro café**: sí, está bien; No se baila, es de adorno; significado: «representa fuerza y ascendencia».
+- **112. Toro en tonos pastel de cuernos ondulados**: otra cosa; «Toro multicolor»; No se baila, es de adorno; significado: «representa la fuerza y la ascendencia».
+- **120. Jabalí**: sí, está bien; No se baila, es de adorno; significado: «representa  ferocidad y coraje.».
+- **121. Mandril**: sí, está bien; No se baila, es de adorno; significado: «representa  protección».
+- **122. Gorila**: sí, está bien; No se baila, es de adorno; significado: «representa la lealtad y liderazgo».
+- **123. Mariposa de alas azul marino**: otra cosa; «Mariposa Multicolor»; No se baila, es de adorno; significado: «Representa Transformación y Renacimiento».
+- **125. Chivo azul de hocico rosa (¿de la danza?)**: otra cosa; «Chivo Multicolor»; No se baila, es de adorno; significado: «representa la unión y la fuerza».
+- **126. Animal morado de cuernos cortos (¿chivo?)**: otra cosa; «chiva Morada»; Danza de los Morenos; significado: «Representa la unión y la fuerza».
+
+**Qué cambió en el sitio con estas respuestas:**
+- Las nueve parejas ya tienen lo que simboliza cada una, en palabras de Don Gorgonio. Los perros son de la danza: identificó la máscara 14 como perro xoloitzcuintle, y su foto es ahora la de la pareja. La máscara 27 es el ocelote.
+- Nombres nuevos (coyota, chiva, gallina, jaguar, zorro, lobo, pelícano, águila, El Ocaso, Diablo el Pecado, Dualidad vida y muerte…) y la marca «Confirmada por Don Gorgonio» en las 36 piezas.
+- A la sala de la danza pasaron el perro xoloitzcuintle, el búho azul (tecolote), el lince naturalista y la chiva morada; el jaguar anaranjado de rosetas salió de la danza porque es de adorno.
+
+**Diferencias con lo publicado (hay que aclararlas con él):**
+- ⚠ **Orden de los capitanes:** Don Gorgonio dice que el chivo es el primer capitán y el coyote el segundo. Guadalupe había dicho lo contrario (Portal Colimote, 2023; El Pulso de Colima, 2023). El sitio sigue a Don Gorgonio.
+- ⚠ **Borrego:** para Don Gorgonio representa «triunfo y fortuna»; Alas y Viento decía «la fuerza y la testarudez». Los felinos: él dice agudeza visual y sigilo (lince) y audacia y valor (ocelote); Alas y Viento, «la agilidad y la destreza». El sitio sigue a Don Gorgonio.
+- ⚠ **Pavo real (84):** lo marcó como de la Danza de los Morenos, hembra, pero el pavo real no está entre las nueve parejas. En el sitio se queda en la sala de aves, sin decir que es de la danza.
+- ⚠ **El Tiempo (37):** dice que esta máscara es de adorno; la del museo de Santa Fe está catalogada como de la Pastorela. Puede que haya de los dos usos.
+- ⚠ **Máscaras 2 y 3:** escribió que la 2 es el mismo coyote blanco de arcoíris en otra expresión de forma y que la 3 es una coyota hembra, pero después quitó lo que había marcado. El sitio usa lo que dejó escrito.

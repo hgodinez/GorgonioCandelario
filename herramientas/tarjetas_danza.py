@@ -3,7 +3,8 @@ máscara completa: encuadra la caja de la máscara anotada en datos/danza.json (
 [izq, arriba, der, abajo] en pixeles de la foto) y, si la foto no alcanza, prolonga la
 pared con el color de su orilla (sin reflejar nada de lo que hay junto a la máscara).
 Escribe img/mascaras/<slug>-tarjeta-<ancho>.webp y .jpg y anota «tarjeta» en datos/danza.json.
-Requiere Pillow y numpy. Uso: python3 herramientas/tarjetas_danza.py ."""
+Requiere Pillow y numpy. Uso: python3 herramientas/tarjetas_danza.py . [parejas…]
+(con nombres de parejas, por ejemplo Perros, solo rehace esas tarjetas; sin nombres, todas)."""
 import json, math, re, sys, pathlib
 import numpy as np
 from PIL import Image, ImageOps
@@ -15,6 +16,7 @@ ANCHOS = (360, 540, 720)
 SALTO, BANDA = 3, 16  # la orilla de la pared se mide en una banda de 16 px, sin los 3 px del borde
 
 raiz = pathlib.Path(sys.argv[1])
+solo = set(sys.argv[2:])
 ruta = raiz / 'datos/danza.json'
 danza = json.loads(ruta.read_text(encoding='utf-8'))
 fotos = {f['archivo']: f for f in json.loads((raiz / 'datos/mascaras.json').read_text(encoding='utf-8'))['fotos']}
@@ -188,6 +190,8 @@ for par in danza['parejas']:
             sys.exit(f'La caja de «{par["nombre"]}» {par["caja"]} se sale de la foto ({W}x{H}).')
 
 for n, par in enumerate(danza['parejas']):
+    if solo and par['nombre'] not in solo:
+        continue
     if not par.get('archivo') or not par.get('caja'):
         if par.get('archivo') in fotos:
             borrar_tarjetas(fotos[par['archivo']]['slug'])

@@ -1,30 +1,10 @@
 {
- "fuente": "Parejas según la familia Candelario y el libro «Máscaras. Arte-presencia» (INPI); símbolos según José Guadalupe Candelario (Alas y Viento, Sección Amarilla); capitanes según Portal Colimote y El Pulso de Colima (2023).",
+ "fuente": "Parejas según la familia Candelario y el libro «Máscaras. Arte-presencia» (INPI); lo que simboliza cada pareja y el orden de los capitanes (el chivo primero, el coyote segundo), según Don Gorgonio (encuesta del 23 de octubre de 2026). Antes: símbolos según José Guadalupe Candelario (Alas y Viento, Sección Amarilla) y capitanes según Portal Colimote y El Pulso de Colima (2023).",
  "parejas": [
-  {
-   "nombre": "Coyotes",
-   "archivo": "IMG-20250829-WA0042.jpg",
-   "nota": "Capitán · la inteligencia",
-   "caja": [
-    108,
-    22,
-    623,
-    1261
-   ],
-   "tarjeta": {
-    "archivo": "IMG-20250829-WA0042.jpg",
-    "slug": "mascara-0042-tarjeta",
-    "tamanos": [
-     360,
-     540,
-     720
-    ]
-   }
-  },
   {
    "nombre": "Chivos",
    "archivo": "IMG-20250829-WA0065.jpg",
-   "nota": "Capitán · la unión y la fuerza",
+   "nota": "Primer capitán · la unión y la fuerza",
    "caja": [
     235,
     5,
@@ -42,9 +22,29 @@
    }
   },
   {
+   "nombre": "Coyotes",
+   "archivo": "IMG-20250829-WA0042.jpg",
+   "nota": "Segundo capitán · la inteligencia",
+   "caja": [
+    108,
+    22,
+    623,
+    1261
+   ],
+   "tarjeta": {
+    "archivo": "IMG-20250829-WA0042.jpg",
+    "slug": "mascara-0042-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
+  },
+  {
    "nombre": "Borregos cimarrones",
    "archivo": "borrego-anaranjado.jpg",
-   "nota": "La fuerza y la testarudez",
+   "nota": "El triunfo y la fortuna",
    "caja": [
     52,
     29,
@@ -83,7 +83,7 @@
   {
    "nombre": "Lince y ocelote",
    "archivo": "felino-manchas-frente.jpg",
-   "nota": "Los felinos · la agilidad y la destreza",
+   "nota": "El lince, la agudeza visual y el sigilo; el ocelote, la audacia y el valor",
    "caja": [
     78,
     37,
@@ -103,7 +103,7 @@
   {
    "nombre": "Burros",
    "archivo": "burro-frente.jpg",
-   "nota": "",
+   "nota": "La docilidad y la resistencia",
    "caja": [
     31,
     54,
@@ -123,7 +123,7 @@
   {
    "nombre": "Guacamayas",
    "archivo": "ave-verde.jpg",
-   "nota": "",
+   "nota": "La fertilidad y la abundancia",
    "caja": [
     186,
     40,
@@ -143,7 +143,7 @@
   {
    "nombre": "Gallos",
    "archivo": "ave-anaranjada.jpg",
-   "nota": "",
+   "nota": "La maternidad y la prosperidad",
    "caja": [
     69,
     31,
@@ -162,8 +162,23 @@
   },
   {
    "nombre": "Perros",
-   "archivo": null,
-   "nota": ""
+   "archivo": "perro-xolo.jpg",
+   "nota": "La fidelidad y la compañía",
+   "caja": [
+    208,
+    8,
+    816,
+    1392
+   ],
+   "tarjeta": {
+    "archivo": "perro-xolo.jpg",
+    "slug": "perro-xolo-tarjeta",
+    "tamanos": [
+     360,
+     540,
+     720
+    ]
+   }
   }
  ]
 }

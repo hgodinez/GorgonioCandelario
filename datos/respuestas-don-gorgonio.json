@@ -1,0 +1,483 @@
+{
+ "fuente": "Encuesta de preguntas/ contestada desde el teléfono de Don Gorgonio el 23 de octubre de 2026, de 20:18 a 22:32 (hora de Colima). Es la última versión de cada respuesta; el historial completo está en la tabla respuestas de Supabase.",
+ "campos": {
+  "es": "«si» = el nombre está bien; «otra» = es otra cosa (dice qué en que_es); otro valor = escogió esa opción de la duda",
+  "uso": "danza o fiesta donde se usa",
+  "sexo": "en la Danza de los Morenos, macho o hembra",
+  "significado": "lo que representa, en sus palabras"
+ },
+ "mascaras": [
+  {
+   "numero": 1,
+   "pieza": "coyote-blanco-arcoiris",
+   "nombre_en_la_encuesta": "Coyote blanco de arcoíris",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "significado": "El coyote segundo  capitán de la danza de los Morenos, que representa la inteligencia."
+   }
+  },
+  {
+   "numero": 2,
+   "pieza": "coyote-blanco-esbelto",
+   "nombre_en_la_encuesta": "Coyote blanco esbelto",
+   "respuesta": {
+    "que_es": "Esta pieza es la misma que el coyote blanco arcoíris, solo que en  otra expresión de forma."
+   },
+   "nota": "Al final quitó lo que había marcado y quedó solo lo escrito. Antes había marcado: {\"uso\": [\"Danza de los Morenos\"], \"sexo\": \"macho\", \"que_es\": \"Esta pieza es la misma que el coyote blanco arcoíris, solo que en  otra expresión de forma.\", \"significado\": \"representa la inteligencia\"}"
+  },
+  {
+   "numero": 3,
+   "pieza": "coyote-crema-ojos-azules",
+   "nombre_en_la_encuesta": "Coyote crema de ojos azules",
+   "respuesta": {
+    "que_es": "Coyota Hembra"
+   },
+   "nota": "Al final quitó lo que había marcado y quedó solo lo escrito. Antes había marcado: {\"es\": \"otra\", \"que_es\": \"Coyota Hembra\"}"
+  },
+  {
+   "numero": 9,
+   "pieza": "coyote-amarillo-anillos",
+   "nombre_en_la_encuesta": "Coyote amarillo de anillos",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "Coyota",
+    "significado": "integrante de la  danza de los morenos representa la inteligencia."
+   }
+  },
+  {
+   "numero": 14,
+   "pieza": "canido-negro-boca-abierta",
+   "nombre_en_la_encuesta": "Cánido negro de boca abierta (¿coyote o perro?)",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "que_es": "Perro Xoloitzcuintle",
+    "significado": "Integrante de la Danza de los Morenos representa fiel y compañía."
+   }
+  },
+  {
+   "numero": 17,
+   "pieza": "chivo-rojo-antifaz-amarillo",
+   "nombre_en_la_encuesta": "Chivo rojo de antifaz amarillo",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "que_es": "El Chivo",
+    "significado": "El chivo primer capitán de la danza de los morenos representa la unión y fuerza."
+   }
+  },
+  {
+   "numero": 21,
+   "pieza": "chivo-blanco-negro",
+   "nombre_en_la_encuesta": "Chivo blanco y negro",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "La Chiva",
+    "significado": "Integrante de la danza de los morenos  representa Unión y Fuerza."
+   }
+  },
+  {
+   "numero": 22,
+   "pieza": "borrego-anaranjado",
+   "nombre_en_la_encuesta": "Borrego anaranjado",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "que_es": "El Borrego",
+    "significado": "integrante de la danza de los morenos que representa triunfo y fortuna"
+   }
+  },
+  {
+   "numero": 24,
+   "pieza": "tecolote-rojo",
+   "nombre_en_la_encuesta": "Tecolote rojo",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "significado": "Integrante de la danza de los morenos que representa la sabiduria."
+   }
+  },
+  {
+   "numero": 25,
+   "pieza": "lince-franjas-zigzag",
+   "nombre_en_la_encuesta": "Lince de franjas y zigzag rojo",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "El Lince",
+    "significado": "El lince integrante de la danza de los morenos representa agudeza visual y sigilo"
+   }
+  },
+  {
+   "numero": 27,
+   "pieza": "felino-lunares",
+   "nombre_en_la_encuesta": "Felino amarillo de lunares (¿ocelote?)",
+   "respuesta": {
+    "es": "Ocelote",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "significado": "Audacia y Valor"
+   }
+  },
+  {
+   "numero": 28,
+   "pieza": "felino-rosetas",
+   "nombre_en_la_encuesta": "Felino anaranjado de rosetas (¿ocelote?)",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Jaguar",
+    "significado": "Valentía y Poder"
+   }
+  },
+  {
+   "numero": 30,
+   "pieza": "burro-gris",
+   "nombre_en_la_encuesta": "Burro gris",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "significado": "integrante de la danza de los morenos que representa dócil y resistencia."
+   }
+  },
+  {
+   "numero": 31,
+   "pieza": "guacamaya-verde",
+   "nombre_en_la_encuesta": "Guacamaya verde",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "La Guacamaya",
+    "significado": "Integrantes de la danza de los morenos que representa la fertilidad y abundancia"
+   }
+  },
+  {
+   "numero": 35,
+   "pieza": "gallo-anaranjado",
+   "nombre_en_la_encuesta": "Gallo anaranjado",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "La Gallina",
+    "significado": "Integrante de la danza de los morenos que representa maternidad y prosperidad"
+   }
+  },
+  {
+   "numero": 37,
+   "pieza": "el-tiempo",
+   "nombre_en_la_encuesta": "El Tiempo",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "Mascaras del tiempo representa las tres etapas de la vida niño, adulto y viejo."
+   }
+  },
+  {
+   "numero": 41,
+   "pieza": "sol-y-luna",
+   "nombre_en_la_encuesta": "Sol y luna",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "El Ocaso",
+    "significado": "La mascaras de ocaso representa el final del dia."
+   }
+  },
+  {
+   "numero": 51,
+   "pieza": "diablo-marco-moteado-lengua-negra",
+   "nombre_en_la_encuesta": "Diablo de marco moteado y lengua de flecha",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Pastorela"
+    ],
+    "que_es": "Diablo el Pecado",
+    "significado": "La mascaras del pecado se usa en las pastorelas y representa lo siete pecados capitales."
+   }
+  },
+  {
+   "numero": 54,
+   "pieza": "vida-muerte-malva",
+   "nombre_en_la_encuesta": "Vida y muerte de barba de colores",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Dualidad vida y muerte",
+    "significado": "Representa el ciclo de la vida"
+   }
+  },
+  {
+   "numero": 81,
+   "pieza": "lince-naturalista",
+   "nombre_en_la_encuesta": "Lince naturalista",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "que_es": "Lince",
+    "significado": "Integrante de la danza de los morenos representa la agudeza visual y sigilo."
+   }
+  },
+  {
+   "numero": 82,
+   "pieza": "felino-multicolor-pastel",
+   "nombre_en_la_encuesta": "Felino multicolor",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Jaguar Multicolor",
+    "significado": "representa Valentía y poder"
+   }
+  },
+  {
+   "numero": 84,
+   "pieza": "pavo-real-pico-dorado",
+   "nombre_en_la_encuesta": "Ave de penacho y pico dorado",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "hembra",
+    "que_es": "Pavo Real",
+    "significado": "integrante de la danza de los morenos que representa la belleza y elegancia."
+   }
+  },
+  {
+   "numero": 90,
+   "pieza": "ave-azul-pico-curvo",
+   "nombre_en_la_encuesta": "Ave azul de pico curvo",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Aguila Multicolor",
+    "significado": "Representa liderazgo y libertad."
+   }
+  },
+  {
+   "numero": 91,
+   "pieza": "ave-azul-pico-amarillo",
+   "nombre_en_la_encuesta": "Ave azul de pico amarillo",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Pelicano",
+    "significado": "Generosidad y sacrificio"
+   }
+  },
+  {
+   "numero": 92,
+   "pieza": "pato",
+   "nombre_en_la_encuesta": "Pato",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa el equilibrio y resiliencia"
+   }
+  },
+  {
+   "numero": 94,
+   "pieza": "buho-azul",
+   "nombre_en_la_encuesta": "Búho azul",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "significado": "integrante de la danza de los morenos que representa la sabiduría"
+   }
+  },
+  {
+   "numero": 103,
+   "pieza": "canido-anaranjado",
+   "nombre_en_la_encuesta": "Cánido anaranjado (¿zorro?)",
+   "respuesta": {
+    "es": "Zorro",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa adaptabilidad y astucia"
+   }
+  },
+  {
+   "numero": 106,
+   "pieza": "canido-gris-verdoso",
+   "nombre_en_la_encuesta": "Cánido gris verdoso",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Lobo",
+    "significado": "Representa astucia y autenticidad"
+   }
+  },
+  {
+   "numero": 111,
+   "pieza": "toro-cafe",
+   "nombre_en_la_encuesta": "Toro café",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa fuerza y ascendencia"
+   }
+  },
+  {
+   "numero": 112,
+   "pieza": "toro-pastel-cuernos-rosas",
+   "nombre_en_la_encuesta": "Toro en tonos pastel de cuernos ondulados",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Toro multicolor",
+    "significado": "representa la fuerza y la ascendencia"
+   }
+  },
+  {
+   "numero": 120,
+   "pieza": "jabali",
+   "nombre_en_la_encuesta": "Jabalí",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa  ferocidad y coraje."
+   }
+  },
+  {
+   "numero": 121,
+   "pieza": "mandril",
+   "nombre_en_la_encuesta": "Mandril",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa  protección"
+   }
+  },
+  {
+   "numero": 122,
+   "pieza": "gorila",
+   "nombre_en_la_encuesta": "Gorila",
+   "respuesta": {
+    "es": "si",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "significado": "representa la lealtad y liderazgo"
+   }
+  },
+  {
+   "numero": 123,
+   "pieza": "mariposa-azul",
+   "nombre_en_la_encuesta": "Mariposa de alas azul marino",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Mariposa Multicolor",
+    "significado": "Representa Transformación y Renacimiento"
+   }
+  },
+  {
+   "numero": 125,
+   "pieza": "chivo-azul-hocico-rosa",
+   "nombre_en_la_encuesta": "Chivo azul de hocico rosa (¿de la danza?)",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "No se baila, es de adorno"
+    ],
+    "que_es": "Chivo Multicolor",
+    "significado": "representa la unión y la fuerza"
+   }
+  },
+  {
+   "numero": 126,
+   "pieza": "chivo-morado",
+   "nombre_en_la_encuesta": "Animal morado de cuernos cortos (¿chivo?)",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "que_es": "chiva Morada",
+    "significado": "Representa la unión y la fuerza"
+   }
+  }
+ ],
+ "generales": [
+  {
+   "numero": 1,
+   "pregunta": "¿En qué año nació?",
+   "respuesta": {
+    "texto": "1977"
+   }
+  }
+ ]
+}
