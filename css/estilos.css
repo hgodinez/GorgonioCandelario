@@ -371,11 +371,15 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 /* Pie */
 
-.pie { background: var(--tinta); color: #d8ccbb; padding: 3rem 0 2rem; font-size: 0.95rem; }
-.pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
+.pie { background: var(--tinta); color: #d8ccbb; padding: 3rem 0 0; font-size: 0.95rem; }
+.pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; padding-bottom: 2rem; }
 .pie strong { color: var(--blanco); font-family: var(--fuente-titulos); font-size: 1.2rem; font-weight: 600; }
 .pie a { color: var(--cempasuchil); }
 .pie p { margin: 0.25rem 0; }
+/* Crédito al pie de todas las páginas */
+.pie-credito { background: #120e0b; border-top: 1px solid rgba(255, 250, 240, 0.08); padding: 0.9rem var(--margen); text-align: center; font-size: 0.85rem; }
+.pie .pie-credito a { display: inline-flex; align-items: center; gap: 0.5rem; color: #b8ab99; font-weight: 600; text-decoration: none; }
+.pie .pie-credito a:hover, .pie .pie-credito a:focus-visible { color: var(--blanco); }
 
 /* Visor con el teléfono en horizontal: texto a un lado de la foto */
 @media (orientation: landscape) and (max-height: 500px) {
