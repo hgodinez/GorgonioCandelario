@@ -1,5 +1,5 @@
 {
- "fuente": "Parejas según la familia Candelario y el libro «Máscaras. Arte-presencia» (INPI); lo que simboliza cada pareja y el orden de los capitanes (el chivo primero, el coyote segundo), según Don Gorgonio (encuesta del 23 de octubre de 2026). Antes: símbolos según José Guadalupe Candelario (Alas y Viento, Sección Amarilla) y capitanes según Portal Colimote y El Pulso de Colima (2023).",
+ "fuente": "Parejas según la familia Candelario y el libro «Máscaras. Arte-presencia» (INPI), confirmadas por Don Gorgonio; lo que simboliza cada pareja y el orden de los capitanes (el chivo primero, el coyote segundo), según Don Gorgonio (encuesta del 23 de octubre de 2026). Antes: símbolos según José Guadalupe Candelario (Alas y Viento, Sección Amarilla) y capitanes según Portal Colimote y El Pulso de Colima (2023).",
  "parejas": [
   {
    "nombre": "Chivos",
@@ -44,7 +44,7 @@
   {
    "nombre": "Borregos cimarrones",
    "archivo": "borrego-anaranjado.jpg",
-   "nota": "El triunfo y la fortuna",
+   "nota": "La fuerza y la testarudez",
    "caja": [
     52,
     29,
@@ -143,7 +143,7 @@
   {
    "nombre": "Gallos",
    "archivo": "ave-anaranjada.jpg",
-   "nota": "La gallina, la maternidad y la prosperidad",
+   "nota": "El gallo, el nuevo día o el amanecer; la gallina, la maternidad y la prosperidad",
    "caja": [
     69,
     31,

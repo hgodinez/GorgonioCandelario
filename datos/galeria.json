@@ -83,7 +83,7 @@
     },
     {
      "titulo": "Borregos cimarrones",
-     "nota": "El triunfo y la fortuna",
+     "nota": "La fuerza y la testarudez",
      "piezas": [
       "borrego-anaranjado",
       "borrego-amarillo"
@@ -125,7 +125,7 @@
     },
     {
      "titulo": "Gallos",
-     "nota": "La gallina, la maternidad y la prosperidad",
+     "nota": "El gallo, el nuevo día o el amanecer; la gallina, la maternidad y la prosperidad",
      "piezas": [
       "gallo-cresta-roja",
       "gallo-cresta-azul",
@@ -146,7 +146,7 @@
    "id": "el-tiempo-y-la-noche",
    "titulo": "El Tiempo y La Noche",
    "subtitulo": "Varios rostros bajo una corona de astros",
-   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, el Tiempo de esta sala es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
+   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela: hay Tiempos de los dos usos. El de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
    "piezas": [
     "el-tiempo",
     "el-tiempo-corona-azul",
@@ -518,7 +518,7 @@
   },
   "borrego-anaranjado": {
    "nombre": "Borrego anaranjado",
-   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente. Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa el triunfo y la fortuna.",
+   "descripcion": "Borrego de cara anaranjada con escamas amarillas, grandes cuernos enroscados negros con relieves blancos, orejas grises y espiral negra y anaranjada en la frente. Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa la fuerza y la testarudez.",
    "fotos": [
     "a164"
    ],
@@ -621,14 +621,14 @@
    "certeza": "alta"
   },
   "gallo-cresta-roja": {
-   "nombre": "Gallo de cresta roja",
-   "descripcion": "Gallo de rostro blanco con cresta roja alta de picos negros, ojos amarillos de rayos negros, pico verde largo y barbillas amarillas con líneas cafés.",
+   "nombre": "Gallo rojo",
+   "descripcion": "Gallo de rostro blanco con cresta roja alta de picos negros, ojos amarillos de rayos negros, pico verde largo y barbillas amarillas con líneas cafés. Según Don Gorgonio, es el gallo rojo de la Danza de los Morenos y representa el nuevo día o el amanecer.",
    "fotos": [
     "a012"
    ],
    "principal": "a012",
    "categoria": "danza-gallo",
-   "certeza": "confirmada-familia"
+   "certeza": "confirmada-maestro"
   },
   "gallo-cresta-azul": {
    "nombre": "Gallo de cresta azul",
@@ -1803,7 +1803,7 @@
    "recorte": false
   },
   "a012": {
-   "alt": "Máscara de gallo blanco con cresta roja, ojos amarillos de rayos negros y pico verde sobre una mesa de madera",
+   "alt": "Máscara del gallo rojo, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde, sobre una mesa de madera",
    "descripcion": "Gallo de la Danza de los Morenos, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde. La familia confirmó la identificación.",
    "recorte": false
   },

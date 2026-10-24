@@ -1,5 +1,5 @@
 {
- "fuente": "Encuesta de preguntas/ contestada desde el teléfono de Don Gorgonio el 23 de octubre de 2026, de 20:18 a 22:32 (hora de Colima). Es la última versión de cada respuesta; el historial completo está en la tabla respuestas de Supabase.",
+ "fuente": "Encuesta de preguntas/ contestada desde el teléfono de Don Gorgonio el 23 de octubre de 2026, de 20:18 a 22:58 (hora de Colima). Es la última versión de cada respuesta; el historial completo está en la tabla respuestas de Supabase.",
  "campos": {
   "es": "«si» = el nombre está bien; «otra» = es otra cosa (dice qué en que_es); otro valor = escogió esa opción de la duda",
   "uso": "danza o fiesta donde se usa",
@@ -105,7 +105,7 @@
     ],
     "sexo": "macho",
     "que_es": "El Borrego",
-    "significado": "integrante de la danza de los morenos que representa triunfo y fortuna"
+    "significado": "integrante de la danza de los morenos que representa la Fuerza y testarudez"
    }
   },
   {
@@ -186,6 +186,20 @@
     "sexo": "hembra",
     "que_es": "La Guacamaya",
     "significado": "Integrantes de la danza de los morenos que representa la fertilidad y abundancia"
+   }
+  },
+  {
+   "numero": 33,
+   "pieza": "gallo-cresta-roja",
+   "nombre_en_la_encuesta": "Gallo de cresta roja",
+   "respuesta": {
+    "es": "otra",
+    "uso": [
+     "Danza de los Morenos"
+    ],
+    "sexo": "macho",
+    "que_es": "El Gallo Rojo",
+    "significado": "Integrante de la danza de los morenos que representa, El nuevo día o amanecer"
    }
   },
   {
@@ -477,6 +491,27 @@
    "pregunta": "¿En qué año nació?",
    "respuesta": {
     "texto": "1977"
+   }
+  },
+  {
+   "numero": 6,
+   "pregunta": "Según lo que encontré, en la Danza de los Morenos salen nueve parejas: coyotes, chivos, borregos cimarrones, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. ¿Está bien?",
+   "respuesta": {
+    "opcion": "Sí, está bien"
+   }
+  },
+  {
+   "numero": 7,
+   "pregunta": "Me contaron que en la danza el coyote es la inteligencia, el chivo la unión y la fuerza, el borrego la fuerza y la testarudez, el tecolote la sabiduría y los felinos la agilidad. ¿Qué representan el burro, la guacamaya, el gallo y el perro?",
+   "respuesta": {
+    "texto": "Burro: dócil y resistencia, guacamayas: fertilidad y abundancia, gallo: Nuevo día o amanecer,  Perro Xoloitzcuintle: Fiel y compañía"
+   }
+  },
+  {
+   "numero": 8,
+   "pregunta": "¿Qué pintura usa? ¿Con qué hace el pelo y las barbas de las máscaras?",
+   "respuesta": {
+    "texto": "Usamos pinturas vinílicas Acrílicas Y Esmaltes. Las barbas se hacen de yute natural"
    }
   }
  ]

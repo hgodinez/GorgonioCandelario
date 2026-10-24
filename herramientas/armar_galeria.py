@@ -108,6 +108,7 @@ ALTS = {
     'a055': 'Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes',
     'a036': 'Máscara de zorro anaranjado de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos',
     'a083': 'Máscara de lobo gris de estilo realista con ojos amarillo verdoso y boca abierta',
+    'a012': 'Máscara del gallo rojo, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde, sobre una mesa de madera',
 }
 # descripciones de fotos que ya no corresponden (la foto se recortó de un collage, o Don Gorgonio dijo que es hembra)
 DESC_FOTOS = {
@@ -154,6 +155,7 @@ NOMBRES_DON_GORGONIO = {
     'felino-lunares': 'Ocelote amarillo de lunares',
     'felino-rosetas': 'Jaguar anaranjado de rosetas',
     'gallo-anaranjado': 'Gallina anaranjada',
+    'gallo-cresta-roja': 'Gallo rojo',
     'sol-y-luna': 'El Ocaso',
     'diablo-marco-moteado-lengua-negra': 'Diablo el Pecado',
     'vida-muerte-malva': 'Dualidad vida y muerte',
@@ -186,7 +188,7 @@ DICE_DON_GORGONIO = {
     'canido-negro-boca-abierta': 'Según Don Gorgonio, es un perro xoloitzcuintle macho de la Danza de los Morenos y representa la fidelidad y la compañía.',
     'chivo-rojo-antifaz-amarillo': 'Según Don Gorgonio, es el chivo, primer capitán de la Danza de los Morenos, y representa la unión y la fuerza.',
     'chivo-blanco-negro': 'Según Don Gorgonio, es la chiva de la Danza de los Morenos y representa la unión y la fuerza.',
-    'borrego-anaranjado': 'Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa el triunfo y la fortuna.',
+    'borrego-anaranjado': 'Según Don Gorgonio, es un borrego macho de la Danza de los Morenos y representa la fuerza y la testarudez.',
     'tecolote-rojo': 'Según Don Gorgonio, es un tecolote macho de la Danza de los Morenos y representa la sabiduría.',
     'lince-franjas-zigzag': 'Según Don Gorgonio, es un lince hembra de la Danza de los Morenos y representa la agudeza visual y el sigilo.',
     'felino-lunares': 'Según Don Gorgonio, es un ocelote macho de la Danza de los Morenos y representa la audacia y el valor.',
@@ -194,6 +196,7 @@ DICE_DON_GORGONIO = {
     'burro-gris': 'Según Don Gorgonio, es un burro macho de la Danza de los Morenos y representa la docilidad y la resistencia.',
     'guacamaya-verde': 'Según Don Gorgonio, es una guacamaya hembra de la Danza de los Morenos y representa la fertilidad y la abundancia.',
     'gallo-anaranjado': 'Según Don Gorgonio, es la gallina de la Danza de los Morenos y representa la maternidad y la prosperidad.',
+    'gallo-cresta-roja': 'Según Don Gorgonio, es el gallo rojo de la Danza de los Morenos y representa el nuevo día o el amanecer.',
     'el-tiempo': 'Según Don Gorgonio, esta máscara es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo.',
     'sol-y-luna': 'Según Don Gorgonio, es El Ocaso, una máscara de adorno que representa el final del día.',
     'diablo-marco-moteado-lengua-negra': 'Según Don Gorgonio, es el Diablo el Pecado: se usa en las pastorelas y representa los siete pecados capitales.',
@@ -222,7 +225,7 @@ NOTAS = {'ave-azul-pico-amarillo': 'Solo hay una foto pequeña de esta pieza.'}
 SALAS = {
     'danza-de-los-morenos': {'subtitulo': 'Nueve parejas de animales, macho y hembra',
         'texto': 'En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás se agruparon por su parecido y esperan confirmación.'},
-    'el-tiempo-y-la-noche': {'texto': 'El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela. Según Don Gorgonio, el Tiempo de esta sala es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.'},
+    'el-tiempo-y-la-noche': {'texto': 'El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela: hay Tiempos de los dos usos. El de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.'},
     'diablos': {'texto': 'Fuera de la danza, Don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Uno de ellos es el Diablo el Pecado, que según Don Gorgonio se usa en las pastorelas y representa los siete pecados capitales; de los demás todavía no sabemos en qué fiesta se usó cada uno.'},
     'vida-y-muerte': {'texto': 'En estas máscaras un mismo rostro se parte a lo largo: de un lado, un hombre de barba tallada; del otro, una calavera. Don Gorgonio llama a una de ellas Dualidad vida y muerte, y dice que representa el ciclo de la vida. Las acompañan otros rostros humanos, entre ellos un hombre calvo de barba negra, otro con gorro de sol y luna y uno de dos tonos, cuyos personajes aún no conocemos.'},
     'aves': {'texto': 'Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y pasó a la sala de la Danza de los Morenos, con los tecolotes; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.'},
@@ -262,10 +265,10 @@ for slug, p in list(piezas.items()):
 
 # Las nueve parejas, con lo que simboliza cada una según Don Gorgonio (el chivo es el primer capitán y el coyote el segundo)
 PAREJAS = [('danza-chivo', 'Chivos', 'Primer capitán · la unión y la fuerza'), ('danza-coyote', 'Coyotes', 'Segundo capitán · la inteligencia'),
-           ('danza-borrego', 'Borregos cimarrones', 'El triunfo y la fortuna'), ('danza-tecolote', 'Tecolotes', 'La sabiduría'),
+           ('danza-borrego', 'Borregos cimarrones', 'La fuerza y la testarudez'), ('danza-tecolote', 'Tecolotes', 'La sabiduría'),
            ('danza-lince-ocelote', 'Lince y ocelote', 'El lince, la agudeza visual y el sigilo; el ocelote, la audacia y el valor'),
            ('danza-burro', 'Burros', 'La docilidad y la resistencia'), ('danza-guacamaya', 'Guacamayas', 'La fertilidad y la abundancia'),
-           ('danza-gallo', 'Gallos', 'La gallina, la maternidad y la prosperidad'), ('danza-perro', 'Perros', 'La fidelidad y la compañía')]
+           ('danza-gallo', 'Gallos', 'El gallo, el nuevo día o el amanecer; la gallina, la maternidad y la prosperidad'), ('danza-perro', 'Perros', 'La fidelidad y la compañía')]
 ORDEN = ['danza-de-los-morenos', 'el-tiempo-y-la-noche', 'nahuales', 'diablos', 'vida-y-muerte', 'rostros-negros', 'seres-encimados', 'felinos', 'aves', 'pelaje-de-pincel', 'bestiario']
 salas_cur = {s['id']: dict(s, piezas=[x for x in s['piezas'] if x not in MOVER]) for s in cur['salas']}
 for slug, (sala, categoria) in MOVER.items():
