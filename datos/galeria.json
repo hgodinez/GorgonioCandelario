@@ -248,7 +248,7 @@
    "id": "aves",
    "titulo": "Aves",
    "subtitulo": "Penachos, picos largos y ojos redondos",
-   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. El búho azul, según Don Gorgonio, es de la danza y pasó a la sala de la Danza de los Morenos, con los tecolotes; de los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.",
+   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. Según Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. De los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.",
    "piezas": [
     "pavo-real-pico-anaranjado",
     "pavo-real-pico-dorado",
@@ -397,7 +397,7 @@
   },
   "coyote-amarillo-anillos": {
    "nombre": "Coyota amarilla de anillos",
-   "descripcion": "Coyota amarilla con orejas verdes y azul marino y anillos morados, rojos, blancos y verdes alrededor de los ojos que bajan hacia el hocico; nariz café oscuro. Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.",
+   "descripcion": "Coyota amarilla con orejas verdes y azul marino, anillos morados, rojos, blancos y verdes que rodean los ojos y bajan hacia el hocico, y nariz café oscuro. Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.",
    "fotos": [
     "a087"
    ],
@@ -1668,8 +1668,8 @@
    "recorte": false
   },
   "a087": {
-   "alt": "Máscara de coyota amarilla con bandas de arcoíris alrededor de los ojos y orejas verdes",
-   "descripcion": "Máscara de coyota amarilla con anillos de colores de arcoíris alrededor de los ojos y orejas verdes y azules.",
+   "alt": "Máscara de coyota amarilla con orejas verdes y bandas de arcoíris alrededor de los ojos",
+   "descripcion": "Máscara de coyota amarilla con orejas verdes y azules, y anillos de colores de arcoíris alrededor de los ojos.",
    "recorte": false
   },
   "a123": {
