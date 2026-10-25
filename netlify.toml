@@ -1,0 +1,3 @@
+# Netlify: el sitio es estático y no se compila; se publica la carpeta raíz tal cual, igual que en GitHub Pages
+[build]
+  publish = "."
