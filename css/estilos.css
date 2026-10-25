@@ -171,7 +171,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 @media (max-width: 760px) {
   .portada .contenedor { grid-template-columns: 1fr; }
-  .portada-imagen { width: min(100% - 1.25rem, 24rem); justify-self: start; }
+  /* centrada con todo y las franjas, que salen 1.25rem a la derecha */
+  .portada-imagen { width: min(100% - 1.25rem, 24rem); justify-self: center; margin-right: 1.25rem; }
   .portada-marco img { aspect-ratio: 1 / 1; }
 }
 
@@ -531,7 +532,7 @@ a.pareja-imagen:hover img { transform: scale(1.04); }
 .espiritu-foto img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 100%; }
 @media (max-width: 640px) {
   .espiritu-contenido { grid-template-columns: minmax(0, 1fr); }
-  .espiritu-foto { max-width: 24rem; }
+  .espiritu-foto { max-width: 24rem; margin-inline: auto; }
 }
 /* el h2 va antes de la cita en el documento, pero la cita se ve primero */
 .espiritu-contenido > div { display: flex; flex-direction: column; }
@@ -558,7 +559,8 @@ a.pareja-imagen:hover img { transform: scale(1.04); }
 @media (min-width: 821px) { .foto-tallando { justify-self: end; } }
 @media (max-width: 820px) {
   .madera-historia { grid-template-columns: minmax(0, 1fr); }
-  .foto-tallando { margin-top: 0; max-width: 22rem; }
+  .foto-tallando { margin-top: 0; max-width: 22rem; margin-inline: auto; }
+  .foto-maestro { margin-inline: auto; }
 }
 
 .raices-contenido > * { max-width: 46rem; }
