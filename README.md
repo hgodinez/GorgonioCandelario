@@ -2,7 +2,7 @@
 
 Sitio web del maestro Gorgonio Candelario Castro, mascarero de Suchitlán, Comala, Colima.
 
-Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni proceso de compilación. Se puede publicar tal cual en GitHub Pages, Netlify o cualquier hosting.
+Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni proceso de compilación. Se puede publicar tal cual en cualquier hosting; ver «Publicar».
 
 ## Estructura
 
@@ -101,9 +101,14 @@ python3 herramientas/encuesta/generar_encuesta.py . /tmp/encuesta modo=sitio fir
 
 La clave pública (`sb_publishable_…`) puede ir en la página; la secreta (`sb_secret_…` o `service_role`) nunca. El mismo script, sin `modo=sitio`, arma la versión para claude.ai.
 
-## Publicar en GitHub Pages
+## Publicar
 
-En GitHub, entra a **Settings → Pages**, elige **Deploy from a branch** y selecciona la rama y la carpeta `/ (root)`. Cuando ya haya dominio, agrega `og:url` y `og:image` en `index.html`; está marcado con un comentario `PENDIENTE`.
+El sitio sale en dos lugares, los dos desde la rama `ccr-0e01a9f0-ekq4s5`; cada push actualiza los dos:
+
+- **Netlify** (https://gorgoniocandelario.netlify.app, y después el dominio propio): el sitio público. La configuración está en `netlify.toml`.
+- **GitHub Pages** (https://humbertogodinez.com/GorgonioCandelario/): se queda mientras Don Gorgonio termina la encuesta. Su enlace es de esta dirección, y lo que lleva contestado se guarda en el navegador de su teléfono para esta dirección; en otra vería la encuesta como si no hubiera empezado. Está en **Settings → Pages → Deploy from a branch**, carpeta `/ (root)`. Si se apaga y se vuelve a prender, no se publica hasta el siguiente push (o hasta volver a correr el último «pages build and deployment» en Actions).
+
+Cuando ya haya dominio, agrega `og:url` y `og:image` en `index.html`; está marcado con un comentario `PENDIENTE`.
 
 ## Pendiente antes de publicar
 
