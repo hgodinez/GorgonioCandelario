@@ -317,7 +317,8 @@
    "descripcion": "Coyote de base blanca con orejas amarillas y azul marino, franjas de arcoíris en V en la frente, espirales de arcoíris en las mejillas y línea de puntos de colores por el hocico. Ojos amarillos con iris verde y nariz negra. Según Don Gorgonio, es el coyote, segundo capitán de la Danza de los Morenos, y representa la inteligencia.",
    "fotos": [
     "a024",
-    "a022"
+    "a022",
+    "a051c"
    ],
    "principal": "a024",
    "categoria": "danza-coyote",
@@ -399,7 +400,8 @@
    "nombre": "Coyota amarilla de anillos",
    "descripcion": "Coyota amarilla con orejas verdes y azul marino, anillos morados, rojos, blancos y verdes que rodean los ojos y bajan hacia el hocico, y nariz café oscuro. Según Don Gorgonio, es una coyota de la Danza de los Morenos y representa la inteligencia.",
    "fotos": [
-    "a087"
+    "a087",
+    "a077"
    ],
    "principal": "a087",
    "categoria": "danza-coyote",
@@ -707,7 +709,8 @@
    "fotos": [
     "a025",
     "a023",
-    "a137"
+    "a137",
+    "a133"
    ],
    "principal": "a025",
    "categoria": "el-tiempo",
@@ -996,7 +999,8 @@
    "nombre": "Tres rostros negros con astros",
    "descripcion": "Tres máscaras humanas negras brillantes con decoración dorada: una con líneas de puntos, estrellas rojas de cuatro puntas y barba en espiral; otra con orejas, estrellas de ocho puntas en la frente y la barbilla y bigote ondulado; la tercera con lunas, estrellas y una estrella fugaz.",
    "fotos": [
-    "a009"
+    "a009",
+    "a125"
    ],
    "principal": "a009",
    "categoria": "rostro-humano",
@@ -1193,7 +1197,8 @@
    "nombre": "Pavo real de pico dorado",
    "descripcion": "Ave azul marino con franjas blancas en V, pico dorado, banda dorada en la frente con rombo y puntos rojos, y penacho de plumas amarillas con rayas azules y ocelos morados. Según Don Gorgonio, es un pavo real hembra de la Danza de los Morenos y representa la belleza y la elegancia.",
    "fotos": [
-    "a027"
+    "a027",
+    "a027b"
    ],
    "principal": "a027",
    "categoria": "otro-animal",
@@ -1223,7 +1228,8 @@
    "nombre": "Ave de penacho de cara anaranjada",
    "descripcion": "Ave de rostro anaranjado brillante con pico largo rojo, ojos de iris azul y penacho verde con rayado azul y amarillo y tres ocelos rojo, amarillo y verde.",
    "fotos": [
-    "a086"
+    "a086",
+    "a080"
    ],
    "principal": "a086",
    "categoria": "otro-animal",
@@ -1622,6 +1628,11 @@
    "descripcion": "Coyote de la Danza de los Morenos en vista de tres cuartos: base blanca, orejas amarillas y azul marino, franjas de arcoíris en V y espirales en las mejillas.",
    "recorte": false
   },
+  "a051c": {
+   "alt": "El coyote blanco de arcoíris de frente, sobre una pared azul",
+   "descripcion": "",
+   "recorte": false
+  },
   "a093": {
    "alt": "Máscara de coyote blanca con bandas y espirales de arcoíris y orejas amarillas y azules",
    "descripcion": "Máscara de coyote blanca con bandas de arcoíris en la frente, espirales de colores en las mejillas y orejas amarillas y azules.",
@@ -1670,6 +1681,11 @@
   "a087": {
    "alt": "Máscara de coyota amarilla con orejas verdes y bandas de arcoíris alrededor de los ojos",
    "descripcion": "Máscara de coyota amarilla con orejas verdes y azules, y anillos de colores de arcoíris alrededor de los ojos.",
+   "recorte": false
+  },
+  "a077": {
+   "alt": "Máscara de coyota amarilla con franjas de colores alrededor de los ojos, orejas verdes y nariz negra, sobre una pared rosa",
+   "descripcion": "Coyote de rostro amarillo con franjas roja, blanca, azul y verde que rodean los ojos y bajan por el hocico hasta la nariz negra.",
    "recorte": false
   },
   "a123": {
@@ -1862,6 +1878,11 @@
    "descripcion": "El Tiempo visto de tres cuartos: se aprecian los tres rostros barbados, la banda dorada y la corona con el sol de cara humana y una estrella dorada sobre fondo azul.",
    "recorte": false
   },
+  "a133": {
+   "alt": "Máscara de El Tiempo con tres rostros barbados y corona con sol de cara humana, vista de frente",
+   "descripcion": "El Tiempo, máscara de tres rostros que comparten los ojos, con barba negra tallada y una corona con un sol de cara humana.",
+   "recorte": false
+  },
   "a094": {
    "alt": "Máscara de tres rostros barbados con banda azul, corona dorada y un sol con cara",
    "descripcion": "Vista en tres cuartos de El Tiempo: tres rostros barbados bajo una corona dorada rematada por un sol con cara.",
@@ -2047,6 +2068,11 @@
    "descripcion": "Tres máscaras de rostro humano pintadas de negro brillante y decoradas en dorado. Una lleva líneas de puntos y estrellas rojas, otra estrellas de ocho puntas y la tercera lunas y una estrella fugaz.",
    "recorte": false
   },
+  "a125": {
+   "alt": "Tres máscaras negras de rostro humano con estrellas, lunas y puntos dorados en una pared crema",
+   "descripcion": "Tres máscaras de rostro humano en negro brillante, decoradas con puntos, estrellas y lunas doradas, colgadas juntas en una pared crema.",
+   "recorte": false
+  },
   "a092": {
    "alt": "Máscara de rostro negro brillante con estrellas, cejas y bigote dorados",
    "descripcion": "Máscara de rostro humano en negro brillante, decorada con estrellas, cejas y bigote dorados.",
@@ -2177,6 +2203,11 @@
    "descripcion": "Máscara de ave azul con franjas blancas, pico dorado, ojos amarillos y un penacho de plumas amarillas con ojos morados de pavo real. Son dos fotos de la misma pieza, lado a lado.",
    "recorte": false
   },
+  "a027b": {
+   "alt": "El mismo pavo real de pico dorado de frente, sobre una pared azul",
+   "descripcion": "",
+   "recorte": false
+  },
   "a149": {
    "alt": "Máscara de ave azul marino con pico dorado y penacho de plumas de pavo real",
    "descripcion": "Ave azul marino de pico dorado con un penacho de tres plumas de pavo real y una banda dorada con puntos rojos.",
@@ -2190,6 +2221,11 @@
   "a086": {
    "alt": "Máscara de ave anaranjada con penacho verde de plumas de pavo real y pico rojo",
    "descripcion": "Máscara de ave de rostro anaranjado con penacho verde de plumas tipo pavo real y pico largo rojo.",
+   "recorte": false
+  },
+  "a080": {
+   "alt": "Máscara de ave anaranjada de pico rojo con penacho verde de plumas con ocelos, de frente",
+   "descripcion": "Ave de rostro anaranjado y pico rojo, coronada por un penacho verde con ojos de pluma de pavo real.",
    "recorte": false
   },
   "a082": {
@@ -2436,6 +2472,7 @@
  "pieza_de": {
   "a024": "coyote-blanco-arcoiris",
   "a022": "coyote-blanco-arcoiris",
+  "a051c": "coyote-blanco-arcoiris",
   "a093": "coyote-blanco-esbelto",
   "a095": "coyote-blanco-esbelto",
   "a020": "coyote-crema-ojos-azules",
@@ -2446,6 +2483,7 @@
   "a091": "coyote-azul-turquesa",
   "a074": "coyote-blanco-anillos",
   "a087": "coyote-amarillo-anillos",
+  "a077": "coyote-amarillo-anillos",
   "a123": "coyote-amarillo-orejas-verdes",
   "a059": "coyote-negro-lineas-blancas",
   "a059b": "coyote-negro-lineas-blancas",
@@ -2484,6 +2522,7 @@
   "a025": "el-tiempo",
   "a023": "el-tiempo",
   "a137": "el-tiempo",
+  "a133": "el-tiempo",
   "a094": "el-tiempo-corona-azul",
   "a107": "la-noche",
   "a097": "la-noche",
@@ -2521,6 +2560,7 @@
   "a105": "rostro-negro-lengua",
   "a135": "rostro-negro-lengua",
   "a009": "trio-rostros-negros-astros",
+  "a125": "trio-rostros-negros-astros",
   "a092": "rostro-negro-estrellas",
   "a153": "calavera-y-rostro-negro-estrellas",
   "a122": "lince-buho-jaguar",
@@ -2547,9 +2587,11 @@
   "a026": "felino-rosetas",
   "a108": "pavo-real-pico-anaranjado",
   "a027": "pavo-real-pico-dorado",
+  "a027b": "pavo-real-pico-dorado",
   "a149": "pavo-real-ocelos-azules",
   "a006": "pavo-real-celeste",
   "a086": "pavo-real-anaranjado",
+  "a080": "pavo-real-anaranjado",
   "a082": "pavo-real-lila",
   "a126": "ave-pico-ganchudo",
   "a140": "ave-azul-pico-curvo",

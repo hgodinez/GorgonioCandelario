@@ -23,8 +23,14 @@ if 'rostro-negro-ave' in piezas:
     del piezas['rostro-negro-ave']
 piezas['rostro-negro-lengua']['fotos'] = ['a105', 'a135']; piezas['rostro-negro-lengua']['principal'] = 'a105'
 
-descartar = set(sum((g['duplicados_descartar'] for g in d['agrupados']), [])) | {'a132', 'a145'}
-debiles = set(cur['fotos_debiles'])
+# a051 y a145 son collages: sus paneles ya están en la galería (el coyote de a051 entra como a051c)
+descartar = set(sum((g['duplicados_descartar'] for g in d['agrupados']), [])) | {'a132', 'a145', 'a051'}
+# Todas las fotos de sus máscaras van en la galería. Estas dos se habían marcado como duplicadas,
+# pero son otra toma de la misma máscara, no la misma foto
+OTRAS_TOMAS = {'a133': 'el-tiempo', 'a125': 'trio-rostros-negros-astros'}
+descartar -= set(OTRAS_TOMAS)
+for f, pieza in OTRAS_TOMAS.items():
+    piezas[pieza]['fotos'].append(f)
 # piezas que no van en la galería. Ya ninguna: el felino y los toros en tonos pastel y el ave azul se habían
 # apartado mientras no se sabía si eran de don Gorgonio, y Humberto confirmó que todas las de las fotos son suyas
 APARTADAS = set()
@@ -108,6 +114,8 @@ ALTS = {
     'a055': 'Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes',
     'a036': 'Máscara de zorro anaranjado de hocico largo con trazos negros de pelo, orejas grises y nariz negra, vista de tres cuartos',
     'a083': 'Máscara de lobo gris de estilo realista con ojos amarillo verdoso y boca abierta',
+    'a077': 'Máscara de coyota amarilla con franjas de colores alrededor de los ojos, orejas verdes y nariz negra, sobre una pared rosa',
+    'a080': 'Máscara de ave anaranjada de pico rojo con penacho verde de plumas con ocelos, de frente',
     'a012': 'Máscara del gallo rojo, de rostro blanco con cresta roja, ojos amarillos de rayos negros y pico verde, sobre una mesa de madera',
 }
 # descripciones de fotos que ya no corresponden (la foto se recortó de un collage, o Don Gorgonio dijo que es hembra)
@@ -124,6 +132,8 @@ EXTRA_VISTAS = {
     'a034b': ('tigre-anaranjado', 'El mismo tigre anaranjado visto de perfil, con las fauces abiertas'),
     'a146b': ('canido-gris-pinceladas', 'El mismo cánido gris de pinceladas visto de lado'),
     'a146c': ('canido-gris-pinceladas', 'El mismo cánido gris de pinceladas visto de tres cuartos'),
+    'a027b': ('pavo-real-pico-dorado', 'El mismo pavo real de pico dorado de frente, sobre una pared azul'),
+    'a051c': ('coyote-blanco-arcoiris', 'El coyote blanco de arcoíris de frente, sobre una pared azul'),
 }
 # correcciones de redacción en las descripciones de las piezas
 REEMPLAZOS = [
@@ -254,9 +264,8 @@ for slug, p in piezas.items():
         p['descripcion'] = p['descripcion'].rstrip() + ' ' + NOTAS[slug]
 
 for slug, p in list(piezas.items()):
+    # también las fotos chicas o borrosas: quedan como vistas extra, la principal sigue siendo la mejor
     fotos = [f for f in p['fotos'] if f not in descartar]
-    if len(fotos) > 1:
-        fotos = [f for f in fotos if f not in debiles] or fotos
     if p['principal'] not in fotos:
         p['principal'] = max(fotos, key=lambda f: cat[f]['calidad'])
     fotos.remove(p['principal']); fotos.insert(0, p['principal'])
@@ -310,7 +319,9 @@ out = {
 }
 # En las salas se muestra siempre la foto original; los recortes aprobados forman el desfile de la entrada
 PREFERENCIA = ['a024', 'a001', 'a007', 'a169', 'a006', 'a121', 'a152', 'a018', 'a043', 'a073', 'a167', 'a108', 'a141', 'a052', 'a136', 'a066', 'a080', 'a036']
-aprobados = [f for f, v in fotos.items() if v['recorte']]
+# las fotos chicas o borrosas están en las salas, pero no en el desfile
+debiles = set(cur['fotos_debiles'])
+aprobados = [f for f, v in fotos.items() if v['recorte'] and f not in debiles]
 desfile, vistas = [], set()
 for f in [x for x in PREFERENCIA if x in aprobados] + [x for x in aprobados if x not in PREFERENCIA]:
     if pieza_de[f] not in vistas:

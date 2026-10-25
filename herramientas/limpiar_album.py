@@ -62,6 +62,8 @@ EXTRAS = {
     'a034b': ('a034', (643, 0, 1280, 1280)),
     'a146b': ('a146', (0, 0, 385, 1280)),
     'a146c': ('a146', (861, 0, 1280, 1280)),
+    'a027b': ('a027', (644, 8, 1272, 1272)),   # la otra foto del pavo real, sobre una pared azul
+    'a051c': ('a051', (856, 166, 1272, 1114)),  # el coyote del collage de tres máscaras (las otras dos ya están en la galería)
 }
 
 def abrir(fid):
