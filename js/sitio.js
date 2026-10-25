@@ -61,10 +61,16 @@
       });
     }
 
+    // Lo que simboliza en la danza (data-significado), en su propio renglón
+    var significado = document.createElement("p");
+    significado.className = "visor-significado";
+    significado.hidden = true;
+    texto.after(significado);
+
     // Tira de vistas cuando una pieza tiene varias fotos (data-vistas: [{src, alt, mini}])
     var tira = document.createElement("div");
     tira.className = "visor-vistas";
-    texto.after(tira);
+    significado.after(tira);
 
     function mostrar(i) {
       actual = (i + enlaces.length) % enlaces.length;
@@ -74,6 +80,8 @@
       img.alt = miniatura ? miniatura.alt : "";
       titulo.textContent = a.dataset.titulo || "";
       texto.textContent = a.dataset.descripcion || "";
+      significado.textContent = a.dataset.significado || "";
+      significado.hidden = !a.dataset.significado;
       contador.textContent = (actual + 1) + " de " + enlaces.length;
       tira.textContent = "";
       var vistas = a.dataset.vistas ? JSON.parse(a.dataset.vistas) : [];

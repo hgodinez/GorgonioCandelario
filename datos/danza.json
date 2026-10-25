@@ -5,6 +5,7 @@
    "nombre": "Chivos",
    "archivo": "IMG-20250829-WA0065.jpg",
    "nota": "Primer capitán · la unión y la fuerza",
+   "significado": "En la danza, según Don Gorgonio, el chivo es el primer capitán y representa la unión y la fuerza.",
    "caja": [
     235,
     5,
@@ -25,6 +26,7 @@
    "nombre": "Coyotes",
    "archivo": "IMG-20250829-WA0042.jpg",
    "nota": "Segundo capitán · la inteligencia",
+   "significado": "En la danza, según Don Gorgonio, el coyote es el segundo capitán y representa la inteligencia.",
    "caja": [
     108,
     22,
@@ -45,6 +47,7 @@
    "nombre": "Borregos cimarrones",
    "archivo": "borrego-anaranjado.jpg",
    "nota": "La fuerza y la testarudez",
+   "significado": "En la danza, según Don Gorgonio, el borrego representa la fuerza y la testarudez.",
    "caja": [
     52,
     29,
@@ -65,6 +68,7 @@
    "nombre": "Tecolotes",
    "archivo": "IMG-20250829-WA0022.jpg",
    "nota": "La sabiduría",
+   "significado": "En la danza, según Don Gorgonio, el tecolote representa la sabiduría.",
    "caja": [
     15,
     6,
@@ -84,6 +88,7 @@
    "nombre": "Lince y ocelote",
    "archivo": "felino-manchas-frente.jpg",
    "nota": "El lince, la agudeza visual y el sigilo; el ocelote, la audacia y el valor",
+   "significado": "En la danza, según Don Gorgonio, el lince representa la agudeza visual y el sigilo, y el ocelote, la audacia y el valor.",
    "caja": [
     78,
     37,
@@ -104,6 +109,7 @@
    "nombre": "Burros",
    "archivo": "burro-frente.jpg",
    "nota": "La docilidad y la resistencia",
+   "significado": "En la danza, según Don Gorgonio, el burro representa la docilidad y la resistencia.",
    "caja": [
     31,
     54,
@@ -124,6 +130,7 @@
    "nombre": "Guacamayas",
    "archivo": "ave-verde.jpg",
    "nota": "La fertilidad y la abundancia",
+   "significado": "En la danza, según Don Gorgonio, la guacamaya representa la fertilidad y la abundancia.",
    "caja": [
     186,
     40,
@@ -144,6 +151,7 @@
    "nombre": "Gallos",
    "archivo": "ave-anaranjada.jpg",
    "nota": "El gallo, el nuevo día o el amanecer; la gallina, la maternidad y la prosperidad",
+   "significado": "En la danza, según Don Gorgonio, el gallo representa el nuevo día o el amanecer, y la gallina, la maternidad y la prosperidad.",
    "caja": [
     69,
     31,
@@ -164,6 +172,7 @@
    "nombre": "Perros",
    "archivo": "perro-xolo.jpg",
    "nota": "La fidelidad y la compañía",
+   "significado": "En la danza, según Don Gorgonio, el perro xoloitzcuintle representa la fidelidad y la compañía.",
    "caja": [
     208,
     8,

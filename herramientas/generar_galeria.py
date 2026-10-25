@@ -81,8 +81,10 @@ for i, par in enumerate(danza['parejas'], 1):
         if t and t.get('archivo') != par['archivo']:
             sys.exit(f'La tarjeta de «{par["nombre"]}» es de otra foto: corre primero python3 herramientas/tarjetas_danza.py .')
         foto = tarjeta(t, f['alt'], tam) if t else picture(f, tam)
+        # lo que simboliza la pareja en la danza, en su propio renglón del visor
+        significado = f' data-significado="{e(par["significado"])}"' if par.get('significado') else ''
         imagen = (f'<a class="pareja-imagen" href="{grande(f)}.jpg" data-grande="{grande(f)}.webp" '
-                  f'data-titulo="{e(par["nombre"])}" data-descripcion="{e(f["descripcion"])}">{foto}</a>')
+                  f'data-titulo="{e(par["nombre"])}" data-descripcion="{e(f["descripcion"])}"{significado}>{foto}</a>')
         clase = 'pareja'
     else:
         imagen = '<div class="pareja-imagen" aria-hidden="true"></div>'
