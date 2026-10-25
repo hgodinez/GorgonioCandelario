@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Esta página sale en cualquier dirección que no exista, así que las rutas parten de la raíz del sitio:
+       / en Netlify y en el dominio propio; /GorgonioCandelario/ en GitHub Pages, mientras siga la encuesta. -->
+  <base href="/">
+  <script>
+    if (location.pathname.indexOf("/GorgonioCandelario/") === 0) document.querySelector("base").href = "/GorgonioCandelario/";
+  </script>
+  <title>Página no encontrada · Gorgonio Candelario, maestro mascarero</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1c1612">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="preload" href="fuentes/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-404">
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+  <script>
+    // con <base>, «#contenido» llevaría a la portada: que apunte a esta misma página
+    document.querySelector(".salto").href = location.href.split("#")[0] + "#contenido";
+  </script>
+
+  <header class="encabezado">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g><path d="M32 3C16 3 8 14 8 28c0 17 11 33 24 33s24-16 24-33C56 14 48 3 32 3z" fill="#b9321c"/><path d="M14 18c5-6 11-9 18-9s13 3 18 9" fill="none" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M17 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><path d="M36 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><ellipse cx="22.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><ellipse cx="41.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><circle cx="22.5" cy="31" r="2.4" fill="#1c1612"/><circle cx="41.5" cy="31" r="2.4" fill="#1c1612"/><path d="M32 27v15" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M23 49c6 4 12 4 18 0" fill="none" stroke="#1c1612" stroke-width="3" stroke-linecap="round"/></g></svg>
+        <span>Gorgonio Candelario <small>Maestro mascarero</small></span>
+      </a>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="navegacion">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        Menú
+      </button>
+      <nav class="navegacion" id="navegacion" aria-label="Secciones">
+        <ul>
+          <li><a href="index.html#maestro">El maestro</a></li>
+          <li><a href="index.html#danza">La danza</a></li>
+          <li><a href="index.html#tecnica">La técnica</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="index.html#reconocimientos">Reconocimientos</a></li>
+          <li><a href="index.html#videos">Videos</a></li>
+          <li><a href="index.html#taller">El taller</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="no-encontrada">
+    <div class="contenedor">
+      <figure class="no-encontrada-mascara">
+        <picture><source type="image/webp" srcset="img/mascaras/mascara-0022-tarjeta-360.webp 360w, img/mascaras/mascara-0022-tarjeta-457.webp 457w" sizes="(max-width: 640px) 13rem, 18rem"><img src="img/mascaras/mascara-0022-tarjeta-360.jpg" srcset="img/mascaras/mascara-0022-tarjeta-360.jpg 360w, img/mascaras/mascara-0022-tarjeta-457.jpg 457w" sizes="(max-width: 640px) 13rem, 18rem" width="360" height="480" alt="Máscara de tecolote roja con ojos redondos blancos de rayas negras, pico verde curvo y orejas puntiagudas, sobre fondo negro"></picture>
+      </figure>
+      <div>
+        <p class="antetitulo">Error 404 · Página no encontrada</p>
+        <h1>Esta página no está en ninguna sala</h1>
+        <p class="no-encontrada-texto">Ni el tecolote, que según Don Gorgonio representa la sabiduría, sabe dónde quedó. Quizá la dirección está mal escrita o la página cambió de lugar.</p>
+        <div class="botones">
+          <a class="boton boton-principal" href="index.html">Ir al inicio</a>
+          <a class="boton boton-secundario" href="galeria.html">Ver la galería</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div>
+        <strong>Gorgonio Candelario Castro</strong>
+        <p>Maestro mascarero · Suchitlán, Comala, Colima, México</p>
+      </div>
+      <div>
+        <p>Taller Mi Güelo Baci · Suchitlán, Comala, Colima</p>
+        <!-- PENDIENTE: confirmar quién tomó las fotos y cómo quiere que se le dé crédito. -->
+        <p>Fotografías de su obra: cortesía de la familia Candelario</p>
+      </div>
+    </div>
+    <div class="pie-credito">
+      <a href="https://plutusiq-ai.com/" target="_blank" rel="noopener noreferrer"><span lang="en">Powered by Plutus iQ AI</span><img src="img/plutusiq-logo-18.png" srcset="img/plutusiq-logo-18.png 1x, img/plutusiq-logo-36.png 2x, img/plutusiq-logo-54.png 3x" alt="" width="18" height="18" loading="lazy" decoding="async"></a>
+    </div>
+  </footer>
+
+  <script src="js/sitio.js" defer></script>
+</body>
+</html>
