@@ -1,3 +1,11 @@
-# Netlify: el sitio es estático y no se compila; se publica la carpeta raíz tal cual, igual que en GitHub Pages
+# Netlify publica solo lo que usa el sitio. La investigación, las herramientas, los datos,
+# las fotos originales y el README se quedan en el repositorio y no salen en el dominio.
 [build]
-  publish = "."
+  command = "rm -rf _sitio && mkdir _sitio && cp -R index.html galeria.html css js img fuentes preguntas _sitio/"
+  publish = "_sitio"
+
+# La encuesta no debe salir en los buscadores (la página también lo pide con su meta robots)
+[[headers]]
+  for = "/preguntas/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
