@@ -64,14 +64,17 @@ portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-porta
       </div>
     </section>'''
 
+danza = json.loads((raiz / 'datos/danza.json').read_text(encoding='utf-8'))
 d = fotos[datos['danza']['archivo']]
+# «tarjeta»: usa la foto 3:4 de la pareja, con la máscara completa (para fotos muy altas que el marco 4:5 cortaría)
+t = next((p['tarjeta'] for p in danza['parejas'] if p.get('tarjeta', {}).get('archivo') == d['archivo']), None) if datos['danza'].get('tarjeta') else None
+tam = "(max-width: 820px) 92vw, (max-width: 1230px) 45vw, 34rem"
 imagen_danza = f'''<figure class="imagen-danza">
-          {picture(d, "(max-width: 820px) 92vw, (max-width: 1230px) 45vw, 34rem")}
+          {tarjeta(t, d["alt"], tam) if t else picture(d, tam)}
           <figcaption>{e(datos['danza'].get('pie') or d["pie"])}</figcaption>
         </figure>'''
 
 # Las nueve parejas de la danza
-danza = json.loads((raiz / 'datos/danza.json').read_text(encoding='utf-8'))
 tarjetas = []
 for i, par in enumerate(danza['parejas'], 1):
     if par.get('archivo'):

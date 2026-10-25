@@ -3,8 +3,9 @@
   "archivo": "IMG-20250829-WA0043.jpg"
  },
  "danza": {
-  "archivo": "buho-azul.jpg",
-  "pie": "Búho azul de la Danza de los Morenos"
+  "archivo": "IMG-20250829-WA0042.jpg",
+  "tarjeta": true,
+  "pie": "Coyote blanco de arcoíris, segundo capitán de la danza"
  },
  "secciones": [
   {
@@ -26,8 +27,7 @@
     "ave-verde.jpg",
     "IMG-20250829-WA0030.jpg",
     "ave-anaranjada.jpg",
-    "perro-xolo.jpg",
-    "buho-azul.jpg"
+    "perro-xolo.jpg"
    ]
   },
   {
@@ -816,25 +816,6 @@
    "fondo": "",
    "enfoque": "50% 40%",
    "origen": "fotos/album/IMG-20260622-WA0035.jpg (a157); Don Gorgonio la identificó como perro xoloitzcuintle de la danza (encuesta, 23-oct-2026)"
-  },
-  {
-   "archivo": "buho-azul.jpg",
-   "slug": "buho-azul",
-   "ancho": 1200,
-   "alto": 1600,
-   "tamanos": [
-    480,
-    960,
-    1200
-   ],
-   "personaje": "Búho azul",
-   "descripcion": "Búho de base azul con pincelado café que imita plumaje, trazos azul marino y amarillos alrededor de la cara, ojos negros con media luna amarilla y pico café con punta rosa.",
-   "pie": "Búho azul de la Danza de los Morenos",
-   "alt": "Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado, sobre pared amarilla",
-   "ajuste": "cover",
-   "fondo": "",
-   "enfoque": "50% 0%",
-   "origen": "fotos/album/IMG-20250829-WA0068.jpg (a050); Don Gorgonio dice que es de la Danza de los Morenos, macho, y que representa la sabiduría (encuesta, 23-oct-2026)"
   }
  ]
 }
