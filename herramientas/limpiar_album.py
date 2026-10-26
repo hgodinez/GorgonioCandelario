@@ -1,5 +1,6 @@
 """Prepara versiones limpias de fotos del álbum: recorta un panel de los collages, quita
-letreros sobrepuestos y rellena las esquinas de color de los marcos ovalados. Escribe en
+letreros sobrepuestos, rellena las esquinas de color de los marcos ovalados y endereza las
+fotos que vienen giradas. Escribe en
 fotos/limpias/<id>.jpg (y <id>b.jpg, <id>c.jpg para vistas extra) y anota en
 datos/album-indice.json el archivo limpio de cada foto.
 Uso: python3 herramientas/limpiar_album.py . [ids…]   (con ids, solo esas fotos; sin ids, todas)"""
@@ -66,6 +67,11 @@ EXTRAS = {
     'a051c': ('a051', (856, 166, 1272, 1114)),  # el coyote del collage de tres máscaras (las otras dos ya están en la galería)
 }
 
+# fotos que el álbum trae giradas: id -> grados en sentido contrario a las manecillas del reloj
+GIRAR = {
+    'a063': 90,   # el jaguar está acostado de lado sobre una mesa (la misma toma que a138)
+}
+
 def abrir(fid):
     return ImageOps.exif_transpose(Image.open(raiz / 'fotos/album' / por_id[fid]['archivo'])).convert('RGB')
 
@@ -75,7 +81,12 @@ for fid, (caja, letreros, esquinas) in PRINCIPAL.items():
     if caja: im = im.crop(caja)
     for l in letreros: im = quitar_texto(im, l)
     if esquinas: im = rellenar_color(im, *esquinas)
+    if fid in GIRAR: im = im.rotate(GIRAR[fid], expand=True)
     im.save(dst / f'{fid}.jpg', quality=95)
+    por_id[fid]['limpia'] = f'fotos/limpias/{fid}.jpg'
+for fid, grados in GIRAR.items():
+    if fid in PRINCIPAL or solo and fid not in solo: continue
+    abrir(fid).rotate(grados, expand=True).save(dst / f'{fid}.jpg', quality=95)
     por_id[fid]['limpia'] = f'fotos/limpias/{fid}.jpg'
 for nid, (origen, caja) in EXTRAS.items():
     if solo and nid not in solo: continue

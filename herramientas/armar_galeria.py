@@ -22,7 +22,7 @@ if 'rostro-negro-ave' in piezas:
     piezas['rostro-negro-ave-alada']['fotos'] = ['a114', 'a032']
     del piezas['rostro-negro-ave']
 piezas['rostro-negro-lengua']['fotos'] = ['a105', 'a135']; piezas['rostro-negro-lengua']['principal'] = 'a105'
-# a138 y a063 son la misma máscara vista de los dos lados (revisión del 26 de octubre de 2026)
+# a138 y a063 son la misma máscara, fotografiada del mismo lado (revisión del 26 de octubre de 2026)
 piezas['felino-fauces-abiertas']['fotos'] += [f for f in piezas['jaguar-orejas-rojas']['fotos'] if f not in piezas['felino-fauces-abiertas']['fotos']]
 del piezas['jaguar-orejas-rojas']
 
@@ -93,12 +93,12 @@ ALTS = {
     'a161': 'Máscara de madera de cebra gris con franjas anaranjadas y rayas blancas y negras, orejas cafés, en pared blanca',
     'a015': 'Máscara de mariposa con alas azul marino y amarillas, cuerpo morado como nariz y antenas enroscadas',
     'a058': 'Máscara de jaguar amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos',
-    'a063': 'Máscara de jaguar amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado',
+    'a063': 'Máscara de jaguar anaranjado con manchas negras, oreja roja y fauces abiertas con colmillos, acostada de lado sobre una mesa',
     'a037': 'Máscara de pantera negra con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos',
     'a076': 'Máscara de perro xoloitzcuintle negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico',
     'a136': 'Máscara de perro xoloitzcuintle negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico',
     'a059': 'Máscara de coyote negro con espirales blancas en las mejillas, ojos rojos y nariz roja',
-    'a052': 'Máscara de lobo de estilo realista con pelaje café grisáceo, orejas altas y ojo ámbar, vista de tres cuartos',
+    'a052': 'Máscara de lobo de estilo realista con pelaje ocre y café a pinceladas, orejas altas y ojo ámbar, vista de tres cuartos',
     'a126': 'Máscara de guacamaya roja y verde con trazos azules y pico ganchudo negro y crema, vista de lado',
     'a043': 'Máscara negra de rostro alargado con lengua roja de fuera y un búho de ojos amarillos tallado en la frente',
     'a111': 'Máscara negra con un búho en la frente, vista de tres cuartos, con cejas doradas y lengua roja',
@@ -145,13 +145,19 @@ ALTS = {
     'a033': 'Máscara de jaguar amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima',
     'a039': 'Máscara de jaguar amarillo con manchas negras, ojos verdes y colmillos, con un búho gris de ojos amarillos encima',
     'a072': 'Detalle de un búho gris de ojos amarillos colocado sobre la cabeza de un jaguar amarillo con manchas',
-    'a068': 'Máscara de jaguar amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla',
+    'a068': 'Máscara de jaguar anaranjado con manchas negras, ojos verdes de pupila rasgada y nariz roja, de frente sobre pared amarilla',
     'a138': 'Cabeza de jaguar anaranjada con manchas negras, ojo verde y fauces abiertas con colmillos blancos',
     'a100': 'Máscara de lobo gris con trazos blancos, orejas doradas, ojos amarillos y nariz roja',
     'a070': 'Máscara de lobo café y gris de hocico largo, orejas puntiagudas y ojos amarillos, vista de tres cuartos',
 }
 # descripciones de fotos que ya no corresponden (la foto se recortó de un collage, o Don Gorgonio dijo que es hembra)
 DESC_FOTOS = {
+    'a052': 'Máscara de lobo de estilo realista, con el pelaje pintado a pincel en tonos café, gris y anaranjado.',
+    'a100': 'Máscara de lobo gris con el pelaje marcado con trazos blancos, orejas doradas, ojos amarillos y nariz roja.',
+    'a070': 'Lobo de hocico largo pintado en tonos café, gris y anaranjado que imitan el pelaje, con ojos amarillos y nariz café.',
+    'a068': 'Jaguar de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.',
+    'a063': 'Cabeza de jaguar anaranjada con manchas negras, oreja roja y el hocico abierto que deja ver los colmillos, acostada de lado sobre una mesa.',
+    'a138': 'Cabeza de jaguar anaranjada con manchas negras, ojo verde y fauces rojas abiertas con colmillos blancos. Detrás se ve otra máscara de felino, anaranjada con rosetas negras.',
     'a065': 'Máscara de pelícano de rostro azul y frente roja con espirales, ojos de iris anaranjado y pico largo y recto amarillo.',
     'a163': 'Gallina de la Danza de los Morenos, de cara anaranjada y pico amarillo. Lleva una cresta alta y escalonada color vino, decorada con triángulos amarillos, y barbas rojas a los lados.',
     'a119': 'Chiva blanca y negra con cuernos largos color café, ojos verdes y barba de fibra.',
@@ -175,6 +181,7 @@ REEMPLAZOS = [
     ('Cánido de hocico largo y fino pintado a pinceladas ocre', 'Lobo de hocico largo y fino pintado a pinceladas ocre'),
     ('Cánido de pelaje gris con trazos blancos cortos', 'Lobo de pelaje gris con trazos blancos cortos'),
     ('Cabeza alargada de cánido en café, gris y anaranjado', 'Cabeza alargada de lobo en café, gris y anaranjado'),
+    ('ojos amarillos de iris azul y nariz café brillante', 'ojos amarillos de pupila azul y nariz café brillante'),
     ('Equino gris de hocico largo', 'Cebra gris de hocico largo'),
     ('chevrones amarillos y rosas en la caña', 'franjas amarillas y rosas en V sobre la nariz'),
     ('con zigzags y chevrones amarillos', 'con zigzags y franjas amarillas en V'),
@@ -291,9 +298,9 @@ SALAS = {
     'aves': {'texto': 'Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne pavos reales, otra guacamaya, varios búhos de rostro gris o plateado, y tres aves que según Don Gorgonio son de adorno: un pato, un águila multicolor y un pelícano. Don Gorgonio identificó como pavo real el de pico dorado y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas. Los otros pavos reales son del mismo diseño, con penacho de plumas de ojos de colores; cambian los colores de la cara, del pico o del penacho. La guacamaya roja y verde no se parece a las de la danza, de cara larga y copete de franjas: tiene la cabeza redonda y el pico ganchudo, y está pintada a pincel seco con trazos como plumas, como el águila multicolor. Según Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. Los búhos de esta sala son de otro diseño, más cercano al natural: cara redonda, ojos grandes y redondos y pico anaranjado o amarillo. Se parecen a los búhos que coronan a los felinos en la sala Seres encimados.'},
     'nahuales': {'subtitulo': 'Entre la persona y el animal',
         'texto': 'Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. El de plumas crema es del mismo diseño que el café: plumaje de trazos cortos, ojos rodeados de rojo y pico largo. El ave negra de pico largo no tiene cabellera, pero lleva el mismo plumaje pintado y los mismos ojos.'},
-    'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Hay otros tres jaguares: el amarillo, con rosetas de anillo como las del anaranjado; el manchado de orejas rojas, y el anaranjado moteado, de boca cerrada pero tallado distinto del ocelote. Los acompañan dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.'},
+    'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Hay otros tres jaguares: el amarillo, con rosetas de anillo como las del anaranjado de rosetas; el manchado de orejas rojas, y el anaranjado moteado, de boca cerrada pero tallado distinto del ocelote. Los acompañan dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.'},
     'pelaje-de-pincel': {'subtitulo': 'Un zorro, cuatro lobos y otros animales de hocico largo',
-        'texto': 'En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. También son lobos el gris de trazos blancos y el ocre naturalista; el lobo café naturalista está pintado como el ocre y tiene los mismos ojos de pupila azul. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. El cánido gris de fauces abiertas se parece a los lobos.'},
+        'texto': 'En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. Hay otros tres lobos: el gris de trazos blancos, el ocre naturalista y el café naturalista, que está pintado como el lobo ocre y tiene sus mismos ojos de pupila azul. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. El cánido gris de fauces abiertas se parece al lobo gris verdoso.'},
     'bestiario': {'texto': 'Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. El toro multicolor de cuernos azules es del mismo diseño que el de cuernos ondulados, y la cebra gris y anaranjada, del mismo que la cebra amarilla y azul. Don Gorgonio crea diseños nuevos a partir de los tradicionales; él lo llama «lo tradicional con innovación».'},
     'rostros-negros': {'texto': 'Una serie de rostros negros y brillantes, con detalles dorados, rojos o crema. Unos llevan sobre la cabeza un búho, un ave de alas abiertas o una pequeña calavera; otros, estrellas y lunas doradas. El de cresta roja comparte con el nahual negro los ojos anaranjados y los dientes rayados de rojo; el de lengua de fuera, con sus orejas puntiagudas, recuerda a los diablos de lengua de fuera, aunque no tiene cuernos. El de estrellas doradas es del mismo diseño que el de en medio de los tres rostros con astros.'},
     'seres-encimados': {'texto': 'En estas piezas varios seres comparten una misma máscara: un búho posado sobre un jaguar amarillo, sobre un felino anaranjado o sobre un tigre blanco; un lince, un búho y un jaguar, uno encima del otro; un hombre águila, con la cabeza del ave como casco, y una cara lila cubierta por una iguana y serpientes. El jaguar que va debajo del lince y el búho tiene las mismas rosetas negras y los mismos ojos azules que el jaguar anaranjado de rosetas de la sala Felinos, que según Don Gorgonio es de adorno. El tigre blanco se parece al de esa misma sala.'},

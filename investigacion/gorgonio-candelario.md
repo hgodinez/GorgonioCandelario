@@ -252,18 +252,19 @@ Contestó desde su teléfono, de 20:18 a 22:58 (hora de Colima), 37 de las 126 m
 
 ### Revisión de nombres y salas (26 de octubre de 2026)
 Humberto pidió quitar los signos de interrogación y las frases de «todavía no sabemos» de la galería. Cada pieza sin confirmar se comparó con las 37 que confirmó Don Gorgonio y las 7 que confirmó la familia: la especie va en el nombre cuando la talla es la de una pieza confirmada o el animal es inconfundible. Si no, el nombre sigue siendo neutral. Esto es lo que cambió:
-- **Misma máscara:** a138 y a063 son la misma pieza vista de los dos lados. Ahora es una sola, «Jaguar manchado de orejas rojas», y la galería queda en 125 piezas.
-- **Cambio de sala:** el jaguar anaranjado moteado (a068) pasó de la danza a los felinos. Su talla no es la del ocelote que confirmó Don Gorgonio (27).
+- **Misma máscara:** a138 y a063 son la misma pieza, fotografiada del mismo lado (a063 se veía girada 90°). Ahora es una sola, «Felino manchado de orejas rojas», y la galería queda en 125 piezas.
+- **Cambio de sala:** el felino anaranjado moteado (a068) pasó de la danza a los felinos. Su talla no es la del ocelote que confirmó Don Gorgonio (27).
 - **Perros:** los tres cánidos negros (a053, a136, a076) tienen la talla del perro xoloitzcuintle que él confirmó (14). Ahora son «Perro xoloitzcuintle de ojos cafés / de nariz gris / de nariz café», y el de líneas blancas (a059) es «Coyote negro de líneas blancas».
 - **Felinos:** «Jaguar amarillo de rosetas» (a058) y «Pantera negra de ojos amarillos / de ojos verdes» (a037, a048). En las piezas compuestas: «Lince, búho y jaguar», «Búho sobre jaguar amarillo» y «Búho sobre tigre blanco».
 - **Aves:** las cinco de penacho son pavos reales, con la talla del que él confirmó (84). La de pico ganchudo es «Guacamaya roja y verde».
 - **Rostros:** «El Tiempo de diadema azul» (a094), «La Noche de rostros amarillos» (a143), «Diablo el Pecado de lengua roja» (a064), «Dualidad vida y muerte de barba café / de piel azul» (a106, a147), «Hombre águila» (a120) y «Nahual de plumas crema» (a061).
 - **Otros:** «Cebra gris y anaranjada» (a161), «Toro multicolor de cuernos azules» (a101) y «Cánido gris de trazos blancos» (a100).
 - **Correcciones de Humberto** (el mismo día): son jaguares el felino anaranjado moteado (a068) y el felino manchado de orejas rojas (a138, a063), y son lobos el cánido ocre naturalista (a052) y el cánido gris de trazos blancos (a100).
-  - Humberto dijo que los dos jaguares eran vistas distintas, pero en las fotos son dos máscaras: a068 tiene las orejas plateadas por dentro, la pupila rasgada y la boca cerrada; a138 y a063 tienen las orejas rojas con crema, la pupila redonda y las fauces abiertas con colmillos. Así lo vieron también, por separado, tres revisiones de las fotos. Quedan como dos piezas: «Jaguar anaranjado moteado» y «Jaguar manchado de orejas rojas».
-  - «Lobo ocre naturalista» y «Lobo gris de trazos blancos». El cánido café naturalista (a070) está pintado como el lobo ocre y tiene los mismos ojos: ahora es «Lobo café naturalista» (dos de tres revisiones lo vieron como lobo).
-- **Se quedan con nombre neutral**, porque la talla no coincide con ninguna confirmada:
+  - Humberto los describió como vistas distintas de un jaguar, pero en las fotos son dos máscaras: a068 tiene las orejas plateadas por dentro, la pupila rasgada y la boca cerrada; a138 y a063 tienen la oreja roja con crema, la pupila redonda y las fauces abiertas con colmillos. Así lo vieron también, por separado, tres revisiones de las fotos. Quedan como dos piezas: «Jaguar anaranjado moteado» y «Jaguar manchado de orejas rojas».
+  - Los lobos ahora se llaman «Lobo ocre naturalista» y «Lobo gris de trazos blancos».
+- **Lobo café naturalista** (a070): no está entre los que nombró Humberto. Está pintado como el lobo ocre y tiene los mismos ojos, aunque la talla no es igual (tiene aberturas bajo los ojos pintados). Dos de tres revisiones lo emparejaron con el lobo ocre.
+- **Se quedan con nombre neutral**, porque nada confirma la especie:
   - «Animal azul de orejas de arcoíris» (ya no se llama «posible burro»);
-  - «Cánido gris de fauces abiertas» (se parece a los lobos; dos de tres revisiones no quisieron llamarlo lobo);
-  - «Cánido gris de pinceladas amarillas» y «Cánido ocre de pinceladas negras», tallados igual entre sí. Las tres revisiones vieron el gris como zorro, por los ojos y el pelo en trazos del zorro anaranjado; el ocre quedó dividido. Falta preguntar.
+  - «Cánido gris de fauces abiertas» (se parece al lobo gris verdoso; dos de tres revisiones no lo llamaron lobo);
+  - «Cánido gris de pinceladas amarillas» y «Cánido ocre de pinceladas negras», tallados igual entre sí. Las tres revisiones vieron el gris como zorro, por los ojos y el pelo en trazos del zorro anaranjado; en el ocre, las revisiones no coincidieron. Falta preguntar.
 - **Textos de las salas:** ya no dicen que una pieza espera confirmación. Cada pieza va con la confirmada a la que se parece.
