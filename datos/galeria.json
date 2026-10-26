@@ -229,7 +229,7 @@
    "id": "felinos",
    "titulo": "Felinos",
    "subtitulo": "Fauces abiertas y piel manchada",
-   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Los acompañan un jaguar amarillo, con rosetas de anillo como las del anaranjado; un felino manchado de orejas rojas; un felino anaranjado moteado, de boca cerrada pero tallado distinto del ocelote; dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.",
+   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Hay otros tres jaguares: el amarillo, con rosetas de anillo como las del anaranjado; el manchado de orejas rojas, y el anaranjado moteado, de boca cerrada pero tallado distinto del ocelote. Los acompañan dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.",
    "piezas": [
     "jaguar-rosetas",
     "felino-fauces-abiertas",
@@ -267,8 +267,8 @@
   {
    "id": "pelaje-de-pincel",
    "titulo": "Pelaje de pincel",
-   "subtitulo": "Un zorro, un lobo y otros animales de hocico largo",
-   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. Los cánidos grises de trazos blancos y de fauces abiertas se parecen al lobo, y los dos naturalistas, el ocre y el café, tienen los mismos ojos de pupila azul.",
+   "subtitulo": "Un zorro, cuatro lobos y otros animales de hocico largo",
+   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. También son lobos el gris de trazos blancos y el ocre naturalista; el lobo café naturalista está pintado como el ocre y tiene los mismos ojos de pupila azul. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. El cánido gris de fauces abiertas se parece a los lobos.",
    "piezas": [
     "canido-gris-pinceladas",
     "canido-ocre-pinceladas",
@@ -1089,8 +1089,8 @@
    "certeza": "media"
   },
   "felino-fauces-abiertas": {
-   "nombre": "Felino manchado de orejas rojas",
-   "descripcion": "Cabeza de felino anaranjada con manchas negras, rayas en el hocico, ojo verde amarillento, oreja roja y fauces rojas abiertas con colmillos blancos.",
+   "nombre": "Jaguar manchado de orejas rojas",
+   "descripcion": "Cabeza de jaguar anaranjada con manchas negras, rayas en el hocico, ojo verde amarillento, oreja roja y fauces rojas abiertas con colmillos blancos.",
    "fotos": [
     "a138",
     "a063"
@@ -1163,8 +1163,8 @@
    "certeza": "confirmada-maestro"
   },
   "felino-moteado": {
-   "nombre": "Felino anaranjado moteado",
-   "descripcion": "Felino amarillo anaranjado con manchas negras grandes y puntos pequeños en el hocico, ojos verdes de pupila rasgada, nariz roja y orejas grises con manchas negras.",
+   "nombre": "Jaguar anaranjado moteado",
+   "descripcion": "Jaguar amarillo anaranjado con manchas negras grandes y puntos pequeños en el hocico, ojos verdes de pupila rasgada, nariz roja y orejas grises con manchas negras.",
    "fotos": [
     "a068"
    ],
@@ -1349,8 +1349,8 @@
    "certeza": "baja"
   },
   "coyote-naturalista-ocre": {
-   "nombre": "Cánido ocre naturalista",
-   "descripcion": "Cánido de hocico largo y fino pintado a pinceladas ocre, café y anaranjado, con orejas de interior blanco, ojo ámbar de pupila azul y línea blanca en la boca.",
+   "nombre": "Lobo ocre naturalista",
+   "descripcion": "Lobo de hocico largo y fino pintado a pinceladas ocre, café y anaranjado, con orejas de interior blanco, ojo ámbar de pupila azul y línea blanca en la boca.",
    "fotos": [
     "a052"
    ],
@@ -1359,8 +1359,8 @@
    "certeza": "media"
   },
   "canido-cafe-naturalista": {
-   "nombre": "Cánido café naturalista",
-   "descripcion": "Cabeza alargada de cánido en café, gris y anaranjado a pinceladas, con orejas puntiagudas, ojos amarillos de iris azul y nariz café brillante.",
+   "nombre": "Lobo café naturalista",
+   "descripcion": "Cabeza alargada de lobo en café, gris y anaranjado a pinceladas, con orejas puntiagudas, ojos amarillos de iris azul y nariz café brillante.",
    "fotos": [
     "a070"
    ],
@@ -1380,8 +1380,8 @@
    "certeza": "confirmada-maestro"
   },
   "canido-gris": {
-   "nombre": "Cánido gris de trazos blancos",
-   "descripcion": "Cánido de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
+   "nombre": "Lobo gris de trazos blancos",
+   "descripcion": "Lobo de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
    "fotos": [
     "a100"
    ],
@@ -2123,12 +2123,12 @@
    "recorte": false
   },
   "a138": {
-   "alt": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces abiertas con colmillos blancos",
+   "alt": "Cabeza de jaguar anaranjada con manchas negras, ojo verde y fauces abiertas con colmillos blancos",
    "descripcion": "Cabeza de felino anaranjada con manchas negras, ojo verde y fauces rojas abiertas con colmillos blancos. Detrás se ve otra máscara de felino moteado.",
    "recorte": false
   },
   "a063": {
-   "alt": "Máscara de felino amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado",
+   "alt": "Máscara de jaguar amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado",
    "descripcion": "Cabeza de felino amarillo con manchas negras, orejas rojas y el hocico abierto que deja ver los colmillos. El barniz brillante resalta el ojo verde.",
    "recorte": false
   },
@@ -2178,7 +2178,7 @@
    "recorte": false
   },
   "a068": {
-   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
+   "alt": "Máscara de jaguar amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
    "descripcion": "Felino de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.",
    "recorte": false
   },
@@ -2298,12 +2298,12 @@
    "recorte": false
   },
   "a052": {
-   "alt": "Máscara de cánido de estilo realista con pelaje café grisáceo, orejas altas y ojo ámbar, vista de tres cuartos",
+   "alt": "Máscara de lobo de estilo realista con pelaje café grisáceo, orejas altas y ojo ámbar, vista de tres cuartos",
    "descripcion": "Máscara de coyote de estilo realista, con el pelaje pintado a pincel en tonos café, gris y anaranjado.",
    "recorte": false
   },
   "a070": {
-   "alt": "Máscara de cánido café y gris de hocico largo, orejas puntiagudas y ojos amarillos, vista de tres cuartos",
+   "alt": "Máscara de lobo café y gris de hocico largo, orejas puntiagudas y ojos amarillos, vista de tres cuartos",
    "descripcion": "Cánido de hocico largo pintado en tonos café, gris y anaranjado que imitan el pelaje, con ojos amarillos y nariz café.",
    "recorte": false
   },
@@ -2318,7 +2318,7 @@
    "recorte": false
   },
   "a100": {
-   "alt": "Máscara de cánido gris con trazos blancos, orejas doradas, ojos amarillos y nariz roja",
+   "alt": "Máscara de lobo gris con trazos blancos, orejas doradas, ojos amarillos y nariz roja",
    "descripcion": "Máscara de cánido gris con el pelaje marcado con trazos blancos, orejas doradas, ojos amarillos y nariz roja.",
    "recorte": false
   },
