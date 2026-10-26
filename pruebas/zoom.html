@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba · Acercamiento al hacer scroll</title>
+  <!-- Página de prueba: no está enlazada desde el sitio ni se publica en Netlify (netlify.toml no copia pruebas/) -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1c1612">
+  <link rel="icon" href="../img/icono.svg" type="image/svg+xml">
+  <link rel="preload" href="../fuentes/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fuentes/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <script>
+    // Con «reducir movimiento» la máscara se queda quieta y todo se ve desde el principio
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
+  </script>
+  <style>
+    .aviso { background: var(--tinta); color: #d8ccbb; font-size: 0.9rem; text-align: center; padding: 0.5rem var(--margen); }
+    .aviso a { color: var(--cempasuchil); }
+    .cabeza { border-bottom: 1px solid var(--borde); }
+    .cabeza .contenedor { display: flex; align-items: center; min-height: 4rem; }
+
+    .intro { padding: clamp(3rem, 9vw, 6rem) 0 clamp(2rem, 5vw, 3rem); }
+    .intro h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); max-width: 18ch; }
+    .intro p { max-width: 40rem; font-size: 1.15rem; color: var(--tinta-suave); }
+
+    /* El acercamiento: la sección es alta para dar recorrido; la escena se queda fija mientras tanto */
+    .zoom { position: relative; }
+    .zoom-escena {
+      position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden;
+      display: grid; place-items: center; background: var(--papel);
+    }
+    .zoom-velo { position: absolute; inset: 0; background: var(--tinta); }
+    .zoom-caja {
+      position: relative; z-index: 1; overflow: hidden; margin: 0;
+      width: min(100%, 75svh); aspect-ratio: 3 / 4; align-self: start;
+      transform-origin: 50% 50%; will-change: transform;
+      background: #2a211b;
+    }
+    .zoom-caja img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 42%; will-change: transform; }
+    .zoom-texto {
+      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
+      padding: 5rem var(--margen) max(1.75rem, env(safe-area-inset-bottom));
+      color: var(--blanco);
+    }
+    /* sombra bajo el texto: aparece junto con el fondo oscuro (--oscuro va de 0 a 1) */
+    .zoom-texto::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--oscuro, 1);
+      background: linear-gradient(rgba(28, 22, 18, 0), rgba(28, 22, 18, 0.88) 42%);
+    }
+    .zoom-texto .antetitulo { color: var(--cempasuchil); margin-bottom: 0.4rem; }
+    .zoom-texto h2 { margin-bottom: 0.3em; }
+    .zoom-texto p { margin: 0; max-width: 32rem; color: #e9dfcf; font-size: 1.08rem; }
+    .zoom-texto a { color: var(--cempasuchil); }
+    .zoom-texto .zoom-enlace { margin-top: 0.9rem; font-size: 0.98rem; }
+    .zoom-pista {
+      position: absolute; z-index: 2; left: 0; right: 0; bottom: max(1.25rem, env(safe-area-inset-bottom));
+      text-align: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--tinta-suave);
+    }
+    .zoom-pista::after { content: ""; display: block; width: 1px; height: 2rem; margin: 0.5rem auto 0; background: currentColor; }
+    @media (max-height: 500px) { .zoom-pista { display: none; } }
+
+    /* Pantalla horizontal: la máscara a la izquierda y el texto a la derecha, sobre el fondo oscuro */
+    @media (min-aspect-ratio: 1 / 1) {
+      .zoom-escena { grid-template-columns: auto minmax(0, 30rem); justify-content: center; column-gap: clamp(2rem, 5vw, 5rem); }
+      .zoom-caja { width: auto; height: min(100svh, 60vw); align-self: center; }
+      .zoom-texto { position: relative; padding: 0 var(--margen) 0 0; }
+      .zoom-texto::before { display: none; }
+    }
+
+    /* Activo (sin «reducir movimiento»): la escena se fija y lo que aparece empieza oculto */
+    .zoom-activo .zoom { height: 400vh; height: 400svh; }
+    .zoom-activo .zoom-escena { position: sticky; top: 0; height: 100vh; height: 100svh; }
+    .zoom-activo .zoom-velo,
+    .zoom-activo .zoom-texto > * { opacity: 0; }
+    .zoom-activo .zoom-texto > * { will-change: opacity, transform; }
+    html:not(.zoom-activo) .zoom-pista { display: none; }
+
+    .despues { padding: clamp(3rem, 8vw, 5rem) 0; }
+    .despues p { max-width: 40rem; color: var(--tinta-suave); }
+  </style>
+</head>
+<body>
+  <p class="aviso">Página de prueba, no enlazada desde el sitio. <a href="../index.html">Volver al sitio</a></p>
+  <header class="cabeza">
+    <div class="contenedor">
+      <a class="marca" href="../index.html">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><g><path d="M32 3C16 3 8 14 8 28c0 17 11 33 24 33s24-16 24-33C56 14 48 3 32 3z" fill="#b9321c"/><path d="M14 18c5-6 11-9 18-9s13 3 18 9" fill="none" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M17 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><path d="M36 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><ellipse cx="22.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><ellipse cx="41.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><circle cx="22.5" cy="31" r="2.4" fill="#1c1612"/><circle cx="41.5" cy="31" r="2.4" fill="#1c1612"/><path d="M32 27v15" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M23 49c6 4 12 4 18 0" fill="none" stroke="#1c1612" stroke-width="3" stroke-linecap="round"/></g></svg>
+        <span>Gorgonio Candelario <small>Maestro mascarero</small></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="contenedor">
+        <p class="antetitulo">Prueba de diseño</p>
+        <h1>Acercamiento al hacer scroll</h1>
+        <p>Al bajar, la máscara empieza como una tarjeta y crece hasta llenar la pantalla; después aparece lo que dice Don Gorgonio de ella.</p>
+      </div>
+    </section>
+
+    <section class="zoom" aria-labelledby="zoom-titulo">
+      <div class="zoom-escena">
+        <div class="zoom-velo" aria-hidden="true"></div>
+        <figure class="zoom-caja">
+          <picture>
+            <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+            <img src="../img/galeria/a025.jpg" width="1200" height="1600" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
+          </picture>
+        </figure>
+        <div class="zoom-texto">
+          <p class="antetitulo">Máscara de adorno</p>
+          <h2 id="zoom-titulo">El Tiempo</h2>
+          <p>Tres rostros que comparten los mismos ojos. Según Don Gorgonio, representa las tres etapas de la vida: niño, adulto y viejo.</p>
+          <p class="zoom-enlace"><a href="../galeria.html#sala-el-tiempo-y-la-noche">Ver en la galería</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
+
+    <section class="despues">
+      <div class="contenedor">
+        <p class="antetitulo">Después del acercamiento</p>
+        <p>Aquí seguiría el resto de la página. En el sitio, este efecto podría ir entre la portada y «El maestro», o abrir la galería.</p>
+        <p><a href="../index.html">Volver al sitio</a></p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      var seccion = document.querySelector(".zoom");
+      var escena = seccion.querySelector(".zoom-escena");
+      var caja = seccion.querySelector(".zoom-caja");
+      var foto = caja.querySelector("img");
+      var velo = seccion.querySelector(".zoom-velo");
+      var pista = seccion.querySelector(".zoom-pista");
+      var textos = seccion.querySelectorAll(".zoom-texto > *");
+      var inicio = null, pendiente = false;
+
+      function tramo(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
+      function suave(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+      // La caja está en su lugar final; se mide para saber cuánto encogerla y moverla al principio (como tarjeta)
+      function medir() {
+        caja.style.transform = "none";
+        var r = caja.getBoundingClientRect(), e = escena.getBoundingClientRect();
+        var ancho = Math.min(e.width * 0.62, e.height * 0.62 * 0.75, 300);  // la tarjeta cabe a lo ancho y a lo alto
+        inicio = {
+          escala: ancho / r.width,
+          dx: e.left + e.width / 2 - (r.left + r.width / 2),
+          dy: e.top + e.height * 0.47 - (r.top + r.height / 2)
+        };
+      }
+
+      function pintar() {
+        pendiente = false;
+        if (!raiz.classList.contains("zoom-activo")) return;
+        var recorrido = seccion.offsetHeight - escena.offsetHeight;
+        var p = recorrido > 0 ? tramo(-seccion.getBoundingClientRect().top, 0, recorrido) : 1;
+        var c = suave(tramo(p, 0.06, 0.5));
+        var s = inicio.escala + (1 - inicio.escala) * c;
+        caja.style.transform = "translate3d(" + (inicio.dx * (1 - c)).toFixed(1) + "px," + (inicio.dy * (1 - c)).toFixed(1) + "px,0) scale(" + s.toFixed(4) + ")";
+        caja.style.borderRadius = (14 * (1 - c) / s).toFixed(1) + "px";
+        caja.style.boxShadow = c < 1 ? "0 " + (24 / s).toFixed(0) + "px " + (48 / s).toFixed(0) + "px rgba(28,22,18," + (0.28 * (1 - c)).toFixed(2) + ")" : "none";
+        foto.style.transform = "scale(" + (1 + 0.1 * suave(tramo(p, 0.5, 1))).toFixed(4) + ")";
+        // el fondo se oscurece hasta el final del crecimiento, para no pasar por un gris lodoso
+        var oscuro = suave(tramo(c, 0.55, 1));
+        velo.style.opacity = oscuro.toFixed(3);
+        escena.style.setProperty("--oscuro", oscuro.toFixed(3));
+        pista.style.opacity = (1 - tramo(p, 0.01, 0.08)).toFixed(3);
+        for (var i = 0; i < textos.length; i++) {
+          var t = suave(tramo(p, 0.48 + i * 0.07, 0.6 + i * 0.07));
+          textos[i].style.opacity = t.toFixed(3);
+          textos[i].style.transform = "translate3d(0," + ((1 - t) * 16).toFixed(1) + "px,0)";
+        }
+      }
+
+      function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }
+      function rehacer() { medir(); pintar(); }
+
+      // Si cambia la preferencia de movimiento, se quita o se vuelve a poner el efecto
+      var quieto = matchMedia("(prefers-reduced-motion: reduce)");
+      function preferencia() {
+        raiz.classList.toggle("zoom-activo", !quieto.matches);
+        [escena, caja, foto, velo, pista].concat([].slice.call(textos)).forEach(function (el) { el.removeAttribute("style"); });
+        if (!quieto.matches) rehacer();
+      }
+      if (quieto.addEventListener) quieto.addEventListener("change", preferencia);
+
+      if (raiz.classList.contains("zoom-activo")) rehacer();
+      addEventListener("scroll", pedir, { passive: true });
+      // con teclado: si el enlace recibe el foco antes de verse, se baja hasta el final del acercamiento
+      escena.addEventListener("focusin", function () {
+        if (!raiz.classList.contains("zoom-activo")) return;
+        var fin = seccion.getBoundingClientRect().top + scrollY + seccion.offsetHeight - escena.offsetHeight;
+        if (scrollY < fin - 2) scrollTo(0, fin);
+      });
+      addEventListener("resize", function () { if (raiz.classList.contains("zoom-activo")) rehacer(); });
+    })();
+  </script>
+</body>
+</html>
