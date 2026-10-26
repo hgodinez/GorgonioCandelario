@@ -51,7 +51,7 @@ portada = f'''<section class="portada" id="inicio" aria-labelledby="titulo-porta
           <p class="antetitulo">Maestro mascarero · Suchitlán, Colima</p>
           <h1 id="titulo-portada">Gorgonio Candelario <em>Castro</em></h1>
           <p class="lema">Su padre le enseñó que antes de tallar hay que danzar.</p>
-          <p class="entrada">Talla y pinta a mano máscaras de madera para la Danza de los Morenos, las pastorelas y otras danzas de su pueblo. Heredó el oficio de su padre, el mascarero Don Herminio Candelario.</p>
+          <p class="entrada">Talla y pinta a mano máscaras de madera para la Danza de los Morenos y las pastorelas, y también piezas de adorno. Heredó el oficio de su padre, el mascarero Don Herminio Candelario.</p>
           <div class="botones">
             <a class="boton boton-principal" href="#maestro">Conoce su historia</a>
             <a class="boton boton-secundario" href="#mascaras">Ver las máscaras</a>

@@ -902,7 +902,7 @@
   },
   "vida-muerte-azul": {
    "nombre": "Vida y muerte azul",
-   "descripcion": "Rostro partido a lo largo: la mitad viva es azul, con ojo de iris verde, oreja y barba y bigote en franjas onduladas de arcoíris que terminan en espiral; la mitad muerta es una calavera color hueso con cuenca vacía, ceja verde y dientes rayados de colores.",
+   "descripcion": "Rostro partido a lo largo: la mitad viva es azul, con ojo de iris verde y oreja azul, y con barba y bigote en franjas onduladas de arcoíris que terminan en espiral; la mitad muerta es una calavera color hueso con cuenca vacía, ceja verde y dientes rayados de colores.",
    "fotos": [
     "a147"
    ],
@@ -1351,7 +1351,7 @@
   },
   "burro-azul-orejas-arcoiris": {
    "nombre": "Posible burro azul de orejas de arcoíris",
-   "descripcion": "Cabeza azul grisáceo con pinceladas amarillas como pelaje, orejas largas y anchas con franjas concéntricas amarillo, rojo, verde y azul celeste, ojos verdes y hocico azul marino con blanco.",
+   "descripcion": "Cabeza azul grisáceo con pinceladas amarillas como pelaje, orejas largas y anchas con franjas concéntricas amarilla, roja, verde y azul celeste, ojos verdes y hocico azul marino con blanco.",
    "fotos": [
     "a159"
    ],
@@ -1475,7 +1475,7 @@
   },
   "toro-pastel-cuernos-rosas": {
    "nombre": "Toro multicolor de cuernos ondulados",
-   "descripcion": "Toro cubierto de grecas en tonos pastel: cuernos largos pintados en ondas azules, rosas y salmón con punta anaranjada, orejas azul claro, rombo café en la frente, chevrones amarillos y rosas en la caña y antifaz rosa punteado. Según Don Gorgonio, es un toro multicolor de adorno y representa la fuerza y la ascendencia.",
+   "descripcion": "Toro cubierto de grecas en tonos pastel: cuernos largos pintados en ondas azules, rosas y salmón con punta anaranjada, orejas azul claro, rombo café en la frente, franjas amarillas y rosas en V sobre la nariz y antifaz rosa punteado. Según Don Gorgonio, es un toro multicolor de adorno y representa la fuerza y la ascendencia.",
    "fotos": [
     "a142",
     "a011"
@@ -1486,7 +1486,7 @@
   },
   "toro-pastel-cuernos-azules": {
    "nombre": "Toro en tonos pastel de cuernos azules",
-   "descripcion": "Toro con cuernos largos y orejas azul celeste; cara pintada en parches geométricos morado, lila, rosa, café y anaranjado, con zigzags y chevrones amarillos.",
+   "descripcion": "Toro con cuernos largos y orejas azul celeste; cara pintada en parches geométricos morado, lila, rosa, café y anaranjado, con zigzags y franjas amarillas en V.",
    "fotos": [
     "a101",
     "a129"
@@ -1537,7 +1537,7 @@
   },
   "equino-rayado": {
    "nombre": "Equino rayado",
-   "descripcion": "Equino gris de hocico largo con franjas anaranjadas en V, rayas blanco y negro tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
+   "descripcion": "Equino gris de hocico largo con franjas anaranjadas en V, rayas blancas y negras tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
    "fotos": [
     "a161"
    ],
@@ -1749,17 +1749,17 @@
    "recorte": false
   },
   "a164": {
-   "alt": "Máscara de borrego anaranjado con escamas amarillas y cuernos enroscados blanco y negro, sobre pared crema",
+   "alt": "Máscara de borrego anaranjado con escamas amarillas y cuernos enroscados en blanco y negro, sobre pared crema",
    "descripcion": "Borrego cimarrón de la Danza de los Morenos, anaranjado con escamas amarillas. Sus grandes cuernos enroscados, en blanco y negro, rodean la cara.",
    "recorte": false
   },
   "a169": {
-   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, de frente en pared blanca",
+   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos, de frente en pared blanca",
    "descripcion": "Borrego cimarrón de la Danza de los Morenos, amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos.",
    "recorte": false
   },
   "a170": {
-   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojo y amarillo, vista de lado en pared blanca",
+   "alt": "Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos, vista de lado en pared blanca",
    "descripcion": "El mismo borrego amarillo de la Danza de los Morenos, visto de lado. Se aprecia el relieve de los cuernos enroscados rojos y amarillos.",
    "recorte": false
   },
@@ -2424,7 +2424,7 @@
    "recorte": false
   },
   "a161": {
-   "alt": "Máscara de madera de equino gris con franjas anaranjadas y rayas blanco y negro tipo cebra, orejas cafés, en pared blanca",
+   "alt": "Máscara de madera de equino gris con franjas anaranjadas y rayas blancas y negras tipo cebra, orejas cafés, en pared blanca",
    "descripcion": "Máscara de equino de hocico largo, pintada de gris con franjas anaranjadas en V y rayas blancas y negras a los lados, como de cebra. Tiene orejas cafés y un copete negro entre ellas.",
    "recorte": false
   },
@@ -2449,7 +2449,7 @@
    "recorte": false
   },
   "a015": {
-   "alt": "Máscara de mariposa con alas azul marino y amarillo, cuerpo morado como nariz y antenas enroscadas",
+   "alt": "Máscara de mariposa con alas azul marino y amarillas, cuerpo morado como nariz y antenas enroscadas",
    "descripcion": "Máscara de mariposa cuyo cuerpo forma la nariz y cuyas alas enmarcan los ojos. Las alas son azul marino con interior amarillo y ocelos de colores.",
    "recorte": false
   },

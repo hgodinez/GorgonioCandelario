@@ -71,6 +71,11 @@ NOMBRES = {
 # textos alternativos que afirmaban una especie no confirmada o describían collages ya recortados,
 # y los de las piezas que identificó Don Gorgonio, con el nombre que les dio
 ALTS = {
+    'a164': 'Máscara de borrego anaranjado con escamas amarillas y cuernos enroscados en blanco y negro, sobre pared crema',
+    'a169': 'Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos, de frente en pared blanca',
+    'a170': 'Máscara de borrego amarillo claro con escamas anaranjadas y cuernos enroscados rojos y amarillos, vista de lado en pared blanca',
+    'a161': 'Máscara de madera de equino gris con franjas anaranjadas y rayas blancas y negras tipo cebra, orejas cafés, en pared blanca',
+    'a015': 'Máscara de mariposa con alas azul marino y amarillas, cuerpo morado como nariz y antenas enroscadas',
     'a058': 'Máscara de felino amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos',
     'a063': 'Máscara de felino amarillo con manchas negras, orejas rojas y hocico abierto con colmillos, vista de lado',
     'a037': 'Máscara de felino negro con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos',
@@ -137,6 +142,11 @@ EXTRA_VISTAS = {
 }
 # correcciones de redacción en las descripciones de las piezas
 REEMPLAZOS = [
+    ('chevrones amarillos y rosas en la caña', 'franjas amarillas y rosas en V sobre la nariz'),
+    ('con zigzags y chevrones amarillos', 'con zigzags y franjas amarillas en V'),
+    ('franjas concéntricas amarillo, rojo, verde y azul celeste', 'franjas concéntricas amarilla, roja, verde y azul celeste'),
+    ('rayas blanco y negro tipo cebra', 'rayas blancas y negras tipo cebra'),
+    ('con ojo de iris verde, oreja y barba y bigote en franjas', 'con ojo de iris verde y oreja azul, y con barba y bigote en franjas'),
     ('chevrón de franjas de arcoíris', 'franjas de arcoíris en V'), ('chevrón de arcoíris', 'franjas de arcoíris en V'),
     ('chevrón de franjas verde, roja, amarilla, azul marino y azul cielo', 'franjas verde, roja, amarilla, azul marino y azul cielo en V'),
     ('chevrón de franjas verde, azul marino, amarilla, roja y lila', 'franjas verde, azul marino, amarilla, roja y lila en V'),

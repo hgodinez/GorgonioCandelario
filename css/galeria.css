@@ -128,7 +128,7 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 .desfile-pistas { display: flex; width: max-content; animation: desfile 90s linear infinite; }
-.desfile:hover .desfile-pistas, .desfile:focus-within .desfile-pistas, .desfile.pausado .desfile-pistas { animation-play-state: paused; }
+.desfile:hover .desfile-pistas, .desfile.pausado .desfile-pistas { animation-play-state: paused; }
 /* Con el teclado el desfile se detiene y se recorre deslizando hasta la máscara enfocada */
 .desfile.detenido .desfile-pistas { animation: none; }
 .desfile-control { display: flex; justify-content: flex-end; margin-top: -0.5rem; }

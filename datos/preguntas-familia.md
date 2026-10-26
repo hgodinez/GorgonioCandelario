@@ -46,12 +46,11 @@ Fotos: a007, a008, a019, a064, a096, a103
 
 Fotos: a006, a027, a108, a149, a086, a082, a126, a140, a065
 
-## 12. El felino y los toros pintados en tonos pastel mate se ven distintos al resto: ¿son de don Gorgonio o de otra persona de la familia? ¿Y de dónde vienen la foto de estudio del diablo de marco moteado y la del toro con el letrero «TORO MULTICOLOR»? ¿A quién le damos el crédito?
+## 12. ¿De dónde vienen la foto de estudio del diablo de marco moteado y la del toro con el letrero «TORO MULTICOLOR»? ¿A quién le damos el crédito?
 
-Fotos: a099, a142, a101, a096, a016
+Fotos: a096, a016
 
 ## Otras preguntas
 
-- Las tres piezas en tonos pastel (a099, a117, a142, a011, a101, a129) están apartadas de la galería: ¿son de don Gorgonio?
 - ¿Tienen una foto mejor del perro (a144) y alguna del ocelote?
 - ¿Quién tomó las fotos y cómo quieren el crédito?

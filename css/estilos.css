@@ -389,7 +389,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
   .visor-barra { grid-column: 1 / -1; }
   .visor-imagen { padding: 0 3.5rem 0.75rem; }
   .visor-anterior, .visor-siguiente { top: 50%; bottom: auto; transform: translateY(-50%); }
-  .visor-texto { align-self: center; text-align: left; padding: 0 1rem 1rem 0; }
+  .visor-texto { align-self: center; max-height: 100%; overflow-y: auto; text-align: left; padding: 0 1rem 1rem 0; }
 }
 
 /* Modo de colores forzados (alto contraste) */
