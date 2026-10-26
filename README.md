@@ -144,5 +144,15 @@ Las dos revisiones del 26 de octubre de 2026 encontraron estos errores. Ya está
 - [x] Al girar el teléfono se conserva el punto de la animación. Un ancla dentro de la sección o el foco del teclado llevan al final, con el texto visible.
 - [x] El encabezado fijo del sitio se esconde mientras la escena está fija y vuelve al salir. La prueba usa el mismo encabezado que el sitio.
 
+Una segunda ronda de revisiones encontró 13 problemas más. También están arreglados y comprobados (los mismos arreglos se probaron en una copia de la galería que no se publicó, con el acercamiento al abrir la Sala 2):
+- [x] Un enlace a un ancla de la sección cae exactamente al final en todas las cargas. Antes variaba hasta 300 px por el scroll suave del sitio.
+- [x] Al fijarse, la tarjeta ya no da un tirón hacia abajo: empieza a crecer a la misma velocidad con que venía.
+- [x] En horizontal, la columna de texto invisible ya no se queda con la rueda del ratón, y el anillo de foco se ve completo.
+- [x] Un clic con ratón ya no deja el encabezado fijo sobre la escena (solo el foco del teclado lo retiene). Tampoco parpadea si el scroll se detiene justo en el borde, y Shift+Tab hacia él no hace retroceder la animación.
+- [x] Girar el teléfono justo al final, o cambiar solo el alto de la ventana, conserva el punto de la animación.
+- [x] En teléfonos chicos la foto llega a los dos bordes, y la sombra del texto termina en tinta sólida.
+- [x] La cortina oscura sube desde el borde real de la pantalla aunque el teléfono esconda la barra del navegador.
+- [x] La sombra de la tarjeta conserva su tamaño y ya no se vuelve a pintar en cada cuadro.
+
 Queda pendiente:
 - [ ] Las fotos son de 1200×1600 (de WhatsApp): en pantallas retina grandes y en el iPad Pro se ven un poco suaves. Hace falta el original de la foto.

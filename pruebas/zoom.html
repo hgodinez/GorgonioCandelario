@@ -14,6 +14,8 @@
   <script>
     // Con «reducir movimiento» la máscara se queda quieta y todo se ve desde el principio
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
+    // con un ancla en la dirección, el navegador salta sin animación; el script corrige el punto después de cargar
+    if (location.hash) document.documentElement.style.scrollBehavior = "auto";
   </script>
   <style>
     .aviso { background: var(--tinta); color: #d8ccbb; font-size: 0.9rem; text-align: center; padding: 0.5rem var(--margen); margin: 0; }
@@ -23,10 +25,13 @@
     .intro h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); max-width: 18ch; }
     .intro p { max-width: 40rem; font-size: 1.15rem; color: var(--tinta-suave); }
 
-    /* El acercamiento. Mientras la escena está fija, el encabezado del sitio se esconde hacia arriba para dejarle toda la pantalla */
+    /* El acercamiento. Mientras la escena está fija, el encabezado del sitio se esconde hacia arriba para dejarle toda la pantalla.
+       --alto-chico es la pantalla con la barra del navegador visible y --alto-grande sin ella: la escena cubre la grande
+       (así la cortina llega al borde real) y su contenido se acomoda en la chica */
+    :root { --alto-chico: 100svh; --alto-grande: 100lvh; }
     .zoom { position: relative; }
     .zoom-escena {
-      --alto-escena: 100svh;
+      --alto-escena: var(--alto-chico);
       position: relative; min-height: var(--alto-escena); overflow: hidden;
       display: grid; place-items: center; background: var(--papel);
     }
@@ -37,22 +42,26 @@
       width: min(100%, calc((var(--alto-escena) - 11rem) * 0.75)); aspect-ratio: 3 / 4; align-self: start;
       transform-origin: 50% 50%; will-change: transform;
     }
-    /* La sombra de la tarjeta se desvanece con opacidad (no se vuelve a pintar en cada cuadro) */
+    /* en teléfonos, a todo el ancho y con el alto limitado (la foto se recorta un poco con object-fit) */
+    @media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
+      .zoom-caja { width: 100%; aspect-ratio: auto; height: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
+    }
+    /* La sombra se compensa una sola vez al medir (--k, --radio-sombra): en cada cuadro solo cambia su opacidad */
     .zoom-caja::before {
-      content: ""; position: absolute; inset: 0; border-radius: var(--radio-caja, 0);
-      box-shadow: 0 24px 48px rgba(28, 22, 18, 0.28); opacity: var(--sombra, 0); will-change: opacity;
+      content: ""; position: absolute; inset: 0; border-radius: var(--radio-sombra, 0);
+      box-shadow: 0 calc(24px * var(--k, 1)) calc(48px * var(--k, 1)) rgba(28, 22, 18, 0.28); opacity: var(--sombra, 0); will-change: opacity;
     }
     .zoom-foto { position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radio-caja, 0); background: #2a211b; }
     .zoom-foto img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 42%; will-change: transform; color: #e9dfcf; font-size: 0.95rem; }
     .zoom-texto {
-      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: 100%; overflow-y: auto;
+      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: var(--alto-escena); overflow-y: auto;
       padding: 2.5rem var(--margen) max(1.5rem, env(safe-area-inset-bottom));
       color: var(--blanco);
     }
     /* sombra bajo el texto, por si el texto pasa sobre la foto: aparece junto con el texto (--texto va de 0 a 1) */
     .zoom-texto::before {
       content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--texto, 1);
-      background: linear-gradient(rgba(28, 22, 18, 0), rgba(28, 22, 18, 0.88) 2.5rem);
+      background: linear-gradient(rgba(28, 22, 18, 0), rgba(28, 22, 18, 0.88) 2.5rem, var(--tinta) 5rem);
     }
     .zoom-texto .antetitulo { color: var(--cempasuchil); margin-bottom: 0.4rem; }
     .zoom-texto h2 { margin-bottom: 0.3em; }
@@ -71,7 +80,8 @@
     @media (min-aspect-ratio: 1 / 1) {
       .zoom-escena { grid-template-columns: auto minmax(0, 30rem); justify-content: center; column-gap: clamp(2rem, 5vw, 5rem); }
       .zoom-caja { width: auto; height: min(var(--alto-escena), 60vw); align-self: center; }
-      .zoom-texto { position: relative; max-height: var(--alto-escena); padding: 0 var(--margen) 0 0; }
+      /* el relleno absorbe los 16px con que sube el texto (sin desborde falso que se quede con la rueda) y deja ver el anillo de foco */
+      .zoom-texto { position: relative; max-height: var(--alto-escena); padding: 1rem var(--margen) 1rem 0.5rem; margin-left: -0.5rem; }
       .zoom-texto::before { display: none; }
     }
     /* de 3:2 en adelante (laptops 16:10, monitores 16:9) la máscara ocupa toda la altura */
@@ -80,10 +90,20 @@
     }
 
     /* Activo (sin «reducir movimiento»): la escena se fija; el fondo oscuro espera abajo y el texto empieza oculto */
-    .zoom-activo .zoom { height: 400vh; height: 400svh; }
-    .zoom-activo .zoom-escena { position: sticky; top: 0; height: 100vh; height: var(--alto-escena); }
+    .zoom-activo .zoom { height: 400vh; height: calc(3 * var(--alto-chico) + var(--alto-grande)); }
+    .zoom-activo .zoom-escena {
+      position: sticky; top: 0; height: 100vh; height: var(--alto-grande);
+      padding-bottom: calc(var(--alto-grande) - var(--alto-chico));
+    }
+    .zoom-activo .zoom-texto { bottom: calc(var(--alto-grande) - var(--alto-chico)); }
+    .zoom-activo .zoom-pista { bottom: calc(var(--alto-grande) - var(--alto-chico) + max(1.25rem, env(safe-area-inset-bottom))); }
+    @media (min-aspect-ratio: 1 / 1) { .zoom-activo .zoom-texto { bottom: auto; } }
+    /* el encabezado se esconde mientras la escena está fija; solo el foco del teclado lo retiene (no un clic) */
     .zoom-activo .encabezado { transition: transform 0.3s ease; }
-    .zoom-activo .encabezado.oculto:not(:focus-within) { transform: translateY(-100%); }
+    .zoom-activo .encabezado:focus-within { transition: none; }
+    .zoom-activo .encabezado.oculto:not(:has(:focus-visible)) { transform: translateY(-100%); }
+    /* Shift+Tab al encabezado escondido: sin scroll-padding, el navegador no retrocede la página */
+    html.zoom-activo:has(.encabezado.oculto:focus-within) { scroll-padding-top: 0; }
     .zoom-activo .zoom-velo { transform: translateY(100%); will-change: transform; }
     .zoom-activo .zoom-texto > * { opacity: 0; pointer-events: none; will-change: opacity, transform; }
     .zoom-activo .zoom-texto::before { opacity: var(--texto, 0); }
@@ -154,23 +174,27 @@
       var velo = seccion.querySelector(".zoom-velo");
       var pista = seccion.querySelector(".zoom-pista");
       var textos = seccion.querySelectorAll(".zoom-texto > *");
-      var inicio = null, pendiente = false, ultimoP = 0, anchoPrevio = innerWidth;
+      var inicio = null, pendiente = false, ultimoP = 0, largoPrevio = 0;
 
       function activo() { return raiz.classList.contains("zoom-activo"); }
       function tramo(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
       function suave(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
-      function arranque(t) { return 1 - Math.pow(1 - t, 3); }  // empieza rápido y llega despacio
+      // empieza a crecer en cuanto se fija, con la misma velocidad con que venía (pendiente 1), y llega despacio
+      function arranque(t) { return t + t * t - t * t * t; }
 
       // La caja está en su lugar final; se mide para saber cuánto encogerla y moverla al principio (como tarjeta)
       function medir() {
         caja.style.transform = "none";
         var r = caja.getBoundingClientRect(), e = escena.getBoundingClientRect();
-        var ancho = Math.min(e.width * 0.62, e.height * 0.62 * 0.75, 300);  // la tarjeta cabe a lo ancho y a lo alto
+        var alto = e.height - parseFloat(getComputedStyle(escena).paddingBottom);  // la parte que siempre se ve
+        var ancho = Math.min(e.width * 0.62, alto * 0.62 * 0.75, 300);  // la tarjeta cabe a lo ancho y a lo alto
         inicio = {
           escala: ancho / r.width,
           dx: e.left + e.width / 2 - (r.left + r.width / 2),
-          dy: e.top + e.height * 0.42 - (r.top + r.height / 2)
+          dy: e.top + alto * 0.42 - (r.top + r.height / 2)
         };
+        caja.style.setProperty("--k", (1 / inicio.escala).toFixed(3));
+        caja.style.setProperty("--radio-sombra", (14 / inicio.escala).toFixed(1) + "px");
       }
 
       function recorrido() { return seccion.offsetHeight - escena.offsetHeight; }
@@ -178,19 +202,25 @@
 
       // Salta sin animación (estilos.css pone scroll-behavior: smooth en html)
       function saltar(y) {
+        var antes = raiz.style.scrollBehavior;
         raiz.style.scrollBehavior = "auto";
         scrollTo(0, y);
-        raiz.style.scrollBehavior = "";
+        raiz.style.scrollBehavior = antes;
       }
 
       function pintar() {
         pendiente = false;
         if (!activo()) return;
         var largo = recorrido(), arriba = seccion.getBoundingClientRect().top;
-        var p = largo > 0 ? tramo(-arriba, 0, largo) : 1;
-        // el encabezado del sitio se esconde mientras la escena está fija y vuelve cuando ya se fue un cuarto de ella
-        if (encabezado) encabezado.classList.toggle("oculto", arriba <= 0 && arriba >= -largo - escena.offsetHeight / 4);
-        ultimoP = p;
+        // el encabezado se esconde al fijarse y vuelve cuando ya se fue un cuarto de la escena; con 48px de margen
+        // para que no parpadee si el dedo o la inercia se detienen justo en el borde
+        if (encabezado) {
+          var limite = -largo - escena.offsetHeight / 4, oculto = encabezado.classList.contains("oculto");
+          if (!oculto && arriba <= 0 && arriba >= limite) encabezado.classList.add("oculto");
+          else if (oculto && (arriba > 48 || arriba < limite - 48)) encabezado.classList.remove("oculto");
+        }
+        ultimoP = largo > 0 ? -arriba / largo : 1;  // sin recortar: sirve para volver al mismo punto al girar
+        var p = Math.min(1, Math.max(0, ultimoP));
         // crece en cuanto la escena se fija, sin un tramo muerto al principio
         var c = arranque(tramo(p, 0, 0.45));
         var s = inicio.escala + (1 - inicio.escala) * c;
@@ -198,11 +228,9 @@
         caja.style.setProperty("--radio-caja", (14 * (1 - c) / s).toFixed(1) + "px");
         caja.style.setProperty("--sombra", (1 - c).toFixed(3));
         foto.style.transform = "scale(" + (1 + 0.06 * suave(tramo(p, 0.45, 1))).toFixed(4) + ")";
-        // el fondo oscuro sube como cortina desde abajo, sin pasar por un gris; la sección se oscurece con él
-        // para que no quede una franja crema abajo cuando el teléfono esconde la barra del navegador
+        // el fondo oscuro sube como cortina desde el borde real de la pantalla, sin pasar por un gris
         var oscuro = suave(tramo(c, 0.55, 1));
         velo.style.transform = "translate3d(0," + ((1 - oscuro) * 100).toFixed(2) + "%,0)";
-        seccion.style.backgroundColor = oscuro > 0 ? "var(--tinta)" : "";
         pista.style.opacity = (1 - tramo(c, 0.03, 0.2)).toFixed(3);
         var primero = 0;
         for (var i = 0; i < textos.length; i++) {
@@ -216,7 +244,7 @@
       }
 
       function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }
-      function rehacer() { medir(); pintar(); }
+      function rehacer() { medir(); pintar(); largoPrevio = recorrido(); }
 
       // Lleva al final del acercamiento, donde ya se ve todo el texto
       function irAlFinal() {
@@ -235,14 +263,13 @@
       }
       if (quieto.addEventListener) quieto.addEventListener("change", preferencia);
 
-      // Al cambiar el ancho (girar el teléfono) se conserva el punto de la animación.
-      // Si solo cambia el alto (la barra del navegador), no se mueve el scroll para no pelear con la inercia.
+      // Si cambia el largo del recorrido (girar el teléfono, cambiar el alto de la ventana) se vuelve al mismo punto.
+      // Si no cambia (la barra del navegador en el teléfono), no se mueve el scroll para no pelear con la inercia.
       addEventListener("resize", function () {
         if (!activo()) return;
-        var p = ultimoP, girado = innerWidth !== anchoPrevio;
-        anchoPrevio = innerWidth;
+        var p = ultimoP, previo = largoPrevio;
         rehacer();
-        if (girado && p > 0 && p < 1) { saltar(inicioSeccion() + p * recorrido()); pintar(); }
+        if (largoPrevio !== previo && p > 0 && p <= 1.001) { saltar(inicioSeccion() + Math.min(p, 1) * recorrido()); pintar(); }
       });
 
       // Con teclado, o con un enlace a un ancla dentro de la sección: se baja al final para que el texto se vea
@@ -252,8 +279,12 @@
         if (destino && seccion.contains(destino)) irAlFinal();
       }
       addEventListener("hashchange", revisarAncla);
-      // el navegador vuelve a bajar al ancla mientras termina de cargar: se corrige después de que lo hace
-      addEventListener("load", function () { setTimeout(revisarAncla, 60); });
+      // el navegador vuelve a bajar al ancla al terminar de cargar: se corrige en ese mismo scroll, antes de pintarse,
+      // y otra vez un momento después; luego vuelve el scroll suave del sitio
+      addEventListener("load", function () {
+        addEventListener("scroll", revisarAncla, { once: true });
+        setTimeout(function () { removeEventListener("scroll", revisarAncla); revisarAncla(); raiz.style.scrollBehavior = ""; }, 60);
+      });
 
       if (activo()) rehacer();
       revisarAncla();
