@@ -267,8 +267,8 @@
   {
    "id": "pelaje-de-pincel",
    "titulo": "Pelaje de pincel",
-   "subtitulo": "Un zorro, cuatro lobos y otros animales de hocico largo",
-   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. Hay otros tres lobos: el gris de trazos blancos, el ocre naturalista y el café naturalista, que está pintado como el lobo ocre y tiene sus mismos ojos de pupila azul. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. El cánido gris de fauces abiertas se parece al lobo gris verdoso.",
+   "subtitulo": "Tres zorros, cinco lobos y un animal de orejas de arcoíris",
+   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. Hay otros dos zorros, el ocre de pinceladas negras y el gris de pinceladas amarillas, tallados igual entre sí, con orejas muy altas y nariz roja; tienen el pelo de trazos cortos y los ojos verdes del zorro anaranjado. Y hay otros cuatro lobos: el gris de trazos blancos, el gris de fauces abiertas, el ocre naturalista y el café naturalista, que está pintado como el lobo ocre y tiene sus mismos ojos de pupila azul. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza.",
    "piezas": [
     "canido-gris-pinceladas",
     "canido-ocre-pinceladas",
@@ -1317,8 +1317,8 @@
    "certeza": "baja"
   },
   "canido-gris-pinceladas": {
-   "nombre": "Cánido gris de pinceladas amarillas",
-   "descripcion": "Cánido gris pizarra cubierto de pinceladas amarillo pálido como pelaje, con orejas altas, ojos verdes, hocico largo y nariz rojo óxido.",
+   "nombre": "Zorro gris de pinceladas amarillas",
+   "descripcion": "Zorro gris pizarra cubierto de pinceladas amarillo pálido como pelaje, con orejas altas, ojos verdes, hocico largo y nariz rojo óxido.",
    "fotos": [
     "a146",
     "a146b",
@@ -1329,8 +1329,8 @@
    "certeza": "baja"
   },
   "canido-ocre-pinceladas": {
-   "nombre": "Cánido ocre de pinceladas negras",
-   "descripcion": "Cánido amarillo ocre con pinceladas negras como pelaje, orejas altas, ojos verdes, nariz roja y mejilla rojo salmón.",
+   "nombre": "Zorro ocre de pinceladas negras",
+   "descripcion": "Zorro amarillo ocre con pinceladas negras como pelaje, orejas altas, ojos verdes, nariz roja y mejilla rojo salmón.",
    "fotos": [
     "a156"
    ],
@@ -1390,8 +1390,8 @@
    "certeza": "baja"
   },
   "canido-gris-fauces": {
-   "nombre": "Cánido gris de fauces abiertas",
-   "descripcion": "Cabeza de cánido gris y negro con pelaje a pinceladas, orejas de interior crema, ojos de diana azul y amarilla, nariz y labios rojos y hocico entreabierto con colmillos; borde inferior ondulado.",
+   "nombre": "Lobo gris de fauces abiertas",
+   "descripcion": "Cabeza de lobo gris y negro con pelaje a pinceladas, orejas de interior crema, ojos de diana azul y amarilla, nariz y labios rojos y hocico entreabierto con colmillos; borde inferior ondulado.",
    "fotos": [
     "a066",
     "a075"
@@ -2273,23 +2273,23 @@
    "recorte": false
   },
   "a146": {
-   "alt": "Máscara de cánido gris con pinceladas amarillas, ojos verdes y nariz roja, de frente",
-   "descripcion": "Tres vistas de una máscara de cánido gris con pelaje sugerido por pinceladas amarillas, orejas altas, ojos verdes y nariz roja.",
+   "alt": "Máscara de zorro gris con pinceladas amarillas, ojos verdes y nariz roja, de frente",
+   "descripcion": "Tres vistas de una máscara de zorro gris con pelaje sugerido por pinceladas amarillas, orejas altas, ojos verdes y nariz roja.",
    "recorte": false
   },
   "a146b": {
-   "alt": "El mismo cánido gris de pinceladas visto de lado",
+   "alt": "El mismo zorro gris de pinceladas visto de lado",
    "descripcion": "",
    "recorte": false
   },
   "a146c": {
-   "alt": "El mismo cánido gris de pinceladas visto de tres cuartos",
+   "alt": "El mismo zorro gris de pinceladas visto de tres cuartos",
    "descripcion": "",
    "recorte": false
   },
   "a156": {
-   "alt": "Máscara de cánido amarillo ocre con pinceladas negras, ojos verdes y nariz roja sobre pared blanca",
-   "descripcion": "Máscara de cánido amarillo ocre con pelaje de pinceladas negras, ojos verdes, nariz roja y mejilla rojiza.",
+   "alt": "Máscara de zorro amarillo ocre con pinceladas negras, ojos verdes y nariz roja sobre pared blanca",
+   "descripcion": "Máscara de zorro amarillo ocre con pelaje de pinceladas negras, ojos verdes, nariz roja y mejilla rojiza.",
    "recorte": false
   },
   "a159": {
@@ -2323,13 +2323,13 @@
    "recorte": false
   },
   "a066": {
-   "alt": "Máscara de cánido gris y negro con orejas puntiagudas, ojos azules y amarillos y hocico abierto con colmillos",
-   "descripcion": "Cánido de pelaje gris y negro con el hocico entreabierto, colmillos y lengua roja. Los ojos están pintados como dianas azules y amarillas.",
+   "alt": "Máscara de lobo gris y negro con orejas puntiagudas, ojos azules y amarillos y hocico abierto con colmillos",
+   "descripcion": "Lobo de pelaje gris y negro con el hocico entreabierto, colmillos y lengua roja. Los ojos están pintados como dianas azules y amarillas.",
    "recorte": false
   },
   "a075": {
-   "alt": "Máscara de cánido gris y negro vista de lado, con labios rojos, colmillos y ojo azul y amarillo",
-   "descripcion": "El mismo cánido gris y negro, visto desde el otro lado: hocico abierto con colmillos, labios rojos y orejas puntiagudas.",
+   "alt": "Máscara de lobo gris y negro vista de lado, con labios rojos, colmillos y ojo azul y amarillo",
+   "descripcion": "El mismo lobo gris y negro, visto desde el otro lado: hocico abierto con colmillos, labios rojos y orejas puntiagudas.",
    "recorte": false
   },
   "a083": {

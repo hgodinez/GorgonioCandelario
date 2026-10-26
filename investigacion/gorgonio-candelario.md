@@ -263,8 +263,8 @@ Humberto pidió quitar los signos de interrogación y las frases de «todavía n
   - Humberto los describió como vistas distintas de un jaguar, pero en las fotos son dos máscaras: a068 tiene las orejas plateadas por dentro, la pupila rasgada y la boca cerrada; a138 y a063 tienen la oreja roja con crema, la pupila redonda y las fauces abiertas con colmillos. Así lo vieron también, por separado, tres revisiones de las fotos. Quedan como dos piezas: «Jaguar anaranjado moteado» y «Jaguar manchado de orejas rojas».
   - Los lobos ahora se llaman «Lobo ocre naturalista» y «Lobo gris de trazos blancos».
 - **Lobo café naturalista** (a070): no está entre los que nombró Humberto. Está pintado como el lobo ocre y tiene los mismos ojos, aunque la talla no es igual (tiene aberturas bajo los ojos pintados). Dos de tres revisiones lo emparejaron con el lobo ocre.
-- **Se quedan con nombre neutral**, porque nada confirma la especie:
-  - «Animal azul de orejas de arcoíris» (ya no se llama «posible burro»);
-  - «Cánido gris de fauces abiertas» (se parece al lobo gris verdoso; dos de tres revisiones no lo llamaron lobo);
-  - «Cánido gris de pinceladas amarillas» y «Cánido ocre de pinceladas negras», tallados igual entre sí. Las tres revisiones vieron el gris como zorro, por los ojos y el pelo en trazos del zorro anaranjado; en el ocre, las revisiones no coincidieron. Falta preguntar.
+- **Más correcciones de Humberto** (el mismo día, cuando se le preguntó):
+  - Son zorros los dos cánidos de pinceladas, tallados igual entre sí: «Zorro gris de pinceladas amarillas» (a146) y «Zorro ocre de pinceladas negras» (a156). De las revisiones de las fotos, las tres habían visto el gris como zorro y en el ocre no habían coincidido.
+  - Es lobo el cánido gris de fauces abiertas (a066, a075): «Lobo gris de fauces abiertas».
+- **Se queda con nombre neutral**, porque nada confirma la especie, el «Animal azul de orejas de arcoíris» (ya no se llama «posible burro»).
 - **Textos de las salas:** ya no dicen que una pieza espera confirmación. Cada pieza va con la confirmada a la que se parece.
