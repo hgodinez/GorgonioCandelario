@@ -24,6 +24,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `datos/mascaras.json` | Catálogo de las fotos: título, descripción, texto alternativo, pie y sección de cada máscara |
 | `datos/danza.json` | Las nueve parejas de la Danza de los Morenos, la foto de cada una y la caja de la máscara para su tarjeta |
 | `datos/respuestas-don-gorgonio.json` | Lo que contestó Don Gorgonio en la encuesta (última versión de cada respuesta). De ahí salen los nombres, las salas y los significados que `armar_galeria.py` marca como «Confirmada por Don Gorgonio» |
+| `datos/encuesta/` | Copias completas de la tabla de respuestas de la encuesta, sin la columna de la clave. El nombre dice la hora (UTC) de la última respuesta que trae; cada copia nueva incluye todas las anteriores. No se publican en ninguno de los dos sitios |
 | `datos/detalles.json` | Acercamientos de la sección de técnica (recorte, título y texto) |
 | `datos/curaduria.json` | Recomendaciones de la curaduría: fotos que faltan y fotos que conviene repetir |
 | `datos/album-catalogo.json` | Clasificación del álbum: qué pieza es cada foto, su certeza, fusiones, duplicados y salas |
