@@ -135,12 +135,14 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 
 Lo inspiró la sección «So bright and so soft» de [elgato.com/us/en/p/key-light](https://www.elgato.com/us/en/p/key-light). Allí no es un zoom: es una secuencia de 243 cuadros renderizados (1920×1080; en el teléfono, 235 verticales). Se dibujan en un `<canvas>` fijo (`position: sticky`) dentro de una sección de 1300vh, y GSAP ScrollTrigger (`scrub`) elige el cuadro según el scroll. Algunos cuadros se repiten 20 veces para que la imagen se detenga mientras aparece cada texto. Para hacer eso aquí haría falta un video de una máscara girando, cortado en cuadros.
 
-Antes de usar el prototipo en el sitio, hay que arreglar lo que encontraron dos revisiones (26 de octubre de 2026):
-- [ ] La pista «Desliza», aunque ya no se ve, tapa el enlace «Ver en la galería» en el teléfono: `pointer-events: none`. El texto que todavía no aparece también recibe toques: `pointer-events: none` hasta que se vea.
-- [ ] En el teléfono, cuando se esconde la barra del navegador queda una franja crema bajo la escena oscura. El fondo de la sección tiene que oscurecerse junto con la escena.
-- [ ] Al fijarse la escena hay casi media pantalla de scroll sin cambio visible. Que la máscara empiece a crecer en cuanto se fija, con una curva que arranque rápido.
-- [ ] El paso del crema al oscuro se ve gris lodoso. Mejor una cortina oscura que suba desde abajo (con `transform`, sin fundido), y que la sombra bajo el texto aparezca con el texto.
-- [ ] En teléfonos chicos y tabletas el texto tapa la barba: la caja debe dejar lugar al texto debajo. En laptops 16:10 la máscara se queda a 16–40 px de la altura completa: altura completa a partir de 3:2.
-- [ ] Al girar el teléfono a mitad del recorrido se pierde el punto de la animación. Un enlace a un ancla dentro de la sección deja el texto invisible.
-- [ ] Si se pone en el sitio, el encabezado fijo (4rem) tapa la parte de arriba de la escena: fijar la escena debajo del encabezado o esconderlo mientras dura.
-- [ ] Las fotos son de 1200×1600 (de WhatsApp): en pantallas retina grandes y en el iPad Pro se ven un poco suaves.
+Las dos revisiones del 26 de octubre de 2026 encontraron estos errores. Ya están arreglados y comprobados en el navegador:
+- [x] La pista «Desliza» y el texto que todavía no aparece ya no reciben toques (`pointer-events`): el enlace «Ver en la galería» se puede tocar.
+- [x] Ya no queda una franja crema en el teléfono cuando se esconde la barra del navegador: la sección se oscurece con la escena.
+- [x] La máscara empieza a crecer en cuanto se fija la escena, con una curva que arranca rápido.
+- [x] Sin gris lodoso: el fondo oscuro sube como una cortina desde abajo, y la sombra bajo el texto aparece con el texto.
+- [x] En vertical, la caja deja lugar al texto (en teléfonos chicos lo pisa poco y con sombra). De 3:2 en adelante, la máscara ocupa toda la altura.
+- [x] Al girar el teléfono se conserva el punto de la animación. Un ancla dentro de la sección o el foco del teclado llevan al final, con el texto visible.
+- [x] El encabezado fijo del sitio se esconde mientras la escena está fija y vuelve al salir. La prueba usa el mismo encabezado que el sitio.
+
+Queda pendiente:
+- [ ] Las fotos son de 1200×1600 (de WhatsApp): en pantallas retina grandes y en el iPad Pro se ven un poco suaves. Hace falta el original de la foto.

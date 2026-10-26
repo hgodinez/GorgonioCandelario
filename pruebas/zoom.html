@@ -16,38 +16,43 @@
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
   </script>
   <style>
-    .aviso { background: var(--tinta); color: #d8ccbb; font-size: 0.9rem; text-align: center; padding: 0.5rem var(--margen); }
+    .aviso { background: var(--tinta); color: #d8ccbb; font-size: 0.9rem; text-align: center; padding: 0.5rem var(--margen); margin: 0; }
     .aviso a { color: var(--cempasuchil); }
-    .cabeza { border-bottom: 1px solid var(--borde); }
-    .cabeza .contenedor { display: flex; align-items: center; min-height: 4rem; }
 
-    .intro { padding: clamp(3rem, 9vw, 6rem) 0 clamp(2rem, 5vw, 3rem); }
+    .intro { padding: clamp(3rem, 9vw, 6rem) 0 clamp(1rem, 3vw, 2rem); }
     .intro h1 { font-size: clamp(2.1rem, 6vw, 3.6rem); max-width: 18ch; }
     .intro p { max-width: 40rem; font-size: 1.15rem; color: var(--tinta-suave); }
 
-    /* El acercamiento: la sección es alta para dar recorrido; la escena se queda fija mientras tanto */
+    /* El acercamiento. Mientras la escena está fija, el encabezado del sitio se esconde hacia arriba para dejarle toda la pantalla */
     .zoom { position: relative; }
     .zoom-escena {
-      position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden;
+      --alto-escena: 100svh;
+      position: relative; min-height: var(--alto-escena); overflow: hidden;
       display: grid; place-items: center; background: var(--papel);
     }
     .zoom-velo { position: absolute; inset: 0; background: var(--tinta); }
+    /* En vertical la caja deja abajo unos 11rem para el texto (en teléfonos chicos el texto pisa un poco la foto, con sombra) */
     .zoom-caja {
-      position: relative; z-index: 1; overflow: hidden; margin: 0;
-      width: min(100%, 75svh); aspect-ratio: 3 / 4; align-self: start;
+      position: relative; z-index: 1;
+      width: min(100%, calc((var(--alto-escena) - 11rem) * 0.75)); aspect-ratio: 3 / 4; align-self: start;
       transform-origin: 50% 50%; will-change: transform;
-      background: #2a211b;
     }
-    .zoom-caja img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 42%; will-change: transform; }
+    /* La sombra de la tarjeta se desvanece con opacidad (no se vuelve a pintar en cada cuadro) */
+    .zoom-caja::before {
+      content: ""; position: absolute; inset: 0; border-radius: var(--radio-caja, 0);
+      box-shadow: 0 24px 48px rgba(28, 22, 18, 0.28); opacity: var(--sombra, 0); will-change: opacity;
+    }
+    .zoom-foto { position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radio-caja, 0); background: #2a211b; }
+    .zoom-foto img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 42%; will-change: transform; color: #e9dfcf; font-size: 0.95rem; }
     .zoom-texto {
-      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
-      padding: 5rem var(--margen) max(1.75rem, env(safe-area-inset-bottom));
+      position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: 100%; overflow-y: auto;
+      padding: 2.5rem var(--margen) max(1.5rem, env(safe-area-inset-bottom));
       color: var(--blanco);
     }
-    /* sombra bajo el texto: aparece junto con el fondo oscuro (--oscuro va de 0 a 1) */
+    /* sombra bajo el texto, por si el texto pasa sobre la foto: aparece junto con el texto (--texto va de 0 a 1) */
     .zoom-texto::before {
-      content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--oscuro, 1);
-      background: linear-gradient(rgba(28, 22, 18, 0), rgba(28, 22, 18, 0.88) 42%);
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--texto, 1);
+      background: linear-gradient(rgba(28, 22, 18, 0), rgba(28, 22, 18, 0.88) 2.5rem);
     }
     .zoom-texto .antetitulo { color: var(--cempasuchil); margin-bottom: 0.4rem; }
     .zoom-texto h2 { margin-bottom: 0.3em; }
@@ -57,7 +62,7 @@
     .zoom-pista {
       position: absolute; z-index: 2; left: 0; right: 0; bottom: max(1.25rem, env(safe-area-inset-bottom));
       text-align: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--tinta-suave);
+      color: var(--tinta-suave); pointer-events: none;
     }
     .zoom-pista::after { content: ""; display: block; width: 1px; height: 2rem; margin: 0.5rem auto 0; background: currentColor; }
     @media (max-height: 500px) { .zoom-pista { display: none; } }
@@ -65,17 +70,23 @@
     /* Pantalla horizontal: la máscara a la izquierda y el texto a la derecha, sobre el fondo oscuro */
     @media (min-aspect-ratio: 1 / 1) {
       .zoom-escena { grid-template-columns: auto minmax(0, 30rem); justify-content: center; column-gap: clamp(2rem, 5vw, 5rem); }
-      .zoom-caja { width: auto; height: min(100svh, 60vw); align-self: center; }
-      .zoom-texto { position: relative; padding: 0 var(--margen) 0 0; }
+      .zoom-caja { width: auto; height: min(var(--alto-escena), 60vw); align-self: center; }
+      .zoom-texto { position: relative; max-height: var(--alto-escena); padding: 0 var(--margen) 0 0; }
       .zoom-texto::before { display: none; }
     }
+    /* de 3:2 en adelante (laptops 16:10, monitores 16:9) la máscara ocupa toda la altura */
+    @media (min-aspect-ratio: 3 / 2) {
+      .zoom-caja { height: var(--alto-escena); }
+    }
 
-    /* Activo (sin «reducir movimiento»): la escena se fija y lo que aparece empieza oculto */
+    /* Activo (sin «reducir movimiento»): la escena se fija; el fondo oscuro espera abajo y el texto empieza oculto */
     .zoom-activo .zoom { height: 400vh; height: 400svh; }
-    .zoom-activo .zoom-escena { position: sticky; top: 0; height: 100vh; height: 100svh; }
-    .zoom-activo .zoom-velo,
-    .zoom-activo .zoom-texto > * { opacity: 0; }
-    .zoom-activo .zoom-texto > * { will-change: opacity, transform; }
+    .zoom-activo .zoom-escena { position: sticky; top: 0; height: 100vh; height: var(--alto-escena); }
+    .zoom-activo .encabezado { transition: transform 0.3s ease; }
+    .zoom-activo .encabezado.oculto:not(:focus-within) { transform: translateY(-100%); }
+    .zoom-activo .zoom-velo { transform: translateY(100%); will-change: transform; }
+    .zoom-activo .zoom-texto > * { opacity: 0; pointer-events: none; will-change: opacity, transform; }
+    .zoom-activo .zoom-texto::before { opacity: var(--texto, 0); }
     html:not(.zoom-activo) .zoom-pista { display: none; }
 
     .despues { padding: clamp(3rem, 8vw, 5rem) 0; }
@@ -84,7 +95,7 @@
 </head>
 <body>
   <p class="aviso">Página de prueba, no enlazada desde el sitio. <a href="../index.html">Volver al sitio</a></p>
-  <header class="cabeza">
+  <header class="encabezado">
     <div class="contenedor">
       <a class="marca" href="../index.html">
         <svg viewBox="0 0 64 64" aria-hidden="true"><g><path d="M32 3C16 3 8 14 8 28c0 17 11 33 24 33s24-16 24-33C56 14 48 3 32 3z" fill="#b9321c"/><path d="M14 18c5-6 11-9 18-9s13 3 18 9" fill="none" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M17 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><path d="M36 24c4-3 7-3 11 0" fill="none" stroke="#17807f" stroke-width="3" stroke-linecap="round"/><ellipse cx="22.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><ellipse cx="41.5" cy="31" rx="6" ry="4.2" fill="#fffaf0"/><circle cx="22.5" cy="31" r="2.4" fill="#1c1612"/><circle cx="41.5" cy="31" r="2.4" fill="#1c1612"/><path d="M32 27v15" stroke="#e8a01a" stroke-width="4" stroke-linecap="round"/><path d="M23 49c6 4 12 4 18 0" fill="none" stroke="#1c1612" stroke-width="3" stroke-linecap="round"/></g></svg>
@@ -98,19 +109,21 @@
       <div class="contenedor">
         <p class="antetitulo">Prueba de diseño</p>
         <h1>Acercamiento al hacer scroll</h1>
-        <p>Al bajar, la máscara empieza como una tarjeta y crece hasta llenar la pantalla; después aparece lo que dice Don Gorgonio de ella.</p>
+        <p>Al bajar, la máscara empieza como una tarjeta y crece hasta su tamaño completo; después aparece lo que dice Don Gorgonio de ella.</p>
       </div>
     </section>
 
     <section class="zoom" aria-labelledby="zoom-titulo">
       <div class="zoom-escena">
         <div class="zoom-velo" aria-hidden="true"></div>
-        <figure class="zoom-caja">
-          <picture>
-            <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-            <img src="../img/galeria/a025.jpg" width="1200" height="1600" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
-          </picture>
-        </figure>
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a025.jpg" width="1200" height="1600" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
+            </picture>
+          </figure>
+        </div>
         <div class="zoom-texto">
           <p class="antetitulo">Máscara de adorno</p>
           <h2 id="zoom-titulo">El Tiempo</h2>
@@ -133,6 +146,7 @@
   <script>
     (function () {
       var raiz = document.documentElement;
+      var encabezado = document.querySelector(".encabezado");
       var seccion = document.querySelector(".zoom");
       var escena = seccion.querySelector(".zoom-escena");
       var caja = seccion.querySelector(".zoom-caja");
@@ -140,10 +154,12 @@
       var velo = seccion.querySelector(".zoom-velo");
       var pista = seccion.querySelector(".zoom-pista");
       var textos = seccion.querySelectorAll(".zoom-texto > *");
-      var inicio = null, pendiente = false;
+      var inicio = null, pendiente = false, ultimoP = 0, anchoPrevio = innerWidth;
 
+      function activo() { return raiz.classList.contains("zoom-activo"); }
       function tramo(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
       function suave(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+      function arranque(t) { return 1 - Math.pow(1 - t, 3); }  // empieza rápido y llega despacio
 
       // La caja está en su lugar final; se mide para saber cuánto encogerla y moverla al principio (como tarjeta)
       function medir() {
@@ -153,54 +169,97 @@
         inicio = {
           escala: ancho / r.width,
           dx: e.left + e.width / 2 - (r.left + r.width / 2),
-          dy: e.top + e.height * 0.47 - (r.top + r.height / 2)
+          dy: e.top + e.height * 0.42 - (r.top + r.height / 2)
         };
+      }
+
+      function recorrido() { return seccion.offsetHeight - escena.offsetHeight; }
+      function inicioSeccion() { return seccion.getBoundingClientRect().top + scrollY; }
+
+      // Salta sin animación (estilos.css pone scroll-behavior: smooth en html)
+      function saltar(y) {
+        raiz.style.scrollBehavior = "auto";
+        scrollTo(0, y);
+        raiz.style.scrollBehavior = "";
       }
 
       function pintar() {
         pendiente = false;
-        if (!raiz.classList.contains("zoom-activo")) return;
-        var recorrido = seccion.offsetHeight - escena.offsetHeight;
-        var p = recorrido > 0 ? tramo(-seccion.getBoundingClientRect().top, 0, recorrido) : 1;
-        var c = suave(tramo(p, 0.06, 0.5));
+        if (!activo()) return;
+        var largo = recorrido(), arriba = seccion.getBoundingClientRect().top;
+        var p = largo > 0 ? tramo(-arriba, 0, largo) : 1;
+        // el encabezado del sitio se esconde mientras la escena está fija y vuelve cuando ya se fue un cuarto de ella
+        if (encabezado) encabezado.classList.toggle("oculto", arriba <= 0 && arriba >= -largo - escena.offsetHeight / 4);
+        ultimoP = p;
+        // crece en cuanto la escena se fija, sin un tramo muerto al principio
+        var c = arranque(tramo(p, 0, 0.45));
         var s = inicio.escala + (1 - inicio.escala) * c;
         caja.style.transform = "translate3d(" + (inicio.dx * (1 - c)).toFixed(1) + "px," + (inicio.dy * (1 - c)).toFixed(1) + "px,0) scale(" + s.toFixed(4) + ")";
-        caja.style.borderRadius = (14 * (1 - c) / s).toFixed(1) + "px";
-        caja.style.boxShadow = c < 1 ? "0 " + (24 / s).toFixed(0) + "px " + (48 / s).toFixed(0) + "px rgba(28,22,18," + (0.28 * (1 - c)).toFixed(2) + ")" : "none";
-        foto.style.transform = "scale(" + (1 + 0.1 * suave(tramo(p, 0.5, 1))).toFixed(4) + ")";
-        // el fondo se oscurece hasta el final del crecimiento, para no pasar por un gris lodoso
+        caja.style.setProperty("--radio-caja", (14 * (1 - c) / s).toFixed(1) + "px");
+        caja.style.setProperty("--sombra", (1 - c).toFixed(3));
+        foto.style.transform = "scale(" + (1 + 0.06 * suave(tramo(p, 0.45, 1))).toFixed(4) + ")";
+        // el fondo oscuro sube como cortina desde abajo, sin pasar por un gris; la sección se oscurece con él
+        // para que no quede una franja crema abajo cuando el teléfono esconde la barra del navegador
         var oscuro = suave(tramo(c, 0.55, 1));
-        velo.style.opacity = oscuro.toFixed(3);
-        escena.style.setProperty("--oscuro", oscuro.toFixed(3));
-        pista.style.opacity = (1 - tramo(p, 0.01, 0.08)).toFixed(3);
+        velo.style.transform = "translate3d(0," + ((1 - oscuro) * 100).toFixed(2) + "%,0)";
+        seccion.style.backgroundColor = oscuro > 0 ? "var(--tinta)" : "";
+        pista.style.opacity = (1 - tramo(c, 0.03, 0.2)).toFixed(3);
+        var primero = 0;
         for (var i = 0; i < textos.length; i++) {
-          var t = suave(tramo(p, 0.48 + i * 0.07, 0.6 + i * 0.07));
+          var t = suave(tramo(p, 0.45 + i * 0.06, 0.55 + i * 0.06));
+          if (i === 0) primero = t;
           textos[i].style.opacity = t.toFixed(3);
           textos[i].style.transform = "translate3d(0," + ((1 - t) * 16).toFixed(1) + "px,0)";
+          textos[i].style.pointerEvents = t > 0.5 ? "auto" : "";  // lo que no se ve no recibe toques
         }
+        escena.style.setProperty("--texto", primero.toFixed(3));
       }
 
       function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }
       function rehacer() { medir(); pintar(); }
 
+      // Lleva al final del acercamiento, donde ya se ve todo el texto
+      function irAlFinal() {
+        if (!activo()) return;
+        var fin = inicioSeccion() + recorrido();
+        if (Math.abs(scrollY - fin) > 2) saltar(fin);
+      }
+
       // Si cambia la preferencia de movimiento, se quita o se vuelve a poner el efecto
       var quieto = matchMedia("(prefers-reduced-motion: reduce)");
       function preferencia() {
         raiz.classList.toggle("zoom-activo", !quieto.matches);
-        [escena, caja, foto, velo, pista].concat([].slice.call(textos)).forEach(function (el) { el.removeAttribute("style"); });
+        [seccion, escena, caja, foto, velo, pista].concat([].slice.call(textos)).forEach(function (el) { el.removeAttribute("style"); });
+        if (encabezado) encabezado.classList.remove("oculto");
         if (!quieto.matches) rehacer();
       }
       if (quieto.addEventListener) quieto.addEventListener("change", preferencia);
 
-      if (raiz.classList.contains("zoom-activo")) rehacer();
-      addEventListener("scroll", pedir, { passive: true });
-      // con teclado: si el enlace recibe el foco antes de verse, se baja hasta el final del acercamiento
-      escena.addEventListener("focusin", function () {
-        if (!raiz.classList.contains("zoom-activo")) return;
-        var fin = seccion.getBoundingClientRect().top + scrollY + seccion.offsetHeight - escena.offsetHeight;
-        if (scrollY < fin - 2) scrollTo(0, fin);
+      // Al cambiar el ancho (girar el teléfono) se conserva el punto de la animación.
+      // Si solo cambia el alto (la barra del navegador), no se mueve el scroll para no pelear con la inercia.
+      addEventListener("resize", function () {
+        if (!activo()) return;
+        var p = ultimoP, girado = innerWidth !== anchoPrevio;
+        anchoPrevio = innerWidth;
+        rehacer();
+        if (girado && p > 0 && p < 1) { saltar(inicioSeccion() + p * recorrido()); pintar(); }
       });
-      addEventListener("resize", function () { if (raiz.classList.contains("zoom-activo")) rehacer(); });
+
+      // Con teclado, o con un enlace a un ancla dentro de la sección: se baja al final para que el texto se vea
+      escena.addEventListener("focusin", irAlFinal);
+      function revisarAncla() {
+        var destino = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (destino && seccion.contains(destino)) irAlFinal();
+      }
+      addEventListener("hashchange", revisarAncla);
+      // el navegador vuelve a bajar al ancla mientras termina de cargar: se corrige después de que lo hace
+      addEventListener("load", function () { setTimeout(revisarAncla, 60); });
+
+      if (activo()) rehacer();
+      revisarAncla();
+      addEventListener("scroll", pedir, { passive: true });
+      // las fuentes cambian la altura de la intro: se vuelve a medir cuando cargan
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (activo()) rehacer(); });
     })();
   </script>
 </body>
