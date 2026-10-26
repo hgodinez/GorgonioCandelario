@@ -252,7 +252,7 @@ Contestó desde su teléfono, de 20:18 a 22:58 (hora de Colima), 37 de las 126 m
 
 ### Revisión de nombres y salas (26 de octubre de 2026)
 Humberto pidió quitar los signos de interrogación y las frases de «todavía no sabemos» de la galería. Cada pieza sin confirmar se comparó con las 37 que confirmó Don Gorgonio y las 7 que confirmó la familia: la especie va en el nombre cuando la talla es la de una pieza confirmada o el animal es inconfundible. Si no, el nombre sigue siendo neutral. Esto es lo que cambió:
-- **Misma máscara:** a138 y a063 son la misma pieza, fotografiada del mismo lado (a063 se veía girada 90°). Ahora es una sola, «Felino manchado de orejas rojas», y la galería queda en 125 piezas.
+- **Misma máscara:** a138 y a063 son la misma pieza, fotografiada del mismo lado (a138 se veía girada 90°: el jaguar cuelga de la pared, no está acostado). Ahora es una sola, «Felino manchado de orejas rojas», y la galería queda en 125 piezas.
 - **Cambio de sala:** el felino anaranjado moteado (a068) pasó de la danza a los felinos. Su talla no es la del ocelote que confirmó Don Gorgonio (27).
 - **Perros:** los tres cánidos negros (a053, a136, a076) tienen la talla del perro xoloitzcuintle que él confirmó (14). Ahora son «Perro xoloitzcuintle de ojos cafés / de nariz gris / de nariz café», y el de líneas blancas (a059) es «Coyote negro de líneas blancas».
 - **Felinos:** «Jaguar amarillo de rosetas» (a058) y «Pantera negra de ojos amarillos / de ojos verdes» (a037, a048). En las piezas compuestas: «Lince, búho y jaguar», «Búho sobre jaguar amarillo» y «Búho sobre tigre blanco».

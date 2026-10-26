@@ -67,9 +67,10 @@ EXTRAS = {
     'a051c': ('a051', (856, 166, 1272, 1114)),  # el coyote del collage de tres máscaras (las otras dos ya están en la galería)
 }
 
-# fotos que el álbum trae giradas: id -> grados en sentido contrario a las manecillas del reloj
+# fotos que el álbum trae giradas: id -> grados (negativos: en el sentido de las manecillas del reloj)
 GIRAR = {
-    'a063': 90,   # el jaguar está acostado de lado sobre una mesa (la misma toma que a138)
+    'a138': -90,  # el jaguar cuelga de una pared amarilla bajo un techo de lámina, como en a063
+    'a140': -90,  # el águila está parada sobre una sábana blanca en el piso
 }
 
 def abrir(fid):

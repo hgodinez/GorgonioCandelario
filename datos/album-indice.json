@@ -446,8 +446,7 @@
    "archivo": "IMG-20250829-WA0081.jpg",
    "w": 1200,
    "h": 1600,
-   "ya_en_sitio": null,
-   "limpia": "fotos/limpias/a063.jpg"
+   "ya_en_sitio": null
   },
   {
    "id": "a064",
@@ -974,7 +973,8 @@
    "archivo": "IMG-20250829-WA0157.jpg",
    "w": 1600,
    "h": 1200,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a138.jpg"
   },
   {
    "id": "a139",
@@ -988,7 +988,8 @@
    "archivo": "IMG-20250829-WA0159.jpg",
    "w": 720,
    "h": 1280,
-   "ya_en_sitio": null
+   "ya_en_sitio": null,
+   "limpia": "fotos/limpias/a140.jpg"
   },
   {
    "id": "a141",
