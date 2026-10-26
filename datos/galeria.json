@@ -19,9 +19,6 @@
     "coyote-amarillo-anillos",
     "coyote-amarillo-orejas-verdes",
     "coyote-negro-lineas-blancas",
-    "canido-negro-ojos-cafes",
-    "canido-negro-nariz-gris",
-    "canido-negro-ojos-rojos",
     "chivo-rojo",
     "chivo-rojo-antifaz-amarillo",
     "chivo-rojo-franjas-diagonales",
@@ -43,6 +40,9 @@
     "gallo-anaranjado",
     "perro-blanco-mancha",
     "canido-negro-boca-abierta",
+    "canido-negro-ojos-cafes",
+    "canido-negro-nariz-gris",
+    "canido-negro-ojos-rojos",
     "lince-naturalista",
     "buho-azul",
     "chivo-morado"
@@ -75,10 +75,7 @@
       "coyote-blanco-anillos",
       "coyote-amarillo-anillos",
       "coyote-amarillo-orejas-verdes",
-      "coyote-negro-lineas-blancas",
-      "canido-negro-ojos-cafes",
-      "canido-negro-nariz-gris",
-      "canido-negro-ojos-rojos"
+      "coyote-negro-lineas-blancas"
      ]
     },
     {
@@ -137,7 +134,10 @@
      "nota": "La fidelidad y la compañía",
      "piezas": [
       "perro-blanco-mancha",
-      "canido-negro-boca-abierta"
+      "canido-negro-boca-abierta",
+      "canido-negro-ojos-cafes",
+      "canido-negro-nariz-gris",
+      "canido-negro-ojos-rojos"
      ]
     }
    ]
@@ -287,7 +287,7 @@
    "id": "bestiario",
    "titulo": "Bestiario",
    "subtitulo": "Venados, toros, jirafas, cebras y otros animales",
-   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.",
+   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Don Gorgonio crea diseños nuevos a partir de los tradicionales; él lo llama «lo tradicional con innovación».",
    "piezas": [
     "venado-astas-negras",
     "venado-astas-azules",
@@ -427,36 +427,6 @@
    "principal": "a059",
    "categoria": "danza-coyote",
    "certeza": "media"
-  },
-  "canido-negro-ojos-cafes": {
-   "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)",
-   "descripcion": "Máscara negra brillante con mejillas blancas, línea amarilla del centro de la frente a la nariz, orejas anaranjadas y verde olivo, pequeñas bandas de arcoíris sobre los ojos y en el hocico, ojos cafés y nariz roja.",
-   "fotos": [
-    "a053"
-   ],
-   "principal": "a053",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "canido-negro-nariz-gris": {
-   "nombre": "Cánido negro de nariz gris (¿coyote o perro?)",
-   "descripcion": "Máscara negra con orejas anaranjada y verde, cejas anchas en franjas azul, roja, amarilla y azul marino, línea amarilla de la frente al hocico, banda de arcoíris sobre el hocico, mejilla blanca y nariz gris oscuro.",
-   "fotos": [
-    "a136"
-   ],
-   "principal": "a136",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
-  },
-  "canido-negro-ojos-rojos": {
-   "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)",
-   "descripcion": "Máscara negra con mejillas blancas, orejas verdes y amarillas, línea amarilla al centro de la frente, banda de arcoíris en V sobre el hocico, ojos de iris rojo y nariz café.",
-   "fotos": [
-    "a076"
-   ],
-   "principal": "a076",
-   "categoria": "danza-coyote",
-   "certeza": "baja"
   },
   "chivo-rojo": {
    "nombre": "Chivo rojo",
@@ -672,6 +642,36 @@
    "principal": "a157",
    "categoria": "danza-perro",
    "certeza": "confirmada-maestro"
+  },
+  "canido-negro-ojos-cafes": {
+   "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)",
+   "descripcion": "Máscara negra brillante con mejillas blancas, línea amarilla del centro de la frente a la nariz, orejas anaranjadas y verde olivo, pequeñas bandas de arcoíris sobre los ojos y en el hocico, ojos cafés y nariz roja.",
+   "fotos": [
+    "a053"
+   ],
+   "principal": "a053",
+   "categoria": "danza-perro",
+   "certeza": "baja"
+  },
+  "canido-negro-nariz-gris": {
+   "nombre": "Cánido negro de nariz gris (¿coyote o perro?)",
+   "descripcion": "Máscara negra con orejas anaranjada y verde, cejas anchas en franjas azul, roja, amarilla y azul marino, línea amarilla de la frente al hocico, banda de arcoíris sobre el hocico, mejilla blanca y nariz gris oscuro.",
+   "fotos": [
+    "a136"
+   ],
+   "principal": "a136",
+   "categoria": "danza-perro",
+   "certeza": "baja"
+  },
+  "canido-negro-ojos-rojos": {
+   "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)",
+   "descripcion": "Máscara negra con mejillas blancas, orejas verdes y amarillas, línea amarilla al centro de la frente, banda de arcoíris en V sobre el hocico, ojos de iris rojo y nariz café.",
+   "fotos": [
+    "a076"
+   ],
+   "principal": "a076",
+   "categoria": "danza-perro",
+   "certeza": "baja"
   },
   "lince-naturalista": {
    "nombre": "Lince naturalista",
@@ -1703,21 +1703,6 @@
    "descripcion": "",
    "recorte": false
   },
-  "a053": {
-   "alt": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
-   "descripcion": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, una línea amarilla al centro y la nariz roja.",
-   "recorte": false
-  },
-  "a136": {
-   "alt": "Máscara de cánido negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
-   "descripcion": "Máscara de cánido negra, de orejas verdes y amarillas, con cejas y una banda de arcoíris sobre el hocico.",
-   "recorte": false
-  },
-  "a076": {
-   "alt": "Máscara de cánido negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
-   "descripcion": "Coyote de rostro negro y mejillas blancas, con bandas de arcoíris que cruzan el hocico como bigotes y orejas verdes y amarillas.",
-   "recorte": false
-  },
   "a047": {
    "alt": "Máscara de chivo roja y amarilla con cuernos largos negros con rayas blancas y barba de fibra clara",
    "descripcion": "Chivo de la Danza de los Morenos, rojo y amarillo, con largos cuernos negros rayados de blanco y barba de fibra.",
@@ -1846,6 +1831,21 @@
   "a157": {
    "alt": "Máscara de perro xoloitzcuintle negro con franjas de arcoíris en ceja y hocico, orejas verdes y colmillos",
    "descripcion": "Máscara de cánido negro de hocico largo con franjas de arcoíris en la ceja y el hocico, orejas verdes y amarillas y boca abierta con colmillos.",
+   "recorte": false
+  },
+  "a053": {
+   "alt": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
+   "descripcion": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, una línea amarilla al centro y la nariz roja.",
+   "recorte": false
+  },
+  "a136": {
+   "alt": "Máscara de cánido negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
+   "descripcion": "Máscara de cánido negra, de orejas verdes y amarillas, con cejas y una banda de arcoíris sobre el hocico.",
+   "recorte": false
+  },
+  "a076": {
+   "alt": "Máscara de cánido negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
+   "descripcion": "Coyote de rostro negro y mejillas blancas, con bandas de arcoíris que cruzan el hocico como bigotes y orejas verdes y amarillas.",
    "recorte": false
   },
   "a054": {
@@ -2487,9 +2487,6 @@
   "a123": "coyote-amarillo-orejas-verdes",
   "a059": "coyote-negro-lineas-blancas",
   "a059b": "coyote-negro-lineas-blancas",
-  "a053": "canido-negro-ojos-cafes",
-  "a136": "canido-negro-nariz-gris",
-  "a076": "canido-negro-ojos-rojos",
   "a047": "chivo-rojo",
   "a088": "chivo-rojo-antifaz-amarillo",
   "a028": "chivo-rojo-franjas-diagonales",
@@ -2516,6 +2513,9 @@
   "a163": "gallo-anaranjado",
   "a144": "perro-blanco-mancha",
   "a157": "canido-negro-boca-abierta",
+  "a053": "canido-negro-ojos-cafes",
+  "a136": "canido-negro-nariz-gris",
+  "a076": "canido-negro-ojos-rojos",
   "a054": "lince-naturalista",
   "a050": "buho-azul",
   "a089": "chivo-morado",

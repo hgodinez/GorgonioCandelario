@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll): no publicar lo interno. La encuesta (preguntas/) y el sitio siguen publicándose.
+exclude:
+  - README.md
+  - netlify.toml
+  - investigacion
+  - datos
+  - herramientas
+  - fotos

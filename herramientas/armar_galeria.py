@@ -193,6 +193,10 @@ NOMBRES_DON_GORGONIO = {
 # pieza -> (sala, categoría): las que según él son de la danza entran a su pareja; las de adorno salen de la danza
 MOVER = {
     'canido-negro-boca-abierta': ('danza-de-los-morenos', 'danza-perro'),
+    # mismo diseño que el perro xoloitzcuintle que identificó Don Gorgonio (decisión de Humberto, 25-oct-2026)
+    'canido-negro-ojos-cafes': ('danza-de-los-morenos', 'danza-perro'),
+    'canido-negro-nariz-gris': ('danza-de-los-morenos', 'danza-perro'),
+    'canido-negro-ojos-rojos': ('danza-de-los-morenos', 'danza-perro'),
     'lince-naturalista': ('danza-de-los-morenos', 'danza-lince-ocelote'),
     'buho-azul': ('danza-de-los-morenos', 'danza-tecolote'),
     'chivo-morado': ('danza-de-los-morenos', 'danza-chivo'),
@@ -254,7 +258,7 @@ SALAS = {
     'felinos': {'texto': 'Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es de la danza, un nahual —como el nahual negro, de cara felina— o una pieza aparte.'},
     'pelaje-de-pincel': {'subtitulo': 'Un zorro, un lobo y otros animales de hocico largo',
         'texto': 'En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, y una tiene grandes orejas de arcoíris. Don Gorgonio identificó un zorro y un lobo, los dos de adorno; de las demás todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.'},
-    'bestiario': {'texto': 'Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Según AmoMéxico, el maestro crea diseños nuevos a partir de los tradicionales.'},
+    'bestiario': {'texto': 'Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Don Gorgonio crea diseños nuevos a partir de los tradicionales; él lo llama «lo tradicional con innovación».'},
 }
 for slug, nombre in list(NOMBRES.items()) + list(NOMBRES_DON_GORGONIO.items()):
     if slug in piezas: piezas[slug]['nombre'] = nombre

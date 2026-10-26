@@ -282,6 +282,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .visor .visor-anterior, .visor .visor-siguiente { background: rgba(16, 12, 10, 0.72); border-color: rgba(255, 250, 240, 0.6); }
 .visor .visor-anterior:hover, .visor .visor-siguiente:hover { background: rgba(16, 12, 10, 0.9); }
 @media (max-width: 600px) {
+  .visor[open] { grid-template-rows: auto minmax(min(16rem, 45dvh), 1fr) auto; }
   .visor-imagen { padding: 0 0.5rem 3.5rem; }
   .visor-anterior, .visor-siguiente { top: auto; bottom: 0.5rem; transform: none; }
 }
