@@ -128,3 +128,19 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] Quién tomó las fotos de don Gorgonio y de don Herminio, y si se pueden usar. El retrato frente a la pared azul parece de un fotógrafo profesional, y la foto en la que pinta es un cuadro de un video.
 - [ ] De dónde viene la transcripción del testimonio de don Gorgonio, para dar el crédito de sus citas (ver `investigacion/testimonio-don-gorgonio.md`).
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.
+
+## Idea guardada: acercamiento al hacer scroll
+
+`pruebas/zoom.html` es un prototipo, sin decidir si vale la pena. La máscara de El Tiempo empieza como una tarjeta y crece hasta su tamaño completo mientras la escena se queda fija. Después se oscurece el fondo y aparece lo que dice Don Gorgonio de ella. No está enlazado desde el sitio, tiene `noindex` y Netlify no lo publica. En GitHub Pages se ve en `/GorgonioCandelario/pruebas/zoom.html`.
+
+Lo inspiró la sección «So bright and so soft» de [elgato.com/us/en/p/key-light](https://www.elgato.com/us/en/p/key-light). Allí no es un zoom: es una secuencia de 243 cuadros renderizados (1920×1080; en el teléfono, 235 verticales). Se dibujan en un `<canvas>` fijo (`position: sticky`) dentro de una sección de 1300vh, y GSAP ScrollTrigger (`scrub`) elige el cuadro según el scroll. Algunos cuadros se repiten 20 veces para que la imagen se detenga mientras aparece cada texto. Para hacer eso aquí haría falta un video de una máscara girando, cortado en cuadros.
+
+Antes de usar el prototipo en el sitio, hay que arreglar lo que encontraron dos revisiones (26 de octubre de 2026):
+- [ ] La pista «Desliza», aunque ya no se ve, tapa el enlace «Ver en la galería» en el teléfono: `pointer-events: none`. El texto que todavía no aparece también recibe toques: `pointer-events: none` hasta que se vea.
+- [ ] En el teléfono, cuando se esconde la barra del navegador queda una franja crema bajo la escena oscura. El fondo de la sección tiene que oscurecerse junto con la escena.
+- [ ] Al fijarse la escena hay casi media pantalla de scroll sin cambio visible. Que la máscara empiece a crecer en cuanto se fija, con una curva que arranque rápido.
+- [ ] El paso del crema al oscuro se ve gris lodoso. Mejor una cortina oscura que suba desde abajo (con `transform`, sin fundido), y que la sombra bajo el texto aparezca con el texto.
+- [ ] En teléfonos chicos y tabletas el texto tapa la barba: la caja debe dejar lugar al texto debajo. En laptops 16:10 la máscara se queda a 16–40 px de la altura completa: altura completa a partir de 3:2.
+- [ ] Al girar el teléfono a mitad del recorrido se pierde el punto de la animación. Un enlace a un ancla dentro de la sección deja el texto invisible.
+- [ ] Si se pone en el sitio, el encabezado fijo (4rem) tapa la parte de arriba de la escena: fijar la escena debajo del encabezado o esconderlo mientras dura.
+- [ ] Las fotos son de 1200×1600 (de WhatsApp): en pantallas retina grandes y en el iPad Pro se ven un poco suaves.
