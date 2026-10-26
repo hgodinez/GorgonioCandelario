@@ -9,7 +9,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | Carpeta / archivo | Contenido |
 |---|---|
 | `index.html` | La página principal: el maestro, la danza, la técnica, una muestra de la galería, reconocimientos, videos y el taller |
-| `galeria.html` | La galería completa: 126 piezas en 11 salas, con el desfile de máscaras recortadas |
+| `galeria.html` | La galería completa: 125 piezas en 11 salas, con el desfile de máscaras recortadas |
 | `css/estilos.css` | Estilos (colores, tipografía y diseño adaptable a celular) |
 | `css/galeria.css` | Estilos de la galería (salas oscuras de museo, mosaico y desfile) |
 | `js/sitio.js` | Menú del celular, visor de fotos con sus vistas, desfile, navegación entre salas y videos que se cargan al tocarlos |

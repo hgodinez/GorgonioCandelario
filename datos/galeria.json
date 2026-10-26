@@ -6,7 +6,7 @@
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
    "subtitulo": "Nueve parejas de animales, macho y hembra",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. Las piezas que ya identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás se agruparon por su parecido y esperan confirmación.",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. De casi todos los animales hay aquí más de una máscara. Las que identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás están con la pareja a la que se parecen. Casi todas repiten el diseño de una pieza confirmada: los coyotes de franjas en V y espirales o de anillos, los chivos de cuernos largos, los perros xoloitzcuintles de línea amarilla, la guacamaya de cara verde y el gallo de cara blanca. El perro blanco de mancha café, de talla naturalista, va con los perros.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
@@ -31,7 +31,6 @@
     "lince-franjas-zigzag",
     "lince-manchas",
     "felino-lunares",
-    "felino-moteado",
     "burro-gris",
     "guacamaya-verde",
     "guacamaya-verde-mate",
@@ -101,7 +100,6 @@
       "lince-franjas-zigzag",
       "lince-manchas",
       "felino-lunares",
-      "felino-moteado",
       "lince-naturalista"
      ]
     },
@@ -146,7 +144,7 @@
    "id": "el-tiempo-y-la-noche",
    "titulo": "El Tiempo y La Noche",
    "subtitulo": "Varios rostros bajo una corona de astros",
-   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela: hay Tiempos de los dos usos. El de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El Ocaso, la máscara de sol y luna, representa para él el final del día. Las demás piezas de dos o tres rostros de esta sala esperan todavía la confirmación de la familia.",
+   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela: hay Tiempos de los dos usos. El de diadema dorada de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El de diadema azul es del mismo diseño, con la piel más clara. La Noche de rostros amarillos repite la corona de picos y la media luna con estrella de La Noche, pero sin el lado azul. Según Don Gorgonio, El Ocaso, la máscara de sol y luna, también es de adorno y representa el final del día.",
    "piezas": [
     "el-tiempo",
     "el-tiempo-corona-azul",
@@ -159,7 +157,7 @@
    "id": "nahuales",
    "titulo": "Nahuales",
    "subtitulo": "Entre la persona y el animal",
-   "texto": "Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. Las dos aves negras de pico largo se les parecen, pero aún no están confirmadas.",
+   "texto": "Además de los animales de la danza, Don Gorgonio talla nahuales: según la tradición, personas que pueden transformarse en animal. No forman parte de la Danza de los Morenos. La familia confirmó tres: el blanco de puntos dorados, el negro y el café de larga cabellera. El de plumas crema es del mismo diseño que el café: plumaje de trazos cortos, ojos rodeados de rojo y pico largo. El ave negra de pico largo no tiene cabellera, pero lleva el mismo plumaje pintado y los mismos ojos.",
    "piezas": [
     "nahual-blanco",
     "nahual-negro",
@@ -172,7 +170,7 @@
    "id": "diablos",
    "titulo": "Diablos",
    "subtitulo": "Cuernos, colmillos y lenguas de fuera",
-   "texto": "Fuera de la danza, Don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Uno de ellos es el Diablo el Pecado, que según Don Gorgonio se usa en las pastorelas y representa los siete pecados capitales; de los demás todavía no sabemos en qué fiesta se usó cada uno.",
+   "texto": "Fuera de la danza, Don Gorgonio talla diablos, pastores, ángeles de pastorela y los siete pecados capitales. Sus diablos tienen el rostro rojo, cuernos y colmillos largos, y algunos llevan animales tallados en la frente, alrededor de la cara o bajo la barbilla. Uno de ellos, el de lengua negra, es el Diablo el Pecado, que según Don Gorgonio se usa en las pastorelas y representa los siete pecados capitales. El de lengua roja es del mismo diseño: frente de franjas doradas, dos animalitos moteados sobre las cejas y un marco moteado alrededor de la cara; por eso lleva el mismo nombre. El diablo con toro y felinos se les parece: también tiene la cara enmarcada por una banda moteada, que aquí forman dos felinos.",
    "piezas": [
     "diablo-rojo-lengua",
     "diablo-rojo-oscuro-lengua",
@@ -187,7 +185,7 @@
    "id": "vida-y-muerte",
    "titulo": "Vida y muerte, y otros rostros",
    "subtitulo": "Media cara viva, media calavera",
-   "texto": "En estas máscaras un mismo rostro se parte a lo largo: de un lado, un hombre de barba tallada; del otro, una calavera. Don Gorgonio llama a una de ellas Dualidad vida y muerte, y dice que representa el ciclo de la vida. Las acompañan otros rostros humanos, entre ellos un hombre calvo de barba negra, otro con gorro de sol y luna y uno de dos tonos, cuyos personajes aún no conocemos.",
+   "texto": "En estas máscaras un mismo rostro se parte a lo largo: de un lado, un hombre de barba tallada; del otro, una calavera. Don Gorgonio llama a una de ellas Dualidad vida y muerte, y dice que es de adorno y representa el ciclo de la vida. La azul es del mismo diseño, y la de barba café se le parece mucho. Las acompañan otros rostros humanos: un hombre calvo de barba negra, otro con gorro de astros, y uno partido en dos tonos, sin calavera.",
    "piezas": [
     "vida-muerte-malva",
     "vida-muerte-barba-cafe",
@@ -201,7 +199,7 @@
    "id": "rostros-negros",
    "titulo": "Rostros negros",
    "subtitulo": "Negro brillante, oro y rojo",
-   "texto": "Una serie de rostros negros y brillantes, con detalles dorados, rojos o crema. Unos llevan sobre la cabeza un búho, un ave de alas abiertas o una pequeña calavera; otros, estrellas y lunas doradas. Aún no sabemos qué personaje representa cada uno.",
+   "texto": "Una serie de rostros negros y brillantes, con detalles dorados, rojos o crema. Unos llevan sobre la cabeza un búho, un ave de alas abiertas o una pequeña calavera; otros, estrellas y lunas doradas. El de cresta roja comparte con el nahual negro los ojos anaranjados y los dientes rayados de rojo; el de lengua de fuera, con sus orejas puntiagudas, recuerda a los diablos de lengua de fuera, aunque no tiene cuernos. El de estrellas doradas es del mismo diseño que el de en medio de los tres rostros con astros.",
    "piezas": [
     "rostro-negro-cresta-roja",
     "rostro-negro-tecolote",
@@ -217,7 +215,7 @@
    "id": "seres-encimados",
    "titulo": "Seres encimados",
    "subtitulo": "Un animal sobre otro",
-   "texto": "En estas piezas varios seres comparten una misma máscara: un búho posado sobre un felino manchado o sobre un felino blanco de rayas; un lince, un búho y un felino de rosetas, uno encima del otro; un rostro humano bajo un casco de águila, y una cara lila cubierta por una iguana y serpientes. Aún no sabemos qué representan ni si alguna se usa en una danza.",
+   "texto": "En estas piezas varios seres comparten una misma máscara: un búho posado sobre un jaguar amarillo, sobre un felino anaranjado o sobre un tigre blanco; un lince, un búho y un jaguar, uno encima del otro; un hombre águila, con la cabeza del ave como casco, y una cara lila cubierta por una iguana y serpientes. El jaguar que va debajo del lince y el búho tiene las mismas rosetas negras y los mismos ojos azules que el jaguar anaranjado de rosetas de la sala Felinos, que según Don Gorgonio es de adorno. El tigre blanco se parece al de esa misma sala.",
    "piezas": [
     "lince-buho-jaguar",
     "jaguar-amarillo-con-buho",
@@ -231,24 +229,24 @@
    "id": "felinos",
    "titulo": "Felinos",
    "subtitulo": "Fauces abiertas y piel manchada",
-   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de boca abierta y colmillos. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor; de los demás todavía no sabemos si alguno es de la danza, un nahual —como el nahual negro, de cara felina— o una pieza aparte.",
+   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Los acompañan un jaguar amarillo, con rosetas de anillo como las del anaranjado; un felino manchado de orejas rojas; un felino anaranjado moteado, de boca cerrada pero tallado distinto del ocelote; dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.",
    "piezas": [
     "jaguar-rosetas",
     "felino-fauces-abiertas",
-    "jaguar-orejas-rojas",
     "tigre-anaranjado",
     "tigre-blanco",
     "pantera-negra-ojos-amarillos",
     "pantera-negra-ojos-verdes",
     "felino-multicolor-pastel",
-    "felino-rosetas"
+    "felino-rosetas",
+    "felino-moteado"
    ]
   },
   {
    "id": "aves",
    "titulo": "Aves",
    "subtitulo": "Penachos, picos largos y ojos redondos",
-   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne aves de penacho con plumas de ojos de colores —Don Gorgonio identificó una como pavo real y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas—, un pato, un águila multicolor, un pelícano, un ave de pico ganchudo y varios búhos de rostro gris o plateado. Según Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. De los demás búhos todavía no sabemos si son tecolotes, nahuales u otras piezas.",
+   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne pavos reales, otra guacamaya, varios búhos de rostro gris o plateado, y tres aves que según Don Gorgonio son de adorno: un pato, un águila multicolor y un pelícano. Don Gorgonio identificó como pavo real el de pico dorado y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas. Los otros pavos reales son del mismo diseño, con penacho de plumas de ojos de colores; cambian los colores de la cara, del pico o del penacho. La guacamaya roja y verde no se parece a las de la danza, de cara larga y copete de franjas: tiene la cabeza redonda y el pico ganchudo, y está pintada a pincel seco con trazos como plumas, como el águila multicolor. Según Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. Los búhos de esta sala son de otro diseño, más cercano al natural: cara redonda, ojos grandes y redondos y pico anaranjado o amarillo. Se parecen a los búhos que coronan a los felinos en la sala Seres encimados.",
    "piezas": [
     "pavo-real-pico-anaranjado",
     "pavo-real-pico-dorado",
@@ -270,7 +268,7 @@
    "id": "pelaje-de-pincel",
    "titulo": "Pelaje de pincel",
    "subtitulo": "Un zorro, un lobo y otros animales de hocico largo",
-   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Casi todas son animales de hocico largo, y una tiene grandes orejas de arcoíris. Don Gorgonio identificó un zorro y un lobo, los dos de adorno; de las demás todavía no sabemos qué animal es cada una ni si alguna se usa en la danza.",
+   "texto": "En estas máscaras el pelaje está pintado con pinceladas cortas, casi pelo por pelo, muy distinto del coyote de bigotes de arcoíris de la danza. Don Gorgonio identificó el zorro anaranjado y el lobo gris verdoso, los dos de adorno. El cánido ocre de pinceladas negras y el gris de pinceladas amarillas están tallados igual entre sí, con orejas muy altas y nariz roja, y tienen el pelo de trazos cortos y los ojos verdes del zorro. El animal azul de orejas de arcoíris está pintado con la misma técnica, pero no tiene el diseño del burro de la danza. Los cánidos grises de trazos blancos y de fauces abiertas se parecen al lobo, y los dos naturalistas, el ocre y el café, tienen los mismos ojos de pupila azul.",
    "piezas": [
     "canido-gris-pinceladas",
     "canido-ocre-pinceladas",
@@ -287,7 +285,7 @@
    "id": "bestiario",
    "titulo": "Bestiario",
    "subtitulo": "Venados, toros, jirafas, cebras y otros animales",
-   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. Don Gorgonio crea diseños nuevos a partir de los tradicionales; él lo llama «lo tradicional con innovación».",
+   "texto": "Más allá de la danza, el álbum de la familia incluye venados de grandes astas, toros, jirafas, cebras, mariposas, un elefante, un jabalí, un mandril, un gorila y un chivo multicolor. Don Gorgonio confirmó que el toro café, el toro multicolor de cuernos ondulados, el jabalí, el mandril, el gorila, la mariposa multicolor y el chivo multicolor son de adorno: no se bailan. El toro multicolor de cuernos azules es del mismo diseño que el de cuernos ondulados, y la cebra gris y anaranjada, del mismo que la cebra amarilla y azul. Don Gorgonio crea diseños nuevos a partir de los tradicionales; él lo llama «lo tradicional con innovación».",
    "piezas": [
     "venado-astas-negras",
     "venado-astas-azules",
@@ -418,7 +416,7 @@
    "certeza": "media"
   },
   "coyote-negro-lineas-blancas": {
-   "nombre": "Cánido negro de líneas blancas (¿coyote o perro?)",
+   "nombre": "Coyote negro de líneas blancas",
    "descripcion": "Máscara negra con una V blanca en la frente, filetes blancos en orejas y hocico, espirales blancas en las mejillas, ojos amarillos de iris rojo y nariz roja redonda.",
    "fotos": [
     "a059",
@@ -551,16 +549,6 @@
    "categoria": "danza-lince-ocelote",
    "certeza": "confirmada-maestro"
   },
-  "felino-moteado": {
-   "nombre": "Felino anaranjado moteado (¿ocelote?)",
-   "descripcion": "Felino amarillo anaranjado con manchas negras grandes y puntos pequeños en el hocico, ojos verdes de pupila rasgada, nariz roja y orejas grises con manchas negras.",
-   "fotos": [
-    "a068"
-   ],
-   "principal": "a068",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "media"
-  },
   "burro-gris": {
    "nombre": "Burro gris",
    "descripcion": "Burro gris jaspeado a pincel seco con orejas muy largas café y anaranjadas, copete negro, ojos con contorno anaranjado y hocico blanco con fosas nasales rosas. Según Don Gorgonio, es un burro macho de la Danza de los Morenos y representa la docilidad y la resistencia.",
@@ -644,7 +632,7 @@
    "certeza": "confirmada-maestro"
   },
   "canido-negro-ojos-cafes": {
-   "nombre": "Cánido negro de ojos cafés (¿coyote o perro?)",
+   "nombre": "Perro xoloitzcuintle de ojos cafés",
    "descripcion": "Máscara negra brillante con mejillas blancas, línea amarilla del centro de la frente a la nariz, orejas anaranjadas y verde olivo, pequeñas bandas de arcoíris sobre los ojos y en el hocico, ojos cafés y nariz roja.",
    "fotos": [
     "a053"
@@ -654,7 +642,7 @@
    "certeza": "baja"
   },
   "canido-negro-nariz-gris": {
-   "nombre": "Cánido negro de nariz gris (¿coyote o perro?)",
+   "nombre": "Perro xoloitzcuintle de nariz gris",
    "descripcion": "Máscara negra con orejas anaranjada y verde, cejas anchas en franjas azul, roja, amarilla y azul marino, línea amarilla de la frente al hocico, banda de arcoíris sobre el hocico, mejilla blanca y nariz gris oscuro.",
    "fotos": [
     "a136"
@@ -664,7 +652,7 @@
    "certeza": "baja"
   },
   "canido-negro-ojos-rojos": {
-   "nombre": "Cánido negro de ojos rojos (¿coyote o perro?)",
+   "nombre": "Perro xoloitzcuintle de nariz café",
    "descripcion": "Máscara negra con mejillas blancas, orejas verdes y amarillas, línea amarilla al centro de la frente, banda de arcoíris en V sobre el hocico, ojos de iris rojo y nariz café.",
    "fotos": [
     "a076"
@@ -717,7 +705,7 @@
    "certeza": "confirmada-maestro"
   },
   "el-tiempo-corona-azul": {
-   "nombre": "Tres rostros con corona de sol (¿El Tiempo?)",
+   "nombre": "El Tiempo de diadema azul",
    "descripcion": "Máscara de tres rostros de piel gris beige con ojos azules y barba negra. La corona lleva una banda azul con X y cruces, un sol amarillo con cara en lo alto y, a un lado, un elemento oscuro con estrella.",
    "fotos": [
     "a094"
@@ -739,7 +727,7 @@
    "certeza": "confirmada-familia"
   },
   "rostro-doble-amarillo": {
-   "nombre": "Rostro doble amarillo con media luna",
+   "nombre": "La Noche de rostros amarillos",
    "descripcion": "Máscara de rostro amarillo brillante con un segundo rostro de perfil a un lado, ojos verdes de rayos rojos, bigote y barba negros con remate en espiral. La corona tiene picos amarillos, una banda azul celeste con figuras moradas y estrella, y arriba una media luna azul con estrella.",
    "fotos": [
     "a143"
@@ -790,7 +778,7 @@
    "certeza": "confirmada-familia"
   },
   "ave-negra-cabellera-azul": {
-   "nombre": "Ave negra de cabellera",
+   "nombre": "Nahual de plumas crema",
    "descripcion": "Cabeza de ave negra cubierta de trazos cortos color crema como plumas, ojo rojo con rayas blancas, pico largo y curvo con borde crema y cabellera larga de fibra azul marino oscuro.",
    "fotos": [
     "a061"
@@ -860,7 +848,7 @@
    "certeza": "confirmada-maestro"
   },
   "diablo-marco-moteado-lengua-roja": {
-   "nombre": "Diablo de marco moteado y lengua roja",
+   "nombre": "Diablo el Pecado de lengua roja",
    "descripcion": "Diablo de rostro rojo con frente de franjas doradas y rojas, dos cabecitas color crema con manchas negras sobre las cejas y cuernos grises y negros hacia los lados. Un marco amarillo con círculos negros de borde azul rodea la cara; tiene colmillos largos grises y lengua roja de fuera.",
    "fotos": [
     "a064"
@@ -891,7 +879,7 @@
    "certeza": "confirmada-maestro"
   },
   "vida-muerte-barba-cafe": {
-   "nombre": "Vida y muerte de barba café",
+   "nombre": "Dualidad vida y muerte de barba café",
    "descripcion": "Rostro partido a la mitad: un lado es un hombre de piel clara con ojo azul, ceja y barba café en espirales; el otro es una calavera amarilla con ojo negro y blanco, dientes y líneas negras.",
    "fotos": [
     "a106"
@@ -901,7 +889,7 @@
    "certeza": "alta"
   },
   "vida-muerte-azul": {
-   "nombre": "Vida y muerte azul",
+   "nombre": "Dualidad vida y muerte de piel azul",
    "descripcion": "Rostro partido a lo largo: la mitad viva es azul, con ojo de iris verde y oreja azul, y con barba y bigote en franjas onduladas de arcoíris que terminan en espiral; la mitad muerta es una calavera color hueso con cuenca vacía, ceja verde y dientes rayados de colores.",
    "fotos": [
     "a147"
@@ -959,7 +947,7 @@
     "a111"
    ],
    "principal": "a043",
-   "categoria": "nahual",
+   "categoria": "compuesta",
    "certeza": "baja"
   },
   "rostro-negro-ave-alada": {
@@ -970,7 +958,7 @@
     "a032"
    ],
    "principal": "a114",
-   "categoria": "nahual",
+   "categoria": "compuesta",
    "certeza": "baja"
   },
   "rostro-negro-calavera": {
@@ -981,7 +969,7 @@
     "a115"
    ],
    "principal": "a113",
-   "categoria": "incierto",
+   "categoria": "rostro-humano",
    "certeza": "baja"
   },
   "rostro-negro-lengua": {
@@ -1023,11 +1011,11 @@
     "a153"
    ],
    "principal": "a153",
-   "categoria": "incierto",
+   "categoria": "rostro-humano",
    "certeza": "baja"
   },
   "lince-buho-jaguar": {
-   "nombre": "Lince, búho y felino de rosetas",
+   "nombre": "Lince, búho y jaguar",
    "descripcion": "Pieza vertical con tres cabezas encimadas: arriba un lince crema con orejas de penacho negro y ojos verdes; al centro un búho gris oscuro con plumas trazadas en blanco y ojos amarillos; abajo un felino anaranjado con rosetas negras, ojos azules, colmillos blancos y lengua roja.",
    "fotos": [
     "a122",
@@ -1038,7 +1026,7 @@
    "certeza": "media"
   },
   "jaguar-amarillo-con-buho": {
-   "nombre": "Búho sobre felino amarillo",
+   "nombre": "Búho sobre jaguar amarillo",
    "descripcion": "Felino amarillo con sombras anaranjadas y manchas negras de centro café, ojos verdes de rayos, colmillos blancos y lengua roja; encima, un búho gris verdoso con textura de plumas, ojos amarillos con pestañas negras curvas y pico gris.",
    "fotos": [
     "a044",
@@ -1061,7 +1049,7 @@
    "certeza": "media"
   },
   "tigre-blanco-con-buho": {
-   "nombre": "Búho sobre felino blanco de rayas",
+   "nombre": "Búho sobre tigre blanco",
    "descripcion": "Cabeza de búho café jaspeado con ojos grandes amarillo-anaranjado y pico gris morado, sobre el rostro de un felino blanco con rayas y manchas negras, ojos azul verdoso, nariz rosa, colmillos amarillos y lengua roja.",
    "fotos": [
     "a002"
@@ -1071,7 +1059,7 @@
    "certeza": "baja"
   },
   "hombre-aguila": {
-   "nombre": "Rostro humano con casco de águila",
+   "nombre": "Hombre águila",
    "descripcion": "Rostro humano color piel rosado con ojo blanco y negro y ceja negra, cubierto por una cabeza de águila café con rayas amarillas a modo de casco; el pico queda sobre la frente y la mandíbula del ave bajo la barbilla.",
    "fotos": [
     "a120"
@@ -1091,7 +1079,7 @@
    "certeza": "baja"
   },
   "jaguar-rosetas": {
-   "nombre": "Felino de rosetas",
+   "nombre": "Jaguar amarillo de rosetas",
    "descripcion": "Felino amarillo con rosetas negras de centro amarillo, hocico con puntos negros, nariz roja, ojos verdes y boca muy abierta con colmillos blancos y lengua roja.",
    "fotos": [
     "a058"
@@ -1101,24 +1089,15 @@
    "certeza": "media"
   },
   "felino-fauces-abiertas": {
-   "nombre": "Felino de fauces abiertas",
+   "nombre": "Felino manchado de orejas rojas",
    "descripcion": "Cabeza de felino anaranjada con manchas negras, rayas en el hocico, ojo verde amarillento, oreja roja y fauces rojas abiertas con colmillos blancos.",
    "fotos": [
-    "a138"
-   ],
-   "principal": "a138",
-   "categoria": "danza-lince-ocelote",
-   "certeza": "baja"
-  },
-  "jaguar-orejas-rojas": {
-   "nombre": "Felino de orejas rojas",
-   "descripcion": "Felino amarillo anaranjado con manchas negras redondeadas, puntos negros alrededor del ojo y rayas negras en el hocico; orejas rojas con interior blanco, ojo verde y hocico abierto con colmillos blancos.",
-   "fotos": [
+    "a138",
     "a063"
    ],
-   "principal": "a063",
+   "principal": "a138",
    "categoria": "otro-animal",
-   "certeza": "media"
+   "certeza": "baja"
   },
   "tigre-anaranjado": {
    "nombre": "Tigre anaranjado",
@@ -1142,7 +1121,7 @@
    "certeza": "alta"
   },
   "pantera-negra-ojos-amarillos": {
-   "nombre": "Felino negro de ojos amarillos",
+   "nombre": "Pantera negra de ojos amarillos",
    "descripcion": "Felino negro brillante de orejas redondeadas, ojos amarillos con contorno gris, bigotes grises pintados, nariz rojiza y hocico abierto con lengua roja y colmillos amarillos.",
    "fotos": [
     "a037"
@@ -1152,7 +1131,7 @@
    "certeza": "media"
   },
   "pantera-negra-ojos-verdes": {
-   "nombre": "Felino negro de ojos verdes",
+   "nombre": "Pantera negra de ojos verdes",
    "descripcion": "Felino negro brillante de orejas puntiagudas con interior dorado, ojos verdes con anillo amarillo, nariz anaranjada, colmillos largos amarillos y lengua roja colgando.",
    "fotos": [
     "a048"
@@ -1183,8 +1162,18 @@
    "categoria": "otro-animal",
    "certeza": "confirmada-maestro"
   },
+  "felino-moteado": {
+   "nombre": "Felino anaranjado moteado",
+   "descripcion": "Felino amarillo anaranjado con manchas negras grandes y puntos pequeños en el hocico, ojos verdes de pupila rasgada, nariz roja y orejas grises con manchas negras.",
+   "fotos": [
+    "a068"
+   ],
+   "principal": "a068",
+   "categoria": "otro-animal",
+   "certeza": "media"
+  },
   "pavo-real-pico-anaranjado": {
-   "nombre": "Ave de penacho y pico anaranjado",
+   "nombre": "Pavo real de pico anaranjado",
    "descripcion": "Ave de cara azul marino con franjas blancas, pico largo anaranjado, ojos amarillos y penacho en abanico de plumas amarillas y azules con ocelos verdes, azules y rojos.",
    "fotos": [
     "a108"
@@ -1205,7 +1194,7 @@
    "certeza": "confirmada-maestro"
   },
   "pavo-real-ocelos-azules": {
-   "nombre": "Ave de penacho de tres plumas",
+   "nombre": "Pavo real de ocelos azules",
    "descripcion": "Cabeza azul marino con franja blanca del ojo al cuello, pico dorado, banda dorada con puntos rojos y penacho de tres grandes plumas con ocelos azules.",
    "fotos": [
     "a149"
@@ -1215,7 +1204,7 @@
    "certeza": "media"
   },
   "pavo-real-celeste": {
-   "nombre": "Ave de penacho de cara celeste",
+   "nombre": "Pavo real de cara celeste",
    "descripcion": "Ave de rostro azul celeste brillante, pico largo y recto café y penacho festoneado con plumas de ocelos verdes, rojos y morados.",
    "fotos": [
     "a006"
@@ -1225,7 +1214,7 @@
    "certeza": "media"
   },
   "pavo-real-anaranjado": {
-   "nombre": "Ave de penacho de cara anaranjada",
+   "nombre": "Pavo real de cara anaranjada",
    "descripcion": "Ave de rostro anaranjado brillante con pico largo rojo, ojos de iris azul y penacho verde con rayado azul y amarillo y tres ocelos rojo, amarillo y verde.",
    "fotos": [
     "a086",
@@ -1236,7 +1225,7 @@
    "certeza": "media"
   },
   "pavo-real-lila": {
-   "nombre": "Ave de penacho de cara lila",
+   "nombre": "Pavo real de cara lila",
    "descripcion": "Ave de rostro lila con cejas anaranjadas, ojos verdes, pico largo gris oscuro y penacho de plumas con ocelos rojo, amarillo y verde.",
    "fotos": [
     "a082"
@@ -1246,13 +1235,13 @@
    "certeza": "baja"
   },
   "ave-pico-ganchudo": {
-   "nombre": "Ave de pico ganchudo",
+   "nombre": "Guacamaya roja y verde",
    "descripcion": "Cabeza redonda de ave en rojo y verde a pincel seco con trazos azules como plumas, parche crema alrededor del ojo y pico ganchudo abierto negro y crema.",
    "fotos": [
     "a126"
    ],
    "principal": "a126",
-   "categoria": "danza-guacamaya",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "ave-azul-pico-curvo": {
@@ -1272,7 +1261,7 @@
     "a065"
    ],
    "principal": "a065",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "confirmada-maestro"
   },
   "pato": {
@@ -1294,7 +1283,7 @@
     "a071"
    ],
    "principal": "a124",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "buho-plateado": {
@@ -1304,7 +1293,7 @@
     "a079"
    ],
    "principal": "a079",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "buho-gris-verdoso": {
@@ -1314,7 +1303,7 @@
     "a118"
    ],
    "principal": "a118",
-   "categoria": "danza-tecolote",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "buho-gris-azulado": {
@@ -1324,7 +1313,7 @@
     "a078"
    ],
    "principal": "a078",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "canido-gris-pinceladas": {
@@ -1336,7 +1325,7 @@
     "a146c"
    ],
    "principal": "a146",
-   "categoria": "danza-coyote",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "canido-ocre-pinceladas": {
@@ -1346,27 +1335,27 @@
     "a156"
    ],
    "principal": "a156",
-   "categoria": "danza-coyote",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "burro-azul-orejas-arcoiris": {
-   "nombre": "Posible burro azul de orejas de arcoíris",
+   "nombre": "Animal azul de orejas de arcoíris",
    "descripcion": "Cabeza azul grisáceo con pinceladas amarillas como pelaje, orejas largas y anchas con franjas concéntricas amarilla, roja, verde y azul celeste, ojos verdes y hocico azul marino con blanco.",
    "fotos": [
     "a159"
    ],
    "principal": "a159",
-   "categoria": "danza-burro",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "coyote-naturalista-ocre": {
-   "nombre": "Cánido ocre naturalista (¿coyote?)",
+   "nombre": "Cánido ocre naturalista",
    "descripcion": "Cánido de hocico largo y fino pintado a pinceladas ocre, café y anaranjado, con orejas de interior blanco, ojo ámbar de pupila azul y línea blanca en la boca.",
    "fotos": [
     "a052"
    ],
    "principal": "a052",
-   "categoria": "danza-coyote",
+   "categoria": "otro-animal",
    "certeza": "media"
   },
   "canido-cafe-naturalista": {
@@ -1376,7 +1365,7 @@
     "a070"
    ],
    "principal": "a070",
-   "categoria": "danza-coyote",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "canido-anaranjado": {
@@ -1387,17 +1376,17 @@
     "a036"
    ],
    "principal": "a055",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "confirmada-maestro"
   },
   "canido-gris": {
-   "nombre": "Cánido gris",
+   "nombre": "Cánido gris de trazos blancos",
    "descripcion": "Cánido de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
    "fotos": [
     "a100"
    ],
    "principal": "a100",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "canido-gris-fauces": {
@@ -1408,7 +1397,7 @@
     "a075"
    ],
    "principal": "a066",
-   "categoria": "danza-perro",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "canido-gris-verdoso": {
@@ -1485,7 +1474,7 @@
    "certeza": "confirmada-maestro"
   },
   "toro-pastel-cuernos-azules": {
-   "nombre": "Toro en tonos pastel de cuernos azules",
+   "nombre": "Toro multicolor de cuernos azules",
    "descripcion": "Toro con cuernos largos y orejas azul celeste; cara pintada en parches geométricos morado, lila, rosa, café y anaranjado, con zigzags y franjas amarillas en V.",
    "fotos": [
     "a101",
@@ -1536,13 +1525,13 @@
    "certeza": "alta"
   },
   "equino-rayado": {
-   "nombre": "Equino rayado",
-   "descripcion": "Equino gris de hocico largo con franjas anaranjadas en V, rayas blancas y negras tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
+   "nombre": "Cebra gris y anaranjada",
+   "descripcion": "Cebra gris de hocico largo con franjas anaranjadas en V, rayas blancas y negras tipo cebra en las mejillas, orejas cortas café jaspeado y copete negro.",
    "fotos": [
     "a161"
    ],
    "principal": "a161",
-   "categoria": "incierto",
+   "categoria": "otro-animal",
    "certeza": "baja"
   },
   "elefante": {
@@ -1694,12 +1683,12 @@
    "recorte": false
   },
   "a059": {
-   "alt": "Máscara de cánido negro con espirales blancas en las mejillas, ojos rojos y nariz roja",
+   "alt": "Máscara de coyote negro con espirales blancas en las mejillas, ojos rojos y nariz roja",
    "descripcion": "Dos vistas de una máscara de coyote negra con espirales y líneas blancas, ojos rojos y nariz roja.",
    "recorte": false
   },
   "a059b": {
-   "alt": "La misma máscara de cánido negro vista de lado, con su espiral blanca en la mejilla",
+   "alt": "El mismo coyote negro visto de lado, con su espiral blanca en la mejilla",
    "descripcion": "",
    "recorte": false
   },
@@ -1778,11 +1767,6 @@
    "descripcion": "Felino de rostro amarillo cubierto de lunares rojos, negros y anaranjados, con orejas grises y hocico largo rayado de negro.",
    "recorte": false
   },
-  "a068": {
-   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
-   "descripcion": "Felino de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.",
-   "recorte": false
-  },
   "a168": {
    "alt": "Máscara de burro gris de frente, con orejas largas rayadas y hocico blanco con fosas nasales rosas, en pared blanca",
    "descripcion": "Burro de la Danza de los Morenos visto de frente, con cara gris, orejas largas rayadas y hocico blanco con fosas nasales rosas.",
@@ -1834,17 +1818,17 @@
    "recorte": false
   },
   "a053": {
-   "alt": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
+   "alt": "Máscara de perro xoloitzcuintle negro con mejillas blancas, orejas anaranjadas, línea amarilla en la frente y nariz roja",
    "descripcion": "Máscara de cánido negro con mejillas blancas, orejas anaranjadas, una línea amarilla al centro y la nariz roja.",
    "recorte": false
   },
   "a136": {
-   "alt": "Máscara de cánido negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
+   "alt": "Máscara de perro xoloitzcuintle negro con orejas verdes y amarillas, cejas y banda de arcoíris en el hocico",
    "descripcion": "Máscara de cánido negra, de orejas verdes y amarillas, con cejas y una banda de arcoíris sobre el hocico.",
    "recorte": false
   },
   "a076": {
-   "alt": "Máscara de cánido negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
+   "alt": "Máscara de perro xoloitzcuintle negro con mejillas blancas, orejas verdes y bandas de arcoíris en el hocico",
    "descripcion": "Coyote de rostro negro y mejillas blancas, con bandas de arcoíris que cruzan el hocico como bigotes y orejas verdes y amarillas.",
    "recorte": false
   },
@@ -1884,7 +1868,7 @@
    "recorte": false
   },
   "a094": {
-   "alt": "Máscara de tres rostros barbados con banda azul, corona dorada y un sol con cara",
+   "alt": "Máscara de El Tiempo de diadema azul: tres rostros barbados con corona dorada y un sol con cara",
    "descripcion": "Vista en tres cuartos de El Tiempo: tres rostros barbados bajo una corona dorada rematada por un sol con cara.",
    "recorte": false
   },
@@ -1904,7 +1888,7 @@
    "recorte": false
   },
   "a143": {
-   "alt": "Máscara de dos rostros amarillos con barba negra y corona con media luna y estrella azules, sobre una mesa",
+   "alt": "Máscara de La Noche de rostros amarillos: dos rostros con barba negra y corona con media luna y estrella azules, sobre una mesa",
    "descripcion": "Máscara de dos rostros amarillos que comparten los ojos, con barba negra y una corona de picos rematada por una media luna y una estrella azules.",
    "recorte": false
   },
@@ -2084,32 +2068,32 @@
    "recorte": false
   },
   "a122": {
-   "alt": "Máscara de madera con un lince, un búho y un felino de rosetas tallados uno encima de otro, sobre pared clara",
+   "alt": "Máscara de madera con un lince, un búho y un jaguar de rosetas tallados uno encima de otro, sobre pared clara",
    "descripcion": "Máscara compuesta con tres animales tallados uno sobre otro: un lince arriba, un búho al centro y un felino moteado con las fauces abiertas abajo.",
    "recorte": false
   },
   "a098": {
-   "alt": "Máscara compuesta con lince, búho gris y felino manchado de fauces abiertas, apilados",
+   "alt": "Máscara compuesta con lince, búho gris y jaguar de fauces abiertas, apilados",
    "descripcion": "Máscara compuesta de tres animales apilados: un lince arriba, un búho gris en medio y un felino manchado con las fauces abiertas abajo.",
    "recorte": false
   },
   "a044": {
-   "alt": "Máscara de felino amarillo con manchas oscuras, colmillos y lengua roja, coronada por un búho gris de ojos amarillos",
+   "alt": "Máscara de jaguar amarillo con manchas oscuras, colmillos y lengua roja, coronada por un búho gris de ojos amarillos",
    "descripcion": "Máscara de felino moteado, de ojos verdes y colmillos, con un tecolote gris tallado sobre la cabeza.",
    "recorte": false
   },
   "a033": {
-   "alt": "Máscara de felino amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima",
+   "alt": "Máscara de jaguar amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima",
    "descripcion": "Felino amarillo con manchas negras de centro café, ojos verdes y hocico abierto con colmillos, que lleva un búho gris de ojos amarillos sobre la cabeza.",
    "recorte": false
   },
   "a039": {
-   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y colmillos, con un búho gris de ojos amarillos encima",
+   "alt": "Máscara de jaguar amarillo con manchas negras, ojos verdes y colmillos, con un búho gris de ojos amarillos encima",
    "descripcion": "Vista frontal cercana del felino amarillo con manchas en roseta, ojos verdes y colmillos, con un búho gris sobre la cabeza.",
    "recorte": false
   },
   "a072": {
-   "alt": "Detalle de un búho gris de ojos amarillos colocado sobre la cabeza de un felino amarillo con manchas",
+   "alt": "Detalle de un búho gris de ojos amarillos colocado sobre la cabeza de un jaguar amarillo con manchas",
    "descripcion": "Detalle del búho gris de ojos amarillos que corona una máscara de felino amarillo con manchas. Solo se ve la parte de arriba del felino.",
    "recorte": false
   },
@@ -2119,7 +2103,7 @@
    "recorte": false
   },
   "a002": {
-   "alt": "Máscara con cabeza de búho café sobre un felino blanco de rayas negras con la lengua roja de fuera",
+   "alt": "Máscara con cabeza de búho café sobre un tigre blanco de rayas negras con la lengua roja de fuera",
    "descripcion": "Máscara que une una cabeza de búho café sobre el rostro de un felino blanco con rayas negras y la lengua roja de fuera. La foto muestra la pieza de frente y de lado.",
    "recorte": false
   },
@@ -2134,7 +2118,7 @@
    "recorte": false
   },
   "a058": {
-   "alt": "Máscara de felino amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos",
+   "alt": "Máscara de jaguar amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos",
    "descripcion": "Máscara de jaguar amarillo con rosetas negras y la boca abierta, que muestra los colmillos y la lengua roja.",
    "recorte": false
   },
@@ -2164,12 +2148,12 @@
    "recorte": false
   },
   "a037": {
-   "alt": "Máscara de felino negro con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos",
+   "alt": "Máscara de pantera negra con ojos amarillos, bigotes grises y hocico rojo abierto con colmillos amarillos",
    "descripcion": "Felino negro brillante con ojos amarillos, bigotes grises pintados, nariz rojiza y hocico abierto con colmillos amarillos.",
    "recorte": false
   },
   "a048": {
-   "alt": "Máscara de felino negro con ojos verdes, nariz anaranjada, colmillos amarillos y lengua roja",
+   "alt": "Máscara de pantera negra con ojos verdes, nariz anaranjada, colmillos amarillos y lengua roja",
    "descripcion": "Máscara de felino negro con ojos verdes, colmillos amarillos y la lengua roja de fuera.",
    "recorte": false
   },
@@ -2191,6 +2175,11 @@
   "a026": {
    "alt": "Máscara de jaguar anaranjado con manchas negras en anillo, ojos azules y orejas grandes rojizas, vista de tres cuartos",
    "descripcion": "Máscara de animal anaranjado con manchas negras en anillo, ojos azules, orejas grandes rojizas con textura de pelo y hocico amarillo con rayas negras.",
+   "recorte": false
+  },
+  "a068": {
+   "alt": "Máscara de felino amarillo con manchas negras, ojos verdes y nariz roja, de frente sobre pared amarilla",
+   "descripcion": "Felino de rostro amarillo anaranjado cubierto de manchas y puntos negros, con ojos verdes y nariz roja. Vista de frente.",
    "recorte": false
   },
   "a108": {
@@ -2234,7 +2223,7 @@
    "recorte": false
   },
   "a126": {
-   "alt": "Máscara de ave roja y verde con trazos azules y pico ganchudo negro y crema, vista de lado",
+   "alt": "Máscara de guacamaya roja y verde con trazos azules y pico ganchudo negro y crema, vista de lado",
    "descripcion": "Máscara de ave de pico curvo, con plumaje rojo y verde rayado de azul y el pico abierto en negro y crema. En el borde izquierdo asoman otras máscaras.",
    "recorte": false
   },
@@ -2424,7 +2413,7 @@
    "recorte": false
   },
   "a161": {
-   "alt": "Máscara de madera de equino gris con franjas anaranjadas y rayas blancas y negras tipo cebra, orejas cafés, en pared blanca",
+   "alt": "Máscara de madera de cebra gris con franjas anaranjadas y rayas blancas y negras, orejas cafés, en pared blanca",
    "descripcion": "Máscara de equino de hocico largo, pintada de gris con franjas anaranjadas en V y rayas blancas y negras a los lados, como de cebra. Tiene orejas cafés y un copete negro entre ellas.",
    "recorte": false
   },
@@ -2502,7 +2491,6 @@
   "a172": "lince-manchas",
   "a081": "felino-lunares",
   "a073": "felino-lunares",
-  "a068": "felino-moteado",
   "a168": "burro-gris",
   "a167": "burro-gris",
   "a165": "guacamaya-verde",
@@ -2575,7 +2563,7 @@
   "a021": "rostro-lila-iguana-serpientes",
   "a058": "jaguar-rosetas",
   "a138": "felino-fauces-abiertas",
-  "a063": "jaguar-orejas-rojas",
+  "a063": "felino-fauces-abiertas",
   "a034": "tigre-anaranjado",
   "a034b": "tigre-anaranjado",
   "a069": "tigre-blanco",
@@ -2585,6 +2573,7 @@
   "a117": "felino-multicolor-pastel",
   "a045": "felino-rosetas",
   "a026": "felino-rosetas",
+  "a068": "felino-moteado",
   "a108": "pavo-real-pico-anaranjado",
   "a027": "pavo-real-pico-dorado",
   "a027b": "pavo-real-pico-dorado",

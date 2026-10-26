@@ -249,3 +249,18 @@ Contestó desde su teléfono, de 20:18 a 22:58 (hora de Colima), 37 de las 126 m
 - ✔ **El Tiempo (37):** dice que esta máscara es de adorno; la del museo de Santa Fe está catalogada como de la Pastorela. Hay de los dos usos: Humberto lo confirmó el 24 de octubre de 2026.
 - **Gallina (35):** la familia la había llamado gallo anaranjado; Don Gorgonio dice que es la gallina, hembra. El sitio la llama gallina, y la nota de la pareja de gallos dice qué simboliza el gallo y qué la gallina.
 - ✔ **Máscaras 2 y 3:** escribió que la 2 es el mismo coyote blanco de arcoíris en otra expresión de forma y que la 3 es una coyota hembra, pero después quitó lo que había marcado. El sitio usa lo que dejó escrito. Humberto confirmó el 24 de octubre de 2026 que son el mismo diseño que la máscara 1, con diferencias sutiles; son tres máscaras distintas.
+
+### Revisión de nombres y salas (26 de octubre de 2026)
+Humberto pidió quitar los signos de interrogación y las frases de «todavía no sabemos» de la galería. Cada pieza sin confirmar se comparó con las 37 que confirmó Don Gorgonio y las 7 que confirmó la familia: la especie va en el nombre cuando la talla es la de una pieza confirmada o el animal es inconfundible. Si no, el nombre sigue siendo neutral. Esto es lo que cambió:
+- **Misma máscara:** a138 y a063 son la misma pieza vista de los dos lados. Ahora es una sola, «Felino manchado de orejas rojas», y la galería queda en 125 piezas.
+- **Cambio de sala:** el felino anaranjado moteado (a068) pasó de la danza a los felinos. Su talla no es la del ocelote que confirmó Don Gorgonio (27).
+- **Perros:** los tres cánidos negros (a053, a136, a076) tienen la talla del perro xoloitzcuintle que él confirmó (14). Ahora son «Perro xoloitzcuintle de ojos cafés / de nariz gris / de nariz café», y el de líneas blancas (a059) es «Coyote negro de líneas blancas».
+- **Felinos:** «Jaguar amarillo de rosetas» (a058) y «Pantera negra de ojos amarillos / de ojos verdes» (a037, a048). En las piezas compuestas: «Lince, búho y jaguar», «Búho sobre jaguar amarillo» y «Búho sobre tigre blanco».
+- **Aves:** las cinco de penacho son pavos reales, con la talla del que él confirmó (84). La de pico ganchudo es «Guacamaya roja y verde».
+- **Rostros:** «El Tiempo de diadema azul» (a094), «La Noche de rostros amarillos» (a143), «Diablo el Pecado de lengua roja» (a064), «Dualidad vida y muerte de barba café / de piel azul» (a106, a147), «Hombre águila» (a120) y «Nahual de plumas crema» (a061).
+- **Otros:** «Cebra gris y anaranjada» (a161), «Toro multicolor de cuernos azules» (a101) y «Cánido gris de trazos blancos» (a100).
+- **Se quedan con nombre neutral**, porque la talla no coincide con ninguna confirmada:
+  - «Felino anaranjado moteado» y «Felino manchado de orejas rojas» (no se llaman ocelote ni jaguar);
+  - «Cánido ocre naturalista» (no se llama zorro);
+  - «Animal azul de orejas de arcoíris» (ya no se llama «posible burro»).
+- **Textos de las salas:** ya no dicen que una pieza espera confirmación. Cada pieza va con la confirmada a la que se parece.
