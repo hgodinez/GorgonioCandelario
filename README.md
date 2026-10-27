@@ -133,6 +133,8 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 
 `pruebas/zoom.html` es un prototipo, sin decidir si vale la pena. La máscara de El Tiempo empieza como una tarjeta y crece hasta su tamaño completo mientras la escena se queda fija. Después se oscurece el fondo y aparece lo que dice Don Gorgonio de ella. No está enlazado desde el sitio, tiene `noindex` y Netlify no lo publica. En GitHub Pages se ve en `/GorgonioCandelario/pruebas/zoom.html`.
 
+Para verlo dentro de la galería está `pruebas/galeria.html`: una copia de la galería con el acercamiento al abrir la Sala 2 (El Tiempo y La Noche), también sin enlazar y con `noindex`. En GitHub Pages se ve en `/GorgonioCandelario/pruebas/galeria.html`. La arma `herramientas/armar_prueba_galeria.py` (`python3 herramientas/armar_prueba_galeria.py .`) a partir de `galeria.html`: si cambia la galería, hay que volver a correrlo. La galería de verdad no cambia.
+
 Lo inspiró la sección «So bright and so soft» de [elgato.com/us/en/p/key-light](https://www.elgato.com/us/en/p/key-light). Allí no es un zoom: es una secuencia de 243 cuadros renderizados (1920×1080; en el teléfono, 235 verticales). Se dibujan en un `<canvas>` fijo (`position: sticky`) dentro de una sección de 1300vh, y GSAP ScrollTrigger (`scrub`) elige el cuadro según el scroll. Algunos cuadros se repiten 20 veces para que la imagen se detenga mientras aparece cada texto. Para hacer eso aquí haría falta un video de una máscara girando, cortado en cuadros.
 
 Las dos revisiones del 26 de octubre de 2026 encontraron estos errores. Ya están arreglados y comprobados en el navegador:
