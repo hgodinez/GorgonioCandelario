@@ -1,4 +1,4 @@
-# Gorgonio Candelario Castro · Maestro mascarero
+# Gorgonio Candelario · Máscaras tradicionales
 
 Sitio web del maestro Gorgonio Candelario Castro, mascarero de Suchitlán, Comala, Colima.
 
@@ -118,7 +118,7 @@ El sitio sale en dos lugares, los dos desde la rama `ccr-0e01a9f0-ekq4s5`; cada 
 Hay que confirmarlo con don Gorgonio o con su familia.
 
 - [ ] Permiso para usar los dos videos de YouTube.
-- [ ] Quién es el danzante 19 que cuenta el INPI, si el bartolo sale con los Morenos y por dónde pasa el recorrido de la danza.
+- [ ] Quién es el danzante 19 que cuenta el INPI (en su escrito sobre la danza, Don Gorgonio cuenta dieciocho), si el bartolo sale con los Morenos y por dónde pasa el recorrido de la danza.
 - [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, las herramientas, el angaro, la fibra del pelo, el acabado y cómo se sujeta la máscara. La pintura y las barbas ya las contestó en la encuesta.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las otras máscaras de vida y muerte tienen nombre (a una Don Gorgonio la llama Dualidad vida y muerte).
 - [ ] Una foto mejor del pelícano (antes «ave azul de pico amarillo»): la única que hay es el panel central de un collage, de 172 px de ancho.

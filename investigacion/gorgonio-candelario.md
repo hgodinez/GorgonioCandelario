@@ -132,7 +132,7 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - El libro *Máscaras. Arte-presencia* del INPI enumera los nueve animales de Suchitlán: chivo, gato montés, coyote, burro, tecolote, gallo, guacamaya, borrego cimarrón y perro. Ocho coinciden con la lista de la familia: gato montés equivale a lince y ocelote, y borrego cimarrón a borregos. Solo queda el perro. https://www.gob.mx/cms/uploads/attachment/file/812179/Libro-Mascaras-Arte-presencia-INPI.pdf
 - La ficha del Inventario del Patrimonio Cultural Inmaterial menciona al perro. Su informante es José Guadalupe Candelario. https://sic.cultura.gob.mx/ficha.php?table=frpintangible&table_id=300
 - ✔ Don Gorgonio confirmó la lista en la encuesta (pregunta 6: «Sí, está bien»).
-- ⚠ El INPI cuenta 19 danzantes; hay que preguntar quién es el que sobra (¿el bartolo?).
+- ⚠ El INPI cuenta 19 danzantes; hay que preguntar quién es el que sobra (¿el bartolo?). En su escrito del 27 de octubre de 2026, Don Gorgonio cuenta dieciocho «elementos» (ver abajo).
 
 ### Datos de la danza
 - **Capitanes:** el chivo es el primer capitán y el coyote el segundo, y detrás van sus hembras. El orden es el de Don Gorgonio (encuesta, 23 de octubre de 2026), y Humberto confirmó el 24 de octubre que el sitio lo sigue a él. Guadalupe había publicado el orden al revés, el coyote primero (Portal Colimote, 2023; El Pulso de Colima, 2023). Antes iba al frente el burro, según la Universidad de Colima (2015).
@@ -140,7 +140,7 @@ La familia dio esta lista: chivos, coyotes, borregos, tecolotes, lince y ocelote
 - **Por qué son nueve:** por los nueve meses de embarazo de la Virgen y los nueve días del novenario de un difunto (El Pulso de Colima, 2023).
 - **Presentaciones fuera de Suchitlán:** en el Encuentro Regional de Danza Centro Occidente, en el Jardín Libertad de Colima (2012), donde Guadalupe dirigió a los 18 danzantes (Secretaría de Cultura de Colima: http://culturacolima.gob.mx/dimos-a-conocer-las-mascaras-de-suchitlan-en-el-encuentro-regional-de-danza/ ; AF Medios: https://www.afmedios.com/dan-a-conocer-las-mascaras-de-suchitlan-en-el-encuentro-regional-de-danza/), y en el festival Tonelhuayo (programa de 2023: https://admiweb.col.gob.mx/archivos_prensa/banco_img/file_64c9695f7d0ec_Programacion_Tonelhuayo_2023.pdf).
 - **Guadalupe, ensayador de la cuadrilla:** así lo presenta la ficha del Inventario del Patrimonio Cultural Inmaterial, de la que es informante (SIC).
-- **Fechas:** Sábado de Gloria, Domingo de Resurrección, 3 de mayo y Pentecostés, además de las invitaciones. En Semana Santa empieza de madrugada.
+- **Fechas:** Sábado de Gloria, Domingo de Resurrección, 3 de mayo y Pentecostés, además de las invitaciones. En Semana Santa empieza de madrugada. ✔ En su escrito del 27 de octubre de 2026, Don Gorgonio da tres fechas: Domingo de Resurrección o Pascua, 3 de mayo y Domingo de Pentecostés. El sitio lo sigue a él y ya no menciona el Sábado de Gloria.
 - **Música:** una vihuela. Antes era de violín y esa melodía se perdió. Guadalupe organiza la danza, la enseña y toca (Universidad de Colima, 2015; blog escolar de Suchitlán, 2015).
 - **Traje:** de yute, con capa de costales de ixtle. Cada danzante lleva una sonaja de bule pintada y un machete de madera o un bastón (SIC; México Desconocido).
 - **Reconocimientos:** salió en el billete de la Lotería Nacional por los 500 años de Colima (28 de julio de 2023). INAH, «Foto del día», 2023: https://www.inah.gob.mx//foto-del-dia/danza-de-morenos-animales-y-religiosidad-en-suchitlan
@@ -268,3 +268,31 @@ Humberto pidió quitar los signos de interrogación y las frases de «todavía n
   - Es lobo el cánido gris de fauces abiertas (a066, a075): «Lobo gris de fauces abiertas».
 - **Se queda con nombre neutral**, porque nada confirma la especie, el «Animal azul de orejas de arcoíris» (ya no se llama «posible burro»).
 - **Textos de las salas:** ya no dicen que una pieza espera confirmación. Cada pieza va con la confirmada a la que se parece.
+
+### Escrito de Don Gorgonio sobre la danza (27 de octubre de 2026)
+
+Don Gorgonio mandó este texto escrito por él, con la petición: «Puede usted reacomodar con sus palabras este escrito y ponerlo ahí en la página por favor?». La foto del escrito está en `datos/escrito-danza-don-gorgonio.webp`. Transcripción literal (se respetan su ortografía y su puntuación):
+
+> **DANZA DE LOS MORENOS**
+>
+> Al decir danza de los morenos es hablar de algo muy tradicional de Suchitlan Cómala Colima, ya que se ha venido fomentando a lo largo de tres generaciones, esta destaca por su importancia y por su vistosidad, Esta danza está constituida por dieciocho elementos estos representan conocimiento, virtudes y cualidades ya que van de par en par en versiones de macho y hembra mencionando tales como chivos, tecolotes, ocelotes, perros, guacamayas, borregos, gallos y burros. Los integrantes van emulando el personaje que se le asigno donde estos danzan al compás de diferentes sones al sonido de una vihuela.
+>
+> Fungiendo como capitanes o jefes de la danza. EL CHIVO Y COYOTE
+>
+> El Coyote significa (Inteligencia)
+>
+> El Chivo significa (La unión y fuerza)
+>
+> Esta danza se realiza en tres eventos importantes tales como.
+>
+> 1)Semana Santa domingo de resurrección o pascua.
+> 2)Tres de mayo día de la cruz.
+> 3)Domingo de pentecostés celebrando la venida del espíritu santo.
+
+Qué cambió en el sitio (sección «La Danza de los Morenos» de `index.html`):
+- La entrada y el párrafo que la sigue ahora cuentan lo que dice el escrito, con otras palabras: tradición muy propia de Suchitlán, cultivada a lo largo de tres generaciones, que destaca por su importancia y su vistosidad; dieciocho danzantes en nueve parejas de macho y hembra; cada animal representa un conocimiento, una virtud o una cualidad; cada danzante imita al animal que se le asignó; bailan al compás de distintos sones que toca una vihuela.
+- «Cuándo se baila» lleva sus tres fechas. Se quitó el Sábado de Gloria, que venía de otras fuentes.
+- Lo de los capitanes y lo que significan el chivo y el coyote ya estaba en el sitio, tomado de la encuesta; el escrito lo confirma.
+- Notas:
+  - Las «tres generaciones» son de la danza. No resuelven si él es la tercera o la cuarta generación de mascareros.
+  - En el escrito, los felinos de la danza son «ocelotes». En la encuesta, la pareja era lince y ocelote. El párrafo usa su palabra del escrito, y la tarjeta de la pareja sigue con lo de la encuesta.
