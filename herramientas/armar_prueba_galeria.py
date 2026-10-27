@@ -1,5 +1,7 @@
-"""Arma pruebas/galeria.html: una copia de galeria.html en la que cada sala abre con un acercamiento al hacer scroll
-(la máscara empieza como tarjeta y crece hasta su tamaño completo; luego aparecen el nombre de la sala y una frase).
+"""Arma pruebas/galeria.html: una copia de galeria.html en la que cada sala abre con una portada que se acerca al hacer
+scroll: la foto de una máscara empieza como tarjeta y crece hasta su tamaño completo, y luego aparecen el número, el nombre
+y el subtítulo de la sala (la portada es de la sala, no habla de la máscara). Debajo, la sala solo conserva su párrafo;
+su título queda para los lectores de pantalla. La barra de salas lleva a la portada ya terminada.
 Sirve para probar el efecto en la galería sin tocar la de verdad. La copia no está enlazada desde el sitio, tiene
 noindex y Netlify no la publica (netlify.toml no copia pruebas/). Si cambia la galería, vuelve a correrlo.
 El efecto se prueba aparte en pruebas/zoom.html; los dos llevan los mismos arreglos.
@@ -29,10 +31,12 @@ APERTURAS = {
 
 CABEZA = '''  <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
+    // con #sala-… en la dirección, el navegador salta sin animación; el script lleva luego a la portada de esa sala
+    if (/^#sala-/.test(location.hash)) document.documentElement.style.scrollBehavior = "auto";
   </script>
   <style>
-    /* Acercamiento al abrir cada sala (prueba). --recorrido: cuántas pantallas de scroll dura cada uno */
-    .zoom { --recorrido: 1.5; position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
+    /* Portada de cada sala (prueba). --recorrido: cuántas pantallas de scroll dura el acercamiento */
+    .zoom { --recorrido: 1; position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
     .zoom-escena { --alto-escena: 100svh; position: relative; min-height: var(--alto-escena); overflow: hidden; display: grid; place-items: center; }
     .zoom-caja {
       position: relative; z-index: 1;
@@ -69,7 +73,13 @@ CABEZA = '''  <script>
     .zoom-texto .sala-numero { display: block; margin-bottom: 0.3rem; }
     .zoom-texto .zoom-nombre { font-family: var(--fuente-titulos); font-weight: 600; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; margin: 0 0 0.3em; color: var(--blanco); max-width: none; }
     .zoom-texto p { margin: 0; max-width: 32rem; color: #e2d7c6; font-size: 1.08rem; }
-    .zoom-texto .zoom-enlace { margin-top: 0.9rem; font-size: 0.98rem; }
+    .zoom-texto .sala-sub { margin: 0.1rem 0 0; color: var(--cempasuchil); font-family: var(--fuente-titulos); font-style: italic; font-size: 1.2rem; }
+    /* Debajo de la portada, la sala solo muestra su párrafo: el número, el título y el subtítulo ya están en la portada
+       (el título sigue ahí para los lectores de pantalla) */
+    .visualmente-oculto { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .zoom + .sala { padding-top: clamp(1.75rem, 4vw, 3rem); border-top: 0; }
+    .zoom + .sala .sala-encabezado { display: block; }
+    .zoom + .sala .sala-texto { max-width: 46rem; font-size: 1.08rem; }
     .zoom-pista {
       position: absolute; z-index: 2; left: 0; right: 0; bottom: max(1.25rem, env(safe-area-inset-bottom)); margin: 0;
       text-align: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #cbbfae; pointer-events: none;
@@ -192,13 +202,28 @@ SCRIPT = '''  <script>
         rehacer();
         if (actual && recorrido(actual.z) !== actual.largo) { saltar(inicioSeccion(actual.z) + Math.min(actual.p, 1) * recorrido(actual.z)); pintar(); }
       });
-      // con teclado: si el enlace recibe el foco antes de verse, se baja hasta el final de esa escena
-      zooms.forEach(function (z) {
-        z.escena.addEventListener("focusin", function () {
-          if (!activo()) return;
-          var fin = inicioSeccion(z) + recorrido(z);
-          if (Math.abs(scrollY - fin) > 2) saltar(fin);
+      // La barra de salas lleva a la portada de cada sala ya terminada, sin la animación.
+      // Sin movimiento (o sin el efecto), al principio de la portada, que ya se ve completa.
+      function irAPortada(hash) {
+        var s = document.getElementById("zoom-" + hash.replace(/^#sala-/, ""));
+        if (!s) return false;
+        var z = zooms.filter(function (x) { return x.seccion === s; })[0];
+        if (activo() && z) { saltar(inicioSeccion(z) + recorrido(z)); pintar(); }
+        else s.scrollIntoView();
+        return true;
+      }
+      document.querySelectorAll('.salas-nav a[href^="#sala-"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          if (irAPortada(a.hash)) { e.preventDefault(); history.replaceState(null, "", a.hash); }
         });
+      });
+      function revisarAncla() { if (/^#sala-/.test(location.hash)) irAPortada(location.hash); }
+      addEventListener("hashchange", revisarAncla);
+      // el navegador vuelve a bajar al ancla al terminar de cargar: se corrige en ese mismo scroll y otra vez un momento después
+      addEventListener("load", function () {
+        addEventListener("scroll", revisarAncla, { once: true });
+        setTimeout(function () { removeEventListener("scroll", revisarAncla); revisarAncla(); raiz.style.scrollBehavior = ""; }, 60);
       });
       if (activo()) rehacer();
       addEventListener("scroll", pedir, { passive: true });
@@ -208,16 +233,6 @@ SCRIPT = '''  <script>
 '''
 
 
-def frase(pieza, sala):
-    """Lo que dice Don Gorgonio de la pieza, si la identificó; si no, el subtítulo de la sala."""
-    d = pieza['descripcion']
-    if 'Según Don Gorgonio' in d:
-        resto = d[d.index('Según Don Gorgonio'):]
-        fin = resto.find('. ')
-        return resto if fin < 0 else resto[:fin + 1]
-    return (sala.get('subtitulo') or '').rstrip('.') + '.'
-
-
 def seccion(numero, sala, slug, foto, foco):
     p = g['piezas'][slug]
     assert foto in p['fotos'], (slug, foto)
@@ -225,23 +240,23 @@ def seccion(numero, sala, slug, foto, foco):
     anchos = t_['tamanos']
     srcset = ', '.join(f'img/galeria/{foto}-{w}.webp {w}w' for w in anchos)
     e = html.escape
-    return f'''    <section class="zoom" id="zoom-{sala['id']}" aria-label="{e(p['nombre'])}, de cerca">
+    # la portada es solo visual (repite el título de la sala, que los lectores de pantalla encuentran en la sala)
+    return f'''    <section class="zoom" id="zoom-{sala['id']}" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="{srcset}" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="img/galeria/{foto}.jpg" width="{t_['w']}" height="{t_['h']}" loading="lazy" decoding="async" style="--foco: {foco}%" alt="{e(g['fotos'][foto]['alt'])}">
+              <img src="img/galeria/{foto}.jpg" width="{t_['w']}" height="{t_['h']}" loading="lazy" decoding="async" style="--foco: {foco}%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala {numero} · {e(sala['titulo'])}</span>
-          <p class="zoom-nombre">{e(p['nombre'])}</p>
-          <p>{e(frase(p, sala))}</p>
-          <p class="zoom-enlace"><a href="#sala-{sala['id']}">Ver la sala</a></p>
+          <span class="sala-numero">Sala {numero}</span>
+          <p class="zoom-nombre">{e(sala['titulo'])}</p>
+          <p class="sala-sub">{e(sala.get('subtitulo') or '')}</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
 '''
@@ -258,6 +273,11 @@ for n, sala in enumerate(g['salas'], 1):
     assert t.count(marca) == 1, marca
     slug, foto, foco = APERTURAS[sala['id']]
     t = t.replace(marca, seccion(n, sala, slug, foto, foco) + marca)
+    i = t.index(marca)
+    viejo = '        <div class="sala-encabezado">\n          <div>\n'
+    j = t.index(viejo, i)
+    assert j - i < 400, sala['id']
+    t = t[:j] + '        <div class="sala-encabezado">\n          <div class="visualmente-oculto">\n' + t[j + len(viejo):]
 
 # La copia vive en pruebas/: las rutas relativas al sitio llevan ../ (la galería misma se queda en pruebas/galeria.html)
 RUTA = re.compile(r'^(img|css|js|fuentes)/|^index\.html')
@@ -276,7 +296,7 @@ for viejo, nuevo in [
     ('<body class="pagina-galeria">\n',
      '<body class="pagina-galeria">\n'
      '  <p class="aviso-prueba" style="margin:0;padding:0.5rem var(--margen);background:var(--cempasuchil);color:var(--tinta);'
-     'font-size:0.9rem;text-align:center">Página de prueba: la galería con un acercamiento al abrir cada sala. '
+     'font-size:0.9rem;text-align:center">Página de prueba: la galería con una portada que se acerca al abrir cada sala. '
      '<a href="../galeria.html" style="color:var(--tinta)">Ver la galería de verdad</a></p>\n'),
 ]:
     assert t.count(viejo) == 1, viejo[:60]
@@ -288,4 +308,4 @@ assert not sobran, sobran[:3]
 print('ok pruebas/galeria.html', len(t), '·', len(APERTURAS), 'salas')
 for n, sala in enumerate(g['salas'], 1):
     slug, foto, _ = APERTURAS[sala['id']]
-    print(f"  Sala {n} {sala['titulo']}: {g['piezas'][slug]['nombre']} ({foto}) · {frase(g['piezas'][slug], sala)}")
+    print(f"  Sala {n} {sala['titulo']} · {sala.get('subtitulo')}: abre con {g['piezas'][slug]['nombre']} ({foto})")

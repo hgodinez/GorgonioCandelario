@@ -26,10 +26,12 @@
   <link rel="stylesheet" href="../css/galeria.css">
   <script>
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
+    // con #sala-… en la dirección, el navegador salta sin animación; el script lleva luego a la portada de esa sala
+    if (/^#sala-/.test(location.hash)) document.documentElement.style.scrollBehavior = "auto";
   </script>
   <style>
-    /* Acercamiento al abrir cada sala (prueba). --recorrido: cuántas pantallas de scroll dura cada uno */
-    .zoom { --recorrido: 1.5; position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
+    /* Portada de cada sala (prueba). --recorrido: cuántas pantallas de scroll dura el acercamiento */
+    .zoom { --recorrido: 1; position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
     .zoom-escena { --alto-escena: 100svh; position: relative; min-height: var(--alto-escena); overflow: hidden; display: grid; place-items: center; }
     .zoom-caja {
       position: relative; z-index: 1;
@@ -66,7 +68,13 @@
     .zoom-texto .sala-numero { display: block; margin-bottom: 0.3rem; }
     .zoom-texto .zoom-nombre { font-family: var(--fuente-titulos); font-weight: 600; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; margin: 0 0 0.3em; color: var(--blanco); max-width: none; }
     .zoom-texto p { margin: 0; max-width: 32rem; color: #e2d7c6; font-size: 1.08rem; }
-    .zoom-texto .zoom-enlace { margin-top: 0.9rem; font-size: 0.98rem; }
+    .zoom-texto .sala-sub { margin: 0.1rem 0 0; color: var(--cempasuchil); font-family: var(--fuente-titulos); font-style: italic; font-size: 1.2rem; }
+    /* Debajo de la portada, la sala solo muestra su párrafo: el número, el título y el subtítulo ya están en la portada
+       (el título sigue ahí para los lectores de pantalla) */
+    .visualmente-oculto { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .zoom + .sala { padding-top: clamp(1.75rem, 4vw, 3rem); border-top: 0; }
+    .zoom + .sala .sala-encabezado { display: block; }
+    .zoom + .sala .sala-texto { max-width: 46rem; font-size: 1.08rem; }
     .zoom-pista {
       position: absolute; z-index: 2; left: 0; right: 0; bottom: max(1.25rem, env(safe-area-inset-bottom)); margin: 0;
       text-align: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #cbbfae; pointer-events: none;
@@ -96,7 +104,7 @@
   </style>
 </head>
 <body class="pagina-galeria">
-  <p class="aviso-prueba" style="margin:0;padding:0.5rem var(--margen);background:var(--cempasuchil);color:var(--tinta);font-size:0.9rem;text-align:center">Página de prueba: la galería con un acercamiento al abrir cada sala. <a href="../galeria.html" style="color:var(--tinta)">Ver la galería de verdad</a></p>
+  <p class="aviso-prueba" style="margin:0;padding:0.5rem var(--margen);background:var(--cempasuchil);color:var(--tinta);font-size:0.9rem;text-align:center">Página de prueba: la galería con una portada que se acerca al abrir cada sala. <a href="../galeria.html" style="color:var(--tinta)">Ver la galería de verdad</a></p>
   <a class="salto" href="#contenido">Saltar al contenido</a>
 
   <header class="encabezado">
@@ -185,29 +193,28 @@
     <nav class="salas-nav" aria-label="Salas de la galería">
       <div class="contenedor"><ul><li><a href="#sala-danza-de-los-morenos">La Danza de los Morenos</a></li><li><a href="#sala-el-tiempo-y-la-noche">El Tiempo y La Noche</a></li><li><a href="#sala-nahuales">Nahuales</a></li><li><a href="#sala-diablos">Diablos</a></li><li><a href="#sala-vida-y-muerte">Vida y muerte, y otros rostros</a></li><li><a href="#sala-rostros-negros">Rostros negros</a></li><li><a href="#sala-seres-encimados">Seres encimados</a></li><li><a href="#sala-felinos">Felinos</a></li><li><a href="#sala-aves">Aves</a></li><li><a href="#sala-pelaje-de-pincel">Pelaje de pincel</a></li><li><a href="#sala-bestiario">Bestiario</a></li></ul></div>
     </nav>
-    <section class="zoom" id="zoom-danza-de-los-morenos" aria-label="Búho azul, de cerca">
+    <section class="zoom" id="zoom-danza-de-los-morenos" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a050-400.webp 400w, ../img/galeria/a050-800.webp 800w, ../img/galeria/a050-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a050.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 35%" alt="Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado">
+              <img src="../img/galeria/a050.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 35%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 1 · La Danza de los Morenos</span>
-          <p class="zoom-nombre">Búho azul</p>
-          <p>Según Don Gorgonio, es un búho macho de la Danza de los Morenos y representa la sabiduría.</p>
-          <p class="zoom-enlace"><a href="#sala-danza-de-los-morenos">Ver la sala</a></p>
+          <span class="sala-numero">Sala 1</span>
+          <p class="zoom-nombre">La Danza de los Morenos</p>
+          <p class="sala-sub">Nueve parejas de animales, macho y hembra</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-danza-de-los-morenos" aria-labelledby="titulo-sala-danza-de-los-morenos">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 1</span>
             <h2 id="titulo-sala-danza-de-los-morenos">La Danza de los Morenos</h2>
             <p class="sala-sub">Nueve parejas de animales, macho y hembra</p>
@@ -302,29 +309,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-el-tiempo-y-la-noche" aria-label="El Tiempo, de cerca">
+    <section class="zoom" id="zoom-el-tiempo-y-la-noche" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a025.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 49%" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
+              <img src="../img/galeria/a025.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 49%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 2 · El Tiempo y La Noche</span>
-          <p class="zoom-nombre">El Tiempo</p>
-          <p>Según Don Gorgonio, esta máscara es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo.</p>
-          <p class="zoom-enlace"><a href="#sala-el-tiempo-y-la-noche">Ver la sala</a></p>
+          <span class="sala-numero">Sala 2</span>
+          <p class="zoom-nombre">El Tiempo y La Noche</p>
+          <p class="sala-sub">Varios rostros bajo una corona de astros</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-el-tiempo-y-la-noche" aria-labelledby="titulo-sala-el-tiempo-y-la-noche">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 2</span>
             <h2 id="titulo-sala-el-tiempo-y-la-noche">El Tiempo y La Noche</h2>
             <p class="sala-sub">Varios rostros bajo una corona de astros</p>
@@ -342,29 +348,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-nahuales" aria-label="Nahual negro, de cerca">
+    <section class="zoom" id="zoom-nahuales" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a102-400.webp 400w, ../img/galeria/a102-800.webp 800w, ../img/galeria/a102-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a102.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado">
+              <img src="../img/galeria/a102.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 3 · Nahuales</span>
-          <p class="zoom-nombre">Nahual negro</p>
-          <p>Entre la persona y el animal.</p>
-          <p class="zoom-enlace"><a href="#sala-nahuales">Ver la sala</a></p>
+          <span class="sala-numero">Sala 3</span>
+          <p class="zoom-nombre">Nahuales</p>
+          <p class="sala-sub">Entre la persona y el animal</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-nahuales" aria-labelledby="titulo-sala-nahuales">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 3</span>
             <h2 id="titulo-sala-nahuales">Nahuales</h2>
             <p class="sala-sub">Entre la persona y el animal</p>
@@ -382,29 +387,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-diablos" aria-label="Diablo rojo de lengua de fuera, de cerca">
+    <section class="zoom" id="zoom-diablos" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a008-400.webp 400w, ../img/galeria/a008-800.webp 800w, ../img/galeria/a008-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a008.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 55%" alt="Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada">
+              <img src="../img/galeria/a008.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 55%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 4 · Diablos</span>
-          <p class="zoom-nombre">Diablo rojo de lengua de fuera</p>
-          <p>Cuernos, colmillos y lenguas de fuera.</p>
-          <p class="zoom-enlace"><a href="#sala-diablos">Ver la sala</a></p>
+          <span class="sala-numero">Sala 4</span>
+          <p class="zoom-nombre">Diablos</p>
+          <p class="sala-sub">Cuernos, colmillos y lenguas de fuera</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-diablos" aria-labelledby="titulo-sala-diablos">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 4</span>
             <h2 id="titulo-sala-diablos">Diablos</h2>
             <p class="sala-sub">Cuernos, colmillos y lenguas de fuera</p>
@@ -424,29 +428,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-vida-y-muerte" aria-label="Dualidad vida y muerte, de cerca">
+    <section class="zoom" id="zoom-vida-y-muerte" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a127-400.webp 400w, ../img/galeria/a127-800.webp 800w, ../img/galeria/a127-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a127.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 38%" alt="Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema">
+              <img src="../img/galeria/a127.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 38%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 5 · Vida y muerte, y otros rostros</span>
-          <p class="zoom-nombre">Dualidad vida y muerte</p>
-          <p>Según Don Gorgonio, es la Dualidad vida y muerte, una máscara de adorno que representa el ciclo de la vida.</p>
-          <p class="zoom-enlace"><a href="#sala-vida-y-muerte">Ver la sala</a></p>
+          <span class="sala-numero">Sala 5</span>
+          <p class="zoom-nombre">Vida y muerte, y otros rostros</p>
+          <p class="sala-sub">Media cara viva, media calavera</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-vida-y-muerte" aria-labelledby="titulo-sala-vida-y-muerte">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 5</span>
             <h2 id="titulo-sala-vida-y-muerte">Vida y muerte, y otros rostros</h2>
             <p class="sala-sub">Media cara viva, media calavera</p>
@@ -465,29 +468,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-rostros-negros" aria-label="Rostro negro de cresta roja, de cerca">
+    <section class="zoom" id="zoom-rostros-negros" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a134-400.webp 400w, ../img/galeria/a134-800.webp 800w, ../img/galeria/a134-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a134.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 38%" alt="Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados">
+              <img src="../img/galeria/a134.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 38%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 6 · Rostros negros</span>
-          <p class="zoom-nombre">Rostro negro de cresta roja</p>
-          <p>Negro brillante, oro y rojo.</p>
-          <p class="zoom-enlace"><a href="#sala-rostros-negros">Ver la sala</a></p>
+          <span class="sala-numero">Sala 6</span>
+          <p class="zoom-nombre">Rostros negros</p>
+          <p class="sala-sub">Negro brillante, oro y rojo</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-rostros-negros" aria-labelledby="titulo-sala-rostros-negros">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 6</span>
             <h2 id="titulo-sala-rostros-negros">Rostros negros</h2>
             <p class="sala-sub">Negro brillante, oro y rojo</p>
@@ -508,29 +510,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-seres-encimados" aria-label="Búho sobre jaguar amarillo, de cerca">
+    <section class="zoom" id="zoom-seres-encimados" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a033-400.webp 400w, ../img/galeria/a033-800.webp 800w, ../img/galeria/a033-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a033.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de jaguar amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima">
+              <img src="../img/galeria/a033.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 7 · Seres encimados</span>
-          <p class="zoom-nombre">Búho sobre jaguar amarillo</p>
-          <p>Un animal sobre otro.</p>
-          <p class="zoom-enlace"><a href="#sala-seres-encimados">Ver la sala</a></p>
+          <span class="sala-numero">Sala 7</span>
+          <p class="zoom-nombre">Seres encimados</p>
+          <p class="sala-sub">Un animal sobre otro</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-seres-encimados" aria-labelledby="titulo-sala-seres-encimados">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 7</span>
             <h2 id="titulo-sala-seres-encimados">Seres encimados</h2>
             <p class="sala-sub">Un animal sobre otro</p>
@@ -549,29 +550,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-felinos" aria-label="Jaguar amarillo de rosetas, de cerca">
+    <section class="zoom" id="zoom-felinos" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a058-400.webp 400w, ../img/galeria/a058-800.webp 800w, ../img/galeria/a058-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a058.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 31%" alt="Máscara de jaguar amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos">
+              <img src="../img/galeria/a058.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 31%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 8 · Felinos</span>
-          <p class="zoom-nombre">Jaguar amarillo de rosetas</p>
-          <p>Fauces abiertas y piel manchada.</p>
-          <p class="zoom-enlace"><a href="#sala-felinos">Ver la sala</a></p>
+          <span class="sala-numero">Sala 8</span>
+          <p class="zoom-nombre">Felinos</p>
+          <p class="sala-sub">Fauces abiertas y piel manchada</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-felinos" aria-labelledby="titulo-sala-felinos">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 8</span>
             <h2 id="titulo-sala-felinos">Felinos</h2>
             <p class="sala-sub">Fauces abiertas y piel manchada</p>
@@ -593,29 +593,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-aves" aria-label="Pavo real de pico anaranjado, de cerca">
+    <section class="zoom" id="zoom-aves" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a108-400.webp 400w, ../img/galeria/a108-780.webp 780w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a108.jpg" width="780" height="1040" loading="lazy" decoding="async" style="--foco: 50%" alt="Máscara de ave azul con pico anaranjado y copete de plumas amarillas y azules con ojos de pavo real">
+              <img src="../img/galeria/a108.jpg" width="780" height="1040" loading="lazy" decoding="async" style="--foco: 50%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 9 · Aves</span>
-          <p class="zoom-nombre">Pavo real de pico anaranjado</p>
-          <p>Penachos, picos largos y ojos redondos.</p>
-          <p class="zoom-enlace"><a href="#sala-aves">Ver la sala</a></p>
+          <span class="sala-numero">Sala 9</span>
+          <p class="zoom-nombre">Aves</p>
+          <p class="sala-sub">Penachos, picos largos y ojos redondos</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-aves" aria-labelledby="titulo-sala-aves">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 9</span>
             <h2 id="titulo-sala-aves">Aves</h2>
             <p class="sala-sub">Penachos, picos largos y ojos redondos</p>
@@ -642,29 +641,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-pelaje-de-pincel" aria-label="Zorro anaranjado, de cerca">
+    <section class="zoom" id="zoom-pelaje-de-pincel" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a055-400.webp 400w, ../img/galeria/a055-800.webp 800w, ../img/galeria/a055-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a055.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes">
+              <img src="../img/galeria/a055.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 10 · Pelaje de pincel</span>
-          <p class="zoom-nombre">Zorro anaranjado</p>
-          <p>Según Don Gorgonio, es un zorro de adorno y representa la adaptabilidad y la astucia.</p>
-          <p class="zoom-enlace"><a href="#sala-pelaje-de-pincel">Ver la sala</a></p>
+          <span class="sala-numero">Sala 10</span>
+          <p class="zoom-nombre">Pelaje de pincel</p>
+          <p class="sala-sub">Tres zorros, cinco lobos y un animal de orejas de arcoíris</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-pelaje-de-pincel" aria-labelledby="titulo-sala-pelaje-de-pincel">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 10</span>
             <h2 id="titulo-sala-pelaje-de-pincel">Pelaje de pincel</h2>
             <p class="sala-sub">Tres zorros, cinco lobos y un animal de orejas de arcoíris</p>
@@ -686,29 +684,28 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-bestiario" aria-label="Toro multicolor de cuernos ondulados, de cerca">
+    <section class="zoom" id="zoom-bestiario" aria-hidden="true">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a142-400.webp 400w, ../img/galeria/a142-800.webp 800w, ../img/galeria/a142-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a142.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 55%" alt="Máscara de toro de frente con cuernos y orejas pintados de grecas azules, rosas y amarillas sobre pared azul">
+              <img src="../img/galeria/a142.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 55%" alt="">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
-          <span class="sala-numero">Sala 11 · Bestiario</span>
-          <p class="zoom-nombre">Toro multicolor de cuernos ondulados</p>
-          <p>Según Don Gorgonio, es un toro multicolor de adorno y representa la fuerza y la ascendencia.</p>
-          <p class="zoom-enlace"><a href="#sala-bestiario">Ver la sala</a></p>
+          <span class="sala-numero">Sala 11</span>
+          <p class="zoom-nombre">Bestiario</p>
+          <p class="sala-sub">Venados, toros, jirafas, cebras y otros animales</p>
         </div>
-        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+        <p class="zoom-pista">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-bestiario" aria-labelledby="titulo-sala-bestiario">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div class="visualmente-oculto">
             <span class="sala-numero">Sala 11</span>
             <h2 id="titulo-sala-bestiario">Bestiario</h2>
             <p class="sala-sub">Venados, toros, jirafas, cebras y otros animales</p>
@@ -881,13 +878,28 @@
         rehacer();
         if (actual && recorrido(actual.z) !== actual.largo) { saltar(inicioSeccion(actual.z) + Math.min(actual.p, 1) * recorrido(actual.z)); pintar(); }
       });
-      // con teclado: si el enlace recibe el foco antes de verse, se baja hasta el final de esa escena
-      zooms.forEach(function (z) {
-        z.escena.addEventListener("focusin", function () {
-          if (!activo()) return;
-          var fin = inicioSeccion(z) + recorrido(z);
-          if (Math.abs(scrollY - fin) > 2) saltar(fin);
+      // La barra de salas lleva a la portada de cada sala ya terminada, sin la animación.
+      // Sin movimiento (o sin el efecto), al principio de la portada, que ya se ve completa.
+      function irAPortada(hash) {
+        var s = document.getElementById("zoom-" + hash.replace(/^#sala-/, ""));
+        if (!s) return false;
+        var z = zooms.filter(function (x) { return x.seccion === s; })[0];
+        if (activo() && z) { saltar(inicioSeccion(z) + recorrido(z)); pintar(); }
+        else s.scrollIntoView();
+        return true;
+      }
+      document.querySelectorAll('.salas-nav a[href^="#sala-"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          if (irAPortada(a.hash)) { e.preventDefault(); history.replaceState(null, "", a.hash); }
         });
+      });
+      function revisarAncla() { if (/^#sala-/.test(location.hash)) irAPortada(location.hash); }
+      addEventListener("hashchange", revisarAncla);
+      // el navegador vuelve a bajar al ancla al terminar de cargar: se corrige en ese mismo scroll y otra vez un momento después
+      addEventListener("load", function () {
+        addEventListener("scroll", revisarAncla, { once: true });
+        setTimeout(function () { removeEventListener("scroll", revisarAncla); revisarAncla(); raiz.style.scrollBehavior = ""; }, 60);
       });
       if (activo()) rehacer();
       addEventListener("scroll", pedir, { passive: true });
