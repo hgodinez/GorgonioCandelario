@@ -28,8 +28,8 @@
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("zoom-activo");
   </script>
   <style>
-    /* Acercamiento al abrir una sala (prueba) */
-    .zoom { position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
+    /* Acercamiento al abrir cada sala (prueba). --recorrido: cuántas pantallas de scroll dura cada uno */
+    .zoom { --recorrido: 1.5; position: relative; border-top: 1px solid rgba(255, 250, 240, 0.08); }
     .zoom-escena { --alto-escena: 100svh; position: relative; min-height: var(--alto-escena); overflow: hidden; display: grid; place-items: center; }
     .zoom-caja {
       position: relative; z-index: 1;
@@ -47,7 +47,10 @@
       opacity: var(--sombra, 0); will-change: opacity;
     }
     .zoom-foto { position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radio-caja, 0); background: #2a211b; }
-    .zoom-foto img { width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 42%; will-change: transform; color: #e9dfcf; font-size: 0.95rem; }
+    .zoom-foto img {
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% var(--foco, 42%); transform-origin: 50% var(--foco, 42%);
+      will-change: transform; color: #e9dfcf; font-size: 0.95rem;
+    }
     .zoom-texto {
       position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: 100%; overflow-y: auto;
       padding: 2.5rem var(--margen) max(1.5rem, env(safe-area-inset-bottom)); color: var(--blanco);
@@ -74,12 +77,12 @@
       .zoom-texto::before { display: none; }
     }
     @media (min-aspect-ratio: 3 / 2) { .zoom-caja { height: var(--alto-escena); } }
-    .zoom-activo .zoom { height: 400vh; height: 400svh; }
+    .zoom-activo .zoom { height: calc((1 + var(--recorrido)) * 100vh); height: calc((1 + var(--recorrido)) * 100svh); }
     .zoom-activo .zoom-escena { position: sticky; top: 0; height: 100vh; height: var(--alto-escena); }
     .zoom-activo .zoom-texto > * { opacity: 0; pointer-events: none; will-change: opacity, transform; }
     .zoom-activo .zoom-texto::before { opacity: var(--texto, 0); }
     html:not(.zoom-activo) .zoom-pista { display: none; }
-    /* mientras la escena está fija se esconden el encabezado y la barra de salas; solo el foco del teclado los retiene */
+    /* mientras una escena está fija se esconden el encabezado y la barra de salas; solo el foco del teclado los retiene */
     .zoom-activo .encabezado, .zoom-activo .salas-nav { transition: transform 0.3s ease; }
     .zoom-activo .encabezado:focus-within, .zoom-activo .salas-nav:focus-within { transition: none; }
     .zoom-fijo .encabezado:not(:has(:focus-visible)) { transform: translateY(-100%); }
@@ -89,7 +92,7 @@
   </style>
 </head>
 <body class="pagina-galeria">
-  <p class="aviso-prueba" style="margin:0;padding:0.5rem var(--margen);background:var(--cempasuchil);color:var(--tinta);font-size:0.9rem;text-align:center">Página de prueba: la galería con el acercamiento al abrir la Sala 2. <a href="../galeria.html" style="color:var(--tinta)">Ver la galería de verdad</a></p>
+  <p class="aviso-prueba" style="margin:0;padding:0.5rem var(--margen);background:var(--cempasuchil);color:var(--tinta);font-size:0.9rem;text-align:center">Página de prueba: la galería con un acercamiento al abrir cada sala. <a href="../galeria.html" style="color:var(--tinta)">Ver la galería de verdad</a></p>
   <a class="salto" href="#contenido">Saltar al contenido</a>
 
   <header class="encabezado">
@@ -178,6 +181,25 @@
     <nav class="salas-nav" aria-label="Salas de la galería">
       <div class="contenedor"><ul><li><a href="#sala-danza-de-los-morenos">La Danza de los Morenos</a></li><li><a href="#sala-el-tiempo-y-la-noche">El Tiempo y La Noche</a></li><li><a href="#sala-nahuales">Nahuales</a></li><li><a href="#sala-diablos">Diablos</a></li><li><a href="#sala-vida-y-muerte">Vida y muerte, y otros rostros</a></li><li><a href="#sala-rostros-negros">Rostros negros</a></li><li><a href="#sala-seres-encimados">Seres encimados</a></li><li><a href="#sala-felinos">Felinos</a></li><li><a href="#sala-aves">Aves</a></li><li><a href="#sala-pelaje-de-pincel">Pelaje de pincel</a></li><li><a href="#sala-bestiario">Bestiario</a></li></ul></div>
     </nav>
+    <section class="zoom" id="zoom-danza-de-los-morenos" aria-label="Búho azul, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a050-400.webp 400w, ../img/galeria/a050-800.webp 800w, ../img/galeria/a050-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a050.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 1 · La Danza de los Morenos</span>
+          <p class="zoom-nombre">Búho azul</p>
+          <p>Según Don Gorgonio, es un búho macho de la Danza de los Morenos y representa la sabiduría.</p>
+          <p class="zoom-enlace"><a href="#sala-danza-de-los-morenos">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
     <section class="sala" id="sala-danza-de-los-morenos" aria-labelledby="titulo-sala-danza-de-los-morenos">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -276,20 +298,20 @@
         </div>
       </div>
     </section>
-    <section class="zoom" aria-label="El Tiempo, de cerca">
+    <section class="zoom" id="zoom-el-tiempo-y-la-noche" aria-label="El Tiempo, de cerca">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a025.jpg" width="1200" height="1600" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
+              <img src="../img/galeria/a025.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
           <span class="sala-numero">Sala 2 · El Tiempo y La Noche</span>
           <p class="zoom-nombre">El Tiempo</p>
-          <p>Tres rostros que comparten los mismos ojos. Según Don Gorgonio, representa las tres etapas de la vida: niño, adulto y viejo.</p>
+          <p>Según Don Gorgonio, esta máscara es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo.</p>
           <p class="zoom-enlace"><a href="#sala-el-tiempo-y-la-noche">Ver la sala</a></p>
         </div>
         <p class="zoom-pista" aria-hidden="true">Desliza</p>
@@ -316,6 +338,25 @@
         </div>
       </div>
     </section>
+    <section class="zoom" id="zoom-nahuales" aria-label="Nahual negro, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a102-400.webp 400w, ../img/galeria/a102-800.webp 800w, ../img/galeria/a102-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a102.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 3 · Nahuales</span>
+          <p class="zoom-nombre">Nahual negro</p>
+          <p>Entre la persona y el animal.</p>
+          <p class="zoom-enlace"><a href="#sala-nahuales">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
     <section class="sala" id="sala-nahuales" aria-labelledby="titulo-sala-nahuales">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -335,6 +376,25 @@
           <li class="pieza"><figure><a href="../img/galeria/a042-1200.webp" data-grande="../img/galeria/a042-1200.webp" data-titulo="Ave negra de pico largo" data-descripcion="Cabeza de ave negra brillante con trazos cortos amarillos como plumas, contorno del ojo rojo con rayas amarillas y pico muy largo y recto con borde rojo y filete amarillo."><img src="../img/galeria/a042-400.webp" srcset="../img/galeria/a042-400.webp 400w, ../img/galeria/a042-800.webp 800w, ../img/galeria/a042-1200.webp 1200w" sizes="(max-width: 560px) 46vw, 15rem" width="400" height="533" alt="Máscara de ave negra con pico largo bordeado de rojo y plumas pintadas con trazos amarillos, vista de lado" loading="lazy" decoding="async"></a><figcaption><strong>Ave negra de pico largo</strong></figcaption></figure></li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="zoom" id="zoom-diablos" aria-label="Diablo rojo de lengua de fuera, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a008-400.webp 400w, ../img/galeria/a008-800.webp 800w, ../img/galeria/a008-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a008.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 4 · Diablos</span>
+          <p class="zoom-nombre">Diablo rojo de lengua de fuera</p>
+          <p>Cuernos, colmillos y lenguas de fuera.</p>
+          <p class="zoom-enlace"><a href="#sala-diablos">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-diablos" aria-labelledby="titulo-sala-diablos">
@@ -360,6 +420,25 @@
         </div>
       </div>
     </section>
+    <section class="zoom" id="zoom-vida-y-muerte" aria-label="Dualidad vida y muerte, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a127-400.webp 400w, ../img/galeria/a127-800.webp 800w, ../img/galeria/a127-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a127.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 5 · Vida y muerte, y otros rostros</span>
+          <p class="zoom-nombre">Dualidad vida y muerte</p>
+          <p>Según Don Gorgonio, es la Dualidad vida y muerte, una máscara de adorno que representa el ciclo de la vida.</p>
+          <p class="zoom-enlace"><a href="#sala-vida-y-muerte">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
     <section class="sala" id="sala-vida-y-muerte" aria-labelledby="titulo-sala-vida-y-muerte">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -380,6 +459,25 @@
           <li class="pieza"><figure><a href="../img/galeria/a154-780.webp" data-grande="../img/galeria/a154-780.webp" data-titulo="Hombre barbado con gorro de astros" data-descripcion="Rostro color piel con ojos azules de rayos, cejas negras gruesas, boca entreabierta con dientes y barba negra larga tallada en rizos. Lleva un gorro azul marino con puntos y destellos dorados, un sol y una media luna dorados a los lados y una franja dorada al centro con un rombo azul."><img src="../img/galeria/a154-400.webp" srcset="../img/galeria/a154-400.webp 400w, ../img/galeria/a154-780.webp 780w" sizes="(max-width: 560px) 46vw, 15rem" width="400" height="533" alt="Máscara de hombre con barba negra y gorro azul con estrellas, sol y luna dorados sobre pared amarilla" loading="lazy" decoding="async"></a><figcaption><strong>Hombre barbado con gorro de astros</strong></figcaption></figure></li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="zoom" id="zoom-rostros-negros" aria-label="Rostro negro de cresta roja, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a134-400.webp 400w, ../img/galeria/a134-800.webp 800w, ../img/galeria/a134-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a134.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 6 · Rostros negros</span>
+          <p class="zoom-nombre">Rostro negro de cresta roja</p>
+          <p>Negro brillante, oro y rojo.</p>
+          <p class="zoom-enlace"><a href="#sala-rostros-negros">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-rostros-negros" aria-labelledby="titulo-sala-rostros-negros">
@@ -406,6 +504,25 @@
         </div>
       </div>
     </section>
+    <section class="zoom" id="zoom-seres-encimados" aria-label="Búho sobre jaguar amarillo, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a044-400.webp 400w, ../img/galeria/a044-800.webp 800w, ../img/galeria/a044-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a044.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de jaguar amarillo con manchas oscuras, colmillos y lengua roja, coronada por un búho gris de ojos amarillos">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 7 · Seres encimados</span>
+          <p class="zoom-nombre">Búho sobre jaguar amarillo</p>
+          <p>Un animal sobre otro.</p>
+          <p class="zoom-enlace"><a href="#sala-seres-encimados">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
     <section class="sala" id="sala-seres-encimados" aria-labelledby="titulo-sala-seres-encimados">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -426,6 +543,25 @@
           <li class="pieza"><figure><a href="../img/galeria/a021-1280.webp" data-grande="../img/galeria/a021-1280.webp" data-titulo="Rostro lila con iguana y serpientes" data-descripcion="Rostro lila con un gran ojo verde, cubierto por una iguana verde de cresta azul, serpientes amarillas con manchas cafés que muestran colmillos, y abajo un animal enroscado café anaranjado con manchas azules."><img src="../img/galeria/a021-400.webp" srcset="../img/galeria/a021-400.webp 400w, ../img/galeria/a021-800.webp 800w, ../img/galeria/a021-1280.webp 1280w" sizes="(max-width: 560px) 46vw, 15rem" width="400" height="300" alt="Máscara de rostro lila cubierta por una iguana verde, serpientes amarillas manchadas y un animal enroscado de manchas azules" loading="lazy" decoding="async"></a><figcaption><strong>Rostro lila con iguana y serpientes</strong></figcaption></figure></li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="zoom" id="zoom-felinos" aria-label="Jaguar anaranjado de rosetas, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a045-400.webp 400w, ../img/galeria/a045-800.webp 800w, ../img/galeria/a045-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a045.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de jaguar anaranjado con rosetas negras, orejas rojas puntiagudas y ojos azules">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 8 · Felinos</span>
+          <p class="zoom-nombre">Jaguar anaranjado de rosetas</p>
+          <p>Según Don Gorgonio, es un jaguar de adorno, que no se baila, y representa la valentía y el poder.</p>
+          <p class="zoom-enlace"><a href="#sala-felinos">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-felinos" aria-labelledby="titulo-sala-felinos">
@@ -451,6 +587,25 @@
           <li class="pieza"><figure><a href="../img/galeria/a068-1200.webp" data-grande="../img/galeria/a068-1200.webp" data-titulo="Jaguar anaranjado moteado" data-descripcion="Jaguar amarillo anaranjado con manchas negras grandes y puntos pequeños en el hocico, ojos verdes de pupila rasgada, nariz roja y orejas grises con manchas negras."><img src="../img/galeria/a068-400.webp" srcset="../img/galeria/a068-400.webp 400w, ../img/galeria/a068-800.webp 800w, ../img/galeria/a068-1200.webp 1200w" sizes="(max-width: 560px) 46vw, 15rem" width="400" height="533" alt="Máscara de jaguar anaranjado con manchas negras, ojos verdes de pupila rasgada y nariz roja, de frente sobre pared amarilla" loading="lazy" decoding="async"></a><figcaption><strong>Jaguar anaranjado moteado</strong></figcaption></figure></li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="zoom" id="zoom-aves" aria-label="Pato, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a013-400.webp 400w, ../img/galeria/a013-720.webp 720w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a013.jpg" width="720" height="1280" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de pato en tonos cafés con ojos grandes blancos y pico ancho saliente">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 9 · Aves</span>
+          <p class="zoom-nombre">Pato</p>
+          <p>Según Don Gorgonio, es de adorno y representa el equilibrio y la resiliencia.</p>
+          <p class="zoom-enlace"><a href="#sala-aves">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-aves" aria-labelledby="titulo-sala-aves">
@@ -483,6 +638,25 @@
         </div>
       </div>
     </section>
+    <section class="zoom" id="zoom-pelaje-de-pincel" aria-label="Zorro anaranjado, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a055-400.webp 400w, ../img/galeria/a055-800.webp 800w, ../img/galeria/a055-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a055.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 10 · Pelaje de pincel</span>
+          <p class="zoom-nombre">Zorro anaranjado</p>
+          <p>Según Don Gorgonio, es un zorro de adorno y representa la adaptabilidad y la astucia.</p>
+          <p class="zoom-enlace"><a href="#sala-pelaje-de-pincel">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
+      </div>
+    </section>
     <section class="sala" id="sala-pelaje-de-pincel" aria-labelledby="titulo-sala-pelaje-de-pincel">
       <div class="contenedor">
         <div class="sala-encabezado">
@@ -506,6 +680,25 @@
           <li class="pieza"><figure><a href="../img/galeria/a083-480.webp" data-grande="../img/galeria/a083-480.webp" data-titulo="Lobo gris verdoso" data-descripcion="Cánido de aspecto de lobo pintado a pincel seco en gris, verde y café, con orejas de interior amarillo verdoso, ojos amarillos de iris verde y boca abierta color guinda. Según Don Gorgonio, es un lobo de adorno y representa la astucia y la autenticidad."><img src="../img/galeria/a083-400.webp" srcset="../img/galeria/a083-400.webp 400w, ../img/galeria/a083-480.webp 480w" sizes="(max-width: 560px) 46vw, 15rem" width="400" height="533" alt="Máscara de lobo gris de estilo realista con ojos amarillo verdoso y boca abierta" loading="lazy" decoding="async"></a><figcaption><strong>Lobo gris verdoso</strong><span>Confirmada por Don Gorgonio</span></figcaption></figure></li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="zoom" id="zoom-bestiario" aria-label="Toro multicolor de cuernos ondulados, de cerca">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="../img/galeria/a142-400.webp 400w, ../img/galeria/a142-800.webp 800w, ../img/galeria/a142-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a142.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de toro de frente con cuernos y orejas pintados de grecas azules, rosas y amarillas sobre pared azul">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala 11 · Bestiario</span>
+          <p class="zoom-nombre">Toro multicolor de cuernos ondulados</p>
+          <p>Según Don Gorgonio, es un toro multicolor de adorno y representa la fuerza y la ascendencia.</p>
+          <p class="zoom-enlace"><a href="#sala-bestiario">Ver la sala</a></p>
+        </div>
+        <p class="zoom-pista" aria-hidden="true">Desliza</p>
       </div>
     </section>
     <section class="sala" id="sala-bestiario" aria-labelledby="titulo-sala-bestiario">
@@ -594,69 +787,102 @@
   <script>
     (function () {
       var raiz = document.documentElement;
-      var seccion = document.querySelector(".zoom");
-      var escena = seccion.querySelector(".zoom-escena");
-      var caja = seccion.querySelector(".zoom-caja");
-      var foto = caja.querySelector("img");
-      var pista = seccion.querySelector(".zoom-pista");
-      var textos = seccion.querySelectorAll(".zoom-texto > *");
-      var inicio = null, pendiente = false, ultimoP = 0, largoPrevio = 0;
+      var zooms = [].map.call(document.querySelectorAll(".zoom"), function (seccion) {
+        var escena = seccion.querySelector(".zoom-escena"), caja = seccion.querySelector(".zoom-caja");
+        return { seccion: seccion, escena: escena, caja: caja, foto: caja.querySelector("img"), pista: seccion.querySelector(".zoom-pista"),
+                 textos: seccion.querySelectorAll(".zoom-texto > *"), inicio: null, ultimoP: 0 };
+      });
+      var pendiente = false;
       function activo() { return raiz.classList.contains("zoom-activo"); }
       function tramo(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
       function suave(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
-      // empieza a crecer en cuanto se fija, con la misma velocidad con que venía (pendiente 1) y llega despacio
+      // empieza a crecer en cuanto se fija, con la misma velocidad con que venía (pendiente 1), y llega despacio
       function arranque(t) { return t + t * t - t * t * t; }
-      function medir() {
-        caja.style.transform = "none";
-        var r = caja.getBoundingClientRect(), e = escena.getBoundingClientRect();
-        var ancho = Math.min(e.width * 0.62, e.height * 0.62 * 0.75, 300);
-        inicio = { escala: ancho / r.width, dx: e.left + e.width / 2 - (r.left + r.width / 2), dy: e.top + e.height * 0.42 - (r.top + r.height / 2) };
-        caja.style.setProperty("--k", (1 / inicio.escala).toFixed(3));
-        caja.style.setProperty("--radio-sombra", (14 / inicio.escala).toFixed(1) + "px");
-      }
-      function recorrido() { return seccion.offsetHeight - escena.offsetHeight; }
-      function inicioSeccion() { return seccion.getBoundingClientRect().top + scrollY; }
+      function recorrido(z) { return z.seccion.offsetHeight - z.escena.offsetHeight; }
+      function inicioSeccion(z) { return z.seccion.getBoundingClientRect().top + scrollY; }
       function saltar(y) { var antes = raiz.style.scrollBehavior; raiz.style.scrollBehavior = "auto"; scrollTo(0, y); raiz.style.scrollBehavior = antes; }
+
+      // Cada caja está en su lugar final; se mide para saber cuánto encogerla y moverla al principio (como tarjeta).
+      // Primero se quitan todas las transformaciones y después se leen todas las medidas, para no forzar el diseño en cada una.
+      function medir() {
+        zooms.forEach(function (z) { z.caja.style.transform = "none"; });
+        zooms.forEach(function (z) {
+          var r = z.caja.getBoundingClientRect(), e = z.escena.getBoundingClientRect();
+          var ancho = Math.min(e.width * 0.62, e.height * 0.62 * 0.75, 300);
+          z.inicio = { escala: ancho / r.width, dx: e.left + e.width / 2 - (r.left + r.width / 2), dy: e.top + e.height * 0.42 - (r.top + r.height / 2) };
+        });
+        zooms.forEach(function (z) {
+          z.caja.style.setProperty("--k", (1 / z.inicio.escala).toFixed(3));
+          z.caja.style.setProperty("--radio-sombra", (14 / z.inicio.escala).toFixed(1) + "px");
+        });
+      }
+
+      function pintarZoom(z, arriba, largo) {
+        z.ultimoP = largo > 0 ? -arriba / largo : 1;  // sin recortar: sirve para volver al mismo punto al girar
+        var p = Math.min(1, Math.max(0, z.ultimoP));
+        var c = arranque(tramo(p, 0, 0.45));
+        var s = z.inicio.escala + (1 - z.inicio.escala) * c;
+        z.caja.style.transform = "translate3d(" + (z.inicio.dx * (1 - c)).toFixed(1) + "px," + (z.inicio.dy * (1 - c)).toFixed(1) + "px,0) scale(" + s.toFixed(4) + ")";
+        z.caja.style.setProperty("--radio-caja", (14 * (1 - c) / s).toFixed(1) + "px");
+        z.caja.style.setProperty("--sombra", (1 - c).toFixed(3));
+        z.foto.style.transform = "scale(" + (1 + 0.06 * suave(tramo(p, 0.45, 1))).toFixed(4) + ")";
+        z.pista.style.opacity = (1 - tramo(c, 0.03, 0.2)).toFixed(3);
+        var primero = 0;
+        for (var i = 0; i < z.textos.length; i++) {
+          var t = suave(tramo(p, 0.45 + i * 0.06, 0.55 + i * 0.06));
+          if (i === 0) primero = t;
+          z.textos[i].style.opacity = t.toFixed(3);
+          z.textos[i].style.transform = "translate3d(0," + ((1 - t) * 16).toFixed(1) + "px,0)";
+          z.textos[i].style.pointerEvents = t > 0.5 ? "auto" : "";
+        }
+        z.escena.style.setProperty("--texto", primero.toFixed(3));
+      }
+
       function pintar() {
         pendiente = false;
         if (!activo()) return;
-        var largo = recorrido(), arriba = seccion.getBoundingClientRect().top;
-        // las barras se esconden al fijarse y vuelven cuando ya se fue un cuarto de la escena; con 48px de margen
+        // primero se lee todo, después se escribe
+        var alto = innerHeight, medidas = zooms.map(function (z) {
+          var r = z.seccion.getBoundingClientRect();
+          return { arriba: r.top, abajo: r.bottom, largo: recorrido(z), escena: z.escena.offsetHeight };
+        });
+        // las barras se esconden al fijarse una escena y vuelven cuando ya se fue un cuarto de ella; con 48px de margen
         // para que no parpadeen si el dedo o la inercia se detienen justo en el borde
-        var limite = -largo - escena.offsetHeight / 4, fijo = raiz.classList.contains("zoom-fijo");
-        if (!fijo && arriba <= 0 && arriba >= limite) raiz.classList.add("zoom-fijo");
-        else if (fijo && (arriba > 48 || arriba < limite - 48)) raiz.classList.remove("zoom-fijo");
-        ultimoP = largo > 0 ? -arriba / largo : 1;  // sin recortar: sirve para volver al mismo punto al girar
-        var p = Math.min(1, Math.max(0, ultimoP));
-        var c = arranque(tramo(p, 0, 0.45));
-        var s = inicio.escala + (1 - inicio.escala) * c;
-        caja.style.transform = "translate3d(" + (inicio.dx * (1 - c)).toFixed(1) + "px," + (inicio.dy * (1 - c)).toFixed(1) + "px,0) scale(" + s.toFixed(4) + ")";
-        caja.style.setProperty("--radio-caja", (14 * (1 - c) / s).toFixed(1) + "px");
-        caja.style.setProperty("--sombra", (1 - c).toFixed(3));
-        foto.style.transform = "scale(" + (1 + 0.06 * suave(tramo(p, 0.45, 1))).toFixed(4) + ")";
-        pista.style.opacity = (1 - tramo(c, 0.03, 0.2)).toFixed(3);
-        var primero = 0;
-        for (var i = 0; i < textos.length; i++) {
-          var t = suave(tramo(p, 0.45 + i * 0.06, 0.55 + i * 0.06));
-          if (i === 0) primero = t;
-          textos[i].style.opacity = t.toFixed(3);
-          textos[i].style.transform = "translate3d(0," + ((1 - t) * 16).toFixed(1) + "px,0)";
-          textos[i].style.pointerEvents = t > 0.5 ? "auto" : "";
-        }
-        escena.style.setProperty("--texto", primero.toFixed(3));
+        var dentro = false, cerca = false;
+        medidas.forEach(function (m) {
+          var limite = -m.largo - m.escena / 4;
+          if (m.arriba <= 0 && m.arriba >= limite) dentro = true;
+          if (m.arriba <= 48 && m.arriba >= limite - 48) cerca = true;
+        });
+        var fijo = raiz.classList.contains("zoom-fijo");
+        if (!fijo && dentro) raiz.classList.add("zoom-fijo");
+        else if (fijo && !cerca) raiz.classList.remove("zoom-fijo");
+        // solo se pintan las que están en pantalla o cerca
+        zooms.forEach(function (z, i) {
+          var m = medidas[i];
+          if (m.abajo < -alto || m.arriba > alto * 1.5) return;
+          pintarZoom(z, m.arriba, m.largo);
+        });
       }
       function pedir() { if (!pendiente) { pendiente = true; requestAnimationFrame(pintar); } }
-      function rehacer() { medir(); pintar(); largoPrevio = recorrido(); }
-      function irAlFinal() { if (!activo()) return; var fin = inicioSeccion() + recorrido(); if (Math.abs(scrollY - fin) > 2) saltar(fin); }
-      // si cambia el largo del recorrido (girar, o cambiar el alto de la ventana) se vuelve al mismo punto;
-      // si no cambia (la barra del navegador en el teléfono), el scroll no se toca
+      function rehacer() { medir(); pintar(); }
+
+      // Al cambiar el tamaño, la escena que estaba fija vuelve al mismo punto de su animación
       addEventListener("resize", function () {
         if (!activo()) return;
-        var p = ultimoP, previo = largoPrevio;
+        var actual = null;
+        zooms.forEach(function (z) { if (z.ultimoP > 0 && z.ultimoP <= 1.001) actual = { z: z, p: z.ultimoP, largo: recorrido(z) }; });
         rehacer();
-        if (largoPrevio !== previo && p > 0 && p <= 1.001) { saltar(inicioSeccion() + Math.min(p, 1) * recorrido()); pintar(); }
+        if (actual && recorrido(actual.z) !== actual.largo) { saltar(inicioSeccion(actual.z) + Math.min(actual.p, 1) * recorrido(actual.z)); pintar(); }
       });
-      escena.addEventListener("focusin", irAlFinal);
+      // con teclado: si el enlace recibe el foco antes de verse, se baja hasta el final de esa escena
+      zooms.forEach(function (z) {
+        z.escena.addEventListener("focusin", function () {
+          if (!activo()) return;
+          var fin = inicioSeccion(z) + recorrido(z);
+          if (Math.abs(scrollY - fin) > 2) saltar(fin);
+        });
+      });
       if (activo()) rehacer();
       addEventListener("scroll", pedir, { passive: true });
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (activo()) rehacer(); });
