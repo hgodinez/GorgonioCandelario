@@ -40,6 +40,8 @@
 *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; -webkit-text-size-adjust: 100%; }
+/* con el foco en el encabezado fijo, sin scroll-padding: cada Tab entre sus enlaces no mueve la página */
+html:has(.encabezado:focus-within) { scroll-padding-top: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -63,7 +65,7 @@ a:hover { color: var(--bermellon); }
 
 :focus-visible { outline: 3px solid var(--turquesa); outline-offset: 3px; border-radius: 4px; }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--fuente-titulos);
   font-weight: 600;
   line-height: 1.12;
@@ -120,7 +122,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 .navegacion a:hover { background: var(--papel-2); color: var(--tinta); }
 
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .menu-boton { display: inline-flex; }
   .navegacion {
     position: absolute; left: 0; right: 0; top: 100%;
@@ -281,10 +283,16 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .visor-siguiente { right: 0.5rem; }
 .visor .visor-anterior, .visor .visor-siguiente { background: rgba(16, 12, 10, 0.72); border-color: rgba(255, 250, 240, 0.6); }
 .visor .visor-anterior:hover, .visor .visor-siguiente:hover { background: rgba(16, 12, 10, 0.9); }
+/* En teléfonos la foto es lo principal: el texto se desplaza dentro de su espacio y las flechas van a los lados de la foto */
 @media (max-width: 600px) {
-  .visor[open] { grid-template-rows: auto minmax(min(16rem, 45dvh), 1fr) auto; }
-  .visor-imagen { padding: 0 0.5rem 3.5rem; }
-  .visor-anterior, .visor-siguiente { top: auto; bottom: 0.5rem; transform: none; }
+  .visor[open] { grid-template-rows: auto minmax(0, 1fr) auto; }
+  .visor-imagen { padding: 0 0.5rem; }
+  .visor-texto { max-height: 36dvh; overflow-y: auto; overscroll-behavior: contain; padding-top: 0.5rem; }
+}
+/* Las otras vistas van primero, pegadas a la foto, para que no queden escondidas bajo el texto */
+@media (max-width: 600px), (orientation: landscape) and (max-height: 500px) {
+  .visor-texto { display: flex; flex-direction: column; }
+  .visor .visor-vistas { order: -1; margin: 0 0 0.5rem; }
 }
 
 /* Danza */
@@ -307,7 +315,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .pasos li:nth-child(2)::before { background: var(--cempasuchil); color: var(--tinta); }
 .pasos li:nth-child(3)::before { background: var(--turquesa); }
 .pasos li:nth-child(4)::before { background: var(--tinta); }
-.pasos h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+.pasos h4 { font-size: 1.2rem; margin-bottom: 0.4rem; }
 .pasos p { margin: 0; color: var(--tinta-suave); }
 @media (max-width: 900px) { .pasos { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .pasos { grid-template-columns: 1fr; } }
@@ -533,7 +541,7 @@ a.pareja-imagen:hover img { transform: scale(1.04); }
 .espiritu-foto img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 100%; }
 @media (max-width: 640px) {
   .espiritu-contenido { grid-template-columns: minmax(0, 1fr); }
-  .espiritu-foto { max-width: 24rem; margin-inline: auto; }
+  .espiritu-foto { width: 100%; max-width: 24rem; margin-inline: auto; }
 }
 /* el h2 va antes de la cita en el documento, pero la cita se ve primero */
 .espiritu-contenido > div { display: flex; flex-direction: column; }

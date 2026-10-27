@@ -16,8 +16,18 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Máscara de El Tiempo de Don Gorgonio: tres rostros con barba negra y una corona con un sol con cara">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- PENDIENTE: cuando haya dominio propio, cambiar gorgoniocandelario.netlify.app en og:url y og:image -->
+  <link rel="canonical" href="https://gorgoniocandelario.netlify.app/">
+  <link rel="icon" href="img/icono-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="img/icono-180.png">
   <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <script>
+    // con #… en la dirección (por ejemplo, desde el menú de la galería), salta directo a la sección sin la animación;
+    // el desplazamiento suave vuelve al terminar de cargar
+    if (location.hash) {
+      document.documentElement.style.scrollBehavior = "auto";
+      addEventListener("load", function () { setTimeout(function () { document.documentElement.style.scrollBehavior = ""; }, 100); });
+    }
+  </script>
   <link rel="preload" href="fuentes/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fuentes/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/estilos.css">
@@ -105,7 +115,6 @@
           </figure>
           <p>Antes de aprender a tallar, aprendió a observar. De niño miraba cómo las manos de su padre sacaban de un pedazo de madera animales, diablos y rostros. Así empezó: mirando, intentando y volviendo a intentar.</p>
           <p>Pero Don Herminio le enseñó algo que iba más allá de las herramientas: para hacer máscaras, primero hay que danzar. Hay que sentir la tradición, conocer a los personajes y entender la alegría de darles vida. Don Gorgonio heredó de su padre el talento y, de él y de su abuelo, la pasión por las danzas y ceremonias de su comunidad.</p>
-          <!-- PENDIENTE confirmar con la familia: edad a la que empezó, generación (tercera o cuarta), premio nacional, significado de "Mi Güelo Baci". -->
 
           <ol class="linaje">
             <li><span>Abuelo</span><strong>Don Basilio</strong></li>
@@ -167,7 +176,7 @@
           <div>
             <p class="antetitulo">Tradición de Suchitlán</p>
             <h2 id="titulo-danza">La Danza de los Morenos</h2>
-            <p class="entrada-danza">En Semana Santa, dieciocho danzantes con máscaras de animales recorren de madrugada las calles de Suchitlán al son de una vihuela. Es una tradición propia de este pueblo, y la familia Candelario la ha sostenido por generaciones.</p>
+            <p class="entrada-danza">En Semana Santa la danza empieza de madrugada: dieciocho danzantes con máscaras de animales bailan en Suchitlán al son de una vihuela. Es una tradición propia de este pueblo, y la familia Candelario la ha sostenido por generaciones.</p>
             <p>Según la tradición, la danza representa la defensa que los animales hicieron del cuerpo de Jesús mientras estuvo en el sepulcro. Otra versión cuenta que bailaban para distraer a los soldados romanos que custodiaban la tumba.</p>
             <p>En Suchitlán se dice que las nueve parejas recuerdan los nueve meses de embarazo de la Virgen María y los nueve días del novenario de un difunto.</p>
           </div>
@@ -180,7 +189,7 @@
         </div>
 
         <h3 class="subtitulo-seccion">Las nueve parejas</h3>
-        <p>Como en el arca de Noé, los animales salen en parejas, macho y hembra. Al frente van los capitanes —según Don Gorgonio, el chivo es el primero y el coyote el segundo— y detrás de ellos sus hembras, como cuenta su hermano José Guadalupe. Antes, cuenta una investigadora de la Universidad de Colima, iba al frente el burro. Junto a cada pareja va lo que simboliza, según Don Gorgonio. Toca una foto para verla en grande.</p>
+        <p>Como en el arca de Noé, los animales salen en parejas, macho y hembra. Al frente van los capitanes —según Don Gorgonio, el chivo es el primero y el coyote el segundo— y detrás de ellos sus hembras, como cuenta su hermano José Guadalupe. Antes, cuenta una investigadora de la Universidad de Colima, iba al frente el burro. Junto a cada pareja va lo que simboliza, según Don Gorgonio. Toca o haz clic en una foto para verla en grande.</p>
         <!-- PAREJAS -->
     <ol class="parejas" data-conjunto>
             <li class="pareja">
@@ -192,7 +201,7 @@
               <p><span class="pareja-numero">2</span><span><strong>Coyotes</strong><span class="pareja-nota">Segundo capitán · la inteligencia</span></span></p>
             </li>
             <li class="pareja">
-              <a class="pareja-imagen" href="img/mascaras/borrego-anaranjado-591.jpg" data-grande="img/mascaras/borrego-anaranjado-591.webp" data-titulo="Borregos cimarrones" data-descripcion="Rostro anaranjado cubierto de escamas amarillas, espiral negra en la frente, ojos verdes y grandes cuernos curvos, negros con dientes blancos." data-significado="En la danza, según Don Gorgonio, el borrego representa la fuerza y la testarudez."><picture><source type="image/webp" srcset="img/mascaras/borrego-anaranjado-tarjeta-360.webp 360w, img/mascaras/borrego-anaranjado-tarjeta-540.webp 540w, img/mascaras/borrego-anaranjado-tarjeta-697.webp 697w" sizes="(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem"><img src="img/mascaras/borrego-anaranjado-tarjeta-360.jpg" srcset="img/mascaras/borrego-anaranjado-tarjeta-360.jpg 360w, img/mascaras/borrego-anaranjado-tarjeta-540.jpg 540w, img/mascaras/borrego-anaranjado-tarjeta-697.jpg 697w" sizes="(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem" width="360" height="480" alt="Máscara de borrego anaranjada con escamas amarillas pintadas, espiral negra en la frente y cuernos curvos negros y blancos" loading="lazy" decoding="async"></picture></a>
+              <a class="pareja-imagen" href="img/mascaras/borrego-anaranjado-591.jpg" data-grande="img/mascaras/borrego-anaranjado-591.webp" data-titulo="Borregos cimarrones" data-descripcion="Rostro anaranjado cubierto de escamas amarillas, espiral negra en la frente, ojos verdes y grandes cuernos curvos, negros con relieves blancos." data-significado="En la danza, según Don Gorgonio, el borrego representa la fuerza y la testarudez."><picture><source type="image/webp" srcset="img/mascaras/borrego-anaranjado-tarjeta-360.webp 360w, img/mascaras/borrego-anaranjado-tarjeta-540.webp 540w, img/mascaras/borrego-anaranjado-tarjeta-697.webp 697w" sizes="(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem"><img src="img/mascaras/borrego-anaranjado-tarjeta-360.jpg" srcset="img/mascaras/borrego-anaranjado-tarjeta-360.jpg 360w, img/mascaras/borrego-anaranjado-tarjeta-540.jpg 540w, img/mascaras/borrego-anaranjado-tarjeta-697.jpg 697w" sizes="(max-width: 560px) 46vw, (max-width: 1000px) 31vw, 23rem" width="360" height="480" alt="Máscara de borrego anaranjada con escamas amarillas pintadas, espiral negra en la frente y cuernos curvos negros y blancos" loading="lazy" decoding="async"></picture></a>
               <p><span class="pareja-numero">3</span><span><strong>Borregos cimarrones</strong><span class="pareja-nota">La fuerza y la testarudez</span></span></p>
             </li>
             <li class="pareja">
@@ -255,7 +264,6 @@
           <p>En 2023, la Danza de los Morenos ilustró el billete de la Lotería Nacional que conmemoró los 500 años de la fundación de Colima. La cuadrilla se ha presentado también fuera de Suchitlán, como en el Encuentro Regional de Danza Centro Occidente, en el Jardín Libertad de Colima (2012), y en el festival Tonelhuayo. Está registrada en el <a href="https://sic.cultura.gob.mx/ficha.php?table=frpintangible&amp;table_id=300" rel="noopener">Inventario del Patrimonio Cultural Inmaterial</a> de la Secretaría de Cultura, con la información que aportó José Guadalupe Candelario.</p>
           <p class="texto-suave">Para saber más: <a href="https://www.inah.gob.mx//foto-del-dia/danza-de-morenos-animales-y-religiosidad-en-suchitlan" rel="noopener">INAH, «Danza de morenos: animales y religiosidad en Suchitlán»</a> · <a href="https://www.ucol.mx/noticias/nota_2251.htm" rel="noopener">Universidad de Colima</a> · <a href="https://www.mexicodesconocido.com.mx/danza-de-los-morenos-colima.html" rel="noopener">México Desconocido</a> · Videos en YouTube: <a href="https://www.youtube.com/watch?v=teMTlD1CO-o" rel="noopener">explicación de José Guadalupe Candelario</a> y <a href="https://www.youtube.com/watch?v=2LT88Jh8fkk" rel="noopener">presentación en la Feria de Todos Santos de Colima</a>.</p>
         </div>
-        <!-- PENDIENTE confirmar con la familia: si el bartolo sale con los Morenos; el recorrido. -->
       </div>
     </section>
 
@@ -289,16 +297,16 @@
         <h3 class="subtitulo-tecnica">Del árbol a la máscara</h3>
         <p class="texto-suave">Así se hace una máscara en Suchitlán, según lo cuentan José Guadalupe Candelario, hermano de Don Gorgonio y también mascarero, y la ficha de arte popular de la Secretaría de Cultura.</p>
         <ol class="pasos pasos-6">
-          <li><h3>El árbol</h3><p>José Guadalupe cuenta que el árbol se prepara en luna llena: se le quita la corteza a metro y medio del suelo, se espera ocho días y se derriba sin tocar la raíz.</p></li>
-          <li><h3>El desbaste</h3><p>Se parte y secciona el tronco y se vacía la pieza por dentro. Con el angaro, herramienta de los mascareros de Suchitlán, se desbasta y se le da forma al rostro.</p></li>
-          <li><h3>La talla fina</h3><p>Con cuchillos de varios tamaños se afinan las facciones y se abren los ojos, la nariz y la boca.</p></li>
-          <li><h3>El lijado y la base</h3><p>Se lija, se pule y se resanan las imperfecciones. Después se aplica una base de blanco de España que tapa el poro de la madera.</p></li>
-          <li><h3>La policromía</h3><p>Sobre la base se dan varias manos de color y, al final, se pintan uno por uno los filetes, puntos, grecas y espirales.</p></li>
-          <li><h3>Los añadidos</h3><p>Algunas máscaras llevan fibra para el pelo o la barba. Los cuernos del borrego cimarrón se tallan en la misma pieza; los del chivo, más largos, se pegan y se clavan.</p></li>
+          <li><h4>El árbol</h4><p>José Guadalupe cuenta que el árbol se prepara en luna llena: se le quita la corteza a metro y medio del suelo, se espera ocho días y se derriba sin tocar la raíz.</p></li>
+          <li><h4>El desbaste</h4><p>Se parte y secciona el tronco y se vacía la pieza por dentro. Con el angaro, herramienta de los mascareros de Suchitlán, se desbasta y se le da forma al rostro.</p></li>
+          <li><h4>La talla fina</h4><p>Con cuchillos de varios tamaños se afinan las facciones y se abren los ojos, la nariz y la boca.</p></li>
+          <li><h4>El lijado y la base</h4><p>Se lija, se pule y se resanan las imperfecciones. Después se aplica una base de blanco de España que tapa el poro de la madera.</p></li>
+          <li><h4>La policromía</h4><p>Sobre la base se dan varias manos de color y, al final, se pintan uno por uno los filetes, puntos, grecas y espirales.</p></li>
+          <li><h4>Los añadidos</h4><p>Algunas máscaras llevan fibra para el pelo o la barba. Los cuernos del borrego cimarrón se tallan en la misma pieza; los del chivo, más largos, se pegan y se clavan.</p></li>
         </ol>
 
         <div class="nota-tecnica">
-          <p><strong>¿Cuánto tarda una máscara?</strong> A Don Gorgonio le lleva unos diez días terminar una máscara.</p>
+          <p><strong>¿Cuánto tarda una máscara?</strong> Cuenta la familia que a Don Gorgonio le lleva unos diez días terminar una máscara.</p>
           <p><strong>¿Con qué pinta?</strong> Don Gorgonio cuenta que en su taller usan pinturas vinílicas, acrílicas y esmaltes, y que las barbas se hacen de yute natural.</p>
         </div>
 
@@ -340,7 +348,6 @@
             </figure></li>
           </ul>
     <!-- /DETALLES -->
-        <!-- PENDIENTE confirmar con Don Gorgonio su proceso propio: madera que usa hoy, corte y secado, herramientas, acabado, fibra para el pelo, cómo se sujeta la máscara. -->
       </div>
     </section>
 
@@ -388,14 +395,14 @@
             <p class="etiqueta">Fomento Cultural Banamex</p>
             <h3>Grandes Maestros del Arte Popular Mexicano</h3>
             <p>Figura en el directorio de <cite>Grandes Maestros del Arte Popular Mexicano, 20 años</cite> (Fomento Cultural Banamex, 2019), con la especialidad de talla policromada.</p>
-            <a href="https://amigosgrandesmaestros.org/gmap20/artesanos/gorgonio-candelario-castro/" rel="noopener">Ver su ficha</a>
+            <a href="https://books.google.com/books/about/Grandes_maestros_del_arte_popular_mexica.html?id=6BQ0zgEACAAJ" rel="noopener">Ver el libro</a>
           </article>
           <article class="tarjeta">
             <p class="etiqueta">Santa Fe, Nuevo México</p>
             <h3 lang="en">Museum of International Folk Art</h3>
             <p>El museo conserva dos máscaras suyas de 1995: un tecolote de la Danza de los Morenos y El Tiempo, para la pastorela.</p>
             <a href="https://collection.moifa.org/objects/82011/buho-owl-dance-mask-for-dance-of-the-morenos-or-dance-of-t" rel="noopener">Ver la máscara del tecolote</a>
-            <a href="https://collection.moifa.org/objects/82012/el-tiempo-time-dance-mask-for-dance-of-the-pastorela-chri" rel="noopener">Ver la máscara «El Tiempo»</a>
+            <a href="https://collection.moifa.org/objects/82012/el-tiempo-time-dance-mask-for-dance-of-the-pastorela-chri" rel="noopener">Ver la máscara de El Tiempo</a>
           </article>
           <article class="tarjeta">
             <p class="etiqueta">La herencia</p>
@@ -451,8 +458,7 @@
         <div>
           <p class="antetitulo">El taller</p>
           <h2 id="titulo-taller">Taller Mi Güelo Baci</h2>
-          <p>En su taller de Suchitlán, Don Gorgonio recibe a quienes quieran conocer de cerca la talla policromada y llevarse una máscara hecha a mano. Antes de ir, escríbele por WhatsApp para confirmar que pueda recibirte.</p>
-          <!-- PENDIENTE: confirmar horario, si recibe visitas sin cita y si da clases de talla. -->
+          <p>En su taller de Suchitlán, Don Gorgonio recibe a quienes quieran conocer de cerca la talla policromada y llevarse una máscara hecha a mano. Antes de ir, escríbele por WhatsApp para saber si puede recibirte.</p>
           <ul class="contacto">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
@@ -460,11 +466,11 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C7 3 3 6.6 3 11c0 2.3 1.1 4.4 2.9 5.9L5 21l4.2-2.2c.9.2 1.8.3 2.8.3 5 0 9-3.6 9-8.1S17 3 12 3zm-3.5 9.2a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zm3.5 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zm3.5 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>
-              <div><strong>WhatsApp</strong><a href="https://wa.me/523121006716?text=Hola%2C%20don%20Gorgonio.%20Vi%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20m%C3%A1scaras." rel="noopener">+52 312 100 6716</a></div>
+              <div><strong>WhatsApp</strong><a href="https://wa.me/523121006716?text=Hola%2C%20Don%20Gorgonio.%20Vi%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20m%C3%A1scaras." rel="noopener">+52 312 100 6716</a></div>
             </li>
           </ul>
           <div class="botones">
-            <a class="boton boton-principal" href="https://wa.me/523121006716?text=Hola%2C%20don%20Gorgonio.%20Vi%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20m%C3%A1scaras." rel="noopener">Escribir por WhatsApp</a>
+            <a class="boton boton-principal" href="https://wa.me/523121006716?text=Hola%2C%20Don%20Gorgonio.%20Vi%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20de%20sus%20m%C3%A1scaras." rel="noopener">Escribir por WhatsApp</a>
             <a class="boton boton-secundario" href="https://www.google.com/maps/dir/?api=1&amp;destination=Jazm%C3%ADn+y+Lirio%2C+Suchitl%C3%A1n%2C+Colima" rel="noopener">Cómo llegar</a>
           </div>
         </div>
@@ -514,7 +520,6 @@
       </div>
       <div>
         <p>Taller Mi Güelo Baci · Suchitlán, Comala, Colima</p>
-        <!-- PENDIENTE: confirmar quién tomó las fotos y cómo quiere que se le dé crédito. -->
         <p>Fotografías de su obra: cortesía de la familia Candelario</p>
       </div>
     </div>

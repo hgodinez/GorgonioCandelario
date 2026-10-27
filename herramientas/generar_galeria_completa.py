@@ -65,9 +65,9 @@ def tarjeta(slug):
     if p.get('pie'):
         sub = f'<span>{e(p["pie"])}</span>'
     elif p.get('certeza') == 'confirmada-maestro':
-        sub = '<span>Confirmada por Don Gorgonio</span>'
+        sub = '<span>Pieza confirmada por Don Gorgonio</span>'
     elif p.get('certeza') == 'confirmada-familia':
-        sub = '<span>Confirmada por la familia</span>'
+        sub = '<span>Pieza confirmada por la familia</span>'
     else:
         sub = ''
     return (f'          <li class="{clase}"><figure>'
@@ -155,7 +155,7 @@ for n, sala in enumerate(g['salas'], 1):
             <h2 id="titulo-sala-{sala["id"]}">{e(sala["titulo"])}</h2>
             <p class="sala-sub">{e(sala["subtitulo"])}</p>
           </div>
-          <p class="sala-texto">{e(sala["texto"])}</p>
+          <div class="sala-texto">{"".join(f"<p>{e(x)}</p>" for x in sala["texto"].split(chr(10) * 2))}</div>
         </div>
 {chr(10).join(partes)}
       </div>
@@ -193,7 +193,7 @@ def desfile(ids):
             'Pausar el desfile</button></div>\n    '
             '<section class="desfile" id="desfile" aria-label="Desfile de máscaras">\n        <div class="desfile-pistas">\n'
             '          <ul class="desfile-pista" data-conjunto>\n' + '\n'.join(items) + '\n          </ul>\n'
-            '          <ul class="desfile-pista" aria-hidden="true" inert>\n' + '\n'.join(copia) + '\n          </ul>\n'
+            '          <ul class="desfile-pista" aria-hidden="true">\n' + '\n'.join(copia) + '\n          </ul>\n'
             '        </div>\n      </section>')
 
 

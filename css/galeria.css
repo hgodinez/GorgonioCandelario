@@ -7,7 +7,7 @@
 .pagina-galeria .navegacion a:hover { background: rgba(255, 250, 240, 0.1); color: var(--blanco); }
 .pagina-galeria .navegacion a[aria-current="page"] { background: var(--cempasuchil); color: var(--tinta); }
 .pagina-galeria .menu-boton { background: var(--cempasuchil); color: var(--tinta); }
-@media (max-width: 1000px) {
+@media (max-width: 62.5em) {
   .pagina-galeria .navegacion { background: #14100d; border-bottom-color: rgba(255, 250, 240, 0.12); }
 }
 .pagina-galeria a { color: var(--cempasuchil); }
@@ -55,7 +55,7 @@
   border-bottom: 1px solid rgba(255, 250, 240, 0.1);
 }
 .salas-nav ul {
-  list-style: none; margin: 0; padding: 0.6rem 3rem 0.6rem 0; display: flex; gap: 0.5rem; overflow-x: auto; scrollbar-width: thin;
+  list-style: none; margin: 0 0 0 -0.4rem; padding: 0.6rem 3rem 0.6rem 0.4rem; display: flex; gap: 0.5rem; overflow-x: auto; scrollbar-width: thin;
   /* Se desvanece a la derecha: hay más salas al deslizar */
   -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 3rem), transparent);
   mask-image: linear-gradient(90deg, #000 calc(100% - 3rem), transparent);
@@ -67,6 +67,14 @@
 .salas-nav a:hover { background: rgba(255, 250, 240, 0.1); color: var(--blanco); }
 .salas-nav a[aria-current] { background: var(--cempasuchil); border-color: var(--cempasuchil); color: var(--tinta); }
 html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
+/* En computadora caben todas las salas: la barra usa todo el ancho y las salas se acomodan en una o dos filas */
+@media (min-width: 1000px) {
+  .salas-nav .contenedor { width: calc(100% - 2 * var(--margen)); }
+  .salas-nav ul { flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-left: 0; padding: 0.6rem 0; overflow-x: visible; -webkit-mask-image: none; mask-image: none; }
+  .salas-nav a { font-size: 0.88rem; padding: 0.35rem 0.75rem; }
+  html:has(.pagina-galeria) { scroll-padding-top: 10.5rem; }
+}
+@media (min-width: 1440px) { html:has(.pagina-galeria) { scroll-padding-top: 8rem; } }  /* de aquí en adelante, una sola fila */
 
 /* Salas */
 .sala { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid rgba(255, 250, 240, 0.08); }
@@ -75,6 +83,8 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 .sala-encabezado h2 { margin: 0; font-size: clamp(2rem, 4.5vw, 3.2rem); }
 .sala-encabezado .sala-sub { margin: 0.4rem 0 0; color: var(--cempasuchil); font-family: var(--fuente-titulos); font-style: italic; font-size: 1.15rem; }
 .sala-encabezado .sala-texto { margin: 0; color: #e2d7c6; }
+.sala-texto > p { margin: 0 0 0.9em; }
+.sala-texto > p:last-child { margin-bottom: 0; }
 .sala-numero { display: block; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a89a87; margin-bottom: 0.5rem; }
 
 .subsala { margin-top: clamp(2rem, 4vw, 3rem); }
@@ -144,7 +154,9 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
   filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.65));
   transition: transform 0.4s ease;
 }
-.desfile a:hover img, .desfile a:focus-visible img { transform: translateY(-10px) scale(1.04); }
+.desfile a:hover img, .desfile a:focus-visible img, .desfile-pista[aria-hidden] li:hover img { transform: translateY(-10px) scale(1.04); }
+/* la copia del bucle no tiene enlaces, pero al tocarla abre la misma máscara (js/sitio.js) */
+.desfile-pista[aria-hidden] li { cursor: pointer; }
 @keyframes desfile { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .desfile { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
@@ -163,16 +175,8 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 .zoom-escena { --alto-escena: 100svh; position: relative; min-height: var(--alto-escena); overflow: hidden; display: grid; place-items: center; }
 .zoom-caja {
   position: relative; z-index: 1;
-  width: min(100%, calc((var(--alto-escena) - 11rem) * 0.75)); aspect-ratio: 3 / 4; align-self: start;
+  width: min(100%, calc((var(--alto-escena) - 13rem) * 0.75)); aspect-ratio: 3 / 4; align-self: start;
   transform-origin: 50% 50%; will-change: transform;
-}
-/* en teléfonos, a todo el ancho y con el alto limitado (la foto se recorta un poco con object-fit) */
-@media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
-  .zoom-escena { --alto-foto: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
-  .zoom-caja { width: 100%; aspect-ratio: auto; height: var(--alto-foto); }
-  /* el texto va justo debajo de la foto, sin una franja vacía en medio */
-  .zoom-texto { top: var(--alto-foto); bottom: auto; padding-top: 1.25rem; }
-  .zoom-texto::before { display: none; }
 }
 /* la sombra se compensa una sola vez (--k, --radio-sombra al medir): en cada cuadro solo cambia su opacidad */
 .zoom-caja::before {
@@ -186,7 +190,7 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
   will-change: transform; color: #e9dfcf; font-size: 0.95rem;
 }
 .zoom-texto {
-  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: 100%; overflow-y: auto;
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; max-height: 100%; overflow: hidden;
   padding: 2.5rem var(--margen) max(1.5rem, env(safe-area-inset-bottom)); color: var(--blanco);
 }
 .zoom-texto::before {
@@ -197,6 +201,19 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 .zoom-texto .zoom-nombre { font-family: var(--fuente-titulos); font-weight: 600; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.12; margin: 0 0 0.3em; color: var(--blanco); max-width: none; }
 .zoom-texto p { margin: 0; max-width: 32rem; color: #e2d7c6; font-size: 1.08rem; }
 .zoom-texto .sala-sub { margin: 0.1rem 0 0; color: var(--cempasuchil); font-family: var(--fuente-titulos); font-style: italic; font-size: 1.2rem; }
+/* en teléfonos, a todo el ancho y con el alto limitado (la foto se recorta un poco con object-fit); el texto va justo
+   debajo de la foto. Va después de las reglas base de .zoom-texto para ganarles */
+@media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
+  .zoom-escena { --alto-foto: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 13rem)); }
+  .zoom-caja { width: 100%; aspect-ratio: auto; height: var(--alto-foto); }
+  .zoom-texto { top: var(--alto-foto); bottom: auto; padding-top: 1.25rem; }
+  .zoom-texto::before { display: none; }
+}
+/* pantallas bajitas (teléfono acostado, zoom grande): el nombre y el subtítulo más chicos para que quepan */
+@media (max-height: 500px) {
+  .zoom-texto .zoom-nombre { font-size: 1.5rem; }
+  .zoom-texto .sala-sub { font-size: 1rem; }
+}
 /* Debajo de la portada, la sala solo muestra su párrafo: el número, el título y el subtítulo ya están en la portada
    (el título sigue ahí para los lectores de pantalla) */
 .visualmente-oculto { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -210,7 +227,7 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 .zoom-pista::after { content: ""; display: block; width: 1px; height: 2rem; margin: 0.5rem auto 0; background: currentColor; }
 @media (max-height: 500px) { .zoom-pista { display: none; } }
 @media (min-aspect-ratio: 1 / 1) {
-  .zoom-escena { grid-template-columns: auto minmax(0, 30rem); justify-content: center; column-gap: clamp(2rem, 5vw, 5rem); }
+  .zoom-escena { grid-template-columns: auto minmax(0, 30rem); justify-content: center; column-gap: clamp(2rem, 5vw, 5rem); padding-inline: var(--margen); }
   .zoom-caja { width: auto; height: min(var(--alto-escena), 60vw); align-self: center; }
   /* el relleno absorbe los 16px con que sube el texto (sin desborde falso) y deja ver el anillo de foco */
   .zoom-texto { position: relative; max-height: var(--alto-escena); padding: 1rem var(--margen) 1rem 0.5rem; margin-left: -0.5rem; }
@@ -222,10 +239,17 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 .zoom-activo .zoom-texto > * { opacity: 0; pointer-events: none; will-change: opacity, transform; }
 .zoom-activo .zoom-texto::before { opacity: var(--texto, 0); }
 html:not(.zoom-activo) .zoom-pista { display: none; }
+/* Con «reducir movimiento» las barras no se esconden: la portada cabe debajo de ellas y, en teléfonos, la foto conserva
+   su marco 3:4 en lugar de recortarse */
+html:not(.zoom-activo) .zoom-escena { --alto-escena: calc(100svh - 8rem); }
+@media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
+  html:not(.zoom-activo) .zoom-caja { width: auto; aspect-ratio: 3 / 4; }
+}
 /* mientras una escena está fija se esconden el encabezado y la barra de salas; solo el foco del teclado los retiene */
 .zoom-activo .encabezado, .zoom-activo .salas-nav { transition: transform 0.3s ease; }
 .zoom-activo .encabezado:focus-within, .zoom-activo .salas-nav:focus-within { transition: none; }
 .zoom-fijo .encabezado:not(:has(:focus-visible)) { transform: translateY(-100%); }
 .zoom-fijo .salas-nav:not(:has(:focus-visible)) { transform: translateY(calc(-100% - 4rem)); }
-/* Shift+Tab a una barra escondida: sin scroll-padding, el navegador no retrocede la página */
-html.zoom-fijo:has(.encabezado:focus-within, .salas-nav:focus-within) { scroll-padding-top: 0; }
+/* Con el foco en el encabezado o en la barra (fijos arriba), sin scroll-padding: el navegador no mueve la página en cada Tab
+   ni la regresa con Shift+Tab a una barra escondida */
+html:has(.encabezado:focus-within, .salas-nav:focus-within) { scroll-padding-top: 0; }

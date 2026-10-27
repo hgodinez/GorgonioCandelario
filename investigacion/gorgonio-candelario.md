@@ -49,7 +49,7 @@ Cada dato lleva su fuente. Lo marcado **⚠ verificar** viene de una sola fuente
 ## 4. Fomento Cultural Banamex: *Grandes Maestros del Arte Popular Mexicano*
 
 - Don Gorgonio aparece en el directorio de **Grandes Maestros del Arte Popular Mexicano, 20 años**, de Fomento Cultural Banamex. La ficha dice: "Gorgonio Candelario Castro (hijo de Herminio Candelario Dolores†), Suchitlán, Comala, Colima. Talla policromada".
-  - Ficha: https://amigosgrandesmaestros.org/gmap20/artesanos/gorgonio-candelario-castro/
+  - Ficha: https://amigosgrandesmaestros.org/gmap20/artesanos/gorgonio-candelario-castro/ (⚠ revisado el 27 de octubre de 2026: el dominio está estacionado y ya no muestra la ficha; el texto citado viene de los extractos de los buscadores. Por eso el sitio enlaza al libro en Google Books).
 - El libro se publicó en 2019. Es la versión actualizada de la obra original y reúne a **610 maestros artesanos**, entre ellos los 150 originales del programa, que empezó en 1996. ⚠ Una nota de prensa da otras cifras (260 Grandes Maestros más un directorio de más de 500, en 648 páginas).
   - Google Books: https://books.google.com/books/about/Grandes_maestros_del_arte_popular_mexica.html?id=6BQ0zgEACAAJ
   - Venta (Tienda del Museo): https://www.tiendadelmuseo.com.mx/producto/grandes-maestros-del-arte-popular-mexicano-20-anos-espanol-e-ingles/

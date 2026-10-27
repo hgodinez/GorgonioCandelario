@@ -1,12 +1,12 @@
 {
- "entrada": "Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca cualquier pieza para verla en grande y recorrer todas sus vistas.",
+ "entrada": "Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca o haz clic en cualquier pieza para verla en grande y recorrer sus fotos.",
  "entrada_corta": "Más de un centenar de máscaras talladas y pintadas a mano, ordenadas en salas como en un museo: la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos y un bestiario completo.",
  "salas": [
   {
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
    "subtitulo": "Nueve parejas de animales, macho y hembra",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris. De casi todos los animales hay aquí más de una máscara. Las que identificaron Don Gorgonio o su familia llevan la marca «Confirmada por Don Gorgonio» o «Confirmada por la familia»; las demás están con la pareja a la que se parecen. Casi todas repiten el diseño de una pieza confirmada: los coyotes de franjas en V y espirales o de anillos, los chivos de cuernos largos, los perros xoloitzcuintles de línea amarilla, la guacamaya de cara verde y el gallo de cara blanca. El perro blanco de mancha café, de talla naturalista, va con los perros.",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: según Don Gorgonio, el chivo es el primero y el coyote el segundo. Cuenta la familia que el coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris.\n\nDe casi todos los animales hay aquí más de una máscara. Las que identificaron Don Gorgonio o su familia llevan la marca «Pieza confirmada por Don Gorgonio» o «Pieza confirmada por la familia»; las demás están con la pareja a la que se parecen. Casi todas repiten el diseño de una pieza confirmada: los coyotes de franjas en V y espirales o de anillos, los chivos de cuernos largos, los perros xoloitzcuintles de línea amarilla, la guacamaya de cara verde y el gallo de cara blanca. El perro blanco de mancha café, de talla naturalista, va con los perros.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
@@ -148,7 +148,7 @@
    "id": "el-tiempo-y-la-noche",
    "titulo": "El Tiempo y La Noche",
    "subtitulo": "Varios rostros bajo una corona de astros",
-   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. En el Museum of International Folk Art, en Santa Fe, Nuevo México, hay un Tiempo de Don Gorgonio de 1995, catalogado como máscara para la Danza de la Pastorela: hay Tiempos de los dos usos. El de diadema dorada de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El de diadema azul es del mismo diseño, con la piel más clara. La Noche de rostros amarillos repite la corona de picos y la media luna con estrella de La Noche, pero sin el lado azul. Según Don Gorgonio, El Ocaso, la máscara de sol y luna, también es de adorno y representa el final del día.",
+   "texto": "El Tiempo tiene tres rostros que comparten los ojos, bajo una corona con sol, luna y estrella; La Noche tiene dos, y uno de ellos es azul. El de diadema dorada de esta sala, según Don Gorgonio, es de adorno, no se baila, y representa las tres etapas de la vida: niño, adulto y viejo. El de diadema azul es del mismo diseño, con la piel más clara. Pero también hay Tiempos para bailar: el Museum of International Folk Art, en Santa Fe, Nuevo México, conserva uno de Don Gorgonio de 1995, catalogado como máscara de pastorela. La Noche de rostros amarillos repite la corona de picos y la media luna con estrella de La Noche, pero sin el lado azul. Según Don Gorgonio, El Ocaso, la máscara de sol y luna, también es de adorno y representa el final del día.",
    "piezas": [
     "el-tiempo",
     "el-tiempo-corona-azul",
@@ -257,7 +257,7 @@
    "id": "felinos",
    "titulo": "Felinos",
    "subtitulo": "Fauces abiertas y piel manchada",
-   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces, una hembra y un macho, y un ocelote, y están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos, casi todos de fauces abiertas y colmillos, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Hay otros tres jaguares: el amarillo, con rosetas de anillo como las del anaranjado de rosetas; el manchado de orejas rojas, y el anaranjado moteado, de boca cerrada pero tallado distinto del ocelote. Los acompañan dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.",
+   "texto": "Algunas fuentes cuentan a los tigres entre los personajes de la Danza de los Morenos, pero la pareja de felinos que nombra la familia es la del lince y el ocelote. Don Gorgonio identificó como de la danza dos linces (una hembra y un macho) y un ocelote; los tres están en la sala de la Danza de los Morenos. Aquí quedan los demás felinos. La mayoría tiene las fauces abiertas y los colmillos de fuera, un diseño distinto del de los linces y el ocelote de la danza, que tienen la boca cerrada. Don Gorgonio identificó dos jaguares de adorno, el anaranjado de rosetas y el multicolor. Hay otros tres jaguares: el amarillo, con rosetas de anillo como las del anaranjado de rosetas; el manchado de orejas rojas, y el anaranjado moteado, de boca cerrada pero tallado distinto del ocelote. Los acompañan dos tigres, uno anaranjado y otro blanco, y dos panteras negras, de un diseño distinto del nahual negro de cara felina.",
    "piezas": [
     "jaguar-rosetas",
     "felino-fauces-abiertas",
@@ -278,7 +278,7 @@
    "id": "aves",
    "titulo": "Aves",
    "subtitulo": "Penachos, picos largos y ojos redondos",
-   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne pavos reales, otra guacamaya, varios búhos de rostro gris o plateado, y tres aves que según Don Gorgonio son de adorno: un pato, un águila multicolor y un pelícano. Don Gorgonio identificó como pavo real el de pico dorado y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas. Los otros pavos reales son del mismo diseño, con penacho de plumas de ojos de colores; cambian los colores de la cara, del pico o del penacho. La guacamaya roja y verde no se parece a las de la danza, de cara larga y copete de franjas: tiene la cabeza redonda y el pico ganchudo, y está pintada a pincel seco con trazos como plumas, como el águila multicolor. Según Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. Los búhos de esta sala son de otro diseño, más cercano al natural: cara redonda, ojos grandes y redondos y pico anaranjado o amarillo. Se parecen a los búhos que coronan a los felinos en la sala Seres encimados.",
+   "texto": "Además de las guacamayas, los gallos y los tecolotes de la danza, esta sala reúne pavos reales, otra guacamaya, varios búhos de rostro gris o plateado, y tres aves que según Don Gorgonio son de adorno: un pato, un águila multicolor y un pelícano.\n\nDon Gorgonio identificó como pavo real el de pico dorado y dice que es de la Danza de los Morenos, aunque el pavo real no está entre las nueve parejas. Los otros pavos reales son del mismo diseño, con penacho de plumas de ojos de colores; cambian los colores de la cara, del pico o del penacho. La guacamaya roja y verde no se parece a las de la danza, de cara larga y copete de franjas: tiene la cabeza redonda y el pico ganchudo y, igual que el águila multicolor, está pintada a pincel seco con trazos que imitan plumas.\n\nSegún Don Gorgonio, el búho azul es de la danza; por eso está en la sala de la Danza de los Morenos, con los tecolotes. Los búhos de esta sala son de otro diseño, más cercano al natural: cara redonda, ojos grandes y redondos y pico anaranjado o amarillo. Se parecen a los búhos que coronan a los felinos en la sala Seres encimados.",
    "piezas": [
     "pavo-real-pico-anaranjado",
     "pavo-real-pico-dorado",
@@ -1094,7 +1094,7 @@
   },
   "tigre-blanco-con-buho": {
    "nombre": "Búho sobre tigre blanco",
-   "descripcion": "Cabeza de búho café jaspeado con ojos grandes amarillo-anaranjado y pico gris morado, sobre el rostro de un felino blanco con rayas y manchas negras, ojos azul verdoso, nariz rosa, colmillos amarillos y lengua roja.",
+   "descripcion": "Cabeza de búho café jaspeado con ojos grandes amarillo anaranjado y pico gris morado, sobre el rostro de un felino blanco con rayas y manchas negras, ojos azul verdoso, nariz rosa, colmillos amarillos y lengua roja.",
    "fotos": [
     "a002"
    ],
@@ -1186,7 +1186,7 @@
   },
   "felino-multicolor-pastel": {
    "nombre": "Jaguar multicolor",
-   "descripcion": "Cabeza de felino de acabado mate en tonos pastel: frente azul con figuras geométricas lila, rosa y anaranjado, orejas amarillas con círculos lila, mejillas con hojas verdes y hocico crema con zigzag y puntitos. Según Don Gorgonio, es un jaguar multicolor de adorno y representa la valentía y el poder.",
+   "descripcion": "Cabeza de felino de acabado mate en tonos pastel: frente azul con figuras geométricas en lila, rosa y anaranjado, orejas amarillas con círculos lila, mejillas con hojas verdes y hocico crema con zigzag y puntitos. Según Don Gorgonio, es un jaguar multicolor de adorno y representa la valentía y el poder.",
    "fotos": [
     "a099",
     "a117"
@@ -1425,7 +1425,7 @@
   },
   "canido-gris": {
    "nombre": "Lobo gris de trazos blancos",
-   "descripcion": "Lobo de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde oliva, nariz roja y labios amarillos con puntos negros.",
+   "descripcion": "Lobo de pelaje gris con trazos blancos cortos, orejas con interior dorado, ojos amarillos con iris verde olivo, nariz roja y labios amarillos con puntos negros.",
    "fotos": [
     "a100"
    ],
@@ -1707,7 +1707,7 @@
    "recorte": false
   },
   "a074": {
-   "alt": "Máscara de coyote blanco con franjas de arcoíris alrededor de los ojos, orejas amarillas y nariz roja oscura",
+   "alt": "Máscara de coyote blanco con franjas de arcoíris alrededor de los ojos, orejas amarillas y nariz rojo oscuro",
    "descripcion": "Coyote de rostro blanco con franjas de arcoíris que rodean los ojos y bajan hasta el hocico. Tiene orejas amarillas y azules y nariz color vino.",
    "recorte": false
   },
@@ -2027,7 +2027,7 @@
    "recorte": false
   },
   "a158": {
-   "alt": "Máscara de hombre de rostro partido en piel rosada y anaranjado, con bigote negro y bola roja en la frente",
+   "alt": "Máscara de hombre de rostro partido en piel rosada y anaranjada, con bigote negro y bola roja en la frente",
    "descripcion": "Rostro de hombre partido en dos tonos, piel rosada y anaranjado, con bigote y piocha negros, sonrisa torcida y una bola roja en la frente.",
    "recorte": false
   },

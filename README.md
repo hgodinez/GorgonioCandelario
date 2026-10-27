@@ -17,7 +17,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `img/mascaras/` | Fotos de la página principal optimizadas para web (WebP y JPG en varios tamaños) |
 | `img/maestro/` | Fotos de don Gorgonio y de su padre, don Herminio, optimizadas para web |
 | `img/galeria/` | Fotos del álbum optimizadas para la galería; en `recortes/`, las máscaras sin fondo del desfile |
-| `img/icono.svg` | Icono del sitio |
+| `img/icono.svg`, `img/icono-32.png`, `img/icono-180.png` | Icono del sitio. Los PNG salen del SVG: el de 32 px es para navegadores que no leen SVG y el de 180 px para la pantalla de inicio del iPhone |
 | `fuentes/` | Tipografías Fraunces y Source Sans 3 (licencia SIL OFL) |
 | `fotos/originales/` | Fotos originales tal como llegaron (las de la danza, en `fotos/originales/danza/`) |
 | `fotos/album/` | Las 172 fotos del álbum de Google Fotos, tal como llegaron |
@@ -111,23 +111,24 @@ El sitio sale en dos lugares, los dos desde la rama `ccr-0e01a9f0-ekq4s5`; cada 
 - **Netlify** (https://gorgoniocandelario.netlify.app, y después el dominio propio): el sitio público. La configuración está en `netlify.toml`.
 - **GitHub Pages** (https://humbertogodinez.com/GorgonioCandelario/): se queda mientras Don Gorgonio termina la encuesta. Su enlace es de esta dirección, y lo que lleva contestado se guarda en el navegador de su teléfono para esta dirección; en otra vería la encuesta como si no hubiera empezado. Está en **Settings → Pages → Deploy from a branch**, carpeta `/ (root)`. Si se apaga y se vuelve a prender, no se publica hasta el siguiente push (o hasta volver a correr el último «pages build and deployment» en Actions).
 
-Cuando ya haya dominio, agrega `og:url` y `og:image` en `index.html`; está marcado con un comentario `PENDIENTE`.
+`og:url`, `og:image` y `canonical` apuntan a `gorgoniocandelario.netlify.app` en `index.html` y `galeria.html`. Cuando haya dominio propio, hay que cambiarlos ahí.
 
 ## Pendiente antes de publicar
 
-Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están marcados con comentarios `PENDIENTE`.
+Hay que confirmarlo con don Gorgonio o con su familia.
 
 - [ ] Permiso para usar los dos videos de YouTube.
-- [ ] Quién es el danzante 19 que cuenta el INPI y si el bartolo sale con los Morenos.
-- [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, el angaro y la fibra del pelo. La pintura y las barbas ya las contestó en la encuesta.
+- [ ] Quién es el danzante 19 que cuenta el INPI, si el bartolo sale con los Morenos y por dónde pasa el recorrido de la danza.
+- [ ] La técnica propia de don Gorgonio. Lo que hay publicado es casi todo del taller de su hermano: la madera que usa, el corte y el secado, las herramientas, el angaro, la fibra del pelo, el acabado y cómo se sujeta la máscara. La pintura y las barbas ya las contestó en la encuesta.
 - [ ] El nombre de los personajes de rostro humano: las tres máscaras negras, el hombre barbado, el rostro con alas y el rostro negro de cresta roja (¿diablo?). También si las otras máscaras de vida y muerte tienen nombre (a una Don Gorgonio la llama Dualidad vida y muerte).
 - [ ] Una foto mejor del pelícano (antes «ave azul de pico amarillo»): la única que hay es el panel central de un collage, de 172 px de ancho.
 - [ ] La encuesta en `preguntas/`: el 23 de octubre de 2026 Don Gorgonio contestó 37 de las 126 máscaras y 4 de las 12 preguntas sobre él y el taller (año de nacimiento, las nueve parejas, lo que simbolizan y la pintura); sus respuestas ya están en el sitio (ver `datos/respuestas-don-gorgonio.json` y la investigación). Faltan las demás máscaras y las otras 8 preguntas sobre él y el taller (la 2, la 3, la 4, la 5, la 9, la 10, la 11 y la 12). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`.
 - [ ] Aclarar con Don Gorgonio con qué pareja sale el pavo real (máscara 84). Él dice que es de la Danza de los Morenos, pero no está entre las nueve parejas que confirmó. ¿Con las guacamayas? Él marcó como hembras tanto la guacamaya verde como el pavo real.
-- [ ] El dominio del sitio. Cuando esté, agrega `og:url` y `og:image` en `index.html` y `galeria.html`.
+- [ ] El dominio del sitio. Cuando esté, cambia `og:url`, `og:image` y `canonical` en `index.html` y `galeria.html`.
+- [ ] Las visitas al taller: el horario, si recibe sin cita y si da clases de talla.
 - [ ] A qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio y una de su padre, don Herminio, en `fotos/originales/maestro/`.
-- [ ] Quién tomó las fotos de don Gorgonio y de don Herminio, y si se pueden usar. El retrato frente a la pared azul parece de un fotógrafo profesional, y la foto en la que pinta es un cuadro de un video.
+- [ ] Quién tomó las fotos de don Gorgonio y de don Herminio, si se pueden usar y cómo quiere cada quien que se le dé crédito. El retrato frente a la pared azul parece de un fotógrafo profesional, y la foto en la que pinta es un cuadro de un video.
 - [ ] De dónde viene la transcripción del testimonio de don Gorgonio, para dar el crédito de sus citas (ver `investigacion/testimonio-don-gorgonio.md`).
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.
 

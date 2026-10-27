@@ -72,7 +72,12 @@
       if (m.arriba <= 48 && m.arriba >= limite - 48) cerca = true;
     });
     var fijo = raiz.classList.contains("zoom-fijo");
-    if (!fijo && dentro) raiz.classList.add("zoom-fijo");
+    if (!fijo && dentro) {
+      raiz.classList.add("zoom-fijo");
+      // el encabezado se esconde: si el menú quedó abierto (y no lo usa el teclado), se cierra con él
+      var menu = document.querySelector('.menu-boton[aria-expanded="true"]');
+      if (menu && !document.querySelector(".encabezado :focus-visible")) menu.click();
+    }
     else if (fijo && !cerca) raiz.classList.remove("zoom-fijo");
     // solo se pintan las que están en pantalla o cerca; el largo se guarda para compararlo al cambiar el tamaño
     zooms.forEach(function (z, i) {
@@ -107,6 +112,9 @@
   document.querySelectorAll('.salas-nav a[href^="#sala-"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
       if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      // el foco pasa al título de la sala (oculto a la vista), para que el siguiente Tab entre a esa sala
+      var titulo = document.getElementById("titulo-" + a.hash.slice(1));
+      if (titulo) { titulo.setAttribute("tabindex", "-1"); titulo.focus({ preventScroll: true }); }
       if (irAPortada(a.hash)) { e.preventDefault(); history.replaceState(null, "", a.hash); }
     });
   });
