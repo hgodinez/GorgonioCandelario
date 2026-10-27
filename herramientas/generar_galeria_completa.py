@@ -201,7 +201,7 @@ total_fotos = sum(len(piezas[s]['fotos']) for sala in g['salas'] for sub in (sal
 cuerpo = f'''<section class="galeria-entrada" aria-labelledby="titulo-galeria">
       <div class="contenedor">
         <p class="antetitulo">La galería</p>
-        <h1 id="titulo-galeria">Las máscaras de Don Gorgonio</h1>
+        <h1 id="titulo-galeria">Máscaras tradicionales</h1>
         <p>{e(g["entrada"])}</p>
         <ul class="galeria-cifras">
           <li><strong>{total_piezas}</strong>piezas</li>
