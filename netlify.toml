@@ -9,3 +9,11 @@
   for = "/preguntas/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+
+# Las fuentes no cambian: el navegador las guarda un año sin volver a preguntar. Si alguna se cambia, hay que darle
+# otro nombre al archivo (y cambiarlo en los @font-face y los preload), o los visitantes seguirán con la vieja.
+# Las fotos se quedan con lo que Netlify hace por omisión mientras se sigan reemplazando con el mismo nombre.
+[[headers]]
+  for = "/fuentes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
