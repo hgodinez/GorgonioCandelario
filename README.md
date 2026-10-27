@@ -1,4 +1,4 @@
-# Gorgonio Candelario · Máscaras tradicionales
+# Gorgonio Candelario Castro · Maestro mascarero
 
 Sitio web del maestro Gorgonio Candelario Castro, mascarero de Suchitlán, Comala, Colima.
 
