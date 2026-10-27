@@ -11,19 +11,20 @@ t = (R / 'galeria.html').read_text(encoding='utf-8')
 g = json.loads((R / 'datos/galeria.json').read_text(encoding='utf-8'))
 tam = json.loads((R / 'datos/album-tamanos.json').read_text(encoding='utf-8'))
 
-# La máscara que abre cada sala: (pieza, foto, foco vertical en % desde arriba, hacia donde se acerca)
+# La máscara que abre cada sala: (pieza, foto, foco vertical en % desde arriba, hacia donde se acerca).
+# Elegidas por nitidez a pantalla completa (1200x1600 de preferencia), encuadre 3:4 y fondo limpio.
 APERTURAS = {
-    'danza-de-los-morenos': ('buho-azul', 'a050', 40),
-    'el-tiempo-y-la-noche': ('el-tiempo', 'a025', 42),
-    'nahuales': ('nahual-negro', 'a102', 40),
-    'diablos': ('diablo-rojo-lengua', 'a008', 40),
-    'vida-y-muerte': ('vida-muerte-malva', 'a127', 42),
-    'rostros-negros': ('rostro-negro-cresta-roja', 'a134', 40),
-    'seres-encimados': ('jaguar-amarillo-con-buho', 'a044', 40),
-    'felinos': ('felino-rosetas', 'a045', 42),
-    'aves': ('pato', 'a013', 40),
-    'pelaje-de-pincel': ('canido-anaranjado', 'a055', 40),
-    'bestiario': ('toro-pastel-cuernos-rosas', 'a142', 40),
+    'danza-de-los-morenos': ('buho-azul', 'a050', 35),            # el tecolote que confirmó Don Gorgonio (el tecolote rojo solo tiene foto de 364x567)
+    'el-tiempo-y-la-noche': ('el-tiempo', 'a025', 49),
+    'nahuales': ('nahual-negro', 'a102', 43),
+    'diablos': ('diablo-rojo-lengua', 'a008', 55),
+    'vida-y-muerte': ('vida-muerte-malva', 'a127', 38),
+    'rostros-negros': ('rostro-negro-cresta-roja', 'a134', 38),
+    'seres-encimados': ('jaguar-amarillo-con-buho', 'a033', 42),
+    'felinos': ('jaguar-rosetas', 'a058', 31),                    # fauces abiertas, como dice el subtítulo de la sala
+    'aves': ('pavo-real-pico-anaranjado', 'a108', 50),           # un pavo real y no otro búho
+    'pelaje-de-pincel': ('canido-anaranjado', 'a055', 43),
+    'bestiario': ('toro-pastel-cuernos-rosas', 'a142', 55),
 }
 
 CABEZA = '''  <script>
@@ -40,7 +41,11 @@ CABEZA = '''  <script>
     }
     /* en teléfonos, a todo el ancho y con el alto limitado (la foto se recorta un poco con object-fit) */
     @media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
-      .zoom-caja { width: 100%; aspect-ratio: auto; height: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
+      .zoom-escena { --alto-foto: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
+      .zoom-caja { width: 100%; aspect-ratio: auto; height: var(--alto-foto); }
+      /* el texto va justo debajo de la foto, sin una franja vacía en medio */
+      .zoom-texto { top: var(--alto-foto); bottom: auto; padding-top: 1.25rem; }
+      .zoom-texto::before { display: none; }
     }
     /* la sombra se compensa una sola vez (--k, --radio-sombra al medir): en cada cuadro solo cambia su opacidad */
     .zoom-caja::before {
@@ -167,9 +172,10 @@ SCRIPT = '''  <script>
         var fijo = raiz.classList.contains("zoom-fijo");
         if (!fijo && dentro) raiz.classList.add("zoom-fijo");
         else if (fijo && !cerca) raiz.classList.remove("zoom-fijo");
-        // solo se pintan las que están en pantalla o cerca
+        // solo se pintan las que están en pantalla o cerca; el largo se guarda para compararlo al cambiar el tamaño
         zooms.forEach(function (z, i) {
           var m = medidas[i];
+          z.largo = m.largo;
           if (m.abajo < -alto || m.arriba > alto * 1.5) return;
           pintarZoom(z, m.arriba, m.largo);
         });
@@ -180,8 +186,9 @@ SCRIPT = '''  <script>
       // Al cambiar el tamaño, la escena que estaba fija vuelve al mismo punto de su animación
       addEventListener("resize", function () {
         if (!activo()) return;
+        // el largo de antes es el que se guardó al pintar: al llegar aquí el navegador ya aplicó el tamaño nuevo
         var actual = null;
-        zooms.forEach(function (z) { if (z.ultimoP > 0 && z.ultimoP <= 1.001) actual = { z: z, p: z.ultimoP, largo: recorrido(z) }; });
+        zooms.forEach(function (z) { if (z.ultimoP > 0 && z.ultimoP <= 1.001) actual = { z: z, p: z.ultimoP, largo: z.largo }; });
         rehacer();
         if (actual && recorrido(actual.z) !== actual.largo) { saltar(inicioSeccion(actual.z) + Math.min(actual.p, 1) * recorrido(actual.z)); pintar(); }
       });

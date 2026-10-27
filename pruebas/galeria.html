@@ -38,7 +38,11 @@
     }
     /* en teléfonos, a todo el ancho y con el alto limitado (la foto se recorta un poco con object-fit) */
     @media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
-      .zoom-caja { width: 100%; aspect-ratio: auto; height: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
+      .zoom-escena { --alto-foto: min(calc(100vw * 4 / 3), calc(var(--alto-escena) - 11rem)); }
+      .zoom-caja { width: 100%; aspect-ratio: auto; height: var(--alto-foto); }
+      /* el texto va justo debajo de la foto, sin una franja vacía en medio */
+      .zoom-texto { top: var(--alto-foto); bottom: auto; padding-top: 1.25rem; }
+      .zoom-texto::before { display: none; }
     }
     /* la sombra se compensa una sola vez (--k, --radio-sombra al medir): en cada cuadro solo cambia su opacidad */
     .zoom-caja::before {
@@ -187,7 +191,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a050-400.webp 400w, ../img/galeria/a050-800.webp 800w, ../img/galeria/a050-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a050.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado">
+              <img src="../img/galeria/a050.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 35%" alt="Máscara de búho azul con pincelado café, grandes ojos negros con media luna amarilla y pico rosado">
             </picture>
           </figure>
         </div>
@@ -304,7 +308,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a025-400.webp 400w, ../img/galeria/a025-800.webp 800w, ../img/galeria/a025-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a025.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
+              <img src="../img/galeria/a025.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 49%" alt="Máscara de El Tiempo de frente: tres rostros con barba negra rizada, diadema dorada y un sol con cara en la corona">
             </picture>
           </figure>
         </div>
@@ -344,7 +348,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a102-400.webp 400w, ../img/galeria/a102-800.webp 800w, ../img/galeria/a102-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a102.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado">
+              <img src="../img/galeria/a102.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="Máscara de nahual negro con cara de felino, ojo anaranjado, orejas con rayas rojas y colmillos, vista de lado">
             </picture>
           </figure>
         </div>
@@ -384,7 +388,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a008-400.webp 400w, ../img/galeria/a008-800.webp 800w, ../img/galeria/a008-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a008.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada">
+              <img src="../img/galeria/a008.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 55%" alt="Máscara de diablo rojo brillante con cuernos largos, cejas negras talladas, colmillos y lengua anaranjada">
             </picture>
           </figure>
         </div>
@@ -426,7 +430,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a127-400.webp 400w, ../img/galeria/a127-800.webp 800w, ../img/galeria/a127-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a127.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema">
+              <img src="../img/galeria/a127.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 38%" alt="Máscara partida: mitad rostro humano malva con barba de colores y mitad calavera color crema">
             </picture>
           </figure>
         </div>
@@ -467,7 +471,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a134-400.webp 400w, ../img/galeria/a134-800.webp 800w, ../img/galeria/a134-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a134.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados">
+              <img src="../img/galeria/a134.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 38%" alt="Máscara negra con cresta de picos rojos en la frente, ojos anaranjados y sonrisa de dientes rayados">
             </picture>
           </figure>
         </div>
@@ -509,8 +513,8 @@
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
-              <source type="image/webp" srcset="../img/galeria/a044-400.webp 400w, ../img/galeria/a044-800.webp 800w, ../img/galeria/a044-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a044.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de jaguar amarillo con manchas oscuras, colmillos y lengua roja, coronada por un búho gris de ojos amarillos">
+              <source type="image/webp" srcset="../img/galeria/a033-400.webp 400w, ../img/galeria/a033-800.webp 800w, ../img/galeria/a033-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a033.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de jaguar amarillo manchado con hocico abierto y colmillos, con un búho gris de ojos amarillos encima">
             </picture>
           </figure>
         </div>
@@ -545,20 +549,20 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-felinos" aria-label="Jaguar anaranjado de rosetas, de cerca">
+    <section class="zoom" id="zoom-felinos" aria-label="Jaguar amarillo de rosetas, de cerca">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
-              <source type="image/webp" srcset="../img/galeria/a045-400.webp 400w, ../img/galeria/a045-800.webp 800w, ../img/galeria/a045-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a045.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 42%" alt="Máscara de jaguar anaranjado con rosetas negras, orejas rojas puntiagudas y ojos azules">
+              <source type="image/webp" srcset="../img/galeria/a058-400.webp 400w, ../img/galeria/a058-800.webp 800w, ../img/galeria/a058-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a058.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 31%" alt="Máscara de jaguar amarillo con rosetas negras, ojos verdes y boca abierta con colmillos blancos">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
           <span class="sala-numero">Sala 8 · Felinos</span>
-          <p class="zoom-nombre">Jaguar anaranjado de rosetas</p>
-          <p>Según Don Gorgonio, es un jaguar de adorno, que no se baila, y representa la valentía y el poder.</p>
+          <p class="zoom-nombre">Jaguar amarillo de rosetas</p>
+          <p>Fauces abiertas y piel manchada.</p>
           <p class="zoom-enlace"><a href="#sala-felinos">Ver la sala</a></p>
         </div>
         <p class="zoom-pista" aria-hidden="true">Desliza</p>
@@ -589,20 +593,20 @@
         </div>
       </div>
     </section>
-    <section class="zoom" id="zoom-aves" aria-label="Pato, de cerca">
+    <section class="zoom" id="zoom-aves" aria-label="Pavo real de pico anaranjado, de cerca">
       <div class="zoom-escena">
         <div class="zoom-caja">
           <figure class="zoom-foto">
             <picture>
-              <source type="image/webp" srcset="../img/galeria/a013-400.webp 400w, ../img/galeria/a013-720.webp 720w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a013.jpg" width="720" height="1280" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de pato en tonos cafés con ojos grandes blancos y pico ancho saliente">
+              <source type="image/webp" srcset="../img/galeria/a108-400.webp 400w, ../img/galeria/a108-780.webp 780w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="../img/galeria/a108.jpg" width="780" height="1040" loading="lazy" decoding="async" style="--foco: 50%" alt="Máscara de ave azul con pico anaranjado y copete de plumas amarillas y azules con ojos de pavo real">
             </picture>
           </figure>
         </div>
         <div class="zoom-texto">
           <span class="sala-numero">Sala 9 · Aves</span>
-          <p class="zoom-nombre">Pato</p>
-          <p>Según Don Gorgonio, es de adorno y representa el equilibrio y la resiliencia.</p>
+          <p class="zoom-nombre">Pavo real de pico anaranjado</p>
+          <p>Penachos, picos largos y ojos redondos.</p>
           <p class="zoom-enlace"><a href="#sala-aves">Ver la sala</a></p>
         </div>
         <p class="zoom-pista" aria-hidden="true">Desliza</p>
@@ -644,7 +648,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a055-400.webp 400w, ../img/galeria/a055-800.webp 800w, ../img/galeria/a055-1200.webp 1200w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a055.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes">
+              <img src="../img/galeria/a055.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="--foco: 43%" alt="Máscara de zorro anaranjado con pelo en trazos negros, orejas puntiagudas grises y ojos verdes">
             </picture>
           </figure>
         </div>
@@ -688,7 +692,7 @@
           <figure class="zoom-foto">
             <picture>
               <source type="image/webp" srcset="../img/galeria/a142-400.webp 400w, ../img/galeria/a142-800.webp 800w, ../img/galeria/a142-960.webp 960w" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
-              <img src="../img/galeria/a142.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 40%" alt="Máscara de toro de frente con cuernos y orejas pintados de grecas azules, rosas y amarillas sobre pared azul">
+              <img src="../img/galeria/a142.jpg" width="960" height="1280" loading="lazy" decoding="async" style="--foco: 55%" alt="Máscara de toro de frente con cuernos y orejas pintados de grecas azules, rosas y amarillas sobre pared azul">
             </picture>
           </figure>
         </div>
@@ -857,9 +861,10 @@
         var fijo = raiz.classList.contains("zoom-fijo");
         if (!fijo && dentro) raiz.classList.add("zoom-fijo");
         else if (fijo && !cerca) raiz.classList.remove("zoom-fijo");
-        // solo se pintan las que están en pantalla o cerca
+        // solo se pintan las que están en pantalla o cerca; el largo se guarda para compararlo al cambiar el tamaño
         zooms.forEach(function (z, i) {
           var m = medidas[i];
+          z.largo = m.largo;
           if (m.abajo < -alto || m.arriba > alto * 1.5) return;
           pintarZoom(z, m.arriba, m.largo);
         });
@@ -870,8 +875,9 @@
       // Al cambiar el tamaño, la escena que estaba fija vuelve al mismo punto de su animación
       addEventListener("resize", function () {
         if (!activo()) return;
+        // el largo de antes es el que se guardó al pintar: al llegar aquí el navegador ya aplicó el tamaño nuevo
         var actual = null;
-        zooms.forEach(function (z) { if (z.ultimoP > 0 && z.ultimoP <= 1.001) actual = { z: z, p: z.ultimoP, largo: recorrido(z) }; });
+        zooms.forEach(function (z) { if (z.ultimoP > 0 && z.ultimoP <= 1.001) actual = { z: z, p: z.ultimoP, largo: z.largo }; });
         rehacer();
         if (actual && recorrido(actual.z) !== actual.largo) { saltar(inicioSeccion(actual.z) + Math.min(actual.p, 1) * recorrido(actual.z)); pintar(); }
       });
