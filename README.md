@@ -13,6 +13,7 @@ Es un sitio estático: HTML, CSS y un poco de JavaScript, sin dependencias ni pr
 | `css/estilos.css` | Estilos (colores, tipografía y diseño adaptable a celular) |
 | `css/galeria.css` | Estilos de la galería (salas oscuras de museo, mosaico y desfile) |
 | `js/sitio.js` | Menú del celular, visor de fotos con sus vistas, desfile, navegación entre salas y videos que se cargan al tocarlos |
+| `js/portadas.js` | Portadas de las salas de la galería: la foto de una máscara se acerca al hacer scroll y aparecen el número, el nombre y el subtítulo de la sala |
 | `img/mascaras/` | Fotos de la página principal optimizadas para web (WebP y JPG en varios tamaños) |
 | `img/maestro/` | Fotos de don Gorgonio y de su padre, don Herminio, optimizadas para web |
 | `img/galeria/` | Fotos del álbum optimizadas para la galería; en `recortes/`, las máscaras sin fondo del desfile |
@@ -73,6 +74,7 @@ python3 herramientas/armar_galeria.py          # escribe datos/galeria.json
 python3 herramientas/generar_galeria_completa.py .
 ```
 
+- Cada sala abre con una portada: la foto de una máscara que se acerca al hacer scroll, con el número, el nombre y el subtítulo de la sala. La máscara de cada portada y el punto hacia donde se acerca están en `PORTADAS`, en `armar_galeria.py`. Conviene una foto de 1200×1600: más chica se ve borrosa a pantalla completa.
 - Para cambiar el nombre, la descripción o la sala de una pieza, edita las tablas al principio de `armar_galeria.py` (`NOMBRES`, `DESCRIPCIONES`, `SALAS`, `APARTADAS`, etc.) y vuelve a correr los dos últimos pasos.
 - Cuando la familia conteste las preguntas de `datos/preguntas-familia.md`, marca las piezas confirmadas en `datos/album-catalogo.json` con `"certeza": "confirmada-familia"`; en la galería aparecen con la leyenda «Confirmada por la familia».
 - Las máscaras del desfile van sin fondo. Para agregar una, quita el fondo con `recortar_fondo.py` (necesita onnxruntime, numpy y el modelo isnet-general-use; el enlace está en el script), revisa el recorte, pásalo a tamaños web con `recortes_web.py` y márcalo en `datos/recortes-revision.json` con `"usar_recorte": true`.
@@ -129,11 +131,9 @@ Hay que confirmarlo con don Gorgonio o con su familia. En `index.html` están ma
 - [ ] De dónde viene la transcripción del testimonio de don Gorgonio, para dar el crédito de sus citas (ver `investigacion/testimonio-don-gorgonio.md`).
 - [ ] Mejores versiones de las fotos. Las actuales llegaron por WhatsApp y están comprimidas; conviene pedir los originales del teléfono.
 
-## Idea guardada: acercamiento al hacer scroll
+## El acercamiento al hacer scroll
 
-`pruebas/zoom.html` es un prototipo, sin decidir si vale la pena. La máscara de El Tiempo empieza como una tarjeta y crece hasta su tamaño completo mientras la escena se queda fija. Después se oscurece el fondo y aparece lo que dice Don Gorgonio de ella. No está enlazado desde el sitio, tiene `noindex` y Netlify no lo publica. En GitHub Pages se ve en `/GorgonioCandelario/pruebas/zoom.html`.
-
-Para verlo dentro de la galería está `pruebas/galeria.html`: una copia de la galería en la que cada sala abre con una portada que se acerca al hacer scroll: la foto de una máscara crece y aparecen el número, el nombre y el subtítulo de la sala (la máscara de cada portada está en `APERTURAS`, en la herramienta). Debajo, la sala solo conserva su párrafo, y la barra de salas lleva a la portada ya terminada. También está sin enlazar y con `noindex`. En GitHub Pages se ve en `/GorgonioCandelario/pruebas/galeria.html`. La arma `herramientas/armar_prueba_galeria.py` (`python3 herramientas/armar_prueba_galeria.py .`) a partir de `galeria.html`: si cambia la galería, hay que volver a correrlo. La galería de verdad no cambia.
+Las portadas de las salas de la galería usan este efecto (`js/portadas.js` y el final de `css/galeria.css`). `pruebas/zoom.html` es el prototipo con el que se probó, sobre fondo crema: la máscara de El Tiempo crece y después aparece lo que dice Don Gorgonio de ella. No está enlazado desde el sitio, tiene `noindex` y Netlify no lo publica.
 
 Lo inspiró la sección «So bright and so soft» de [elgato.com/us/en/p/key-light](https://www.elgato.com/us/en/p/key-light). Allí no es un zoom: es una secuencia de 243 cuadros renderizados (1920×1080; en el teléfono, 235 verticales). Se dibujan en un `<canvas>` fijo (`position: sticky`) dentro de una sección de 1300vh, y GSAP ScrollTrigger (`scrub`) elige el cuadro según el scroll. Algunos cuadros se repiten 20 veces para que la imagen se detenga mientras aparece cada texto. Para hacer eso aquí haría falta un video de una máscara girando, cortado en cuadros.
 

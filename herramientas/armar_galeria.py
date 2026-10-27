@@ -375,6 +375,23 @@ PAREJAS = [('danza-chivo', 'Chivos', 'Primer capitán · la unión y la fuerza')
            ('danza-lince-ocelote', 'Lince y ocelote', 'El lince, la agudeza visual y el sigilo; el ocelote, la audacia y el valor'),
            ('danza-burro', 'Burros', 'La docilidad y la resistencia'), ('danza-guacamaya', 'Guacamayas', 'La fertilidad y la abundancia'),
            ('danza-gallo', 'Gallos', 'El gallo, el nuevo día o el amanecer; la gallina, la maternidad y la prosperidad'), ('danza-perro', 'Perros', 'La fidelidad y la compañía')]
+# Portada de cada sala: la foto de una máscara que se acerca al hacer scroll, con el número, el nombre y el subtítulo de la sala.
+# (pieza, foto, foco vertical en % desde arriba). Elegidas por nitidez a pantalla completa (1200x1600 de preferencia),
+# encuadre 3:4 y fondo limpio.
+PORTADAS = {
+    'danza-de-los-morenos': ('buho-azul', 'a050', 35),            # el tecolote que confirmó Don Gorgonio (el tecolote rojo solo tiene foto de 364x567)
+    'el-tiempo-y-la-noche': ('el-tiempo', 'a025', 49),
+    'nahuales': ('nahual-negro', 'a102', 43),
+    'diablos': ('diablo-rojo-lengua', 'a008', 55),
+    'vida-y-muerte': ('vida-muerte-malva', 'a127', 38),
+    'rostros-negros': ('rostro-negro-cresta-roja', 'a134', 38),
+    'seres-encimados': ('jaguar-amarillo-con-buho', 'a033', 42),
+    'felinos': ('jaguar-rosetas', 'a058', 31),                    # fauces abiertas, como dice el subtítulo de la sala
+    'aves': ('pavo-real-pico-anaranjado', 'a108', 50),           # un pavo real y no otro búho
+    'pelaje-de-pincel': ('canido-anaranjado', 'a055', 43),
+    'bestiario': ('toro-pastel-cuernos-rosas', 'a142', 55),
+}
+
 ORDEN = ['danza-de-los-morenos', 'el-tiempo-y-la-noche', 'nahuales', 'diablos', 'vida-y-muerte', 'rostros-negros', 'seres-encimados', 'felinos', 'aves', 'pelaje-de-pincel', 'bestiario']
 salas_cur = {s['id']: dict(s, piezas=[x for x in s['piezas'] if x not in MOVER]) for s in cur['salas']}
 for slug, (sala, categoria) in MOVER.items():
@@ -392,6 +409,10 @@ for sid in ORDEN:
             s['subsalas'].append({'titulo': t, 'nota': nota, 'piezas': ps})
         resto = [x for x in lista if not piezas[x]['categoria'].startswith('danza-')]
         if resto: s['subsalas'].append({'titulo': 'Otras', 'nota': '', 'piezas': resto})
+    if sid in PORTADAS:
+        pieza, foto, foco = PORTADAS[sid]
+        assert pieza in lista and foto in piezas[pieza]['fotos'], (sid, pieza, foto)
+        s['portada'] = {'foto': foto, 'foco': foco}
     salas.append(s)
 faltan = [x for x in piezas if x not in usadas and x not in APARTADAS]
 print('piezas sin sala:', faltan)

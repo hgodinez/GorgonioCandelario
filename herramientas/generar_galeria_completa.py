@@ -112,6 +112,32 @@ def filas(subs):
             yield subsala(sub)
 
 
+def portada(n, sala):
+    """La portada de la sala: la foto de una máscara que se acerca al hacer scroll (js/portadas.js) y el número, el nombre
+    y el subtítulo de la sala. Es solo visual: repite el título de la sala, que los lectores de pantalla encuentran en ella."""
+    fid, foco = sala['portada']['foto'], sala['portada']['foco']
+    t = tam[fid]
+    return f'''    <section class="zoom" id="zoom-{sala["id"]}" aria-hidden="true">
+      <div class="zoom-escena">
+        <div class="zoom-caja">
+          <figure class="zoom-foto">
+            <picture>
+              <source type="image/webp" srcset="{', '.join(f'img/galeria/{fid}-{w}.webp {w}w' for w in t['tamanos'])}" sizes="(min-aspect-ratio: 1/1) 45vw, 100vw">
+              <img src="img/galeria/{fid}.jpg" width="{t['w']}" height="{t['h']}" loading="lazy" decoding="async" style="--foco: {foco}%" alt="">
+            </picture>
+          </figure>
+        </div>
+        <div class="zoom-texto">
+          <span class="sala-numero">Sala {n}</span>
+          <p class="zoom-nombre">{e(sala["titulo"])}</p>
+          <p class="sala-sub">{e(sala["subtitulo"])}</p>
+        </div>
+        <p class="zoom-pista">Desliza</p>
+      </div>
+    </section>
+'''
+
+
 # Salas
 nav, bloques = [], []
 total_piezas = 0
@@ -120,10 +146,11 @@ for n, sala in enumerate(g['salas'], 1):
     subs = [x for x in (sala.get('subsalas') or [{'titulo': '', 'piezas': sala['piezas']}]) if x['piezas']]
     total_piezas += sum(len(x['piezas']) for x in subs)
     partes = list(filas(subs))
-    bloques.append(f'''    <section class="sala" id="sala-{sala["id"]}" aria-labelledby="titulo-sala-{sala["id"]}">
+    oculto = ' class="visualmente-oculto"' if sala.get('portada') else ''  # con portada, el número y el título ya están en ella
+    bloques.append((portada(n, sala) if sala.get('portada') else '') + f'''    <section class="sala" id="sala-{sala["id"]}" aria-labelledby="titulo-sala-{sala["id"]}">
       <div class="contenedor">
         <div class="sala-encabezado">
-          <div>
+          <div{oculto}>
             <span class="sala-numero">Sala {n}</span>
             <h2 id="titulo-sala-{sala["id"]}">{e(sala["titulo"])}</h2>
             <p class="sala-sub">{e(sala["subtitulo"])}</p>

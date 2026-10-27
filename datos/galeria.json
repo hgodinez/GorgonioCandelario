@@ -138,7 +138,11 @@
       "canido-negro-ojos-rojos"
      ]
     }
-   ]
+   ],
+   "portada": {
+    "foto": "a050",
+    "foco": 35
+   }
   },
   {
    "id": "el-tiempo-y-la-noche",
@@ -151,7 +155,11 @@
     "la-noche",
     "rostro-doble-amarillo",
     "sol-y-luna"
-   ]
+   ],
+   "portada": {
+    "foto": "a025",
+    "foco": 49
+   }
   },
   {
    "id": "nahuales",
@@ -164,7 +172,11 @@
     "nahual-cafe",
     "ave-negra-cabellera-azul",
     "ave-negra-pico-largo"
-   ]
+   ],
+   "portada": {
+    "foto": "a102",
+    "foco": 43
+   }
   },
   {
    "id": "diablos",
@@ -179,7 +191,11 @@
     "diablo-marco-moteado-lengua-negra",
     "diablo-marco-moteado-lengua-roja",
     "diablo-toro-felinos"
-   ]
+   ],
+   "portada": {
+    "foto": "a008",
+    "foco": 55
+   }
   },
   {
    "id": "vida-y-muerte",
@@ -193,7 +209,11 @@
     "rostro-dos-tonos",
     "hombre-barbado",
     "hombre-gorro-astros"
-   ]
+   ],
+   "portada": {
+    "foto": "a127",
+    "foco": 38
+   }
   },
   {
    "id": "rostros-negros",
@@ -209,7 +229,11 @@
     "trio-rostros-negros-astros",
     "rostro-negro-estrellas",
     "calavera-y-rostro-negro-estrellas"
-   ]
+   ],
+   "portada": {
+    "foto": "a134",
+    "foco": 38
+   }
   },
   {
    "id": "seres-encimados",
@@ -223,7 +247,11 @@
     "tigre-blanco-con-buho",
     "hombre-aguila",
     "rostro-lila-iguana-serpientes"
-   ]
+   ],
+   "portada": {
+    "foto": "a033",
+    "foco": 42
+   }
   },
   {
    "id": "felinos",
@@ -240,7 +268,11 @@
     "felino-multicolor-pastel",
     "felino-rosetas",
     "felino-moteado"
-   ]
+   ],
+   "portada": {
+    "foto": "a058",
+    "foco": 31
+   }
   },
   {
    "id": "aves",
@@ -262,7 +294,11 @@
     "buho-plateado",
     "buho-gris-verdoso",
     "buho-gris-azulado"
-   ]
+   ],
+   "portada": {
+    "foto": "a108",
+    "foco": 50
+   }
   },
   {
    "id": "pelaje-de-pincel",
@@ -279,7 +315,11 @@
     "canido-gris",
     "canido-gris-fauces",
     "canido-gris-verdoso"
-   ]
+   ],
+   "portada": {
+    "foto": "a055",
+    "foco": 43
+   }
   },
   {
    "id": "bestiario",
@@ -306,7 +346,11 @@
     "mariposa-azul",
     "mariposa-verde",
     "chivo-azul-hocico-rosa"
-   ]
+   ],
+   "portada": {
+    "foto": "a142",
+    "foco": 55
+   }
   }
  ],
  "piezas": {
