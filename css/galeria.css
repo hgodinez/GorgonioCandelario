@@ -66,15 +66,17 @@
 }
 .salas-nav a:hover { background: rgba(255, 250, 240, 0.1); color: var(--blanco); }
 .salas-nav a[aria-current] { background: var(--cempasuchil); border-color: var(--cempasuchil); color: var(--tinta); }
-html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
+/* --alto-barras: hasta dónde llegan el encabezado y la barra de salas. js/sitio.js pone la medida exacta; estos valores son
+   para cuando no corre */
+html:has(.pagina-galeria) { --alto-barras: 8rem; scroll-padding-top: var(--alto-barras); }
 /* En computadora caben todas las salas: la barra usa todo el ancho y las salas se acomodan en una o dos filas */
 @media (min-width: 1000px) {
   .salas-nav .contenedor { width: calc(100% - 2 * var(--margen)); }
   .salas-nav ul { flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-left: 0; padding: 0.6rem 0; overflow-x: visible; -webkit-mask-image: none; mask-image: none; }
   .salas-nav a { font-size: 0.88rem; padding: 0.35rem 0.75rem; }
-  html:has(.pagina-galeria) { scroll-padding-top: 10.5rem; }
+  html:has(.pagina-galeria) { --alto-barras: 10.5rem; }
 }
-@media (min-width: 1440px) { html:has(.pagina-galeria) { scroll-padding-top: 8rem; } }  /* de aquí en adelante, una sola fila */
+@media (min-width: 1400px) { html:has(.pagina-galeria) { --alto-barras: 8rem; } }  /* de aquí en adelante, una sola fila */
 
 /* Salas */
 .sala { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid rgba(255, 250, 240, 0.08); }
@@ -241,7 +243,7 @@ html:has(.pagina-galeria) { scroll-padding-top: 8rem; }
 html:not(.zoom-activo) .zoom-pista { display: none; }
 /* Con «reducir movimiento» las barras no se esconden: la portada cabe debajo de ellas y, en teléfonos, la foto conserva
    su marco 3:4 en lugar de recortarse */
-html:not(.zoom-activo) .zoom-escena { --alto-escena: calc(100svh - 8rem); }
+html:not(.zoom-activo) .zoom-escena { --alto-escena: calc(100svh - var(--alto-barras, 8rem)); }
 @media (max-aspect-ratio: 1 / 1) and (max-width: 600px) {
   html:not(.zoom-activo) .zoom-caja { width: auto; aspect-ratio: 3 / 4; }
 }

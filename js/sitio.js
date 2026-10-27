@@ -181,6 +181,13 @@
 
   // Navegación entre salas: marca la sala que se está viendo
   var salasNav = document.querySelector(".salas-nav ul");
+  // Hasta dónde llegan el encabezado y la barra de salas (una o dos filas, según el ancho y la letra): de ahí salen el
+  // scroll-padding y, con «reducir movimiento», el alto de las portadas (--alto-barras en css/galeria.css)
+  var barraSalas = document.querySelector(".salas-nav");
+  if (barraSalas && "ResizeObserver" in window) new ResizeObserver(function () {
+    var abajo = (parseFloat(getComputedStyle(barraSalas).top) || 0) + barraSalas.offsetHeight + 6;
+    document.documentElement.style.setProperty("--alto-barras", abajo + "px");
+  }).observe(barraSalas);
   if (salasNav && "IntersectionObserver" in window) {
     var porSala = {};
     salasNav.querySelectorAll("a").forEach(function (a) { porSala[a.hash.slice(1)] = a; });
