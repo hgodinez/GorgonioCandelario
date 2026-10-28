@@ -142,7 +142,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .portada .contenedor { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .portada h1 { font-size: clamp(2.6rem, 7vw, 5rem); margin-bottom: 0.35em; }
 .portada h1 em { font-style: italic; color: var(--bermellon); font-weight: 500; }
-/* «Máscaras tradicionales», el nombre con el que Don Gorgonio presenta su trabajo */
+/* «Máscaras Tradicionales», el nombre con el que Don Gorgonio presenta su trabajo */
 .portada .portada-marca {
   display: flex; align-items: center; gap: 0.7rem; margin: -0.1em 0 1.1rem;
   font-weight: 700; font-size: clamp(0.95rem, 1.7vw, 1.15rem); letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta);

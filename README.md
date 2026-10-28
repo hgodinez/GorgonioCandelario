@@ -1,4 +1,4 @@
-# Gorgonio Candelario Castro · Maestro mascarero
+# Gorgonio Candelario Castro · Maestro Mascarero
 
 Sitio web del maestro Gorgonio Candelario Castro, mascarero de Suchitlán, Comala, Colima.
 
@@ -124,7 +124,7 @@ Hay que confirmarlo con don Gorgonio o con su familia.
 - [ ] Una foto mejor del pelícano (antes «ave azul de pico amarillo»): la única que hay es el panel central de un collage, de 172 px de ancho.
 - [ ] La encuesta en `preguntas/`: el 23 de octubre de 2026 Don Gorgonio contestó 37 de las 126 máscaras y 4 de las 12 preguntas sobre él y el taller (año de nacimiento, las nueve parejas, lo que simbolizan y la pintura); sus respuestas ya están en el sitio (ver `datos/respuestas-don-gorgonio.json` y la investigación). Faltan las demás máscaras y las otras 8 preguntas sobre él y el taller (la 2, la 3, la 4, la 5, la 9, la 10, la 11 y la 12). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`.
 - [ ] Aclarar con Don Gorgonio con qué pareja sale el pavo real (máscara 84). Él dice que es de la Danza de los Morenos, pero no está entre las nueve parejas que confirmó. ¿Con las guacamayas? Él marcó como hembras tanto la guacamaya verde como el pavo real.
-- [ ] El dominio del sitio. Don Gorgonio lo quiere con el nombre «Gorgonio Candelario · Máscaras tradicionales» (el 27 de octubre de 2026 estaban libres gorgoniocandelario.com y gorgoniocandelariomascarastradicionales.com). Cuando esté, cambia `og:url`, `og:image` y `canonical` en `index.html` y `galeria.html`.
+- [ ] El dominio del sitio. Don Gorgonio lo quiere con el nombre «Gorgonio Candelario · Máscaras Tradicionales» (el 27 de octubre de 2026 estaban libres gorgoniocandelario.com y gorgoniocandelariomascarastradicionales.com). Cuando esté, cambia `og:url`, `og:image` y `canonical` en `index.html` y `galeria.html`.
 - [ ] Las visitas al taller: el horario, si recibe sin cita y si da clases de talla.
 - [ ] A qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio y una de su padre, don Herminio, en `fotos/originales/maestro/`.
