@@ -196,6 +196,9 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .seccion-crema { background: var(--papel-2); }
 
 .texto-suave { color: var(--tinta-suave); }
+/* Indicaciones de uso («Toca o haz clic…»): aparte del texto y en letra más chica */
+.indicacion { font-size: 0.92rem; color: var(--tinta-suave); }
+.seccion-oscura .indicacion { color: #cbbfae; }
 .encabezado-seccion { max-width: 46rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .encabezado-seccion p:not(.antetitulo) { font-size: 1.15rem; }
 

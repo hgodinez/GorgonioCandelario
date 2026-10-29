@@ -64,10 +64,6 @@ def tarjeta(slug):
     clase = 'pieza pieza-recorte' if fotos[fid].get('recorte') else 'pieza'
     if p.get('pie'):
         sub = f'<span>{e(p["pie"])}</span>'
-    elif p.get('certeza') == 'confirmada-maestro':
-        sub = '<span>Pieza confirmada por Don Gorgonio</span>'
-    elif p.get('certeza') == 'confirmada-familia':
-        sub = '<span>Pieza confirmada por la familia</span>'
     else:
         sub = ''
     return (f'          <li class="{clase}"><figure>'
@@ -203,6 +199,7 @@ cuerpo = f'''<section class="galeria-entrada" aria-labelledby="titulo-galeria">
         <p class="antetitulo">La galería</p>
         <h1 id="titulo-galeria">Máscaras Tradicionales</h1>
         <p>{e(g["entrada"])}</p>
+        <p class="indicacion">Toca o haz clic en cualquier pieza para verla en grande y recorrer sus fotos.</p>
         <ul class="galeria-cifras">
           <li><strong>{total_piezas}</strong>piezas</li>
           <li><strong>{total_fotos}</strong>fotografías</li>

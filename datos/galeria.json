@@ -1,12 +1,12 @@
 {
- "entrada": "Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero. Toca o haz clic en cualquier pieza para verla en grande y recorrer sus fotos.",
+ "entrada": "Una selección de las máscaras que Don Gorgonio ha tallado y pintado a mano: los animales de la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos, rostros y un bestiario entero.",
  "entrada_corta": "Más de un centenar de máscaras talladas y pintadas a mano, ordenadas en salas como en un museo: la Danza de los Morenos, El Tiempo y La Noche, nahuales, diablos y un bestiario completo.",
  "salas": [
   {
    "id": "danza-de-los-morenos",
    "titulo": "La Danza de los Morenos",
    "subtitulo": "Nueve parejas de animales, macho y hembra",
-   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: el chivo es el primero y el coyote el segundo. El coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris.\n\nDe casi todos los animales hay aquí más de una máscara. Las que identificaron Don Gorgonio o su familia llevan la marca «Pieza confirmada por Don Gorgonio» o «Pieza confirmada por la familia». Casi todas repiten el mismo diseño: los coyotes de franjas en V y espirales o de anillos, los chivos de cuernos largos, los perros xoloitzcuintles de línea amarilla, la guacamaya de cara verde y el gallo de cara blanca. El perro blanco de mancha café, de talla naturalista, va con los perros.",
+   "texto": "En Suchitlán, la Danza de los Morenos la bailan nueve parejas de animales, macho y hembra: chivos, coyotes, borregos, tecolotes, lince y ocelote, burros, guacamayas, gallos y perros. Al frente van el chivo y el coyote como capitanes: el chivo es el primero y el coyote el segundo. El coyote de bigotes de arcoíris lo crearon el abuelo y el padre de Don Gorgonio al ver a un coyote beber en un charco donde se reflejaba el arcoíris.\n\nDe casi todos los animales hay aquí más de una máscara. Se repiten los mismos diseños: los coyotes de franjas en V y espirales o de anillos, los chivos de cuernos largos, los perros xoloitzcuintles de línea amarilla, la guacamaya de cara verde y el gallo de cara blanca. El perro blanco de mancha café, de talla naturalista, va con los perros.",
    "piezas": [
     "coyote-blanco-arcoiris",
     "coyote-blanco-esbelto",
