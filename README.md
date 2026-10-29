@@ -108,10 +108,10 @@ La clave pública (`sb_publishable_…`) puede ir en la página; la secreta (`sb
 
 El sitio sale en dos lugares, los dos desde la rama `ccr-0e01a9f0-ekq4s5`; cada push actualiza los dos:
 
-- **Netlify** (https://gorgoniocandelario.netlify.app, y después el dominio propio): el sitio público. La configuración está en `netlify.toml`.
+- **Netlify** (https://gorgoniocandelario.com; también responde en https://gorgoniocandelario.netlify.app): el sitio público. El dominio se compró en Squarespace, que maneja el DNS: un registro A de `@` a `75.2.60.5` y un CNAME de `www` a `gorgoniocandelario.netlify.app`. La configuración está en `netlify.toml`.
 - **GitHub Pages** (https://humbertogodinez.com/GorgonioCandelario/): se queda mientras Don Gorgonio termina la encuesta. Su enlace es de esta dirección, y lo que lleva contestado se guarda en el navegador de su teléfono para esta dirección; en otra vería la encuesta como si no hubiera empezado. Está en **Settings → Pages → Deploy from a branch**, carpeta `/ (root)`. Si se apaga y se vuelve a prender, no se publica hasta el siguiente push (o hasta volver a correr el último «pages build and deployment» en Actions).
 
-`og:url`, `og:image` y `canonical` apuntan a `gorgoniocandelario.netlify.app` en `index.html` y `galeria.html`. Cuando haya dominio propio, hay que cambiarlos ahí.
+`og:url`, `og:image` y `canonical` apuntan a `gorgoniocandelario.com` en `index.html` y `galeria.html`.
 
 ## Pendiente antes de publicar
 
@@ -124,7 +124,7 @@ Hay que confirmarlo con don Gorgonio o con su familia.
 - [ ] Una foto mejor del pelícano (antes «ave azul de pico amarillo»): la única que hay es el panel central de un collage, de 172 px de ancho.
 - [ ] La encuesta en `preguntas/`: el 23 de octubre de 2026 Don Gorgonio contestó 37 de las 126 máscaras y 4 de las 12 preguntas sobre él y el taller (año de nacimiento, las nueve parejas, lo que simbolizan y la pintura); sus respuestas ya están en el sitio (ver `datos/respuestas-don-gorgonio.json` y la investigación). Faltan las demás máscaras y las otras 8 preguntas sobre él y el taller (la 2, la 3, la 4, la 5, la 9, la 10, la 11 y la 12). Las mismas preguntas, con los mismos números, están en `datos/preguntas-para-don-gorgonio.md`.
 - [ ] Aclarar con Don Gorgonio con qué pareja sale el pavo real (máscara 84). Él dice que es de la Danza de los Morenos, pero no está entre las nueve parejas que confirmó. ¿Con las guacamayas? Él marcó como hembras tanto la guacamaya verde como el pavo real.
-- [ ] El dominio del sitio. Don Gorgonio lo quiere con el nombre «Gorgonio Candelario · Máscaras Tradicionales» (el 27 de octubre de 2026 estaban libres gorgoniocandelario.com y gorgoniocandelariomascarastradicionales.com). Cuando esté, cambia `og:url`, `og:image` y `canonical` en `index.html` y `galeria.html`.
+- [x] El dominio del sitio: gorgoniocandelario.com (comprado el 29 de octubre de 2026 en Squarespace).
 - [ ] Las visitas al taller: el horario, si recibe sin cita y si da clases de talla.
 - [ ] A qué edad empezó, si es la tercera o la cuarta generación, qué premio nacional recibió y qué significa "Mi Güelo Baci".
 - [ ] Fotos que faltan: el taller, más del proceso de trabajo y la danza. La lista completa está en `datos/curaduria.json`. Ya hay tres fotos de don Gorgonio y una de su padre, don Herminio, en `fotos/originales/maestro/`.
